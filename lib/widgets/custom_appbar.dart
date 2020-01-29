@@ -1,53 +1,41 @@
 import 'package:flutter/material.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
-  final double height;
-
-  const CustomAppBar({
-    Key key,
-    @required this.height,
-  }) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: <Widget>[
-        Container(
-          height: 107,
-          color: Color(0xBF73C700),
-          alignment: Alignment.center,
-          child: Container(
-            decoration: new BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.all(Radius.circular(5.0)),
-            ),
-            width: 320,
-            height: 35,
-            margin: EdgeInsets.only(top: 40.0),
+    return Container(
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+      ),
+      child: Row(
+        children: <Widget>[
+          IconButton(
+            color: Colors.grey,
+            splashColor: Colors.white,
+            icon: Icon(Icons.menu),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+              FocusScope.of(context).requestFocus(new FocusNode());
+            },
+          ),
+          Expanded(
             child: TextField(
-              style: new TextStyle(color: Colors.black),
-              cursorColor: Colors.black,
+              cursorColor: Colors.blue,
+              keyboardType: TextInputType.text,
               keyboardAppearance: Brightness.light,
-              decoration: new InputDecoration(
-                fillColor: Colors.black,
-                border: InputBorder.none,
-                contentPadding: EdgeInsets.only(top: 3.0),
-                prefixIcon: new Icon(
-                  Icons.search,
-                  color: Colors.black,
-                ),
-                hintText: "Search",
-                hintStyle: TextStyle(
-                  color: Colors.black,
-                ),
-              ),
+              textInputAction: TextInputAction.go,
+              decoration: InputDecoration(
+                  border: InputBorder.none,
+                  contentPadding: EdgeInsets.symmetric(horizontal: 10),
+                  hintText: "Search"),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 
   @override
-  Size get preferredSize => Size.fromHeight(height);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
 }

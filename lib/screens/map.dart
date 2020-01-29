@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
@@ -8,9 +9,11 @@ const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 80;
 const double CAMERA_BEARING = 30;
 const LatLng DEST_LOCATION = LatLng(45.495944, -73.578075);
-const String googleAPIKey = "AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0";
 
 class MapPage extends StatefulWidget {
+  final Completer<GoogleMapController> completer;
+  MapPage({Key key, this.completer}) : super(key: key);
+
   @override
   _MapPageState createState() => _MapPageState();
 }
@@ -55,9 +58,7 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     while (_initialCameraLocation == null) {
-      return Scaffold(
-        body: Center(child: Text("Loading Map")),
-      );
+      return Text("Loading Map");
     }
     return GoogleMap(
         myLocationEnabled: true,
@@ -68,8 +69,10 @@ class _MapPageState extends State<MapPage> {
         indoorViewEnabled: true,
         trafficEnabled: false,
         initialCameraPosition: _initialCameraLocation,
-        onMapCreated: (GoogleMapController controller) {
-          _controller = controller;
+        onMapCreated: (GoogleMapController controller) async {
+          widget.completer.complete(controller);
+          //_controller = controller;
+//          widget.onMapCreated(controller);
         });
   }
 
