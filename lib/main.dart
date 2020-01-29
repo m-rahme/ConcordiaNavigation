@@ -3,6 +3,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/map.dart';
 import 'dart:async';
 import 'widgets/custom_appbar.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(App());
 
@@ -43,17 +44,24 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _expendTile() {
-    return ExpansionTile(
-      leading: Icon(Icons.map),
-      title: new Text(
-        "Campus",
-        style: TextStyle(fontWeight: FontWeight.bold),
+    return Theme(
+      data: ThemeData(
+        accentColor: Color(0xFF73C700),
       ),
-      children: <Widget>[
-        new Column(
-          children: _buildExpandableContent(),
+      child: ExpansionTile(
+        leading: Icon(Icons.map),
+        title: new Text(
+          "Campus",
+          style: GoogleFonts.raleway(
+            fontWeight: FontWeight.bold,
+          ),
         ),
-      ],
+        children: <Widget>[
+          new Column(
+            children: _buildExpandableContent(),
+          ),
+        ],
+      ),
     );
   }
 
@@ -64,6 +72,7 @@ class _HomePageState extends State<HomePage> {
       new ListTile(
           title: new Text(
             "Sir George Williams",
+            style: GoogleFonts.raleway(),
           ),
           onTap: () {
             Navigator.of(context).pop();
@@ -74,6 +83,7 @@ class _HomePageState extends State<HomePage> {
       new ListTile(
         title: new Text(
           "Loyola",
+          style: GoogleFonts.raleway(),
         ),
         onTap: () {
           Navigator.of(context).pop();
@@ -92,16 +102,23 @@ class _HomePageState extends State<HomePage> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.blue,
+            Container(
+              padding: EdgeInsets.only(
+                top: 35.0,
               ),
-              child: Text(
-                "ConNavigator",
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
+              decoration: BoxDecoration(
+                color: Color(0xFF73C700),
+              ),
+              child: ListTile(
+                title: Text(
+                  "ConNavigator",
+                  style: GoogleFonts.raleway(
+                    fontSize: 24.0,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
+                onTap: () {},
               ),
             ),
             _expendTile(),
@@ -109,7 +126,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.calendar_today),
               title: Text(
                 "Your Schedule",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
             ),
@@ -117,7 +134,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.account_circle),
               title: Text(
                 "Profile",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
             ),
@@ -125,7 +142,7 @@ class _HomePageState extends State<HomePage> {
               leading: Icon(Icons.settings),
               title: Text(
                 "Settings",
-                style: TextStyle(fontWeight: FontWeight.bold),
+                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
             ),
@@ -139,8 +156,8 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 50,
-            left: 10,
-            right: 10,
+            left: 30,
+            right: 30,
             child: CustomAppBar(),
           ),
         ],

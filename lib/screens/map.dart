@@ -58,7 +58,7 @@ class _MapPageState extends State<MapPage> {
   @override
   Widget build(BuildContext context) {
     while (_initialCameraLocation == null) {
-      return Text("Loading Map");
+      return Center(child: Text("Loading Map"));
     }
     return GoogleMap(
         myLocationEnabled: true,
@@ -68,11 +68,16 @@ class _MapPageState extends State<MapPage> {
         mapType: MapType.normal,
         indoorViewEnabled: true,
         trafficEnabled: false,
+        onTap: (LatLng) {
+          FocusScopeNode currentFocus = FocusScope.of(context);
+
+          if (!currentFocus.hasPrimaryFocus) {
+            currentFocus.unfocus();
+          }
+        },
         initialCameraPosition: _initialCameraLocation,
         onMapCreated: (GoogleMapController controller) async {
           widget.completer.complete(controller);
-          //_controller = controller;
-//          widget.onMapCreated(controller);
         });
   }
 

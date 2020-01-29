@@ -7,11 +7,23 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.grey[700],
+            blurRadius: 5.0,
+            spreadRadius: 0.0,
+            offset: Offset(
+              1.0,
+              3.0,
+              // Move to bottom 10 Vertically
+            ),
+          )
+        ],
       ),
       child: Row(
         children: <Widget>[
           IconButton(
-            color: Colors.grey,
+            color: Colors.grey[900],
             splashColor: Colors.white,
             icon: Icon(Icons.menu),
             onPressed: () {
