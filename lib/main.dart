@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/map.dart';
 import 'dart:async';
+import 'package:flutter_statusbar_text_color/flutter_statusbar_text_color.dart';
 import 'widgets/custom_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -36,7 +37,7 @@ class _HomePageState extends State<HomePage> {
     final c = await _completer.future;
     final p = CameraPosition(
       target: LatLng(lat, lng),
-      zoom: 17,
+      zoom: 16.5,
       tilt: 30.440717697143555,
       bearing: 30.8334901395799,
     );
@@ -76,7 +77,7 @@ class _HomePageState extends State<HomePage> {
           ),
           onTap: () {
             Navigator.of(context).pop();
-            animateTo(45.4957, -73.5781);
+            animateTo(45.496676, -73.578760);
           }),
     );
     columnContent.add(
@@ -97,6 +98,7 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    FlutterStatusbarTextColor.setTextColor(FlutterStatusbarTextColor.dark);
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -156,8 +158,8 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 50,
-            left: 30,
-            right: 30,
+            left: 10,
+            right: 10,
             child: CustomAppBar(),
           ),
         ],

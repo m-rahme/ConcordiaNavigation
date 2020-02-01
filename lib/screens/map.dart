@@ -4,6 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
+import 'campus_polygons.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 80;
@@ -57,6 +58,7 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+    CampusPolygons poly = new CampusPolygons();
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
@@ -65,10 +67,12 @@ class _MapPageState extends State<MapPage> {
         myLocationButtonEnabled: true,
         compassEnabled: false,
         tiltGesturesEnabled: true,
+        buildingsEnabled: false,
         mapType: MapType.normal,
+        polygons: poly.allPolygons,
         indoorViewEnabled: true,
         trafficEnabled: false,
-        onTap: (LatLng) {
+        onTap: (latLng) {
           FocusScopeNode currentFocus = FocusScope.of(context);
 
           if (!currentFocus.hasPrimaryFocus) {
