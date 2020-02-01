@@ -9,6 +9,10 @@
         android:name="io.flutter.app.FlutterApplication"
         android:label="concordia_navigation"
         android:icon="@mipmap/ic_launcher">
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCaKvHdoIKWPdW1hl0ZLkmXe7UbyYRw5nE" />
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
