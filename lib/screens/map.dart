@@ -62,7 +62,7 @@ class _MapPageState extends State<MapPage> {
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
-    double midHeight = MediaQuery.of(context).size.height/2;
+    double midHeight = MediaQuery.of(context).size.height*0.865;
     return GoogleMap(
         myLocationEnabled: true,
         myLocationButtonEnabled: true,
