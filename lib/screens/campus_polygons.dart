@@ -48,17 +48,17 @@ class CampusPolygons {
   ];
 
   CampusPolygons() {
-    allPolygons.add(
-      Polygon(
-        polygonId: PolygonId('Hbuilding'),
-        fillColor: Color(0x7A73C700),
-        consumeTapEvents: false,
-        geodesic: false,
-        points: Hbuilding,
-        strokeWidth: 0,
-        strokeColor: Colors.transparent,
-      ),
-    );
+//    allPolygons.add(
+//      Polygon(
+//        polygonId: PolygonId('Hbuilding'),
+//        fillColor: Color(0x7A73C700),
+//        consumeTapEvents: false,
+//        geodesic: false,
+//        points: Hbuilding,
+//        strokeWidth: 0,
+//        strokeColor: Colors.transparent,
+//      ),
+//    );
     allPolygons.add(
       Polygon(
         polygonId: PolygonId('LBbuilding'),
