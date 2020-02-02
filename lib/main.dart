@@ -151,19 +151,20 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: Stack(
-        children: <Widget>[
-          MapPage(
-            completer: _completer,
-          ),
-          Positioned(
-            top: 50,
-            left: 10,
-            right: 10,
-            child: CustomAppBar(),
-          ),
-        ],
-      ),
-    );
-  }
-}
+			body: SafeArea(
+				child: Stack(
+					children: <Widget>[
+						MapPage(
+							completer: _completer,
+						),
+						Positioned(
+							top: 30,
+							right: 30,
+							left: 30,
+							child: CustomAppBar(),
+						),
+					],
+				),
+			),
+		);
+	}
