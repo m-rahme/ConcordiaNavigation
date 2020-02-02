@@ -31,7 +31,6 @@ class _MapPageState extends State<MapPage> {
   @override
   void initState() {
     super.initState();
-
     initPlatformState();
     _locationSubscription =
         _location.onLocationChanged().listen((newLocalData) {
@@ -58,11 +57,12 @@ class _MapPageState extends State<MapPage> {
 
   @override
   Widget build(BuildContext context) {
+    double midHeight = MediaQuery.of(context).size.height * 0.865;
     CampusPolygons poly = new CampusPolygons();
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
-    double midHeight = MediaQuery.of(context).size.height*0.865;
+
     return GoogleMap(
         myLocationEnabled: true,
         myLocationButtonEnabled: true,

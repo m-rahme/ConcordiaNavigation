@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'screens/map.dart';
 import 'dart:async';
-import 'package:flutter_statusbar_text_color/flutter_statusbar_text_color.dart';
 import 'widgets/custom_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -98,7 +97,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    FlutterStatusbarTextColor.setTextColor(FlutterStatusbarTextColor.dark);
     return Scaffold(
       drawer: Drawer(
         child: ListView(
@@ -151,20 +149,18 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
-      body: SafeArea(
-        child: Stack(
-          children: <Widget>[
-            MapPage(
-              completer: _completer,
-            ),
-            Positioned(
-              top: 30,
-              right: 40,
-              left: 40,
-              child: CustomAppBar(),
-            ),
-          ],
-        ),
+      body: Stack(
+        children: <Widget>[
+          MapPage(
+            completer: _completer,
+          ),
+          Positioned(
+            top: 50,
+            right: 40,
+            left: 40,
+            child: CustomAppBar(),
+          ),
+        ],
       ),
     );
   }
