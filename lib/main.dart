@@ -4,14 +4,87 @@ import 'screens/map.dart';
 import 'dart:async';
 import 'widgets/custom_appbar.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:intl/intl.dart';
+import 'l10n/messages_all.dart';
 
-void main() => runApp(App());
+class ConcordiaLocalizations{
+	ConcordiaLocalizations(this.localeName);
+
+	static Future<ConcordiaLocalizations> load(Locale locale) {
+		final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+		final String localeName = Intl.canonicalizedLocale(name);
+
+		return initializeMessages(localeName).then((_) {
+			return ConcordiaLocalizations(localeName);
+		});
+	}
+
+	static ConcordiaLocalizations of(BuildContext context) {
+		return Localizations.of<ConcordiaLocalizations>(context, ConcordiaLocalizations);
+	}
+
+	final String localeName;
+
+	String get profile {
+		return Intl.message(
+			'Profile',
+			name: 'profile',
+			desc: 'Profile for the user',
+			locale: localeName,
+		);
+	}
+
+	String get schedule {
+		return Intl.message(
+			'Schedule',
+			name: 'schedule',
+			desc: 'Schedule',
+			locale: localeName,
+		);
+	}
+	String get settings {
+		return Intl.message(
+			'Settings',
+			name: 'settings',
+			desc: 'Settings',
+			locale: localeName,
+		);
+	}
+}
+
+class ConcordiaLocalizationsDelegate extends LocalizationsDelegate<ConcordiaLocalizations> {
+	const ConcordiaLocalizationsDelegate();
+
+	@override
+	bool isSupported(Locale locale) => ['en', 'fr'].contains(locale.languageCode);
+
+	@override
+	Future<ConcordiaLocalizations> load(Locale locale) => ConcordiaLocalizations.load(locale);
+
+	@override
+	bool shouldReload(ConcordiaLocalizationsDelegate old) => false;
+}
+
+void main() {
+	runApp(App());
+}
 
 class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Concordia Navigation',
+			localizationsDelegates: [
+				// ... app-specific localization delegate[s] here
+				const ConcordiaLocalizationsDelegate(),
+				GlobalMaterialLocalizations.delegate,
+				GlobalWidgetsLocalizations.delegate,
+			],
+			supportedLocales: [
+				const Locale('en', ''),
+				const Locale('fr', ''),
+			],
       routes: {
 //          Welcome.id: (context) => Welcome(),
 //          Register.id: (context) => Register(),
@@ -125,7 +198,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.calendar_today),
               title: Text(
-                "Your Schedule",
+								ConcordiaLocalizations.of(context).schedule,
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
@@ -133,7 +206,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.account_circle),
               title: Text(
-                "Profile",
+								ConcordiaLocalizations.of(context).profile,
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},
@@ -141,7 +214,7 @@ class _HomePageState extends State<HomePage> {
             ListTile(
               leading: Icon(Icons.settings),
               title: Text(
-                "Settings",
+								ConcordiaLocalizations.of(context).settings,
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {},

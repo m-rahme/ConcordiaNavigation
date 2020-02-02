@@ -1,0 +1,21 @@
+{
+  "@@last_modified": "2020-02-02T01:33:58.883511",
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile for the user",
+    "type": "text",
+    "placeholders": {}
+  },
+  "schedule": "Schedule",
+  "@schedule": {
+    "description": "Schedule",
+    "type": "text",
+    "placeholders": {}
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings",
+    "type": "text",
+    "placeholders": {}
+  }
+}

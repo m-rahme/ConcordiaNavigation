@@ -1,0 +1,17 @@
+{
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile",
+    "type": "text"
+  },
+  "schedule": "Schedule",
+  "@shedule": {
+    "description": "Schedule",
+    "type": "text"
+  },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings",
+    "type": "text"
+  }
+}
