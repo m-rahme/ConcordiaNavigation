@@ -19,6 +19,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
+
   - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
   - flutter_statusbar_text_color (from `.symlinks/plugins/flutter_statusbar_text_color/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
