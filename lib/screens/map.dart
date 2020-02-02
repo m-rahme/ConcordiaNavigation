@@ -62,6 +62,8 @@ class _MapPageState extends State<MapPage> {
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
+    double midHeight = MediaQuery.of(context).size.height/2;
+
     return GoogleMap(
         myLocationEnabled: true,
         myLocationButtonEnabled: true,
@@ -72,6 +74,7 @@ class _MapPageState extends State<MapPage> {
         polygons: poly.allPolygons,
         indoorViewEnabled: true,
         trafficEnabled: false,
+        padding: EdgeInsets.only(top: midHeight),
         onTap: (latLng) {
           FocusScopeNode currentFocus = FocusScope.of(context);
 
