@@ -44,6 +44,7 @@ android {
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+		manifestPlaceHolders = [mapsApiKey: "$System.env.MAPS_API_KEY"]
     }
 
     buildTypes {
