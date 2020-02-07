@@ -1,4 +1,4 @@
-import Foundation
+import Configuration
 import UIKit
 import Flutter
 import GoogleMaps
@@ -9,8 +9,9 @@ import GoogleMaps
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-	let mapsApiKey = ProcessInfo.processInfo.environment["MAPS_API_KEY"]
-	GMSServices.provideAPIKey(mapsApiKey)
+	let manager = ConfigurationManager()
+	manager.load(file: ".env").load(.environmentVariables)
+	GMSServices.provideAPIKey(manager["MAPS_API_KEY"])
     GeneratedPluginRegistrant.register(with: self)
     return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
