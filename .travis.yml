@@ -1,0 +1,37 @@
+git:
+  submodules: false
+  depth: 3
+branches:
+  only:
+    - master
+    - dev
+language: dart
+
+jobs:
+  include:
+    - name: "iOS tests, stable channel"
+      os: osx
+      language: objective-c
+      script: ./tool/travis_ios_script.sh
+
+    - name: "Android tests, stable channel"
+      os: linux
+      dist: trusty
+      language: android
+      script: ./tool/travis_android_script.sh
+
+    - name: "Flutter tests, stable channel"
+      os: linux
+      dist: trusty
+      language: ruby
+      script: ./tool/travis_flutter_script.sh
+
+before_script:
+  - git clone https://github.com/flutter/flutter.git
+  - ./flutter/bin/flutter doctor
+  - chmod +x tool/travis_*_script.sh
+
+cache:
+  cocoapods: true
+  directories:
+    - $HOME/shared/.pub-cache
