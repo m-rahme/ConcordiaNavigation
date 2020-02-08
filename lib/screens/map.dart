@@ -72,7 +72,7 @@ class _MapPageState extends State<MapPage> {
         myLocationButtonEnabled: true,
         compassEnabled: false,
         tiltGesturesEnabled: true,
-        buildingsEnabled: false,
+        buildingsEnabled: true,
         mapType: MapType.normal,
         polygons: poly.allPolygons,
         indoorViewEnabled: true,

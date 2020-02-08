@@ -9,6 +9,7 @@ import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
+//TODO: Move to new file.
 class ConcordiaLocalizations {
   ConcordiaLocalizations(this.localeName);
 
