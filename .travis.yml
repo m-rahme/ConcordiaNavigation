@@ -29,7 +29,7 @@ jobs:
 before_script:
   - git clone https://github.com/flutter/flutter.git
   - ./flutter/bin/flutter doctor
-  - chmod +x tool/travis_*_script.sh
+  - chmod +x build-tools/travis_*_script.sh
 
 cache:
   cocoapods: true
