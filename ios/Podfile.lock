@@ -1,16 +1,14 @@
 PODS:
   - Flutter (1.0.0)
-  - flutter_plugin_android_lifecycle (0.0.1):
-    - Flutter
-  - flutter_statusbar_text_color (0.0.1):
+  - flutter_statusbarcolor (0.0.1):
     - Flutter
   - google_maps_flutter (0.0.1):
     - Flutter
     - GoogleMaps
-  - GoogleMaps (2.7.0):
-    - GoogleMaps/Maps (= 2.7.0)
-  - GoogleMaps/Base (2.7.0)
-  - GoogleMaps/Maps (2.7.0):
+  - GoogleMaps (3.7.0):
+    - GoogleMaps/Maps (= 3.7.0)
+  - GoogleMaps/Base (3.7.0)
+  - GoogleMaps/Maps (3.7.0):
     - GoogleMaps/Base
   - location (0.0.1):
     - Flutter
@@ -19,9 +17,7 @@ PODS:
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
-
-  - flutter_plugin_android_lifecycle (from `.symlinks/plugins/flutter_plugin_android_lifecycle/ios`)
-  - flutter_statusbar_text_color (from `.symlinks/plugins/flutter_statusbar_text_color/ios`)
+  - flutter_statusbarcolor (from `.symlinks/plugins/flutter_statusbarcolor/ios`)
   - google_maps_flutter (from `.symlinks/plugins/google_maps_flutter/ios`)
   - location (from `.symlinks/plugins/location/ios`)
   - path_provider (from `.symlinks/plugins/path_provider/ios`)
@@ -33,10 +29,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   Flutter:
     :path: Flutter
-  flutter_plugin_android_lifecycle:
-    :path: ".symlinks/plugins/flutter_plugin_android_lifecycle/ios"
-  flutter_statusbar_text_color:
-    :path: ".symlinks/plugins/flutter_statusbar_text_color/ios"
+  flutter_statusbarcolor:
+    :path: ".symlinks/plugins/flutter_statusbarcolor/ios"
   google_maps_flutter:
     :path: ".symlinks/plugins/google_maps_flutter/ios"
   location:
@@ -46,13 +40,12 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Flutter: 0e3d915762c693b495b44d77113d4970485de6ec
-  flutter_plugin_android_lifecycle: 47de533a02850f070f5696a623995e93eddcdb9b
-  flutter_statusbar_text_color: bfeb27e69d90920ed6ebe0cbe83466011c75c4f4
+  flutter_statusbarcolor: 8afb1071ed8c58be929f1e32b36c629771fd2259
   google_maps_flutter: d0dd62f5a7d39bae61057eb9f52dd778d99c7c6c
-  GoogleMaps: f79af95cb24d869457b1f961c93d3ce8b2f3b848
+  GoogleMaps: 55da829c68aa931f3ae982b9e341cc2f3d89c587
   location: 3a2eed4dd2fab25e7b7baf2a9efefe82b512d740
   path_provider: fb74bd0465e96b594bb3b5088ee4a4e7bb1f2a9d
 
-PODFILE CHECKSUM: 1b66dae606f75376c5f2135a8290850eeb09ae83
+PODFILE CHECKSUM: e45c292f618eeca3034958d33b444b6e1249b55f
 
 COCOAPODS: 1.8.4

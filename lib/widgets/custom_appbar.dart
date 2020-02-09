@@ -9,15 +9,15 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
         borderRadius: BorderRadius.all(Radius.circular(10.0)),
         boxShadow: [
           BoxShadow(
-            color: Colors.grey[700],
+            color: Colors.grey[800],
             blurRadius: 5.0,
-            spreadRadius: 0.0,
+            spreadRadius: -1.0,
             offset: Offset(
               1.0,
               3.0,
               // Move to bottom 10 Vertically
             ),
-          )
+          ),
         ],
       ),
       child: Row(

@@ -1,0 +1,49 @@
+git:
+  submodules: false
+  depth: 3
+branches:
+  only:
+    - master
+    - dev
+    - travis
+language: dart
+
+jobs:
+  include:
+    - name: "Building on iOS"
+      os: osx
+      osx_image: xcode11.3
+      language: objective-c
+      script:
+        - ./flutter/bin/flutter precache --no-web --no-linux --no-windows --no-fuchsia --no-android --no-macos
+        - ./flutter/bin/flutter build ios --release --no-codesign
+
+    - name: "Building on Android"
+      os: linux
+      dist: trusty
+      language: android
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      script:
+        - ./flutter/bin/flutter build appbundle
+
+    - name: "Flutter tests"
+      os: linux
+      dist: trusty
+      language: bash
+      script:
+        - ./flutter/bin/flutter format -n --set-exit-if-changed .
+        - ./flutter/bin/flutter test
+
+
+before_script:
+  - git clone https://github.com/flutter/flutter.git
+  - ./flutter/bin/flutter doctor
+  - ./flutter/bin/flutter packages get
+
+cache:
+  cocoapods: true
+  directories:
+    - $HOME/shared/.pub-cache

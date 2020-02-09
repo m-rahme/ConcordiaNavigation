@@ -7,12 +7,15 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
+import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 
-class ConcordiaLocalizations{
+//TODO: Move to new file.
+class ConcordiaLocalizations {
   ConcordiaLocalizations(this.localeName);
 
   static Future<ConcordiaLocalizations> load(Locale locale) {
-    final String name = locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
+    final String name =
+        locale.countryCode.isEmpty ? locale.languageCode : locale.toString();
     final String localeName = Intl.canonicalizedLocale(name);
 
     return initializeMessages(localeName).then((_) {
@@ -21,7 +24,8 @@ class ConcordiaLocalizations{
   }
 
   static ConcordiaLocalizations of(BuildContext context) {
-    return Localizations.of<ConcordiaLocalizations>(context, ConcordiaLocalizations);
+    return Localizations.of<ConcordiaLocalizations>(
+        context, ConcordiaLocalizations);
   }
 
   final String localeName;
@@ -43,6 +47,7 @@ class ConcordiaLocalizations{
       locale: localeName,
     );
   }
+
   String get settings {
     return Intl.message(
       'Settings',
@@ -53,14 +58,16 @@ class ConcordiaLocalizations{
   }
 }
 
-class ConcordiaLocalizationsDelegate extends LocalizationsDelegate<ConcordiaLocalizations> {
+class ConcordiaLocalizationsDelegate
+    extends LocalizationsDelegate<ConcordiaLocalizations> {
   const ConcordiaLocalizationsDelegate();
 
   @override
   bool isSupported(Locale locale) => ['en', 'fr'].contains(locale.languageCode);
 
   @override
-  Future<ConcordiaLocalizations> load(Locale locale) => ConcordiaLocalizations.load(locale);
+  Future<ConcordiaLocalizations> load(Locale locale) =>
+      ConcordiaLocalizations.load(locale);
 
   @override
   bool shouldReload(ConcordiaLocalizationsDelegate old) => false;
@@ -117,6 +124,12 @@ class _HomePageState extends State<HomePage> {
     c.animateCamera(CameraUpdate.newCameraPosition(p));
   }
 
+  @override
+  initState() {
+    super.initState();
+    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
+  }
+
   Widget _expendTile() {
     return Theme(
       data: ThemeData(
@@ -144,15 +157,14 @@ class _HomePageState extends State<HomePage> {
 
     columnContent.add(
       new ListTile(
-        title: new Text(
-          "Sir George Williams",
-          style: GoogleFonts.raleway(),
-        ),
-        onTap: () {
-          Navigator.of(context).pop();
-          animateTo(45.496676, -73.578760);
-        }
-      ),
+          title: new Text(
+            "Sir George Williams",
+            style: GoogleFonts.raleway(),
+          ),
+          onTap: () {
+            Navigator.of(context).pop();
+            animateTo(45.496676, -73.578760);
+          }),
     );
     columnContent.add(
       new ListTile(
@@ -231,8 +243,8 @@ class _HomePageState extends State<HomePage> {
           ),
           Positioned(
             top: 50,
-            right: 40,
-            left: 40,
+            right: 20,
+            left: 20,
             child: CustomAppBar(),
           ),
         ],
