@@ -5,31 +5,43 @@ branches:
   only:
     - master
     - dev
+    - travis
 language: dart
 
 jobs:
   include:
-    - name: "iOS tests, stable channel"
+    - name: "Building on iOS"
       os: osx
+      osx_image: xcode11.3
       language: objective-c
-      script: ./build-tools/travis_ios_script.sh
+      script:
+        - ./flutter/bin/flutter precache --no-web --no-linux --no-windows --no-fuchsia --no-android --no-macos
+        - ./flutter/bin/flutter build ios --release --no-codesign
 
-    - name: "Android tests, stable channel"
+    - name: "Building on Android"
       os: linux
       dist: trusty
       language: android
-      script: ./build-tools/travis_android_script.sh
+      android:
+        components:
+          - build-tools-28.0.3
+          - android-28
+      script:
+        - ./flutter/bin/flutter build appbundle
 
-    - name: "Flutter tests, stable channel"
+    - name: "Flutter tests"
       os: linux
       dist: trusty
-      language: ruby
-      script: ./build-tools/travis_flutter_script.sh
+      language: bash
+      script:
+        - ./flutter/bin/flutter format -n --set-exit-if-changed .
+        - ./flutter/bin/flutter test
+
 
 before_script:
   - git clone https://github.com/flutter/flutter.git
   - ./flutter/bin/flutter doctor
-  - chmod +x build-tools/travis_*_script.sh
+  - ./flutter/bin/flutter packages get
 
 cache:
   cocoapods: true
