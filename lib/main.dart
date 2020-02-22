@@ -3,8 +3,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_statusbarcolor/flutter_statusbarcolor.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'screens/map.dart';
 import 'dart:async';
-
 import 'screens/map.dart';
 import 'localization.dart';
 import 'widgets/custom_appbar.dart';
@@ -58,12 +58,6 @@ class _HomePageState extends State<HomePage> {
       bearing: 30.8334901395799,
     );
     c.animateCamera(CameraUpdate.newCameraPosition(p));
-  }
-
-  @override
-  initState() {
-    super.initState();
-    FlutterStatusbarcolor.setStatusBarWhiteForeground(true);
   }
 
   Widget _expendTile() {

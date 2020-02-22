@@ -109,13 +109,6 @@ packages:
     description: flutter
     source: sdk
     version: "0.0.0"
-  flutter_statusbarcolor:
-    dependency: "direct main"
-    description:
-      name: flutter_statusbarcolor
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.2.3"
   flutter_test:
     dependency: "direct dev"
     description: flutter
@@ -134,7 +127,7 @@ packages:
       name: google_fonts
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.3.6"
+    version: "0.3.8"
   google_maps_flutter:
     dependency: "direct main"
     description:
@@ -176,7 +169,7 @@ packages:
       name: intl
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.16.1"
+    version: "0.16.0"
   intl_translation:
     dependency: "direct main"
     description:
@@ -281,7 +274,7 @@ packages:
       name: provider
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.2"
+    version: "4.0.3"
   pub_semver:
     dependency: transitive
     description:
