@@ -1,4 +1,3 @@
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart';
 import 'l10n/messages_all.dart';
 import 'package:flutter/material.dart';
