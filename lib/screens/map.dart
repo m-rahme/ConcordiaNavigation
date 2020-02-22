@@ -77,7 +77,7 @@ class _MapPageState extends State<MapPage> {
         polygons: poly.allPolygons,
         indoorViewEnabled: true,
         trafficEnabled: false,
-        padding: EdgeInsets.only(top: 600),
+        padding: EdgeInsets.only(top: 500),
         onTap: (latLng) {
           FocusScopeNode currentFocus = FocusScope.of(context);
 
