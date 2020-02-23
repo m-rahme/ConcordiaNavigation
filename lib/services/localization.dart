@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'l10n/messages_all.dart';
+import '../l10n/messages_all.dart';
 import 'package:flutter/material.dart';
 
 class ConcordiaLocalizations {

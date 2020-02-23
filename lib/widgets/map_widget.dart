@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/map_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -5,24 +6,22 @@ import 'dart:async';
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter/services.dart' show rootBundle;
-import 'campus_polygons.dart';
+import '../models/campus_polygons.dart';
+import 'package:provider/provider.dart';
 
 const double CAMERA_ZOOM = 16;
-const double CAMERA_TILT = 80;
+const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
 const LatLng DEST_LOCATION = LatLng(45.495944, -73.578075);
 String _mapStyle;
 
-class MapPage extends StatefulWidget {
-  final Completer<GoogleMapController> completer;
-  MapPage({Key key, this.completer}) : super(key: key);
-
+class MapWidget extends StatefulWidget {
   @override
-  _MapPageState createState() => _MapPageState();
+  _MapWidgetState createState() => _MapWidgetState();
 }
 
-class _MapPageState extends State<MapPage> {
-  GoogleMapController _controller;
+class _MapWidgetState extends State<MapWidget> {
+  Completer<GoogleMapController> _completer;
   LatLng _currentLocation;
   CameraPosition _initialCameraLocation;
   StreamSubscription _locationSubscription;
@@ -67,6 +66,7 @@ class _MapPageState extends State<MapPage> {
       return Center(child: Text("Loading Map"));
     }
 
+    _completer = Provider.of<MapData>(context).getCompleter;
     return GoogleMap(
         myLocationEnabled: true,
         myLocationButtonEnabled: true,
@@ -86,8 +86,8 @@ class _MapPageState extends State<MapPage> {
           }
         },
         initialCameraPosition: _initialCameraLocation,
-        onMapCreated: (GoogleMapController controller) async {
-          widget.completer.complete(controller);
+        onMapCreated: (controller) async {
+          _completer.complete(controller);
           controller.setMapStyle(_mapStyle);
         });
   }
