@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class CampusPolygons {
-  final Set<Polygon> allPolygons = {};
+  final Set<Polygon> allPolygons = new Set();
 
   Map<String, List<LatLng>> buildings = {
     "Hbuilding": [

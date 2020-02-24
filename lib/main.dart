@@ -1,9 +1,13 @@
+import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'models/map_data.dart';
+import 'package:concordia_navigation/screens/settings.dart';
+import 'package:concordia_navigation/screens/profile.dart';
+import 'package:concordia_navigation/screens/schedule.dart';
 
 void main() {
   runApp(App());
@@ -31,8 +35,12 @@ class App extends StatelessWidget {
           const Locale('en', ''),
           const Locale('fr', ''),
         ],
+        initialRoute: '/',
         routes: {
-//      Settings.id: (context) => Settings()
+          '/schedule': (context) => Schedule(),
+          '/profile': (context) => Profile(),
+          '/o_interest': (context) => OutdoorInterest(),
+          '/settings': (context) => Settings(),
         },
         debugShowCheckedModeBanner: false,
         home: HomePage(),

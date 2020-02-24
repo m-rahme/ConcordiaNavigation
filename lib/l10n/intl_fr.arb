@@ -9,6 +9,11 @@
     "description": "Schedule",
     "type": "text"
   },
+  "interest": "Intérêt Extérieur",
+  "@interest": {
+  "description": "Outdoor Interest",
+  "type": "text"
+  }
   "settings": "Paramètres",
   "@settings": {
     "description": "Settings",

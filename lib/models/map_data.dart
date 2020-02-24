@@ -1,6 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+import 'package:flutter/material.dart';
 
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();

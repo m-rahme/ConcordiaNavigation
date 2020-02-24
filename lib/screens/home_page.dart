@@ -5,6 +5,7 @@ import 'package:concordia_navigation/widgets/custom_appbar.dart';
 import 'package:concordia_navigation/widgets/map_widget.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/services/location_search.dart';
 
 class HomePage extends StatefulWidget {
   @override
@@ -75,16 +76,32 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Color(0xFF73C700),
+        title: Text("ConNavigation"),
+        actions: <Widget>[
+          IconButton(
+            icon: Icon(Icons.wb_sunny),
+            onPressed: () {},
+          ),
+          IconButton(
+            icon: Icon(Icons.search),
+            onPressed: () {
+              showSearch(context: context, delegate: LocationSearch());
+            },
+          )
+        ],
+      ),
       drawer: Drawer(
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
             Container(
               padding: EdgeInsets.only(
-                top: 35.0,
+                top: 42.5,
               ),
               decoration: BoxDecoration(
-                color: Color(0xFF73C700),
+                color: Color(0xFFFFFFF8),
               ),
               child: ListTile(
                 title: Text(
@@ -92,36 +109,91 @@ class _HomePageState extends State<HomePage> {
                   style: GoogleFonts.raleway(
                     fontSize: 24.0,
                     fontWeight: FontWeight.bold,
-                    color: Colors.white,
+                    color: Color(0xFF76C807),
                   ),
                 ),
-                onTap: () {},
+                onTap: () {
+                  Navigator.of(context).pop();
+                },
               ),
             ),
-            _expendTile(),
-            ListTile(
-              leading: Icon(Icons.calendar_today),
-              title: Text(
-                ConcordiaLocalizations.of(context).schedule,
-                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: Container(
+                color: Color(0xFFF0F0F0),
+                height: 2,
               ),
-              onTap: () {},
             ),
-            ListTile(
-              leading: Icon(Icons.account_circle),
-              title: Text(
-                ConcordiaLocalizations.of(context).profile,
-                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
-              ),
-              onTap: () {},
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: _expendTile(),
             ),
-            ListTile(
-              leading: Icon(Icons.settings),
-              title: Text(
-                ConcordiaLocalizations.of(context).settings,
-                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: ListTile(
+                leading: Icon(Icons.calendar_today),
+                title: Text(
+                  ConcordiaLocalizations.of(context).schedule,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, '/schedule');
+                },
               ),
-              onTap: () {},
+            ),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: ListTile(
+                leading: Icon(Icons.location_on),
+                title: Text(
+                  ConcordiaLocalizations.of(context).interest,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, '/o_interest');
+                },
+              ),
+            ),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: ListTile(
+                leading: Icon(Icons.account_circle),
+                title: Text(
+                  ConcordiaLocalizations.of(context).profile,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, '/profile');
+                },
+              ),
+            ),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: ListTile(
+                leading: Icon(Icons.settings),
+                title: Text(
+                  ConcordiaLocalizations.of(context).settings,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, '/settings');
+                },
+              ),
+            ),
+            Container(
+              color: Color(0xFFFFFFF8),
+              child: Container(
+                color: Color(0xFFF0F0F0),
+                height: 2,
+              ),
+            ),
+            Container(
+              color: Color(0xFFFFFFF8),
+              height: 570,
             ),
           ],
         ),
@@ -129,12 +201,12 @@ class _HomePageState extends State<HomePage> {
       body: Stack(
         children: <Widget>[
           MapWidget(),
-          Positioned(
-            top: 50,
-            right: 20,
-            left: 20,
-            child: CustomAppBar(),
-          ),
+//          Positioned(
+//            top: 50,
+//            right: 20,
+//            left: 20,
+//            child: CustomAppBar(),
+//          ),
         ],
       ),
     );
