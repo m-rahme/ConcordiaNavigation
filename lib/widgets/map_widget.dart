@@ -28,7 +28,7 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   Completer<GoogleMapController> _completer;
-  CampusPolygons _polygon;
+  BuildingsData _buildings;
   LatLng _currentLocation;
   CameraPosition _initialCameraLocation;
   StreamSubscription _locationSubscription;
@@ -71,10 +71,10 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print(1);
     SizeConfig().init(context);
-    BuildingsData buildings = new BuildingsData();
     _completer = Provider.of<MapData>(context).getCompleter;
-    _polygon = Provider.of<MapData>(context).getPolygon;
+    _buildings = Provider.of<MapData>(context).buildings;
 
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
@@ -89,7 +89,7 @@ class _MapWidgetState extends State<MapWidget> {
             tiltGesturesEnabled: true,
             buildingsEnabled: false,
             mapType: MapType.normal,
-            polygons: _polygon.allPolygons,
+            polygons: _buildings.polygons,
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCameraLocation,

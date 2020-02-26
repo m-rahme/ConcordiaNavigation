@@ -7,7 +7,7 @@ class CustomLocation implements Reachable {
 
   // TODO: change to whatever is returned by current location function call of location package.
   CustomLocation(String coord) {
-    coordinates = coordinates;
+    //coordinates = coordinates;
   }
 
   /*

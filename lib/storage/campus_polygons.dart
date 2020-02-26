@@ -765,8 +765,4 @@ class CampusPolygons {
       LatLng(45.45994, -73.64087),
     ],
   };
-
-  void clearPolygons() {
-    allPolygons.clear();
-  }
 }

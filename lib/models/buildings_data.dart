@@ -6,11 +6,21 @@ import 'package:provider/provider.dart';
 
 class BuildingsData extends ChangeNotifier {
   final Set<Building> buildings = new Set();
-  final Set<Polygon> polygons = new Set();
+  final Set<Polygon> _polygons = new Set();
+  final Set<Polygon> _clear = new Set();
+  bool visible = true;
+
+  Set<Polygon> get polygons {
+    if (visible) {
+      return _polygons;
+    }
+    return _clear;
+  }
 
   BuildingsData() {
     loadBuildings();
     drawOutlines();
+    showOutlines();
   }
 
   void loadBuildings() {
@@ -22,7 +32,15 @@ class BuildingsData extends ChangeNotifier {
 
   void drawOutlines() {
     buildings.forEach((building) {
-      polygons.add(building.outline);
+      _polygons.add(building.outline);
     });
+  }
+
+  void showOutlines() {
+    visible = true;
+  }
+
+  void clearOutlines() {
+    visible = false;
   }
 }
