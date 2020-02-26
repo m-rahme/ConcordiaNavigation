@@ -12,6 +12,12 @@
     "type": "text",
     "placeholders": {}
   },
+  "interest": "Outdoor Interest",
+  "@interest": {
+    "description": "Outdoor Interest",
+    "type": "text",
+    "placeholders": {}
+      },
   "settings": "Settings",
   "@settings": {
     "description": "Settings",

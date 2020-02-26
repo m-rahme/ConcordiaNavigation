@@ -5,7 +5,7 @@
     "type": "text"
   },
   "schedule": "Horaire",
-  "@shedule": {
+  "@schedule": {
     "description": "Schedule",
     "type": "text"
   },

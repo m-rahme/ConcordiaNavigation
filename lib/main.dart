@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/campus_polygons.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -20,6 +21,9 @@ class App extends StatelessWidget {
       providers: [
         ChangeNotifierProvider<MapData>(
           create: (_) => MapData(),
+        ),
+        ChangeNotifierProvider<CampusPolygons>(
+          create: (_) => CampusPolygons(),
         ),
       ],
       child: MaterialApp(
