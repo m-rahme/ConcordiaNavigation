@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
@@ -7,9 +9,11 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
+import '../services/navigation.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
@@ -32,6 +36,10 @@ class _MapWidgetState extends State<MapWidget> {
   LatLng _currentLocation;
   CameraPosition _initialCameraLocation;
   StreamSubscription _locationSubscription;
+
+  List<Polyline> allPolylines = [];
+  PolylinePoints points = new PolylinePoints();
+  List<PointLatLng> result = [];
 
   Location _location = new Location();
   String error;
@@ -58,6 +66,34 @@ class _MapWidgetState extends State<MapWidget> {
           bearing: CAMERA_BEARING,
         );
       });
+    });
+  }
+
+  void getDirectionData() async {
+    allPolylines = [];
+    var direction = await Navigation().getMapDirections();
+    setState(() {
+      var pointsFromJson = json.decode(direction);
+      for (int i = 0; i < 13; i++) {
+        dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
+            ["polyline"]["points"];
+        List<PointLatLng> result2 = points.decodePolyline(directions);
+        result = new List.from(result)..addAll(result2);
+      }
+      List<LatLng> po = [];
+      result.forEach((f) {
+        po.add(LatLng(f.latitude, f.longitude));
+      });
+
+      Polyline route = new Polyline(
+        polylineId: PolylineId("route"),
+        geodesic: true,
+        points: po,
+        width: 5,
+        color: Colors.blue,
+      );
+
+      allPolylines.add(route);
     });
   }
 
@@ -93,6 +129,7 @@ class _MapWidgetState extends State<MapWidget> {
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCameraLocation,
+            polylines: Set.from(allPolylines),
             onMapCreated: (controller) async {
               _completer.complete(controller);
 //          controller.setMapStyle(_mapStyle);
@@ -135,6 +172,7 @@ class _MapWidgetState extends State<MapWidget> {
               onPressed: () {
                 Provider.of<MapData>(context, listen: false).animateTo(
                     _currentLocation.latitude, _currentLocation.longitude);
+                getDirectionData();
               },
               child: Icon(Icons.gps_fixed),
               backgroundColor: Color(0xFFFFFFF8),
