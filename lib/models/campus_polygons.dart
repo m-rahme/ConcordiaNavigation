@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CampusPolygons {
-  final Set<Polygon> allPolygons = {};
+class CampusPolygons extends ChangeNotifier {
+  final Set<Polygon> allPolygons = new Set();
 
   Map<String, List<LatLng>> buildings = {
     "Hbuilding": [
@@ -769,7 +769,7 @@ class CampusPolygons {
     ],
   };
 
-  CampusPolygons() {
+  void addPolygons() async {
     buildings.forEach((id, points) {
       allPolygons.add(
         Polygon(
@@ -783,5 +783,9 @@ class CampusPolygons {
         ),
       );
     });
+  }
+
+  CampusPolygons() {
+    addPolygons();
   }
 }

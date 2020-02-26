@@ -5,7 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter/services.dart' show rootBundle;
+//*****UNCOMMENT BELLOW FOR DARK MAP*****
+//import 'package:flutter/services.dart' show rootBundle;
 import '../models/campus_polygons.dart';
 import 'package:provider/provider.dart';
 
@@ -13,7 +14,9 @@ const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
 const LatLng DEST_LOCATION = LatLng(45.495944, -73.578075);
-String _mapStyle;
+
+//*****UNCOMMENT BELLOW FOR DARK MAP*****
+//String _mapStyle;
 
 class MapWidget extends StatefulWidget {
   @override
@@ -32,9 +35,11 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
-    rootBundle.loadString('assets/map_style.txt').then((string) {
-      _mapStyle = string;
-    });
+    //*****UNCOMMENT BELLOW FOR DARK MAP*****
+    //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
+//    rootBundle.loadString('assets/map_style.txt').then((string) {
+//      _mapStyle = string;
+//    });
     initPlatformState();
     _locationSubscription =
         _location.onLocationChanged().listen((newLocalData) {
@@ -62,22 +67,22 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   Widget build(BuildContext context) {
     CampusPolygons poly = new CampusPolygons();
+    _completer = Provider.of<MapData>(context).getCompleter;
+
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
 
-    _completer = Provider.of<MapData>(context).getCompleter;
     return GoogleMap(
         myLocationEnabled: true,
-        myLocationButtonEnabled: true,
+        myLocationButtonEnabled: false,
         compassEnabled: false,
         tiltGesturesEnabled: true,
-        buildingsEnabled: true,
+        buildingsEnabled: false,
         mapType: MapType.normal,
         polygons: poly.allPolygons,
         indoorViewEnabled: true,
         trafficEnabled: false,
-        padding: EdgeInsets.only(top: 500),
         onTap: (latLng) {
           FocusScopeNode currentFocus = FocusScope.of(context);
 
@@ -88,7 +93,7 @@ class _MapWidgetState extends State<MapWidget> {
         initialCameraPosition: _initialCameraLocation,
         onMapCreated: (controller) async {
           _completer.complete(controller);
-          controller.setMapStyle(_mapStyle);
+//          controller.setMapStyle(_mapStyle);
         });
   }
 

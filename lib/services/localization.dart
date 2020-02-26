@@ -40,6 +40,15 @@ class ConcordiaLocalizations {
     );
   }
 
+  String get interest {
+    return Intl.message(
+      'Outdoor Interest',
+      name: 'interest',
+      desc: 'Outdoor Interest',
+      locale: localeName,
+    );
+  }
+
   String get settings {
     return Intl.message(
       'Settings',
