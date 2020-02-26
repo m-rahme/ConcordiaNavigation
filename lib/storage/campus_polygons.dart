@@ -1,10 +1,7 @@
-import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CampusPolygons extends ChangeNotifier {
-  final Set<Polygon> allPolygons = new Set();
-
-  Map<String, List<LatLng>> buildings = {
+class CampusPolygons {
+  static const Map<String, List<LatLng>> buildings = {
     "Hbuilding": [
       LatLng(45.49738, -73.57833),
       LatLng(45.49755, -73.57869),
@@ -768,24 +765,4 @@ class CampusPolygons extends ChangeNotifier {
       LatLng(45.45994, -73.64087),
     ],
   };
-
-  void addPolygons() async {
-    buildings.forEach((id, points) {
-      allPolygons.add(
-        Polygon(
-          polygonId: PolygonId(id),
-          fillColor: Color(0xFF73C700).withOpacity(0.3),
-          consumeTapEvents: false,
-          geodesic: false,
-          points: points,
-          strokeWidth: 0,
-          strokeColor: Colors.transparent,
-        ),
-      );
-    });
-  }
-
-  CampusPolygons() {
-    addPolygons();
-  }
 }

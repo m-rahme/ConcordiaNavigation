@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -7,7 +8,6 @@ import 'package:location/location.dart';
 import 'package:flutter/services.dart';
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //import 'package:flutter/services.dart' show rootBundle;
-import '../models/campus_polygons.dart';
 import 'package:provider/provider.dart';
 
 const double CAMERA_ZOOM = 16;
@@ -66,7 +66,7 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    CampusPolygons poly = new CampusPolygons();
+    BuildingsData buildings = new BuildingsData();
     _completer = Provider.of<MapData>(context).getCompleter;
 
     while (_initialCameraLocation == null) {
@@ -80,7 +80,7 @@ class _MapWidgetState extends State<MapWidget> {
         tiltGesturesEnabled: true,
         buildingsEnabled: false,
         mapType: MapType.normal,
-        polygons: poly.allPolygons,
+        polygons: buildings.polygons,
         indoorViewEnabled: true,
         trafficEnabled: false,
         onTap: (latLng) {
