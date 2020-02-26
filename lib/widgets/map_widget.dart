@@ -90,6 +90,7 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
+            markers: {hBuildingMarker, lbBuildingMarker},
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCameraLocation,
@@ -170,3 +171,20 @@ class _MapWidgetState extends State<MapWidget> {
     });
   }
 }
+
+Marker hBuildingMarker = Marker(
+  markerId: MarkerId('h'),
+  position: LatLng(45.497548, -73.579040),
+  infoWindow: InfoWindow(title: 'Henry F. Hall Building'),
+  icon: BitmapDescriptor.defaultMarkerWithHue(
+    BitmapDescriptor.hueRed,
+  ),
+);
+Marker lbBuildingMarker = Marker(
+  markerId: MarkerId('lb'),
+  position: LatLng(45.497111, -73.578028),
+  infoWindow: InfoWindow(title: 'J.W. McConnell Building'),
+  icon: BitmapDescriptor.defaultMarkerWithHue(
+    BitmapDescriptor.hueRed,
+  ),
+);
