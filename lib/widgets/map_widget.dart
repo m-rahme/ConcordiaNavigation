@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/models/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -13,7 +14,9 @@ import 'package:provider/provider.dart';
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
-const LatLng DEST_LOCATION = LatLng(45.495944, -73.578075);
+const LatLng SGW = LatLng(45.495944, -73.578075);
+const LatLng LOYOLA = LatLng(45.4582, -73.6405);
+bool _campus = true;
 
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //String _mapStyle;
@@ -25,6 +28,7 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   Completer<GoogleMapController> _completer;
+  CampusPolygons _polygon;
   LatLng _currentLocation;
   CameraPosition _initialCameraLocation;
   StreamSubscription _locationSubscription;
@@ -35,6 +39,7 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
+    SizeConfig();
     //*****UNCOMMENT BELLOW FOR DARK MAP*****
     //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
 //    rootBundle.loadString('assets/map_style.txt').then((string) {
@@ -66,35 +71,81 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     BuildingsData buildings = new BuildingsData();
     _completer = Provider.of<MapData>(context).getCompleter;
+    _polygon = Provider.of<MapData>(context).getPolygon;
 
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
 
-    return GoogleMap(
-        myLocationEnabled: true,
-        myLocationButtonEnabled: false,
-        compassEnabled: false,
-        tiltGesturesEnabled: true,
-        buildingsEnabled: false,
-        mapType: MapType.normal,
-        polygons: buildings.polygons,
-        indoorViewEnabled: true,
-        trafficEnabled: false,
-        onTap: (latLng) {
-          FocusScopeNode currentFocus = FocusScope.of(context);
-
-          if (!currentFocus.hasPrimaryFocus) {
-            currentFocus.unfocus();
-          }
-        },
-        initialCameraPosition: _initialCameraLocation,
-        onMapCreated: (controller) async {
-          _completer.complete(controller);
+    return Stack(
+      children: <Widget>[
+        GoogleMap(
+            myLocationEnabled: true,
+            myLocationButtonEnabled: false,
+            compassEnabled: false,
+            tiltGesturesEnabled: true,
+            buildingsEnabled: false,
+            mapType: MapType.normal,
+            polygons: _polygon.allPolygons,
+            indoorViewEnabled: false,
+            trafficEnabled: false,
+            initialCameraPosition: _initialCameraLocation,
+            onMapCreated: (controller) async {
+              _completer.complete(controller);
 //          controller.setMapStyle(_mapStyle);
-        });
+            }),
+        SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: SizeConfig.safeBlockVertical * 66,
+              left: SizeConfig.safeBlockHorizontal * 83,
+            ),
+            child: FloatingActionButton(
+              onPressed: () {
+                _campus
+                    ? () {
+                        Provider.of<MapData>(context, listen: false)
+                            .animateTo(SGW.latitude, SGW.longitude);
+                        _campus = false;
+                      }()
+                    : () {
+                        Provider.of<MapData>(context, listen: false)
+                            .animateTo(LOYOLA.latitude, LOYOLA.longitude);
+                        _campus = true;
+                      }();
+              },
+              child: Icon(Icons.swap_calls),
+              backgroundColor: Color(0xFFFFFFF8),
+              foregroundColor: Color(0xFF656363),
+              elevation: 5.0,
+              heroTag: null,
+            ),
+          ),
+        ),
+        SafeArea(
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: SizeConfig.safeBlockVertical * 75,
+              left: SizeConfig.safeBlockHorizontal * 83,
+            ),
+            child: FloatingActionButton(
+              onPressed: () {
+                Provider.of<MapData>(context, listen: false).animateTo(
+                    _currentLocation.latitude, _currentLocation.longitude);
+              },
+              child: Icon(Icons.gps_fixed),
+              backgroundColor: Color(0xFFFFFFF8),
+              foregroundColor: Color(0xFF656363),
+              elevation: 5.0,
+              heroTag: null,
+            ),
+          ),
+        ),
+      ],
+    );
   }
 
   initPlatformState() async {
