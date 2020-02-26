@@ -769,7 +769,7 @@ class CampusPolygons extends ChangeNotifier {
     ],
   };
 
-  void addPolygons() async {
+  void addPolygons() {
     buildings.forEach((id, points) {
       allPolygons.add(
         Polygon(
@@ -785,7 +785,7 @@ class CampusPolygons extends ChangeNotifier {
     });
   }
 
-  CampusPolygons() {
-    addPolygons();
+  void clearPolygons() {
+    allPolygons.clear();
   }
 }

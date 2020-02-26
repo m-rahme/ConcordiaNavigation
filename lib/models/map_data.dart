@@ -2,9 +2,15 @@ import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'campus_polygons.dart';
 
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
+  CampusPolygons _poly = new CampusPolygons();
+
+  CampusPolygons get getPolygon {
+    return _poly;
+  }
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
