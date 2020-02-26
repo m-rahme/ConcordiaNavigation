@@ -1,50 +1,34 @@
+import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:flutter/material.dart';
+import 'package:concordia_navigation/services/location_search.dart';
+import 'package:provider/provider.dart';
+import 'package:concordia_navigation/models/map_data.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-        boxShadow: [
-          BoxShadow(
-            color: Colors.grey[800],
-            blurRadius: 5.0,
-            spreadRadius: -1.0,
-            offset: Offset(
-              1.0,
-              3.0,
-              // Move to bottom 10 Vertically
-            ),
-          ),
-        ],
-      ),
-      child: Row(
-        children: <Widget>[
-          IconButton(
-            color: Colors.grey[900],
-            splashColor: Colors.white,
-            icon: Icon(Icons.menu),
-            onPressed: () {
-              Scaffold.of(context).openDrawer();
-              FocusScope.of(context).requestFocus(new FocusNode());
-            },
-          ),
-          Expanded(
-            child: TextField(
-              cursorColor: Colors.blue,
-              keyboardType: TextInputType.text,
-              keyboardAppearance: Brightness.light,
-              textInputAction: TextInputAction.go,
-              decoration: InputDecoration(
-                  border: InputBorder.none,
-                  contentPadding: EdgeInsets.symmetric(horizontal: 10),
-                  hintText: "Search"),
-            ),
-          ),
-        ],
-      ),
+    BuildingsData buildingsService = Provider.of<MapData>(context).buildings;
+    return AppBar(
+      backgroundColor: Color(0xFF73C700),
+      title: Text("ConNavigation"),
+      actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.wb_sunny),
+          onPressed: () {
+            if (buildingsService.visible) {
+              buildingsService.clearOutlines();
+            } else {
+              buildingsService.showOutlines();
+            }
+          },
+        ),
+        IconButton(
+          icon: Icon(Icons.search),
+          onPressed: () {
+            showSearch(context: context, delegate: LocationSearch());
+          },
+        )
+      ],
     );
   }
 

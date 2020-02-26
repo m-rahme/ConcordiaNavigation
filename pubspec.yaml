@@ -30,8 +30,9 @@ dependencies:
   cupertino_icons: ^0.1.2
   provider: ^4.0.2
   google_maps_flutter: 0.5.21+17
-  location: ^2.3.5
+  location: ^2.5.0
   google_fonts: ^0.3.5
+
 
 
 

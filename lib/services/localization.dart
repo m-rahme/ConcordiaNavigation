@@ -1,5 +1,5 @@
 import 'package:intl/intl.dart';
-import 'l10n/messages_all.dart';
+import '../l10n/messages_all.dart';
 import 'package:flutter/material.dart';
 
 class ConcordiaLocalizations {
@@ -36,6 +36,15 @@ class ConcordiaLocalizations {
       'Schedule',
       name: 'schedule',
       desc: 'Schedule',
+      locale: localeName,
+    );
+  }
+
+  String get interest {
+    return Intl.message(
+      'Outdoor Interest',
+      name: 'interest',
+      desc: 'Outdoor Interest',
       locale: localeName,
     );
   }
