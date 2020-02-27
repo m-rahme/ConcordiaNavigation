@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -81,24 +82,23 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     Marker hBuildingMarker = Marker(
-        markerId: MarkerId('h'),
-        position: LatLng(45.497548, -73.579040),
-        infoWindow: InfoWindow(title: 'Henry F. Hall Building'),
-        icon: BitmapDescriptor.defaultMarkerWithHue(
-          BitmapDescriptor.hueRed,
-        ),
+      markerId: MarkerId('h'),
+      position: LatLng(45.497548, -73.579040),
+      infoWindow: InfoWindow(title: 'Henry F. Hall Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
       onTap: () {
-
         showModalBottomSheet(
             context: context,
             builder: (builder) {
               return Container(
-
+                height: SizeConfig.safeBlockVertical * 40,
               );
             });
       },
     );
-    
+
     Marker lbBuildingMarker = Marker(
       markerId: MarkerId('lb'),
       position: LatLng(45.497111, -73.578028),
@@ -107,17 +107,166 @@ class _MapWidgetState extends State<MapWidget> {
         BitmapDescriptor.hueRed,
       ),
       onTap: () {
-
         showModalBottomSheet(
             context: context,
             builder: (builder) {
-              return RichText(
-                text: TextSpan(
-                  text: "J.W. McConnell Building\n ",
-                  style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5, color: Colors.green),
-                  children: <TextSpan>[
-                    TextSpan(text: "1400 De Maisonneuve Blvd. W.\n "),
-                    TextSpan(text: "Operating Hours: 24h", style: TextStyle(fontWeight: FontWeight.bold)),
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "J.W. McConnell Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "1400 De Maisonneuve Blvd. W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
                   ],
                 ),
               );
@@ -143,56 +292,51 @@ class _MapWidgetState extends State<MapWidget> {
               _completer.complete(controller);
 //          controller.setMapStyle(_mapStyle);
             }),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 66,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                _campus
-                    ? () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(SGW.latitude, SGW.longitude);
-                        _campus = false;
-                      }()
-                    : () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(LOYOLA.latitude, LOYOLA.longitude);
-                        _campus = true;
-                      }();
-              },
-              child: Icon(Icons.swap_calls),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
+        Padding(
+          padding: EdgeInsets.only(
+            top: SizeConfig.safeBlockVertical * 66,
+            left: SizeConfig.safeBlockHorizontal * 83,
+          ),
+          child: FloatingActionButton(
+            onPressed: () {
+              _campus
+                  ? () {
+                      Provider.of<MapData>(context, listen: false)
+                          .animateTo(SGW.latitude, SGW.longitude);
+                      _campus = false;
+                    }()
+                  : () {
+                      Provider.of<MapData>(context, listen: false)
+                          .animateTo(LOYOLA.latitude, LOYOLA.longitude);
+                      _campus = true;
+                    }();
+            },
+            child: Icon(Icons.swap_calls),
+            backgroundColor: Color(0xFFFFFFF8),
+            foregroundColor: Color(0xFF656363),
+            elevation: 5.0,
+            heroTag: null,
           ),
         ),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 75,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                Provider.of<MapData>(context, listen: false).animateTo(
-                    _currentLocation.latitude, _currentLocation.longitude);
-              },
-              child: Icon(Icons.gps_fixed),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
+        Padding(
+          padding: EdgeInsets.only(
+            top: SizeConfig.safeBlockVertical * 75,
+            left: SizeConfig.safeBlockHorizontal * 83,
+          ),
+          child: FloatingActionButton(
+            onPressed: () {
+              Provider.of<MapData>(context, listen: false).animateTo(
+                  _currentLocation.latitude, _currentLocation.longitude);
+            },
+            child: Icon(Icons.gps_fixed),
+            backgroundColor: Color(0xFFFFFFF8),
+            foregroundColor: Color(0xFF656363),
+            elevation: 5.0,
+            heroTag: null,
           ),
         ),
       ],
     );
-
   } // widget
 
   initPlatformState() async {
@@ -217,5 +361,3 @@ class _MapWidgetState extends State<MapWidget> {
     });
   }
 }
-
-
