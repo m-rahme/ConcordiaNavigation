@@ -9,9 +9,6 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   group('Trivial tests', () {
-    test('true == false', () {
-      expect(true, false);
-    });
 
     test('true == true', () {
       expect(true, true);
