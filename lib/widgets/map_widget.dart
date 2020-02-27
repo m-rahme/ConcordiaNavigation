@@ -98,6 +98,7 @@ class _MapWidgetState extends State<MapWidget> {
             });
       },
     );
+    
     Marker lbBuildingMarker = Marker(
       markerId: MarkerId('lb'),
       position: LatLng(45.497111, -73.578028),
@@ -105,10 +106,24 @@ class _MapWidgetState extends State<MapWidget> {
       icon: BitmapDescriptor.defaultMarkerWithHue(
         BitmapDescriptor.hueRed,
       ),
+      onTap: () {
+
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return RichText(
+                text: TextSpan(
+                  text: "J.W. McConnell Building\n ",
+                  style: DefaultTextStyle.of(context).style.apply(fontSizeFactor: 1.5, color: Colors.green),
+                  children: <TextSpan>[
+                    TextSpan(text: "1400 De Maisonneuve Blvd. W.\n "),
+                    TextSpan(text: "Operating Hours: 24h", style: TextStyle(fontWeight: FontWeight.bold)),
+                  ],
+                ),
+              );
+            });
+      },
     );
-
-
-
 
     return Stack(
       children: <Widget>[
