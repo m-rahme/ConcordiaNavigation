@@ -38,9 +38,11 @@ class BuildingsData extends ChangeNotifier {
 
   void showOutlines() {
     visible = true;
+    notifyListeners();
   }
 
   void clearOutlines() {
     visible = false;
+    notifyListeners();
   }
 }

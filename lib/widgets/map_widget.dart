@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/models/buildings_data.dart';
-import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/providers/buildings_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -71,10 +71,9 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(1);
     SizeConfig().init(context);
-    _completer = Provider.of<MapData>(context).getCompleter;
-    _buildings = Provider.of<MapData>(context).buildings;
+    final _completer = Provider.of<MapData>(context).getCompleter;
+    final _buildings = Provider.of<BuildingsData>(context);
 
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));

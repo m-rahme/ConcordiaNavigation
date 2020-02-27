@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/localization.dart';
-import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:provider/provider.dart';
 
 class CustomDrawer extends StatelessWidget {
