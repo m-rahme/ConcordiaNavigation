@@ -303,14 +303,42 @@ class _DirectionsPageState extends State<DirectionsPage> {
               SafeArea(
                 top: false,
                 child: Container(
-                  height: SizeConfig.safeBlockVertical * 10,
+                  height: SizeConfig.safeBlockVertical * 9,
                   width: SizeConfig.screenWidth,
-                  child: ListTile(
-                    contentPadding: EdgeInsets.only(
-                        left: SizeConfig.safeBlockHorizontal * 8.0),
-                    leading: Icon(Icons.directions_car),
-                    title: Text("via Autoroute 76"),
-                    subtitle: Text("35 Mins"),
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Expanded(
+                            child: ListTile(
+                              contentPadding: EdgeInsets.only(
+                                  left: SizeConfig.safeBlockHorizontal * 8.0,
+                                  right: SizeConfig.safeBlockHorizontal * 8.0),
+                              leading: Icon(
+                                Icons.directions_car,
+                                color: Colors.black,
+                              ),
+                              title: Text("via Autoroute 76"),
+                              subtitle: Text("35 Mins"),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.only(right: 30.0),
+                            height: SizeConfig.safeBlockVertical * 4,
+                            width: SizeConfig.safeBlockHorizontal * 20,
+                            child: Column(
+                              children: <Widget>[
+                                Text(
+                                  "15mins",
+                                  style: TextStyle(color: Color(0xFF76C807)),
+                                ),
+                                Text("5km"),
+                              ],
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
                   ),
                 ),
               ),
