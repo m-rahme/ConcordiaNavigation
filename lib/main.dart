@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/models/buildings_data.dart';
+import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -45,6 +46,7 @@ class App extends StatelessWidget {
           '/profile': (context) => Profile(),
           '/o_interest': (context) => OutdoorInterest(),
           '/settings': (context) => Settings(),
+          '/directions': (context) => DirectionsPage(),
         },
         debugShowCheckedModeBanner: false,
         home: HomePage(),

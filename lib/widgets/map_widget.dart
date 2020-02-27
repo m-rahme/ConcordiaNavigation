@@ -1,5 +1,4 @@
 import 'dart:convert';
-
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
@@ -74,7 +73,7 @@ class _MapWidgetState extends State<MapWidget> {
     var direction = await Navigation().getMapDirections();
     setState(() {
       var pointsFromJson = json.decode(direction);
-      for (int i = 0; i < 13; i++) {
+      for (int i = 0; i < 4; i++) {
         dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
             ["polyline"]["points"];
         List<PointLatLng> result2 = points.decodePolyline(directions);

@@ -1,10 +1,15 @@
 import 'network.dart';
 
 const String apiKey = 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0';
-const String mapAPIURL =
-    'https://maps.googleapis.com/maps/api/directions/json?origin=45.4957,%20-73.5781&destination=45.4582,%20-73.6405';
-const String origin = 'origin=';
-const String destination = 'destination=';
+String mapAPIURL = 'https://maps.googleapis.com/maps/api/directions/json?' +
+    _origin +
+    '45.4957,%20-73.5781' +
+    _destination +
+    '45.4582,%20-73.6405' +
+    _mode;
+String _mode = '&mode=driving';
+String _origin = 'origin=';
+String _destination = '&destination=';
 const String apiKeyString = '&key=$apiKey';
 
 class Navigation {
