@@ -80,6 +80,36 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
+    Marker hBuildingMarker = Marker(
+        markerId: MarkerId('h'),
+        position: LatLng(45.497548, -73.579040),
+        infoWindow: InfoWindow(title: 'Henry F. Hall Building'),
+        icon: BitmapDescriptor.defaultMarkerWithHue(
+          BitmapDescriptor.hueRed,
+        ),
+      onTap: () {
+
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+
+              );
+            });
+      },
+    );
+    Marker lbBuildingMarker = Marker(
+      markerId: MarkerId('lb'),
+      position: LatLng(45.497111, -73.578028),
+      infoWindow: InfoWindow(title: 'J.W. McConnell Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+    );
+
+
+
+
     return Stack(
       children: <Widget>[
         GoogleMap(
@@ -147,7 +177,8 @@ class _MapWidgetState extends State<MapWidget> {
         ),
       ],
     );
-  }
+
+  } // widget
 
   initPlatformState() async {
     LocationData myLocation;
@@ -172,19 +203,4 @@ class _MapWidgetState extends State<MapWidget> {
   }
 }
 
-Marker hBuildingMarker = Marker(
-  markerId: MarkerId('h'),
-  position: LatLng(45.497548, -73.579040),
-  infoWindow: InfoWindow(title: 'Henry F. Hall Building'),
-  icon: BitmapDescriptor.defaultMarkerWithHue(
-    BitmapDescriptor.hueRed,
-  ),
-);
-Marker lbBuildingMarker = Marker(
-  markerId: MarkerId('lb'),
-  position: LatLng(45.497111, -73.578028),
-  infoWindow: InfoWindow(title: 'J.W. McConnell Building'),
-  icon: BitmapDescriptor.defaultMarkerWithHue(
-    BitmapDescriptor.hueRed,
-  ),
-);
+
