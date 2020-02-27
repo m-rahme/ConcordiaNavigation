@@ -39,8 +39,13 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.496676, -73.578760);
+                //TODO: use itinerary class to generate polylines, and update map with said polylines.
               });
         },
       ),
@@ -55,8 +60,13 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.4582, -73.6405);
+                //TODO: use itinerary class to generate polylines, and update map with said polylines.
               });
         },
       ),

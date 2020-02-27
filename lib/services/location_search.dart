@@ -28,7 +28,14 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                mapData.animateTo(45.4582, -73.6405);
+                Provider.of<MapData>(context, listen: false)
+                    .controllerDestination
+                    .text = "Loyola Campus, Montreal";
+                Provider.of<MapData>(context, listen: false)
+                    .controllerStaring
+                    .text = "Current Location";
+                Navigator.pushNamed(context, '/directions');
+//                mapData.animateTo(45.4582, -73.6405);
               },
             );
           },
