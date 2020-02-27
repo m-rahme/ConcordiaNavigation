@@ -1,23 +1,26 @@
-import 'reachable.dart';
-import 'direction.dart';
+import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/models/supported_destination.dart';
+import 'package:concordia_navigation/models/transportation_mode.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
+import 'reachable.dart';
+
 class CustomLocation implements Reachable {
-  Location _location;
+  final double lat;
+  final double long;
+  final String desc;
 
-  // TODO: change to whatever is returned by current location function call of location package.
-  CustomLocation(String coord) {
-    //coordinates = coordinates;
-  }
+  CustomLocation(this.lat, this.long, this.desc);
 
-  /*
-   * See
-   * https://medium.com/@shubham.narkhede8/flutter-google-map-with-direction-6a26ad875083
-   * and 
-   * https://github.com/flutter/plugins/blob/master/packages/google_maps_flutter/google_maps_flutter/example/lib/place_polyline.dart
-  */
-  List<Direction> pathTo(CustomLocation destination) {
-    //TODO: use google API to retrieve list of directions.
+  static Future<LatLng> getCurrentLocation() =>
+    Location()
+    .getLocation()
+    .then((LocationData currentLocation) {
+      return LatLng(currentLocation.latitude, currentLocation.longitude);
+    });
+
+  Itinerary pathTo(SupportedDestination dest, TransportationMode mode) {
+    return Itinerary(dest, mode);
   }
-  
 }

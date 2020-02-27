@@ -1,9 +1,7 @@
-import '../models/custom_location.dart';
-import 'direction.dart';
+import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/models/supported_destination.dart';
+import 'package:concordia_navigation/models/transportation_mode.dart';
 
-/*
- * From https://dart.dev/samples
-*/
 class Reachable {
-  List<Direction> pathTo(CustomLocation destination) {}
+  Itinerary pathTo(SupportedDestination dest, TransportationMode mode) {}
 }

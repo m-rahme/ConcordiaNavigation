@@ -1,0 +1,4 @@
+enum SupportedDestination {
+  SGW,
+  LOYOLA,
+}
