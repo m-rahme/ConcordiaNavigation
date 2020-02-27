@@ -9,6 +9,7 @@ import 'models/map_data.dart';
 import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/schedule.dart';
+import 'package:concordia_navigation/models/providers.dart';
 
 void main() {
   runApp(App());
@@ -18,14 +19,7 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MultiProvider(
-      providers: [
-        ChangeNotifierProvider<MapData>(
-          create: (_) => MapData(),
-        ),
-        ChangeNotifierProvider<BuildingsData>(
-          create: (_) => BuildingsData(),
-        ),
-      ],
+      providers: providers,
       child: MaterialApp(
         title: 'Concordia Navigation',
         localizationsDelegates: [
