@@ -6170,6 +6170,4033 @@ class _MapWidgetState extends State<MapWidget> {
             });
       },
     );
+    
+ //LOYOLA CAMPUS BUILDINGS
+    Marker adBuildingMarker = Marker(
+      markerId: MarkerId('ad'),
+      position: LatLng(45.45827, -73.63945),
+      infoWindow: InfoWindow(title: 'Administration Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Administration Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker bbBuildingMarker = Marker(
+      markerId: MarkerId('bb'),
+      position: LatLng(45.45979, -73.63909),
+      infoWindow: InfoWindow(title: 'BB Annex'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "BB Annex",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "3502 Belmore",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker bhBuildingMarker = Marker(
+      markerId: MarkerId('bh'),
+      position: LatLng(45.45976, -73.63901),
+      infoWindow: InfoWindow(title: 'BH Annex'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "BH Annex",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "3500 Belmore",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker ccBuildingMarker = Marker(
+      markerId: MarkerId('cc'),
+      position: LatLng(45.45823, -73.6399),
+      infoWindow: InfoWindow(title: 'Central Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Central Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker cjBuildingMarker = Marker(
+      markerId: MarkerId('cj'),
+      position: LatLng(45.45748, -73.63981),
+      infoWindow: InfoWindow(title: 'Communication Studies and Journalism Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Communication Studies and Journalism Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker doBuildingMarker = Marker(
+      markerId: MarkerId('do'),
+      position: LatLng(45.45793, -73.63523),
+      infoWindow: InfoWindow(title: 'Stinger Dome (seasonal)'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Stinger Dome (Seasonal)",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker fcBuildingMarker = Marker(
+      markerId: MarkerId('fc'),
+      position: LatLng(45.45876, -73.63957),
+      infoWindow: InfoWindow(title: 'F.C. Smith Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "F.C. Smith Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker geBuildingMarker = Marker(
+      markerId: MarkerId('ge'),
+      position: LatLng(45.45704, -73.64016),
+      infoWindow: InfoWindow(title: 'Centre for Structural and Functional Genomics'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Centre for Structural and Functional Genomics",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker haBuildingMarker = Marker(
+      markerId: MarkerId('ha'),
+      position: LatLng(45.45949, -73.64088),
+      infoWindow: InfoWindow(title: 'Hingston Hall (HA Wing)'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Hingston Hall (HA Wing)",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker hbBuildingMarker = Marker(
+      markerId: MarkerId('hb'),
+      position: LatLng(45.45921, -73.64168),
+      infoWindow: InfoWindow(title: 'Hingston Hall (HB Wing)'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Hingston Hall (HB Wing)",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker hcBuildingMarker = Marker(
+      markerId: MarkerId('hc'),
+      position: LatLng(45.45983, -73.64183),
+      infoWindow: InfoWindow(title: 'Hingston Hall (HC Wing)'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Hingston Hall (HC Wing)",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker huBuildingMarker = Marker(
+      markerId: MarkerId('hu'),
+      position: LatLng(45.45864, -73.64141),
+      infoWindow: InfoWindow(title: 'Applied Science Hub'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Applied Science Hub",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker jrBuildingMarker = Marker(
+      markerId: MarkerId('jr'),
+      position: LatLng(45.45854, -73.64305),
+      infoWindow: InfoWindow(title: 'Jesuit Residence'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Jesuit Residence",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker pcBuildingMarker = Marker(
+      markerId: MarkerId('pc'),
+      position: LatLng(45.45696, -73.63676),
+      infoWindow: InfoWindow(title: 'PERFORM Centre'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "PERFORM Centre",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7200 Sherbrooke St. W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker psBuildingMarker = Marker(
+      markerId: MarkerId('ps'),
+      position: LatLng(45.45958, -73.63922),
+      infoWindow: InfoWindow(title: 'Physical Services Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Physical Services Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker ptBuildingMarker = Marker(
+      markerId: MarkerId('pt'),
+      position: LatLng(45.45931, -73.63867),
+      infoWindow: InfoWindow(title: 'Oscar Peterson Concert Hall'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Oscar Peterson Concert Hall",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker pyBuildingMarker = Marker(
+      markerId: MarkerId('py'),
+      position: LatLng(45.45909, -73.64015),
+      infoWindow: InfoWindow(title: 'Psychology Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Psychology Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker raBuildingMarker = Marker(
+      markerId: MarkerId('ra'),
+      position: LatLng(45.45691, -73.63756),
+      infoWindow: InfoWindow(title: 'Recreational and Athletics Complex'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Recreational and Athletics Complex",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7200 Sherbrooke St. W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker rfBuildingMarker = Marker(
+      markerId: MarkerId('rf'),
+      position: LatLng(45.45869, -73.6408),
+      infoWindow: InfoWindow(title: 'Loyola Jesuit Hall and Conference Centre'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Loyola Jesuit Hall and Conference Centre",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker shBuildingMarker = Marker(
+      markerId: MarkerId('sh'),
+      position: LatLng(45.45933, -73.64237),
+      infoWindow: InfoWindow(title: 'Solar House'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Solar House",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker siBuildingMarker = Marker(
+      markerId: MarkerId('si'),
+      position: LatLng(45.4581, -73.64241),
+      infoWindow: InfoWindow(title: 'St. Ignatius of Loyola Church'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "St. Ignatius of Loyola Church",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "4455 Broadway",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker spBuildingMarker = Marker(
+      markerId: MarkerId('sp'),
+      position: LatLng(45.4572, -73.64065),
+      infoWindow: InfoWindow(title: 'Richard J. Renaud Science Complex'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Richard J. Renaud Science Complex",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7141 Sherbrooke W.",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
+    Marker taBuildingMarker = Marker(
+      markerId: MarkerId('ta'),
+      position: LatLng(45.46005, -73.64079),
+      infoWindow: InfoWindow(title: 'Terrebone Building'),
+      icon: BitmapDescriptor.defaultMarkerWithHue(
+        BitmapDescriptor.hueRed,
+      ),
+      onTap: () {
+        showModalBottomSheet(
+            context: context,
+            builder: (builder) {
+              return Container(
+                height: SizeConfig.safeBlockVertical * 27,
+                width: SizeConfig.screenWidth,
+                color: Color(0xFFFFFFF8),
+                child: Column(
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 65,
+                                height: SizeConfig.safeBlockVertical * 4,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 8.0, left: 8.0),
+                                  child: Text(
+                                    "Terrebone Building",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 22.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              children: <Widget>[
+                                Padding(
+                                  padding: const EdgeInsets.only(
+                                      top: 5.0, left: 15.0),
+                                  child: Container(
+                                    width: SizeConfig.safeBlockHorizontal * 65,
+                                    height: SizeConfig.safeBlockVertical * 4,
+                                    child: Padding(
+                                      padding: const EdgeInsets.only(
+                                        bottom: 8.0,
+                                        left: 8.0,
+                                      ),
+                                      child: Text(
+                                        "7079 Terrebone",
+                                        style: GoogleFonts.raleway(
+                                          fontWeight: FontWeight.w400,
+                                          fontSize: 15.0,
+                                        ),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 25,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                    new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: Color(0xFF76C807),
+                                  textColor: Colors.white,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                    Container(
+                      width: SizeConfig.screenWidth,
+                      height: SizeConfig.safeBlockVertical * 13,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: <Widget>[
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 25.0, left: 23.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 15,
+                                  height: SizeConfig.safeBlockVertical * 7,
+                                  child: Icon(
+                                    Icons.access_time,
+                                    color: Color(0xFF76C807),
+                                    size: 55.0,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          Column(
+                            children: <Widget>[
+                              Padding(
+                                padding: const EdgeInsets.only(
+                                    top: 10.0,
+                                    bottom: 8.0,
+                                    right: 8.0,
+                                    left: 8.0),
+                                child: Container(
+                                  width: SizeConfig.safeBlockHorizontal * 75,
+                                  height: SizeConfig.safeBlockVertical * 10,
+                                  child: Column(
+                                    mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                    children: <Widget>[
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Monday - Friday  07:00 - 23:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                      Row(
+                                        children: <Widget>[
+                                          Text(
+                                            "Saturday - Sunday  08:00 - 21:00",
+                                            style: GoogleFonts.raleway(
+                                              fontWeight: FontWeight.normal,
+                                              fontSize: 20.0,
+                                            ),
+                                          ),
+                                        ],
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            });
+      },
+    );
+
 
     return Stack(
       children: <Widget>[
@@ -6216,7 +10243,30 @@ class _MapWidgetState extends State<MapWidget> {
               vBuildingMarker,
               vaBuildingMarker,
               xBuildingMarker,
-              zBuildingMarker
+              zBuildingMarker,
+              adBuildingMarker, 
+              bbBuildingMarker, 
+              bhBuildingMarker,
+              ccBuildingMarker,
+              cjBuildingMarker,
+              doBuildingMarker,
+              fcBuildingMarker,
+              geBuildingMarker, 
+              haBuildingMarker,
+              hbBuildingMarker, 
+              hcBuildingMarker, 
+              huBuildingMarker, 
+              jrBuildingMarker, 
+              pcBuildingMarker, 
+              psBuildingMarker,
+              ptBuildingMarker, 
+              pyBuildingMarker, 
+              raBuildingMarker, 
+              rfBuildingMarker, 
+              shBuildingMarker, 
+              siBuildingMarker,
+              spBuildingMarker, 
+              taBuildingMarker
             },
             indoorViewEnabled: false,
             trafficEnabled: false,
