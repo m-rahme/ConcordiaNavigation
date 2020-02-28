@@ -18,9 +18,9 @@ class BuildingMarker{
   Marker getMarker(){
 
     Marker bBuildingMarker = Marker(
-      markerId: MarkerId('b'),
-      position: LatLng(45.498121, -73.579442),
-      infoWindow: InfoWindow(title: 'B Annex'),
+      markerId: MarkerId(building.getBuildingInitial()),
+      position: LatLng(building.getLatitude(), building.getLongitude()),
+      infoWindow: InfoWindow(title: building.getBuildingName()),
       icon: BitmapDescriptor.defaultMarkerWithHue(
         BitmapDescriptor.hueRed,
       ),
@@ -50,7 +50,7 @@ class BuildingMarker{
                                   padding: const EdgeInsets.only(
                                       top: 8.0, left: 8.0),
                                   child: Text(
-                                    "B Annex",
+                                    building.getBuildingName(),
                                     style: GoogleFonts.raleway(
                                       fontWeight: FontWeight.bold,
                                       fontSize: 22.0,
@@ -73,7 +73,7 @@ class BuildingMarker{
                                         left: 8.0,
                                       ),
                                       child: Text(
-                                        "2160 Bishop St",
+                                        building.getBuildingAddress(),
                                         style: GoogleFonts.raleway(
                                           fontWeight: FontWeight.w400,
                                           fontSize: 15.0,
@@ -192,10 +192,8 @@ class BuildingMarker{
       },
     );
 
-
     return bBuildingMarker;
   }
-
 }
 
 
