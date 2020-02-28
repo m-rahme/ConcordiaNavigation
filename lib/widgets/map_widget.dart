@@ -1,5 +1,6 @@
 import 'dart:convert';
 import 'package:concordia_navigation/models/buildings_data.dart';
+import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:flutter/foundation.dart';
@@ -12,7 +13,6 @@ import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
-import '../services/direction_service.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
@@ -31,14 +31,13 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   Completer<GoogleMapController> _completer;
+  Completer<Itinerary> _lineCompleter;
   BuildingsData _buildings;
   LatLng _currentLocation;
   CameraPosition _initialCameraLocation;
   StreamSubscription _locationSubscription;
-
-  List<Polyline> allPolylines = [];
-  PolylinePoints points = new PolylinePoints();
-  List<PointLatLng> result = [];
+  Future<Itinerary> mapItinerary;
+  Set<Polyline> polylines = {};
 
   Location _location = new Location();
   String error;
@@ -55,6 +54,7 @@ class _MapWidgetState extends State<MapWidget> {
     initPlatformState();
     _locationSubscription =
         _location.onLocationChanged().listen((newLocalData) {
+      /*
       setState(() {
         _currentLocation =
             LatLng(newLocalData.latitude, newLocalData.longitude);
@@ -65,6 +65,7 @@ class _MapWidgetState extends State<MapWidget> {
           bearing: CAMERA_BEARING,
         );
       });
+      */
     });
   }
 
@@ -78,81 +79,94 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print(1);
     SizeConfig().init(context);
     _completer = Provider.of<MapData>(context).getCompleter;
     _buildings = Provider.of<MapData>(context).buildings;
+    _lineCompleter = Provider.of<MapData>(context).getLineCompleter;
+
 
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
     }
 
-    return Stack(
-      children: <Widget>[
-        GoogleMap(
-            myLocationEnabled: true,
-            myLocationButtonEnabled: false,
-            compassEnabled: false,
-            tiltGesturesEnabled: true,
-            buildingsEnabled: false,
-            mapType: MapType.normal,
-            polygons: _buildings.polygons,
-            indoorViewEnabled: false,
-            trafficEnabled: false,
-            initialCameraPosition: _initialCameraLocation,
-            polylines: null,
-            onMapCreated: (controller) async {
-              _completer.complete(controller);
-//          controller.setMapStyle(_mapStyle);
-            }),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 66,
-              left: SizeConfig.safeBlockHorizontal * 83,
+    List<Widget> children;
+
+    return FutureBuilder<Itinerary>(
+      future: _lineCompleter.future,
+      builder: (BuildContext context, AsyncSnapshot<Itinerary> snapshot) {
+        if (snapshot.hasData) {
+          polylines = snapshot.data.polylines.toSet();
+        } else {
+          polylines = null;
+        }
+        print(polylines);
+        return Stack (
+          children: <Widget>[
+            GoogleMap(
+                myLocationEnabled: true,
+                myLocationButtonEnabled: false,
+                compassEnabled: false,
+                tiltGesturesEnabled: true,
+                buildingsEnabled: false,
+                mapType: MapType.normal,
+                polygons: _buildings.polygons,
+                indoorViewEnabled: false,
+                trafficEnabled: false,
+                initialCameraPosition: _initialCameraLocation,
+                polylines: polylines,
+                onMapCreated: (controller) async {
+                  _completer.complete(controller);
+                }),
+            SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: SizeConfig.safeBlockVertical * 66,
+                  left: SizeConfig.safeBlockHorizontal * 83,
+                ),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    _campus
+                        ? () {
+                            Provider.of<MapData>(context, listen: false)
+                                .animateTo(SGW.latitude, SGW.longitude);
+                            _campus = false;
+                          }()
+                        : () {
+                            Provider.of<MapData>(context, listen: false)
+                                .animateTo(LOYOLA.latitude, LOYOLA.longitude);
+                            _campus = true;
+                          }();
+                  },
+                  child: Icon(Icons.swap_calls),
+                  backgroundColor: Color(0xFFFFFFF8),
+                  foregroundColor: Color(0xFF656363),
+                  elevation: 5.0,
+                  heroTag: null,
+                ),
+              ),
             ),
-            child: FloatingActionButton(
-              onPressed: () {
-                _campus
-                    ? () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(SGW.latitude, SGW.longitude);
-                        _campus = false;
-                      }()
-                    : () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(LOYOLA.latitude, LOYOLA.longitude);
-                        _campus = true;
-                      }();
-              },
-              child: Icon(Icons.swap_calls),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
+            SafeArea(
+              child: Padding(
+                padding: EdgeInsets.only(
+                  top: SizeConfig.safeBlockVertical * 75,
+                  left: SizeConfig.safeBlockHorizontal * 83,
+                ),
+                child: FloatingActionButton(
+                  onPressed: () {
+                    Provider.of<MapData>(context, listen: false).animateTo(
+                        _currentLocation.latitude, _currentLocation.longitude);
+                  },
+                  child: Icon(Icons.gps_fixed),
+                  backgroundColor: Color(0xFFFFFFF8),
+                  foregroundColor: Color(0xFF656363),
+                  elevation: 5.0,
+                  heroTag: null,
+                ),
+              ),
             ),
-          ),
-        ),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 75,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                Provider.of<MapData>(context, listen: false).animateTo(
-                    _currentLocation.latitude, _currentLocation.longitude);
-              },
-              child: Icon(Icons.gps_fixed),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
-          ),
-        ),
-      ],
+          ],
+        );
+      }
     );
   }
 
@@ -167,6 +181,7 @@ class _MapWidgetState extends State<MapWidget> {
         myLocation = null;
       }
     }
+    /*
     setState(() {
       _currentLocation = LatLng(myLocation.latitude, myLocation.longitude);
       _initialCameraLocation = CameraPosition(
@@ -176,5 +191,6 @@ class _MapWidgetState extends State<MapWidget> {
         bearing: CAMERA_BEARING,
       );
     });
+    */
   }
 }

@@ -1,3 +1,8 @@
+import 'dart:async';
+
+import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/models/supported_destination.dart';
+import 'package:concordia_navigation/models/transportation_mode.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/models/map_data.dart';
@@ -13,9 +18,12 @@ class LocationSearch extends SearchDelegate {
               leading: Icon(Icons.location_city),
               title: Text("SGW Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
-              onTap: () {
+              onTap: () async {
                 Navigator.of(context).pop();
                 mapData.animateTo(45.496676, -73.578760);
+                Completer<Itinerary> lineCompleter = Provider.of<MapData>(context, listen: false).getLineCompleter;
+                Itinerary itinerary = await Itinerary.create(SupportedDestination.SGW, TransportationMode.DRIVING);
+                lineCompleter.complete(itinerary);
               },
             );
           },
@@ -26,7 +34,7 @@ class LocationSearch extends SearchDelegate {
               leading: Icon(Icons.location_city),
               title: Text("Loyola Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
-              onTap: () {
+              onTap: () async {
                 Navigator.of(context).pop();
                 Provider.of<MapData>(context, listen: false)
                     .controllerDestination
@@ -36,6 +44,9 @@ class LocationSearch extends SearchDelegate {
                     .text = "Current Location";
                 Navigator.pushNamed(context, '/directions');
 //                mapData.animateTo(45.4582, -73.6405);
+                Completer<Itinerary> lineCompleter = Provider.of<MapData>(context, listen:false).getLineCompleter;
+                Itinerary itinerary = await Itinerary.create(SupportedDestination.SGW, TransportationMode.DRIVING);
+                lineCompleter.complete(itinerary);
               },
             );
           },

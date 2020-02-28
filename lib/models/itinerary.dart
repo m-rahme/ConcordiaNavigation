@@ -16,22 +16,21 @@ class Itinerary {
   CustomLocation _end;
   PolylinePoints polylinePoints = PolylinePoints();
 
-  Itinerary (SupportedDestination dest, TransportationMode mode) {
+  static Future<Itinerary> create(SupportedDestination dest, TransportationMode mode) async {
     assert(dest == SupportedDestination.SGW || dest == SupportedDestination.LOYOLA);
     assert(mode == TransportationMode.DRIVING || mode == TransportationMode.TRANSIT || mode == TransportationMode.WALKING);
-    LatLng _end;
+    LatLng temp;
+    Itinerary itinerary;
+    //var completer = new Completer();
     if (dest == SupportedDestination.SGW) {
-      _end = LatLng(45.500090, -73.575620); // SGW
+      temp = LatLng(45.500090, -73.575620); // SGW
     } else {
-      _end = LatLng(45.465950, -73.624720); // LOYOLA
+      temp = LatLng(45.465950, -73.624720); // LOYOLA
+      LatLng currentLocation = await CustomLocation.getCurrentLocation();
+      String jsonString = await DirectionsService.getDirections(currentLocation, temp, mode: mode);
+      itinerary = Itinerary.fromJson(json.decode(jsonString));
     }
-    CustomLocation.getCurrentLocation()
-    .then((currentLocation) => 
-      DirectionsService.getDirections(currentLocation, _end, mode: mode)
-      .then((jsonString) =>
-        Itinerary.fromJson(json.decode(jsonString))
-      )
-    );
+    return Future<Itinerary>.value(itinerary);
   }
 
   Itinerary.fromJson(dynamic json) { // if somehow we got raw json direction data

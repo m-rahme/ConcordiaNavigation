@@ -16,11 +16,11 @@ class CustomLocation implements Reachable {
   static Future<LatLng> getCurrentLocation() =>
     Location()
     .getLocation()
-    .then((LocationData currentLocation) {
-      return LatLng(currentLocation.latitude, currentLocation.longitude);
-    });
+    .then((LocationData currentLocation) =>
+      LatLng(currentLocation.latitude, currentLocation.longitude)
+    );
 
-  Itinerary pathTo(SupportedDestination dest, TransportationMode mode) {
-    return Itinerary(dest, mode);
+  Future<Itinerary> pathTo(SupportedDestination dest, TransportationMode mode) {
+    return Itinerary.create(dest, mode);
   }
 }
