@@ -1,0 +1,23 @@
+AD Building,45.45827,-73.63945,Administration Building,7141 Sherbrooke W.
+BB Annex,45.45979,-73.63909,BB Annex,3502 Belmore
+BH Annex,45.45976,-73.63901,BH Annex,3500 Belmore
+CC Building,45.45823,-73.6399,Central Building,7141 Sherbrooke W.
+CJ Building,45.45748,-73.63981,Communication Studies and Journalism Building,7141 Sherbrooke W.
+DO,45.45793,-73.63523,Stinger Dome (seasonal),7141 Sherbrooke W.
+FC Building,45.45876,-73.63957,F.C. Smith Building,7141 Sherbrooke W.
+GE Centre,45.45704,-73.64016,Centre for Structural and Functional Genomics,7141 Sherbrooke W. 
+HA Hall,45.45949,-73.64088,Hingston Hall (HA Wing),7141 Sherbrooke W.
+HB Hall,45.45921,-73.64168,Hingston Hall (HB Wing),7141 Sherbrooke W.
+HC Hall,45.45983,-73.64183,Hingston Hall (HC Wing),7141 Sherbrooke W.
+HU,45.45864,-73.64141,Applied Science Hub,7141 Sherbrooke W.
+JR,45.45854,-73.64305,Jesuit Residence,7141 Sherbrooke W.
+PC Centre,45.45696,-73.63676,PERFORM Centre,7200 Sherbrooke St. W.
+PS Building,45.45958,-73.63922,Physical Services Building,7141 Sherbrooke W.
+PT Hall,45.45931,-73.63867,Oscar Peterson Concert Hall,7141 Sherbrooke W.
+PY Building,45.45909,-73.64015,Psychology Building,7141 Sherbrooke W.
+RA Complex,45.45691,-73.63756,Recreation and Athletics Complex,7200 Sherbrooke St. W.
+RF Centre,45.45869,-73.6408,Loyola Jesuit Hall and Conference Centre,7141 Sherbrooke W.
+SH,45.45933,-73.64237,Solar House,7141 Sherbrooke W.
+SI,45.4581,-73.64241,St. Ignatius of Loyola Church,4455 Broadway
+SP Complex,45.4572,-73.64065,Richard J. Renaud Science Complex,7141 Sherbrooke W.
+TA Building,45.46005,-73.64079,Terrebone Building,7079 Terrebone

@@ -73,6 +73,8 @@ class _MapWidgetState extends State<MapWidget> {
     super.dispose();
   }
 
+  BuildingList buildingList = BuildingList();
+
   @override
   Widget build(BuildContext context) {
 //    print(1);
@@ -84,14 +86,17 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
-    BuildingList buildingList = BuildingList();
-    Set<Marker> setOfMarkers = {};
 
-    for(int i = 0; i<2; i++){
+    Set<Marker> setOfMarkers = {};
+    buildingList.readBuildingFile();
+    for(int i = 0; i<3; i++){
+      print(buildingList.getListOfBuildings().length);
       BuildingMarker buildingMarker = BuildingMarker(
           building: buildingList.getListOfBuildings().elementAt(i),
           bContext: context);
       setOfMarkers.add(buildingMarker.getMarker());
+
+
     }
 
     return Stack(
