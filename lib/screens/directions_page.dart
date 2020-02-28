@@ -3,6 +3,7 @@ import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:provider/provider.dart';
+import 'package:concordia_navigation/widgets/shuttle_tile.dart';
 
 class DirectionsPage extends StatefulWidget {
   static Color _white = Color(0xFFFFFFFF);
@@ -45,7 +46,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
             children: <Widget>[
               Container(
                 color: Color(0xFF73C700),
-                height: SizeConfig.safeBlockVertical * 24,
+                height: SizeConfig.safeBlockVertical * 25,
                 width: SizeConfig.screenWidth,
                 child: SafeArea(
                   bottom: false,
@@ -286,13 +287,13 @@ class _DirectionsPageState extends State<DirectionsPage> {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
                       Text(
-                        "Best Route",
+                        "Concordia Shuttle Bus",
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
                       ),
                       InkWell(
                         onTap: () {},
                         child: Text(
-                          "OPTIONS",
+                          "SCHEDULE",
                           style: TextStyle(color: Colors.white, fontSize: 15.0),
                         ),
                       ),
@@ -310,17 +311,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
                       Row(
                         children: <Widget>[
                           Expanded(
-                            child: ListTile(
-                              contentPadding: EdgeInsets.only(
-                                  left: SizeConfig.safeBlockHorizontal * 8.0,
-                                  right: SizeConfig.safeBlockHorizontal * 8.0),
-                              leading: Icon(
-                                Icons.directions_car,
-                                color: Colors.black,
-                              ),
-                              title: Text("via Autoroute 76"),
-                              subtitle: Text("35 Mins"),
-                            ),
+                            child: ShuttleTile(),
                           ),
                           Container(
                             padding: const EdgeInsets.only(right: 30.0),
