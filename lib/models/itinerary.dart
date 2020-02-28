@@ -16,9 +16,11 @@ class Itinerary {
   CustomLocation _end;
   PolylinePoints polylinePoints = PolylinePoints();
 
-  static Future<Itinerary> create(SupportedDestination dest, TransportationMode mode) async {
-    assert(dest == SupportedDestination.SGW || dest == SupportedDestination.LOYOLA);
-    assert(mode == TransportationMode.DRIVING || mode == TransportationMode.TRANSIT || mode == TransportationMode.WALKING);
+  static Future<Itinerary> create(SupportedDestination dest,
+      {String mode = "DRIVING"}) async {
+    assert(dest == SupportedDestination.SGW ||
+        dest == SupportedDestination.LOYOLA);
+    //assert(mode == TransportationMode.DRIVING || mode == TransportationMode.TRANSIT || mode == TransportationMode.WALKING);
     LatLng temp;
     Itinerary itinerary;
     //var completer = new Completer();
@@ -30,6 +32,13 @@ class Itinerary {
       String jsonString = await DirectionsService.getDirections(currentLocation, temp, mode: mode);
       itinerary = Itinerary.fromJson(json.decode(jsonString));
     }
+    LatLng currentLocation = await CustomLocation.getCurrentLocation();
+    print(currentLocation.latitude);
+    String jsonString = await DirectionsService.getDirections(
+        currentLocation, temp,
+        mode: "DRIVING");
+    itinerary = Itinerary.fromJson(json.decode(jsonString));
+    print(itinerary);
     return Future<Itinerary>.value(itinerary);
   }
 

@@ -20,7 +20,7 @@ class CustomLocation implements Reachable {
       LatLng(currentLocation.latitude, currentLocation.longitude)
     );
 
-  Future<Itinerary> pathTo(SupportedDestination dest, TransportationMode mode) {
-    return Itinerary.create(dest, mode);
+  Future<Itinerary> pathTo(SupportedDestination dest, String mode) {
+    return Itinerary.create(dest, mode: mode);
   }
 }

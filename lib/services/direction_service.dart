@@ -12,7 +12,7 @@ class DirectionsService {
   static Future<dynamic> getDirections(
       final LatLng start,
       final LatLng end,
-      { TransportationMode mode = TransportationMode.DRIVING }) async {
-    return await Network.getData('https://$mapsUrl?origin=${start.latitude},${start.longitude}&destination=${end.latitude},${end.longitude}&key=$apiKey');
+      { String mode = "DRIVING" }) async {
+    return await Network.getData('https://$mapsUrl?origin=${start.latitude},${start.longitude}&destination=${end.latitude},${end.longitude}&mode=$mode&key=$apiKey');
   }
 }
