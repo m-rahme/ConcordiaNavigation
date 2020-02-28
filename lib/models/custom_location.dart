@@ -13,12 +13,12 @@ class CustomLocation implements Reachable {
 
   CustomLocation(this.lat, this.long, this.desc);
 
-  static Future<LatLng> getCurrentLocation() =>
-    Location()
-    .getLocation()
-    .then((LocationData currentLocation) =>
-      LatLng(currentLocation.latitude, currentLocation.longitude)
-    );
+  static Future<LatLng> getCurrentLocation() async {
+    final LocationData locationData = await Location().getLocation();
+    LatLng currentLocation =
+        LatLng(locationData.latitude, locationData.longitude);
+    return currentLocation;
+  }
 
   Future<Itinerary> pathTo(SupportedDestination dest, String mode) {
     return Itinerary.create(dest, mode: mode);
