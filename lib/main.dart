@@ -1,5 +1,7 @@
+import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
+import 'package:concordia_navigation/services/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
@@ -13,6 +15,10 @@ import 'package:concordia_navigation/screens/schedule.dart';
 void main() {
   runApp(MultiProvider(
     providers: [
+      StreamProvider<UserLocation>(
+        create: (context) => LocationService().stream,
+        initialData: UserLocation.SGW(),
+      ),
       ChangeNotifierProvider<MapData>(
         create: (context) => MapData(),
       ),

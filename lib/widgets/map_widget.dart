@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
@@ -74,6 +75,7 @@ class _MapWidgetState extends State<MapWidget> {
     SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
+    final pos = Provider.of<UserLocation>(context);
 
     while (_initialCameraLocation == null) {
       return Center(child: Text("Loading Map"));
@@ -133,7 +135,7 @@ class _MapWidgetState extends State<MapWidget> {
             child: FloatingActionButton(
               onPressed: () {
                 Provider.of<MapData>(context, listen: false).animateTo(
-                    _currentLocation.latitude, _currentLocation.longitude);
+                    pos.latitude, pos.longitude);
               },
               child: Icon(Icons.gps_fixed),
               backgroundColor: Color(0xFFFFFFF8),
