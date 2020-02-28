@@ -10,6 +10,13 @@ class MapData extends ChangeNotifier {
     return _completer;
   }
 
+  LatLng start;
+  LatLng end;
+  String mode;
+
+  final controllerStaring = TextEditingController();
+  final controllerDestination = TextEditingController();
+
   Future<void> animateTo(double lat, double lng) async {
     final c = await _completer.future;
     final p = CameraPosition(

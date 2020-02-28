@@ -39,7 +39,11 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.496676, -73.578760);
               });
         },
@@ -55,7 +59,11 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.4582, -73.6405);
               });
         },

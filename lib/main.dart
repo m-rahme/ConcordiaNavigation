@@ -1,3 +1,6 @@
+import 'package:concordia_navigation/models/buildings_data.dart';
+import 'package:concordia_navigation/models/shuttle_data.dart';
+import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
@@ -24,6 +27,9 @@ void main() {
       ),
       ChangeNotifierProvider<BuildingsData>(
         create: (context) => BuildingsData(),
+      ),
+      ChangeNotifierProvider<ShuttleData>(
+        create: (_) => ShuttleData(),
       ),
     ],
     child: App(),
@@ -52,6 +58,7 @@ class App extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
+        '/directions': (context) => DirectionsPage(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),

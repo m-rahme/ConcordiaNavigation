@@ -6,16 +6,19 @@ import 'package:concordia_navigation/services/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
+import 'package:location/location.dart';
+import 'package:flutter/services.dart';
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
+import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
 const LatLng SGW = LatLng(45.495944, -73.578075);
 const LatLng LOYOLA = LatLng(45.4582, -73.6405);
-CameraPosition _initialCamera;
 bool _campus = true;
 
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
@@ -27,6 +30,10 @@ class MapWidget extends StatefulWidget {
 }
 
 class _MapWidgetState extends State<MapWidget> {
+  CameraPosition _initialCamera;
+  List<Polyline> allPolylines = [];
+  PolylinePoints points = new PolylinePoints();
+  List<PointLatLng> result = [];
 
   Future<void> setInitialCamera() async {
     var location = await LocationService().getLocation();
@@ -37,6 +44,35 @@ class _MapWidgetState extends State<MapWidget> {
       bearing: CAMERA_BEARING,
     );
   }
+
+
+//  void getDirectionData() async {
+//    allPolylines = [];
+//    var direction = await Navigation().getMapDirections();
+//    setState(() {
+//      var pointsFromJson = json.decode(direction);
+//      for (int i = 0; i < 4; i++) {
+//        dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
+//            ["polyline"]["points"];
+//        List<PointLatLng> result2 = points.decodePolyline(directions);
+//        result = new List.from(result)..addAll(result2);
+//      }
+//      List<LatLng> po = [];
+//      result.forEach((f) {
+//        po.add(LatLng(f.latitude, f.longitude));
+//      });
+//
+//      Polyline route = new Polyline(
+//        polylineId: PolylineId("route"),
+//        geodesic: true,
+//        points: po,
+//        width: 5,
+//        color: Colors.blue,
+//      );
+//
+//      allPolylines.add(route);
+//    });
+//  }
 
   @override
   void initState() {
@@ -71,6 +107,7 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
+            polylines: Set.from(allPolylines),
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCamera,
@@ -86,6 +123,7 @@ class _MapWidgetState extends State<MapWidget> {
             ),
             child: FloatingActionButton(
               onPressed: () {
+                Itinerary(SGW, LOYOLA, "driving");
                 _campus
                     ? () {
                         Provider.of<MapData>(context, listen: false)
