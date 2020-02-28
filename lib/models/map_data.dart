@@ -1,7 +1,6 @@
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:concordia_navigation/models/supported_destination.dart';
-import 'package:concordia_navigation/models/transportation_mode.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
@@ -10,17 +9,23 @@ import 'package:flutter/material.dart';
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   BuildingsData buildings = BuildingsData();
-  Completer<Itinerary> _lineCompleter = Completer();
+  Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
-  Completer<Itinerary> get getLineCompleter {
-    return _lineCompleter;
-  }
 
   final controllerStaring = TextEditingController();
   final controllerDestination = TextEditingController();
+
+  void setItinerary(SupportedDestination dest,
+      {String mode = "DRIVING"}) async {
+    if (dest == SupportedDestination.SGW ||
+        dest == SupportedDestination.LOYOLA) {
+      itinerary = await Itinerary.create(dest, mode: "DRIVING");
+    }
+    notifyListeners();
+  }
 
   Future<void> animateTo(double lat, double lng) async {
     final c = await _completer.future;
