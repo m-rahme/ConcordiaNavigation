@@ -1,9 +1,12 @@
+import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/widgets/shuttle_tile.dart';
+import 'package:async/async.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DirectionsPage extends StatefulWidget {
   static Color _white = Color(0xFFFFFFFF);
@@ -18,6 +21,18 @@ class DirectionsPage extends StatefulWidget {
 }
 
 class _DirectionsPageState extends State<DirectionsPage> {
+  final AsyncMemoizer _memoizer = AsyncMemoizer();
+  _fetchData() {
+    return this._memoizer.runOnce(() async {
+      await Future.delayed(Duration(seconds: 1));
+      return Itinerary(
+              Provider.of<MapData>(context, listen: false).start,
+              Provider.of<MapData>(context, listen: false).end,
+              Provider.of<MapData>(context, listen: false).mode)
+          .parseJson();
+    });
+  }
+
   var _controllerStarting;
   var _controllerDestination;
 
@@ -262,18 +277,69 @@ class _DirectionsPageState extends State<DirectionsPage> {
                 ),
               ),
               Expanded(
-                  child: ListView.builder(
-                      padding: EdgeInsets.all(0.0),
-                      itemCount: 10,
-                      itemBuilder: (BuildContext context, int index) {
-                        return new ListTile(
-                          contentPadding: EdgeInsets.only(
-                              left: SizeConfig.safeBlockHorizontal * 8.0),
-                          leading: Icon(Icons.directions_car),
-                          title: Text("via Autoroute 76"),
-                          subtitle: Text("35 Mins"),
-                        );
-                      })),
+                child: FutureBuilder(
+                    future: _fetchData(),
+                    builder: (context, AsyncSnapshot itinerary) {
+                      switch (itinerary.connectionState) {
+                        // Uncompleted State
+                        case ConnectionState.none:
+                          return new Text('Error');
+                        case ConnectionState.waiting:
+                          return Center(child: CircularProgressIndicator());
+                          break;
+                        default:
+                          // Completed with error
+                          if (itinerary.hasError)
+                            return Container(
+                              child: Text("Error Occured"),
+                            );
+
+                          // Completed with data
+                          return ListView.builder(
+                            padding: EdgeInsets.all(0.0),
+                            itemCount: itinerary.data.length,
+                            itemBuilder: (BuildContext context, index) {
+                              String key = itinerary.data.keys.elementAt(index);
+                              return Container(
+                                decoration: BoxDecoration(
+                                  color: Color(0xFFFFFFF8),
+                                  border: Border(
+                                    bottom: BorderSide(
+                                        width: 1.0, color: Color(0xFFF0F0F0)),
+                                  ),
+                                ),
+                                child: ListTile(
+                                  contentPadding: EdgeInsets.only(
+                                      left:
+                                          SizeConfig.safeBlockHorizontal * 5.0),
+                                  leading: Icon(Icons.subdirectory_arrow_right),
+                                  title: Text(
+                                    "$key",
+                                    style: GoogleFonts.raleway(
+                                      fontSize: 17.0,
+                                      fontWeight: FontWeight.w600,
+                                      color: Color(0xFF000000),
+                                    ),
+                                  ),
+                                  subtitle: Text(
+                                    "Time: " +
+                                        "${itinerary.data[key].keys.toString().replaceAll(RegExp(r"\(|\)"), "")}" +
+                                        "  " +
+                                        "Distance: " +
+                                        "${itinerary.data[key].values.toString().replaceAll(RegExp(r"\(|\)"), "")}",
+                                    style: GoogleFonts.raleway(
+                                      fontSize: 15.0,
+                                      fontWeight: FontWeight.w400,
+                                      color: Color(0xFF000000),
+                                    ),
+                                  ),
+                                ),
+                              );
+                            },
+                          );
+                      }
+                    }),
+              ),
               Container(
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.all(Radius.circular(3.0)),

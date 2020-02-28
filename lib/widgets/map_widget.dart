@@ -1,4 +1,3 @@
-import 'dart:convert';
 import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
@@ -9,10 +8,8 @@ import 'dart:async';
 import 'package:location/location.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
-import '../services/navigation.dart';
+import 'package:concordia_navigation/models/itinerary.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
@@ -20,9 +17,6 @@ const double CAMERA_BEARING = 30;
 const LatLng SGW = LatLng(45.495944, -73.578075);
 const LatLng LOYOLA = LatLng(45.4582, -73.6405);
 bool _campus = true;
-
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//String _mapStyle;
 
 class MapWidget extends StatefulWidget {
   @override
@@ -47,11 +41,6 @@ class _MapWidgetState extends State<MapWidget> {
   void initState() {
     super.initState();
     SizeConfig();
-    //*****UNCOMMENT BELLOW FOR DARK MAP*****
-    //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
-//    rootBundle.loadString('assets/map_style.txt').then((string) {
-//      _mapStyle = string;
-//    });
     initPlatformState();
     _locationSubscription =
         _location.onLocationChanged().listen((newLocalData) {
@@ -68,33 +57,33 @@ class _MapWidgetState extends State<MapWidget> {
     });
   }
 
-  void getDirectionData() async {
-    allPolylines = [];
-    var direction = await Navigation().getMapDirections();
-    setState(() {
-      var pointsFromJson = json.decode(direction);
-      for (int i = 0; i < 4; i++) {
-        dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
-            ["polyline"]["points"];
-        List<PointLatLng> result2 = points.decodePolyline(directions);
-        result = new List.from(result)..addAll(result2);
-      }
-      List<LatLng> po = [];
-      result.forEach((f) {
-        po.add(LatLng(f.latitude, f.longitude));
-      });
-
-      Polyline route = new Polyline(
-        polylineId: PolylineId("route"),
-        geodesic: true,
-        points: po,
-        width: 5,
-        color: Colors.blue,
-      );
-
-      allPolylines.add(route);
-    });
-  }
+//  void getDirectionData() async {
+//    allPolylines = [];
+//    var direction = await Navigation().getMapDirections();
+//    setState(() {
+//      var pointsFromJson = json.decode(direction);
+//      for (int i = 0; i < 4; i++) {
+//        dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
+//            ["polyline"]["points"];
+//        List<PointLatLng> result2 = points.decodePolyline(directions);
+//        result = new List.from(result)..addAll(result2);
+//      }
+//      List<LatLng> po = [];
+//      result.forEach((f) {
+//        po.add(LatLng(f.latitude, f.longitude));
+//      });
+//
+//      Polyline route = new Polyline(
+//        polylineId: PolylineId("route"),
+//        geodesic: true,
+//        points: po,
+//        width: 5,
+//        color: Colors.blue,
+//      );
+//
+//      allPolylines.add(route);
+//    });
+//  }
 
   @override
   void dispose() {
@@ -131,7 +120,6 @@ class _MapWidgetState extends State<MapWidget> {
             polylines: Set.from(allPolylines),
             onMapCreated: (controller) async {
               _completer.complete(controller);
-//          controller.setMapStyle(_mapStyle);
             }),
         SafeArea(
           child: Padding(
@@ -141,6 +129,7 @@ class _MapWidgetState extends State<MapWidget> {
             ),
             child: FloatingActionButton(
               onPressed: () {
+                Itinerary(SGW, LOYOLA, "driving");
                 _campus
                     ? () {
                         Provider.of<MapData>(context, listen: false)
@@ -171,7 +160,7 @@ class _MapWidgetState extends State<MapWidget> {
               onPressed: () {
                 Provider.of<MapData>(context, listen: false).animateTo(
                     _currentLocation.latitude, _currentLocation.longitude);
-                getDirectionData();
+//                getDirectionData();
               },
               child: Icon(Icons.gps_fixed),
               backgroundColor: Color(0xFFFFFFF8),

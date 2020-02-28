@@ -33,6 +33,7 @@ dependencies:
   location: ^2.5.0
   google_fonts: ^0.3.5
   flutter_polyline_points:
+  async: ^2.4.0
 
 
 

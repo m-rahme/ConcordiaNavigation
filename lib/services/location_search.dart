@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/models/map_data.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class LocationSearch extends SearchDelegate {
+  LatLng sgw = LatLng(45.495944, -73.578075);
+  LatLng loyola = LatLng(45.4582, -73.6405);
+  String mode = "Driving";
+
   @override
   Widget buildSuggestions(BuildContext context) {
     return ListView(
@@ -34,6 +39,10 @@ class LocationSearch extends SearchDelegate {
                 Provider.of<MapData>(context, listen: false)
                     .controllerStaring
                     .text = "Current Location";
+                Provider.of<MapData>(context, listen: false).start = sgw;
+                Provider.of<MapData>(context, listen: false).end = loyola;
+                Provider.of<MapData>(context, listen: false).mode = mode;
+
                 Navigator.pushNamed(context, '/directions');
 //                mapData.animateTo(45.4582, -73.6405);
               },

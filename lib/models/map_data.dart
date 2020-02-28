@@ -12,6 +12,10 @@ class MapData extends ChangeNotifier {
     return _completer;
   }
 
+  LatLng start;
+  LatLng end;
+  String mode;
+
   final controllerStaring = TextEditingController();
   final controllerDestination = TextEditingController();
 
