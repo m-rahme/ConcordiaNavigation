@@ -11,7 +11,6 @@ import 'dart:convert';
 class Itinerary {
   List<Polyline> polylines = [];
   List<PointLatLng> _result = [];
-  Set<Direction> directions;
   CustomLocation _start;
   CustomLocation _end;
   PolylinePoints polylinePoints = PolylinePoints();
@@ -23,14 +22,10 @@ class Itinerary {
     //assert(mode == TransportationMode.DRIVING || mode == TransportationMode.TRANSIT || mode == TransportationMode.WALKING);
     LatLng temp;
     Itinerary itinerary;
-    //var completer = new Completer();
     if (dest == SupportedDestination.SGW) {
       temp = LatLng(45.500090, -73.575620); // SGW
     } else {
       temp = LatLng(45.465950, -73.624720); // LOYOLA
-      LatLng currentLocation = await CustomLocation.getCurrentLocation();
-      String jsonString = await DirectionsService.getDirections(currentLocation, temp, mode: mode);
-      itinerary = Itinerary.fromJson(json.decode(jsonString));
     }
     LatLng currentLocation = await CustomLocation.getCurrentLocation();
     print(currentLocation.latitude);
@@ -42,19 +37,19 @@ class Itinerary {
     return Future<Itinerary>.value(itinerary);
   }
 
-  Itinerary.fromJson(dynamic json) { // if somehow we got raw json direction data
-    double sLat = json['routes'][0]['legs']['start_location']['lat'];
-    double sLong = json['routes'][0]['legs']['start_location']['long'];
-    double eLat = json['routes'][0]['legs']['end_location']['lat'];
-    double eLong = json['routes'][0]['legs']['end_location']['long'];
+  Itinerary.fromJson(dynamic json) {
+    double sLat = json['routes'][0]['legs'][0]['start_location']['lat'];
+    double sLong = json['routes'][0]['legs'][0]['start_location']['long'];
+    double eLat = json['routes'][0]['legs'][0]['end_location']['lat'];
+    double eLong = json['routes'][0]['legs'][0]['end_location']['long'];
 
-    String sDesc = json['routes'][0]['legs']['start_address'];
-    String eDesc = json['routes'][0]['legs']['end_address'];
+    String sDesc = json['routes'][0]['legs'][0]['start_address'];
+    String eDesc = json['routes'][0]['legs'][0]['end_address'];
 
     _start = CustomLocation(sLat, sLong, sDesc);
     _end = CustomLocation(eLat, eLong, eDesc);
 
-    var steps = json['route'][0]['legs']['steps'];
+    var steps = json['routes'][0]['legs'][0]['steps'];
 
     for (int i = 0; i < steps.length; i++) {
       dynamic directions = steps[i]["polyline"]["points"];
