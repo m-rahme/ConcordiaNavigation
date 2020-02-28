@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/itinerary.dart';
-import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/models/size_config.dart';

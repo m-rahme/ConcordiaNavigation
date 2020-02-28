@@ -6,8 +6,6 @@ import 'package:concordia_navigation/services/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
-import 'package:location/location.dart';
-import 'package:flutter/services.dart';
 //*****UNCOMMENT BELLOW FOR DARK MAP*****
 //import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';

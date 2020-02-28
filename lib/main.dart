@@ -1,4 +1,3 @@
-import 'package:concordia_navigation/models/buildings_data.dart';
 import 'package:concordia_navigation/models/shuttle_data.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/models/user_location.dart';
