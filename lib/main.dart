@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/models/buildings_data.dart';
+import 'package:concordia_navigation/models/shuttle_data.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:flutter/material.dart';
@@ -25,6 +26,9 @@ class App extends StatelessWidget {
         ),
         ChangeNotifierProvider<BuildingsData>(
           create: (_) => BuildingsData(),
+        ),
+        ChangeNotifierProvider<ShuttleData>(
+          create: (_) => ShuttleData(),
         ),
       ],
       child: MaterialApp(
