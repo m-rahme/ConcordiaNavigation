@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import '../building_information/building_stats.dart';
+import '../buildingModels/building_information.dart';
 
 class  BuildingList extends StatelessWidget {
-  final List <BuildingStatistics> build_stats;
-  BuildingList(this.build_stats);
+  final List <BuildingInformation> buildStats;
+  BuildingList(this.buildStats);
   @override
   Widget build(BuildContext context) {
     return Container();

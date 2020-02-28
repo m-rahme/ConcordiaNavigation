@@ -1,27 +1,21 @@
+import 'package:concordia_navigation/widgets/buildingModels/building_information.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-import '../models/size_config.dart';
+import '../../models/size_config.dart';
 
 class BuildingMarker{
-//  final String initials;
-//  final String title;
-//  final String address;
-//  final String weekday;
-//  final String weekend;
-  BuildContext context;
+
+  final BuildingInformation building;
+  final BuildContext bContext;
 
   BuildingMarker({
-//    this.initials,
-//    this.title,
-//    this.address,
-//    this.weekday,
-//    this.weekend,
-    this.context,
+    @required this.building,
+    @required this.bContext,
   });
 
-  Marker GetMarker(){
+  Marker getMarker(){
 
     Marker bBuildingMarker = Marker(
       markerId: MarkerId('b'),
@@ -32,7 +26,7 @@ class BuildingMarker{
       ),
       onTap: () {
         showModalBottomSheet(
-            context: context,
+            context: bContext,
             builder: (builder) {
               return Container(
                 height: SizeConfig.safeBlockVertical * 27,

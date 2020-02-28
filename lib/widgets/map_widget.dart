@@ -12,7 +12,7 @@ import 'package:flutter/services.dart';
 //import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
 
-import './building_marker.dart';
+import 'building_widgets/building_marker.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
@@ -83,7 +83,7 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
-    BuildingMarker bBuildingMarker = BuildingMarker(context: context);
+    BuildingMarker bBuildingMarker = BuildingMarker(bContext: context);
 
 //    Marker bBuildingMarker = Marker(
 //      markerId: MarkerId('b'),
@@ -10216,7 +10216,7 @@ class _MapWidgetState extends State<MapWidget> {
             mapType: MapType.normal,
             polygons: _buildings.polygons,
             markers: {
-              bBuildingMarker.GetMarker(),
+              bBuildingMarker.getMarker(),
 //              ciBuildingMarker,
 //              clBuildingMarker,
 //              dBuildingMarker,
