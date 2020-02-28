@@ -19,34 +19,40 @@ class LocationSearch extends SearchDelegate {
               title: Text("SGW Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
               onTap: () async {
+                // mapData.animateTo(45.496676, -73.578760);
+                Provider.of<MapData>(context, listen: false)
+                    .controllerDestination
+                    .text = "SGW Campus, Montreal";
+                Provider.of<MapData>(context, listen: false)
+                    .controllerStaring
+                    .text = "Current Location";
+                print("Setting itinerary to LOYOLA!!");
+                Provider.of<MapData>(context, listen: false)
+                    .setItinerary(SupportedDestination.SGW);
                 Navigator.of(context).pop();
-                mapData.animateTo(45.496676, -73.578760);
-                Completer<Itinerary> lineCompleter = Provider.of<MapData>(context, listen: false).getLineCompleter;
-                Itinerary itinerary = await Itinerary.create(SupportedDestination.SGW, TransportationMode.DRIVING);
-                lineCompleter.complete(itinerary);
               },
             );
           },
         ),
         Consumer<MapData>(
           builder: (context, mapData, child) {
+            print(1);
             return ListTile(
               leading: Icon(Icons.location_city),
               title: Text("Loyola Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
               onTap: () async {
-                Navigator.of(context).pop();
                 Provider.of<MapData>(context, listen: false)
                     .controllerDestination
                     .text = "Loyola Campus, Montreal";
                 Provider.of<MapData>(context, listen: false)
                     .controllerStaring
                     .text = "Current Location";
-                Navigator.pushNamed(context, '/directions');
 //                mapData.animateTo(45.4582, -73.6405);
-                Completer<Itinerary> lineCompleter = Provider.of<MapData>(context, listen:false).getLineCompleter;
-                Itinerary itinerary = await Itinerary.create(SupportedDestination.SGW, TransportationMode.DRIVING);
-                lineCompleter.complete(itinerary);
+                Provider.of<MapData>(context, listen: false)
+                    .setItinerary(SupportedDestination.LOYOLA);
+                print("Setting itinerary to LOYOLA!!");
+                Navigator.of(context).pop();
               },
             );
           },
