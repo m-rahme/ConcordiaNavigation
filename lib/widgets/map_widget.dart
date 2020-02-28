@@ -40,6 +40,9 @@ class _MapWidgetState extends State<MapWidget> {
   Location _location = new Location();
   String error;
 
+  BuildingList buildingList = BuildingList();
+  Set<Marker> setOfMarkers = {};
+
   @override
   void initState() {
     super.initState();
@@ -73,8 +76,6 @@ class _MapWidgetState extends State<MapWidget> {
     super.dispose();
   }
 
-  BuildingList buildingList = BuildingList();
-
   @override
   Widget build(BuildContext context) {
 //    print(1);
@@ -86,17 +87,18 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
-
-    Set<Marker> setOfMarkers = {};
-    buildingList.readBuildingFile();
-    for(int i = 0; i<3; i++){
+    /*
+    markers created here
+     */
+    if(buildingList.getListOfBuildings().length <= 58){
+      buildingList.readBuildingFile();
       print(buildingList.getListOfBuildings().length);
-      BuildingMarker buildingMarker = BuildingMarker(
-          building: buildingList.getListOfBuildings().elementAt(i),
-          bContext: context);
-      setOfMarkers.add(buildingMarker.getMarker());
-
-
+      for(int i = 0; i<58; i++){
+        BuildingMarker buildingMarker = BuildingMarker(
+            building: buildingList.getListOfBuildings().elementAt(i),
+            bContext: context);
+        setOfMarkers.add(buildingMarker.getMarker());
+      }
     }
 
     return Stack(
