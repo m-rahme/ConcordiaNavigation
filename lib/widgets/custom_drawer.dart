@@ -39,7 +39,6 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-//              Navigator.of(context).pop();
                 Navigator.popUntil(
                   context,
                   ModalRoute.withName(Navigator.defaultRouteName),
@@ -59,7 +58,6 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-//              Navigator.of(context).pop();
                 Navigator.popUntil(
                   context,
                   ModalRoute.withName(Navigator.defaultRouteName),
