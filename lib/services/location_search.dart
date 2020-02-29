@@ -26,6 +26,7 @@ class LocationSearch extends SearchDelegate {
                     .controllerStaring
                     .text = "Current Location";
                 mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);
                 mapData.changeMode("driving");
 
@@ -49,6 +50,7 @@ class LocationSearch extends SearchDelegate {
                     .controllerStaring
                     .text = "Current Location";
                 mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeCampus('loyola');
                 mapData.changeEnd(loyola);
                 mapData.changeMode("driving");
 

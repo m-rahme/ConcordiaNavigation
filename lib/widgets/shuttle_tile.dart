@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:concordia_navigation/models/shuttle_data.dart';
@@ -8,7 +9,9 @@ class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var response1 = "via Shuttle Bus";
-    if (Provider.of<ShuttleData>(context).getNextShuttle() ==
+    var campus = Provider.of<MapData>(context, listen: false).getCampus;
+    if (Provider.of<ShuttleData>(context, listen: false)
+            .getNextShuttle(campus) ==
         "Check Shuttle Schedule for More Info") {
       response1 = "No Shuttle Bus Until Monday";
     }
@@ -36,7 +39,8 @@ class ShuttleTile extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          Provider.of<ShuttleData>(context).getNextShuttle(),
+          Provider.of<ShuttleData>(context, listen: false)
+              .getNextShuttle(campus),
           style: GoogleFonts.raleway(
             fontSize: 10.0,
             fontWeight: FontWeight.w600,

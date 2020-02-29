@@ -5,7 +5,6 @@ import 'package:flutter/services.dart' show rootBundle;
 
 class ShuttleData extends ChangeNotifier {
   var _json;
-  String campus = 'loyola';
 
   ShuttleData() {
     readJsonFile();
@@ -24,7 +23,7 @@ class ShuttleData extends ChangeNotifier {
     _json = json.decode(response);
   }
 
-  String getNextShuttle() {
+  String getNextShuttle(campus) {
     var now = new DateTime.now();
     if (now.weekday == 7 ||
         now.weekday == 6 ||

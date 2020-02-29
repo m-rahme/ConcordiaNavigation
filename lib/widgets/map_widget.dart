@@ -88,11 +88,11 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    print("Hi");
     if (_location != null) {
-      print("HEEELLLLLLLLLLLLLOOOOOOOO");
-      Provider.of<MapData>(context, listen: false)
-          .changeCurrentLocation(_location.toLatLng());
+      Provider.of<MapData>(
+        context,
+        listen: false,
+      ).changeCurrentLocation(_location.toLatLng());
     }
     SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;

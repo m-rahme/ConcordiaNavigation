@@ -11,13 +11,18 @@ class MapData extends ChangeNotifier {
   }
 
   LatLng _currentLocation;
-
+  String _campus;
   LatLng _start;
   LatLng _end;
   String _mode;
 
   MapData() {
     _mode = "driving";
+  }
+
+  void changeCampus(campus) {
+    _campus = campus;
+    notifyListeners();
   }
 
   void changeMode(mode) {
@@ -37,7 +42,6 @@ class MapData extends ChangeNotifier {
 
   void changeCurrentLocation(current) {
     _currentLocation = current;
-    notifyListeners();
   }
 
   LatLng get getCurrentLocation {
@@ -54,6 +58,10 @@ class MapData extends ChangeNotifier {
 
   LatLng get getEnd {
     return _end;
+  }
+
+  String get getCampus {
+    return _campus;
   }
 
   final controllerStaring = TextEditingController();
