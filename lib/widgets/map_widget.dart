@@ -46,45 +46,12 @@ class _MapWidgetState extends State<MapWidget> {
     return location;
   }
 
-//  void getDirectionData() async {
-//    allPolylines = [];
-//    var direction = await Navigation().getMapDirections();
-//    setState(() {
-//      var pointsFromJson = json.decode(direction);
-//      for (int i = 0; i < 4; i++) {
-//        dynamic directions = pointsFromJson["routes"][0]["legs"][0]["steps"][i]
-//            ["polyline"]["points"];
-//        List<PointLatLng> result2 = points.decodePolyline(directions);
-//        result = new List.from(result)..addAll(result2);
-//      }
-//      List<LatLng> po = [];
-//      result.forEach((f) {
-//        po.add(LatLng(f.latitude, f.longitude));
-//      });
-//
-//      Polyline route = new Polyline(
-//        polylineId: PolylineId("route"),
-//        geodesic: true,
-//        points: po,
-//        width: 5,
-//        color: Colors.blue,
-//      );
-//
-//      allPolylines.add(route);
-//    });
-//  }
-
   @override
   void initState() {
     super.initState();
     Future location = setInitialCamera();
     location.then((value) => _location = value);
     SizeConfig();
-    //*****UNCOMMENT BELLOW FOR DARK MAP*****
-    //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
-//    rootBundle.loadString('assets/map_style.txt').then((string) {
-//      _mapStyle = string;
-//    });
   }
 
   @override
@@ -120,7 +87,6 @@ class _MapWidgetState extends State<MapWidget> {
             initialCameraPosition: _initialCamera,
             onMapCreated: (controller) async {
               _completer.complete(controller);
-//          controller.setMapStyle(_mapStyle);
             }),
         SafeArea(
           child: Padding(
