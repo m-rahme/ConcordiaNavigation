@@ -7,6 +7,15 @@ void main() {
   Future delay([int milliseconds = 100]) async {
     await Future.delayed(Duration(milliseconds: milliseconds));
   }
+
+  Future snapshot(FlutterDriver driver, String screenshotName) async {
+    await driver.waitUntilNoTransientCallbacks();
+    final List<int> pixels = await driver.screenshot();
+    File file = await new File('.\\test_driver\\screenshots\\$screenshotName.png').create(recursive: true);
+    await file.writeAsBytes(pixels);
+    print('Screenshot $file');
+  }
+
   group('App System Integration Test', () {
      FlutterDriver driver;
 
@@ -35,6 +44,23 @@ void main() {
         Duration(minutes: 1),
       ),
     );
+
+    test('User Story 1', () async {
+      delay(2000);
+      await snapshot(driver, '\\UserStory_1\\1');
+      final swapCampusIcon = find.byValueKey('SwitchCampus');
+      await driver.tap(swapCampusIcon);
+      await snapshot(driver, '\\UserStory_1\\2');
+      await driver.tap(swapCampusIcon);
+      await snapshot(driver, '\\UserStory_1\\3');
+    },
+    timeout: Timeout(
+        Duration(minutes: 1),
+      ),
+    );
+
+        
+      
   });
 
   

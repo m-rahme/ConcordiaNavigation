@@ -95,6 +95,7 @@ class _MapWidgetState extends State<MapWidget> {
               left: SizeConfig.safeBlockHorizontal * 83,
             ),
             child: FloatingActionButton(
+              key: Key('SwitchCampus'),
               onPressed: () {
                 Itinerary(SGW, LOYOLA, "driving");
                 _campus
