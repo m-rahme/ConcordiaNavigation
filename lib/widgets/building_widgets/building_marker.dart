@@ -5,8 +5,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../models/size_config.dart';
 
-class BuildingMarker{
-
+class BuildingMarker {
   final BuildingInformation building;
   final BuildContext bContext;
 
@@ -15,8 +14,7 @@ class BuildingMarker{
     @required this.bContext,
   });
 
-  Marker getMarker(){
-
+  Marker getMarker() {
     Marker bBuildingMarker = Marker(
       markerId: MarkerId(building.getBuildingInitial()),
       position: LatLng(building.getLatitude(), building.getLongitude()),
@@ -42,13 +40,13 @@ class BuildingMarker{
                           children: <Widget>[
                             Padding(
                               padding:
-                              const EdgeInsets.only(top: 15.0, left: 15.0),
+                                  const EdgeInsets.only(top: 15.0, left: 15.0),
                               child: Container(
                                 width: SizeConfig.safeBlockHorizontal * 65,
-                                height: SizeConfig.safeBlockVertical * 4,
+                                height: SizeConfig.safeBlockVertical * 5,
                                 child: Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 8.0, left: 8.0),
+                                      top: 4.0, left: 8.0),
                                   child: Text(
                                     building.getBuildingName(),
                                     style: GoogleFonts.raleway(
@@ -90,14 +88,14 @@ class BuildingMarker{
                           children: <Widget>[
                             Padding(
                               padding:
-                              const EdgeInsets.only(top: 10.0, right: 20.0),
+                                  const EdgeInsets.only(top: 10.0, right: 20.0),
                               child: Container(
                                 width: SizeConfig.safeBlockHorizontal * 25,
                                 height: SizeConfig.safeBlockVertical * 5,
                                 child: RaisedButton(
                                   shape: RoundedRectangleBorder(
                                     borderRadius:
-                                    new BorderRadius.circular(10.0),
+                                        new BorderRadius.circular(10.0),
                                   ),
                                   onPressed: () {},
                                   color: Color(0xFF76C807),
@@ -152,7 +150,7 @@ class BuildingMarker{
                                   height: SizeConfig.safeBlockVertical * 10,
                                   child: Column(
                                     mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
+                                        MainAxisAlignment.spaceEvenly,
                                     children: <Widget>[
                                       Row(
                                         children: <Widget>[
@@ -195,9 +193,3 @@ class BuildingMarker{
     return bBuildingMarker;
   }
 }
-
-
-
-
-
-

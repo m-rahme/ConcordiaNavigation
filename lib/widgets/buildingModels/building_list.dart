@@ -30,13 +30,9 @@ class BuildingList {
         holder += value[i];
       }
     }
-
     createBuilding(valueHolder);
   }
 
-  /***
-   *
-   */
   void createBuilding(List<String> info) {
     for (int i = 0; i < info.length; i += 6) {
       BuildingInformation buildingInformation = BuildingInformation(
