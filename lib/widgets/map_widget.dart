@@ -32,10 +32,10 @@ class _MapWidgetState extends State<MapWidget> {
   List<Polyline> allPolylines = [];
   PolylinePoints points = new PolylinePoints();
   List<PointLatLng> result = [];
-  var _location;
+  UserLocation _location;
 
   Future setInitialCamera() async {
-    var location = UserLocation.fromLocationData(
+    UserLocation location = UserLocation.fromLocationData(
         await LocationService.getInstance().getLocationData());
     _initialCamera = CameraPosition(
       target: location.toLatLng(),

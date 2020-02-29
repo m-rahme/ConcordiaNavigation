@@ -6,13 +6,12 @@ class LocationService {
   static LocationService _instance;
   UserLocation _current;
   Location _location;
-  StreamController<UserLocation> _locationController;
+  StreamController<UserLocation> _locationController = StreamController<UserLocation>();
 
   LocationService._() { // private constructor
-    _locationController = StreamController<UserLocation>();
+    _locationController.add(_current);
     _location = Location();
     setCurrent();
-    _locationController.add(_current);
     registerLocationUpdates();
   }
 
