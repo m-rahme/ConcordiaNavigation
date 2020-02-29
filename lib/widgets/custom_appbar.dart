@@ -11,7 +11,8 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text("ConNavigation"),
       actions: <Widget>[
         Consumer<BuildingsData>(
-          builder: (BuildContext context, buildings, Widget child) => IconButton(
+          builder: (BuildContext context, buildings, Widget child) =>
+              IconButton(
             icon: Icon(Icons.wb_sunny),
             onPressed: () {
               if (buildings.visible) {

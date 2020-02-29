@@ -4,7 +4,6 @@ import 'package:concordia_navigation/storage/campus_polygons.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-
 void main() {
   group('BuildingsData', () {
     BuildingsData buildingsData;
@@ -13,11 +12,15 @@ void main() {
       buildingsData = new BuildingsData();
     });
 
-    test('BuildingsData creates set of Buildings with same size as buildings in CampusPolygons.', () {
+    test(
+        'BuildingsData creates set of Buildings with same size as buildings in CampusPolygons.',
+        () {
       expect(buildingsData.buildings.length, CampusPolygons.buildings.length);
     });
 
-    test('BuildingsData creates set of Polygons with same size as its set of Buildings.', () {
+    test(
+        'BuildingsData creates set of Polygons with same size as its set of Buildings.',
+        () {
       expect(buildingsData.polygons.length, buildingsData.buildings.length);
     });
 
@@ -30,7 +33,5 @@ void main() {
       buildingsData.showOutlines();
       expect(buildingsData.polygons.length, isNonZero);
     });
-
   });
-  
 }

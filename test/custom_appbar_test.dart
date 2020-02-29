@@ -1,10 +1,8 @@
-
 import 'package:flutter_test/flutter_test.dart';
 import './test_app_widget.dart';
 
 void main() {
   group('Custom Appbar', () {
-
     testWidgets('CustomAppBar creates AppBar', (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
 
