@@ -3,26 +3,43 @@ import 'package:location/location.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 
 class LocationService {
-  UserLocation _current = UserLocation.sgw();
-  Location _location = Location();
-  StreamController<UserLocation> _locationController =
-      StreamController<UserLocation>();
+  static LocationService _instance;
+  UserLocation _current;
+  Location _location;
+  StreamController<UserLocation> _locationController;
 
-  LocationService() {
+  LocationService._() { // private constructor
+    _locationController = StreamController<UserLocation>();
+    _location = Location();
+    setCurrent();
     _locationController.add(_current);
     registerLocationUpdates();
+  }
+
+  static getInstance() {
+    if (_instance == null) {
+      _instance = LocationService._();
+    }
+    return _instance;
   }
 
   Stream<UserLocation> get stream => _locationController.stream;
 
   Future<UserLocation> getLocation() async {
     try {
-      _current = new UserLocation.fromData(await _location.getLocation());
+      loc = await _location.getLocation();
     } catch (e) {
       print('Location Service Error: $e');
     }
 
-    return _current;
+    return loc;
+  }
+
+  void setCurrent() async {
+    Future<LocationData> future = getLocationData();
+    future.then((value) {
+      _current = new UserLocation.fromLocationData(value);
+    });
   }
 
   void registerLocationUpdates() {

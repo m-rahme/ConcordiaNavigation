@@ -19,7 +19,7 @@ void main() {
   runApp(MultiProvider(
     providers: [
       StreamProvider<UserLocation>(
-        create: (context) => LocationService().stream,
+        create: (context) => LocationService.getInstance().stream,
         initialData: UserLocation.sgw(),
       ),
       ChangeNotifierProvider<MapData>(
