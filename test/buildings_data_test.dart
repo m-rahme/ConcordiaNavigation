@@ -1,8 +1,6 @@
-import 'package:concordia_navigation/models/building.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/storage/campus_polygons.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   group('BuildingsData', () {
