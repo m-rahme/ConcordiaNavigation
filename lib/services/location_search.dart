@@ -6,7 +6,6 @@ import 'package:concordia_navigation/providers/map_data.dart';
 class LocationSearch extends SearchDelegate {
   LatLng sgw = LatLng(45.495944, -73.578075);
   LatLng loyola = LatLng(45.4582, -73.6405);
-  String mode = "Driving";
 
   @override
   Widget buildSuggestions(BuildContext context) {
@@ -20,7 +19,17 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                mapData.animateTo(45.496676, -73.578760);
+                Provider.of<MapData>(context, listen: false)
+                    .controllerDestination
+                    .text = "SGW, Montreal";
+                Provider.of<MapData>(context, listen: false)
+                    .controllerStaring
+                    .text = "Current Location";
+                mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeEnd(sgw);
+                mapData.changeMode("driving");
+
+                Navigator.pushNamed(context, '/directions');
               },
             );
           },
@@ -39,12 +48,11 @@ class LocationSearch extends SearchDelegate {
                 Provider.of<MapData>(context, listen: false)
                     .controllerStaring
                     .text = "Current Location";
-                Provider.of<MapData>(context, listen: false).start = sgw;
-                Provider.of<MapData>(context, listen: false).end = loyola;
-                Provider.of<MapData>(context, listen: false).mode = mode;
+                mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeEnd(loyola);
+                mapData.changeMode("driving");
 
                 Navigator.pushNamed(context, '/directions');
-//                mapData.animateTo(45.4582, -73.6405);
               },
             );
           },

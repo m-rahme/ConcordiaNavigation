@@ -10,9 +10,51 @@ class MapData extends ChangeNotifier {
     return _completer;
   }
 
-  LatLng start;
-  LatLng end;
-  String mode;
+  LatLng _currentLocation;
+
+  LatLng _start;
+  LatLng _end;
+  String _mode;
+
+  MapData() {
+    _mode = "driving";
+  }
+
+  void changeMode(mode) {
+    _mode = mode;
+    notifyListeners();
+  }
+
+  void changeStart(start) {
+    _start = start;
+    notifyListeners();
+  }
+
+  void changeEnd(end) {
+    _end = end;
+    notifyListeners();
+  }
+
+  void changeCurrentLocation(current) {
+    _currentLocation = current;
+    notifyListeners();
+  }
+
+  LatLng get getCurrentLocation {
+    return _currentLocation;
+  }
+
+  String get getMode {
+    return _mode;
+  }
+
+  LatLng get getStart {
+    return _start;
+  }
+
+  LatLng get getEnd {
+    return _end;
+  }
 
   final controllerStaring = TextEditingController();
   final controllerDestination = TextEditingController();

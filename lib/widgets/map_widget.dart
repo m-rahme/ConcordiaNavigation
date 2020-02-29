@@ -31,9 +31,10 @@ class _MapWidgetState extends State<MapWidget> {
   CameraPosition _initialCamera;
   List<Polyline> allPolylines = [];
   PolylinePoints points = new PolylinePoints();
+  var _location;
   List<PointLatLng> result = [];
 
-  Future<void> setInitialCamera() async {
+  Future setInitialCamera() async {
     var location = await LocationService().getLocation();
     _initialCamera = CameraPosition(
       target: location.toLatLng(),
@@ -41,8 +42,8 @@ class _MapWidgetState extends State<MapWidget> {
       tilt: CAMERA_TILT,
       bearing: CAMERA_BEARING,
     );
+    return location;
   }
-
 
 //  void getDirectionData() async {
 //    allPolylines = [];
@@ -75,7 +76,8 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
-    setInitialCamera();
+    Future location = setInitialCamera();
+    location.then((value) => _location = value);
     SizeConfig();
     //*****UNCOMMENT BELLOW FOR DARK MAP*****
     //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
@@ -86,6 +88,12 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
+    print("Hi");
+    if (_location != null) {
+      print("HEEELLLLLLLLLLLLLOOOOOOOO");
+      Provider.of<MapData>(context, listen: false)
+          .changeCurrentLocation(_location.toLatLng());
+    }
     SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
@@ -150,8 +158,8 @@ class _MapWidgetState extends State<MapWidget> {
             ),
             child: FloatingActionButton(
               onPressed: () {
-                Provider.of<MapData>(context, listen: false).animateTo(
-                    pos.latitude, pos.longitude);
+                Provider.of<MapData>(context, listen: false)
+                    .animateTo(pos.latitude, pos.longitude);
               },
               child: Icon(Icons.gps_fixed),
               backgroundColor: Color(0xFFFFFFF8),

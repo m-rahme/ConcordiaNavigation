@@ -12,16 +12,15 @@ class UserLocation {
     this.longitude = locationData.longitude;
   }
 
-  factory UserLocation.SGW() {
+  factory UserLocation.sgw() {
     return UserLocation(45.495944, -73.578075);
   }
 
-  factory UserLocation.LOYOLA() {
+  factory UserLocation.loyola() {
     return UserLocation(45.4582, -73.6405);
   }
 
   LatLng toLatLng() {
     return LatLng(latitude, longitude);
   }
-
 }

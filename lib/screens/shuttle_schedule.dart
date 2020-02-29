@@ -13,8 +13,15 @@ class ShuttleSchedule extends StatelessWidget {
       ),
       body: DataTable(
         columns: [
-          DataColumn(label: Text("SGW to Loyola")),
-          DataColumn(label: Text("Loyola to SGW")),
+          DataColumn(label: Text('SGW to Loyola')),
+        ],
+        rows: [
+          DataRow(
+            selected: true,
+            cells: [
+              DataCell(Text('07:40')),
+            ],
+          ),
         ],
       ),
     );

@@ -3,10 +3,10 @@ import 'package:location/location.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 
 class LocationService {
-  UserLocation _current = UserLocation.SGW();
+  UserLocation _current = UserLocation.sgw();
   Location _location = Location();
   StreamController<UserLocation> _locationController =
-    StreamController<UserLocation>();
+      StreamController<UserLocation>();
 
   LocationService() {
     _locationController.add(_current);
@@ -18,7 +18,7 @@ class LocationService {
   Future<UserLocation> getLocation() async {
     try {
       _current = new UserLocation.fromData(await _location.getLocation());
-    } catch(e) {
+    } catch (e) {
       print('Location Service Error: $e');
     }
 
@@ -39,6 +39,4 @@ class LocationService {
       }
     });
   }
-
-
 }

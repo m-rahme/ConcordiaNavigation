@@ -20,7 +20,7 @@ void main() {
     providers: [
       StreamProvider<UserLocation>(
         create: (context) => LocationService().stream,
-        initialData: UserLocation.SGW(),
+        initialData: UserLocation.sgw(),
       ),
       ChangeNotifierProvider<MapData>(
         create: (context) => MapData(),
