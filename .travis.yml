@@ -5,7 +5,7 @@ branches:
   only:
     - master
     - dev
-    - travis
+    - testing
 language: dart
 
 jobs:
