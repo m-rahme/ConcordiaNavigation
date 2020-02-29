@@ -357,7 +357,9 @@ class _DirectionsPageState extends State<DirectionsPage> {
                         style: TextStyle(color: Colors.white, fontSize: 15.0),
                       ),
                       InkWell(
-                        onTap: () {},
+                        onTap: () {
+                          Navigator.pushNamed(context, '/shuttle');
+                        },
                         child: Text(
                           "SCHEDULE",
                           style: TextStyle(color: Colors.white, fontSize: 15.0),
@@ -370,7 +372,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
               SafeArea(
                 top: false,
                 child: Container(
-                  height: SizeConfig.safeBlockVertical * 9,
+                  height: SizeConfig.safeBlockVertical * 10,
                   width: SizeConfig.screenWidth,
                   child: Column(
                     children: <Widget>[
@@ -380,16 +382,17 @@ class _DirectionsPageState extends State<DirectionsPage> {
                             child: ShuttleTile(),
                           ),
                           Container(
-                            padding: const EdgeInsets.only(right: 30.0),
-                            height: SizeConfig.safeBlockVertical * 4,
+                            padding:
+                                const EdgeInsets.only(right: 30.0, top: 15.0),
+                            height: SizeConfig.safeBlockVertical * 6,
                             width: SizeConfig.safeBlockHorizontal * 20,
                             child: Column(
                               children: <Widget>[
                                 Text(
-                                  "15mins",
+                                  "20mins",
                                   style: TextStyle(color: Color(0xFF76C807)),
                                 ),
-                                Text("5km"),
+                                Text("8.6km"),
                               ],
                             ),
                           ),

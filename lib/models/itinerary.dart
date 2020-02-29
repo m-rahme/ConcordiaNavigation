@@ -27,7 +27,8 @@ class Itinerary {
         for (int i = 0; i < _length; i++) {
           String s1 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
                   ["html_instructions"]
-              .replaceAll(RegExp(r"(<\/?\w+\/?>)"), "");
+              .replaceAll(
+                  RegExp(r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'), ' ');
           String s2 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
               ["duration"]["text"];
           String s3 = _parsedJson["routes"][0]["legs"][0]["steps"][i]

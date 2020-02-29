@@ -23,7 +23,8 @@ class MessageLookup extends MessageLookupByLibrary {
   static _notInlinedMessages(_) => <String, Function>{
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
-        "interest": MessageLookupByLibrary.simpleMessage("Interest"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings")
+        "interest": MessageLookupByLibrary.simpleMessage("Outdoor Interest"),
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "shuttle": MessageLookupByLibrary.simpleMessage("Shuttle Schedule")
       };
 }

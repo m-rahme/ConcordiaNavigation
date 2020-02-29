@@ -11,26 +11,32 @@ class ShuttleData extends ChangeNotifier {
 
   String getNextShuttle() {
     var now = new DateTime.now();
-    var length = now.weekday == 5
-        ? _json[campus]['5'].length
-        : _json[campus]['1'].length;
-    var day = now.weekday.toString();
+    if (now.weekday == 7 ||
+        now.weekday == 6 ||
+        (now.weekday == 5 && now.hour * 100 > 1950)) {
+      return "Check Shuttle Schedule for More Info";
+    } else {
+      var length = now.weekday == 5
+          ? _json[campus]['5'].length
+          : _json[campus]['1'].length;
+      var day = now.weekday.toString();
 
-    String time;
-    for (var i = 0; i < length; i++) {
-      if (int.parse(_json[campus][day][i]) >= (now.hour * 100) + now.minute) {
-        time = _json[campus][day][i];
-        break;
+      String shuttleTime;
+
+      for (var i = 0; i < length; i++) {
+        if (int.parse(_json[campus][day][i]) >= (now.hour * 100) + now.minute) {
+          shuttleTime = _json[campus][day][i];
+          break;
+        }
       }
+      var timeList = shuttleTime.split('');
+      return "Next Shuttle Bus at: " +
+          timeList[0] +
+          timeList[1] +
+          ":" +
+          timeList[2] +
+          timeList[3];
     }
-    var timeList = time.split('');
-    print(timeList);
-    return "Next Shuttle Bus at: " +
-        timeList[0] +
-        timeList[1] +
-        ":" +
-        timeList[2] +
-        timeList[3];
   }
 
   void loadJson() {

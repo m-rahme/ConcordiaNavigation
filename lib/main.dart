@@ -13,6 +13,7 @@ import 'providers/map_data.dart';
 import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/schedule.dart';
+import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
 void main() {
   runApp(MultiProvider(
@@ -58,6 +59,7 @@ class App extends StatelessWidget {
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
         '/directions': (context) => DirectionsPage(),
+        '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),

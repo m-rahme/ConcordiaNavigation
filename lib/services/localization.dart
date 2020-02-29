@@ -57,6 +57,15 @@ class ConcordiaLocalizations {
       locale: localeName,
     );
   }
+
+  String get shuttle {
+    return Intl.message(
+      'Shuttle Schedule',
+      name: 'shuttle',
+      desc: 'Shuttle Scedule',
+      locale: localeName,
+    );
+  }
 }
 
 class ConcordiaLocalizationsDelegate

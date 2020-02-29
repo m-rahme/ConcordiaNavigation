@@ -23,5 +23,11 @@
     "description": "Settings",
     "type": "text",
     "placeholders": {}
+  },
+  "shuttle": "Shuttle Schedule",
+  "@shuttle": {
+    "description": "Shuttle Schedule",
+    "type": "text",
+    "placeholders": {}
   }
 }

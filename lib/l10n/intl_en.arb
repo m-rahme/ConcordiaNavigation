@@ -18,5 +18,10 @@
   "@settings": {
     "description": "Settings",
     "type": "text"
-  }
+  },
+  "shuttle": "Shuttle Schedule",
+    "@shuttle": {
+      "description": "Shuttle Schedule",
+      "type": "text"
+    },
 }
