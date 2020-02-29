@@ -3,6 +3,7 @@ import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/models/size_config.dart';
 import 'package:concordia_navigation/services/location_service.dart';
+import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
@@ -88,53 +89,33 @@ class _MapWidgetState extends State<MapWidget> {
             onMapCreated: (controller) async {
               _completer.complete(controller);
             }),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 66,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                Itinerary(SGW, LOYOLA, "driving");
-                _campus
-                    ? () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(SGW.latitude, SGW.longitude);
-                        _campus = false;
-                      }()
-                    : () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(LOYOLA.latitude, LOYOLA.longitude);
-                        _campus = true;
-                      }();
-              },
-              child: Icon(Icons.swap_calls),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
-          ),
+        FloatingMapButton(
+          top: SizeConfig.safeBlockVertical * 66,
+          left: SizeConfig.safeBlockHorizontal * 83,
+          icon: Icon(Icons.swap_calls),
+          onClick: () {
+            Itinerary(SGW, LOYOLA, "driving");
+            _campus
+                ? () {
+              Provider.of<MapData>(context, listen: false)
+                  .animateTo(SGW.latitude, SGW.longitude);
+              _campus = false;
+            }()
+                : () {
+              Provider.of<MapData>(context, listen: false)
+                  .animateTo(LOYOLA.latitude, LOYOLA.longitude);
+              _campus = true;
+            }();
+          },
         ),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 75,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                Provider.of<MapData>(context, listen: false)
-                    .animateTo(pos.latitude, pos.longitude);
-              },
-              child: Icon(Icons.gps_fixed),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
-          ),
+        FloatingMapButton(
+          top: SizeConfig.safeBlockVertical * 75,
+          left: SizeConfig.safeBlockHorizontal * 83,
+          icon: Icon(Icons.gps_fixed),
+          onClick: () {
+            Provider.of<MapData>(context, listen: false).animateTo(
+                pos.latitude, pos.longitude);
+          },
         ),
       ],
     );
