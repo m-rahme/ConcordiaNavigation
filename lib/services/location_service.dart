@@ -25,7 +25,8 @@ class LocationService {
 
   Stream<UserLocation> get stream => _locationController.stream;
 
-  Future<UserLocation> getLocation() async {
+  Future<LocationData> getLocationData() async {
+    LocationData loc;
     try {
       loc = await _location.getLocation();
     } catch (e) {
@@ -49,7 +50,7 @@ class LocationService {
         // listen to the onLocationChanged stream and emit over our controller
         _location.onLocationChanged().listen((position) {
           if (position != null) {
-            _current = new UserLocation.fromData(position);
+            _current = new UserLocation.fromLocationData(position);
             _locationController.add(_current);
           }
         });

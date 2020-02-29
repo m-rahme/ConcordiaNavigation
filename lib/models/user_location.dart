@@ -7,7 +7,7 @@ class UserLocation {
 
   UserLocation(this.latitude, this.longitude);
 
-  UserLocation.fromData(LocationData locationData) {
+  UserLocation.fromLocationData(LocationData locationData) {
     this.latitude = locationData.latitude;
     this.longitude = locationData.longitude;
   }
