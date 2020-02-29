@@ -19,12 +19,8 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                Provider.of<MapData>(context, listen: false)
-                    .controllerDestination
-                    .text = "SGW, Montreal";
-                Provider.of<MapData>(context, listen: false)
-                    .controllerStaring
-                    .text = "Current Location";
+                mapData.controllerDestination.text = "SGW, Montreal";
+                mapData.controllerStaring.text = "Current Location";
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);
@@ -43,12 +39,8 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                Provider.of<MapData>(context, listen: false)
-                    .controllerDestination
-                    .text = "Loyola Campus, Montreal";
-                Provider.of<MapData>(context, listen: false)
-                    .controllerStaring
-                    .text = "Current Location";
+                mapData.controllerDestination.text = "Loyola Campus, Montreal";
+                mapData.controllerStaring.text = "Current Location";
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('loyola');
                 mapData.changeEnd(loyola);
