@@ -14,6 +14,7 @@ import 'package:provider/provider.dart';
 
 import 'building_widgets/building_marker.dart';
 import 'buildingModels/building_list.dart';
+import 'buildingModels/building_information.dart';
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
@@ -41,6 +42,7 @@ class _MapWidgetState extends State<MapWidget> {
   String error;
 
   BuildingList buildingList = BuildingList();
+  List<BuildingInformation> buildings;
   Set<Marker> setOfMarkers = {};
 
   @override
@@ -52,6 +54,7 @@ class _MapWidgetState extends State<MapWidget> {
 //    rootBundle.loadString('assets/map_style.txt').then((string) {
 //      _mapStyle = string;
 //    });
+    buildings = buildingList.getListOfBuildings();
     initPlatformState();
     _locationSubscription =
         _location.onLocationChanged().listen((newLocalData) {
@@ -90,13 +93,17 @@ class _MapWidgetState extends State<MapWidget> {
     /*
     markers created here
      */
-    if(buildingList.getListOfBuildings().length <= 58){
+    if (buildings.length <= 58) {
       buildingList.readBuildingFile();
-      print(buildingList.getListOfBuildings().length);
-      for(int i = 0; i<58; i++){
-        BuildingMarker buildingMarker = BuildingMarker(
-            building: buildingList.getListOfBuildings().elementAt(i),
-            bContext: context);
+      while (buildings.length == 0) {
+        return Container(
+          width: 0,
+          height: 0,
+        );
+      }
+      for (int i = 0; i < 58; i++) {
+        BuildingMarker buildingMarker =
+            BuildingMarker(building: buildings.elementAt(i), bContext: context);
         setOfMarkers.add(buildingMarker.getMarker());
       }
     }
@@ -111,10 +118,7 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
-
-            markers:
-            Set.of(setOfMarkers),
-
+            markers: Set.of(setOfMarkers),
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCameraLocation,
