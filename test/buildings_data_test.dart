@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/providers/buildings_data.dart';
-import 'package:concordia_navigation/storage/campus_polygons.dart';
+import 'package:concordia_navigation/storage/campus_buildings.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -13,7 +13,7 @@ void main() {
     test(
         'BuildingsData creates set of Buildings with same size as buildings in CampusPolygons.',
         () {
-      expect(buildingsData.buildings.length, CampusPolygons.buildings.length);
+      expect(buildingsData.buildings.length, CampusBuildings.buildings.length);
     });
 
     test(

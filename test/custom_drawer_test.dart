@@ -13,7 +13,7 @@ void main() {
       await tester.dragFrom(
           tester.getTopLeft(find.byType(MaterialApp)), Offset(300, 0));
       await tester.pumpAndSettle();
-      final drawerTitle = find.text('ConNavigator');
+      final drawerTitle = find.text('ConNavigation');
       expect(drawerTitle, findsOneWidget);
     });
   });

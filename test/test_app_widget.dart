@@ -1,6 +1,6 @@
 import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/services/localization.dart';
-import 'package:concordia_navigation/widgets/custom_appbar.dart';
+import 'package:concordia_navigation/widgets/homepage_appbar.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:concordia_navigation/widgets/map_widget.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +22,7 @@ Widget testAppWidget = MultiProvider(
         const Locale('fr', ''),
       ],
       home: Scaffold(
-        appBar: CustomAppBar(),
+        appBar: HomePageAppBar(),
         drawer: CustomDrawer(),
         body: MapWidget(),
       ),

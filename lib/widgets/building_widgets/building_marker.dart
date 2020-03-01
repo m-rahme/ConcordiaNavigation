@@ -27,11 +27,69 @@ class BuildingMarker {
             context: bContext,
             builder: (builder) {
               return Container(
-                height: SizeConfig.safeBlockVertical * 27,
-                width: SizeConfig.screenWidth,
+                height: SizeConfig.safeBlockVertical * 30,
+                width: SizeConfig.screenWidth * 100,
                 color: whiteColor,
                 child: Column(
                   children: <Widget>[
+                    Row(
+                      children: <Widget>[
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.only(top: 15.0, left: 15.0),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 63,
+                                height: SizeConfig.safeBlockVertical * 2,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(
+                                    bottom: 0.0,
+                                    left: 0.0,
+                                  ),
+                                  child: Text(
+                                    building.getBuildingAddress(),
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 15.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(
+                                top: 20.0,
+                              ),
+                              child: Container(
+                                width: SizeConfig.safeBlockHorizontal * 30,
+                                height: SizeConfig.safeBlockVertical * 5,
+                                child: RaisedButton(
+                                  shape: RoundedRectangleBorder(
+                                    borderRadius:
+                                        new BorderRadius.circular(10.0),
+                                  ),
+                                  onPressed: () {},
+                                  color: greenColor,
+                                  textColor: whiteColor,
+                                  child: Text(
+                                    "Directions",
+                                    style: GoogleFonts.raleway(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 12.0,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
@@ -40,71 +98,18 @@ class BuildingMarker {
                           children: <Widget>[
                             Padding(
                               padding:
-                                  const EdgeInsets.only(top: 15.0, left: 15.0),
+                                  const EdgeInsets.only(top: 5.0, left: 15.0),
                               child: Container(
-                                width: SizeConfig.safeBlockHorizontal * 65,
-                                height: SizeConfig.safeBlockVertical * 5,
+                                width: SizeConfig.safeBlockHorizontal * 90,
+                                height: SizeConfig.safeBlockVertical * 7,
                                 child: Padding(
                                   padding: const EdgeInsets.only(
-                                      top: 4.0, left: 8.0),
+                                      top: 0.0, left: 0.0),
                                   child: Text(
                                     building.getBuildingName(),
                                     style: GoogleFonts.raleway(
                                       fontWeight: FontWeight.bold,
-                                      fontSize: 22.0,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ),
-                            Row(
-                              children: <Widget>[
-                                Padding(
-                                  padding: const EdgeInsets.only(
-                                      top: 5.0, left: 15.0),
-                                  child: Container(
-                                    width: SizeConfig.safeBlockHorizontal * 65,
-                                    height: SizeConfig.safeBlockVertical * 4,
-                                    child: Padding(
-                                      padding: const EdgeInsets.only(
-                                        bottom: 8.0,
-                                        left: 8.0,
-                                      ),
-                                      child: Text(
-                                        building.getBuildingAddress(),
-                                        style: GoogleFonts.raleway(
-                                          fontWeight: FontWeight.w400,
-                                          fontSize: 15.0,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        Column(
-                          children: <Widget>[
-                            Padding(
-                              padding:
-                                  const EdgeInsets.only(top: 10.0, right: 20.0),
-                              child: Container(
-                                width: SizeConfig.safeBlockHorizontal * 25,
-                                height: SizeConfig.safeBlockVertical * 5,
-                                child: RaisedButton(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius:
-                                        new BorderRadius.circular(10.0),
-                                  ),
-                                  onPressed: () {},
-                                  color: Color(0xFF76C807),
-                                  textColor: Colors.white,
-                                  child: Text(
-                                    "Directions",
-                                    style: GoogleFonts.raleway(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 12.0,
+                                      fontSize: 20.0,
                                     ),
                                   ),
                                 ),
@@ -124,13 +129,13 @@ class BuildingMarker {
                             children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 25.0, left: 23.0),
+                                    top: 15.0, left: 23.0),
                                 child: Container(
                                   width: SizeConfig.safeBlockHorizontal * 15,
                                   height: SizeConfig.safeBlockVertical * 7,
                                   child: Icon(
                                     Icons.access_time,
-                                    color: Color(0xFF76C807),
+                                    color: greenColor,
                                     size: 55.0,
                                   ),
                                 ),
@@ -141,10 +146,7 @@ class BuildingMarker {
                             children: <Widget>[
                               Padding(
                                 padding: const EdgeInsets.only(
-                                    top: 10.0,
-                                    bottom: 8.0,
-                                    right: 8.0,
-                                    left: 8.0),
+                                    bottom: 10.0, right: 8.0, left: 8.0),
                                 child: Container(
                                   width: SizeConfig.safeBlockHorizontal * 75,
                                   height: SizeConfig.safeBlockVertical * 10,
