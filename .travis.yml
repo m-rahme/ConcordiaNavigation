@@ -5,7 +5,7 @@ branches:
   only:
     - master
     - dev
-    - travis
+    - testing
 language: dart
 
 jobs:
@@ -34,7 +34,6 @@ jobs:
       dist: trusty
       language: bash
       script:
-        - ./flutter/bin/flutter format -n --set-exit-if-changed .
         - ./flutter/bin/flutter test
 
 
