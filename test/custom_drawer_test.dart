@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import './test_app_widget.dart';
@@ -13,7 +14,7 @@ void main() {
       await tester.dragFrom(
           tester.getTopLeft(find.byType(MaterialApp)), Offset(300, 0));
       await tester.pumpAndSettle();
-      final drawerTitle = find.text('ConNavigation');
+      final drawerTitle = find.byType(CustomDrawer);
       expect(drawerTitle, findsOneWidget);
     });
   });
