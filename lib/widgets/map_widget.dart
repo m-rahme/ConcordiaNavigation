@@ -68,9 +68,7 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
-    /*
-    markers created here
-     */
+    ///Create markers here
     if (buildings.length <= 58) {
       buildingList.readBuildingFile();
       while (buildings.length == 0) {
