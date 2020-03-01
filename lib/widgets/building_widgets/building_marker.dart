@@ -1,9 +1,9 @@
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:concordia_navigation/widgets/buildingModels/building_information.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-
-import '../../models/size_config.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 
 class BuildingMarker {
   final BuildingInformation building;
@@ -29,7 +29,7 @@ class BuildingMarker {
               return Container(
                 height: SizeConfig.safeBlockVertical * 27,
                 width: SizeConfig.screenWidth,
-                color: Color(0xFFFFFFF8),
+                color: whiteColor,
                 child: Column(
                   children: <Widget>[
                     Row(

@@ -4,7 +4,6 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/widgets/floating_map_button.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
@@ -49,6 +48,7 @@ class _MapWidgetState extends State<MapWidget> {
     Future location = setInitialCamera();
     location.then((value) => _location = value);
     SizeConfig();
+    buildings = buildingList.getListOfBuildings();
   }
 
   @override
