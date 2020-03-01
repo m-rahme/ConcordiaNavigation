@@ -1,5 +1,6 @@
 import 'package:flutter/widgets.dart';
 
+//In this class we are getting the exact screen width and height.
 class SizeConfig {
   static MediaQueryData _mediaQueryData;
   static double screenWidth;

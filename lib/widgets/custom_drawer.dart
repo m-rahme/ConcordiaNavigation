@@ -1,14 +1,16 @@
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:provider/provider.dart';
 
+//Custom drawer used in the app.
 class CustomDrawer extends StatelessWidget {
   Widget _expendTile() {
     return Theme(
       data: ThemeData(
-        accentColor: Color(0xFF73C700),
+        accentColor: greenColor,
       ),
       child: ExpansionTile(
         leading: Icon(Icons.map),
@@ -84,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
               top: 42.5,
             ),
             decoration: BoxDecoration(
-              color: Color(0xFFFFFFF8),
+              color: offWhiteColor,
             ),
             child: ListTile(
               title: Text(
@@ -92,7 +94,7 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF76C807),
+                  color: greenColor,
                 ),
               ),
               onTap: () {
@@ -101,18 +103,18 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: Container(
-              color: Color(0xFFF0F0F0),
+              color: lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: _expendTile(),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.calendar_today),
               title: Text(
@@ -126,7 +128,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.location_on),
               title: Text(
@@ -140,7 +142,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.account_circle),
               title: Text(
@@ -154,7 +156,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.settings),
               title: Text(
@@ -168,14 +170,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             child: Container(
-              color: Color(0xFFF0F0F0),
+              color: lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: offWhiteColor,
             height: 570,
           ),
         ],

@@ -1,28 +1,18 @@
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/models/size_config.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//import 'package:flutter/services.dart' show rootBundle;
 import 'package:provider/provider.dart';
-import 'package:concordia_navigation/models/itinerary.dart';
-import 'package:flutter_polyline_points/flutter_polyline_points.dart';
+import 'package:concordia_navigation/storage/app_constants.dart';
 
-const double CAMERA_ZOOM = 16;
-const double CAMERA_TILT = 50;
-const double CAMERA_BEARING = 30;
-const LatLng SGW = LatLng(45.495944, -73.578075);
-const LatLng LOYOLA = LatLng(45.4582, -73.6405);
-bool _campus = true;
+import 'floating_map_button.dart';
 
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//String _mapStyle;
-
+//This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
   @override
   _MapWidgetState createState() => _MapWidgetState();
@@ -30,9 +20,7 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   CameraPosition _initialCamera;
-  List<Polyline> allPolylines = [];
-  PolylinePoints points = new PolylinePoints();
-  List<PointLatLng> result = [];
+  bool _campus = true;
   var _location;
 
   Future setInitialCamera() async {
@@ -82,7 +70,6 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
-            polylines: Set.from(allPolylines),
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCamera,
@@ -94,16 +81,15 @@ class _MapWidgetState extends State<MapWidget> {
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
-            Itinerary(SGW, LOYOLA, "driving");
             _campus
                 ? () {
               Provider.of<MapData>(context, listen: false)
-                  .animateTo(SGW.latitude, SGW.longitude);
+                  .animateTo(sgw.latitude, sgw.longitude);
               _campus = false;
             }()
                 : () {
               Provider.of<MapData>(context, listen: false)
-                  .animateTo(LOYOLA.latitude, LOYOLA.longitude);
+                  .animateTo(loyola.latitude, loyola.longitude);
               _campus = true;
             }();
           },

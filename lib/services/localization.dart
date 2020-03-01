@@ -2,6 +2,7 @@ import 'package:intl/intl.dart';
 import '../l10n/messages_all.dart';
 import 'package:flutter/material.dart';
 
+//Localization for French/English Support
 class ConcordiaLocalizations {
   ConcordiaLocalizations(this.localeName);
 

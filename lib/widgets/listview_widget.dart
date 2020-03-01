@@ -1,11 +1,13 @@
 import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/models/size_config.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:provider/provider.dart';
 import 'package:async/async.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//This widget is where the directions will be displayed in the directions page.
 class ListViewWidget extends StatefulWidget {
   @override
   _ListViewWidgetState createState() => _ListViewWidgetState();
@@ -14,7 +16,10 @@ class ListViewWidget extends StatefulWidget {
 class _ListViewWidgetState extends State<ListViewWidget> {
   @override
   Widget build(BuildContext context) {
+    ///Fetch transit mode
     final _mode = Provider.of<MapData>(context);
+
+    ///Memoizer used to optimize the List Builder
     final AsyncMemoizer _memoizer = AsyncMemoizer();
     _fetchData() {
       return _memoizer.runOnce(() async {
@@ -54,10 +59,9 @@ class _ListViewWidgetState extends State<ListViewWidget> {
                     String key = itinerary.data.keys.elementAt(index);
                     return Container(
                       decoration: BoxDecoration(
-                        color: Color(0xFFFAFAFA),
+                        color: offWhiteColor,
                         border: Border(
-                          bottom:
-                              BorderSide(width: 1.0, color: Color(0xFFF0F0F0)),
+                          bottom: BorderSide(width: 1.0, color: lightGreyColor),
                         ),
                       ),
                       child: ListTile(
@@ -70,7 +74,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
                           style: GoogleFonts.raleway(
                             fontSize: 17.0,
                             fontWeight: FontWeight.w600,
-                            color: Color(0xFF000000),
+                            color: blackColor,
                           ),
                         ),
                         subtitle: Text(
@@ -82,7 +86,7 @@ class _ListViewWidgetState extends State<ListViewWidget> {
                           style: GoogleFonts.raleway(
                             fontSize: 15.0,
                             fontWeight: FontWeight.w400,
-                            color: Color(0xFF000000),
+                            color: blackColor,
                           ),
                         ),
                       ),

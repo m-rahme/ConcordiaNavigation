@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/shuttle_data.dart';
+import 'package:concordia_navigation/services/shuttle_data.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';

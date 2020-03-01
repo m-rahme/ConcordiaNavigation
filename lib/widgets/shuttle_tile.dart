@@ -1,10 +1,12 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/models/size_config.dart';
-import 'package:concordia_navigation/models/shuttle_data.dart';
+import 'package:concordia_navigation/services/size_config.dart';
+import 'package:concordia_navigation/services/shuttle_data.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+//Tile with shuttle information used in the shuttle widget
 class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -17,7 +19,7 @@ class ShuttleTile extends StatelessWidget {
     }
     return Container(
       decoration: BoxDecoration(
-        color: Color(0xFFFFFFF8),
+        color: offWhiteColor,
       ),
       child: ListTile(
         contentPadding: EdgeInsets.only(
@@ -35,7 +37,7 @@ class ShuttleTile extends StatelessWidget {
           style: GoogleFonts.raleway(
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
-            color: Color(0xFF000000),
+            color: blackColor,
           ),
         ),
         subtitle: Text(
@@ -44,7 +46,7 @@ class ShuttleTile extends StatelessWidget {
           style: GoogleFonts.raleway(
             fontSize: 10.0,
             fontWeight: FontWeight.w600,
-            color: Color(0xFF000000),
+            color: blackColor,
           ),
         ),
       ),

@@ -64,7 +64,7 @@ class MapData extends ChangeNotifier {
     return _campus;
   }
 
-  final controllerStaring = TextEditingController();
+  final controllerStarting = TextEditingController();
   final controllerDestination = TextEditingController();
 
   Future<void> animateTo(double lat, double lng) async {

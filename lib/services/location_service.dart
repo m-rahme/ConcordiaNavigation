@@ -2,13 +2,15 @@ import 'dart:async';
 import 'package:location/location.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 
+///Location Service, implementing the Singleton Design Pattern
 class LocationService {
   static LocationService _instance;
   UserLocation _current;
   Location _location;
   StreamController<UserLocation> _locationController;
 
-  LocationService._() { // private constructor
+  ///Private Constructor
+  LocationService._() {
     _locationController = StreamController<UserLocation>();
     _location = Location();
     setCurrent();
@@ -17,6 +19,7 @@ class LocationService {
   }
 
   static getInstance() {
+    ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
     if (_instance == null) {
       _instance = LocationService._();
     }
@@ -25,6 +28,7 @@ class LocationService {
 
   Stream<UserLocation> get stream => _locationController.stream;
 
+  ///Fetches user location using the Location Package
   Future<LocationData> getLocationData() async {
     LocationData loc;
     try {
@@ -36,6 +40,7 @@ class LocationService {
     return loc;
   }
 
+  ///Sets _current to current user location
   void setCurrent() async {
     Future<LocationData> future = getLocationData();
     future.then((value) {
@@ -43,6 +48,7 @@ class LocationService {
     });
   }
 
+  ///Listen to location changes to continuously update user location on map
   void registerLocationUpdates() {
     // request permission to use location
     _location.requestPermission().then((granted) async {

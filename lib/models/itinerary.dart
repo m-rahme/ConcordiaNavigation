@@ -2,7 +2,9 @@ import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:convert';
 
+//This class is used to generate an an Itinerary from the direction's JSON.
 class Itinerary {
+  ///Safety making sure the itinerary is generated only once.
   bool safety = true;
   LatLng _startDestination;
   LatLng _endDestination;
@@ -11,6 +13,7 @@ class Itinerary {
   Map<String, dynamic> _parsedJson;
   Map<String, Map<String, String>> _itinerary =
       Map<String, Map<String, String>>();
+
   Itinerary(this._startDestination, this._endDestination, this._mode) {
     parseJson();
   }

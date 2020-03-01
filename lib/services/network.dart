@@ -1,5 +1,6 @@
 import 'package:http/http.dart';
 
+//This class is used to send a URL request
 class Network {
   static Future getData(String url) async {
     print('Calling uri: $url');
