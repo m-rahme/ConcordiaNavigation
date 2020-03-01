@@ -8,12 +8,12 @@ import 'package:async/async.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //This widget is where the directions will be displayed in the directions page.
-class ListViewWidget extends StatefulWidget {
+class DirectionsWidget extends StatefulWidget {
   @override
-  _ListViewWidgetState createState() => _ListViewWidgetState();
+  _DirectionsWidgetState createState() => _DirectionsWidgetState();
 }
 
-class _ListViewWidgetState extends State<ListViewWidget> {
+class _DirectionsWidgetState extends State<DirectionsWidget> {
   @override
   Widget build(BuildContext context) {
     ///Fetch transit mode

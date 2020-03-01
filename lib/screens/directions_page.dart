@@ -1,6 +1,6 @@
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:concordia_navigation/widgets/directions_appbar.dart';
-import 'package:concordia_navigation/widgets/listview_widget.dart';
+import 'package:concordia_navigation/widgets/directions_widget.dart';
 import 'package:concordia_navigation/widgets/shuttle_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -24,7 +24,7 @@ class _DirectionsPageState extends State<DirectionsPage> {
           builder: (context) => Column(
             children: <Widget>[
               DirectionsAppBar(),
-              ListViewWidget(),
+              DirectionsWidget(),
               ShuttleWidget(),
             ],
           ),

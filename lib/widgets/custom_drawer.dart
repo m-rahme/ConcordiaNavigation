@@ -90,7 +90,7 @@ class CustomDrawer extends StatelessWidget {
             ),
             child: ListTile(
               title: Text(
-                "ConNavigator",
+                "ConNavigation",
                 style: GoogleFonts.raleway(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,

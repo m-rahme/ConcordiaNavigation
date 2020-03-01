@@ -9,7 +9,6 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
-
 import 'floating_map_button.dart';
 
 //This is the map widget that will be loaded in the home screen.
