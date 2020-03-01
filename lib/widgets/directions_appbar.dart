@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/storage/app_constants.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/services/size_config.dart';
@@ -22,10 +22,10 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
   @override
   void initState() {
     super.initState();
-    DirectionsAppBar._swapCar = blueColor;
-    DirectionsAppBar._swapTransit = whiteColor;
-    DirectionsAppBar._swapWalking = whiteColor;
-    DirectionsAppBar._swapBike = whiteColor;
+    DirectionsAppBar._swapCar = constants.blueColor;
+    DirectionsAppBar._swapTransit = constants.whiteColor;
+    DirectionsAppBar._swapWalking = constants.whiteColor;
+    DirectionsAppBar._swapBike = constants.whiteColor;
   }
 
   @override
@@ -36,7 +36,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
         Provider.of<MapData>(context, listen: false).controllerDestination;
     return Consumer<MapData>(
       builder: (BuildContext context, mapData, Widget child) => Container(
-        color: greenColor,
+        color: constants.greenColor,
         height: SizeConfig.safeBlockVertical * 25,
         width: SizeConfig.screenWidth,
         child: SafeArea(
@@ -49,7 +49,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                 children: <Widget>[
                   IconButton(
                     icon: Icon(Icons.dehaze),
-                    color: Colors.white,
+                    color: constants.whiteColor,
                     onPressed: () {
                       Scaffold.of(context).openDrawer();
                     },
@@ -62,11 +62,14 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         onPressed: () {
                           mapData.changeMode("driving");
                           setState(() {
-                            if (DirectionsAppBar._swapCar == whiteColor) {
-                              DirectionsAppBar._swapCar = blueColor;
-                              DirectionsAppBar._swapTransit = whiteColor;
-                              DirectionsAppBar._swapWalking = whiteColor;
-                              DirectionsAppBar._swapBike = whiteColor;
+                            if (DirectionsAppBar._swapCar ==
+                                constants.whiteColor) {
+                              DirectionsAppBar._swapCar = constants.blueColor;
+                              DirectionsAppBar._swapTransit =
+                                  constants.whiteColor;
+                              DirectionsAppBar._swapWalking =
+                                  constants.whiteColor;
+                              DirectionsAppBar._swapBike = constants.whiteColor;
                             }
                           });
                         },
@@ -77,11 +80,14 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         onPressed: () {
                           mapData.changeMode("transit");
                           setState(() {
-                            if (DirectionsAppBar._swapTransit == whiteColor) {
-                              DirectionsAppBar._swapTransit = blueColor;
-                              DirectionsAppBar._swapCar = whiteColor;
-                              DirectionsAppBar._swapWalking = whiteColor;
-                              DirectionsAppBar._swapBike = whiteColor;
+                            if (DirectionsAppBar._swapTransit ==
+                                constants.whiteColor) {
+                              DirectionsAppBar._swapTransit =
+                                  constants.blueColor;
+                              DirectionsAppBar._swapCar = constants.whiteColor;
+                              DirectionsAppBar._swapWalking =
+                                  constants.whiteColor;
+                              DirectionsAppBar._swapBike = constants.whiteColor;
                             }
                           });
                         },
@@ -92,11 +98,14 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         onPressed: () {
                           mapData.changeMode("walking");
                           setState(() {
-                            if (DirectionsAppBar._swapWalking == whiteColor) {
-                              DirectionsAppBar._swapWalking = blueColor;
-                              DirectionsAppBar._swapCar = whiteColor;
-                              DirectionsAppBar._swapTransit = whiteColor;
-                              DirectionsAppBar._swapBike = whiteColor;
+                            if (DirectionsAppBar._swapWalking ==
+                                constants.whiteColor) {
+                              DirectionsAppBar._swapWalking =
+                                  constants.blueColor;
+                              DirectionsAppBar._swapCar = constants.whiteColor;
+                              DirectionsAppBar._swapTransit =
+                                  constants.whiteColor;
+                              DirectionsAppBar._swapBike = constants.whiteColor;
                             }
                           });
                         },
@@ -107,11 +116,14 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         onPressed: () {
                           mapData.changeMode("bicycling");
                           setState(() {
-                            if (DirectionsAppBar._swapBike == whiteColor) {
-                              DirectionsAppBar._swapBike = blueColor;
-                              DirectionsAppBar._swapCar = whiteColor;
-                              DirectionsAppBar._swapTransit = whiteColor;
-                              DirectionsAppBar._swapWalking = whiteColor;
+                            if (DirectionsAppBar._swapBike ==
+                                constants.whiteColor) {
+                              DirectionsAppBar._swapBike = constants.blueColor;
+                              DirectionsAppBar._swapCar = constants.whiteColor;
+                              DirectionsAppBar._swapTransit =
+                                  constants.whiteColor;
+                              DirectionsAppBar._swapWalking =
+                                  constants.whiteColor;
                             }
                           });
                         },
@@ -120,7 +132,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                   ),
                   IconButton(
                     icon: Icon(Icons.close),
-                    color: whiteColor,
+                    color: constants.whiteColor,
                     onPressed: () {
                       Navigator.pop(context);
                     },
@@ -132,7 +144,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                 height: SizeConfig.safeBlockVertical * 5,
                 width: SizeConfig.safeBlockHorizontal * 75,
                 decoration: BoxDecoration(
-                  color: whiteColor,
+                  color: constants.whiteColor,
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   boxShadow: [
                     BoxShadow(
@@ -155,7 +167,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         style: GoogleFonts.raleway(
                           fontSize: 15.0,
                           fontWeight: FontWeight.w600,
-                          color: blackColor,
+                          color: constants.blackColor,
                         ),
                         controller: _controllerStarting,
                         cursorColor: Colors.blue,
@@ -195,7 +207,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                               _controllerDestination.text;
                           _controllerDestination.text = temp;
                         },
-                        color: whiteColor,
+                        color: constants.whiteColor,
                       ),
                     ),
                   ],
@@ -206,7 +218,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                 height: SizeConfig.safeBlockVertical * 5,
                 width: SizeConfig.safeBlockHorizontal * 75,
                 decoration: BoxDecoration(
-                  color: whiteColor,
+                  color: constants.whiteColor,
                   borderRadius: BorderRadius.all(Radius.circular(10.0)),
                   boxShadow: [
                     BoxShadow(
@@ -229,10 +241,10 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         style: GoogleFonts.raleway(
                           fontSize: 15.0,
                           fontWeight: FontWeight.w600,
-                          color: blackColor,
+                          color: constants.blackColor,
                         ),
                         controller: _controllerDestination,
-                        cursorColor: Colors.blue,
+                        cursorColor: constants.blueColor,
                         keyboardType: TextInputType.text,
                         keyboardAppearance: Brightness.light,
                         textInputAction: TextInputAction.go,

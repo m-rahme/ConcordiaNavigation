@@ -1,6 +1,6 @@
+import 'dart:convert';
 import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:convert';
 
 //This class is used to generate an an Itinerary from the direction's JSON.
 class Itinerary {
@@ -17,6 +17,7 @@ class Itinerary {
   Itinerary(this._startDestination, this._endDestination, this._mode) {
     parseJson();
   }
+
   ///Parses the JSON returned by the Google API so we can build our route on screen, then returns the recommended routes
   Future<Map<String, Map<String, String>>> parseJson() async {
     // Requests the directions from Google API, in directions_service
@@ -33,8 +34,10 @@ class Itinerary {
         for (int i = 0; i < _length; i++) {
           String s1 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
                   ["html_instructions"]
-              .replaceAll( //Regex to replace certain special characters in HTML with whitespace
-                  RegExp(r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'), ' ');
+              .replaceAll(
+                  //Regex to replace certain special characters in HTML with whitespace
+                  RegExp(r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'),
+                  ' ');
           String s2 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
               ["duration"]["text"];
           String s3 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
