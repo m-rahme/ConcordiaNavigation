@@ -14,7 +14,6 @@ import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
-import 'package:concordia_navigation/models/providers.dart';
 
 void main() {
   runApp(MultiProvider(
