@@ -17,20 +17,23 @@ class Itinerary {
   Itinerary(this._startDestination, this._endDestination, this._mode) {
     parseJson();
   }
-
+  ///Parses the JSON returned by the Google API so we can build our route on screen, then returns the recommended routes
   Future<Map<String, Map<String, String>>> parseJson() async {
+    // Requests the directions from Google API, in directions_service
     await DirectionsService.getDirections(_startDestination, _endDestination,
             mode: _mode)
         .then((value) {
       _parsedJson = json.decode(value);
       print(_parsedJson);
+      //JSON contains all recommended routes, any transportation mode changes, and how many steps in the directions.
       _length = _parsedJson["routes"][0]["legs"][0]["steps"].length;
       print(_length);
+      //safety prevents the JSON from being parsed multiple times unnecessarily
       if (safety) {
         for (int i = 0; i < _length; i++) {
           String s1 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
                   ["html_instructions"]
-              .replaceAll(
+              .replaceAll( //Regex to replace certain special characters in HTML with whitespace
                   RegExp(r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'), ' ');
           String s2 = _parsedJson["routes"][0]["legs"][0]["steps"][i]
               ["duration"]["text"];
