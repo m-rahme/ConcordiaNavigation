@@ -104,6 +104,7 @@ class _MapWidgetState extends State<MapWidget> {
               left: SizeConfig.safeBlockHorizontal * 83,
             ),
             child: FloatingActionButton(
+              key: Key('SwitchCampus'),
               onPressed: () {
                 _campus
                     ? () {
