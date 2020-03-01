@@ -1,15 +1,11 @@
-import 'package:concordia_navigation/providers/shuttle_data.dart';
+import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
-import 'package:concordia_navigation/models/user_location.dart';
-import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
-import 'package:concordia_navigation/services/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
-import 'providers/map_data.dart';
 import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/schedule.dart';
@@ -17,21 +13,7 @@ import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
 void main() {
   runApp(MultiProvider(
-    providers: [
-      StreamProvider<UserLocation>(
-        create: (context) => LocationService.getInstance().stream,
-        initialData: UserLocation.sgw(),
-      ),
-      ChangeNotifierProvider<MapData>(
-        create: (context) => MapData(),
-      ),
-      ChangeNotifierProvider<BuildingsData>(
-        create: (context) => BuildingsData(),
-      ),
-      ChangeNotifierProvider<ShuttleData>(
-        create: (_) => ShuttleData(),
-      ),
-    ],
+    providers: providers,
     child: App(),
   ));
 }
