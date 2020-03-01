@@ -3,7 +3,8 @@ import 'package:flutter/foundation.dart';
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 
-//This class is used to parse the shuttle schedule JSON and get the next available shuttle bus.
+///Observer Pattern
+///This class is used to parse the shuttle schedule JSON and get the next available shuttle bus.
 class ShuttleData extends ChangeNotifier {
   var _json;
 

@@ -3,6 +3,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:flutter/material.dart';
 
+///Observer Pattern
+///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
 

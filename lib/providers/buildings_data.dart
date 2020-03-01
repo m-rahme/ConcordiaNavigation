@@ -3,6 +3,8 @@ import 'package:concordia_navigation/storage/campus_buildings.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/widgets.dart';
 
+///Observer Pattern
+///Handles data related to campus buildings, listens to changes and notifies listeners.
 class BuildingsData extends ChangeNotifier {
   final Set<Building> buildings = new Set();
   final Set<Polygon> _polygons = new Set();
