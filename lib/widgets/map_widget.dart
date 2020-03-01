@@ -4,12 +4,17 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/widgets/floating_map_button.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'dart:async';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'floating_map_button.dart';
+
+import 'building_widgets/building_marker.dart';
+import 'buildingModels/building_list.dart';
+import 'buildingModels/building_information.dart';
 
 //This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
@@ -21,6 +26,10 @@ class _MapWidgetState extends State<MapWidget> {
   CameraPosition _initialCamera;
   bool _campus = true;
   var _location;
+
+  BuildingList buildingList = BuildingList();
+  List<BuildingInformation> buildings;
+  Set<Marker> setOfMarkers = {};
 
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
@@ -59,6 +68,24 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
+    /*
+    markers created here
+     */
+    if (buildings.length <= 58) {
+      buildingList.readBuildingFile();
+      while (buildings.length == 0) {
+        return Container(
+          width: 0,
+          height: 0,
+        );
+      }
+      for (int i = 0; i < 58; i++) {
+        BuildingMarker buildingMarker =
+            BuildingMarker(building: buildings.elementAt(i), bContext: context);
+        setOfMarkers.add(buildingMarker.getMarker());
+      }
+    }
+
     return Stack(
       children: <Widget>[
         GoogleMap(
@@ -69,6 +96,7 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
+            markers: Set.of(setOfMarkers),
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCamera,
