@@ -24,6 +24,7 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profile"),
         "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
         "interest": MessageLookupByLibrary.simpleMessage("Interest"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings")
+        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
+        "shuttle": MessageLookupByLibrary.simpleMessage("Shuttle Schedule")
       };
 }

@@ -1,6 +1,7 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class CampusPolygons {
+///Campus Buildings Latitude and Longitude Stored Here.
+class CampusBuildings {
   static const Map<String, List<LatLng>> buildings = {
     "Hbuilding": [
       LatLng(45.49738, -73.57833),

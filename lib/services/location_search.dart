@@ -1,13 +1,19 @@
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 
+/*This class extends Search Delegate class implemented by flutter.
+It will be called when the user clicks on the search button in the Appbar.
+*/
 class LocationSearch extends SearchDelegate {
+  ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
     return ListView(
       children: <Widget>[
         Consumer<MapData>(
+          ///Wrapped in Consumer, listening to Provider **ConcreteObserver**
           builder: (context, mapData, child) {
             return ListTile(
               leading: Icon(Icons.location_city),
@@ -15,12 +21,19 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                mapData.animateTo(45.496676, -73.578760);
+                mapData.controllerDestination.text = "SGW, Montreal";
+                mapData.controllerStarting.text = "Current Location";
+                mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeCampus('sgw');
+                mapData.changeEnd(sgw);
+                mapData.changeMode("driving");
+                Navigator.pushNamed(context, '/directions');
               },
             );
           },
         ),
         Consumer<MapData>(
+          ///Wrapped in Consumer, listening to Provider **ConcreteObserver**
           builder: (context, mapData, child) {
             return ListTile(
               leading: Icon(Icons.location_city),
@@ -28,7 +41,13 @@ class LocationSearch extends SearchDelegate {
               subtitle: Text("Quebec, Canada"),
               onTap: () {
                 Navigator.of(context).pop();
-                mapData.animateTo(45.4582, -73.6405);
+                mapData.controllerDestination.text = "Loyola Campus, Montreal";
+                mapData.controllerStarting.text = "Current Location";
+                mapData.changeStart(mapData.getCurrentLocation);
+                mapData.changeCampus('loyola');
+                mapData.changeEnd(loyola);
+                mapData.changeMode("driving");
+                Navigator.pushNamed(context, '/directions');
               },
             );
           },
@@ -37,6 +56,7 @@ class LocationSearch extends SearchDelegate {
     );
   }
 
+  ///This method adds a return IconButton to return to the homepage.
   @override
   Widget buildLeading(BuildContext context) {
     return IconButton(
@@ -49,6 +69,7 @@ class LocationSearch extends SearchDelegate {
         });
   }
 
+  ///This method add the a clear IconButton to clear user's input.
   @override
   List<Widget> buildActions(BuildContext context) {
     return [
@@ -61,6 +82,8 @@ class LocationSearch extends SearchDelegate {
     ];
   }
 
+  ///This method returns results from user input.
+  ///To be implemented with Google Places.
   @override
   Widget buildResults(BuildContext context) {
     return Container();

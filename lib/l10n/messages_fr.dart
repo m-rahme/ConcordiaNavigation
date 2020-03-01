@@ -24,6 +24,8 @@ class MessageLookup extends MessageLookupByLibrary {
         "profile": MessageLookupByLibrary.simpleMessage("Profil"),
         "schedule": MessageLookupByLibrary.simpleMessage("Horaire"),
         "interest": MessageLookupByLibrary.simpleMessage("Intérêt Extérieur"),
-        "settings": MessageLookupByLibrary.simpleMessage("Paramètres")
+        "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
+        "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
+        "shuttle": MessageLookupByLibrary.simpleMessage("Horaire de la Navette")
       };
 }

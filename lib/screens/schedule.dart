@@ -1,6 +1,8 @@
+import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 
+//User Schedule Screen
 class Schedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -9,15 +11,15 @@ class Schedule extends StatelessWidget {
         title: Text(
           ConcordiaLocalizations.of(context).schedule,
         ),
-        backgroundColor: Color(0xFF73C700),
+        backgroundColor: greenColor,
       ),
       body: Center(
         child: RaisedButton(
           child: Text(
             ConcordiaLocalizations.of(context).schedule,
           ),
-          color: Color(0xFF73C700),
-          textColor: Colors.white,
+          color: greenColor,
+          textColor: whiteColor,
           onPressed: () {
             showDialog(
                 context: context,

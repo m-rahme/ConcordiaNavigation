@@ -1,83 +1,86 @@
-import 'package:concordia_navigation/models/buildings_data.dart';
-import 'package:concordia_navigation/models/map_data.dart';
-import 'package:concordia_navigation/models/size_config.dart';
-import 'package:flutter/foundation.dart';
+import 'dart:async';
+import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
-import 'package:location/location.dart';
-import 'package:flutter/services.dart';
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//import 'package:flutter/services.dart' show rootBundle;
+import 'package:concordia_navigation/models/user_location.dart';
+import 'package:concordia_navigation/providers/buildings_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/size_config.dart';
+import 'package:concordia_navigation/services/location_service.dart';
+import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:provider/provider.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import 'package:concordia_navigation/widgets/building_widgets/building_marker.dart';
+import 'package:concordia_navigation/widgets/buildingModels/building_list.dart';
+import 'package:concordia_navigation/widgets/buildingModels/building_information.dart';
 
-const double CAMERA_ZOOM = 16;
-const double CAMERA_TILT = 50;
-const double CAMERA_BEARING = 30;
-const LatLng SGW = LatLng(45.495944, -73.578075);
-const LatLng LOYOLA = LatLng(45.4582, -73.6405);
-bool _campus = true;
-
-//*****UNCOMMENT BELLOW FOR DARK MAP*****
-//String _mapStyle;
-
+//This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
   @override
   _MapWidgetState createState() => _MapWidgetState();
 }
 
 class _MapWidgetState extends State<MapWidget> {
-  Completer<GoogleMapController> _completer;
-  BuildingsData _buildings;
-  LatLng _currentLocation;
-  CameraPosition _initialCameraLocation;
-  StreamSubscription _locationSubscription;
+  CameraPosition _initialCamera;
+  bool _campus = true;
+  var _location;
 
-  Location _location = new Location();
-  String error;
+  BuildingList buildingList = BuildingList();
+  List<BuildingInformation> buildings;
+  Set<Marker> setOfMarkers = {};
+
+  Future setInitialCamera() async {
+    var location = UserLocation.fromLocationData(
+        await LocationService.getInstance().getLocationData());
+    _initialCamera = CameraPosition(
+      target: location.toLatLng(),
+      zoom: constants.CAMERA_ZOOM,
+      tilt: constants.CAMERA_TILT,
+      bearing: constants.CAMERA_BEARING,
+    );
+    return location;
+  }
 
   @override
   void initState() {
     super.initState();
+    Future location = setInitialCamera();
+    location.then((value) => _location = value);
     SizeConfig();
-    //*****UNCOMMENT BELLOW FOR DARK MAP*****
-    //*****MIGHT IMPLEMENT AUTOMATIC DARK MODE*****
-//    rootBundle.loadString('assets/map_style.txt').then((string) {
-//      _mapStyle = string;
-//    });
-    initPlatformState();
-    _locationSubscription =
-        _location.onLocationChanged().listen((newLocalData) {
-      setState(() {
-        _currentLocation =
-            LatLng(newLocalData.latitude, newLocalData.longitude);
-        _initialCameraLocation = CameraPosition(
-          target: _currentLocation,
-          zoom: CAMERA_ZOOM,
-          tilt: CAMERA_TILT,
-          bearing: CAMERA_BEARING,
-        );
-      });
-    });
-  }
-
-  @override
-  void dispose() {
-    if (_locationSubscription != null) {
-      _locationSubscription.cancel();
-    }
-    super.dispose();
+    buildings = buildingList.getListOfBuildings();
   }
 
   @override
   Widget build(BuildContext context) {
-    print(1);
+    if (_location != null) {
+      Provider.of<MapData>(
+        context,
+        listen: false,
+      ).changeCurrentLocation(_location.toLatLng());
+    }
     SizeConfig().init(context);
-    _completer = Provider.of<MapData>(context).getCompleter;
-    _buildings = Provider.of<MapData>(context).buildings;
+    final _completer = Provider.of<MapData>(context).getCompleter;
+    final _buildings = Provider.of<BuildingsData>(context);
+    final pos = Provider.of<UserLocation>(context);
 
-    while (_initialCameraLocation == null) {
+    while (_initialCamera == null) {
       return Center(child: Text("Loading Map"));
+    }
+
+    ///Create markers here
+    if (buildings.length <= 58) {
+      buildingList.readBuildingFile();
+      while (buildings.length == 0) {
+        return Container(
+          width: 0,
+          height: 0,
+        );
+      }
+      for (int i = 0; i < 58; i++) {
+        BuildingMarker buildingMarker =
+            BuildingMarker(building: buildings.elementAt(i), bContext: context);
+        setOfMarkers.add(buildingMarker.getMarker());
+      }
     }
 
     return Stack(
@@ -90,83 +93,41 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.polygons,
+            markers: Set.of(setOfMarkers),
             indoorViewEnabled: false,
             trafficEnabled: false,
-            initialCameraPosition: _initialCameraLocation,
+            initialCameraPosition: _initialCamera,
             onMapCreated: (controller) async {
               _completer.complete(controller);
-//          controller.setMapStyle(_mapStyle);
             }),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 66,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                _campus
-                    ? () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(SGW.latitude, SGW.longitude);
-                        _campus = false;
-                      }()
-                    : () {
-                        Provider.of<MapData>(context, listen: false)
-                            .animateTo(LOYOLA.latitude, LOYOLA.longitude);
-                        _campus = true;
-                      }();
-              },
-              child: Icon(Icons.swap_calls),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
-          ),
+        FloatingMapButton(
+          top: SizeConfig.safeBlockVertical * 66,
+          left: SizeConfig.safeBlockHorizontal * 83,
+          icon: Icon(Icons.swap_calls),
+          onClick: () {
+            _campus
+                ? () {
+                    Provider.of<MapData>(context, listen: false).animateTo(
+                        constants.sgw.latitude, constants.sgw.longitude);
+                    _campus = false;
+                  }()
+                : () {
+                    Provider.of<MapData>(context, listen: false).animateTo(
+                        constants.loyola.latitude, constants.loyola.longitude);
+                    _campus = true;
+                  }();
+          },
         ),
-        SafeArea(
-          child: Padding(
-            padding: EdgeInsets.only(
-              top: SizeConfig.safeBlockVertical * 75,
-              left: SizeConfig.safeBlockHorizontal * 83,
-            ),
-            child: FloatingActionButton(
-              onPressed: () {
-                Provider.of<MapData>(context, listen: false).animateTo(
-                    _currentLocation.latitude, _currentLocation.longitude);
-              },
-              child: Icon(Icons.gps_fixed),
-              backgroundColor: Color(0xFFFFFFF8),
-              foregroundColor: Color(0xFF656363),
-              elevation: 5.0,
-              heroTag: null,
-            ),
-          ),
+        FloatingMapButton(
+          top: SizeConfig.safeBlockVertical * 75,
+          left: SizeConfig.safeBlockHorizontal * 83,
+          icon: Icon(Icons.gps_fixed),
+          onClick: () {
+            Provider.of<MapData>(context, listen: false)
+                .animateTo(pos.latitude, pos.longitude);
+          },
         ),
       ],
     );
-  }
-
-  initPlatformState() async {
-    LocationData myLocation;
-    try {
-      myLocation = await _location.getLocation();
-      error = "";
-    } on PlatformException catch (e) {
-      if (e.code == 'PERMISSION_DENIED') {
-        debugPrint("Permission Denied");
-        myLocation = null;
-      }
-    }
-    setState(() {
-      _currentLocation = LatLng(myLocation.latitude, myLocation.longitude);
-      _initialCameraLocation = CameraPosition(
-        target: _currentLocation,
-        zoom: CAMERA_ZOOM,
-        tilt: CAMERA_TILT,
-        bearing: CAMERA_BEARING,
-      );
-    });
   }
 }

@@ -1,14 +1,16 @@
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/localization.dart';
-import 'package:concordia_navigation/models/map_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:provider/provider.dart';
 
+//Custom drawer used in the app.
 class CustomDrawer extends StatelessWidget {
   Widget _expendTile() {
     return Theme(
       data: ThemeData(
-        accentColor: Color(0xFF73C700),
+        accentColor: constants.greenColor,
       ),
       child: ExpansionTile(
         leading: Icon(Icons.map),
@@ -39,7 +41,11 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.496676, -73.578760);
               });
         },
@@ -55,7 +61,11 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(),
               ),
               onTap: () {
-                Navigator.of(context).pop();
+//              Navigator.of(context).pop();
+                Navigator.popUntil(
+                  context,
+                  ModalRoute.withName(Navigator.defaultRouteName),
+                );
                 mapData.animateTo(45.4582, -73.6405);
               });
         },
@@ -76,15 +86,15 @@ class CustomDrawer extends StatelessWidget {
               top: 42.5,
             ),
             decoration: BoxDecoration(
-              color: Color(0xFFFFFFF8),
+              color: constants.offWhiteColor,
             ),
             child: ListTile(
               title: Text(
-                "ConNavigator",
+                "ConNavigation",
                 style: GoogleFonts.raleway(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
-                  color: Color(0xFF76C807),
+                  color: constants.greenColor,
                 ),
               ),
               onTap: () {
@@ -93,18 +103,18 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: Container(
-              color: Color(0xFFF0F0F0),
+              color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: _expendTile(),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.calendar_today),
               title: Text(
@@ -118,7 +128,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.location_on),
               title: Text(
@@ -132,7 +142,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.account_circle),
               title: Text(
@@ -146,7 +156,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: ListTile(
               leading: Icon(Icons.settings),
               title: Text(
@@ -160,14 +170,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             child: Container(
-              color: Color(0xFFF0F0F0),
+              color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: Color(0xFFFFFFF8),
+            color: constants.offWhiteColor,
             height: 570,
           ),
         ],

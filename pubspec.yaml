@@ -14,7 +14,7 @@ description: Concordia&#x27;s MiniCap Project - SOEN 390
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.1.0 <3.0.0"
+  sdk: ">=2.2.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -32,6 +32,8 @@ dependencies:
   google_maps_flutter: 0.5.21+17
   location: ^2.5.0
   google_fonts: ^0.3.5
+  flutter_polyline_points:
+  async: ^2.4.0
 
 
 
@@ -39,6 +41,10 @@ dependencies:
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  flutter_driver:
+    sdk: flutter
+  mockito: ^4.1.1
+  test: any
 
 
 # For information on the generic Dart part of this file, see the
@@ -54,7 +60,10 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
+    - assets/campus_buildings_info.txt
     - assets/map_style.txt
+    - assets/logo.png
+    - assets/shuttleSchedule.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

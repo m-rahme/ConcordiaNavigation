@@ -18,5 +18,10 @@
   "@settings": {
     "description": "Settings",
     "type": "text"
+  },
+  "shuttle": "Horaire de la Navette",
+  "@shuttle": {
+    "description": "Horaire de la Navette",
+    "type": "text"
   }
 }

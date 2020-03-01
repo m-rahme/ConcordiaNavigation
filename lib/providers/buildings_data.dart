@@ -1,9 +1,10 @@
 import 'package:concordia_navigation/models/building.dart';
-import 'package:concordia_navigation/storage/campus_polygons.dart';
+import 'package:concordia_navigation/storage/campus_buildings.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 
+///Observer Pattern
+///Handles data related to campus buildings, listens to changes and notifies listeners.
 class BuildingsData extends ChangeNotifier {
   final Set<Building> buildings = new Set();
   final Set<Polygon> _polygons = new Set();
@@ -25,7 +26,7 @@ class BuildingsData extends ChangeNotifier {
 
   void loadBuildings() {
     // todo: parse data from simple json file not dart class
-    CampusPolygons.buildings.forEach((key, value) {
+    CampusBuildings.buildings.forEach((key, value) {
       buildings.add(new Building(key, value));
     });
   }
@@ -38,9 +39,11 @@ class BuildingsData extends ChangeNotifier {
 
   void showOutlines() {
     visible = true;
+    notifyListeners();
   }
 
   void clearOutlines() {
     visible = false;
+    notifyListeners();
   }
 }
