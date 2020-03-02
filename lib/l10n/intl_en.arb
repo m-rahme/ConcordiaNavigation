@@ -1,0 +1,27 @@
+{
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile",
+    "type": "text"
+  },
+  "schedule": "Schedule",
+  "@schedule": {
+    "description": "Schedule",
+    "type": "text"
+  },
+  "interest": "Outdoor Interest",
+    "@interest": {
+      "description": "Outdoor Interest",
+      "type": "text"
+    },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings",
+    "type": "text"
+  },
+  "shuttle": "Shuttle Schedule",
+    "@shuttle": {
+      "description": "Shuttle Schedule",
+      "type": "text"
+    },
+}

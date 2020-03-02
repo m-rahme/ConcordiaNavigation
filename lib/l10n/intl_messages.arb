@@ -1,0 +1,33 @@
+{
+  "@@last_modified": "2020-02-02T18:43:52.788958",
+  "profile": "Profile",
+  "@profile": {
+    "description": "Profile for the user",
+    "type": "text",
+    "placeholders": {}
+  },
+  "schedule": "Schedule",
+  "@schedule": {
+    "description": "Schedule",
+    "type": "text",
+    "placeholders": {}
+  },
+  "interest": "Outdoor Interest",
+  "@interest": {
+    "description": "Outdoor Interest",
+    "type": "text",
+    "placeholders": {}
+      },
+  "settings": "Settings",
+  "@settings": {
+    "description": "Settings",
+    "type": "text",
+    "placeholders": {}
+  },
+  "shuttle": "Shuttle Schedule",
+  "@shuttle": {
+    "description": "Shuttle Schedule",
+    "type": "text",
+    "placeholders": {}
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "profile": "Profil",
+  "@profile": {
+    "description": "Profile",
+    "type": "text"
+  },
+  "schedule": "Horaire",
+  "@schedule": {
+    "description": "Schedule",
+    "type": "text"
+  },
+  "interest": "Intérêt Extérieur",
+  "@interest": {
+  "description": "Outdoor Interest",
+  "type": "text"
+  }
+  "settings": "Paramètres",
+  "@settings": {
+    "description": "Settings",
+    "type": "text"
+  },
+  "shuttle": "Horaire de la Navette",
+  "@shuttle": {
+    "description": "Horaire de la Navette",
+    "type": "text"
+  }
+}
