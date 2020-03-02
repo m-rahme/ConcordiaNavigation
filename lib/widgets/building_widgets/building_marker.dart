@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/storage/app_constants.dart';
-import 'package:concordia_navigation/widgets/buildingModels/building_information.dart';
+import 'package:concordia_navigation/models/buildingModels/building_information.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -41,7 +41,7 @@ class BuildingMarker {
                                   const EdgeInsets.only(top: 15.0, left: 15.0),
                               child: Container(
                                 width: SizeConfig.safeBlockHorizontal * 63,
-                                height: SizeConfig.safeBlockVertical * 2,
+                                height: SizeConfig.safeBlockVertical * 2.5,
                                 child: Padding(
                                   padding: const EdgeInsets.only(
                                     bottom: 0.0,

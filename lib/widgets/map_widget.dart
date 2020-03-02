@@ -11,8 +11,8 @@ import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/widgets/building_widgets/building_marker.dart';
-import 'package:concordia_navigation/widgets/buildingModels/building_list.dart';
-import 'package:concordia_navigation/widgets/buildingModels/building_information.dart';
+import 'package:concordia_navigation/models/buildingModels/building_list.dart';
+import 'package:concordia_navigation/models/buildingModels/building_information.dart';
 
 //This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
