@@ -11,13 +11,13 @@ void main() {
     });
 
     test(
-        'constructor creates set of Buildings with same size as buildings in CampusPolygons.',
+        'constructor creates set of Buildings with same size as buildings in CampusPolygons',
         () {
       expect(buildingsData.buildings.length, CampusBuildings.buildings.length);
     });
 
     test(
-        'constructor creates set of Polygons with same size as its set of Buildings.',
+        'constructor creates set of Polygons with same size as its set of Buildings',
         () {
       expect(buildingsData.polygons.length, buildingsData.buildings.length);
     });
