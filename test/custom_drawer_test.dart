@@ -5,7 +5,7 @@ import './test_app_widget.dart';
 
 void main() {
   group('Custom Drawer', () {
-    testWidgets('CustomDrawer creates Drawer', (WidgetTester tester) async {
+    testWidgets('slides custom drawer open', (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
 
       // Wait for LocalizationsDelegate's futures

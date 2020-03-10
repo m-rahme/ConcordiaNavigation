@@ -4,7 +4,7 @@ import './test_app_widget.dart';
 
 void main() {
   group('Location Search', () {
-    testWidgets('display default search suggestions',
+    testWidgets('displays SGW as a default search suggestion',
         (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
 

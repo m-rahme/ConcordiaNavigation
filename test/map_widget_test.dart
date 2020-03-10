@@ -4,7 +4,7 @@ import './test_app_widget.dart';
 void main() {
   group('MapWidget', () {
     testWidgets(
-        'Map tries to create the map widget but fails because the initial camera location is null',
+        'tries to create the map widget but fails because the initial camera location is null',
         (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
 
