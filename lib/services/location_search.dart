@@ -34,7 +34,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeEnd(sgw);
                 mapData.changeMode("driving");
                 mapData.setItinerary();
-                Navigator.pushNamed(context, '/directions');
+                Provider.of<MapData>(context, listen: false).setDrawer(true);
               },
             );
           },

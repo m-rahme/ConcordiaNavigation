@@ -17,25 +17,11 @@ import 'package:concordia_navigation/models/buildingModels/building_information.
 
 //This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
-  final double _expandedBottomSheetBottomPosition = 0;
-  final double _collapsedBottomSheetBottomPosition = -260;
   @override
   _MapWidgetState createState() => _MapWidgetState();
 }
 
 class _MapWidgetState extends State<MapWidget> {
-  double _bottomSheetBottomPosition = -260;
-  bool isCollapsed = false;
-
-  _onTap() {
-    setState(() {
-      _bottomSheetBottomPosition = isCollapsed
-          ? widget._expandedBottomSheetBottomPosition
-          : widget._collapsedBottomSheetBottomPosition;
-      isCollapsed = !isCollapsed;
-    });
-  }
-
   CameraPosition _initialCamera;
   bool _campus = true;
   var _location;

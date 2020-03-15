@@ -14,6 +14,10 @@ class MapData extends ChangeNotifier {
     return _completer;
   }
 
+  final double _expandedBottomSheetBottomPosition = 0;
+  final double _collapsedBottomSheetBottomPosition = -700;
+  double bottomSheetBottomPosition = -700;
+  bool directionsCollapsed = false;
   LatLng _currentLocation;
   String _campus;
   LatLng _start;
@@ -22,6 +26,24 @@ class MapData extends ChangeNotifier {
 
   MapData() {
     _mode = "driving";
+  }
+
+  void toggleDrawer() {
+    if (bottomSheetBottomPosition == 0) {
+      bottomSheetBottomPosition = -600;
+    } else {
+      bottomSheetBottomPosition = 0;
+    }
+    notifyListeners();
+  }
+
+  void setDrawer(bool value) {
+    if (value) {
+      bottomSheetBottomPosition = _expandedBottomSheetBottomPosition;
+    } else {
+      bottomSheetBottomPosition = _collapsedBottomSheetBottomPosition;
+    }
+    notifyListeners();
   }
 
   void changeCampus(campus) {
