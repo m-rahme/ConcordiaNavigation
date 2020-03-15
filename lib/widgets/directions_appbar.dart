@@ -61,6 +61,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapCar,
                         onPressed: () {
                           mapData.changeMode("driving");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapCar ==
                                 constants.whiteColor) {
@@ -79,6 +80,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapTransit,
                         onPressed: () {
                           mapData.changeMode("transit");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapTransit ==
                                 constants.whiteColor) {
@@ -97,6 +99,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapWalking,
                         onPressed: () {
                           mapData.changeMode("walking");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapWalking ==
                                 constants.whiteColor) {
@@ -115,6 +118,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapBike,
                         onPressed: () {
                           mapData.changeMode("bicycling");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapBike ==
                                 constants.whiteColor) {
