@@ -96,7 +96,9 @@ class _MapWidgetState extends State<MapWidget> {
             markers: Set.of(setOfMarkers),
             indoorViewEnabled: false,
             trafficEnabled: false,
-            initialCameraPosition: _initialCamera,
+            initialCameraPosition:_initialCamera,
+            polylines:
+                Provider.of<MapData>(context).itinerary?.polylines?.toSet(),
             onMapCreated: (controller) async {
               _completer.complete(controller);
             }),

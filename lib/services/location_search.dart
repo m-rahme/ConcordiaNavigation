@@ -19,7 +19,13 @@ class LocationSearch extends SearchDelegate {
               leading: Icon(Icons.location_city),
               title: Text("SGW Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
-              onTap: () {
+              onTap: () async {
+                Provider.of<MapData>(context, listen: false)
+                    .controllerDestination
+                    .text = "SGW Campus, Montreal";
+                Provider.of<MapData>(context, listen: false)
+                    .controllerStarting
+                    .text = "Current Location";
                 Navigator.of(context).pop();
                 mapData.controllerDestination.text = "SGW, Montreal";
                 mapData.controllerStarting.text = "Current Location";
@@ -27,6 +33,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);
                 mapData.changeMode("driving");
+                Provider.of<MapData>(context, listen: false).setItinerary();
                 Navigator.pushNamed(context, '/directions');
               },
             );
@@ -35,6 +42,7 @@ class LocationSearch extends SearchDelegate {
         Consumer<MapData>(
           ///Wrapped in Consumer, listening to Provider **ConcreteObserver**
           builder: (context, mapData, child) {
+            print(1);
             return ListTile(
               leading: Icon(Icons.location_city),
               title: Text("Loyola Campus, Montreal"),
@@ -47,6 +55,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeCampus('loyola');
                 mapData.changeEnd(loyola);
                 mapData.changeMode("driving");
+                Provider.of<MapData>(context, listen: false).setItinerary();
                 Navigator.pushNamed(context, '/directions');
               },
             );
