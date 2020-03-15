@@ -210,6 +210,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                           _controllerStarting.text =
                               _controllerDestination.text;
                           _controllerDestination.text = temp;
+                          mapData.setItinerary();
                         },
                         color: constants.whiteColor,
                       ),
