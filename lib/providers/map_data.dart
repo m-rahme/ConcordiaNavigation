@@ -1,12 +1,14 @@
+import 'dart:async';
+import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
+  Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
@@ -64,6 +66,12 @@ class MapData extends ChangeNotifier {
 
   String get getCampus {
     return _campus;
+  }
+
+  void setItinerary() async {
+    itinerary = await Itinerary.create(_start, _end, "DRIVING");
+    print(itinerary.itinerary);
+    notifyListeners();
   }
 
   final controllerStarting = TextEditingController();
