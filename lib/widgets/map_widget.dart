@@ -16,11 +16,25 @@ import 'package:concordia_navigation/models/buildingModels/building_information.
 
 //This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
+  final double _expandedBottomSheetBottomPosition = 0;
+  final double _collapsedBottomSheetBottomPosition = -260;
   @override
   _MapWidgetState createState() => _MapWidgetState();
 }
 
 class _MapWidgetState extends State<MapWidget> {
+  double _bottomSheetBottomPosition = -260;
+  bool isCollapsed = false;
+
+  _onTap() {
+    setState(() {
+      _bottomSheetBottomPosition = isCollapsed
+          ? widget._expandedBottomSheetBottomPosition
+          : widget._collapsedBottomSheetBottomPosition;
+      isCollapsed = !isCollapsed;
+    });
+  }
+
   CameraPosition _initialCamera;
   bool _campus = true;
   var _location;
@@ -96,7 +110,7 @@ class _MapWidgetState extends State<MapWidget> {
             markers: Set.of(setOfMarkers),
             indoorViewEnabled: false,
             trafficEnabled: false,
-            initialCameraPosition:_initialCamera,
+            initialCameraPosition: _initialCamera,
             polylines:
                 Provider.of<MapData>(context).itinerary?.polylines?.toSet(),
             onMapCreated: (controller) async {
@@ -129,7 +143,50 @@ class _MapWidgetState extends State<MapWidget> {
                 .animateTo(pos.latitude, pos.longitude);
           },
         ),
+        AnimatedPositioned(
+          duration: const Duration(milliseconds: 500),
+          curve: Curves.decelerate,
+          bottom: _bottomSheetBottomPosition,
+          left: 0,
+          right: 0,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(
+                topLeft: Radius.circular(40),
+                topRight: Radius.circular(40),
+              ),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: <Widget>[
+                InkWell(
+                  onTap: _onTap,
+                  child: Container(
+                    alignment: Alignment.centerLeft,
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
+                    height: 80,
+                    child: Text(
+                      "Directions",
+                    ),
+                  ),
+                ),
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: _clipsWidget(),
+                ),
+              ],
+            ),
+          ),
+        ),
       ],
+    );
+  }
+
+  Widget _clipsWidget() {
+    return Container(
+      height: 250,
+      margin: const EdgeInsets.symmetric(horizontal: 16),
     );
   }
 }
