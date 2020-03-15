@@ -7,16 +7,14 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 //This class is used to generate an an Itinerary from the direction's JSON.
 class Itinerary {
   ///Safety making sure the itinerary is generated only once.
-  static bool safety = true;
   LatLng _startDestination;
   LatLng _endDestination;
   String _mode;
   Map<String, Map<String, String>> _itinerary;
   List<Polyline> _polylines;
 
-  Itinerary._create() {
-    print('leol');
-  }
+  Itinerary._create();
+
   List<Polyline> get polylines => _polylines;
 
   Map<String, Map<String, String>> get itinerary => _itinerary;

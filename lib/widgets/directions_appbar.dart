@@ -30,8 +30,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    _controllerStarting =
-        Provider.of<MapData>(context, listen: false).controllerStarting;
+    _controllerStarting = Provider.of<MapData>(context, listen: false).controllerStarting;
     _controllerDestination =
         Provider.of<MapData>(context, listen: false).controllerDestination;
     return Consumer<MapData>(

@@ -33,7 +33,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);
                 mapData.changeMode("driving");
-                Provider.of<MapData>(context, listen: false).setItinerary();
+                mapData.setItinerary();
                 Navigator.pushNamed(context, '/directions');
               },
             );
@@ -55,7 +55,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeCampus('loyola');
                 mapData.changeEnd(loyola);
                 mapData.changeMode("driving");
-                Provider.of<MapData>(context, listen: false).setItinerary();
+                mapData.setItinerary();
                 Navigator.pushNamed(context, '/directions');
               },
             );

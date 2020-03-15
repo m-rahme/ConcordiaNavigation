@@ -1,4 +1,3 @@
-import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
@@ -23,8 +22,9 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
     final AsyncMemoizer _memoizer = AsyncMemoizer();
 
     Future<Map<String, Map<String, String>>> _fetchMoreData() async {
+      Map<String, Map<String, String>> test =
+          Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
       await Future.delayed(Duration(seconds: 1));
-      Map<String, Map<String, String>> test = Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
       return Future.value(test);
     }
 
