@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
@@ -14,9 +15,11 @@ class MapData extends ChangeNotifier {
     return _completer;
   }
 
-  final double _expandedBottomSheetBottomPosition = 0;
-  final double _collapsedBottomSheetBottomPosition = -700;
-  double bottomSheetBottomPosition = -700;
+  final double _expandedBottomSheetBottomPosition =
+      SizeConfig.blockSizeVertical * 0;
+  final double _collapsedBottomSheetBottomPosition =
+      SizeConfig.blockSizeVertical * -80;
+  double bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -80;
   bool directionsCollapsed = false;
   LatLng _currentLocation;
   String _campus;
@@ -29,10 +32,10 @@ class MapData extends ChangeNotifier {
   }
 
   void toggleDrawer() {
-    if (bottomSheetBottomPosition == 0) {
-      bottomSheetBottomPosition = -600;
+    if (bottomSheetBottomPosition == SizeConfig.blockSizeVertical * 0) {
+      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -60;
     } else {
-      bottomSheetBottomPosition = 0;
+      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * 0;
     }
     notifyListeners();
   }

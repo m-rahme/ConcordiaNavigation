@@ -1,20 +1,14 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class DirectionsDrawer extends StatefulWidget {
-  @override
-  _DirectionsDrawerState createState() => _DirectionsDrawerState();
-}
-
-class _DirectionsDrawerState extends State<DirectionsDrawer> {
-  bool isCollapsed = false;
-
+class DirectionsDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnimatedPositioned(
       duration: const Duration(milliseconds: 500),
-      curve: Curves.decelerate,
+      curve: Curves.fastLinearToSlowEaseIn,
       bottom: Provider.of<MapData>(context).bottomSheetBottomPosition,
       left: 0,
       right: 0,
@@ -45,7 +39,7 @@ class _DirectionsDrawerState extends State<DirectionsDrawer> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Container(
-                height: 600,
+                height: SizeConfig.blockSizeVertical * 60,
                 margin: const EdgeInsets.symmetric(horizontal: 16),
               ),
             ),
