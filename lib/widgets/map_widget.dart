@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:concordia_navigation/widgets/directions_drawer.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -143,50 +144,8 @@ class _MapWidgetState extends State<MapWidget> {
                 .animateTo(pos.latitude, pos.longitude);
           },
         ),
-        AnimatedPositioned(
-          duration: const Duration(milliseconds: 500),
-          curve: Curves.decelerate,
-          bottom: _bottomSheetBottomPosition,
-          left: 0,
-          right: 0,
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(40),
-                topRight: Radius.circular(40),
-              ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: <Widget>[
-                InkWell(
-                  onTap: _onTap,
-                  child: Container(
-                    alignment: Alignment.centerLeft,
-                    padding: const EdgeInsets.symmetric(horizontal: 32),
-                    height: 80,
-                    child: Text(
-                      "Directions",
-                    ),
-                  ),
-                ),
-                SingleChildScrollView(
-                  scrollDirection: Axis.horizontal,
-                  child: _clipsWidget(),
-                ),
-              ],
-            ),
-          ),
-        ),
+        DirectionsDrawer(),
       ],
-    );
-  }
-
-  Widget _clipsWidget() {
-    return Container(
-      height: 250,
-      margin: const EdgeInsets.symmetric(horizontal: 16),
     );
   }
 }
