@@ -3,6 +3,7 @@ import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/location_search.dart';
 import 'package:provider/provider.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
 
 //Custom AppBar shown only in HomePage
 class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -28,6 +29,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {
+            Provider.of<MapData>(context, listen: false).setDrawer(false);
             showSearch(context: context, delegate: LocationSearch());
           },
         )

@@ -1,17 +1,26 @@
+import 'dart:async';
+import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
+  Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
+  final double _expandedBottomSheetBottomPosition =
+      SizeConfig.blockSizeVertical * 0;
+  final double _collapsedBottomSheetBottomPosition =
+      SizeConfig.blockSizeVertical * -80;
+  double bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -80;
+  bool directionsCollapsed = false;
   LatLng _currentLocation;
   String _campus;
   LatLng _start;
@@ -20,6 +29,24 @@ class MapData extends ChangeNotifier {
 
   MapData() {
     _mode = "driving";
+  }
+
+  void toggleDrawer() {
+    if (bottomSheetBottomPosition == SizeConfig.blockSizeVertical * 0) {
+      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -60;
+    } else {
+      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * 0;
+    }
+    notifyListeners();
+  }
+
+  void setDrawer(bool value) {
+    if (value) {
+      bottomSheetBottomPosition = _expandedBottomSheetBottomPosition;
+    } else {
+      bottomSheetBottomPosition = _collapsedBottomSheetBottomPosition;
+    }
+    notifyListeners();
   }
 
   void changeCampus(campus) {
@@ -64,6 +91,11 @@ class MapData extends ChangeNotifier {
 
   String get getCampus {
     return _campus;
+  }
+
+  void setItinerary() async {
+    itinerary = await Itinerary.create(_start, _end, _mode);
+    notifyListeners();
   }
 
   final controllerStarting = TextEditingController();

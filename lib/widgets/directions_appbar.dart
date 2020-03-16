@@ -30,8 +30,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
 
   @override
   Widget build(BuildContext context) {
-    _controllerStarting =
-        Provider.of<MapData>(context, listen: false).controllerStarting;
+    _controllerStarting = Provider.of<MapData>(context, listen: false).controllerStarting;
     _controllerDestination =
         Provider.of<MapData>(context, listen: false).controllerDestination;
     return Consumer<MapData>(
@@ -61,6 +60,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapCar,
                         onPressed: () {
                           mapData.changeMode("driving");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapCar ==
                                 constants.whiteColor) {
@@ -79,6 +79,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapTransit,
                         onPressed: () {
                           mapData.changeMode("transit");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapTransit ==
                                 constants.whiteColor) {
@@ -97,6 +98,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapWalking,
                         onPressed: () {
                           mapData.changeMode("walking");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapWalking ==
                                 constants.whiteColor) {
@@ -115,6 +117,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                         color: DirectionsAppBar._swapBike,
                         onPressed: () {
                           mapData.changeMode("bicycling");
+                          mapData.setItinerary();
                           setState(() {
                             if (DirectionsAppBar._swapBike ==
                                 constants.whiteColor) {
@@ -206,6 +209,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                           _controllerStarting.text =
                               _controllerDestination.text;
                           _controllerDestination.text = temp;
+                          mapData.setItinerary();
                         },
                         color: constants.whiteColor,
                       ),
