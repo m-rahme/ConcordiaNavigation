@@ -19,6 +19,7 @@ class Itinerary {
 
   Map<String, Map<String, String>> get itinerary => _itinerary;
 
+  /// Create the Itinerary object and populate its fields from json data.
   static Future<Itinerary> create(
       LatLng startDestination, LatLng endDestination, String mode) async {
     Itinerary itinerary = Itinerary._create();
@@ -33,11 +34,29 @@ class Itinerary {
     return itinerary;
   }
 
-  ///Parses the JSON returned by the Google API so we can build our route on screen, then returns the recommended routes
+  /// Returns a Map of instructions obtained by parsing a json object from Google's Directions API.
+  /// 
+  /// The format is the following:
+  /// ```
+  /// {
+  ///   Summary of instruction 1 : {duration, distance},
+  ///   Summary of instruction 2 : {duration, distance},
+  ///   ...
+  /// }
+  /// ```
+  /// 
+  /// Sample output:
+  /// ```
+  /// {
+  ///   Head west on Rue Sainte-Catherine O. toward Avenue Atwater : {5 mins: 0.2 km},
+  ///   Turn left onto Avenue Atwater : {3 mins: 1.4 km},
+  ///   Turn left onto Rue Tupper : {1 min: 0.7 km}, 
+  ///   ...
+  /// }
+  /// ```
+  /// Currently doesn't support subdirections.
   static Map<String, Map<String, String>> getDirectionList(
       Map<String, dynamic> rawJson) {
-    // Requests the directions from Google API, in directions_service
-    //JSON contains all recommended routes, any transportation mode changes, and how many steps in the directions.
     Map<String, Map<String, String>> temp = Map<String, Map<String, String>>();
     var steps = rawJson["routes"][0]["legs"][0]["steps"].length;
     for (int i = 0; i < steps; i++) {
@@ -58,6 +77,8 @@ class Itinerary {
     return temp;
   }
 
+  /// Returns a list of Polylines obtained by parsing a json object from Google's Directions API.
+  /// similar to [getDirectionList(Map<String, dynamic>)] but returns a list of Polyline objects instead of a Map of directions.
   static List<Polyline> getPolylinePoints(Map<String, dynamic> rawJson) {
     PolylinePoints tPolylinePoints = PolylinePoints();
     List<PointLatLng> tPointLatLng = [];
@@ -65,11 +86,7 @@ class Itinerary {
 
     double sLat = rawJson['routes'][0]['legs'][0]['start_location']['lat'];
     double sLong = rawJson['routes'][0]['legs'][0]['start_location']['long'];
-    double eLat = rawJson['routes'][0]['legs'][0]['end_location']['lat'];
-    double eLong = rawJson['routes'][0]['legs'][0]['end_location']['long'];
-
     String sDesc = rawJson['routes'][0]['legs'][0]['start_address'];
-    String eDesc = rawJson['routes'][0]['legs'][0]['end_address'];
 
     var steps = rawJson['routes'][0]['legs'][0]['steps'];
 

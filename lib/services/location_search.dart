@@ -42,7 +42,6 @@ class LocationSearch extends SearchDelegate {
         Consumer<MapData>(
           ///Wrapped in Consumer, listening to Provider **ConcreteObserver**
           builder: (context, mapData, child) {
-            print(1);
             return ListTile(
               leading: Icon(Icons.location_city),
               title: Text("Loyola Campus, Montreal"),

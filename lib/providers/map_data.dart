@@ -95,7 +95,6 @@ class MapData extends ChangeNotifier {
 
   void setItinerary() async {
     itinerary = await Itinerary.create(_start, _end, _mode);
-    print(itinerary.itinerary);
     notifyListeners();
   }
 
