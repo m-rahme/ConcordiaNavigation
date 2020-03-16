@@ -18,8 +18,8 @@ class MapData extends ChangeNotifier {
   final double _expandedBottomSheetBottomPosition =
       SizeConfig.blockSizeVertical * 0;
   final double _collapsedBottomSheetBottomPosition =
-      SizeConfig.blockSizeVertical * -80;
-  double bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -80;
+      SizeConfig.blockSizeVertical * -120;
+  double bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -100;
   bool directionsCollapsed = false;
   LatLng _currentLocation;
   String _campus;
