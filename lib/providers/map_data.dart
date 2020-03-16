@@ -33,7 +33,7 @@ class MapData extends ChangeNotifier {
 
   void toggleDrawer() {
     if (bottomSheetBottomPosition == SizeConfig.blockSizeVertical * 0) {
-      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -60;
+      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -65;
     } else {
       bottomSheetBottomPosition = SizeConfig.blockSizeVertical * 0;
     }

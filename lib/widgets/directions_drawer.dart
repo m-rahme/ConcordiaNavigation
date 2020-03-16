@@ -11,7 +11,7 @@ class DirectionsDrawer extends StatelessWidget {
   static Color _swapTransit = constants.whiteColor;
   static Color _swapWalking = constants.whiteColor;
   static Color _swapBike = constants.whiteColor;
-
+  static IconData icon = Icons.expand_more;
   @override
   Widget build(BuildContext context) {
     var _controllerStarting =
@@ -34,113 +34,116 @@ class DirectionsDrawer extends StatelessWidget {
         child: Consumer<MapData>(
             builder: (BuildContext context, mapData, Widget child) => Column(
                   children: <Widget>[
-                    InkWell(
-                      onTap: () {
-                        mapData.toggleDrawer();
-                      },
-                      child: Container(
-                        decoration: BoxDecoration(
-                          color: constants.greenColor,
-                          borderRadius: BorderRadius.only(
-                            topLeft: Radius.circular(40),
-                            topRight: Radius.circular(40),
-                          ),
+                    Container(
+                      decoration: BoxDecoration(
+                        color: constants.greenColor,
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(40),
+                          topRight: Radius.circular(40),
                         ),
-                        height: SizeConfig.blockSizeVertical * 7,
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: <Widget>[
-                            Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              crossAxisAlignment: CrossAxisAlignment.center,
-                              children: <Widget>[
-                                Padding(
-                                  padding: EdgeInsets.only(left: 100.0),
-                                  child: Row(
-                                    children: <Widget>[
-                                      IconButton(
-                                        icon: Icon(Icons.directions_car),
-                                        color: _swapCar,
-                                        onPressed: () {
-                                          mapData.changeMode("driving");
-                                          mapData.setItinerary();
-                                          if (_swapCar ==
-                                              constants.whiteColor) {
-                                            _swapCar = constants.blueColor;
-                                            _swapTransit = constants.whiteColor;
-                                            _swapWalking = constants.whiteColor;
-                                            _swapBike = constants.whiteColor;
-                                          }
-                                        },
-                                      ),
-                                      IconButton(
-                                        icon: Icon(Icons.train),
-                                        color: _swapTransit,
-                                        onPressed: () {
-                                          mapData.changeMode("transit");
-                                          mapData.setItinerary();
-                                          if (_swapTransit ==
-                                              constants.whiteColor) {
-                                            _swapTransit = constants.blueColor;
-                                            _swapCar = constants.whiteColor;
-                                            _swapWalking = constants.whiteColor;
-                                            _swapBike = constants.whiteColor;
-                                          }
-                                        },
-                                      ),
-                                      IconButton(
-                                        icon: Icon(Icons.directions_walk),
-                                        color: _swapWalking,
-                                        onPressed: () {
-                                          mapData.changeMode("walking");
-                                          mapData.setItinerary();
-                                          if (_swapWalking ==
-                                              constants.whiteColor) {
-                                            _swapWalking = constants.blueColor;
-                                            _swapCar = constants.whiteColor;
-                                            _swapTransit = constants.whiteColor;
-                                            _swapBike = constants.whiteColor;
-                                          }
-                                        },
-                                      ),
-                                      IconButton(
-                                        icon: Icon(Icons.directions_bike),
-                                        color: _swapBike,
-                                        onPressed: () {
-                                          mapData.changeMode("bicycling");
-                                          mapData.setItinerary();
-                                          if (_swapBike ==
-                                              constants.whiteColor) {
-                                            _swapBike = constants.blueColor;
-                                            _swapCar = constants.whiteColor;
-                                            _swapTransit = constants.whiteColor;
-                                            _swapWalking = constants.whiteColor;
-                                          }
-                                        },
-                                      ),
-                                    ],
+                      ),
+                      height: SizeConfig.blockSizeVertical * 7.2,
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            children: <Widget>[
+                              IconButton(
+                                padding: EdgeInsets.only(left: 30.0),
+                                icon: Icon(icon),
+                                color: constants.whiteColor,
+                                onPressed: () {
+                                  mapData.toggleDrawer();
+                                  if (icon == Icons.expand_more) {
+                                    icon = Icons.expand_less;
+                                  } else {
+                                    icon = Icons.expand_more;
+                                  }
+                                },
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  IconButton(
+                                    icon: Icon(Icons.directions_car),
+                                    color: _swapCar,
+                                    onPressed: () {
+                                      mapData.changeMode("driving");
+                                      mapData.setItinerary();
+                                      if (_swapCar == constants.whiteColor) {
+                                        _swapCar = constants.blueColor;
+                                        _swapTransit = constants.whiteColor;
+                                        _swapWalking = constants.whiteColor;
+                                        _swapBike = constants.whiteColor;
+                                      }
+                                    },
                                   ),
-                                ),
-                                IconButton(
-                                  padding: EdgeInsets.only(right: 30.0),
-                                  icon: Icon(Icons.close),
-                                  color: constants.whiteColor,
-                                  onPressed: () {
-                                    Provider.of<MapData>(context, listen: false)
-                                        .itinerary = null;
-                                    mapData.setDrawer(false);
-                                    if (_swapCar == constants.whiteColor) {
-                                      _swapCar = constants.blueColor;
-                                      _swapTransit = constants.whiteColor;
-                                      _swapWalking = constants.whiteColor;
-                                      _swapBike = constants.whiteColor;
-                                    }
-                                  },
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
+                                  IconButton(
+                                    icon: Icon(Icons.train),
+                                    color: _swapTransit,
+                                    onPressed: () {
+                                      mapData.changeMode("transit");
+                                      mapData.setItinerary();
+                                      if (_swapTransit ==
+                                          constants.whiteColor) {
+                                        _swapTransit = constants.blueColor;
+                                        _swapCar = constants.whiteColor;
+                                        _swapWalking = constants.whiteColor;
+                                        _swapBike = constants.whiteColor;
+                                      }
+                                    },
+                                  ),
+                                  IconButton(
+                                    icon: Icon(Icons.directions_walk),
+                                    color: _swapWalking,
+                                    onPressed: () {
+                                      mapData.changeMode("walking");
+                                      mapData.setItinerary();
+                                      if (_swapWalking ==
+                                          constants.whiteColor) {
+                                        _swapWalking = constants.blueColor;
+                                        _swapCar = constants.whiteColor;
+                                        _swapTransit = constants.whiteColor;
+                                        _swapBike = constants.whiteColor;
+                                      }
+                                    },
+                                  ),
+                                  IconButton(
+                                    icon: Icon(Icons.directions_bike),
+                                    color: _swapBike,
+                                    onPressed: () {
+                                      mapData.changeMode("bicycling");
+                                      mapData.setItinerary();
+                                      if (_swapBike == constants.whiteColor) {
+                                        _swapBike = constants.blueColor;
+                                        _swapCar = constants.whiteColor;
+                                        _swapTransit = constants.whiteColor;
+                                        _swapWalking = constants.whiteColor;
+                                      }
+                                    },
+                                  ),
+                                ],
+                              ),
+                              IconButton(
+                                padding: EdgeInsets.only(right: 30.0),
+                                icon: Icon(Icons.close),
+                                color: constants.whiteColor,
+                                onPressed: () {
+                                  Provider.of<MapData>(context, listen: false)
+                                      .itinerary = null;
+                                  mapData.setDrawer(false);
+                                  if (_swapCar == constants.whiteColor) {
+                                    _swapCar = constants.blueColor;
+                                    _swapTransit = constants.whiteColor;
+                                    _swapWalking = constants.whiteColor;
+                                    _swapBike = constants.whiteColor;
+                                  }
+                                },
+                              ),
+                            ],
+                          ),
+                        ],
                       ),
                     ),
                     Container(
@@ -189,7 +192,7 @@ class DirectionsDrawer extends StatelessWidget {
                                         Expanded(
                                           child: Padding(
                                             padding: const EdgeInsets.only(
-                                                bottom: 5.0),
+                                                bottom: 2.0),
                                             child: TextField(
                                               style: GoogleFonts.raleway(
                                                 fontSize: 15.0,
@@ -251,7 +254,7 @@ class DirectionsDrawer extends StatelessWidget {
                                         Expanded(
                                           child: Padding(
                                             padding: const EdgeInsets.only(
-                                                bottom: 5.0),
+                                                bottom: 2.0),
                                             child: TextField(
                                               style: GoogleFonts.raleway(
                                                 fontSize: 15.0,
@@ -304,7 +307,7 @@ class DirectionsDrawer extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      height: SizeConfig.safeBlockVertical * 50,
+                      height: SizeConfig.safeBlockVertical * 45,
                       color: constants.whiteColor,
                       child: FutureBuilder(
                           future: _fetchMoreData(),
