@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'package:concordia_navigation/widgets/directions_drawer.dart';
+import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -11,7 +12,6 @@ import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/widgets/building_widgets/building_marker.dart';
 import 'package:concordia_navigation/models/buildingModels/building_list.dart';
 import 'package:concordia_navigation/models/buildingModels/building_information.dart';
 
@@ -26,9 +26,12 @@ class _MapWidgetState extends State<MapWidget> {
   bool _campus = true;
   var _location;
 
+  //attributes for markers
   BuildingList buildingList = BuildingList();
   List<BuildingInformation> buildings;
-  Set<Marker> setOfMarkers = {};
+  Set<Marker> setOfMarkers = Set<Marker>();
+  BitmapDescriptor buildingIcon;
+
 
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
@@ -49,6 +52,12 @@ class _MapWidgetState extends State<MapWidget> {
     location.then((value) => _location = value);
     SizeConfig();
     buildings = buildingList.getListOfBuildings();
+    setBuildingIcons();
+  }
+
+  void setBuildingIcons() async {
+    buildingIcon = await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/h.png');
   }
 
   @override
@@ -78,9 +87,17 @@ class _MapWidgetState extends State<MapWidget> {
         );
       }
       for (int i = 0; i < 58; i++) {
-        BuildingMarker buildingMarker =
-            BuildingMarker(building: buildings.elementAt(i), bContext: context);
-        setOfMarkers.add(buildingMarker.getMarker());
+        setOfMarkers.add(Marker(
+          markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
+          position: LatLng(buildings.elementAt(i).getLatitude(), buildings.elementAt(i).getLongitude()),
+          infoWindow: InfoWindow(title: buildings.elementAt(i).getBuildingName()),
+          icon: buildingIcon,
+
+          onTap: () {
+
+            showModalBottomSheet(context: context, builder: (builder) {return BottomSheetWidget(buildings.elementAt(i));});
+          },
+        ));
       }
     }
 
