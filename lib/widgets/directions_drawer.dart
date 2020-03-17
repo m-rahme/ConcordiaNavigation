@@ -130,8 +130,7 @@ class DirectionsDrawer extends StatelessWidget {
                                 icon: Icon(Icons.close),
                                 color: constants.whiteColor,
                                 onPressed: () {
-                                  Provider.of<MapData>(context, listen: false)
-                                      .itinerary = null;
+                                  mapData.itinerary = null;
                                   mapData.setDrawer(false);
                                   if (_swapCar == constants.whiteColor) {
                                     _swapCar = constants.blueColor;

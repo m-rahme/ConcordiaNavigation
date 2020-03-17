@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:concordia_navigation/widgets/directions_drawer.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -130,7 +129,6 @@ class _MapWidgetState extends State<MapWidget> {
                 .animateTo(pos.latitude, pos.longitude);
           },
         ),
-        DirectionsDrawer(),
       ],
     );
   }
