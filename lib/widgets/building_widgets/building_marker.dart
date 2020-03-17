@@ -9,19 +9,32 @@ class BuildingMarker {
   final BuildingInformation building;
   final BuildContext bContext;
 
+  BitmapDescriptor myIcon;
+
   BuildingMarker({
     @required this.building,
     @required this.bContext,
   });
+
+  void initState(){
+    BitmapDescriptor.fromAssetImage(
+      ImageConfiguration(size: Size(20,20)), 'assets/h.png').then((onValue){
+        myIcon = onValue;
+    }
+    );
+  }
+
 
   Marker getMarker() {
     Marker bBuildingMarker = Marker(
       markerId: MarkerId(building.getBuildingInitial()),
       position: LatLng(building.getLatitude(), building.getLongitude()),
       infoWindow: InfoWindow(title: building.getBuildingName()),
-      icon: BitmapDescriptor.defaultMarkerWithHue(
-        BitmapDescriptor.hueRed,
-      ),
+//      icon: BitmapDescriptor.defaultMarkerWithHue(
+//        BitmapDescriptor.hueBlue,
+//      ),
+      icon: myIcon,
+
       onTap: () {
         showModalBottomSheet(
             context: bContext,

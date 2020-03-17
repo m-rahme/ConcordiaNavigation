@@ -64,6 +64,7 @@ flutter:
     - assets/map_style.txt
     - assets/logo.png
     - assets/shuttleSchedule.json
+    - assets/h.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
