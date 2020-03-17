@@ -1,26 +1,24 @@
 import 'dart:async';
 import 'package:concordia_navigation/models/itinerary.dart';
-import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
+  PanelController panelController = new PanelController();
+  final controllerStarting = TextEditingController();
+  final controllerDestination = TextEditingController();
+
   Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
-  final double _expandedBottomSheetBottomPosition =
-      SizeConfig.blockSizeVertical * 0;
-  final double _collapsedBottomSheetBottomPosition =
-      SizeConfig.blockSizeVertical * -120;
-  double bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -100;
-  bool directionsCollapsed = false;
   LatLng _currentLocation;
   String _campus;
   LatLng _start;
@@ -29,24 +27,6 @@ class MapData extends ChangeNotifier {
 
   MapData() {
     _mode = "driving";
-  }
-
-  void toggleDrawer() {
-    if (bottomSheetBottomPosition == SizeConfig.blockSizeVertical * 0) {
-      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * -65;
-    } else {
-      bottomSheetBottomPosition = SizeConfig.blockSizeVertical * 0;
-    }
-    notifyListeners();
-  }
-
-  void setDrawer(bool value) {
-    if (value) {
-      bottomSheetBottomPosition = _expandedBottomSheetBottomPosition;
-    } else {
-      bottomSheetBottomPosition = _collapsedBottomSheetBottomPosition;
-    }
-    notifyListeners();
   }
 
   void changeCampus(campus) {
@@ -98,8 +78,11 @@ class MapData extends ChangeNotifier {
     notifyListeners();
   }
 
-  final controllerStarting = TextEditingController();
-  final controllerDestination = TextEditingController();
+  void removeItinerary() {
+    itinerary = null;
+    panelController.hide();
+    notifyListeners();
+  }
 
   Future<void> animateTo(double lat, double lng) async {
     final c = await _completer.future;

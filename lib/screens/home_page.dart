@@ -16,8 +16,12 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: HomePageAppBar(),
       drawer: CustomDrawer(),
-      body: MapWidget(),
-      bottomSheet: DirectionsDrawer(), // use bottom sheet as it's separate to map widget and thus won't be rebuilt every so often
+      body: Stack(
+        children: <Widget>[
+          MapWidget(),
+          DirectionsDrawer(),
+        ]
+      ),
     );
   }
 }

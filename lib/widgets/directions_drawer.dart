@@ -2,6 +2,7 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/shuttle_widget.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -18,6 +19,7 @@ class DirectionsDrawer extends StatelessWidget {
         Provider.of<MapData>(context, listen: false).controllerStarting;
     var _controllerDestination =
         Provider.of<MapData>(context, listen: false).controllerDestination;
+
     Future<Map<String, Map<String, String>>> _fetchMoreData() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
@@ -25,13 +27,9 @@ class DirectionsDrawer extends StatelessWidget {
       return Future.value(test);
     }
 
-    return AnimatedPositioned(
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.fastLinearToSlowEaseIn,
-        bottom: Provider.of<MapData>(context).bottomSheetBottomPosition,
-        left: 0,
-        right: 0,
-        child: Consumer<MapData>(
+    SlidingUpPanel sp = SlidingUpPanel(
+        controller: Provider.of<MapData>(context).panelController,
+        panel: Consumer<MapData>(
             builder: (BuildContext context, mapData, Widget child) => Column(
                   children: <Widget>[
                     Container(
@@ -55,7 +53,6 @@ class DirectionsDrawer extends StatelessWidget {
                                 icon: Icon(icon),
                                 color: constants.whiteColor,
                                 onPressed: () {
-                                  mapData.toggleDrawer();
                                   if (icon == Icons.expand_more) {
                                     icon = Icons.expand_less;
                                   } else {
@@ -130,8 +127,7 @@ class DirectionsDrawer extends StatelessWidget {
                                 icon: Icon(Icons.close),
                                 color: constants.whiteColor,
                                 onPressed: () {
-                                  mapData.itinerary = null;
-                                  mapData.setDrawer(false);
+                                  Provider.of<MapData>(context, listen: false).removeItinerary();
                                   if (_swapCar == constants.whiteColor) {
                                     _swapCar = constants.blueColor;
                                     _swapTransit = constants.whiteColor;
@@ -144,7 +140,7 @@ class DirectionsDrawer extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
+                    ), // top row for transportation mode selection
                     Container(
                       height: SizeConfig.safeBlockVertical * 14,
                       width: SizeConfig.safeBlockHorizontal * 100,
@@ -304,7 +300,7 @@ class DirectionsDrawer extends StatelessWidget {
                           ),
                         ],
                       ),
-                    ),
+                    ), // search bars
                     Container(
                       height: SizeConfig.safeBlockVertical * 45,
                       color: constants.whiteColor,
@@ -382,9 +378,16 @@ class DirectionsDrawer extends StatelessWidget {
                                 );
                             }
                           }),
-                    ),
+                    ), // list of directions
                     ShuttleWidget(),
                   ],
                 )));
+
+      if (Provider.of<MapData>(context).itinerary == null) {
+        return Container();
+      } else {
+        return sp;
+      }
+      
   }
 }
