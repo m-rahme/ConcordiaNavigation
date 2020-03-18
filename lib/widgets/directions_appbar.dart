@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/services/size_config.dart';
@@ -181,7 +182,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                           border: InputBorder.none,
                           contentPadding: EdgeInsets.symmetric(
                               horizontal: 10, vertical: 12),
-                          hintText: "Choose Starting Point",
+                          hintText: ConcordiaLocalizations.of(context).chooseStartingPoint,
                         ),
                       ),
                     ),
@@ -256,7 +257,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                             border: InputBorder.none,
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 12),
-                            hintText: "Choose Destination"),
+                            hintText: ConcordiaLocalizations.of(context).chooseDestination,
                       ),
                     ),
                   ],

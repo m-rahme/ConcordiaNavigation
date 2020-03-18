@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/size_config.dart';
@@ -43,7 +44,7 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
                 // Completed with error
                 if (itinerary.hasError)
                   return Container(
-                    child: Text("Error Occured"),
+                    child: Text(ConcordiaLocalizations.of(context).errorOccurred),
                   );
 
                 // Completed with data

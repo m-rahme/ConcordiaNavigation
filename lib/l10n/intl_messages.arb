@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-02-02T18:43:52.788958",
+  "@@last_modified": "2020-03-18T02:55:44.870414",
   "profile": "Profile",
   "@profile": {
     "description": "Profile for the user",
@@ -17,7 +17,7 @@
     "description": "Outdoor Interest",
     "type": "text",
     "placeholders": {}
-      },
+  },
   "settings": "Settings",
   "@settings": {
     "description": "Settings",
@@ -26,7 +26,49 @@
   },
   "shuttle": "Shuttle Schedule",
   "@shuttle": {
-    "description": "Shuttle Schedule",
+    "description": "Shuttle Scedule",
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkShuttleSchedule": "Check Shuttle Schedule for More Info",
+  "@checkShuttleSchedule": {
+    "description": "Check Shuttle Schedule",
+    "type": "text",
+    "placeholders": {}
+  },
+  "comingSoon": "Coming Soon!",
+  "@comingSoon": {
+    "description": "Coming Soon!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "currentLocation": "Current Location",
+  "@currentLocation": {
+    "description": "Current Location",
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseStartingPoint": "Choose Starting Point",
+  "@chooseStartingPoint": {
+    "description": "Choose Starting Point",
+    "type": "text",
+    "placeholders": {}
+  },
+  "chooseDestination": "Choose Destination",
+  "@chooseDestination": {
+    "description": "Choose Destination",
+    "type": "text",
+    "placeholders": {}
+  },
+  "errorOccurred": "Error Occurred",
+  "@errorOccurred": {
+    "description": "Error Occurred",
+    "type": "text",
+    "placeholders": {}
+  },
+  "concordiaShuttleBus": "Concordia Shuttle Bus",
+  "@concordiaShuttleBus": {
+    "description": "Concordia Shuttle Bus",
     "type": "text",
     "placeholders": {}
   }

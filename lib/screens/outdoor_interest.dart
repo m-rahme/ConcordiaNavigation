@@ -27,7 +27,7 @@ class OutdoorInterest extends StatelessWidget {
                   title: new Text(
                     ConcordiaLocalizations.of(context).interest,
                   ),
-                  content: new Text("Coming Soon!"),
+                  content: new Text(ConcordiaLocalizations.of(context).comingSoon),
                 ));
           },
         ),

@@ -20,12 +20,17 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'fr';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function>{
-        "profile": MessageLookupByLibrary.simpleMessage("Profil"),
-        "schedule": MessageLookupByLibrary.simpleMessage("Horaire"),
-        "interest": MessageLookupByLibrary.simpleMessage("Intérêt Extérieur"),
-        "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
-        "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
-        "shuttle": MessageLookupByLibrary.simpleMessage("Horaire de la Navette")
-      };
+  static _notInlinedMessages(_) => <String, Function> {
+    "chooseDestination" : MessageLookupByLibrary.simpleMessage("Destination"),
+    "chooseStartingPoint" : MessageLookupByLibrary.simpleMessage("Lieu de départ"),
+    "comingSoon" : MessageLookupByLibrary.simpleMessage("Bientôt disponible"),
+    "concordiaShuttleBus" : MessageLookupByLibrary.simpleMessage("Navette Concordia"),
+    "currentLocation" : MessageLookupByLibrary.simpleMessage("Location actuelle"),
+    "errorOccurred" : MessageLookupByLibrary.simpleMessage("Une s\'est produite"),
+    "interest" : MessageLookupByLibrary.simpleMessage("Intérêt Extérieur"),
+    "profile" : MessageLookupByLibrary.simpleMessage("Profil"),
+    "schedule" : MessageLookupByLibrary.simpleMessage("Horaire"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Paramètres"),
+    "shuttle" : MessageLookupByLibrary.simpleMessage("Horaire de la Navette")
+  };
 }

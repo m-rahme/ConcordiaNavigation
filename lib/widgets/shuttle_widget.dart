@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -23,7 +24,7 @@ class ShuttleWidget extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: <Widget>[
                 Text(
-                  "Concordia Shuttle Bus",
+                  ConcordiaLocalizations.of(context).concordiaShuttleBus,
                   style: GoogleFonts.raleway(
                     fontSize: 14.0,
                     fontWeight: FontWeight.w600,
@@ -35,7 +36,7 @@ class ShuttleWidget extends StatelessWidget {
                     Navigator.pushNamed(context, '/shuttle');
                   },
                   child: Text(
-                    "SCHEDULE",
+                    ConcordiaLocalizations.of(context).schedule,
                     style: GoogleFonts.raleway(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w600,

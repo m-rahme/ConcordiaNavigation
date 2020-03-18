@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 
 /*This class extends Search Delegate class implemented by flutter.
@@ -25,10 +26,10 @@ class LocationSearch extends SearchDelegate {
                     .text = "SGW Campus, Montreal";
                 Provider.of<MapData>(context, listen: false)
                     .controllerStarting
-                    .text = "Current Location";
+                    .text = ConcordiaLocalizations.of(context).currentLocation;
                 Navigator.of(context).pop();
                 mapData.controllerDestination.text = "SGW, Montreal";
-                mapData.controllerStarting.text = "Current Location";
+                mapData.controllerStarting.text = ConcordiaLocalizations.of(context).currentLocation;
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);
@@ -49,7 +50,7 @@ class LocationSearch extends SearchDelegate {
               onTap: () {
                 Navigator.of(context).pop();
                 mapData.controllerDestination.text = "Loyola Campus, Montreal";
-                mapData.controllerStarting.text = "Current Location";
+                mapData.controllerStarting.text = ConcordiaLocalizations.of(context).currentLocation;
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('loyola');
                 mapData.changeEnd(loyola);

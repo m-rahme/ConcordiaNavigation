@@ -10,18 +10,48 @@
     "type": "text"
   },
   "interest": "Outdoor Interest",
-    "@interest": {
-      "description": "Outdoor Interest",
-      "type": "text"
-    },
+  "@interest": {
+    "description": "Outdoor Interest",
+    "type": "text"
+  },
   "settings": "Settings",
   "@settings": {
     "description": "Settings",
     "type": "text"
   },
-  "shuttle": "Shuttle Schedule",
-    "@shuttle": {
-      "description": "Shuttle Schedule",
-      "type": "text"
-    },
+  "checkShuttleSchedule": "Check Shuttle Schedule for More Info",
+  "@checkShuttleSchedule": {
+    "description": "Check Shuttle Schedule",
+    "type": "text"
+  },
+  "comingSoon": "Coming Soon!",
+  "@comingSoon": {
+    "description": "Coming Soon!",
+    "type": "text"
+  },
+  "currentLocation": "Current Location",
+  "@currentLocation": {
+    "description": "Current Location",
+    "type": "text"
+  },
+  "chooseStartingPoint": "Choose Starting Point",
+  "@chooseStartingPoint": {
+    "description": "Choose Starting Point",
+    "type": "text"
+  },
+  "chooseDestination": "Choose Destination",
+  "@chooseDestination": {
+    "description": "Choose Destination",
+    "type": "text"
+  },
+  "errorOccurred": "Error Occurred",
+  "@errorOccurred": {
+    "description": "Error Occurred",
+    "type": "text"
+  },
+  "concordiaShuttleBus": "Concordia Shuttle Bus",
+  "@concordiaShuttleBus": {
+    "description": "Concordia Shuttle Bus",
+    "type": "text"
+  }
 }

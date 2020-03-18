@@ -11,9 +11,9 @@
   },
   "interest": "Intérêt Extérieur",
   "@interest": {
-  "description": "Outdoor Interest",
-  "type": "text"
-  }
+    "description": "Outdoor Interest",
+    "type": "text"
+  },
   "settings": "Paramètres",
   "@settings": {
     "description": "Settings",
@@ -22,6 +22,36 @@
   "shuttle": "Horaire de la Navette",
   "@shuttle": {
     "description": "Horaire de la Navette",
+    "type": "text"
+  },
+  "comingSoon": "Bientôt disponible",
+  "@comingSoon": {
+    "description": "Bientôt disponible",
+    "type": "text"
+  },
+  "currentLocation": "Location actuelle",
+  "@currentLocation": {
+    "description": "Location actuelle",
+    "type": "text"
+  },
+  "chooseStartingPoint": "Lieu de départ",
+  "@chooseStartingPoint": {
+    "description": "Lieu de départ",
+    "type": "text"
+  },
+  "chooseDestination": "Destination",
+  "@chooseDestination": {
+    "description": "Destination",
+    "type": "text"
+  },
+  "errorOccurred": "Une s'est produite",
+  "@errorOccurred": {
+    "description": "Une s'est produite",
+    "type": "text"
+  },
+  "concordiaShuttleBus": "Navette Concordia",
+  "@concordiaShuttleBus": {
+    "description": "Navette Concordia",
     "type": "text"
   }
 }

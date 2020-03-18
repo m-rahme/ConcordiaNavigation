@@ -23,50 +23,89 @@ class ConcordiaLocalizations {
 
   final String localeName;
 
-  String get profile {
-    return Intl.message(
-      'Profile',
-      name: 'profile',
-      desc: 'Profile for the user',
-      locale: localeName,
-    );
-  }
+  String get profile => Intl.message(
+        'Profile',
+        name: 'profile',
+        desc: 'Profile for the user',
+        locale: localeName,
+      );
 
-  String get schedule {
-    return Intl.message(
-      'Schedule',
-      name: 'schedule',
-      desc: 'Schedule',
-      locale: localeName,
-    );
-  }
+  String get schedule => Intl.message(
+        'Schedule',
+        name: 'schedule',
+        desc: 'Schedule',
+        locale: localeName,
+      );
 
-  String get interest {
-    return Intl.message(
-      'Outdoor Interest',
-      name: 'interest',
-      desc: 'Outdoor Interest',
-      locale: localeName,
-    );
-  }
+  String get interest => Intl.message(
+        'Outdoor Interest',
+        name: 'interest',
+        desc: 'Outdoor Interest',
+        locale: localeName,
+      );
 
-  String get settings {
-    return Intl.message(
-      'Settings',
-      name: 'settings',
-      desc: 'Settings',
-      locale: localeName,
-    );
-  }
+  String get settings => Intl.message(
+        'Settings',
+        name: 'settings',
+        desc: 'Settings',
+        locale: localeName,
+      );
 
-  String get shuttle {
-    return Intl.message(
-      'Shuttle Schedule',
-      name: 'shuttle',
-      desc: 'Shuttle Scedule',
-      locale: localeName,
-    );
-  }
+  String get shuttle => Intl.message(
+        'Shuttle Schedule',
+        name: 'shuttle',
+        desc: 'Shuttle Scedule',
+        locale: localeName,
+      );
+
+  String get checkShuttleSchedule => Intl.message(
+        "Check Shuttle Schedule for More Info",
+        name: 'checkShuttleSchedule',
+        desc: 'Check Shuttle Schedule',
+        locale: localeName,
+      );
+
+  String get comingSoon => Intl.message(
+        "Coming Soon!",
+        name: 'comingSoon',
+        desc: 'Coming Soon!',
+        locale: localeName,
+      );
+
+  String get currentLocation => Intl.message(
+        "Current Location",
+        name: 'currentLocation',
+        desc: 'Current Location',
+        locale: localeName,
+      );
+
+  String get chooseStartingPoint => Intl.message(
+        "Choose Starting Point",
+        name: 'chooseStartingPoint',
+        desc: 'Choose Starting Point',
+        locale: localeName,
+      );
+
+  String get chooseDestination => Intl.message(
+        "Choose Destination",
+        name: 'chooseDestination',
+        desc: 'Choose Destination',
+        locale: localeName,
+      );
+
+  String get errorOccurred => Intl.message(
+        "Error Occurred",
+        name: 'errorOccurred',
+        desc: 'Error Occurred',
+        locale: localeName,
+      );
+
+  String get concordiaShuttleBus => Intl.message(
+        "Concordia Shuttle Bus",
+        name: 'concordiaShuttleBus',
+        desc: 'Concordia Shuttle Bus',
+        locale: localeName,
+      );
 }
 
 class ConcordiaLocalizationsDelegate

@@ -20,11 +20,18 @@ class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'messages';
 
   final messages = _notInlinedMessages(_notInlinedMessages);
-  static _notInlinedMessages(_) => <String, Function>{
-        "profile": MessageLookupByLibrary.simpleMessage("Profile"),
-        "schedule": MessageLookupByLibrary.simpleMessage("Schedule"),
-        "interest": MessageLookupByLibrary.simpleMessage("Interest"),
-        "settings": MessageLookupByLibrary.simpleMessage("Settings"),
-        "shuttle": MessageLookupByLibrary.simpleMessage("Shuttle Schedule")
-      };
+  static _notInlinedMessages(_) => <String, Function> {
+    "checkShuttleSchedule" : MessageLookupByLibrary.simpleMessage("Check Shuttle Schedule for More Info"),
+    "chooseDestination" : MessageLookupByLibrary.simpleMessage("Choose Destination"),
+    "chooseStartingPoint" : MessageLookupByLibrary.simpleMessage("Choose Starting Point"),
+    "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming Soon!"),
+    "concordiaShuttleBus" : MessageLookupByLibrary.simpleMessage("Concordia Shuttle Bus"),
+    "currentLocation" : MessageLookupByLibrary.simpleMessage("Current Location"),
+    "errorOccurred" : MessageLookupByLibrary.simpleMessage("Error Occurred"),
+    "interest" : MessageLookupByLibrary.simpleMessage("Outdoor Interest"),
+    "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
+    "schedule" : MessageLookupByLibrary.simpleMessage("Schedule"),
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "shuttle" : MessageLookupByLibrary.simpleMessage("Shuttle Schedule")
+  };
 }
