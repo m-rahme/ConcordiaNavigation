@@ -18,17 +18,17 @@ class LocationSearch extends SearchDelegate {
           builder: (context, mapData, child) {
             return ListTile(
               leading: Icon(Icons.location_city),
-              title: Text("SGW Campus, Montreal"),
-              subtitle: Text("Quebec, Canada"),
+              title: Text(ConcordiaLocalizations.of(context).sgwCampus),
+              subtitle: Text(ConcordiaLocalizations.of(context).quebecCanada),
               onTap: () async {
                 Provider.of<MapData>(context, listen: false)
                     .controllerDestination
-                    .text = "SGW Campus, Montreal";
+                    .text = ConcordiaLocalizations.of(context).sgwCampus;
                 Provider.of<MapData>(context, listen: false)
                     .controllerStarting
                     .text = ConcordiaLocalizations.of(context).currentLocation;
                 Navigator.of(context).pop();
-                mapData.controllerDestination.text = "SGW, Montreal";
+                mapData.controllerDestination.text = ConcordiaLocalizations.of(context).currentLocation;
                 mapData.controllerStarting.text = ConcordiaLocalizations.of(context).currentLocation;
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('sgw');
@@ -45,11 +45,11 @@ class LocationSearch extends SearchDelegate {
           builder: (context, mapData, child) {
             return ListTile(
               leading: Icon(Icons.location_city),
-              title: Text("Loyola Campus, Montreal"),
-              subtitle: Text("Quebec, Canada"),
+              title: Text( ConcordiaLocalizations.of(context).loyolaCampus),
+              subtitle: Text(ConcordiaLocalizations.of(context).quebecCanada),
               onTap: () {
                 Navigator.of(context).pop();
-                mapData.controllerDestination.text = "Loyola Campus, Montreal";
+                mapData.controllerDestination.text = ConcordiaLocalizations.of(context).loyolaCampus;
                 mapData.controllerStarting.text = ConcordiaLocalizations.of(context).currentLocation;
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('loyola');

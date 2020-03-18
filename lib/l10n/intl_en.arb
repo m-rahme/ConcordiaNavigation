@@ -53,5 +53,20 @@
   "@concordiaShuttleBus": {
     "description": "Concordia Shuttle Bus",
     "type": "text"
+  },
+  "sgwCampus": "SGW Campus, Montreal",
+  "@sgwCampus": {
+    "description": "SGW Campus, Montreal",
+    "type": "text"
+  },
+  "loyolaCampus": "Loyola Campus, Montreal",
+  "@loyolaCampus": {
+    "description": "Loyola Campus, Montreal",
+    "type": "text"
+  },
+  "quebecCanada": "Quebec, Canada",
+  "@quebecCanada": {
+    "description": "Quebec, Canada",
+    "type": "text"
   }
 }

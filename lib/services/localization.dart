@@ -106,6 +106,24 @@ class ConcordiaLocalizations {
         desc: 'Concordia Shuttle Bus',
         locale: localeName,
       );
+  String get sgwCampus => Intl.message(
+        "SGW Campus, Montreal",
+        name: 'sgwCampus',
+        desc: 'SGW Campus, Montreal',
+        locale: localeName,
+      );
+  String get loyolaCampus => Intl.message(
+        "Loyola Campus, Montreal",
+        name: 'loyolaCampus',
+        desc: 'Loyola Campus, Montreal',
+        locale: localeName,
+      );
+  String get quebecCanada => Intl.message(
+        "Quebec, Canada",
+        name: 'quebecCanada',
+        desc: 'Quebec, Canada',
+        locale: localeName,
+      );
 }
 
 class ConcordiaLocalizationsDelegate

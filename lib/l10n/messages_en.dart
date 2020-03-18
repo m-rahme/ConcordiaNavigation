@@ -29,8 +29,11 @@ class MessageLookup extends MessageLookupByLibrary {
     "currentLocation" : MessageLookupByLibrary.simpleMessage("Current Location"),
     "errorOccurred" : MessageLookupByLibrary.simpleMessage("Error Occurred"),
     "interest" : MessageLookupByLibrary.simpleMessage("Outdoor Interest"),
+    "loyolaCampus" : MessageLookupByLibrary.simpleMessage("Loyola Campus, Montreal"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
+    "quebecCanada" : MessageLookupByLibrary.simpleMessage("Quebec, Canada"),
     "schedule" : MessageLookupByLibrary.simpleMessage("Schedule"),
-    "settings" : MessageLookupByLibrary.simpleMessage("Settings")
+    "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
+    "sgwCampus" : MessageLookupByLibrary.simpleMessage("SGW Campus, Montreal")
   };
 }
