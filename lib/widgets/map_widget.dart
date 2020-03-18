@@ -32,7 +32,6 @@ class _MapWidgetState extends State<MapWidget> {
   Set<Marker> setOfMarkers = Set<Marker>();
   BitmapDescriptor buildingIcon;
 
-
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
         await LocationService.getInstance().getLocationData());
@@ -86,16 +85,21 @@ class _MapWidgetState extends State<MapWidget> {
           height: 0,
         );
       }
-      for (int i = 0; i < 58; i++) {
+      for (int i = 0; i < 10; i++) {
         setOfMarkers.add(Marker(
           markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
-          position: LatLng(buildings.elementAt(i).getLatitude(), buildings.elementAt(i).getLongitude()),
-          infoWindow: InfoWindow(title: buildings.elementAt(i).getBuildingName()),
+          anchor: const Offset(0.5, 0.5),
+          position: LatLng(buildings.elementAt(i).getLatitude(),
+              buildings.elementAt(i).getLongitude()),
+          infoWindow:
+              InfoWindow(title: buildings.elementAt(i).getBuildingName()),
           icon: buildingIcon,
-
           onTap: () {
-
-            showModalBottomSheet(context: context, builder: (builder) {return BottomSheetWidget(buildings.elementAt(i));});
+            showModalBottomSheet(
+                context: context,
+                builder: (builder) {
+                  return BottomSheetWidget(buildings.elementAt(i));
+                });
           },
         ));
       }

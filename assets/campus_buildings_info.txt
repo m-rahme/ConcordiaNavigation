@@ -1,58 +1,12 @@
-Sir George William Campus:B Annex:45.498121:-73.579442:B Annex:2160 Bishop St.
-Sir George William Campus:CI Annex:45.497689:-73.579905:CI Annex:2149 Mackay St.
-Sir George William Campus:CL Annex:45.494347:-73.578751:CL Annex:1665 Saint-Catherine St W.
-Sir George William Campus:D Annex:45.503089:-73.579756:D Annex:2140 Bishop St.
-Sir George William Campus:EN Annex:45.501957:-73.580070:EN Annex:2070 Mackay St.
-Sir George William Campus:ER Annex:45.506222:-73.578583:ER Annex:2155 Guy St.
-Sir George William Campus:EV Building:45.495534:-73.577975:Engineering, Computer Science and Visual Arts Integrated Complex:1515 Saint-Catherine St W.
-Sir George William Campus:FA Annex:45.497139:-73.579628:FA Annex:2060 MacKay St.
-Sir George William Campus:FG Building:45.494905:-73.577571:Faubourg Building:1250 Guy St
-Sir George William Campus:GA Annex:45.494255:-73.577821:Grey Nuns Annex:1211-1215 St-Mathieu St.
-Sir George William Campus:GM Building:45.496082:-73.578879:Guy-De Maisonneuve Building:1550 Maisonneuve Blvd W.
-Sir George William Campus:GN Building:45.492915:-73.576963:Grey Nuns Building:1190 Guy St.
-Sir George William Campus:GS Building:45.496786:-73.581402:GS Building:1538 Sherbrooke St. W.
-Sir George William Campus:H Building:45.497548:-73.579040:Henry F. Hall Building:1455 De Maisonneuve Blvd. W.
-Sir George William Campus:K Annex:45.497849:-73.579521:K Annex:2150 Bishop St.
-Sir George William Campus:LB Building:45.497111:-73.578028:J.W. McConnell Building:1400 De Maisonneuve Blvd. W.
-Sir George William Campus:LD Building:45.496792:-73.577298:LD Building:1424 Bishop St.
-Sir George William Campus:LS Building:45.496195:-73.579486:Learning Square Building:1535 De Maisonneuve W.
-Sir George William Campus:M Annex:45.497363:-73.579774:M Annex:2135 Mackay St.
-Sir George William Campus:MB Building:45.495287:-73.579045:John-Molson Building:1450 Guy St.
-Sir George William Campus:MI Annex:45.497801:-73.579259:MI Annex:2130 Bishop St.
-Sir George William Campus:MU Annex:45.497945:-73.579498:MU Annex:2170 Bishop St.
-Sir George William Campus:P Annex:45.496733:-73.579374:P Annex:2020 Mackay St.
-Sir George William Campus:PR Annex:45.497171:-73.580103:PR Annex:2100 Mackay St.
-Sir George William Campus:Q Annex:45.496642:-73.579089:Q Annex:2010 Mackay St.
-Sir George William Campus:R Annex:45.496826:-73.579388:R Annex:2050 Mackay St.
-Sir George William Campus:RR Annex:45.496814:-73.579477:RR Annex:2040 Mackay St.
-Sir George William Campus:S Annex:45.497415:-73.579852:S Annex:2145 Mackay St.
-Sir George William Campus:SB Building:45.496592:-73.586084:Samuel-Bronfman Building:1590 Docteur-Penfield
-Sir George William Campus:T Annex:45.496775:-73.579406:T Annex:2030 Mackay St.
-Sir George William Campus:TD Building:45.495104:-73.578374:Toronto-Dominion Building:1410 Guy St.
-Sir George William Campus:V Annex:45.497088:-73.579901:V Annex:2110 Mackay St.
-Sir George William Campus:VA Building:45.495526:-73.573793:Visual Arts Building:1395 René-Lévesque Blvd. W.
-Sir George William Campus:X Building:45.496977:-73.579804:X Annex:2080 Mackay St.
-Sir George William Campus:Z Annex:45.497018:-73.579912:Z Annex:2090 Mackay St.
-Loyola Campus:AD Building:45.45827:-73.63945:Administration Building:7141 Sherbrooke W. 
-Loyola Campus:BB Annex:45.45979:-73.63909:BB Annex:3502 Belmore
-Loyola Campus:BH Annex:45.45976:-73.63901:BH Annex:3500 Belmore
+Sir George William Campus:H Building:45.497246:-73.578972:Henry F. Hall Building:1455 De Maisonneuve Blvd. W.
+Sir George William Campus:LB Building:45.496810:-73.577813:J.W. McConnell Building:1400 De Maisonneuve Blvd. W.
+Sir George William Campus:FG Building:45.494236:-73.578284 :Faubourg Building:1250 Guy St
+Sir George William Campus:MB Building:45.495324:-73.579062:John-Molson Building:1450 Guy St.
+Sir George William Campus:EV Building:45.495666:-73.578086:Engineering, Computer Science and Visual Arts Integrated Complex:1515 Saint-Catherine St W.
 Loyola Campus:CC Building:45.45823:-73.6399:Central Building:7141 Sherbrooke W.
 Loyola Campus:CJ Building:45.45748:-73.63981:Communication Studies and Journalism Building:7141 Sherbrooke W.
-Loyola Campus:DO:45.45793:-73.63523:Stinger Dome (seasonal):7141 Sherbrooke W.
-Loyola Campus:FC Building:45.45876:-73.63957:F.C. Smith Building:7141 Sherbrooke W.
-Loyola Campus:GE Centre:45.45704:-73.64016:Centre for Structural and Functional Genomics:7141 Sherbrooke W. 
-Loyola Campus:HA Hall:45.45949:-73.64088:Hingston Hall (HA Wing):7141 Sherbrooke W.
-Loyola Campus:HB Hall:45.45921:-73.64168:Hingston Hall (HB Wing):7141 Sherbrooke W.
-Loyola Campus:HC Hall:45.45983:-73.64183:Hingston Hall (HC Wing):7141 Sherbrooke W.
-Loyola Campus:HU:45.45864:-73.64141:Applied Science Hub:7141 Sherbrooke W.
-Loyola Campus:JR Residence:45.45854:-73.64305:Jesuit Residence:7141 Sherbrooke W.
-Loyola Campus:PC Centre:45.45696:-73.63676:PERFORM Centre:7200 Sherbrooke St. W.
-Loyola Campus:PS Building:45.45958:-73.63922:Physical Services Building:7141 Sherbrooke W.
-Loyola Campus:PT Hall:45.45931:-73.63867:Oscar Peterson Concert Hall:7141 Sherbrooke W.
+Loyola Campus:GE Centre:45.45704:-73.64016:Centre for Structural and Functional Genomics:7141 Sherbrooke W.
 Loyola Campus:PY Building:45.45909:-73.64015:Psychology Building:7141 Sherbrooke W.
-Loyola Campus:RA Complex:45.45691:-73.63756:Recreation and Athletics Complex:7200 Sherbrooke St. W.
-Loyola Campus:RF Centre:45.45869:-73.6408:Loyola Jesuit Hall and Conference Centre:7141 Sherbrooke W.
-Loyola Campus:SH:45.45933:-73.64237:Solar House:7141 Sherbrooke W.
-Loyola Campus:SI:45.4581:-73.64241:St. Ignatius of Loyola Church:4455 Broadway
 Loyola Campus:SP Complex:45.4572:-73.64065:Richard J. Renaud Science Complex:7141 Sherbrooke W.
-Loyola Campus:TA Building:45.46005:-73.64079:Terrebone Building:7079 Terrebone
+
+
