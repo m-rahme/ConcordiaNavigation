@@ -8,16 +8,14 @@ class ShuttleData extends ChangeNotifier {
   ShuttleData() {
     loadJson();
   }
-
-  String getNextShuttle(campus) {
-    var now = new DateTime.now();
-
-    if (now.weekday == 7 ||
-        now.weekday == 6 ||
-        (now.weekday == 5 && now.hour * 100 > 1950)) {
+  String getNextShuttle(campus, [DateTime time]) {
+    time = time ?? DateTime.now();
+    if (time.weekday == 7 ||
+        time.weekday == 6 ||
+        (time.weekday == 5 && time.hour * 100 > 1950)) {
       return "Check Shuttle Schedule for More Info";
     } else {
-      var length = now.weekday == 5
+      var length = time.weekday == 5
           ? _json[campus]['5'].length
           : _json[campus]['1'].length;
 
@@ -26,7 +24,8 @@ class ShuttleData extends ChangeNotifier {
       String shuttleTime;
 
       for (var i = 0; i < length; i++) {
-        if (int.parse(_json[campus][day][i]) >= (now.hour * 100) + now.minute) {
+        if (int.parse(_json[campus][day][i]) >=
+            (time.hour * 100) + time.minute) {
           shuttleTime = _json[campus][day][i];
           break;
         }
