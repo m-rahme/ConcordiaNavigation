@@ -56,7 +56,7 @@ class _MapWidgetState extends State<MapWidget> {
 
   void setBuildingIcons() async {
     buildingIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/h.png');
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/markers/h3.png');
   }
 
   @override
