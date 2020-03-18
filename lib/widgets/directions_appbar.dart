@@ -258,6 +258,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
                             contentPadding: EdgeInsets.symmetric(
                                 horizontal: 10, vertical: 12),
                             hintText: ConcordiaLocalizations.of(context).chooseDestination,
+                        )
                       ),
                     ),
                   ],
