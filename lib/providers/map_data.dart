@@ -78,9 +78,10 @@ class MapData extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the shared itinerary object to null, causing a re-render of the DirectionsDrawer widget
+  /// given it builds only with an empty Container() if it is indeed null
   void removeItinerary() {
     itinerary = null;
-    panelController.hide();
     notifyListeners();
   }
 
