@@ -18,8 +18,7 @@ class ShuttleData extends ChangeNotifier {
       var length = time.weekday == 5
           ? _json[campus]['5'].length
           : _json[campus]['1'].length;
-
-      var day = now.weekday.toString();
+      var day = time.weekday.toString();
 
       String shuttleTime;
 

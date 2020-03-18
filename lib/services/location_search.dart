@@ -34,7 +34,7 @@ class LocationSearch extends SearchDelegate {
                 mapData.changeEnd(sgw);
                 mapData.changeMode("driving");
                 mapData.setItinerary();
-                mapData.panelController.panelPosition = 1;
+                mapData.panelController.open();
               },
             );
           },
