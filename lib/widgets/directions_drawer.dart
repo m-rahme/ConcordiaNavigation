@@ -412,9 +412,9 @@ class DirectionsDrawer extends StatelessWidget {
                 )));
 
     if (Provider.of<MapData>(context).itinerary == null) {
-      return Container();
+      return Container(); // return an empty Container() if the itinerary object is null
     } else {
-      return sp;
+      return sp; // else return the SlidingUpPanel containing directions
     }
   }
 }
