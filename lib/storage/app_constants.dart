@@ -17,3 +17,4 @@ const Color blackColor = Color(0xFF000000);
 const Color offWhiteColor = Color(0xFFFFFFF8);
 const Color lightGreyColor = Color(0xFFF0F0F0);
 const Color greyColor = Color(0xFF656363);
+const Color maroonColor = Color(0xFFAE0000);

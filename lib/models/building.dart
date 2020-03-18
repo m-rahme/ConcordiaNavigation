@@ -17,7 +17,7 @@ class Building {
     if (_outline == null || updated == false) {
       _outline = new Polygon(
         polygonId: PolygonId(name),
-        fillColor: constants.greenColor.withOpacity(0.3),
+        fillColor: constants.maroonColor.withOpacity(0.7),
         consumeTapEvents: false,
         geodesic: false,
         points: edges,
