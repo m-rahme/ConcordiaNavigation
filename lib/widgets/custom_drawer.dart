@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -135,7 +136,7 @@ class CustomDrawer extends StatelessWidget {
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.pushNamed(context, '/o_interest');
+                Navigator.pushNamed(context, OutdoorInterest.routeName);
               },
             ),
           ),
