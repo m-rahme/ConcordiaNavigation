@@ -30,11 +30,11 @@ class ShuttleData extends ChangeNotifier {
             (time.hour * 100) + time.minute) {
           shuttleTime = schedule[campus][day][i];
           break;
-        } else {
+        } else { // it's between 11PM and 12AM
           if (campus == "loyola") {
-            if (int.parse(day) < 5) {
+            if (int.parse(day) < 5) { // it's between monday and thursday inclusive
               shuttleTime = "0730";
-            } else {
+            } else { // it's a friday
               shuttleTime = "0740";
             }
           } else {

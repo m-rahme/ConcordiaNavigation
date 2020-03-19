@@ -8,6 +8,9 @@ const LatLng loyola = LatLng(45.4582, -73.6405);
 const LatLng hBuilding = LatLng(45.497094, -73.578797);
 const LatLng jmsbBuilding = LatLng(45.495549, -73.579036);
 
+final RegExp removeHTML = RegExp(
+    r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'); //Regex to replace certain special characters in HTML with whitespace
+
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;

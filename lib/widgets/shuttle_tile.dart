@@ -14,8 +14,8 @@ class ShuttleTile extends StatelessWidget {
     return FutureBuilder(
         future: Provider.of<ShuttleData>(context, listen: false)
             .getNextShuttle(campus),
-        builder: (context, AsyncSnapshot itinerary) {
-          switch (itinerary.connectionState) {
+        builder: (context, AsyncSnapshot shuttleTime) {
+          switch (shuttleTime.connectionState) {
             // Uncompleted State
             case ConnectionState.none:
               return Text('Error');
@@ -24,7 +24,7 @@ class ShuttleTile extends StatelessWidget {
               break;
             default:
               // Completed with error
-              if (itinerary.hasError)
+              if (shuttleTime.hasError)
                 return Container(
                   child: Text("Error Occured"),
                 );
@@ -45,7 +45,7 @@ class ShuttleTile extends StatelessWidget {
                 iconSize: 45.0,
               ),
               title: Text(
-                itinerary.data == null ? "No Shuttle Bus" : "via Shuttle Bus",
+                shuttleTime.data == null ? "No Shuttle Bus" : "via Shuttle Bus",
                 style: GoogleFonts.raleway(
                   fontSize: 14.0,
                   fontWeight: FontWeight.w600,
@@ -53,9 +53,9 @@ class ShuttleTile extends StatelessWidget {
                 ),
               ),
               subtitle: Text(
-                itinerary.data == null
+                shuttleTime.data == null
                     ? "Check Shuttle Schedule For More Info"
-                    : itinerary.data,
+                    : shuttleTime.data,
                 style: GoogleFonts.raleway(
                   fontSize: 10.0,
                   fontWeight: FontWeight.w600,

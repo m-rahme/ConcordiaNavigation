@@ -20,7 +20,7 @@ class DirectionsDrawer extends StatelessWidget {
     var _controllerDestination =
         Provider.of<MapData>(context, listen: false).controllerDestination;
 
-    Future<Map<String, Map<String, String>>> _fetchMoreData() async {
+    Future<Map<String, Map<String, String>>> fetchItinerary() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
       await Future.delayed(Duration(seconds: 1));
@@ -333,7 +333,7 @@ class DirectionsDrawer extends StatelessWidget {
                       height: SizeConfig.safeBlockVertical * 45,
                       color: constants.whiteColor,
                       child: FutureBuilder(
-                          future: _fetchMoreData(),
+                          future: fetchItinerary(),
                           builder: (context, AsyncSnapshot itinerary) {
                             switch (itinerary.connectionState) {
                               case ConnectionState.none:

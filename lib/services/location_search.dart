@@ -16,15 +16,10 @@ class LocationSearch extends SearchDelegate {
     'MB1.437'
   ]; // for demonstration purposes
 
-  void getClassrooms() async {
-    classrooms =
-        json.decode(await rootBundle.loadString('assets/destinations.json'));
-  }
 
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
-    getClassrooms();
 
     final suggestionList = query.isEmpty
         ? recentRooms
@@ -32,6 +27,7 @@ class LocationSearch extends SearchDelegate {
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
         onTap: () async {
+          classrooms = json.decode(await rootBundle.loadString('assets/destinations.json'));
           Provider.of<MapData>(context, listen: false)
               .controllerDestination
               .text = "SGW Campus, Montreal";
