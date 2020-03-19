@@ -8,54 +8,51 @@ import 'package:concordia_navigation/widgets/shuttle_tile.dart';
 class ShuttleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(3.0)),
-            color: constants.greenColor,
-          ),
-          height: SizeConfig.safeBlockVertical * 4,
-          width: SizeConfig.screenWidth,
-          child: Padding(
-            padding: const EdgeInsets.only(right: 20.0, left: 20.0),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: <Widget>[
-                Text(
-                  "Concordia Shuttle Bus",
-                  style: GoogleFonts.raleway(
-                    fontSize: 14.0,
-                    fontWeight: FontWeight.w600,
-                    color: constants.whiteColor,
-                  ),
-                ),
-                InkWell(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/shuttle');
-                  },
-                  child: Text(
-                    "SCHEDULE",
+    return Container(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: <Widget>[
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.all(Radius.circular(3.0)),
+              color: constants.greenColor,
+            ),
+            height: SizeConfig.safeBlockVertical * 4,
+            width: SizeConfig.screenWidth,
+            child: Padding(
+              padding: const EdgeInsets.only(right: 20.0, left: 20.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Text(
+                    "Concordia Shuttle Bus",
                     style: GoogleFonts.raleway(
                       fontSize: 14.0,
                       fontWeight: FontWeight.w600,
                       color: constants.whiteColor,
                     ),
                   ),
-                ),
-              ],
+                  InkWell(
+                    onTap: () {
+                      Navigator.pushNamed(context, '/shuttle');
+                    },
+                    child: Text(
+                      "SCHEDULE",
+                      style: GoogleFonts.raleway(
+                        fontSize: 14.0,
+                        fontWeight: FontWeight.w600,
+                        color: constants.whiteColor,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
-        ),
-        Container(
-          height: 106,
-          color: constants.offWhiteColor,
-          child: SafeArea(
-            top: false,
+          Container(
             child: Container(
-              color: constants.offWhiteColor,
-              height: SizeConfig.safeBlockVertical * 12,
+              color: constants.whiteColor,
+              height: SizeConfig.safeBlockVertical * 11,
               width: SizeConfig.screenWidth,
               child: Column(
                 children: <Widget>[
@@ -95,8 +92,8 @@ class ShuttleWidget extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
