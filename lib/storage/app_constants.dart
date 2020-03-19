@@ -5,6 +5,8 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 const LatLng sgw = LatLng(45.495944, -73.578075);
 const LatLng loyola = LatLng(45.4582, -73.6405);
+const LatLng hBuilding = LatLng(45.497094, -73.578797);
+const LatLng jmsbBuilding = LatLng(45.495549, -73.579036);
 
 const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
