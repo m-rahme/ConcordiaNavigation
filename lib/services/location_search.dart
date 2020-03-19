@@ -93,7 +93,6 @@ class LocationSearch extends SearchDelegate {
           }
           Provider.of<MapData>(context, listen: false).changeMode("driving");
           Provider.of<MapData>(context, listen: false).setItinerary();
-          Provider.of<MapData>(context, listen: false).setDrawer(true);
         },
         leading: Icon(Icons.location_city),
         title: RichText(

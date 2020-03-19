@@ -30,8 +30,19 @@ class ShuttleData extends ChangeNotifier {
             (time.hour * 100) + time.minute) {
           shuttleTime = schedule[campus][day][i];
           break;
+        } else {
+          if (campus == "loyola") {
+            if (int.parse(day) < 5) {
+              shuttleTime = "0730";
+            } else {
+              shuttleTime = "0740";
+            }
+          } else {
+            shuttleTime = "0745";
+          }
         }
       }
+
       var timeList = shuttleTime.split('');
       return "Next Shuttle Bus at: " +
           timeList[0] +
