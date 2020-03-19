@@ -91,8 +91,6 @@ class _MapWidgetState extends State<MapWidget> {
           anchor: const Offset(0.5, 0.5),
           position: LatLng(buildings.elementAt(i).getLatitude(),
               buildings.elementAt(i).getLongitude()),
-          infoWindow:
-              InfoWindow(title: buildings.elementAt(i).getBuildingName()),
           icon: buildingIcon,
           onTap: () {
             showModalBottomSheet(
