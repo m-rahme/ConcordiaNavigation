@@ -10,46 +10,60 @@ import 'package:google_fonts/google_fonts.dart';
 class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var response1 = "via Shuttle Bus";
     var campus = Provider.of<MapData>(context, listen: false).getCampus;
-    if (Provider.of<ShuttleData>(context, listen: false)
-            .getNextShuttle(campus) ==
-        "Check Shuttle Schedule for More Info") {
-      response1 = "No Shuttle Bus Until Monday";
-    }
-    return Container(
-      decoration: BoxDecoration(
-        color: constants.offWhiteColor,
-      ),
-      child: ListTile(
-        contentPadding: EdgeInsets.only(
-            left: SizeConfig.safeBlockHorizontal * 5.0,
-            right: SizeConfig.safeBlockHorizontal * 0.0,
-            top: SizeConfig.safeBlockHorizontal * 0.0),
-        leading: IconButton(
-          icon: new Image.asset('assets/logo.png'),
-          tooltip: 'Concordia',
-          onPressed: () {},
-          iconSize: 45.0,
-        ),
-        title: Text(
-          response1,
-          style: GoogleFonts.raleway(
-            fontSize: 14.0,
-            fontWeight: FontWeight.w600,
-            color: constants.blackColor,
-          ),
-        ),
-        subtitle: Text(
-          Provider.of<ShuttleData>(context, listen: false)
-              .getNextShuttle(campus),
-          style: GoogleFonts.raleway(
-            fontSize: 10.0,
-            fontWeight: FontWeight.w600,
-            color: constants.blackColor,
-          ),
-        ),
-      ),
-    );
+    return FutureBuilder(
+        future: Provider.of<ShuttleData>(context, listen: false)
+            .getNextShuttle(campus),
+        builder: (context, AsyncSnapshot itinerary) {
+          switch (itinerary.connectionState) {
+            // Uncompleted State
+            case ConnectionState.none:
+              return Text('Error');
+            case ConnectionState.waiting:
+              return Center(child: CircularProgressIndicator());
+              break;
+            default:
+              // Completed with error
+              if (itinerary.hasError)
+                return Container(
+                  child: Text("Error Occured"),
+                );
+          }
+          return Container(
+            decoration: BoxDecoration(
+              color: constants.offWhiteColor,
+            ),
+            child: ListTile(
+              contentPadding: EdgeInsets.only(
+                  left: SizeConfig.safeBlockHorizontal * 5.0,
+                  right: SizeConfig.safeBlockHorizontal * 0.0,
+                  top: SizeConfig.safeBlockHorizontal * 0.0),
+              leading: IconButton(
+                icon: new Image.asset('assets/logo.png'),
+                tooltip: 'Concordia',
+                onPressed: () {},
+                iconSize: 45.0,
+              ),
+              title: Text(
+                itinerary.data == null ? "No Shuttle Bus" : "via Shuttle Bus",
+                style: GoogleFonts.raleway(
+                  fontSize: 14.0,
+                  fontWeight: FontWeight.w600,
+                  color: constants.blackColor,
+                ),
+              ),
+              subtitle: Text(
+                itinerary.data == null
+                    ? "Check Shuttle Schedule For More Info"
+                    : itinerary.data,
+                style: GoogleFonts.raleway(
+                  fontSize: 10.0,
+                  fontWeight: FontWeight.w600,
+                  color: constants.blackColor,
+                ),
+              ),
+            ),
+          );
+        });
   }
 }
