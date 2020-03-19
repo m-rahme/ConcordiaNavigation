@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'package:concordia_navigation/widgets/directions_drawer.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -104,7 +103,7 @@ class _MapWidgetState extends State<MapWidget> {
               _completer.complete(controller);
             }),
         FloatingMapButton(
-          top: SizeConfig.safeBlockVertical * 66,
+          top: SizeConfig.safeBlockVertical * 62,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
@@ -122,7 +121,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
-          top: SizeConfig.safeBlockVertical * 75,
+          top: SizeConfig.safeBlockVertical * 70,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.gps_fixed),
           onClick: () {
@@ -130,7 +129,6 @@ class _MapWidgetState extends State<MapWidget> {
                 .animateTo(pos.latitude, pos.longitude);
           },
         ),
-        DirectionsDrawer(),
       ],
     );
   }
