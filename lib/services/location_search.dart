@@ -10,7 +10,11 @@ It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
   List<dynamic> classrooms;
-  final recentRooms = ['H102', 'H103', 'H101']; // for demonstration purposes
+  final recentRooms = [
+    'HALL BUILDING',
+    'H837',
+    'MB1.437'
+  ]; // for demonstration purposes
 
   void getClassrooms() async {
     classrooms =
@@ -24,7 +28,7 @@ class LocationSearch extends SearchDelegate {
 
     final suggestionList = query.isEmpty
         ? recentRooms
-        : classrooms.where((p) => p.startsWith(query.toUpperCase())).toList();
+        : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
     return ListView.builder(
       itemBuilder: (context, index) => ListTile(
         onTap: () async {
