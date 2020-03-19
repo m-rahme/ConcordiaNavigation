@@ -1,0 +1,79 @@
+{
+  "loyola": {
+    "loyolapark":[
+		{"Name":"Loyola Park"},
+		{"LAT":"45.4608841"},
+		{"LNG":"73.6458944"},
+		{"Description":""},
+		{"Open":"NA"},
+		{"Close":"NA"}
+    ],
+    "souvlakigeorge":[
+		{"Name":"Souvlaki George"},
+		{"LAT":"45.459880"},
+		{"LNG":"-73.637000"},
+		{"Description":""},
+		{"Open":"11:00"},
+		{"Close":"5:00"}
+    ],
+    "ndghotdog":[
+		{"Name":"NDG Hotdog & Pizzaria"},
+		{"LAT":"45.465950"},
+		{"LNG":"-73.624720"},
+		{"Description":""},
+		{"Open":"11:00"},
+		{"Close":"22:00"}
+    ],
+	"comptoirkoyajo":[
+		{"Name":"Comptoir Koyajo"},
+		{"LAT":"45.460000"},
+		{"LNG":"-73.636440"},
+		{"Description":""},
+		{"Open":"10:30"},
+		{"Close":"15:00"}
+    ]
+
+  },
+  "sgw": {
+    "britnchips":[
+		{"Name":"Brit & Chips"},
+		{"LAT":"45.4975289"},
+		{"LNG":"73.5776902"},
+		{"Description":""},
+		{"Open":"11:00"},
+		{"Close":"22:00"}
+    ],
+	"kintonramen":[
+		{"Name":"Kinton Ramen"},
+		{"LAT":"45.49600359999999"},
+		{"LNG":"73.5748529"},
+		{"Description":""},
+		{"Open":"11:30"},
+		{"Close":"22:30"}
+	],
+	"belleetlabouef":[
+		{"Name":"La Belle et la Boeuf"},
+		{"LAT":"45.49423729999999"},
+		{"LNG":"73.57853639999999"},
+		{"Description":""},
+		{"Open":"11:30"},
+		{"Close":"23:00"}
+    ],
+	"sota":[
+		{"Name":"Sota"},
+		{"LAT":"45.4935173"},
+		{"LNG":"73.5798552"},
+		{"Description":""},
+		{"Open":"11:30"},
+		{"Close":"0:00"}
+    ],
+	"mckibbins":[
+		{"Name":"McKibbin's Irish Pub"},
+		{"LAT":"45.4967536"},
+		{"LNG":"73.57734959999999"},
+		{"Description":""},
+		{"Open":"11:30"},
+		{"Close":"3:00"}
+    ]
+  }
+}
