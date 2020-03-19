@@ -29,7 +29,7 @@ class DirectionsDrawer extends StatelessWidget {
 
     SlidingUpPanel sp = SlidingUpPanel(
         controller: Provider.of<MapData>(context).panelController,
-        maxHeight: SizeConfig.safeBlockVertical * 83,
+        maxHeight: SizeConfig.safeBlockVertical * 85,
         defaultPanelState: PanelState.OPEN,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
@@ -407,7 +407,7 @@ class DirectionsDrawer extends StatelessWidget {
                             }
                           }),
                     ), // list of directions
-                    ShuttleWidget(),
+                    Container(height: 145, child: ShuttleWidget()),
                   ],
                 )));
 

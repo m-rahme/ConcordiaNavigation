@@ -28,23 +28,31 @@ class LocationSearch extends SearchDelegate {
           onTap: () async {
             classrooms = json.decode(
                 await rootBundle.loadString('assets/destinations.json'));
-            mapData.controllerDestination.text = "SGW Campus, Montreal";
-            mapData.controllerStarting.text = "Current Location";
             Navigator.of(context).pop();
-            mapData.controllerDestination.text = "SGW, Montreal";
             mapData.controllerStarting.text = "Current Location";
             mapData.changeStart(mapData.getCurrentLocation);
             switch (suggestionList[index][0].toString()) {
               case "H":
                 {
-                  mapData.changeCampus('sgw');
-                  mapData.changeEnd(constants.hBuilding);
+                  if (suggestionList[index][1].toString() == "A") {
+                    mapData.changeCampus('sgw');
+                    mapData.controllerDestination.text =
+                        "Hall Building, Montreal";
+                    mapData.changeEnd(constants.hBuilding);
+                  } else {
+                    mapData.changeCampus('sgw');
+                    mapData.controllerDestination.text =
+                        suggestionList[index].toString();
+                    mapData.changeEnd(constants.hBuilding);
+                  }
                 }
                 break;
 
               case "M":
                 {
                   mapData.changeCampus('sgw');
+                  mapData.controllerDestination.text =
+                      suggestionList[index].toString();
                   mapData.changeEnd(constants.jmsbBuilding);
                 }
                 break;
@@ -52,6 +60,8 @@ class LocationSearch extends SearchDelegate {
               case "L":
                 {
                   mapData.changeCampus('loyola');
+                  mapData.controllerDestination.text =
+                      "Loyola Campus, Montreal";
                   mapData.changeEnd(constants.loyola);
                 }
                 break;
@@ -59,6 +69,8 @@ class LocationSearch extends SearchDelegate {
               case "J":
                 {
                   mapData.changeCampus('sgw');
+                  mapData.controllerDestination.text =
+                      "John Molson Business, Montreal";
                   mapData.changeEnd(constants.jmsbBuilding);
                 }
                 break;
@@ -66,6 +78,7 @@ class LocationSearch extends SearchDelegate {
               default:
                 {
                   mapData.changeCampus('sgw');
+                  mapData.controllerDestination.text = "SGW Campus, Montreal";
                   mapData.changeEnd(constants.sgw);
                 }
                 break;

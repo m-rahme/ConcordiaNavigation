@@ -9,6 +9,7 @@ class ShuttleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
         Container(
           decoration: BoxDecoration(
@@ -48,6 +49,7 @@ class ShuttleWidget extends StatelessWidget {
           ),
         ),
         Container(
+          height: 106,
           color: constants.offWhiteColor,
           child: SafeArea(
             top: false,
