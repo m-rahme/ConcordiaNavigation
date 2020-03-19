@@ -13,7 +13,7 @@ void main() {
 
       await tester.tap(find.byIcon(Icons.search));
       await tester.pumpAndSettle();
-      expect(find.text("SGW Campus, Montreal"), findsOneWidget);
+      expect(find.text("Sir George Williams"), findsOneWidget);
     });
   });
 }
