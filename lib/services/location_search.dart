@@ -32,6 +32,8 @@ class LocationSearch extends SearchDelegate {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
           onTap: () async {
+            mapData.controllerDestination.text = "SGW Campus, Montreal";
+            mapData.controllerStarting.text = "Current Location";
             Navigator.of(context).pop();
             mapData.controllerStarting.text = "Current Location";
             mapData.changeStart(mapData.getCurrentLocation);
