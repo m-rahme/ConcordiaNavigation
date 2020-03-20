@@ -27,10 +27,21 @@ class _MapWidgetState extends State<MapWidget> {
   var _location;
 
   //attributes for markers
-  BuildingList buildingList = BuildingList();
-  Set<BuildingInformation> buildings;
+  Set<BuildingInformation> buildings = (new BuildingList()).getListOfBuildings();
   Set<Marker> setOfMarkers = Set<Marker>();
   Set<BitmapDescriptor> buildingIcon = Set<BitmapDescriptor>();
+  Set<String> iconSet = {
+    "assets/markers/h.png",
+    "assets/markers/lb.png",
+    "assets/markers/fg.png",
+    "assets/markers/mb.png",
+    "assets/markers/ev.png",
+    "assets/markers/cc.png",
+    "assets/markers/cj.png",
+    "assets/markers/ge.png",
+    "assets/markers/py.png",
+    "assets/markers/sp.png",
+  };
 
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
@@ -50,15 +61,15 @@ class _MapWidgetState extends State<MapWidget> {
     Future location = setInitialCamera();
     location.then((value) => _location = value);
     SizeConfig();
-    buildings = buildingList.getListOfBuildings();
-    setBuildingIcons();
   }
 
   void setBuildingIcons() async {
     for(int i = 0 ; i< 10; i++){
     buildingIcon.add(await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/markers/h.png'));
-  }}
+//        ImageConfiguration(devicePixelRatio: 2.5), buildings.elementAt(i).getFilename()));
+        ImageConfiguration(devicePixelRatio: 2.5), iconSet.elementAt(i)));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -78,34 +89,35 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if (buildings.length < 11) {
-      buildingList.readBuildingFile();
-      while (buildings.length == 0) {
+    if(buildingIcon.length < 10 && buildings.length>9)
+      setBuildingIcons();
+
+    if (buildingIcon.length == 10 ) {
+      while (buildings.length < 10) {
         return Container(
           width: 0,
           height: 0,
         );
       }
-      for (int i = 0; i < 10; i++) {
-        setOfMarkers.add(Marker(
-          markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
-          anchor: const Offset(0.5, 0.5),
-          position: LatLng(buildings.elementAt(i).getLatitude(),
-              buildings.elementAt(i).getLongitude()),
-          icon: buildingIcon.elementAt(i),
-          onTap: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (builder) {
-                  return BottomSheetWidget(buildings.elementAt(i));
-                });
-          },
-        )
-
-        );
+      if(setOfMarkers.length < 10){
+        for (int i = 0; i < 10; i++) {
+          setOfMarkers.add(Marker(
+            markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
+            anchor: const Offset(0.5, 0.5),
+            position: LatLng(
+                buildings.elementAt(i).getLatitude(),
+                buildings.elementAt(i).getLongitude()),
+            icon: buildingIcon.elementAt(i),
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (builder) {return BottomSheetWidget(buildings.elementAt(i));}
+                  );
+            },
+          ));
+        }
       }
     }
-
     return Stack(
       children: <Widget>[
         GoogleMap(
