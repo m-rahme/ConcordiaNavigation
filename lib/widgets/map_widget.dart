@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -25,7 +26,8 @@ class _MapWidgetState extends State<MapWidget> {
   var _location;
 
   //attributes for markers
-  Set<BuildingInformation> buildings = (new BuildingList()).getListOfBuildings();
+  Set<BuildingInformation> buildings =
+      (new BuildingList()).getListOfBuildings();
   Set<Marker> setOfMarkers = Set<Marker>();
   Set<BitmapDescriptor> buildingIcon = Set<BitmapDescriptor>();
   Set<String> iconSet = {
@@ -62,10 +64,11 @@ class _MapWidgetState extends State<MapWidget> {
   }
 
   void setBuildingIcons() async {
-    for(int i = 0 ; i< 10; i++){
-    buildingIcon.add(await BitmapDescriptor.fromAssetImage(
+    for (int i = 0; i < 10; i++) {
+      buildingIcon.add(await BitmapDescriptor.fromAssetImage(
 //        ImageConfiguration(devicePixelRatio: 2.5), buildings.elementAt(i).getFilename()));
-        ImageConfiguration(devicePixelRatio: 2.5), iconSet.elementAt(i)));
+          ImageConfiguration(devicePixelRatio: 2.5),
+          iconSet.elementAt(i)));
     }
   }
 
@@ -87,30 +90,29 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if(buildingIcon.length < 10 && buildings.length>9)
-      setBuildingIcons();
+    if (buildingIcon.length < 10 && buildings.length > 9) setBuildingIcons();
 
-    if (buildingIcon.length == 10 ) {
+    if (buildingIcon.length == 10) {
       while (buildings.length < 10) {
         return Container(
           width: 0,
           height: 0,
         );
       }
-      if(setOfMarkers.length < 10){
+      if (setOfMarkers.length < 10) {
         for (int i = 0; i < 10; i++) {
           setOfMarkers.add(Marker(
             markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
             anchor: const Offset(0.5, 0.5),
-            position: LatLng(
-                buildings.elementAt(i).getLatitude(),
+            position: LatLng(buildings.elementAt(i).getLatitude(),
                 buildings.elementAt(i).getLongitude()),
             icon: buildingIcon.elementAt(i),
             onTap: () {
               showModalBottomSheet(
                   context: context,
-                  builder: (builder) {return BottomSheetWidget(buildings.elementAt(i));}
-                  );
+                  builder: (builder) {
+                    return BottomSheetWidget(buildings.elementAt(i));
+                  });
             },
           ));
         }
