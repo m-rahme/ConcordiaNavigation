@@ -24,21 +24,9 @@ class MapData extends ChangeNotifier {
   LatLng _start;
   LatLng _end;
   String _mode;
-  String _duration;
-  String _distance;
 
   MapData() {
     _mode = "driving";
-  }
-
-  void changeDuration(duration) {
-    _duration = duration;
-    notifyListeners();
-  }
-
-  void changeDistance(distance) {
-    _distance = distance;
-    notifyListeners();
   }
 
   void changeCampus(campus) {
@@ -73,14 +61,6 @@ class MapData extends ChangeNotifier {
     return _mode;
   }
 
-  String get getDuration {
-    return _duration;
-  }
-
-  String get getDistance {
-    return _distance;
-  }
-
   LatLng get getStart {
     return _start;
   }
@@ -95,8 +75,6 @@ class MapData extends ChangeNotifier {
 
   void setItinerary() async {
     itinerary = await Itinerary.create(_start, _end, _mode);
-    _distance = Itinerary.getDistance();
-    _duration = Itinerary.getDuration();
     notifyListeners();
   }
 

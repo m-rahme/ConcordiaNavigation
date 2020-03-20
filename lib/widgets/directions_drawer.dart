@@ -340,7 +340,7 @@ class DirectionsDrawer extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 55.0, top: 3.0),
                                     child: Text(
-                                      "Duration: " + mapData.getDuration,
+                                      "Duration: " + mapData.itinerary.duration,
                                       style: GoogleFonts.raleway(
                                         fontSize: 12.0,
                                         fontWeight: FontWeight.w600,
@@ -355,7 +355,7 @@ class DirectionsDrawer extends StatelessWidget {
                                   padding: const EdgeInsets.only(
                                       left: 5.0, top: 3.0),
                                   child: Text(
-                                    "Distance: " + mapData.getDistance,
+                                    "Distance: " + mapData.itinerary.distance,
                                     style: GoogleFonts.raleway(
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.w600,

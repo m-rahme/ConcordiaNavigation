@@ -16,16 +16,11 @@ class Itinerary {
 
   Itinerary._create();
 
-  static String _duration;
-  static String _distance;
+  String _duration;
+  String _distance;
 
-  static String getDuration() {
-    return _duration;
-  }
-
-  static String getDistance() {
-    return _distance;
-  }
+  String get duration => _duration;
+  String get distance => _distance;
 
   List<Polyline> get polylines => _polylines;
 
@@ -42,6 +37,8 @@ class Itinerary {
     Map<String, dynamic> rawJson = json.decode(rawData);
     itinerary._polylines = getPolylinePoints(rawJson);
     itinerary._itinerary = getDirectionList(rawJson);
+    itinerary._distance = getDistance(rawJson);
+    itinerary._duration = getDuration(rawJson);
 
     return itinerary;
   }
@@ -94,8 +91,6 @@ class Itinerary {
     double sLat = rawJson['routes'][0]['legs'][0]['start_location']['lat'];
     double sLong = rawJson['routes'][0]['legs'][0]['start_location']['long'];
     String sDesc = rawJson['routes'][0]['legs'][0]['start_address'];
-    _duration = rawJson['routes'][0]['legs'][0]['duration']['text'];
-    _distance = rawJson['routes'][0]['legs'][0]['distance']['text'];
 
     var steps =
         rawJson['routes'][0]['legs'][0]['steps']; // # of direction steps
@@ -121,5 +116,13 @@ class Itinerary {
 
     tPolyline.add(route);
     return tPolyline;
+  }
+
+  static String getDuration(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['duration']['text'];
+  }
+
+  static String getDistance(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['distance']['text'];
   }
 }
