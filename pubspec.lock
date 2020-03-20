@@ -320,6 +320,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.9.1"
+  package_resolver:
+    dependency: transitive
+    description:
+      name: package_resolver
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.10"
   path:
     dependency: transitive
     description:
@@ -354,7 +361,7 @@ packages:
       name: pedantic
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.9.0"
+    version: "1.8.0+1"
   petitparser:
     dependency: transitive
     description:
@@ -424,7 +431,7 @@ packages:
       name: shelf_packages_handler
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "1.0.4"
   shelf_static:
     dependency: transitive
     description:
@@ -548,7 +555,7 @@ packages:
       name: vm_service
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.0.0"
+    version: "2.3.1"
   vm_service_client:
     dependency: transitive
     description:
