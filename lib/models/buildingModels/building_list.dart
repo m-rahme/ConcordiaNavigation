@@ -4,23 +4,25 @@ import 'package:concordia_navigation/models/buildingModels/building_information.
 
 class BuildingList {
 //-------class members----------------------
-  final List<BuildingInformation> buildingList = [];
+  final Set<BuildingInformation> buildingList = Set<BuildingInformation>();
 
-  BuildingList();
+  BuildingList(){
+    _readBuildingFile();
+  }
 //-------class methods----------------------
   ///For reading the file
-  Future<String> loadAsset() async {
+  Future<String> _loadAsset() async {
     return await rootBundle.loadString('assets/campus_buildings_info.txt');
   }
 
   ///Send String value to be organized
-  void readBuildingFile() async {
-    Future<String> future = loadAsset();
-    future.then((value) => organizeStringToList(value));
+  void _readBuildingFile() async {
+    Future<String> future = _loadAsset();
+    future.then((value) => _organizeStringToList(value));
   }
 
   ///Parse String into elements and add to list
-  void organizeStringToList(String value) {
+  void _organizeStringToList(String value) {
     List<String> valueHolder = [];
     String holder = '';
     for (int i = 0; i < value.length; i++) {
@@ -31,12 +33,12 @@ class BuildingList {
         holder += value[i];
       }
     }
-    createBuilding(valueHolder);
+    _createBuilding(valueHolder);
   }
 
   ///Create a BuildingInformation for each consecutive 6 elements
-  void createBuilding(List<String> info) {
-    for (int i = 0; i < info.length; i += 6) {
+  void _createBuilding(List<String> info) {
+    for (int i = 0; i < info.length; i += 7) {
       BuildingInformation buildingInformation = BuildingInformation(
         campusName: info.elementAt(i),
         buildingInitial: info.elementAt(i + 1),
@@ -44,18 +46,19 @@ class BuildingList {
         longitude: double.parse(info.elementAt(i + 3)),
         buildingName: info.elementAt(i + 4),
         buildingAddress: info.elementAt(i + 5),
+        filename: info.elementAt(i + 6),
       );
-      addToBuildingList(buildingInformation);
+      _addToBuildingList(buildingInformation);
     }
   }
 
   ///Add building to list
-  void addToBuildingList(BuildingInformation building) {
+  void _addToBuildingList(BuildingInformation building) {
     buildingList.add(building);
   }
 
   ///Return list
-  List<BuildingInformation> getListOfBuildings() {
+  Set<BuildingInformation> getListOfBuildings() {
     return buildingList;
   }
 }
