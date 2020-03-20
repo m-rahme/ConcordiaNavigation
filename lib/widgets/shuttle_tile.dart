@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/size_config.dart';
@@ -18,7 +19,7 @@ class ShuttleTile extends StatelessWidget {
           switch (shuttleTime.connectionState) {
             // Uncompleted State
             case ConnectionState.none:
-              return Text('Error');
+              return Text(ConcordiaLocalizations.of(context).errorOccurred);
             case ConnectionState.waiting:
               return Center(child: CircularProgressIndicator());
               break;
@@ -26,7 +27,7 @@ class ShuttleTile extends StatelessWidget {
               // Completed with error
               if (shuttleTime.hasError)
                 return Container(
-                  child: Text("Error Occured"),
+                  child: Text(ConcordiaLocalizations.of(context).errorOccurred),
                 );
           }
           return Container(
@@ -45,7 +46,7 @@ class ShuttleTile extends StatelessWidget {
                 iconSize: 45.0,
               ),
               title: Text(
-                shuttleTime.data == null ? "No Shuttle Bus" : "via Shuttle Bus",
+                shuttleTime.data == null ? ConcordiaLocalizations.of(context).noShuttleBus : ConcordiaLocalizations.of(context).viaShuttleBus,
                 style: GoogleFonts.raleway(
                   fontSize: 14.0,
                   fontWeight: FontWeight.w600,
@@ -54,7 +55,7 @@ class ShuttleTile extends StatelessWidget {
               ),
               subtitle: Text(
                 shuttleTime.data == null
-                    ? "Check Shuttle Schedule For More Info"
+                    ? ConcordiaLocalizations.of(context).checkShuttleSchedule 
                     : shuttleTime.data,
                 style: GoogleFonts.raleway(
                   fontSize: 10.0,

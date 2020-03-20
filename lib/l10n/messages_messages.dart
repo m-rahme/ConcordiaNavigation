@@ -27,11 +27,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Coming Soon!"),
     "concordiaShuttleBus" : MessageLookupByLibrary.simpleMessage("Concordia Shuttle Bus"),
     "currentLocation" : MessageLookupByLibrary.simpleMessage("Current Location"),
+    "duration" : MessageLookupByLibrary.simpleMessage("Duration"),
     "errorOccurred" : MessageLookupByLibrary.simpleMessage("Error Occurred"),
+    "hallBuilding" : MessageLookupByLibrary.simpleMessage("Hall Building"),
     "interest" : MessageLookupByLibrary.simpleMessage("Outdoor Interest"),
+    "jmsbBuilding" : MessageLookupByLibrary.simpleMessage("John Molson Building, Montreal"),
+    "loadingMap" : MessageLookupByLibrary.simpleMessage("Loading Map"),
+    "loyolaCampus" : MessageLookupByLibrary.simpleMessage("Loyola Campus, Montreal"),
+    "mondayToFriday" : MessageLookupByLibrary.simpleMessage("Mon-Fri"),
+    "noShuttleBus" : MessageLookupByLibrary.simpleMessage("No Shuttle Bus"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profile"),
+    "quebecCanada" : MessageLookupByLibrary.simpleMessage("Quebec, Canada"),
+    "saturdayToSunday" : MessageLookupByLibrary.simpleMessage("Sat-Sun"),
     "schedule" : MessageLookupByLibrary.simpleMessage("Schedule"),
     "settings" : MessageLookupByLibrary.simpleMessage("Settings"),
-    "shuttle" : MessageLookupByLibrary.simpleMessage("Shuttle Schedule")
+    "sgwCampus" : MessageLookupByLibrary.simpleMessage("SGW Campus, Montreal"),
+    "shuttle" : MessageLookupByLibrary.simpleMessage("Shuttle Schedule"),
+    "viaShuttleBus" : MessageLookupByLibrary.simpleMessage("Via Shuttle Bus")
   };
 }

@@ -27,7 +27,7 @@ class Schedule extends StatelessWidget {
                   title: new Text(
                     ConcordiaLocalizations.of(context).schedule,
                   ),
-                  content: new Text("Coming Soon!"),
+                  content: new Text(ConcordiaLocalizations.of(context).comingSoon),
                 ));
           },
         ),

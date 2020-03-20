@@ -68,5 +68,45 @@
   "@quebecCanada": {
     "description": "Québec, Canada",
     "type": "text"
+  },
+  "jmsbBuilding": "Édifice John Molson, Montréal",
+  "@jmsbBuilding": {
+    "description": "Édifice John Molson, Montréal",
+    "type": "text"
+  },
+  "hallBuilding": "Édifice Hall, Montréal",
+  "@hallBuilding": {
+    "description": "Édifice Hall, Montréal",
+    "type": "text"
+  },
+  "viaShuttleBus": "Navette Concordia",
+  "@viaShuttleBus": {
+    "description": "Navette Concordia",
+    "type": "text"
+  },
+  "noShuttleBus": "Aucune navette",
+  "@noShuttleBus": {
+    "description": "Aucune navette",
+    "type": "text"
+  },
+  "duration": "Durée",
+  "@duration": {
+    "description": "Durée",
+    "type": "text"
+  },
+  "loadingMap": "Chargement de Google Maps",
+  "@loadingMap": {
+    "description": "Chargement de Google Maps",
+    "type": "text"
+  },
+  "mondayToFriday": "Lun-Ven",
+  "@mondayToFriday": {
+    "description": "Lun-Ven",
+    "type": "text"
+  },
+  "saturdayToSunday": "Samedi-Dimanche",
+  "@saturdayToSunday": {
+    "description": "Samedi-Dimanche",
+    "type": "text"
   }
 }

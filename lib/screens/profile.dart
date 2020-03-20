@@ -27,7 +27,7 @@ class Profile extends StatelessWidget {
                   title: new Text(
                     ConcordiaLocalizations.of(context).profile,
                   ),
-                  content: new Text("Coming Soon!"),
+                  content: new Text(ConcordiaLocalizations.of(context).comingSoon),
                 ));
           },
         ),

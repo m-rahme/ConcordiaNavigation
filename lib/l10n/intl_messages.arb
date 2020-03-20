@@ -1,5 +1,5 @@
 {
-  "@@last_modified": "2020-03-18T02:55:44.870414",
+  "@@last_modified": "2020-03-20T01:08:26.504219",
   "profile": "Profile",
   "@profile": {
     "description": "Profile for the user",
@@ -69,6 +69,72 @@
   "concordiaShuttleBus": "Concordia Shuttle Bus",
   "@concordiaShuttleBus": {
     "description": "Concordia Shuttle Bus",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sgwCampus": "SGW Campus, Montreal",
+  "@sgwCampus": {
+    "description": "SGW Campus, Montreal",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loyolaCampus": "Loyola Campus, Montreal",
+  "@loyolaCampus": {
+    "description": "Loyola Campus, Montreal",
+    "type": "text",
+    "placeholders": {}
+  },
+  "quebecCanada": "Quebec, Canada",
+  "@quebecCanada": {
+    "description": "Quebec, Canada",
+    "type": "text",
+    "placeholders": {}
+  },
+  "jmsbBuilding": "John Molson Building, Montreal",
+  "@jmsbBuilding": {
+    "description": "John Molson Building, Montreal",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hallBuilding": "Hall Building",
+  "@hallBuilding": {
+    "description": "Hall Building",
+    "type": "text",
+    "placeholders": {}
+  },
+  "noShuttleBus": "No Shuttle Bus",
+  "@noShuttleBus": {
+    "description": "No Shuttle Bus",
+    "type": "text",
+    "placeholders": {}
+  },
+  "viaShuttleBus": "Via Shuttle Bus",
+  "@viaShuttleBus": {
+    "description": "Via Shuttle Bus",
+    "type": "text",
+    "placeholders": {}
+  },
+  "duration": "Duration",
+  "@duration": {
+    "description": "Via Shuttle Bus",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loadingMap": "Loading Map",
+  "@loadingMap": {
+    "description": "Loading Map",
+    "type": "text",
+    "placeholders": {}
+  },
+  "mondayToFriday": "Mon-Fri",
+  "@mondayToFriday": {
+    "description": "Mon-Fri",
+    "type": "text",
+    "placeholders": {}
+  },
+  "saturdayToSunday": "Sat-Sun",
+  "@saturdayToSunday": {
+    "description": "Sat-Sun",
     "type": "text",
     "placeholders": {}
   }

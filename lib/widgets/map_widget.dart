@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:concordia_navigation/services/localization.dart';
+
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -64,7 +66,7 @@ class _MapWidgetState extends State<MapWidget> {
     final pos = Provider.of<UserLocation>(context);
 
     while (_initialCamera == null) {
-      return Center(child: Text("Loading Map"));
+      return Center(child: Text(ConcordiaLocalizations.of(context).loadingMap));
     }
 
     ///Create markers here

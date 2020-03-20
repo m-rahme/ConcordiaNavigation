@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/shuttle_widget.dart';
@@ -243,7 +244,7 @@ class DirectionsDrawer extends StatelessWidget {
                                                         horizontal: 10,
                                                         vertical: 12),
                                                 hintText:
-                                                    "Choose Starting Point",
+                                                    ConcordiaLocalizations.of(context).chooseStartingPoint,
                                               ),
                                             ),
                                           ),
@@ -303,7 +304,7 @@ class DirectionsDrawer extends StatelessWidget {
                                                           horizontal: 10,
                                                           vertical: 12),
                                                   hintText:
-                                                      "Choose Destination"),
+                                                      ConcordiaLocalizations.of(context).chooseDestination),
                                             ),
                                           ),
                                         ],
@@ -340,7 +341,7 @@ class DirectionsDrawer extends StatelessWidget {
                                     padding: const EdgeInsets.only(
                                         left: 55.0, top: 3.0),
                                     child: Text(
-                                      "Duration: " + mapData.itinerary.duration,
+                                      ConcordiaLocalizations.of(context).duration + ": " + mapData.itinerary.duration,
                                       style: GoogleFonts.raleway(
                                         fontSize: 12.0,
                                         fontWeight: FontWeight.w600,
@@ -377,7 +378,7 @@ class DirectionsDrawer extends StatelessWidget {
                           builder: (context, AsyncSnapshot itinerary) {
                             switch (itinerary.connectionState) {
                               case ConnectionState.none:
-                                return new Text('Error');
+                                return new Text(ConcordiaLocalizations.of(context).errorOccurred);
                               case ConnectionState.waiting:
                                 return Center(
                                     child: CircularProgressIndicator());
@@ -386,7 +387,7 @@ class DirectionsDrawer extends StatelessWidget {
                                 // Completed with error
                                 if (itinerary.hasError) {
                                   return Container(
-                                    child: Text("Error Occured"),
+                                    child: Text(ConcordiaLocalizations.of(context).errorOccurred),
                                   );
                                 }
                                 return Visibility(

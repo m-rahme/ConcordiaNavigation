@@ -106,24 +106,70 @@ class ConcordiaLocalizations {
         desc: 'Concordia Shuttle Bus',
         locale: localeName,
       );
+
   String get sgwCampus => Intl.message(
         "SGW Campus, Montreal",
         name: 'sgwCampus',
         desc: 'SGW Campus, Montreal',
         locale: localeName,
       );
+
   String get loyolaCampus => Intl.message(
         "Loyola Campus, Montreal",
         name: 'loyolaCampus',
         desc: 'Loyola Campus, Montreal',
         locale: localeName,
       );
+
   String get quebecCanada => Intl.message(
         "Quebec, Canada",
         name: 'quebecCanada',
         desc: 'Quebec, Canada',
         locale: localeName,
       );
+
+  String get jmsbBuilding => Intl.message(
+        "John Molson Building, Montreal",
+        name: 'jmsbBuilding',
+        desc: 'John Molson Building, Montreal',
+        locale: localeName,
+      );
+
+  String get hallBuilding => Intl.message(
+        "Hall Building",
+        name: 'hallBuilding',
+        desc: 'Hall Building',
+        locale: localeName,
+      );
+
+  String get noShuttleBus => Intl.message(
+        "No Shuttle Bus",
+        name: 'noShuttleBus',
+        desc: 'No Shuttle Bus',
+        locale: localeName,
+      );
+  String get viaShuttleBus => Intl.message(
+        "Via Shuttle Bus",
+        name: 'viaShuttleBus',
+        desc: 'Via Shuttle Bus',
+        locale: localeName,
+      );
+
+  String get duration => Intl.message(
+        "Duration",
+        name: 'duration',
+        desc: 'Via Shuttle Bus',
+        locale: localeName,
+      );
+
+  String get loadingMap => Intl.message("Loading Map",
+      name: 'loadingMap', desc: 'Loading Map', locale: localeName);
+
+  String get mondayToFriday => Intl.message("Mon-Fri",
+      name: 'mondayToFriday', desc: 'Mon-Fri', locale: localeName);
+
+  String get saturdayToSunday => Intl.message("Sat-Sun",
+      name: 'saturdayToSunday', desc: 'Sat-Sun', locale: localeName);
 }
 
 class ConcordiaLocalizationsDelegate

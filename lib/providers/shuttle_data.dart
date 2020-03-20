@@ -44,6 +44,7 @@ class ShuttleData extends ChangeNotifier {
       }
 
       var timeList = shuttleTime.split('');
+      // TODO: Move this into a build method where there's a context
       return "Next Shuttle Bus at: " +
           timeList[0] +
           timeList[1] +

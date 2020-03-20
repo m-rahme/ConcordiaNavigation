@@ -68,5 +68,45 @@
   "@quebecCanada": {
     "description": "Quebec, Canada",
     "type": "text"
+  },
+  "jmsbBuilding": "John Molson Building, Montreal",
+  "@jmsbBuilding": {
+    "description": "John Molson Building, Montreal",
+    "type": "text"
+  },
+  "hallBuilding": "Hall Building, Montreal",
+  "@hallBuilding": {
+    "description": "Hall Building, Montreal",
+    "type": "text"
+  },
+  "viaShuttleBus": "Via Shuttle Bus",
+  "@viaShuttleBus": {
+    "description": "Via Shuttle Bus",
+    "type": "text"
+  },
+  "noShuttleBus": "No Shuttle Bus",
+  "@noShuttleBus": {
+    "description": "No Shuttle Bus",
+    "type": "text"
+  },
+  "duration": "Duration",
+  "@duration": {
+    "description": "Duration",
+    "type": "text"
+  },
+  "loadingMap": "Loading Map",
+  "@loadingMap": {
+    "description": "Loading Map",
+    "type": "text"
+  },
+  "mondayToFriday": "Mon-Fri",
+  "@mondayToFriday": {
+    "description": "Duration",
+    "type": "text"
+  },
+  "saturdayToSunday": "Sat-Sun",
+  "@saturdayToSunday": {
+    "description": "Sat-Sun",
+    "type": "text"
   }
 }

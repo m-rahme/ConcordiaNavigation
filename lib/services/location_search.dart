@@ -11,11 +11,6 @@ It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
   List<dynamic> classrooms;
-  final recentRooms = [
-    'HALL BUILDING',
-    'H837',
-    'MB1.437'
-  ]; // for demonstration purposes
 
   void getClassrooms() async {
     classrooms =
@@ -27,7 +22,7 @@ class LocationSearch extends SearchDelegate {
   Widget buildSuggestions(BuildContext context) {
     getClassrooms();
     final suggestionList = query.isEmpty
-        ? recentRooms
+        ? [ConcordiaLocalizations.of(context).hallBuilding.toUpperCase(), 'H837', 'MB1.437'] // demo purposes
         : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(

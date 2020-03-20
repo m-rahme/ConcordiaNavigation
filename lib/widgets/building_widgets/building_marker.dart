@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:concordia_navigation/models/buildingModels/building_information.dart';
 import 'package:flutter/material.dart';
@@ -157,7 +158,7 @@ class BuildingMarker {
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            "Monday - Friday  07:00 - 23:00",
+                                            ConcordiaLocalizations.of(bContext).mondayToFriday + "07:00 - 23:00",
                                             style: GoogleFonts.raleway(
                                               fontWeight: FontWeight.normal,
                                               fontSize: 20.0,
@@ -168,7 +169,7 @@ class BuildingMarker {
                                       Row(
                                         children: <Widget>[
                                           Text(
-                                            "Saturday - Sunday  08:00 - 21:00",
+                                            ConcordiaLocalizations.of(bContext).saturdayToSunday + "08:00 - 21:00",
                                             style: GoogleFonts.raleway(
                                               fontWeight: FontWeight.normal,
                                               fontSize: 20.0,

@@ -26,14 +26,22 @@ class MessageLookup extends MessageLookupByLibrary {
     "comingSoon" : MessageLookupByLibrary.simpleMessage("Bientôt disponible"),
     "concordiaShuttleBus" : MessageLookupByLibrary.simpleMessage("Navette Concordia"),
     "currentLocation" : MessageLookupByLibrary.simpleMessage("Location actuelle"),
+    "duration" : MessageLookupByLibrary.simpleMessage("Durée"),
     "errorOccurred" : MessageLookupByLibrary.simpleMessage("Une s\'est produite"),
+    "hallBuilding" : MessageLookupByLibrary.simpleMessage("Édifice Hall, Montréal"),
     "interest" : MessageLookupByLibrary.simpleMessage("Intérêt Extérieur"),
+    "jmsbBuilding" : MessageLookupByLibrary.simpleMessage("Édifice John Molson, Montréal"),
+    "loadingMap" : MessageLookupByLibrary.simpleMessage("Chargement de Google Maps"),
     "loyolaCampus" : MessageLookupByLibrary.simpleMessage("Campus Loyola, Montréal"),
+    "mondayToFriday" : MessageLookupByLibrary.simpleMessage("Lun-Ven"),
+    "noShuttleBus" : MessageLookupByLibrary.simpleMessage("Aucune navette"),
     "profile" : MessageLookupByLibrary.simpleMessage("Profil"),
     "quebecCanada" : MessageLookupByLibrary.simpleMessage("Québec, Canada"),
+    "saturdayToSunday" : MessageLookupByLibrary.simpleMessage("Samedi-Dimanche"),
     "schedule" : MessageLookupByLibrary.simpleMessage("Horaire"),
     "settings" : MessageLookupByLibrary.simpleMessage("Paramètres"),
     "sgwCampus" : MessageLookupByLibrary.simpleMessage("Campus SGW, Montréal"),
-    "shuttle" : MessageLookupByLibrary.simpleMessage("Horaire de la Navette")
+    "shuttle" : MessageLookupByLibrary.simpleMessage("Horaire de la Navette"),
+    "viaShuttleBus" : MessageLookupByLibrary.simpleMessage("Navette Concordia")
   };
 }
