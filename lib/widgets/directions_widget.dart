@@ -4,7 +4,6 @@ import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:provider/provider.dart';
-import 'package:async/async.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 //This widget is where the directions will be displayed in the directions page.
@@ -16,12 +15,6 @@ class DirectionsWidget extends StatefulWidget {
 class _DirectionsWidgetState extends State<DirectionsWidget> {
   @override
   Widget build(BuildContext context) {
-    ///Fetch transit mode
-    final _mode = Provider.of<MapData>(context);
-
-    ///Memoizer used to optimize the List Builder
-    final AsyncMemoizer _memoizer = AsyncMemoizer();
-
     Future<Map<String, Map<String, String>>> _fetchMoreData() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
