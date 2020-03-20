@@ -31,7 +31,7 @@ class ShuttleTile extends StatelessWidget {
           }
           return Container(
             decoration: BoxDecoration(
-              color: constants.offWhiteColor,
+              color: constants.whiteColor,
             ),
             child: ListTile(
               contentPadding: EdgeInsets.only(
