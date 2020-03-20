@@ -28,9 +28,9 @@ class _MapWidgetState extends State<MapWidget> {
 
   //attributes for markers
   BuildingList buildingList = BuildingList();
-  List<BuildingInformation> buildings;
+  Set<BuildingInformation> buildings;
   Set<Marker> setOfMarkers = Set<Marker>();
-  BitmapDescriptor buildingIcon;
+  Set<BitmapDescriptor> buildingIcon = Set<BitmapDescriptor>();
 
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
@@ -55,9 +55,10 @@ class _MapWidgetState extends State<MapWidget> {
   }
 
   void setBuildingIcons() async {
-    buildingIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/markers/h.png');
-  }
+    for(int i = 0 ; i< 10; i++){
+    buildingIcon.add(await BitmapDescriptor.fromAssetImage(
+        ImageConfiguration(devicePixelRatio: 2.5), 'assets/markers/h.png'));
+  }}
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +78,7 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if (buildings.length <= 58) {
+    if (buildings.length < 11) {
       buildingList.readBuildingFile();
       while (buildings.length == 0) {
         return Container(
@@ -91,7 +92,7 @@ class _MapWidgetState extends State<MapWidget> {
           anchor: const Offset(0.5, 0.5),
           position: LatLng(buildings.elementAt(i).getLatitude(),
               buildings.elementAt(i).getLongitude()),
-          icon: buildingIcon,
+          icon: buildingIcon.elementAt(i),
           onTap: () {
             showModalBottomSheet(
                 context: context,
@@ -99,7 +100,9 @@ class _MapWidgetState extends State<MapWidget> {
                   return BottomSheetWidget(buildings.elementAt(i));
                 });
           },
-        ));
+        )
+
+        );
       }
     }
 

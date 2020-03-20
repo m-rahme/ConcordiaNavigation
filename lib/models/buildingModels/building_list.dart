@@ -4,7 +4,7 @@ import 'package:concordia_navigation/models/buildingModels/building_information.
 
 class BuildingList {
 //-------class members----------------------
-  final List<BuildingInformation> buildingList = [];
+  final Set<BuildingInformation> buildingList = Set<BuildingInformation>();
 
   BuildingList();
 //-------class methods----------------------
@@ -55,7 +55,7 @@ class BuildingList {
   }
 
   ///Return list
-  List<BuildingInformation> getListOfBuildings() {
+  Set<BuildingInformation> getListOfBuildings() {
     return buildingList;
   }
 }
