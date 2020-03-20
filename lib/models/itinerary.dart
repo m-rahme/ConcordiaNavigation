@@ -16,6 +16,12 @@ class Itinerary {
 
   Itinerary._create();
 
+  String _duration;
+  String _distance;
+
+  String get duration => _duration;
+  String get distance => _distance;
+
   List<Polyline> get polylines => _polylines;
 
   Map<String, Map<String, String>> get itinerary => _itinerary;
@@ -31,6 +37,8 @@ class Itinerary {
     Map<String, dynamic> rawJson = json.decode(rawData);
     itinerary._polylines = getPolylinePoints(rawJson);
     itinerary._itinerary = getDirectionList(rawJson);
+    itinerary._distance = getDistance(rawJson);
+    itinerary._duration = getDuration(rawJson);
 
     return itinerary;
   }
@@ -108,5 +116,13 @@ class Itinerary {
 
     tPolyline.add(route);
     return tPolyline;
+  }
+
+  static String getDuration(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['duration']['text'];
+  }
+
+  static String getDistance(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['distance']['text'];
   }
 }
