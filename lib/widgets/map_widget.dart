@@ -77,9 +77,9 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if (buildings.length <= 58) {
+    if (buildings.length <11) {
       buildingList.readBuildingFile();
-      while (buildings.length == 0) {
+      while (buildings.length < 10) {
         return Container(
           width: 0,
           height: 0,

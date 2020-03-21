@@ -8,5 +8,3 @@ Loyola Campus:CJ Building:45.457446:-73.640363:Communication Studies and Journal
 Loyola Campus:GE Centre:45.456997:-73.640484:Centre for Structural and Functional Genomics:7141 Sherbrooke W.
 Loyola Campus:PY Building:45.458984:-73.640495:Psychology Building:7141 Sherbrooke W.
 Loyola Campus:SP Complex:45.457822:-73.641497:Richard J. Renaud Science Complex:7141 Sherbrooke W.
-
-

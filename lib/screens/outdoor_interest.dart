@@ -8,7 +8,7 @@ import 'package:concordia_navigation/services/localization.dart';
 class OutdoorInterest extends StatelessWidget {
   static const routeName = '/o_interest';
 
-  List<OutdoorPOI> outdoorPOIList = OutdoorPOIList(filename: 'pointofinterest.json').getOutdoorList();
+  List<OutdoorPOI> outdoorPOIList = (new OutdoorPOIList()).getOutdoorList();
 
   @override
   Widget build(BuildContext context) {
