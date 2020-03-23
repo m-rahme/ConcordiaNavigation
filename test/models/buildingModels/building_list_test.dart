@@ -12,7 +12,7 @@ void main() {
     test('readBuildingFile() creates list of BuildingInformation with a specific length', () async {
       BuildingList buildingList = new BuildingList();
       await buildingList.readBuildingFile();
-      expect(buildingList.buildingList.length, 58);
+      expect(buildingList.getListOfBuildings().length, 10);
     });
   });
 }

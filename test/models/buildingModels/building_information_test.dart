@@ -11,6 +11,7 @@ void main() {
         buildingAddress: "buildingAddress",
         latitude: 90.0,
         longitude: 180.0,
+        filename: 'filename',
       );
      
       expect(buildingInformation.getCampusName(), "campusName");
