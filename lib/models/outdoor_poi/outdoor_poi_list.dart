@@ -6,14 +6,12 @@ class OutdoorPOIList{
 
   final String filename = 'assets/pointsofinterest.json';
 
-  OutdoorPOIList(){
-    readPOIFile();
-  }
+  OutdoorPOIList();
 
   List<OutdoorPOI> pointOfInterests = List<OutdoorPOI>();
 
 
-  void readPOIFile() async {
+  Future<List<OutdoorPOI>> readPOIFile() async {
     /**
      * Examples to access elements the pointsofinterest.json file
      *
@@ -24,19 +22,19 @@ class OutdoorPOIList{
      * returns loyola
      *
      * poi.keys.length;
-     * returns 2
+     * returns number of campuses
      *
      * poi['loyola'].keys;
      * returns loyolapark, souvlakigeorge, ndghotdog, comptoirkoyajo
      *
      * poi['loyola'].keys.length;
-     * returns 4
+     * returns number of POIs of the campus
      *
      * poi['loyola'].keys.elementAt(2);
      * returns ndghotdog
      *
      * poi['loyola']['loyolapark'].keys.length;
-     * returns 6
+     * returns number of attributes
      *
      * poi['loyola']['loyolapark'].keys.elementAt(0);
      *  returns {Name: Loyola Park}
@@ -49,7 +47,7 @@ class OutdoorPOIList{
 
     for(int campus = 0; campus< poi.keys.length; campus++){
       for(int location = 0; location< poi[poi.keys.elementAt(campus)].keys.length; location++){
-          pointOfInterests.add(
+          this.pointOfInterests.add(
               OutdoorPOI(
                   campus: poi.keys.elementAt(campus).toString(),
                   title: poi[poi.keys.elementAt(campus)].keys.elementAt(location).toString(),
@@ -63,9 +61,8 @@ class OutdoorPOIList{
           );
       }
     }
+    return pointOfInterests;
+
   }
 
-  List<OutdoorPOI> getOutdoorList(){
-    return pointOfInterests;
-  }
 }
