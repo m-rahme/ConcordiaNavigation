@@ -18,18 +18,14 @@ class Schedule {
 
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
   /// We're using indexes instead of string values for week days due to multilingual support.
-  List<Iterable> byWeekday() => [
-        _courses.where(
-            (course) => course.start.weekday == 1 && isThisWeek(course.start)),
-        _courses.where(
-            (course) => course.start.weekday == 2 && isThisWeek(course.start)),
-        _courses.where(
-            (course) => course.start.weekday == 3 && isThisWeek(course.start)),
-        _courses.where(
-            (course) => course.start.weekday == 4 && isThisWeek(course.start)),
-        _courses.where(
-            (course) => course.start.weekday == 5 && isThisWeek(course.start)),
-      ];
+  List<Iterable<Course>> byWeekday() =>
+      List.from([byDay(1), byDay(2), byDay(3), byDay(4), byDay(5)]);
+
+  /// Returns a list containing courses for a single day.
+  Iterable<Course> byDay(int day) => _courses
+      .where(
+          (course) => course.start.weekday == day && isThisWeek(course.start))
+      .toList();
 
   /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
   ///
