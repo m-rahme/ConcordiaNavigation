@@ -31,8 +31,14 @@ class Schedule {
             (course) => course.start.weekday == 5 && isThisWeek(course.start)),
       ];
 
-  bool isThisWeek(DateTime date) =>
-      isoWeekNumber(DateTime.now()) == isoWeekNumber(date);
+  /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
+  ///
+  /// Weeks start on Monday and end on Sunday.
+  ///
+  /// A course on Monday, March 23 2020 is not in the same week
+  /// as a course on Sunday, March 22 2020.
+  bool isThisWeek(DateTime when) =>
+      isoWeekNumber(DateTime.now()) == isoWeekNumber(when);
 
   /// https://stackoverflow.com/a/59693145/12964166
   int isoWeekNumber(DateTime date) {

@@ -18,7 +18,6 @@ class CalendarService {
         'https://www.googleapis.com/calendar/v3/calendars/${calId}@group.calendar.google.com/events?key=${apiKey}');
 
     Map<String, dynamic> rawJson = json.decode(raw);
-
     return Schedule.fromJson(rawJson);
   }
 }
