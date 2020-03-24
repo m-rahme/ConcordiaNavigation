@@ -7,6 +7,7 @@ class OutdoorPOI{
     @required this.campus,
     @required this.title,
     @required this.name,
+    @required this.address,
     @required this.latitude,
     @required this.longitude,
     this.description,
@@ -16,6 +17,7 @@ class OutdoorPOI{
   final String campus;
   final String title;
   final String name;
+  final String address;
   final double latitude;
   final double longitude;
   final String description;
@@ -25,6 +27,7 @@ class OutdoorPOI{
   String getCampus(){return campus;}
   String getTitle(){return title;}
   String getName(){return name;}
+  String getAddress(){return address;}
   double getLat(){return latitude;}
   double getLong(){return longitude;}
   String getDescription(){return description;}

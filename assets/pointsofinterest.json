@@ -1,7 +1,8 @@
 {
-  "loyola": {
+  "Loyola": {
     "loyolapark": {
 		"Name": "Loyola Park",
+		"Address": "4877 Avenue Doherty",
 		"LAT": "45.4608841",
 		"LNG": "73.6458944",
 		"Description": "",
@@ -10,6 +11,7 @@
 	},
     "souvlakigeorge":{
 		"Name":"Souvlaki George",
+		"Address":"6995 Monkland Ave",
 		"LAT":"45.459880",
 		"LNG":"-73.637000",
 		"Description":"",
@@ -18,6 +20,7 @@
 		},
     "ndghotdog": {
 		"Name": "NDG Hotdog & Pizzaria",
+		"Address" : "7363 Sherbrooke St W",
 		"LAT": "45.465950",
 		"LNG": "-73.624720",
 		"Description": "",
@@ -26,6 +29,7 @@
 	},
 	"comptoirkoyajo": {
 		"Name": "Comptoir Koyajo",
+		"Address": "6963 Sherbrooke St W",
 		"LAT": "45.460000",
 		"LNG": "-73.636440",
 		"Description": "",
@@ -34,9 +38,10 @@
 	}
 
   },
-  "sgw": {
+  "Sir George Williams": {
     "britnchips": {
 		"Name": "Brit & Chips",
+		"Address":"1390 Maisonneuve Blvd W",
 		"LAT": "45.4975289",
 		"LNG": "73.5776902",
 		"Description": "",
@@ -45,6 +50,7 @@
 	},
 	"kintonramen":{
 		"Name":"Kinton Ramen",
+		"Address": "1211 Bishop St",
 		"LAT":"45.49600359999999",
 		"LNG":"73.5748529",
 		"Description":"",
@@ -53,6 +59,7 @@
 	},
 	"belleetlabouef": {
 		"Name": "La Belle et la Boeuf",
+		"Address": "1620 Saint-Catherine St W",
 		"LAT": "45.49423729999999",
 		"LNG": "73.57853639999999",
 		"Description": "",
@@ -61,6 +68,7 @@
 	},
 	"sota":{
 		"Name":"Sota",
+		"Address": "1825 Saint-Catherine St W",
 		"LAT":"45.4935173",
 		"LNG":"73.5798552",
 		"Description":"",
@@ -69,6 +77,7 @@
 	},
 	"mckibbins": {
 		"Name": "McKibbin's Irish Pub",
+		"Address": "1426 Bishop St",
 		"LAT": "45.4967536",
 		"LNG": "73.57734959999999",
 		"Description": "",

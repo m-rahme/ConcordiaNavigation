@@ -52,6 +52,7 @@ class OutdoorPOIList{
                   campus: poi.keys.elementAt(campus).toString(),
                   title: poi[poi.keys.elementAt(campus)].keys.elementAt(location).toString(),
                   name: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Name'],
+                  address: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Address'],
                   latitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LAT']),
                   longitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LNG']),
                   description: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Description'],

@@ -25,10 +25,50 @@ class OutdoorInterest extends StatelessWidget {
         future: callAsyncFetch(),
         builder: (context, AsyncSnapshot<List<OutdoorPOI>> snapshot){
           if(snapshot.hasData){
-            return Text(snapshot.data.elementAt(0).getName());
+            return Container(
+
+              child: ListView.builder(
+                itemBuilder: (context, index) {
+                  return Card(
+                    child: Row(children: <Widget>[
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+
+                          Text(
+                            snapshot.data[index].getName(),
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 18,
+                              color: Colors.black,
+                            ),
+                          ),
+
+                          Text(
+                            snapshot.data[index].getAddress(),
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                          ),
+
+                        ],
+
+                      ),
+                    ],
+                    ),
+                  );
+                },
+                itemCount: snapshot.data.length,
+              ),
+            );
           }
           else{
-            return CircularProgressIndicator();
+            return Center(
+
+                child:
+                CircularProgressIndicator()
+            );
           }
         },
       ),
