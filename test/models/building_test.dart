@@ -4,7 +4,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 void main() {
   group('Building', () {
-    test('Building constructor creates Polygon', () {
+    test('constructor creates Polygon', () {
       List<LatLng> buildingEdges = [
         LatLng(45.49738, -73.57833),
         LatLng(45.49755, -73.57869),

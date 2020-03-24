@@ -4,11 +4,10 @@ import 'package:concordia_navigation/models/buildingModels/building_information.
 
 class BuildingList {
 //-------class members----------------------
-  final Set<BuildingInformation> buildingList = Set<BuildingInformation>();
+  final Set<BuildingInformation> _buildingList = Set<BuildingInformation>();
 
-  BuildingList(){
-    _readBuildingFile();
-  }
+  BuildingList();
+
 //-------class methods----------------------
   ///For reading the file
   Future<String> _loadAsset() async {
@@ -16,9 +15,10 @@ class BuildingList {
   }
 
   ///Send String value to be organized
-  void _readBuildingFile() async {
-    Future<String> future = _loadAsset();
-    future.then((value) => _organizeStringToList(value));
+  Future<Set<BuildingInformation>> readBuildingFile() async {
+    String value = await _loadAsset();
+    _organizeStringToList(value);
+    return _buildingList;
   }
 
   ///Parse String into elements and add to list
@@ -54,11 +54,11 @@ class BuildingList {
 
   ///Add building to list
   void _addToBuildingList(BuildingInformation building) {
-    buildingList.add(building);
+    _buildingList.add(building);
   }
 
   ///Return list
   Set<BuildingInformation> getListOfBuildings() {
-    return buildingList;
+    return _buildingList;
   }
 }
