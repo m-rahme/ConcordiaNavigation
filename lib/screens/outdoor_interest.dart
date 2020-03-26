@@ -8,10 +8,10 @@ import 'package:concordia_navigation/services/localization.dart';
 class OutdoorInterest extends StatelessWidget {
   static const routeName = '/o_interest';
 
-  final OutdoorPOIList x = OutdoorPOIList();
+  final OutdoorPOIList outdoorPOIList = OutdoorPOIList();
 
   Future<List<OutdoorPOI>> callAsyncFetch() {
-    return Future.delayed(Duration(seconds: 2), () => x.readPOIFile());
+    return Future.delayed(Duration(seconds: 2), () => outdoorPOIList.readPOIFile());
   }
 
   @override
@@ -52,9 +52,35 @@ class OutdoorInterest extends StatelessWidget {
                             ),
                           ),
 
+                          Text(
+                            "Open: " +snapshot.data[index].getOpen() + " Close: "+snapshot.data[index].getClose(),
+                            style: TextStyle(
+                              fontSize: 14,
+                              color: Colors.grey,
+                            ),
+                          ),
+
                         ],
 
                       ),
+
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        children: <Widget>[
+
+                          Container(
+                              decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 2),),
+                              child: new Image.asset(
+                                'assets/poi_images/mcdonalds.png',
+                                height: 80.0,
+                                fit: BoxFit.cover,
+
+                              )
+                          ),
+
+                        ],
+                      ),
+
                     ],
                     ),
                   );
@@ -64,11 +90,7 @@ class OutdoorInterest extends StatelessWidget {
             );
           }
           else{
-            return Center(
-
-                child:
-                CircularProgressIndicator()
-            );
+            return Center(child: CircularProgressIndicator());
           }
         },
       ),

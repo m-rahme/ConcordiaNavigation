@@ -4,10 +4,10 @@
 		"Name": "Loyola Park",
 		"Address": "4877 Avenue Doherty",
 		"LAT": "45.4608841",
-		"LNG": "73.6458944",
+		"LNG": "-73.6458944",
 		"Description": "",
-		"Open": "NA",
-		"Close": "NA"
+		"Open": "8:00",
+		"Close": "23:00"
 	},
     "souvlakigeorge":{
 		"Name":"Souvlaki George",
@@ -39,11 +39,20 @@
 
   },
   "Sir George Williams": {
+  	"mcdonalds": {
+	  "Name": "McDonald's",
+	  "Address":"1472 Saint-Catherine St W",
+	  "LAT": "45.495645",
+	  "LNG": "-73.576931",
+	  "Description": "",
+	  "Open": "11:00",
+	  "Close": "22:00"
+  },
     "britnchips": {
 		"Name": "Brit & Chips",
 		"Address":"1390 Maisonneuve Blvd W",
 		"LAT": "45.4975289",
-		"LNG": "73.5776902",
+		"LNG": "-73.5776902",
 		"Description": "",
 		"Open": "11:00",
 		"Close": "22:00"
@@ -52,7 +61,7 @@
 		"Name":"Kinton Ramen",
 		"Address": "1211 Bishop St",
 		"LAT":"45.49600359999999",
-		"LNG":"73.5748529",
+		"LNG":"-73.5748529",
 		"Description":"",
 		"Open":"11:30",
 		"Close":"22:30"
@@ -61,7 +70,7 @@
 		"Name": "La Belle et la Boeuf",
 		"Address": "1620 Saint-Catherine St W",
 		"LAT": "45.49423729999999",
-		"LNG": "73.57853639999999",
+		"LNG": "-73.57853639999999",
 		"Description": "",
 		"Open": "11:30",
 		"Close": "23:00"
@@ -70,7 +79,7 @@
 		"Name":"Sota",
 		"Address": "1825 Saint-Catherine St W",
 		"LAT":"45.4935173",
-		"LNG":"73.5798552",
+		"LNG":"-73.5798552",
 		"Description":"",
 		"Open":"11:30",
 		"Close":"0:00"
@@ -79,7 +88,7 @@
 		"Name": "McKibbin's Irish Pub",
 		"Address": "1426 Bishop St",
 		"LAT": "45.4967536",
-		"LNG": "73.57734959999999",
+		"LNG": "-73.57734959999999",
 		"Description": "",
 		"Open": "11:30",
 		"Close": "3:00"
