@@ -71,7 +71,7 @@ class OutdoorInterest extends StatelessWidget {
                           Container(
                               decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 2),),
                               child: new Image.asset(
-                                'assets/poi_images/mcdonalds.png',
+                                snapshot.data[index].getLogo(),
                                 height: 80.0,
                                 fit: BoxFit.cover,
 

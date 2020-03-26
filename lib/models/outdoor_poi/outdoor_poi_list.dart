@@ -55,6 +55,7 @@ class OutdoorPOIList{
                   address: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Address'],
                   latitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LAT']),
                   longitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LNG']),
+                  logo: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Logo'],
                   description: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Description'],
                   open: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Open'],
                   close: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Close']

@@ -10,6 +10,7 @@ class OutdoorPOI{
     @required this.address,
     @required this.latitude,
     @required this.longitude,
+    @required this.logo,
     this.description,
     this.open,
     this.close
@@ -20,6 +21,7 @@ class OutdoorPOI{
   final String address;
   final double latitude;
   final double longitude;
+  final String logo;
   final String description;
   final String open;
   final String close;
@@ -30,6 +32,7 @@ class OutdoorPOI{
   String getAddress(){return address;}
   double getLat(){return latitude;}
   double getLong(){return longitude;}
+  String getLogo(){return logo;}
   String getDescription(){return description;}
   String getOpen(){return open;}
   String getClose(){return close;}

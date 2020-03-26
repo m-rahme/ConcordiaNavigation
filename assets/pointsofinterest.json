@@ -7,7 +7,8 @@
 		"LNG": "-73.6458944",
 		"Description": "",
 		"Open": "8:00",
-		"Close": "23:00"
+		"Close": "23:00",
+		"Logo" : "assets/poi_images/park.png"
 	},
     "souvlakigeorge":{
 		"Name":"Souvlaki George",
@@ -16,7 +17,8 @@
 		"LNG":"-73.637000",
 		"Description":"",
 		"Open":"11:00",
-		"Close":"5:00"
+		"Close":"5:00",
+		"Logo" : "assets/poi_images/souvlakigeorge.png"
 		},
     "ndghotdog": {
 		"Name": "NDG Hotdog & Pizzaria",
@@ -25,7 +27,8 @@
 		"LNG": "-73.624720",
 		"Description": "",
 		"Open": "11:00",
-		"Close": "22:00"
+		"Close": "22:00",
+		"Logo": "assets/poi_images/ndghotdog.png"
 	},
 	"comptoirkoyajo": {
 		"Name": "Comptoir Koyajo",
@@ -34,19 +37,21 @@
 		"LNG": "-73.636440",
 		"Description": "",
 		"Open": "10:30",
-		"Close": "15:00"
+		"Close": "15:00",
+		"Logo": "assets/poi_images/comptoirkoyajo.png"
 	}
 
   },
   "Sir George Williams": {
   	"mcdonalds": {
-	  "Name": "McDonald's",
-	  "Address":"1472 Saint-Catherine St W",
-	  "LAT": "45.495645",
-	  "LNG": "-73.576931",
-	  "Description": "",
-	  "Open": "11:00",
-	  "Close": "22:00"
+		"Name": "McDonald's",
+		"Address":"1472 Saint-Catherine St W",
+		"LAT": "45.495645",
+		"LNG": "-73.576931",
+		"Description": "",
+		"Open": "11:00",
+		"Close": "22:00",
+		"Logo": "assets/poi_images/mcdonalds.png"
   },
     "britnchips": {
 		"Name": "Brit & Chips",
@@ -55,7 +60,8 @@
 		"LNG": "-73.5776902",
 		"Description": "",
 		"Open": "11:00",
-		"Close": "22:00"
+		"Close": "22:00",
+		"Logo": "assets/poi_images/britnchips.png"
 	},
 	"kintonramen":{
 		"Name":"Kinton Ramen",
@@ -64,7 +70,8 @@
 		"LNG":"-73.5748529",
 		"Description":"",
 		"Open":"11:30",
-		"Close":"22:30"
+		"Close":"22:30",
+		"Logo": "assets/poi_images/kintonramen.png"
 	},
 	"belleetlabouef": {
 		"Name": "La Belle et la Boeuf",
@@ -73,7 +80,8 @@
 		"LNG": "-73.57853639999999",
 		"Description": "",
 		"Open": "11:30",
-		"Close": "23:00"
+		"Close": "23:00",
+		"Logo": "assets/poi_images/belleetlaboeuf.png"
 	},
 	"sota":{
 		"Name":"Sota",
@@ -82,7 +90,8 @@
 		"LNG":"-73.5798552",
 		"Description":"",
 		"Open":"11:30",
-		"Close":"0:00"
+		"Close":"0:00",
+		"Logo": "assets/poi_images/sota.png"
 	},
 	"mckibbins": {
 		"Name": "McKibbin's Irish Pub",
@@ -91,7 +100,8 @@
 		"LNG": "-73.57734959999999",
 		"Description": "",
 		"Open": "11:30",
-		"Close": "3:00"
+		"Close": "3:00",
+		"Logo": "assets/poi_images/mckibbinsirishpub.png"
 	}
   }
 }
