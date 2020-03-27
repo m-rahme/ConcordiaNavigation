@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/models/course.dart';
+import 'package:device_calendar/device_calendar.dart';
 
 class Schedule {
   List<Course> _courses;
@@ -15,6 +16,11 @@ class Schedule {
         _tz = json['timeZone'],
         _courses =
             json['items'].map<Course>((json) => Course.fromJson(json)).toList();
+
+  Schedule.fromEvents(List<Event> events)
+      : _summary = 'All Classes',
+        _tz = 'America/Toronto',
+        _courses = events.map<Course>((event) => Course.fromEvent(event)).toList();
 
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
   /// We're using indexes instead of string values for week days due to multilingual support.

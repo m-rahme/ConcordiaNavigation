@@ -1,3 +1,5 @@
+import 'package:device_calendar/device_calendar.dart';
+
 /// This class models a course provided by Google Calendar.
 class Course {
   String _summary, _description;
@@ -18,4 +20,11 @@ class Course {
         _start = DateTime.parse(json['start']['dateTime']),
         _end = DateTime.parse(json['end']['dateTime']),
         _location = json['location'];
+
+  Course.fromEvent(Event event)
+      : _summary = event.title,
+        _description = event.description,
+        _start = event.start,
+        _end = event.end,
+        _location = event.location;
 }

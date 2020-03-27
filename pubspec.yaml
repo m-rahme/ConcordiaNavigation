@@ -35,6 +35,7 @@ dependencies:
   flutter_polyline_points:
   async: ^2.4.0
   sliding_up_panel: ^1.0.0
+  device_calendar: ^0.1.1
 
 
 
