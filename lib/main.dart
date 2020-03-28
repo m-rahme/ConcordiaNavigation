@@ -8,7 +8,7 @@ import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
-import 'package:concordia_navigation/screens/schedule.dart';
+import 'package:concordia_navigation/screens/course_schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
 void main() {
@@ -36,7 +36,7 @@ class App extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
-        '/schedule': (context) => Schedule(),
+        '/schedule': (context) => CourseSchedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
