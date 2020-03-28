@@ -129,16 +129,15 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: constants.offWhiteColor,
             child: ListTile(
-              leading: Icon(Icons.location_on),
-              title: Text(
-                ConcordiaLocalizations.of(context).interest,
-                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                Navigator.of(context).pop();
-                Navigator.pushNamed(context, OutdoorInterest.routeName);
-              },
-            ),
+                leading: Icon(Icons.location_on),
+                title: Text(
+                  ConcordiaLocalizations.of(context).interest,
+                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+                ),
+                onTap: () {
+                  Navigator.of(context).pop();
+                  Navigator.pushNamed(context, '/o_interest');
+                }),
           ),
           Container(
             color: constants.offWhiteColor,

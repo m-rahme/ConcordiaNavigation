@@ -20,15 +20,9 @@ class LocationSearch extends SearchDelegate {
               title: Text("SGW Campus, Montreal"),
               subtitle: Text("Quebec, Canada"),
               onTap: () async {
-                Provider.of<MapData>(context, listen: false)
-                    .controllerDestination
-                    .text = "SGW Campus, Montreal";
-                Provider.of<MapData>(context, listen: false)
-                    .controllerStarting
-                    .text = "Current Location";
-                Navigator.of(context).pop();
-                mapData.controllerDestination.text = "SGW, Montreal";
+                mapData.controllerDestination.text = "SGW Campus, Montreal";
                 mapData.controllerStarting.text = "Current Location";
+                Navigator.of(context).pop();
                 mapData.changeStart(mapData.getCurrentLocation);
                 mapData.changeCampus('sgw');
                 mapData.changeEnd(sgw);

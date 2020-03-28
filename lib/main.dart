@@ -36,6 +36,7 @@ class App extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
+        '/': (context) => HomePage(),
         '/schedule': (context) => Schedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
@@ -44,7 +45,6 @@ class App extends StatelessWidget {
         '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
     );
   }
 }
