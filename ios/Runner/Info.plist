@@ -47,5 +47,7 @@
     <string>Needed to access location</string>
     <key>NSLocationWhenInUseUsageDescription</key>
     <string>Needed to access location</string>
+    <key>NSCalendarsUsageDescription</key>
+    <string>Needed to retrieve classes</string>
 </dict>
 </plist>

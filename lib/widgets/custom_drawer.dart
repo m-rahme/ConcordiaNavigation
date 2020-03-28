@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/screens/outdoor_interest.dart';
+import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -121,6 +121,8 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {
+                Provider.of<CalendarData>(context, listen: false)
+                    .retrieveFromDevice();
                 Navigator.of(context).pop();
                 Navigator.pushNamed(context, '/schedule');
               },
@@ -129,15 +131,16 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: constants.offWhiteColor,
             child: ListTile(
-                leading: Icon(Icons.location_on),
-                title: Text(
-                  ConcordiaLocalizations.of(context).interest,
-                  style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
-                ),
-                onTap: () {
-                  Navigator.of(context).pop();
-                  Navigator.pushNamed(context, '/o_interest');
-                }),
+              leading: Icon(Icons.location_on),
+              title: Text(
+                ConcordiaLocalizations.of(context).interest,
+                style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                Navigator.of(context).pop();
+                Navigator.pushNamed(context, '/o_interest');
+              },
+            ),
           ),
           Container(
             color: constants.offWhiteColor,

@@ -74,6 +74,9 @@ class MapData extends ChangeNotifier {
   }
 
   void setItinerary() async {
+    if (_start == null) {
+      _start = _currentLocation;
+    }
     itinerary = await Itinerary.create(_start, _end, _mode);
     notifyListeners();
   }
