@@ -62,7 +62,7 @@ class CalendarData extends ChangeNotifier {
     // This conflicts with [Schedule.byWeekday()] but device_calendar doesn't support
     // null start and end dates.
     RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
-        startDate: _firstDayOfTheweek, endDate: now.add(_lookahead));
+        startDate: _firstDayOfTheweek, endDate: now.add(constants.dateLookahead));
 
     List<Event> events = List();
 
@@ -78,8 +78,7 @@ class CalendarData extends ChangeNotifier {
     _classes = events.where((event) => (
         // check title has discipline (4 letters uppercase) followed by a course # (3 digits)
         // event can't be all day
-      !event.allDay && event.title.contains(RegExp(r"[A-Z]{4}[-|\s]?\d{3}"))
-    ))?.toList();
+        !event.allDay && event.title.contains(constants.eventFilter)))?.toList();
 
     _schedule = Schedule.fromEvents(_classes);
     notifyListeners();

@@ -1,4 +1,4 @@
-///All application constants are stored here.
+/// All application constants are stored here.
 
 import 'package:flutter/cupertino.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -23,3 +23,8 @@ const Color offWhiteColor = Color(0xFFFFFFF8);
 const Color lightGreyColor = Color(0xFFF0F0F0);
 const Color greyColor = Color(0xFF656363);
 const Color maroonColor = Color(0xAD0000);
+
+final RegExp calFilter = RegExp("conco|school|uni|test");
+final RegExp eventFilter = RegExp(r"[A-Z]{4}[-|\s]?\d{3}");
+
+final Duration dateLookahead = Duration(days: 31);
