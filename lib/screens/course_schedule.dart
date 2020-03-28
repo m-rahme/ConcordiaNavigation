@@ -10,53 +10,36 @@ import 'package:provider/provider.dart';
 class CourseSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    List<Iterable<Course>> weekdays =
+        Provider.of<CalendarData>(context).schedule?.byWeekday();
+    List<Widget> weekdayContainer = [];
+
+    while (weekdays == null) {
+      return Center(child: CircularProgressIndicator());
+    }
+
+    for (int i = 0; i < weekdays.length; i++) {
+      List<Course> courseList = weekdays[i];
+      if (courseList.isNotEmpty) {
+        String weekday;
+        if (i == 0) {
+          weekday = "Monday";
+        } else if (i == 1) {
+          weekday = "Tuesday";
+        } else if (i == 2) {
+          weekday = "Wednesday";
+        } else if (i == 3) {
+          weekday = "Thursday";
+        } else {
+          weekday = "Friday";
+        }
+        weekdayContainer.add(Weekday(weekday, courseList));
+      }
+    }
     return Scaffold(
         appBar: AppBar(
           title: Text(ConcordiaLocalizations.of(context).schedule),
         ),
-        // TODO: rework future builder...
-        body: FutureBuilder(
-            future: Provider.of<CalendarData>(context, listen: false)
-                .retrieveFromDevice()
-                .then((schedule) => schedule.byWeekday()),
-            builder: (context, AsyncSnapshot snapshot) {
-              switch (snapshot.connectionState) {
-                // Uncompleted State
-                case ConnectionState.none:
-                  return new Text('Error Occurred');
-                case ConnectionState.waiting:
-                  return Center(child: CircularProgressIndicator());
-                  break;
-                default:
-                  // Completed with error
-                  if (snapshot.hasError) {
-                    return Container(
-                      child: Text("Error Occured"),
-                    );
-                  }
-                  List<Widget> weekdayContainer = [];
-
-                  for (int i = 0; i < 5; i++) {
-                    List<Course> courseList = snapshot.data[i];
-                    if (courseList.isNotEmpty) {
-                      String weekday;
-                      if (i == 0) {
-                        weekday = "Monday";
-                      } else if (i == 1) {
-                        weekday = "Tuesday";
-                      } else if (i == 2) {
-                        weekday = "Wednesday";
-                      } else if (i == 3) {
-                        weekday = "Thursday";
-                      } else {
-                        weekday = "Friday";
-                      }
-                      weekdayContainer.add(Weekday(weekday, courseList));
-                    }
-                  }
-                  return SingleChildScrollView(
-                      child: Column(children: weekdayContainer));
-              }
-            }));
+        body: SingleChildScrollView(child: Column(children: weekdayContainer)));
   }
 }
