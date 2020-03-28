@@ -40,18 +40,73 @@ class Weekday extends StatelessWidget {
           RaisedButton(
               onPressed: (course != null && course?.location != '')
                   ? () {
-                      // TODO: use localization
-                      Provider.of<MapData>(context, listen: false)
-                          .changeEnd(constants.sgw);
-                      Provider.of<MapData>(context, listen: false)
-                          .setItinerary();
-                      Provider.of<MapData>(context, listen: false)
-                          .controllerDestination
-                          .text = "Sir George Williams";
-                      Provider.of<MapData>(context, listen: false)
-                          .controllerStarting
-                          .text = "Current Location";
-                      Navigator.of(context).pop();
+                      switch (course.location[0]) {
+                        case "H":
+                          {
+                            Provider.of<MapData>(context, listen: false)
+                                .changeCampus('sgw');
+                            Provider.of<MapData>(context, listen: false)
+                                .changeEnd(constants.hBuilding);
+                            if (course.location[1] == "A") {
+                              Provider.of<MapData>(context, listen: false)
+                                  .controllerDestination
+                                  .text = "Hall Building, Montreal";
+                            } else {
+                              Provider.of<MapData>(context, listen: false)
+                                  .controllerDestination
+                                  .text = course.location;
+                            }
+                          }
+                          break;
+
+                        case "M":
+                          {
+                            Provider.of<MapData>(context, listen: false)
+                                .changeCampus('sgw');
+                            Provider.of<MapData>(context, listen: false)
+                                .controllerDestination
+                                .text = course.location;
+                            Provider.of<MapData>(context, listen: false)
+                                .changeEnd(constants.jmsbBuilding);
+                          }
+                          break;
+
+                        case "L":
+                          {
+                            Provider.of<MapData>(context, listen: false)
+                                .changeCampus('loyola');
+                            Provider.of<MapData>(context, listen: false)
+                                .controllerDestination
+                                .text = "Loyola Campus, Montreal";
+                            Provider.of<MapData>(context, listen: false)
+                                .changeEnd(constants.loyola);
+                          }
+                          break;
+
+                        case "J":
+                          {
+                            Provider.of<MapData>(context, listen: false)
+                                .changeCampus('sgw');
+                            Provider.of<MapData>(context, listen: false)
+                                .controllerDestination
+                                .text = "John Molson Business, Montreal";
+                            Provider.of<MapData>(context, listen: false)
+                                .changeEnd(constants.jmsbBuilding);
+                          }
+                          break;
+
+                        default:
+                          {
+                            Provider.of<MapData>(context, listen: false)
+                                .changeCampus('sgw');
+                            Provider.of<MapData>(context, listen: false)
+                                .controllerDestination
+                                .text = "SGW Campus, Montreal";
+                            Provider.of<MapData>(context, listen: false)
+                                .changeEnd(constants.sgw);
+                          }
+                          break;
+                      }
                     }
                   : null,
               elevation: 1.0,
