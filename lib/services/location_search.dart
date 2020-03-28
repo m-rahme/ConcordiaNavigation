@@ -80,6 +80,13 @@ class LocationSearch extends SearchDelegate {
                   mapData.changeEnd(constants.jmsbBuilding);
                 }
                 break;
+              case "F":
+                {
+                  mapData.changeCampus('sgw');
+                  mapData.controllerDestination.text = "FG Building, Montreal";
+                  mapData.changeEnd(constants.fgBuilding);
+                }
+                break;
 
               default:
                 {

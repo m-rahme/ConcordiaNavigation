@@ -78,6 +78,14 @@ class Weekday extends StatelessWidget {
                             .text = "John Molson Business, Montreal";
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.jmsbBuilding);
+                      } else if (letter == "F") {
+                        Provider.of<MapData>(context, listen: false)
+                            .changeCampus('sgw');
+                        Provider.of<MapData>(context, listen: false)
+                            .controllerDestination
+                            .text = "FG Building, Montreal";
+                        Provider.of<MapData>(context, listen: false)
+                            .changeEnd(constants.fgBuilding);
                       }
                       Provider.of<MapData>(context, listen: false)
                           .controllerStarting
