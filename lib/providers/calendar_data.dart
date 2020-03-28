@@ -8,10 +8,7 @@ import 'package:flutter/widgets.dart';
 
 class CalendarData extends ChangeNotifier {
   final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
-  final DeviceCalendarPlugin _deviceCalendarPlugin = new DeviceCalendarPlugin();
-  final Duration _lookahead = new Duration(days: 31);
-  List<Calendar> _calendars = new List();
-  List<Event> _classes = new List();
+  List<Calendar> _calendars = List();
   List<Event> _classes = List();
   Schedule _schedule;
 
@@ -21,6 +18,7 @@ class CalendarData extends ChangeNotifier {
     retrieveFromDevice();
   }
 
+  /// Checks for (and requests) permissions required by the [device calendar plugins](https://pub.dev/packages/device_calendar)
   Future<bool> _checkPermission() async {
     var permissionsGranted = await _deviceCalendarPlugin.hasPermissions();
     if (permissionsGranted.isSuccess && !permissionsGranted.data) {
@@ -32,6 +30,7 @@ class CalendarData extends ChangeNotifier {
     return true;
   }
 
+  /// Retrieves calendar objects from the device that match a certain format.
   Future<void> _retrieveDeviceCalendars() async {
     //Retrieve user's calendars from mobile device
     //Request permissions first if they haven't been granted
@@ -40,10 +39,7 @@ class CalendarData extends ChangeNotifier {
 
       // Filter to find only school related calendars
       final calendarsResult = await _deviceCalendarPlugin.retrieveCalendars();
-      _calendars = calendarsResult?.data?.where((calendar) => (
-          calendar.isReadOnly == false &&
-          calendar.name.contains(RegExp("([C|c]onco)|[S|s]chool|[U|u]ni"))
-          ))?.toList();
+      // only accept calendar whose names are linked to concordia
       _calendars = calendarsResult?.data
           ?.where((calendar) => (calendar.isReadOnly == false &&
               calendar.name.toLowerCase().contains(constants.calFilter)))
@@ -53,7 +49,7 @@ class CalendarData extends ChangeNotifier {
     }
   }
 
-  /// Using device calendars, retrieve relevant events from
+  /// Retrieve relevant events from device calendars.
   Future<Schedule> retrieveFromDevice() async {
     if (_calendars.isEmpty) {
       await _retrieveDeviceCalendars();
@@ -62,20 +58,26 @@ class CalendarData extends ChangeNotifier {
     DateTime now = DateTime.now();
     DateTime _firstDayOfTheweek = now.subtract(Duration(days: now.weekday));
 
-    DateTime _firstDayOfTheweek = now.subtract(new Duration(days: now.weekday));
+    // Events are loaded starting from the beginning of this week
+    // This conflicts with [Schedule.byWeekday()] but device_calendar doesn't support
+    // null start and end dates.
     RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
         startDate: _firstDayOfTheweek, endDate: now.add(_lookahead));
 
     List<Event> events = List();
 
+    // iterate through all calendars obtained from the device
     for (Calendar cal in _calendars) {
-      final result = await _deviceCalendarPlugin.retrieveEvents(cal.id, retrieveEventsParams);
+      // get events from this week up to 31 days from now
+      final result = await _deviceCalendarPlugin.retrieveEvents(
+          cal.id, retrieveEventsParams);
+      // add events from that calendar to the events container
       events.addAll(result?.data);
-      print(result);
     }
 
     _classes = events.where((event) => (
-      // check title has discipline (4 letters uppercase) followed by a course # (3 digits)
+        // check title has discipline (4 letters uppercase) followed by a course # (3 digits)
+        // event can't be all day
       !event.allDay && event.title.contains(RegExp(r"[A-Z]{4}[-|\s]?\d{3}"))
     ))?.toList();
 
