@@ -13,9 +13,7 @@ class ShuttleData extends ChangeNotifier {
     schedule =
         json.decode(await rootBundle.loadString('assets/shuttleSchedule.json'));
     time = time ?? DateTime.now();
-    if (time.weekday == 7 ||
-        time.weekday == 6 ||
-        (time.weekday == 5 && time.hour * 100 > 1950)) {
+    if (time.weekday == 7 || time.weekday == 6) {
       return null;
     } else {
       var length = time.weekday == 5
@@ -25,22 +23,20 @@ class ShuttleData extends ChangeNotifier {
 
       String shuttleTime;
 
+      // Find next available shuttle time on same day
       for (var i = 0; i < length; i++) {
         if (int.parse(schedule[campus][day][i]) >=
             (time.hour * 100) + time.minute) {
           shuttleTime = schedule[campus][day][i];
           break;
-        } else { // it's between 11PM and 12AM
-          if (campus == "loyola") {
-            if (int.parse(day) < 5) { // it's between monday and thursday inclusive
-              shuttleTime = "0730";
-            } else { // it's a friday
-              shuttleTime = "0740";
-            }
-          } else {
-            shuttleTime = "0745";
-          }
         }
+      }
+
+      // Get next day's available shuttle time
+      if (shuttleTime == null) {
+        int nextAvailableDay = (time.weekday + 1) % (schedule[campus].length + 1);
+        if(nextAvailableDay == 0) nextAvailableDay++;
+        shuttleTime = schedule[campus][nextAvailableDay.toString()][0];
       }
 
       var timeList = shuttleTime.split('');
