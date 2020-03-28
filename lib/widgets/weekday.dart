@@ -45,7 +45,9 @@ class Weekday extends StatelessWidget {
         ]),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-              onPressed: (course != null && course?.location != '')
+              onPressed: (course != null &&
+                      course?.location != '' &&
+                      course?.location != null)
                   ? () {
                       String letter = course.location[0];
                       if (letter == "H") {

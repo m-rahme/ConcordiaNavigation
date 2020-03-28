@@ -75,10 +75,13 @@ class CalendarData extends ChangeNotifier {
       events.addAll(result?.data);
     }
 
-    _classes = events.where((event) => (
-        // check title has discipline (4 letters uppercase) followed by a course # (3 digits)
-        // event can't be all day
-        !event.allDay && event.title.contains(constants.eventFilter)))?.toList();
+    _classes = events
+        .where((event) => (
+            // check title has discipline (4 letters uppercase) followed by a course # (3 digits)
+            // event can't be all day
+            !event.allDay &&
+                event.title.toUpperCase().contains(constants.eventFilter)))
+        ?.toList();
 
     _schedule = Schedule.fromEvents(_classes);
     notifyListeners();
