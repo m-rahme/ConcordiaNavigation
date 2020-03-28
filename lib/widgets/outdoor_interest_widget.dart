@@ -104,7 +104,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                               mapData.changeStart(mapData.getCurrentLocation);
                               mapData.changeEnd(LatLng(
                                   snapshot.data[index].getLat(),
-                                  snapshot.data[index].getLat()));
+                                  snapshot.data[index].getLong()));
                               mapData.changeMode("driving");
                               mapData.setItinerary();
                             },

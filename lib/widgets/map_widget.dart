@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:concordia_navigation/widgets/directions_drawer.dart';
 import 'package:flutter/services.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
