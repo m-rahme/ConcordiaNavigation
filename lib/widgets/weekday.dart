@@ -40,68 +40,43 @@ class Weekday extends StatelessWidget {
           RaisedButton(
               onPressed: (course != null && course?.location != '')
                   ? () {
-                      switch (course.location[0]) {
-                        case "H":
-                          {
-                            Provider.of<MapData>(context, listen: false)
-                                .changeCampus('sgw');
-                            Provider.of<MapData>(context, listen: false)
-                                .changeEnd(constants.hBuilding);
-                            if (course.location[1] == "A") {
-                              Provider.of<MapData>(context, listen: false)
-                                  .controllerDestination
-                                  .text = "Hall Building, Montreal";
-                            } else {
-                              Provider.of<MapData>(context, listen: false)
-                                  .controllerDestination
-                                  .text = course.location;
-                            }
-                          }
-                          break;
-
-                        case "M":
-                          {
-                            Provider.of<MapData>(context, listen: false)
-                                .changeCampus('sgw');
-                            Provider.of<MapData>(context, listen: false)
+                      String letter = course.location[0];
+                      if (letter == "H") {
+                        Provider.of<MapData>(context, listen: false)
+                            .changeCampus('sgw');
+                        Provider.of<MapData>(context, listen: false)
+                            .changeEnd(constants.hBuilding);
+                        Provider.of<MapData>(context, listen: false)
                                 .controllerDestination
-                                .text = course.location;
-                            Provider.of<MapData>(context, listen: false)
-                                .changeEnd(constants.jmsbBuilding);
-                          }
-                          break;
-
-                        case "L":
-                          {
-                            Provider.of<MapData>(context, listen: false)
-                                .changeCampus('loyola');
-                            Provider.of<MapData>(context, listen: false)
-                                .controllerDestination
-                                .text = "Loyola Campus, Montreal";
-                            Provider.of<MapData>(context, listen: false)
-                                .changeEnd(constants.loyola);
-                          }
-                          break;
-
-                        case "J":
-                          {
-                            Provider.of<MapData>(context, listen: false)
-                                .changeCampus('sgw');
-                            Provider.of<MapData>(context, listen: false)
-                                .controllerDestination
-                                .text = "John Molson Business, Montreal";
-                            Provider.of<MapData>(context, listen: false)
-                                .changeEnd(constants.jmsbBuilding);
-                          }
-                          break;
-
-                        default:
-                          {
-                            Provider.of<MapData>(context, listen: false)
-                                .changeCampus('sgw');
-                            Provider.of<MapData>(context, listen: false)
-                                .controllerDestination
-                                .text = "SGW Campus, Montreal";
+                                .text =
+                            course.location[1] == "A"
+                                ? "Hall Building, Montreal"
+                                : course.location;
+                      } else if (letter == "M") {
+                        Provider.of<MapData>(context, listen: false)
+                            .changeCampus('sgw');
+                        Provider.of<MapData>(context, listen: false)
+                            .controllerDestination
+                            .text = course.location;
+                        Provider.of<MapData>(context, listen: false)
+                            .changeEnd(constants.jmsbBuilding);
+                      } else if (letter == "L") {
+                        Provider.of<MapData>(context, listen: false)
+                            .changeCampus('loyola');
+                        Provider.of<MapData>(context, listen: false)
+                            .controllerDestination
+                            .text = "Loyola Campus, Montreal";
+                        Provider.of<MapData>(context, listen: false)
+                            .changeEnd(constants.loyola);
+                      } else if (letter == "J") {
+                        Provider.of<MapData>(context, listen: false)
+                            .changeCampus('sgw');
+                        Provider.of<MapData>(context, listen: false)
+                            .controllerDestination
+                            .text = "John Molson Business, Montreal";
+                        Provider.of<MapData>(context, listen: false)
+                            .changeEnd(constants.jmsbBuilding);
+                      }
                             Provider.of<MapData>(context, listen: false)
                                 .changeEnd(constants.sgw);
                           }
