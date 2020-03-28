@@ -94,7 +94,7 @@ class CalendarData extends ChangeNotifier {
   /// This is a different approach to what is done with directions in that the model is built here.
   ///
   /// Constructs the URL from: premade API key + calendar url
-  Future<Schedule> retrieveFromGoogle(
+  Future<void> retrieveFromGoogle(
       {String apiKey: 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0',
       String calId = 'r9cpm71rcvjq91n86ku85ghr18'}) async {
     String raw = await Network.getData(
@@ -102,7 +102,5 @@ class CalendarData extends ChangeNotifier {
 
     _schedule = Schedule.fromJson(json.decode(raw));
     notifyListeners();
-
-    return _schedule;
   }
 }
