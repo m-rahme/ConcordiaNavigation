@@ -20,9 +20,13 @@ class Weekday extends StatelessWidget {
     DateFormat formatter = DateFormat("Hm");
 
     List<Widget> courseContainer = [];
-    courseContainer.add(Padding(
-      padding: const EdgeInsets.only(top: 8.0),
-      child: Text(weekday, style: TextStyle(fontSize: 20.0)),
+    courseContainer.add(Align(
+      alignment: Alignment.topLeft,
+      child: Padding(
+        padding: const EdgeInsets.only(top: 15.0, left: 15.0, bottom: 15.0),
+        child: Text(weekday,
+            style: TextStyle(fontSize: 22.0, fontWeight: FontWeight.w600)),
+      ),
     ));
 
     courseList.forEach((course) => courseContainer.add(ListTile(
@@ -32,17 +36,22 @@ class Weekday extends StatelessWidget {
         leading: CircleAvatar(backgroundImage: AssetImage('assets/logo.png')),
         title: Text(
           course.summary,
+          style: TextStyle(fontWeight: FontWeight.w500),
         ),
-        subtitle: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
-          Text(
-            "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())} | ",
-          ),
-          Text((course == null ||
-                  course?.location == null ||
-                  course?.location == '')
-              ? "N/A"
-              : course.location)
-        ]),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Text(
+              "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())}",
+              style: TextStyle(color: constants.blueColor),
+            ),
+            Text((course == null ||
+                    course?.location == null ||
+                    course?.location == '')
+                ? "N/A"
+                : course.location),
+          ],
+        ),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
               onPressed: (course != null &&
