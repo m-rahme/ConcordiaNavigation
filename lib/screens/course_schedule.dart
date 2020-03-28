@@ -15,10 +15,13 @@ class CourseSchedule extends StatelessWidget {
         Provider.of<CalendarData>(context).schedule?.byWeekday();
     List<Widget> weekdayContainer = [];
 
+    // show progess indicator if fetching calendar events isn't done
     while (weekdays == null) {
       return Center(child: CircularProgressIndicator());
     }
 
+    // iterate through what is returned by [Schedule.byWeekday()]
+    // where 0 is monday, 1 is tuesday, 2 is wednesday, etc.
     for (int i = 0; i < weekdays.length; i++) {
       List<Course> courseList = weekdays[i];
       if (courseList.isNotEmpty) {
