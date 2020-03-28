@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -392,27 +393,30 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
     return Container(
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
-        child: RaisedButton(
-          padding: EdgeInsets.fromLTRB(25.0, 15.0, 25.0, 15.0),
-          color: Colors.lightGreen[400],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
-          onPressed: () {
-            setState(
-              () {
-                if (!isSelectedSGWToLoy)
-                  isSelectedSGWToLoy = !isSelectedSGWToLoy;
-                if (isSelectedLoyToSGW)
-                  isSelectedLoyToSGW = !isSelectedLoyToSGW;
-              },
-            );
-          },
-          child: Text(
-            cellDisplay,
-            style: GoogleFonts.raleway(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+        child: ButtonTheme(
+          height: SizeConfig.safeBlockVertical * 6,
+          minWidth: SizeConfig.safeBlockHorizontal * 30,
+          child: RaisedButton(
+            color: greenColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(7.0)),
+            onPressed: () {
+              setState(
+                () {
+                  if (!isSelectedSGWToLoy)
+                    isSelectedSGWToLoy = !isSelectedSGWToLoy;
+                  if (isSelectedLoyToSGW)
+                    isSelectedLoyToSGW = !isSelectedLoyToSGW;
+                },
+              );
+            },
+            child: Text(
+              cellDisplay,
+              style: GoogleFonts.raleway(
+                fontSize: 12.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),
@@ -425,27 +429,30 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
     return Container(
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
-        child: RaisedButton(
-          padding: EdgeInsets.fromLTRB(20.0, 15.0, 20.0, 15.0),
-          color: Colors.lightGreen[400],
-          shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(7.0)),
-          onPressed: () {
-            setState(
-              () {
-                if (!isSelectedLoyToSGW)
-                  isSelectedLoyToSGW = !isSelectedLoyToSGW;
-                if (isSelectedSGWToLoy)
-                  isSelectedSGWToLoy = !isSelectedSGWToLoy;
-              },
-            );
-          },
-          child: Text(
-            cellDisplay,
-            style: GoogleFonts.raleway(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              color: Colors.white,
+        child: ButtonTheme(
+          height: SizeConfig.safeBlockVertical * 6,
+          minWidth: SizeConfig.safeBlockHorizontal * 30,
+          child: RaisedButton(
+            color: greenColor,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(7.0)),
+            onPressed: () {
+              setState(
+                () {
+                  if (!isSelectedLoyToSGW)
+                    isSelectedLoyToSGW = !isSelectedLoyToSGW;
+                  if (isSelectedSGWToLoy)
+                    isSelectedSGWToLoy = !isSelectedSGWToLoy;
+                },
+              );
+            },
+            child: Text(
+              cellDisplay,
+              style: GoogleFonts.raleway(
+                fontSize: 12.0,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
             ),
           ),
         ),

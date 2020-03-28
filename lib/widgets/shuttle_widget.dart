@@ -32,22 +32,19 @@ class ShuttleWidget extends StatelessWidget {
                       color: constants.whiteColor,
                     ),
                   ),
-                  InkWell(
-                    onTap: () {
-                      Navigator.pushNamed(context, '/shuttle');
-                    },
-                    child: Container(
-                      padding: EdgeInsets.all(5.0),
-                      child: OutlineButton(
-                        child: Text(
-                          "VIEW SCHEDULE",
-                          style: GoogleFonts.raleway(
-                            fontSize: 14.0,
-                            fontWeight: FontWeight.w600,
-                            color: constants.whiteColor,
-                          ),
+                  Container(
+                    padding: EdgeInsets.all(5.0),
+                    child: OutlineButton(
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/shuttle');
+                      },
+                      child: Text(
+                        "View Schedule",
+                        style: GoogleFonts.raleway(
+                          fontSize: 14.0,
+                          fontWeight: FontWeight.w600,
+                          color: constants.whiteColor,
                         ),
-                        borderSide: BorderSide( width: 2),
                       ),
                     ),
                   ),
