@@ -6,6 +6,7 @@ class Course {
   DateTime _start, _end;
   String _location;
 
+  // duration in minutes
   int duration() => _end.minute - _start.minute;
 
   String get summary => _summary;
