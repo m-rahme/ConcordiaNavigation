@@ -2,14 +2,17 @@ import 'dart:convert';
 
 import 'package:concordia_navigation/models/schedule.dart';
 import 'package:concordia_navigation/services/network.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';
 
 class CalendarData extends ChangeNotifier {
+  final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
   final DeviceCalendarPlugin _deviceCalendarPlugin = new DeviceCalendarPlugin();
   final Duration _lookahead = new Duration(days: 31);
   List<Calendar> _calendars = new List();
   List<Event> _classes = new List();
+  List<Event> _classes = List();
   Schedule _schedule;
 
   Schedule get schedule => _schedule;
@@ -41,6 +44,10 @@ class CalendarData extends ChangeNotifier {
           calendar.isReadOnly == false &&
           calendar.name.contains(RegExp("([C|c]onco)|[S|s]chool|[U|u]ni"))
           ))?.toList();
+      _calendars = calendarsResult?.data
+          ?.where((calendar) => (calendar.isReadOnly == false &&
+              calendar.name.toLowerCase().contains(constants.calFilter)))
+          ?.toList();
     } catch (e) {
       print(e);
     }
@@ -53,11 +60,13 @@ class CalendarData extends ChangeNotifier {
     }
 
     DateTime now = DateTime.now();
+    DateTime _firstDayOfTheweek = now.subtract(Duration(days: now.weekday));
+
     DateTime _firstDayOfTheweek = now.subtract(new Duration(days: now.weekday));
     RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
         startDate: _firstDayOfTheweek, endDate: now.add(_lookahead));
 
-    List<Event> events = new List();
+    List<Event> events = List();
 
     for (Calendar cal in _calendars) {
       final result = await _deviceCalendarPlugin.retrieveEvents(cal.id, retrieveEventsParams);
@@ -76,17 +85,14 @@ class CalendarData extends ChangeNotifier {
     return _schedule;
   }
 
-
   /// DEPRECATED
   /// Requests the JSON from Google's calendar API then builds the Schedule object.
   /// This is a different approach to what is done with directions in that the model is built here.
   ///
   /// Constructs the URL from: premade API key + calendar url
-  Future<Schedule> retrieveFromGoogle({
-    String apiKey: 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0',
-    String calId = 'r9cpm71rcvjq91n86ku85ghr18'
-  }) async {
-
+  Future<Schedule> retrieveFromGoogle(
+      {String apiKey: 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0',
+      String calId = 'r9cpm71rcvjq91n86ku85ghr18'}) async {
     String raw = await Network.getData(
         'https://www.googleapis.com/calendar/v3/calendars/$calId@group.calendar.google.com/events?key=$apiKey');
 

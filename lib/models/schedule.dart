@@ -20,7 +20,8 @@ class Schedule {
   Schedule.fromEvents(List<Event> events)
       : _summary = 'All Classes',
         _tz = 'America/Toronto',
-        _courses = events.map<Course>((event) => Course.fromEvent(event)).toList();
+        _courses =
+            events.map<Course>((event) => Course.fromEvent(event)).toList();
 
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
   /// We're using indexes instead of string values for week days due to multilingual support.

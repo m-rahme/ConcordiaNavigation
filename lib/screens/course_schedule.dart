@@ -16,13 +16,14 @@ class CourseSchedule extends StatelessWidget {
         ),
         // TODO: rework future builder...
         body: FutureBuilder(
-            future: Provider.of<CalendarData>(context).retrieveFromDevice()
+            future: Provider.of<CalendarData>(context, listen: false)
+                .retrieveFromDevice()
                 .then((schedule) => schedule.byWeekday()),
             builder: (context, AsyncSnapshot snapshot) {
               switch (snapshot.connectionState) {
                 // Uncompleted State
                 case ConnectionState.none:
-                  return new Text('Error occurred');
+                  return new Text('Error Occurred');
                 case ConnectionState.waiting:
                   return Center(child: CircularProgressIndicator());
                   break;
