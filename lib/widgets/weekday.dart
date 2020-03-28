@@ -34,7 +34,9 @@ class Weekday extends StatelessWidget {
           Text(
             "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())} | ",
           ),
-          Text((course == null || course?.location == '') ? "N/A" : course.location)
+          Text((course == null || course?.location == '')
+              ? "N/A"
+              : course.location)
         ]),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
@@ -77,11 +79,11 @@ class Weekday extends StatelessWidget {
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.jmsbBuilding);
                       }
-                            Provider.of<MapData>(context, listen: false)
-                                .changeEnd(constants.sgw);
-                          }
-                          break;
-                      }
+                      Provider.of<MapData>(context, listen: false)
+                          .controllerStarting
+                          .text = "Current Location";
+                      Provider.of<MapData>(context, listen: false).setItinerary();
+                      Navigator.of(context).pop();
                     }
                   : null,
               elevation: 1.0,
