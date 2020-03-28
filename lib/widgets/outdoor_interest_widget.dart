@@ -18,7 +18,6 @@ class OutdoorInterestWidget extends StatelessWidget {
       itemBuilder: (context, index) {
         if (snapshot.data[index].getCampus() == campus)
           return Card(
-            shadowColor: constants.lightGreyColor,
             child: Container(
               height: SizeConfig.safeBlockVertical * 14,
               child: Row(
@@ -108,7 +107,6 @@ class OutdoorInterestWidget extends StatelessWidget {
                                   snapshot.data[index].getLat()));
                               mapData.changeMode("driving");
                               mapData.setItinerary();
-                              mapData.setDrawer(true);
                             },
                           );
                         }),
