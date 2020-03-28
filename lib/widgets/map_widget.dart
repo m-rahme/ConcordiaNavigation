@@ -1,5 +1,7 @@
 import 'dart:async';
+import 'dart:typed_data';
 import 'package:concordia_navigation/widgets/directions_drawer.dart';
+import 'package:flutter/services.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +16,7 @@ import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/models/buildingModels/building_list.dart';
 import 'package:concordia_navigation/models/buildingModels/building_information.dart';
+import 'dart:ui' as ui;
 
 //This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
@@ -27,10 +30,21 @@ class _MapWidgetState extends State<MapWidget> {
   var _location;
 
   //attributes for markers
-  BuildingList buildingList = BuildingList();
-  List<BuildingInformation> buildings;
+  Set<BuildingInformation> buildings = Set<BuildingInformation>();
   Set<Marker> setOfMarkers = Set<Marker>();
-  BitmapDescriptor buildingIcon;
+  Set<Uint8List> buildingIcon = Set<Uint8List>();
+  Set<String> iconSet = {
+    "assets/markers/h.png",
+    "assets/markers/lb.png",
+    "assets/markers/fg.png",
+    "assets/markers/mb.png",
+    "assets/markers/ev.png",
+    "assets/markers/cc.png",
+    "assets/markers/cj.png",
+    "assets/markers/ge.png",
+    "assets/markers/py.png",
+    "assets/markers/sp.png",
+  };
 
   Future setInitialCamera() async {
     var location = UserLocation.fromLocationData(
@@ -47,16 +61,28 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
+    BuildingList().readBuildingFile().then((buildingSet) {
+      buildings = buildingSet;
+    });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
     SizeConfig();
-    buildings = buildingList.getListOfBuildings();
-    setBuildingIcons();
+  }
+
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
+        .buffer
+        .asUint8List();
   }
 
   void setBuildingIcons() async {
-    buildingIcon = await BitmapDescriptor.fromAssetImage(
-        ImageConfiguration(devicePixelRatio: 2.5), 'assets/markers/h.png');
+    for (int i = 0; i < 10; i++) {
+      buildingIcon.add(await getBytesFromAsset(iconSet.elementAt(i), 350));
+    }
   }
 
   @override
@@ -77,32 +103,35 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if (buildings.length <11) {
-      buildingList.readBuildingFile();
+    if (buildingIcon.length < 10 && buildings.length > 9) setBuildingIcons();
+
+    if (buildingIcon.length == 10) {
       while (buildings.length < 10) {
         return Container(
           width: 0,
           height: 0,
         );
       }
-      for (int i = 0; i < 10; i++) {
-        setOfMarkers.add(Marker(
-          markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
-          anchor: const Offset(0.5, 0.5),
-          position: LatLng(buildings.elementAt(i).getLatitude(),
-              buildings.elementAt(i).getLongitude()),
-          icon: buildingIcon,
-          onTap: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (builder) {
-                  return BottomSheetWidget(buildings.elementAt(i));
-                });
-          },
-        ));
+      if (setOfMarkers.length < 10) {
+        for (int i = 0; i < 10; i++) {
+          setOfMarkers.add(Marker(
+            markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
+            anchor: const Offset(0.5, 0.5),
+            position: LatLng(buildings.elementAt(i).getLatitude(),
+                buildings.elementAt(i).getLongitude()),
+//            icon: buildingIcon.elementAt(i),
+            icon: BitmapDescriptor.fromBytes(buildingIcon.elementAt(i)),
+            onTap: () {
+              showModalBottomSheet(
+                  context: context,
+                  builder: (builder) {
+                    return BottomSheetWidget(buildings.elementAt(i));
+                  });
+            },
+          ));
+        }
       }
     }
-
     return Stack(
       children: <Widget>[
         GoogleMap(
@@ -149,7 +178,6 @@ class _MapWidgetState extends State<MapWidget> {
                 .animateTo(pos.latitude, pos.longitude);
           },
         ),
-        DirectionsDrawer(),
       ],
     );
   }

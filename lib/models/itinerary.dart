@@ -3,6 +3,7 @@ import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 //This class is used to generate an an Itinerary from the direction's JSON.
 class Itinerary {
@@ -12,8 +13,15 @@ class Itinerary {
   String _mode;
   Map<String, Map<String, String>> _itinerary;
   List<Polyline> _polylines;
+  static DirectionsService _directionsService;
 
   Itinerary._create();
+
+  String _duration;
+  String _distance;
+
+  String get duration => _duration;
+  String get distance => _distance;
 
   List<Polyline> get polylines => _polylines;
 
@@ -21,21 +29,24 @@ class Itinerary {
 
   /// Create the Itinerary object and populate its fields from json data.
   static Future<Itinerary> create(
-      LatLng startDestination, LatLng endDestination, String mode) async {
+      LatLng startDestination, LatLng endDestination, String mode, [DirectionsService directionsService = const DirectionsService()]) async {
     Itinerary itinerary = Itinerary._create();
+    _directionsService = directionsService;
 
-    String rawData = await DirectionsService.getDirections(
+    String rawData = await _directionsService.getDirections(
         startDestination, endDestination,
         mode: mode);
     Map<String, dynamic> rawJson = json.decode(rawData);
     itinerary._polylines = getPolylinePoints(rawJson);
     itinerary._itinerary = getDirectionList(rawJson);
+    itinerary._distance = getDistance(rawJson);
+    itinerary._duration = getDuration(rawJson);
 
     return itinerary;
   }
 
   /// Returns a Map of instructions obtained by parsing a json object from Google's Directions API.
-  /// 
+  ///
   /// The format is the following:
   /// ```
   /// {
@@ -44,13 +55,13 @@ class Itinerary {
   ///   ...
   /// }
   /// ```
-  /// 
+  ///
   /// Sample output:
   /// ```
   /// {
   ///   Head west on Rue Sainte-Catherine O. toward Avenue Atwater : {5 mins: 0.2 km},
   ///   Turn left onto Avenue Atwater : {3 mins: 1.4 km},
-  ///   Turn left onto Rue Tupper : {1 min: 0.7 km}, 
+  ///   Turn left onto Rue Tupper : {1 min: 0.7 km},
   ///   ...
   /// }
   /// ```
@@ -60,18 +71,13 @@ class Itinerary {
     Map<String, Map<String, String>> temp = Map<String, Map<String, String>>();
     var steps = rawJson["routes"][0]["legs"][0]["steps"].length;
     for (int i = 0; i < steps; i++) {
-      String s1 = rawJson["routes"][0]["legs"][0]["steps"][i]
+      String instructions = rawJson["routes"][0]["legs"][0]["steps"][i]
               ["html_instructions"]
-          .replaceAll(
-              //Regex to replace certain special characters in HTML with whitespace
-              RegExp(r'(<\/?\w+\/?>?| \w+=\"\w+-\w+:\d.\d\w+\">)'),
-              ' ');
-      String s2 =
+          .replaceAll(constants.removeHTML, ' ');
+      String directionText =
           rawJson["routes"][0]["legs"][0]["steps"][i]["duration"]["text"];
-      String s3 =
-          rawJson["routes"][0]["legs"][0]["steps"][i]["distance"]["text"];
       temp.addAll({
-        s1: {s2: s3}
+        instructions: {directionText: directionText}
       });
     }
     return temp;
@@ -88,9 +94,11 @@ class Itinerary {
     double sLong = rawJson['routes'][0]['legs'][0]['start_location']['long'];
     String sDesc = rawJson['routes'][0]['legs'][0]['start_address'];
 
-    var steps = rawJson['routes'][0]['legs'][0]['steps'];
+    var steps =
+        rawJson['routes'][0]['legs'][0]['steps']; // # of direction steps
 
     for (int i = 0; i < steps.length; i++) {
+      // get polyline of every steps
       dynamic directions = steps[i]["polyline"]["points"];
       List<PointLatLng> temp = tPolylinePoints.decodePolyline(directions);
       tPointLatLng = new List.from(tPointLatLng)..addAll(temp);
@@ -110,5 +118,13 @@ class Itinerary {
 
     tPolyline.add(route);
     return tPolyline;
+  }
+
+  static String getDuration(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['duration']['text'];
+  }
+
+  static String getDistance(Map<String, dynamic> rawJson) {
+    return rawJson['routes'][0]['legs'][0]['distance']['text'];
   }
 }

@@ -1,10 +1,10 @@
-Sir George William Campus:H Building:45.497261:-73.578943:Henry F. Hall Building:1455 De Maisonneuve Blvd. W.
-Sir George William Campus:LB Building:45.496810:-73.577813:J.W. McConnell Building:1400 De Maisonneuve Blvd. W.
-Sir George William Campus:FG Building:45.494236:-73.578284 :Faubourg Building:1250 Guy St
-Sir George William Campus:MB Building:45.495222:-73.578824 :John-Molson Building:1450 Guy St.
-Sir George William Campus:EV Building:45.495666:-73.578086:Engineering, Computer Science and Visual Arts Integrated Complex:1515 Saint-Catherine St W.
-Loyola Campus:CC Building:45.458306:-73.640339:Central Building:7141 Sherbrooke W.
-Loyola Campus:CJ Building:45.457446:-73.640363:Communication Studies and Journalism Building:7141 Sherbrooke W.
-Loyola Campus:GE Centre:45.456997:-73.640484:Centre for Structural and Functional Genomics:7141 Sherbrooke W.
-Loyola Campus:PY Building:45.458984:-73.640495:Psychology Building:7141 Sherbrooke W.
-Loyola Campus:SP Complex:45.457822:-73.641497:Richard J. Renaud Science Complex:7141 Sherbrooke W.
+Sir George William Campus:H Building:45.497261:-73.578943:Henry F. Hall Building:1455 De Maisonneuve Blvd. W.:assets/markers/h.png
+Sir George William Campus:LB Building:45.496810:-73.577813:J.W. McConnell Building:1400 De Maisonneuve Blvd. W.:assets/markers/lb.png
+Sir George William Campus:FG Building:45.494236:-73.578284 :Faubourg Building:1250 Guy St:assets/markers/fg.png
+Sir George William Campus:MB Building:45.495222:-73.578824 :John-Molson Building:1450 Guy St.:assets/markers/mb.png
+Sir George William Campus:EV Building:45.495666:-73.578086:Engineering, Computer Science and Visual Arts Integrated Complex:1515 Saint-Catherine St W.:assets/markers/ev.png
+Loyola Campus:CC Building:45.458306:-73.640339:Central Building:7141 Sherbrooke W.:assets/markers/cc.png
+Loyola Campus:CJ Building:45.457446:-73.640363:Communication Studies and Journalism Building:7141 Sherbrooke W.:assets/markers/cj.png
+Loyola Campus:GE Centre:45.456997:-73.640484:Centre for Structural and Functional Genomics:7141 Sherbrooke W.:assets/markers/ge.png
+Loyola Campus:PY Building:45.458984:-73.640495:Psychology Building:7141 Sherbrooke W.:assets/markers/py.png
+Loyola Campus:SP Complex:45.457822:-73.641497:Richard J. Renaud Science Complex:7141 Sherbrooke W.:assets/markers/sp.png
