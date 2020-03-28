@@ -13,6 +13,7 @@ class Itinerary {
   String _mode;
   Map<String, Map<String, String>> _itinerary;
   List<Polyline> _polylines;
+  static DirectionsService _directionsService;
 
   Itinerary._create();
 
@@ -28,10 +29,11 @@ class Itinerary {
 
   /// Create the Itinerary object and populate its fields from json data.
   static Future<Itinerary> create(
-      LatLng startDestination, LatLng endDestination, String mode) async {
+      LatLng startDestination, LatLng endDestination, String mode, [DirectionsService directionsService = const DirectionsService()]) async {
     Itinerary itinerary = Itinerary._create();
+    _directionsService = directionsService;
 
-    String rawData = await DirectionsService.getDirections(
+    String rawData = await _directionsService.getDirections(
         startDestination, endDestination,
         mode: mode);
     Map<String, dynamic> rawJson = json.decode(rawData);

@@ -30,8 +30,7 @@ class _MapWidgetState extends State<MapWidget> {
   var _location;
 
   //attributes for markers
-  Set<BuildingInformation> buildings =
-      (new BuildingList()).getListOfBuildings();
+  Set<BuildingInformation> buildings = Set<BuildingInformation>();
   Set<Marker> setOfMarkers = Set<Marker>();
   Set<Uint8List> buildingIcon = Set<Uint8List>();
   Set<String> iconSet = {
@@ -62,6 +61,9 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
+    BuildingList().readBuildingFile().then((buildingSet) {
+      buildings = buildingSet;
+    });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
     SizeConfig();
