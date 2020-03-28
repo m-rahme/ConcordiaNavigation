@@ -32,13 +32,13 @@ class Weekday extends StatelessWidget {
         ),
         subtitle: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           Text(
-            "${formatter.format(course.start.toLocal())} - ${formatter.format(course.end.toLocal())} | ",
+            "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())} | ",
           ),
-          Text((course?.location == '') ? "N/A" : course.location)
+          Text((course == null || course?.location == '') ? "N/A" : course.location)
         ]),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-              onPressed: (course?.location != '')
+              onPressed: (course != null && course?.location != '')
                   ? () {
                       // TODO: use localization
                       Provider.of<MapData>(context, listen: false)
