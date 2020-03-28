@@ -54,7 +54,8 @@ class CourseSchedule extends StatelessWidget {
                       weekdayContainer.add(Weekday(weekday, courseList));
                     }
                   }
-                  return Column(children: weekdayContainer);
+                  return SingleChildScrollView(
+                      child: Column(children: weekdayContainer));
               }
             }));
   }
