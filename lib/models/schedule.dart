@@ -23,6 +23,15 @@ class Schedule {
         _courses =
             events.map<Course>((event) => Course.fromEvent(event)).toList();
 
+  /// return a list of future classes starting from now until X days into the future
+  List<Course> nextClasses({days: 7}) {
+    DateTime now = DateTime.now();
+    return _courses.where(
+      (course) => course.start.isAfter(now)
+          && course.end.isBefore(now.add(Duration(days: days)))
+    )?.toList();
+  }
+
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
   /// We're using indexes instead of string values for week days due to multilingual support.
   List<Iterable<Course>> byWeekday() =>
@@ -31,7 +40,7 @@ class Schedule {
   /// Returns a list containing courses for a single day.
   Iterable<Course> byDay(int day) => _courses
       .where(
-          (course) => course.start.weekday == day && isThisWeek(course.start))
+          (course) => course.start.weekday == day && _isThisWeek(course.start))
       .toList();
 
   /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
@@ -40,21 +49,21 @@ class Schedule {
   ///
   /// A course on Monday, March 23 2020 is not in the same week
   /// as a course on Sunday, March 22 2020.
-  bool isThisWeek(DateTime when) =>
-      isoWeekNumber(DateTime.now()) == isoWeekNumber(when);
+  bool _isThisWeek(DateTime when) =>
+      _isoWeekNumber(DateTime.now()) == _isoWeekNumber(when);
 
   /// https://stackoverflow.com/a/59693145/12964166
-  int isoWeekNumber(DateTime date) {
+  int _isoWeekNumber(DateTime date) {
     int daysToAdd = DateTime.thursday - date.weekday;
     DateTime thursdayDate = daysToAdd > 0
         ? date.add(Duration(days: daysToAdd))
         : date.subtract(Duration(days: daysToAdd.abs()));
-    int dayOfYearThursday = dayOfYear(thursdayDate);
+    int dayOfYearThursday = _dayOfYear(thursdayDate);
     return 1 + ((dayOfYearThursday - 1) / 7).floor();
   }
 
   /// https://stackoverflow.com/a/59693145/12964166
-  int dayOfYear(DateTime date) {
+  int _dayOfYear(DateTime date) {
     return date.difference(DateTime(date.year, 1, 1)).inDays;
   }
 }

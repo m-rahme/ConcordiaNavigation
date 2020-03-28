@@ -1,3 +1,5 @@
+import 'package:concordia_navigation/models/course.dart';
+import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -28,6 +30,18 @@ class LocationSearch extends SearchDelegate {
     final suggestionList = query.isEmpty
         ? recentRooms
         : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
+
+    //TODO: make it clear that the first item is from the users calendar
+    CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
+    List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
+    if (nextClasses != null && nextClasses.isNotEmpty) {
+      var next = nextClasses.first.location;
+      // Avoid duplicates on widget rebuild
+      if (!suggestionList.contains(next)) {
+        suggestionList.insert(0, next);
+      }
+    }
+
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
