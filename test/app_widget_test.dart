@@ -39,7 +39,7 @@ void main() {
 
   group('App Widget Test', () {
     testWidgets('open drawer', (WidgetTester tester) async {
-      await tester.pumpWidget(appWidget);
+      await tester.pumpWidget(appWidget());
 
       // Wait for LocalizationsDelegate's futures
       await tester.pumpAndSettle();

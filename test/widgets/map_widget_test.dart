@@ -6,7 +6,7 @@ void main() {
     testWidgets(
         'tries to create the map widget but fails because the initial camera location is null',
         (WidgetTester tester) async {
-      await tester.pumpWidget(appWidget);
+      await tester.pumpWidget(appWidget());
 
       // Wait for LocalizationsDelegate's futures
       await tester.pumpAndSettle();
