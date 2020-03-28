@@ -41,8 +41,7 @@ class CalendarData extends ChangeNotifier {
       final calendarsResult = await _deviceCalendarPlugin.retrieveCalendars();
       // only accept calendar whose names are linked to concordia
       _calendars = calendarsResult?.data
-          ?.where((calendar) => (calendar.isReadOnly == false &&
-              calendar.name.toLowerCase().contains(constants.calFilter)))
+          ?.where((calendar) => (calendar.isReadOnly == false))
           ?.toList();
     } catch (e) {
       print(e);
@@ -62,7 +61,8 @@ class CalendarData extends ChangeNotifier {
     // This conflicts with [Schedule.byWeekday()] but device_calendar doesn't support
     // null start and end dates.
     RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
-        startDate: _firstDayOfTheweek, endDate: now.add(constants.dateLookahead));
+        startDate: _firstDayOfTheweek,
+        endDate: now.add(constants.dateLookahead));
 
     List<Event> events = List();
 
