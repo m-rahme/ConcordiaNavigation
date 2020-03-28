@@ -11,7 +11,7 @@ void main() {
         buildingAddress: "buildingAddress",
         latitude: 90.0,
         longitude: 180.0,
-        filename: 'filename',
+        filename: "filename",
       );
      
       expect(buildingInformation.getCampusName(), "campusName");
@@ -20,6 +20,7 @@ void main() {
       expect(buildingInformation.getBuildingAddress(), "buildingAddress");
       expect(buildingInformation.getLatitude(), 90.0);
       expect(buildingInformation.getLongitude(), 180.0);
+      expect(buildingInformation.getFilename(), "filename");
     });
   });
 }
