@@ -53,7 +53,9 @@ class CalendarData extends ChangeNotifier {
     }
 
     DateTime now = DateTime.now();
-    RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(startDate: now, endDate: now.add(_lookahead));
+    DateTime _firstDayOfTheweek = now.subtract(new Duration(days: now.weekday));
+    RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
+        startDate: _firstDayOfTheweek, endDate: now.add(_lookahead));
 
     List<Event> events = new List();
 
