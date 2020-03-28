@@ -55,13 +55,13 @@ class CalendarData extends ChangeNotifier {
     }
 
     DateTime now = DateTime.now();
-    DateTime _firstDayOfTheweek = now.subtract(Duration(days: now.weekday));
+    DateTime _firstDayOfTheWeek = now.subtract(Duration(days: now.weekday));
 
     // Events are loaded starting from the beginning of this week
     // This conflicts with [Schedule.byWeekday()] but device_calendar doesn't support
     // null start and end dates.
     RetrieveEventsParams retrieveEventsParams = new RetrieveEventsParams(
-        startDate: _firstDayOfTheweek,
+        startDate: _firstDayOfTheWeek,
         endDate: now.add(constants.dateLookahead));
 
     List<Event> events = List();

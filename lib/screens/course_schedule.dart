@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/course.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/widgets/weekday.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
@@ -39,6 +40,21 @@ class CourseSchedule extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(ConcordiaLocalizations.of(context).schedule),
+          backgroundColor: constants.greenColor,
+          actions: <Widget>[
+            // action button
+            Padding(
+              padding: const EdgeInsets.only(right: 8.0),
+              child: IconButton(
+                tooltip: "Refresh",
+                icon: Icon(Icons.refresh),
+                onPressed: () {
+                  Provider.of<CalendarData>(context, listen: false)
+                      .retrieveFromDevice();
+                },
+              ),
+            ),
+          ],
         ),
         body: SingleChildScrollView(child: Column(children: weekdayContainer)));
   }

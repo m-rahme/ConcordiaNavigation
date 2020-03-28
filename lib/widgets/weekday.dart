@@ -20,7 +20,10 @@ class Weekday extends StatelessWidget {
     DateFormat formatter = DateFormat("Hm");
 
     List<Widget> courseContainer = [];
-    courseContainer.add(Text(weekday, style: TextStyle(fontSize: 20.0)));
+    courseContainer.add(Padding(
+      padding: const EdgeInsets.only(top: 8.0),
+      child: Text(weekday, style: TextStyle(fontSize: 20.0)),
+    ));
 
     courseList.forEach((course) => courseContainer.add(ListTile(
         contentPadding: EdgeInsets.only(
@@ -34,7 +37,9 @@ class Weekday extends StatelessWidget {
           Text(
             "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())} | ",
           ),
-          Text((course == null || course?.location == '')
+          Text((course == null ||
+                  course?.location == null ||
+                  course?.location == '')
               ? "N/A"
               : course.location)
         ]),
@@ -90,7 +95,8 @@ class Weekday extends StatelessWidget {
                       Provider.of<MapData>(context, listen: false)
                           .controllerStarting
                           .text = "Current Location";
-                      Provider.of<MapData>(context, listen: false).setItinerary();
+                      Provider.of<MapData>(context, listen: false)
+                          .setItinerary();
                       Navigator.of(context).pop();
                     }
                   : null,
