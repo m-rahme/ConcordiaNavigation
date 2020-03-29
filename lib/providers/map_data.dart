@@ -10,8 +10,8 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
-  final controllerStarting = TextEditingController();
-  final controllerDestination = TextEditingController();
+  String controllerStarting;
+  String controllerDestination;
 
   Itinerary itinerary;
 
