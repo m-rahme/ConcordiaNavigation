@@ -45,18 +45,12 @@ class Weekday extends StatelessWidget {
               "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())}",
               style: TextStyle(color: constants.blueColor),
             ),
-            Text((course == null ||
-                    course?.location == null ||
-                    course?.location == '')
-                ? "N/A"
-                : course.location),
+            Text(course.filteredLocation()),
           ],
         ),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-              onPressed: (course != null &&
-                      course?.location != '' &&
-                      course?.location != null)
+              onPressed: (course.filteredLocation() != 'N/A')
                   ? () {
                       String letter = course.location[0];
                       if (letter == "H") {
