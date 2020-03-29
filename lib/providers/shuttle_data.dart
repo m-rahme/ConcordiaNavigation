@@ -25,7 +25,7 @@ class ShuttleData extends ChangeNotifier {
 
       // Find next available shuttle time on same day
       for (var i = 0; i < length; i++) {
-        if (int.parse(schedule[campus][day][i]) >=
+        if (int.parse(schedule[campus][day][i].replaceAll(RegExp(r":"), "")) >=
             (time.hour * 100) + time.minute) {
           shuttleTime = schedule[campus][day][i];
           break;
@@ -39,13 +39,7 @@ class ShuttleData extends ChangeNotifier {
         shuttleTime = schedule[campus][nextAvailableDay.toString()][0];
       }
 
-      var timeList = shuttleTime.split('');
-      return "Next Shuttle Bus at: " +
-          timeList[0] +
-          timeList[1] +
-          ":" +
-          timeList[2] +
-          timeList[3];
+      return "Next Shuttle Bus at: $shuttleTime";
     }
   }
 }
