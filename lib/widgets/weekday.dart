@@ -65,8 +65,7 @@ class Weekday extends StatelessWidget {
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.hBuilding);
                         Provider.of<MapData>(context, listen: false)
-                                .controllerDestination
-                                .text =
+                                .controllerDestination =
                             course.location[1] == "A"
                                 ? "Hall Building, Montreal"
                                 : course.location;
@@ -74,38 +73,34 @@ class Weekday extends StatelessWidget {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('sgw');
                         Provider.of<MapData>(context, listen: false)
-                            .controllerDestination
-                            .text = course.location;
+                            .controllerDestination = course.location;
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.jmsbBuilding);
                       } else if (letter == "L") {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('loyola');
                         Provider.of<MapData>(context, listen: false)
-                            .controllerDestination
-                            .text = "Loyola Campus, Montreal";
+                            .controllerDestination = "Loyola Campus, Montreal";
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.loyola);
                       } else if (letter == "J") {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('sgw');
                         Provider.of<MapData>(context, listen: false)
-                            .controllerDestination
-                            .text = "John Molson Business, Montreal";
+                                .controllerDestination =
+                            "John Molson Business, Montreal";
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.jmsbBuilding);
                       } else if (letter == "F") {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('sgw');
                         Provider.of<MapData>(context, listen: false)
-                            .controllerDestination
-                            .text = "FG Building, Montreal";
+                            .controllerDestination = "FG Building, Montreal";
                         Provider.of<MapData>(context, listen: false)
                             .changeEnd(constants.fgBuilding);
                       }
                       Provider.of<MapData>(context, listen: false)
-                          .controllerStarting
-                          .text = "Current Location";
+                          .controllerStarting = "Current Location";
                       Provider.of<MapData>(context, listen: false)
                           .setItinerary();
                       Navigator.of(context).pop();

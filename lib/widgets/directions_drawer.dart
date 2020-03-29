@@ -15,11 +15,6 @@ class DirectionsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _controllerStarting =
-        Provider.of<MapData>(context, listen: false).controllerStarting;
-    var _controllerDestination =
-        Provider.of<MapData>(context, listen: false).controllerDestination;
-
     Future<Map<String, Map<String, String>>> fetchItinerary() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
@@ -202,7 +197,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             Radius.circular(10.0)),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.grey[600],
+                                            color: constants.greyColor,
                                             blurRadius: 3.0,
                                             spreadRadius: -1.0,
                                             offset: Offset(
@@ -223,27 +218,18 @@ class DirectionsDrawer extends StatelessWidget {
                                             child: Icon(Icons.search),
                                           ),
                                           Expanded(
-                                            child: TextField(
-                                              style: GoogleFonts.raleway(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.w600,
-                                                color: constants.blackColor,
-                                              ),
-                                              controller: _controllerStarting,
-                                              cursorColor: Colors.blue,
-                                              keyboardType: TextInputType.text,
-                                              keyboardAppearance:
-                                                  Brightness.light,
-                                              textInputAction:
-                                                  TextInputAction.go,
-                                              decoration: InputDecoration(
-                                                border: InputBorder.none,
-                                                contentPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 10,
-                                                        vertical: 12),
-                                                hintText:
-                                                    "Choose Starting Point",
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                Provider.of<MapData>(context,
+                                                        listen: false)
+                                                    .controllerStarting,
+                                                style: GoogleFonts.raleway(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: constants.blackColor,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -263,7 +249,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             Radius.circular(10.0)),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.grey[600],
+                                            color: constants.greyColor,
                                             blurRadius: 3.0,
                                             spreadRadius: -1.0,
                                             offset: Offset(
@@ -282,28 +268,19 @@ class DirectionsDrawer extends StatelessWidget {
                                             child: Icon(Icons.search),
                                           ),
                                           Expanded(
-                                            child: TextField(
-                                              style: GoogleFonts.raleway(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.w600,
-                                                color: constants.blackColor,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                Provider.of<MapData>(context,
+                                                        listen: false)
+                                                    .controllerDestination,
+                                                style: GoogleFonts.raleway(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: constants.blackColor,
+                                                ),
                                               ),
-                                              controller:
-                                                  _controllerDestination,
-                                              cursorColor: constants.blueColor,
-                                              keyboardType: TextInputType.text,
-                                              keyboardAppearance:
-                                                  Brightness.light,
-                                              textInputAction:
-                                                  TextInputAction.go,
-                                              decoration: InputDecoration(
-                                                  border: InputBorder.none,
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          horizontal: 10,
-                                                          vertical: 12),
-                                                  hintText:
-                                                      "Choose Destination"),
                                             ),
                                           ),
                                         ],
@@ -321,10 +298,17 @@ class DirectionsDrawer extends StatelessWidget {
                                   var start = mapData.getStart;
                                   mapData.changeStart(mapData.getEnd);
                                   mapData.changeEnd(start);
-                                  var temp = _controllerStarting.text;
-                                  _controllerStarting.text =
-                                      _controllerDestination.text;
-                                  _controllerDestination.text = temp;
+                                  String temp = Provider.of<MapData>(context,
+                                          listen: false)
+                                      .controllerStarting;
+                                  Provider.of<MapData>(context, listen: false)
+                                          .controllerStarting =
+                                      Provider.of<MapData>(context,
+                                              listen: false)
+                                          .controllerDestination;
+                                  ;
+                                  Provider.of<MapData>(context, listen: false)
+                                      .controllerDestination = temp;
                                   mapData.setItinerary();
                                 },
                               ),

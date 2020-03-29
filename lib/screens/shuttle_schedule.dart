@@ -1,13 +1,10 @@
-import 'dart:convert';
-
 import 'package:concordia_navigation/providers/shuttle_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/storage/app_constants.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/rendering.dart';
-import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -32,11 +29,11 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               ? GoogleFonts.raleway(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: constants.blackColor,
                 )
               : GoogleFonts.raleway(
                   fontSize: 20.0,
-                  color: Colors.black,
+                  color: constants.blackColor,
                 ),
           duration: const Duration(milliseconds: 200),
           child: Text(
@@ -57,11 +54,11 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               ? GoogleFonts.raleway(
                   fontSize: 20.0,
                   fontWeight: FontWeight.bold,
-                  color: Colors.black,
+                  color: constants.blackColor,
                 )
               : GoogleFonts.raleway(
                   fontSize: 20.0,
-                  color: Colors.black,
+                  color: constants.blackColor,
                 ),
           duration: const Duration(milliseconds: 200),
           child: Text(
@@ -107,7 +104,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
         title: Text(
           ConcordiaLocalizations.of(context).shuttle,
         ),
-        backgroundColor: greenColor,
+        backgroundColor: constants.greenColor,
       ),
       body: Center(
         child: Column(
@@ -118,7 +115,8 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               child: Table(
                 border: TableBorder(
                   top: BorderSide.none,
-                  bottom: BorderSide(width: 3.0, color: Colors.lightGreen),
+                  bottom: BorderSide(
+                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -134,7 +132,8 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
               child: Table(
                 border: TableBorder(
-                  bottom: BorderSide(width: 3.0, color: Colors.lightGreen),
+                  bottom: BorderSide(
+                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -155,8 +154,8 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
                 child: SingleChildScrollView(
                   child: Table(
                     border: TableBorder(
-                      verticalInside:
-                          BorderSide(width: 1.0, color: Colors.grey[200]),
+                      verticalInside: BorderSide(
+                          width: 1.0, color: constants.lightGreyColor),
                     ),
                     children: rows,
                   ),
@@ -178,7 +177,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: greenColor,
+            color: constants.greenColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {
@@ -196,7 +195,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               style: GoogleFonts.raleway(
                 fontSize: 12.0,
                 fontWeight: FontWeight.bold,
-                color: Colors.white,
+                color: constants.whiteColor,
               ),
             ),
           ),
@@ -214,7 +213,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: greenColor,
+            color: constants.greenColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {
