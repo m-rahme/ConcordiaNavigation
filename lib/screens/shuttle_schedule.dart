@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:concordia_navigation/providers/shuttle_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/cupertino.dart';
@@ -8,6 +9,7 @@ import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 //Concordia Shuttle Schedule Screen
 class ShuttleSchedule extends StatefulWidget {
@@ -19,11 +21,6 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // bool variable to know whenever the user presses the top buttons to highlight the bus schedule hours depending on the destination
   bool isSelectedSGWToLoy = false;
   bool isSelectedLoyToSGW = false;
-
-  dynamic getSchedule() async {
-    return json
-        .decode(await rootBundle.loadString('assets/shuttleSchedule.json'));
-  }
 
   // Builds the table cell to display the departure of the shuttle bus from SGW to Loyola
   Container buildTableCellSGWtoLoy(String cellDisplay) {
@@ -77,103 +74,99 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
 
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getSchedule(),
-        builder: (BuildContext context, AsyncSnapshot snapshot) {
-          if (!snapshot.hasData) {
-            return Center(child: CircularProgressIndicator());
-          } else {
-            List<TableRow> rows = [];
+    dynamic shuttleSchedule = Provider.of<ShuttleData>(context).shuttleSchedule;
 
-            // note: if schedules between monday, tuesday, wednesday or thursday
-            // change, this will only show that of monday
-            // given they are currently the same
+    while (shuttleSchedule == null) {
+      return Center(child: CircularProgressIndicator());
+    }
 
-            // iterate through all days
-            for (int k = 0; k < snapshot.data['sgw']['1'].length; k++) {
-              // build the row containing the 4 times
-              TableRow row = TableRow(children: [
-                buildTableCellSGWtoLoy(snapshot.data['sgw']['1'][k]),
-                buildTableCellSGWtoLoy(snapshot.data['sgw']['5'].length > k
-                    ? snapshot.data['sgw']['5'][k] // friday
-                    : '--:--'),
-                buildTableCellLoyToSGW(snapshot.data['loyola']['1'][k]),
-                buildTableCellLoyToSGW(snapshot.data['loyola']['5'].length > k
-                    ? snapshot.data['loyola']['5'][k] // friday
-                    : '--:--'),
-              ]);
-              rows.add(row);
-            }
+    List<TableRow> rows = [];
 
-            return Scaffold(
-              appBar: AppBar(
-                title: Text(
-                  ConcordiaLocalizations.of(context).shuttle,
+    // note: if schedules between monday, tuesday, wednesday or thursday
+    // change, this will only show that of monday
+    // given they are currently the same
+
+    // iterate through all days
+    for (int k = 0; k < shuttleSchedule['sgw']['1'].length; k++) {
+      // build the row containing the 4 times
+      TableRow row = TableRow(children: [
+        buildTableCellSGWtoLoy(shuttleSchedule['sgw']['1'][k]),
+        buildTableCellSGWtoLoy(shuttleSchedule['sgw']['5'].length > k
+            ? shuttleSchedule['sgw']['5'][k] // friday
+            : '--:--'),
+        buildTableCellLoyToSGW(shuttleSchedule['loyola']['1'][k]),
+        buildTableCellLoyToSGW(shuttleSchedule['loyola']['5'].length > k
+            ? shuttleSchedule['loyola']['5'][k] // friday
+            : '--:--'),
+      ]);
+      rows.add(row);
+    }
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          ConcordiaLocalizations.of(context).shuttle,
+        ),
+        backgroundColor: greenColor,
+      ),
+      body: Center(
+        child: Column(
+          children: <Widget>[
+            // Shuttle bus destinations
+            Container(
+              margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+              child: Table(
+                border: TableBorder(
+                  top: BorderSide.none,
+                  bottom: BorderSide(width: 3.0, color: Colors.lightGreen),
                 ),
-                backgroundColor: greenColor,
+                children: [
+                  TableRow(children: [
+                    buildTitleTableCellSGWToLoy('SGW to Loyola'),
+                    buildTitleTableCellLoyToSGW('Loyola to SGW'),
+                  ]),
+                ],
               ),
-              body: Center(
-                child: Column(
-                  children: <Widget>[
-                    // Shuttle bus destinations
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-                      child: Table(
-                        border: TableBorder(
-                          top: BorderSide.none,
-                          bottom:
-                              BorderSide(width: 3.0, color: Colors.lightGreen),
-                        ),
-                        children: [
-                          TableRow(children: [
-                            buildTitleTableCellSGWToLoy('SGW to Loyola'),
-                            buildTitleTableCellLoyToSGW('Loyola to SGW'),
-                          ]),
-                        ],
-                      ),
-                    ),
+            ),
 
-                    // Days of the week of shuttle bus schedule
-                    Container(
-                      margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
-                      child: Table(
-                        border: TableBorder(
-                          bottom:
-                              BorderSide(width: 3.0, color: Colors.lightGreen),
-                        ),
-                        children: [
-                          TableRow(children: [
-                            buildTableCellSGWtoLoy('Mon-Thu'),
-                            buildTableCellSGWtoLoy('Friday'),
-                            buildTableCellLoyToSGW('Mon-Thu'),
-                            buildTableCellLoyToSGW('Friday'),
-                          ]),
-                        ],
-                      ),
-                    ),
+            // Days of the week of shuttle bus schedule
+            Container(
+              margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 0.0),
+              child: Table(
+                border: TableBorder(
+                  bottom: BorderSide(width: 3.0, color: Colors.lightGreen),
+                ),
+                children: [
+                  TableRow(children: [
+                    buildTableCellSGWtoLoy('Mon-Thu'),
+                    buildTableCellSGWtoLoy('Friday'),
+                    buildTableCellLoyToSGW('Mon-Thu'),
+                    buildTableCellLoyToSGW('Friday'),
+                  ]),
+                ],
+              ),
+            ),
 
-                    // Shuttle bus departure schedule
-                    // check if sgw
-                    Expanded(
-                      child: Container(
-                        margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
-                        child: SingleChildScrollView(
-                          child: Table(
-                            border: TableBorder(
-                              verticalInside: BorderSide(
-                                  width: 1.0, color: Colors.grey[200]),
-                            ),
-                            children: rows,
-                          ),
-                        ),
-                      ),
+            // Shuttle bus departure schedule
+            // check if sgw
+            Expanded(
+              child: Container(
+                margin: EdgeInsets.fromLTRB(10.0, 0.0, 10.0, 10.0),
+                child: SingleChildScrollView(
+                  child: Table(
+                    border: TableBorder(
+                      verticalInside:
+                          BorderSide(width: 1.0, color: Colors.grey[200]),
                     ),
-                  ],
+                    children: rows,
+                  ),
                 ),
               ),
-            );
-          }
-        });
+            ),
+          ],
+        ),
+      ),
+    );
   }
 
   // Builds the button to highlight the shuttle bus schedule departure hours from SGW to Loyola

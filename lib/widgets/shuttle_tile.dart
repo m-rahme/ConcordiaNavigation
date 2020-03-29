@@ -10,60 +10,44 @@ import 'package:google_fonts/google_fonts.dart';
 class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var campus = Provider.of<MapData>(context, listen: false).getCampus;
-    return FutureBuilder(
-        future: Provider.of<ShuttleData>(context, listen: false)
-            .getNextShuttle(campus),
-        builder: (context, AsyncSnapshot shuttleTime) {
-          switch (shuttleTime.connectionState) {
-            // Uncompleted State
-            case ConnectionState.none:
-              return Text('Error');
-            case ConnectionState.waiting:
-              return Center(child: CircularProgressIndicator());
-              break;
-            default:
-              // Completed with error
-              if (shuttleTime.hasError)
-                return Container(
-                  child: Text("Error Occured"),
-                );
-          }
-          return Container(
-            decoration: BoxDecoration(
-              color: constants.whiteColor,
-            ),
-            child: ListTile(
-              contentPadding: EdgeInsets.only(
-                  left: SizeConfig.safeBlockHorizontal * 5.0,
-                  right: SizeConfig.safeBlockHorizontal * 0.0,
-                  top: SizeConfig.safeBlockHorizontal * 0.0),
-              leading: IconButton(
-                icon: new Image.asset('assets/logo.png'),
-                tooltip: 'Concordia',
-                onPressed: () {},
-                iconSize: 45.0,
-              ),
-              title: Text(
-                shuttleTime.data == null ? "No Shuttle Bus" : "via Shuttle Bus",
-                style: GoogleFonts.raleway(
-                  fontSize: 14.0,
-                  fontWeight: FontWeight.w600,
-                  color: constants.blackColor,
-                ),
-              ),
-              subtitle: Text(
-                shuttleTime.data == null
-                    ? "Check Shuttle Schedule For More Info"
-                    : shuttleTime.data,
-                style: GoogleFonts.raleway(
-                  fontSize: 10.0,
-                  fontWeight: FontWeight.w600,
-                  color: constants.blackColor,
-                ),
-              ),
-            ),
-          );
-        });
+    String campus = Provider.of<MapData>(context, listen: false).getCampus;
+    String shuttleTime =
+        Provider.of<ShuttleData>(context, listen: false).getNextShuttle(campus);
+
+    return Container(
+      decoration: BoxDecoration(
+        color: constants.whiteColor,
+      ),
+      child: ListTile(
+        contentPadding: EdgeInsets.only(
+            left: SizeConfig.safeBlockHorizontal * 5.0,
+            right: SizeConfig.safeBlockHorizontal * 0.0,
+            top: SizeConfig.safeBlockHorizontal * 0.0),
+        leading: IconButton(
+          icon: new Image.asset('assets/logo.png'),
+          tooltip: 'Concordia',
+          onPressed: () {},
+          iconSize: 45.0,
+        ),
+        title: Text(
+          shuttleTime == null ? "No Shuttle Bus" : "via Shuttle Bus",
+          style: GoogleFonts.raleway(
+            fontSize: 14.0,
+            fontWeight: FontWeight.w600,
+            color: constants.blackColor,
+          ),
+        ),
+        subtitle: Text(
+          shuttleTime == null
+              ? "Check Shuttle Schedule For More Info"
+              : shuttleTime,
+          style: GoogleFonts.raleway(
+            fontSize: 10.0,
+            fontWeight: FontWeight.w600,
+            color: constants.blackColor,
+          ),
+        ),
+      ),
+    );
   }
 }
