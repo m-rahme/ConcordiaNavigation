@@ -17,7 +17,6 @@ class _DirectionsWidgetState extends State<DirectionsWidget> {
     Future<Map<String, Map<String, String>>> _fetchMoreData() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
-      await Future.delayed(Duration(seconds: 1));
       return Future.value(test);
     }
 

@@ -23,7 +23,6 @@ class DirectionsDrawer extends StatelessWidget {
     Future<Map<String, Map<String, String>>> fetchItinerary() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
-      await Future.delayed(Duration(seconds: 1));
       return Future.value(test);
     }
 
