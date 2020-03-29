@@ -25,7 +25,6 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   CameraPosition _initialCamera;
-  bool sizeConfig = true;
   bool _campus = true;
   var _location;
 
@@ -95,10 +94,7 @@ class _MapWidgetState extends State<MapWidget> {
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
     final pos = Provider.of<UserLocation>(context);
-    if (sizeConfig) {
-      SizeConfig().init(context);
-      sizeConfig = false;
-    }
+
     while (_initialCamera == null) {
       return Center(child: Text("Loading Map"));
     }
