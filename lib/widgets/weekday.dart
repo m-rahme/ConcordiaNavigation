@@ -52,7 +52,7 @@ class Weekday extends StatelessWidget {
           RaisedButton(
               onPressed: (course.filteredLocation() != 'N/A')
                   ? () {
-                      String letter = course.location[0];
+                      String letter = course.filteredLocation()[0];
                       if (letter == "H") {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('sgw');
