@@ -1,4 +1,5 @@
 import 'package:device_calendar/device_calendar.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 /// This class models a course provided by Google Calendar.
 class Course {
@@ -28,4 +29,13 @@ class Course {
         _start = event.start,
         _end = event.end,
         _location = event.location;
+
+  /// Returns whether this location is supported.
+  bool hasClassroomLocation() => constants.classroomFilter.hasMatch(_location);
+
+  /// Returns the filtered location, according to the regex in the constants file.
+  /// The filtered location is N/A if location is null, a null string or unsupported.
+  String filteredLocation() => _location != null && _location != '' && hasClassroomLocation()
+      ? constants.classroomFilter.firstMatch(_location)[0]
+      : 'N/A';
 }
