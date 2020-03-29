@@ -26,6 +26,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
         IconButton(
+          key: Key("LocationSearch"),
           icon: Icon(Icons.search),
           onPressed: () {
             showSearch(context: context, delegate: LocationSearch());
