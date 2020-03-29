@@ -15,6 +15,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
         Consumer<BuildingsData>(
           builder: (BuildContext context, buildings, Widget child) =>
               IconButton(
+            key: Key("ToggleBuildingHighlight"),
             icon: Icon(Icons.wb_sunny),
             onPressed: () {
               if (buildings.visible) {

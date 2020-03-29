@@ -79,6 +79,7 @@ class DirectionsDrawer extends StatelessWidget {
                                       Row(
                                         children: <Widget>[
                                           IconButton(
+                                            key: Key("Driving"),
                                             icon: Icon(Icons.directions_car),
                                             color: _swapCar,
                                             onPressed: () {
@@ -97,6 +98,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Transit"),
                                             icon: Icon(Icons.train),
                                             color: _swapTransit,
                                             onPressed: () {
@@ -115,6 +117,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Walking"),
                                             icon: Icon(Icons.directions_walk),
                                             color: _swapWalking,
                                             onPressed: () {
@@ -133,6 +136,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Bicycling"),
                                             icon: Icon(Icons.directions_bike),
                                             color: _swapBike,
                                             onPressed: () {

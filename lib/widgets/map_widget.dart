@@ -152,6 +152,7 @@ class _MapWidgetState extends State<MapWidget> {
               _completer.complete(controller);
             }),
         FloatingMapButton(
+          key: Key("SwitchCampus"),
           top: SizeConfig.safeBlockVertical * 66,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
@@ -170,6 +171,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
+          key: Key("CurrentLocation"),
           top: SizeConfig.safeBlockVertical * 75,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.gps_fixed),

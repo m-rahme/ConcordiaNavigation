@@ -3,8 +3,17 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
+
+  /**
+   * Functions
+   */
   Future delay([int milliseconds = 100]) async {
     await Future.delayed(Duration(milliseconds: milliseconds));
+  }
+
+  Future tap(FlutterDriver driver, SerializableFinder  finder) async {
+    await driver.tap(finder);
+    await delay(1000);
   }
 
   Future snapshot(FlutterDriver driver, String screenshotName) async {
@@ -17,6 +26,10 @@ void main() {
     print('Screenshot $file');
   }
 
+
+  /**
+   * Automated Tests
+   */
   group('App System Integration Test', () {
     FlutterDriver driver;
 
@@ -47,9 +60,9 @@ void main() {
       () async {
         final SerializableFinder drawerMenu =
             find.byTooltip('Open navigation menu');
-        await driver.tap(drawerMenu);
+        await tap(driver, drawerMenu);
         await driver.scroll(
-            drawerMenu, -300.0, 0.0, const Duration(milliseconds: 300));
+            drawerMenu, -300.0, 0.0, const Duration(milliseconds: 500));
       },
       timeout: Timeout(
         Duration(minutes: 1),
@@ -57,19 +70,59 @@ void main() {
     );
 
     test(
-      'User Story 1',
+      'see current location and campus building highlights',
       () async {
-        delay(2000);
-        await snapshot(driver, '\\UserStory_1\\1');
         final swapCampusIcon = find.byValueKey('SwitchCampus');
-        await driver.tap(swapCampusIcon);
+        final sun = find.byValueKey('ToggleBuildingHighlight');
+        await snapshot(driver, '\\UserStory_1\\1');
+        await tap(driver, swapCampusIcon);
         await snapshot(driver, '\\UserStory_1\\2');
-        await driver.tap(swapCampusIcon);
+        await tap(driver, sun);
         await snapshot(driver, '\\UserStory_1\\3');
+        await tap(driver, sun);
+        await tap(driver, swapCampusIcon);
+        await snapshot(driver, '\\UserStory_1\\4');
       },
       timeout: Timeout(
         Duration(minutes: 1),
       ),
     );
+
+     test(
+      'get directions',
+      () async {
+
+        /// Finders
+        final search = find.byValueKey('LocationSearch');
+        final swapCampusIcon = find.byValueKey('SwitchCampus');
+        final currentLocation = find.byValueKey('CurrentLocation');
+        final location1 = find.byValueKey('Location1');
+        final driving = find.byValueKey('Driving');
+        final transit = find.byValueKey('Transit');
+        final walking = find.byValueKey('Walking');
+        final bicycling = find.byValueKey('Bicycling');
+        final schedule = find.text('SCHEDULE');
+
+        // Tests
+        await tap(driver, search);
+        await snapshot(driver, '\\Directions\\1');
+        await tap(driver, location1);
+        await delay(3000);
+        await snapshot(driver, '\\Directions\\driving');
+        await tap(driver, transit);
+        await snapshot(driver, '\\Directions\\transit');
+        await tap(driver, walking);
+        await snapshot(driver, '\\Directions\\walking');
+        await tap(driver, bicycling);
+        await snapshot(driver, '\\Directions\\bicycling');
+        await driver.scroll(
+            schedule, 0.0, 500.0, const Duration(milliseconds: 800));
+        await snapshot(driver, '\\Directions\\mapDirections');
+      },
+      timeout: Timeout(
+        Duration(minutes: 1),
+      ),
+    );
+
   });
 }
