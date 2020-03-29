@@ -3,11 +3,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/services.dart' show rootBundle;
 
 ///Observer Pattern
-///This class is used to parse the shuttle schedule JSON and get the next available shuttle bus.
+///This class is used to parse the shuttle schedule JSON and get the next available scheduled bus.
 class ShuttleData extends ChangeNotifier {
-  static Map schedule;
+  Map shuttleSchedule;
 
-  ShuttleData();
+  ShuttleData() {
+    // set schedule whenever rootBundle is done
+    rootBundle
+        .loadString('assets/shuttleSchedule.json')
+        .then((data) => shuttleSchedule = json.decode(data));
+  }
 
   Future<String> getNextShuttle(campus, [DateTime time]) async {
     schedule =
