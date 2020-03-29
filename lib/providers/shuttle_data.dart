@@ -14,9 +14,7 @@ class ShuttleData extends ChangeNotifier {
         .then((data) => shuttleSchedule = json.decode(data));
   }
 
-  Future<String> getNextShuttle(campus, [DateTime time]) async {
-    schedule =
-        json.decode(await rootBundle.loadString('assets/shuttleSchedule.json'));
+  String getNextShuttle(campus, [DateTime time]) {
     time = time ?? DateTime.now();
     if (time.weekday == 7 || time.weekday == 6) {
       return null;
