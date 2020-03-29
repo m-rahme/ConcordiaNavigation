@@ -97,10 +97,9 @@ class OutdoorInterestWidget extends StatelessWidget {
                             ),
                             onPressed: () {
                               Navigator.of(context).pop();
-                              mapData.controllerDestination.text =
+                              mapData.controllerDestination =
                                   snapshot.data[index].getName();
-                              mapData.controllerStarting.text =
-                                  "Current Location";
+                              mapData.controllerStarting = "Current Location";
                               mapData.changeStart(mapData.getCurrentLocation);
                               mapData.changeEnd(LatLng(
                                   snapshot.data[index].getLat(),
