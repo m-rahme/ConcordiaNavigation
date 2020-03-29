@@ -65,7 +65,6 @@ class _MapWidgetState extends State<MapWidget> {
     });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
-    SizeConfig();
   }
 
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
@@ -92,7 +91,6 @@ class _MapWidgetState extends State<MapWidget> {
         listen: false,
       ).changeCurrentLocation(_location.toLatLng());
     }
-    SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
     final pos = Provider.of<UserLocation>(context);
@@ -151,7 +149,7 @@ class _MapWidgetState extends State<MapWidget> {
               _completer.complete(controller);
             }),
         FloatingMapButton(
-          top: SizeConfig.safeBlockVertical * 66,
+          top: Provider.of<MapData>(context).swapButtonTop,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
@@ -169,7 +167,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
-          top: SizeConfig.safeBlockVertical * 75,
+          top: Provider.of<MapData>(context).locationButtonTop,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.gps_fixed),
           onClick: () {

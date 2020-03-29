@@ -12,6 +12,8 @@ class MapData extends ChangeNotifier {
   PanelController panelController = new PanelController();
   String controllerStarting;
   String controllerDestination;
+  double swapButtonTop;
+  double locationButtonTop;
 
   Itinerary itinerary;
 
@@ -31,6 +33,16 @@ class MapData extends ChangeNotifier {
 
   void changeCampus(campus) {
     _campus = campus;
+    notifyListeners();
+  }
+
+  void changeSwapTop(double top) {
+    swapButtonTop = top;
+    notifyListeners();
+  }
+
+  void changeLocationTop(double top) {
+    locationButtonTop = top;
     notifyListeners();
   }
 

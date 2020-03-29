@@ -23,6 +23,18 @@ class DirectionsDrawer extends StatelessWidget {
     }
 
     SlidingUpPanel sp = SlidingUpPanel(
+        onPanelClosed: () {
+          Provider.of<MapData>(context, listen: false)
+              .changeSwapTop(SizeConfig.safeBlockVertical * 57);
+          Provider.of<MapData>(context, listen: false)
+              .changeLocationTop(SizeConfig.safeBlockVertical * 66);
+        },
+        onPanelOpened: () {
+          Provider.of<MapData>(context, listen: false)
+              .changeSwapTop(SizeConfig.safeBlockVertical * 66);
+          Provider.of<MapData>(context, listen: false)
+              .changeLocationTop(SizeConfig.safeBlockVertical * 75);
+        },
         controller: Provider.of<MapData>(context).panelController,
         maxHeight: SizeConfig.safeBlockVertical * 85,
         defaultPanelState: PanelState.OPEN,
@@ -50,7 +62,7 @@ class DirectionsDrawer extends StatelessWidget {
                             child: IconButton(
                               icon: Icon(Icons.maximize),
                               iconSize: 30.0,
-                              color: Colors.white,
+                              color: constants.whiteColor,
                               onPressed: () {},
                             ),
                           ),
@@ -152,6 +164,16 @@ class DirectionsDrawer extends StatelessWidget {
                                         icon: Icon(Icons.close),
                                         color: constants.whiteColor,
                                         onPressed: () {
+                                          Provider.of<MapData>(context,
+                                                  listen: false)
+                                              .changeSwapTop(
+                                                  SizeConfig.safeBlockVertical *
+                                                      66);
+                                          Provider.of<MapData>(context,
+                                                  listen: false)
+                                              .changeLocationTop(
+                                                  SizeConfig.safeBlockVertical *
+                                                      75);
                                           Provider.of<MapData>(context,
                                                   listen: false)
                                               .removeItinerary();
