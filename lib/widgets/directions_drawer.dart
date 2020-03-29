@@ -164,7 +164,6 @@ class DirectionsDrawer extends StatelessWidget {
                                         icon: Icon(Icons.close),
                                         color: constants.whiteColor,
                                         onPressed: () {
-                                          print(SizeConfig.blockSizeVertical);
                                           Provider.of<MapData>(context,
                                                   listen: false)
                                               .changeSwapTop(

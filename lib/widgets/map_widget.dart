@@ -25,6 +25,7 @@ class MapWidget extends StatefulWidget {
 
 class _MapWidgetState extends State<MapWidget> {
   CameraPosition _initialCamera;
+  bool sizeConfig = true;
   bool _campus = true;
   var _location;
 
@@ -65,7 +66,6 @@ class _MapWidgetState extends State<MapWidget> {
     });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
-    SizeConfig();
   }
 
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
@@ -92,11 +92,13 @@ class _MapWidgetState extends State<MapWidget> {
         listen: false,
       ).changeCurrentLocation(_location.toLatLng());
     }
-    SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
     final pos = Provider.of<UserLocation>(context);
-
+    if (sizeConfig) {
+      SizeConfig().init(context);
+      sizeConfig = false;
+    }
     while (_initialCamera == null) {
       return Center(child: Text("Loading Map"));
     }

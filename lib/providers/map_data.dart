@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'package:concordia_navigation/models/itinerary.dart';
-import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
@@ -13,8 +12,8 @@ class MapData extends ChangeNotifier {
   PanelController panelController = new PanelController();
   String controllerStarting;
   String controllerDestination;
-  double swapButtonTop = SizeConfig.safeBlockVertical * 66;
-  double locationButtonTop = SizeConfig.safeBlockVertical * 75;
+  double swapButtonTop;
+  double locationButtonTop;
 
   Itinerary itinerary;
 
