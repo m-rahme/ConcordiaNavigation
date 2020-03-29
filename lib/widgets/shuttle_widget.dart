@@ -49,14 +49,12 @@ class ShuttleWidget extends StatelessWidget {
               ),
             ),
           ),
-          Container(
+          Expanded(
             child: Container(
               color: constants.whiteColor,
               height: SizeConfig.safeBlockVertical * 11,
               width: SizeConfig.screenWidth,
-              child: Column(
-                children: <Widget>[
-                  Row(
+              child: Row(
                     children: <Widget>[
                       Expanded(
                         child: ShuttleTile(),
@@ -88,8 +86,6 @@ class ShuttleWidget extends StatelessWidget {
                       ),
                     ],
                   ),
-                ],
-              ),
             ),
           ),
         ],
