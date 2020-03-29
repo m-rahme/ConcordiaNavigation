@@ -33,9 +33,9 @@ class Course {
   /// Returns whether this location is supported.
   bool hasClassroomLocation() => constants.classroomFilter.hasMatch(_location);
 
-  /// Returns the filtered location, according to the regex in the constants file.
+  /// Returns the uppercase filtered location, according to the regex in the constants file.
   /// The filtered location is N/A if location is null, a null string or unsupported.
   String filteredLocation() => _location != null && _location != '' && hasClassroomLocation()
-      ? constants.classroomFilter.firstMatch(_location)[0]
+      ? constants.classroomFilter.firstMatch(_location)[0].toUpperCase()
       : 'N/A';
 }
