@@ -49,9 +49,6 @@ void main() {
 
       final cityIcon = find.byIcon(Icons.location_city);
       expect(cityIcon, findsWidgets);
-/*
-      final bike = find.text("SCHEDULE");
-      expect(bike, findsOneWidget);*/
     });
   });
 }

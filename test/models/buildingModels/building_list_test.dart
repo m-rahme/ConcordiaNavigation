@@ -1,10 +1,6 @@
 import 'package:concordia_navigation/models/buildingModels/building_list.dart';
-import 'package:flutter/services.dart' show AssetBundle, rootBundle;
+import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mockito/mockito.dart';
-
-class MockBuildingList extends Mock implements BuildingList{}
-class MockAssetBundle extends Mock implements AssetBundle{}
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();

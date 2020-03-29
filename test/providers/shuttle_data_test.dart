@@ -1,5 +1,4 @@
 import 'package:concordia_navigation/providers/shuttle_data.dart';
-import 'package:flutter/services.dart' show AssetBundle, rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
