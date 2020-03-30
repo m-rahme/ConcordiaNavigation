@@ -134,6 +134,7 @@ class _MapWidgetState extends State<MapWidget> {
     return Stack(
       children: <Widget>[
         GoogleMap(
+            mapToolbarEnabled: false,
             myLocationEnabled: true,
             myLocationButtonEnabled: false,
             compassEnabled: false,
