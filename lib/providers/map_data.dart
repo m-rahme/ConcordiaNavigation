@@ -1,12 +1,21 @@
+import 'dart:async';
+import 'package:concordia_navigation/models/itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:sliding_up_panel/sliding_up_panel.dart';
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
+  PanelController panelController = new PanelController();
+  String controllerStarting;
+  String controllerDestination;
+  double swapButtonTop;
+  double locationButtonTop;
+
+  Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
@@ -24,6 +33,16 @@ class MapData extends ChangeNotifier {
 
   void changeCampus(campus) {
     _campus = campus;
+    notifyListeners();
+  }
+
+  void changeSwapTop(double top) {
+    swapButtonTop = top;
+    notifyListeners();
+  }
+
+  void changeLocationTop(double top) {
+    locationButtonTop = top;
     notifyListeners();
   }
 
@@ -66,8 +85,20 @@ class MapData extends ChangeNotifier {
     return _campus;
   }
 
-  final controllerStarting = TextEditingController();
-  final controllerDestination = TextEditingController();
+  void setItinerary() async {
+    if (_start == null) {
+      _start = _currentLocation;
+    }
+    itinerary = await Itinerary.create(_start, _end, _mode);
+    notifyListeners();
+  }
+
+  /// Sets the shared itinerary object to null, causing a re-render of the DirectionsDrawer widget
+  /// given it builds only with an empty Container() if it is indeed null
+  void removeItinerary() {
+    itinerary = null;
+    notifyListeners();
+  }
 
   Future<void> animateTo(double lat, double lng) async {
     final c = await _completer.future;

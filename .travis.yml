@@ -46,3 +46,6 @@ cache:
   cocoapods: true
   directories:
     - $HOME/shared/.pub-cache
+
+notifications:
+  slack: soen-minicap:YhYrjuefm0GJEaEVWLim5DbY

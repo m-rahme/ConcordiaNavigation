@@ -1,21 +1,30 @@
 import 'dart:async';
 import 'package:location/location.dart';
 import 'package:concordia_navigation/models/user_location.dart';
+import 'package:meta/meta.dart' show visibleForTesting;
 
 ///Location Service, implementing the Singleton Design Pattern
 class LocationService {
   static LocationService _instance;
   UserLocation _current;
-  Location _location;
+  static Location _location;
   StreamController<UserLocation> _locationController;
 
   ///Private Constructor
   LocationService._() {
     _locationController = StreamController<UserLocation>();
-    _location = Location();
+    _location ??= Location();
     setCurrent();
     _locationController.add(_current);
     registerLocationUpdates();
+  }
+
+  @visibleForTesting
+  static getTestInstance(Location location) {
+    ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
+    if(_location == null) _location = location;
+    if(_instance == null) _instance = LocationService._();
+    return _instance;
   }
 
   static getInstance() {

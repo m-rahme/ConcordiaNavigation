@@ -1,430 +1,49 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/services.dart' show rootBundle;
 
 ///Observer Pattern
-///This class is used to parse the shuttle schedule JSON and get the next available shuttle bus.
+///This class is used to parse the shuttle schedule JSON and get the next available scheduled bus.
 class ShuttleData extends ChangeNotifier {
-  var _json;
+  Map shuttleSchedule;
+
   ShuttleData() {
-    loadJson();
+    // set schedule whenever rootBundle is done
+    rootBundle
+        .loadString('assets/shuttleSchedule.json')
+        .then((data) => shuttleSchedule = json.decode(data));
   }
 
-  String getNextShuttle(campus) {
-    var now = new DateTime.now();
-    if (now.weekday == 7 ||
-        now.weekday == 6 ||
-        (now.weekday == 5 && now.hour * 100 > 1950)) {
-      return "Check Shuttle Schedule for More Info";
+  String getNextShuttle(campus, [DateTime time]) {
+    time = time ?? DateTime.now();
+    if (time.weekday == 7 || time.weekday == 6) {
+      return null;
     } else {
-      var length = now.weekday == 5
-          ? _json[campus]['5'].length
-          : _json[campus]['1'].length;
-      var day = now.weekday.toString();
+      var length = time.weekday == 5
+          ? shuttleSchedule[campus]['5'].length
+          : shuttleSchedule[campus]['1'].length;
+      var day = time.weekday.toString();
 
       String shuttleTime;
 
+      // Find next available shuttleSchedule time on same day
       for (var i = 0; i < length; i++) {
-        if (int.parse(_json[campus][day][i]) >= (now.hour * 100) + now.minute) {
-          shuttleTime = _json[campus][day][i];
+        if (int.parse(shuttleSchedule[campus][day][i].replaceAll(RegExp(r":"), "")) >=
+            (time.hour * 100) + time.minute) {
+          shuttleTime = shuttleSchedule[campus][day][i];
           break;
         }
       }
-      var timeList = shuttleTime.split('');
-      return "Next Shuttle Bus at: " +
-          timeList[0] +
-          timeList[1] +
-          ":" +
-          timeList[2] +
-          timeList[3];
-    }
-  }
 
-  void loadJson() {
-    _json = json.decode('''
-    {
-  "loyola": {
-    "1":[
-      "730",
-      "740",
-      "755",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1020",
-      "1035",
-      "1055",
-      "1110",
-      "1130",
-      "1200",
-      "1230",
-      "1300",
-      "1330",
-      "1400",
-      "1430",
-      "1500",
-      "1530",
-      "1600",
-      "1630",
-      "1700",
-      "1730",
-      "1800",
-      "1830",
-      "1900",
-      "1930",
-      "2000",
-      "2030",
-      "2045",
-      "2105",
-      "2130",
-      "2200",
-      "2230",
-      "2330"
-    ],
-    "2":[
-      "730",
-      "740",
-      "755",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1020",
-      "1035",
-      "1055",
-      "1110",
-      "1130",
-      "1200",
-      "1230",
-      "1300",
-      "1330",
-      "1400",
-      "1430",
-      "1500",
-      "1530",
-      "1600",
-      "1630",
-      "1700",
-      "1730",
-      "1800",
-      "1830",
-      "1900",
-      "1930",
-      "2000",
-      "2030",
-      "2045",
-      "2105",
-      "2130",
-      "2200",
-      "2230",
-      "2330"
-    ],
-    "3":[
-      "730",
-      "740",
-      "755",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1020",
-      "1035",
-      "1055",
-      "1110",
-      "1130",
-      "1200",
-      "1230",
-      "1300",
-      "1330",
-      "1400",
-      "1430",
-      "1500",
-      "1530",
-      "1600",
-      "1630",
-      "1700",
-      "1730",
-      "1800",
-      "1830",
-      "1900",
-      "1930",
-      "2000",
-      "2030",
-      "2045",
-      "2105",
-      "2130",
-      "2200",
-      "2230",
-      "2330"
-    ],
-    "4":[
-      "730",
-      "740",
-      "755",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1020",
-      "1035",
-      "1055",
-      "1110",
-      "1130",
-      "1200",
-      "1230",
-      "1300",
-      "1330",
-      "1400",
-      "1430",
-      "1500",
-      "1530",
-      "1600",
-      "1630",
-      "1700",
-      "1730",
-      "1800",
-      "1830",
-      "1900",
-      "1930",
-      "2000",
-      "2030",
-      "2045",
-      "2105",
-      "2130",
-      "2200",
-      "2230",
-      "2330"
-    ],
-    "5":[
-      "740",
-      "815",
-      "855",
-      "910",
-      "930",
-      "1020",
-      "1035",
-      "1110",
-      "1130",
-      "1145",
-      "1220",
-      "1240",
-      "1255",
-      "1330",
-      "1405",
-      "1420",
-      "1440",
-      "1515",
-      "1530",
-      "1550",
-      "1625",
-      "1640",
-      "1700",
-      "1805",
-      "1840",
-      "1915",
-      "1950"
-    ]
-  },
-  "sgw": {
-    "1":[
-      "745",
-      "805",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1005",
-      "1020",
-      "1055",
-      "1110",
-      "1145",
-      "1215",
-      "1245",
-      "1315",
-      "1345",
-      "1415",
-      "1445",
-      "1515",
-      "1545",
-      "1615",
-      "1645",
-      "1715",
-      "1745",
-      "1815",
-      "1845",
-      "1915",
-      "1945",
-      "2000",
-      "2010",
-      "2030",
-      "2100",
-      "2125",
-      "2145",
-      "2200",
-      "2230",
-      "2300"
-    ],
-    "2":[
-      "745",
-      "805",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1005",
-      "1020",
-      "1055",
-      "1110",
-      "1145",
-      "1215",
-      "1245",
-      "1315",
-      "1345",
-      "1415",
-      "1445",
-      "1515",
-      "1545",
-      "1615",
-      "1645",
-      "1715",
-      "1745",
-      "1815",
-      "1845",
-      "1915",
-      "1945",
-      "2000",
-      "2010",
-      "2030",
-      "2100",
-      "2125",
-      "2145",
-      "2200",
-      "2230",
-      "2300"
-    ],
-    "3":[
-      "745",
-      "805",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1005",
-      "1020",
-      "1055",
-      "1110",
-      "1145",
-      "1215",
-      "1245",
-      "1315",
-      "1345",
-      "1415",
-      "1445",
-      "1515",
-      "1545",
-      "1615",
-      "1645",
-      "1715",
-      "1745",
-      "1815",
-      "1845",
-      "1915",
-      "1945",
-      "2000",
-      "2010",
-      "2030",
-      "2100",
-      "2125",
-      "2145",
-      "2200",
-      "2230",
-      "2300"
-    ],
-    "4":[
-      "745",
-      "805",
-      "820",
-      "835",
-      "855",
-      "910",
-      "930",
-      "945",
-      "1005",
-      "1020",
-      "1055",
-      "1110",
-      "1145",
-      "1215",
-      "1245",
-      "1315",
-      "1345",
-      "1415",
-      "1445",
-      "1515",
-      "1545",
-      "1615",
-      "1645",
-      "1715",
-      "1745",
-      "1815",
-      "1845",
-      "1915",
-      "1945",
-      "2000",
-      "2010",
-      "2030",
-      "2100",
-      "2125",
-      "2145",
-      "2200",
-      "2230",
-      "2300"
-    ],
-    "5":[
-      "745",
-      "820",
-      "855",
-      "930",
-      "945",
-      "1005",
-      "1055",
-      "1110",
-      "1145",
-      "1205",
-      "1220",
-      "1255",
-      "1330",
-      "1335",
-      "1405",
-      "1440",
-      "1455",
-      "1515",
-      "1550",
-      "1605",
-      "1625",
-      "1715",
-      "1730",
-      "1805",
-      "1840",
-      "1915",
-      "1950"
-    ]
-  }
-}
-    ''');
+      // Get next day's available shuttleSchedule time
+      if (shuttleTime == null) {
+        int nextAvailableDay =
+            (time.weekday + 1) % (shuttleSchedule[campus].length + 1);
+        if (nextAvailableDay == 0) nextAvailableDay++;
+        shuttleTime = shuttleSchedule[campus][nextAvailableDay.toString()][0];
+      }
+
+      return "Next Shuttle Bus at: $shuttleTime";
+    }
   }
 }

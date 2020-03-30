@@ -10,16 +10,13 @@ import 'package:google_fonts/google_fonts.dart';
 class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    var response1 = "via Shuttle Bus";
-    var campus = Provider.of<MapData>(context, listen: false).getCampus;
-    if (Provider.of<ShuttleData>(context, listen: false)
-            .getNextShuttle(campus) ==
-        "Check Shuttle Schedule for More Info") {
-      response1 = "No Shuttle Bus Until Monday";
-    }
+    String campus = Provider.of<MapData>(context, listen: false).getCampus;
+    String shuttleTime =
+        Provider.of<ShuttleData>(context, listen: false).getNextShuttle(campus);
+
     return Container(
       decoration: BoxDecoration(
-        color: constants.offWhiteColor,
+        color: constants.whiteColor,
       ),
       child: ListTile(
         contentPadding: EdgeInsets.only(
@@ -33,7 +30,7 @@ class ShuttleTile extends StatelessWidget {
           iconSize: 45.0,
         ),
         title: Text(
-          response1,
+          shuttleTime == null ? "No Shuttle Bus" : "via Shuttle Bus",
           style: GoogleFonts.raleway(
             fontSize: 14.0,
             fontWeight: FontWeight.w600,
@@ -41,8 +38,9 @@ class ShuttleTile extends StatelessWidget {
           ),
         ),
         subtitle: Text(
-          Provider.of<ShuttleData>(context, listen: false)
-              .getNextShuttle(campus),
+          shuttleTime == null
+              ? "Check Shuttle Schedule For More Info"
+              : shuttleTime,
           style: GoogleFonts.raleway(
             fontSize: 10.0,
             fontWeight: FontWeight.w600,
