@@ -26,10 +26,11 @@ class Schedule {
   /// return a list of future classes starting from now until X days into the future
   List<Course> nextClasses({days: 7}) {
     DateTime now = DateTime.now();
-    return _courses.where(
-      (course) => course.start.isAfter(now)
-          && course.end.isBefore(now.add(Duration(days: days)))
-    )?.toList();
+    return _courses
+        .where((course) =>
+            course.start.isAfter(now) &&
+            course.end.isBefore(now.add(Duration(days: days))))
+        ?.toList();
   }
 
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
@@ -45,25 +46,31 @@ class Schedule {
 
   /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
   ///
-  /// Weeks start on Monday and end on Sunday.
+  /// Weeks start on Saturday and end on Friday.
   ///
-  /// A course on Monday, March 23 2020 is not in the same week
-  /// as a course on Sunday, March 22 2020.
-  bool _isThisWeek(DateTime when) =>
-      _isoWeekNumber(DateTime.now()) == _isoWeekNumber(when);
+  /// A course on Friday, March 27 2020 is not in the same week
+  /// as a course on Saturday, March 28 2020.
+  bool _isThisWeek(DateTime when) {
+    DateTime now = DateTime.now();
 
-  /// https://stackoverflow.com/a/59693145/12964166
-  int _isoWeekNumber(DateTime date) {
-    int daysToAdd = DateTime.thursday - date.weekday;
-    DateTime thursdayDate = daysToAdd > 0
-        ? date.add(Duration(days: daysToAdd))
-        : date.subtract(Duration(days: daysToAdd.abs()));
-    int dayOfYearThursday = _dayOfYear(thursdayDate);
-    return 1 + ((dayOfYearThursday - 1) / 7).floor();
-  }
+    DateTime lastSaturday = now;
+    DateTime nextFriday = now;
+    int diff = now.weekday;
 
-  /// https://stackoverflow.com/a/59693145/12964166
-  int _dayOfYear(DateTime date) {
-    return date.difference(DateTime(date.year, 1, 1)).inDays;
+    if (diff < 6) {
+      diff += 7;
+    }
+
+    lastSaturday = now.subtract(Duration(days: diff % 6));
+
+    if (now.weekday < 5) {
+      nextFriday = now.add(Duration(days: 5 - now.weekday));
+    } else if (now.weekday == 6) {
+      nextFriday = now.subtract(Duration(days: 1));
+    } else {
+      nextFriday = now.add(Duration(days: 5));
+    }
+
+    return when.isAfter(lastSaturday) && when.isBefore(nextFriday);
   }
 }

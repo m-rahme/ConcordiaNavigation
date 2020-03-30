@@ -27,6 +27,6 @@ const Color maroonColor = Color(0xAD0000);
 
 final RegExp calFilter = RegExp("conco|school|uni|test");
 final RegExp eventFilter = RegExp(r"[A-Z]{4}[-|\s]?\d{3}");
-final RegExp classroomFilter = RegExp(r"(H\d{3}|MBS?[1-9]\.[0-9]{3}|FG\ B-?0[3-8]0)", caseSensitive: false);
+final RegExp classroomFilter = RegExp(r"(H\ ?\d{3}|MB\ ?S?[1-9]\.[0-9]{3}|FG\ B-?0[3-8]0)", caseSensitive: false);
 
 final Duration dateLookahead = Duration(days: 31);
