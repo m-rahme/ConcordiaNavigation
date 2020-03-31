@@ -2,6 +2,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../test_app_widget.dart';
 
 void main() {
+  /*
   group('Custom Appbar', () {
     testWidgets('finds text widget with name of app', (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
@@ -13,4 +14,5 @@ void main() {
       expect(appBarTitle, findsOneWidget);
     });
   });
+  */
 }
