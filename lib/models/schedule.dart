@@ -71,6 +71,14 @@ class Schedule {
       nextFriday = now.add(Duration(days: 5));
     }
 
+    // Set time of next friday to 1ms before midnight
+    nextFriday =
+        DateTime(nextFriday.year, nextFriday.month, nextFriday.day, 23, 59, 59, 59);
+
+    // Set time of last saturday to midnight
+    lastSaturday = DateTime(
+        lastSaturday.year, lastSaturday.month, lastSaturday.day, 0, 0, 0);
+
     return when.isAfter(lastSaturday) && when.isBefore(nextFriday);
   }
 }
