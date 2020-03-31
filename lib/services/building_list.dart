@@ -1,24 +1,24 @@
 import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
-import 'package:concordia_navigation/models/buildingModels/building_information.dart';
+import 'package:concordia_navigation/models/building.dart';
 
 class BuildingList {
 //-------class members----------------------
-  final Set<BuildingInformation> _buildingList = Set<BuildingInformation>();
+  final Set<Building> buildingList = Set<Building>();
+  static String buildingInfo;
 
-  BuildingList();
-
+  BuildingList() {
+    _readBuildingFile();
+  }
 //-------class methods----------------------
   ///For reading the file
-  Future<String> _loadAsset() async {
+  static Future<String> loadAsset() async {
     return await rootBundle.loadString('assets/campus_buildings_info.txt');
   }
 
   ///Send String value to be organized
-  Future<Set<BuildingInformation>> readBuildingFile() async {
-    String value = await _loadAsset();
-    _organizeStringToList(value);
-    return _buildingList;
+  void _readBuildingFile() async {
+    _organizeStringToList(buildingInfo);
   }
 
   ///Parse String into elements and add to list
@@ -39,7 +39,7 @@ class BuildingList {
   ///Create a BuildingInformation for each consecutive 6 elements
   void _createBuilding(List<String> info) {
     for (int i = 0; i < info.length; i += 7) {
-      BuildingInformation buildingInformation = BuildingInformation(
+      Building buildingInformation = Building(
         campusName: info.elementAt(i),
         buildingInitial: info.elementAt(i + 1),
         latitude: double.parse(info.elementAt(i + 2)),
@@ -53,12 +53,12 @@ class BuildingList {
   }
 
   ///Add building to list
-  void _addToBuildingList(BuildingInformation building) {
-    _buildingList.add(building);
+  void _addToBuildingList(Building building) {
+    buildingList.add(building);
   }
 
   ///Return list
-  Set<BuildingInformation> getListOfBuildings() {
-    return _buildingList;
+  Set<Building> getListOfBuildings() {
+    return buildingList;
   }
 }

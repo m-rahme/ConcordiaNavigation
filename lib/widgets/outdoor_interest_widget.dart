@@ -16,7 +16,7 @@ class OutdoorInterestWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemBuilder: (context, index) {
-        if (snapshot.data[index].getCampus() == campus)
+        if (snapshot.data[index].campus == campus)
           return Card(
             child: Container(
               height: SizeConfig.safeBlockVertical * 14,
@@ -37,7 +37,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(75.0),
                             child: new Image.asset(
-                              snapshot.data[index].getLogo(),
+                              snapshot.data[index].logo,
                             ),
                           ),
                         ),
@@ -50,7 +50,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          snapshot.data[index].getName(),
+                          snapshot.data[index].name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -58,7 +58,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          snapshot.data[index].getAddress(),
+                          snapshot.data[index].address,
                           style: TextStyle(
                             fontSize: 14,
                             color: constants.blueColor,
@@ -68,9 +68,9 @@ class OutdoorInterestWidget extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Text(
                             "Open: " +
-                                snapshot.data[index].getOpen() +
+                                snapshot.data[index].open +
                                 " Close: " +
-                                snapshot.data[index].getClose(),
+                                snapshot.data[index].close,
                             style: TextStyle(
                               fontSize: 14,
                               color: constants.greyColor,
@@ -98,12 +98,12 @@ class OutdoorInterestWidget extends StatelessWidget {
                             onPressed: () {
                               Navigator.of(context).pop();
                               mapData.controllerDestination =
-                                  snapshot.data[index].getName();
+                                  snapshot.data[index].name;
                               mapData.controllerStarting = "Current Location";
                               mapData.changeStart(mapData.getCurrentLocation);
                               mapData.changeEnd(LatLng(
-                                  snapshot.data[index].getLat(),
-                                  snapshot.data[index].getLong()));
+                                  snapshot.data[index].latitude,
+                                  snapshot.data[index].longitude));
                               mapData.changeMode("driving");
                               mapData.setItinerary();
                             },
