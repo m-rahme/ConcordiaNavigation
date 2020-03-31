@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import '../test_app_widget.dart';
 
 void main() {
+  /*
   group('Custom Drawer', () {
     testWidgets('slides custom drawer open', (WidgetTester tester) async {
       await tester.pumpWidget(testAppWidget);
@@ -17,5 +18,5 @@ void main() {
       final drawerTitle = find.byType(CustomDrawer);
       expect(drawerTitle, findsOneWidget);
     });
-  });
+  });*/
 }

@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
+import 'package:concordia_navigation/services/building_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
@@ -11,7 +12,10 @@ import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/course_schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  BuildingList.buildingInfo = await BuildingList.loadAsset();
+
   runApp(MultiProvider(
     providers: providers,
     child: App(),
