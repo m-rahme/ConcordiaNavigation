@@ -60,9 +60,6 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
-    BuildingList().readBuildingFile().then((buildingSet) {
-      buildings = buildingSet;
-    });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
   }

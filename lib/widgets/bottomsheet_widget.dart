@@ -1,11 +1,11 @@
-import 'package:concordia_navigation/models/buildingModels/building_information.dart';
+import 'package:concordia_navigation/models/building.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  final BuildingInformation bInformation;
+  final Building bInformation;
   BottomSheetWidget(this.bInformation);
 
   @override
@@ -31,7 +31,7 @@ class BottomSheetWidget extends StatelessWidget {
                           left: 0.0,
                         ),
                         child: Text(
-                          bInformation.getBuildingAddress(),
+                          bInformation.buildingAddress,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.w400,
                             fontSize: 15.0,
@@ -86,7 +86,7 @@ class BottomSheetWidget extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 0.0, left: 0.0),
                         child: Text(
-                          bInformation.getBuildingName(),
+                          bInformation.buildingName,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
