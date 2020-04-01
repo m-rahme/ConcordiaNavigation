@@ -18,11 +18,14 @@ void main() {
       BuildingList buildingList = new BuildingList();
 
       // Get number of lines from source
-//      String linebreak = '\n';
-//      int numLines = linebreak.allMatches(BuildingList.buildingInfo).length;
-//
-//      // Compare lengths
-//      expect(buildingList.getListOfBuildings().length, numLines);
+
+      int loyolaBuidings = BuildingList.buildingInfo['Loyola'].length;
+      int sgwBuildings = BuildingList.buildingInfo['Sir George Williams'].length;
+
+      int numOfBuildings = buildingList.getListOfBuildings().length;
+
+
+      expect(loyolaBuidings + sgwBuildings, numOfBuildings);
     });
   });
 }
