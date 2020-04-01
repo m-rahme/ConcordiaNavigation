@@ -19,28 +19,18 @@ class LoadBuildingInfo {
   static List<double> yNearList = new List<double>();
   static List trip = ["EscalatorUp", 1, 811, 813, 815, 819, 821, 823, 820];
 
+  Map indoorData;
+
   LoadBuildingInfo() {
-    _readFile();
+    rootBundle.loadString('assets/buildings_indoor.json').then((data) {
+      indoorData = json.decode(data);
+      _organizeToSet(indoorData);
+      setXList();
+    });
   }
 
   static Future getClassroomSet() async {
     return classroomSet;
-  }
-
-//-------class methods----------------------
-  ///For reading the file
-  Future<Map> _loadAsset() async {
-    return await json
-        .decode(await rootBundle.loadString('assets/buildings_indoor.json'));
-  }
-
-  ///Send String value to be organized
-  void _readFile() async {
-    Future<Map> future = _loadAsset();
-    future.then((data) {
-      _organizeToSet(data);
-      setXList();
-    });
   }
 
   ///THIS IS BEING CALLED MULTIPLE TIMES!

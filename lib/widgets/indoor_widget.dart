@@ -19,7 +19,6 @@ class _IndoorViewState extends State<IndoorView> {
   @override
   void initState() {
     super.initState();
-    LoadBuildingInfo();
     for (String assetName in assetNames) {
       _painters.add(
         SvgPicture.asset(assetName),
@@ -29,31 +28,6 @@ class _IndoorViewState extends State<IndoorView> {
 
   @override
   Widget build(BuildContext context) {
-    while (LoadBuildingInfo.xRoomList.isEmpty) {
-      return Container(
-        color: Colors.white,
-        child: LayoutBuilder(
-          builder: (_, constraints) => Zoom(
-            backgroundColor: Colors.white,
-            canvasColor: Colors.white,
-            doubleTapZoom: true,
-            enableScroll: true,
-            opacityScrollBars: 0,
-            width: 940,
-            height: 862,
-            child: Container(
-              width: 1080,
-              height: 1080,
-              child: Stack(
-                children: <Widget>[
-                  _painters[0],
-                ],
-              ),
-            ),
-          ),
-        ),
-      );
-    }
     return Container(
       color: Colors.white,
       child: LayoutBuilder(

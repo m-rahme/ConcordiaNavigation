@@ -1,4 +1,7 @@
 import 'dart:async';
+import 'package:concordia_navigation/providers/shuttle_data.dart';
+import 'package:concordia_navigation/services/building_list.dart';
+import 'package:concordia_navigation/services/change_later.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/screens/home_page.dart';
 
@@ -15,7 +18,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   void initState() {
-    // TODO: implement initState
+    LoadBuildingInfo();
     super.initState();
     _animationController = new AnimationController(
         vsync: this, duration: new Duration(milliseconds: 500));
