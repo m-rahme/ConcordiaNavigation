@@ -36,6 +36,7 @@ dependencies:
   async: ^2.4.0
   sliding_up_panel: ^1.0.0
   device_calendar: ^3.1.0
+  collection: ^1.14.11
 
 
 
@@ -62,7 +63,7 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/campus_buildings_info.txt
+    - assets/campus_buildings_info.json
     - assets/map_style.txt
     - assets/logo.png
     - assets/shuttleSchedule.json
