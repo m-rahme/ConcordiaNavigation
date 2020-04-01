@@ -33,16 +33,17 @@ class _MapWidgetState extends State<MapWidget> {
   Set<Marker> setOfMarkers = new Set<Marker>();
   Set<Uint8List> buildingIcon = Set<Uint8List>();
   Set<String> iconSet = {
-    "assets/markers/h.png",
-    "assets/markers/lb.png",
-    "assets/markers/fg.png",
-    "assets/markers/mb.png",
-    "assets/markers/ev.png",
     "assets/markers/cc.png",
     "assets/markers/cj.png",
     "assets/markers/ge.png",
     "assets/markers/py.png",
     "assets/markers/sp.png",
+    "assets/markers/h.png",
+    "assets/markers/lb.png",
+    "assets/markers/fg.png",
+    "assets/markers/mb.png",
+    "assets/markers/ev.png",
+
   };
 
   Future setInitialCamera() async {

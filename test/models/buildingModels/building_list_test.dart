@@ -17,12 +17,14 @@ void main() {
 
       BuildingList buildingList = new BuildingList();
 
-      // Get number of lines from source
-      String linebreak = '\n';
-      int numLines = linebreak.allMatches(BuildingList.buildingInfo).length;
+      int dynSum = 0;
+      BuildingList.buildingInfo.forEach((element) {
+        dynSum += element['buildings'].length;
+      });
 
-      // Compare lengths
-      expect(buildingList.getListOfBuildings().length, numLines);
+      int numOfBuildings = buildingList.getListOfBuildings().length;
+
+      expect(dynSum, numOfBuildings);
     });
   });
 }
