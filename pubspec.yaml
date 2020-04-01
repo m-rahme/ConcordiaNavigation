@@ -36,6 +36,8 @@ dependencies:
   async: ^2.4.0
   sliding_up_panel: ^1.0.0
   device_calendar: ^0.1.1
+  flutter_svg: ^0.17.3+1
+  zoom_widget: ^0.1.3
 
 
 
@@ -71,6 +73,10 @@ flutter:
     - assets/destinations.json
     - assets/pointsofinterest.json
     - assets/poi_images/
+    - assets/buildings_indoor.json
+    - assets/Hall-8.svg
+    - assets/LaunchImage.png
+    - assets/app_logo.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

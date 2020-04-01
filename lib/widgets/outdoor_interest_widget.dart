@@ -89,7 +89,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                         child: Consumer<MapData>(
                             builder: (context, mapData, child) {
                           return RaisedButton(
-                            color: constants.greenColor,
+                            color: constants.appColor,
                             child: Text(
                               "Directions",
                               style: TextStyle(

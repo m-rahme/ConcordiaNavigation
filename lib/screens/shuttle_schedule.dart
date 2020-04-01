@@ -104,7 +104,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
         title: Text(
           ConcordiaLocalizations.of(context).shuttle,
         ),
-        backgroundColor: constants.greenColor,
+        backgroundColor: constants.appColor,
       ),
       body: Center(
         child: Column(
@@ -116,7 +116,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
                 border: TableBorder(
                   top: BorderSide.none,
                   bottom: BorderSide(
-                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
+                      width: 3.0, color: constants.appColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -133,7 +133,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               child: Table(
                 border: TableBorder(
                   bottom: BorderSide(
-                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
+                      width: 3.0, color: constants.appColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -177,7 +177,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: constants.greenColor,
+            color: constants.appColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {
@@ -213,7 +213,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: constants.greenColor,
+            color: constants.appColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {

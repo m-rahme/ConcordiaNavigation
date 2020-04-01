@@ -43,7 +43,7 @@ class CourseSchedule extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: Text(ConcordiaLocalizations.of(context).schedule),
-          backgroundColor: constants.greenColor,
+          backgroundColor: constants.appColor,
           actions: <Widget>[
             // action button
             Padding(

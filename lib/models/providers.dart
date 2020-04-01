@@ -20,6 +20,7 @@ List<SingleChildWidget> providers = [
   ),
   ChangeNotifierProvider<ShuttleData>(
     create: (_) => ShuttleData(),
+    lazy: false,
   ),
   ChangeNotifierProvider<CalendarData>(
     create: (_) => CalendarData(),

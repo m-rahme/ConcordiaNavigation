@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
+import 'package:concordia_navigation/screens/splash_screen.dart';
 import 'package:concordia_navigation/services/building_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -40,6 +41,7 @@ class App extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
+        '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
@@ -48,7 +50,7 @@ class App extends StatelessWidget {
         '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }

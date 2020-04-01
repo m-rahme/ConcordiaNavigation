@@ -25,7 +25,7 @@ class OutdoorInterest extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(ConcordiaLocalizations.of(context).interest),
-          backgroundColor: greenColor,
+          backgroundColor: appColor,
           bottom: TabBar(
             tabs: [
               Tab(text: "Sir George Williams"),

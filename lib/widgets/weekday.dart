@@ -101,7 +101,7 @@ class Weekday extends StatelessWidget {
                     }
                   : null,
               elevation: 1.0,
-              color: constants.greenColor,
+              color: constants.appColor,
               textColor: constants.whiteColor,
               child: Text("Directions")),
           Icon(Icons.keyboard_arrow_right)

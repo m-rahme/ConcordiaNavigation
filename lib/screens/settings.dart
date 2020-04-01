@@ -11,12 +11,12 @@ class Settings extends StatelessWidget {
         title: Text(
           ConcordiaLocalizations.of(context).settings,
         ),
-        backgroundColor: greenColor,
+        backgroundColor: appColor,
       ),
       body: Center(
         child: RaisedButton(
           child: Text(ConcordiaLocalizations.of(context).settings),
-          color: greenColor,
+          color: appColor,
           textColor: whiteColor,
           onPressed: () {
             showDialog(
