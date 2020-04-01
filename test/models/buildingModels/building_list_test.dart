@@ -17,15 +17,14 @@ void main() {
 
       BuildingList buildingList = new BuildingList();
 
-      // Get number of lines from source
-
-      int loyolaBuidings = BuildingList.buildingInfo[0]['buildings'].length;
-      int sgwBuildings = BuildingList.buildingInfo[1]['buildings'].length;
+      int dynSum = 0;
+      BuildingList.buildingInfo.forEach((element) {
+        dynSum += element['buildings'].length;
+      });
 
       int numOfBuildings = buildingList.getListOfBuildings().length;
 
-
-      expect(loyolaBuidings + sgwBuildings, numOfBuildings);
+      expect(dynSum, numOfBuildings);
     });
   });
 }
