@@ -11,22 +11,19 @@ import 'package:flutter/services.dart' show rootBundle;
 It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
-  List<dynamic> classrooms;
+  static List classrooms;
   final recentRooms = [
     'HALL BUILDING',
     'H837',
     'MB1.437'
   ]; // for demonstration purposes
 
-  void getClassrooms() async {
-    classrooms =
-        json.decode(await rootBundle.loadString('assets/destinations.json'));
-  }
+  static Future<List> loadJson() async =>
+      json.decode(await rootBundle.loadString('assets/destinations.json'));
 
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
-    getClassrooms();
     final suggestionList = query.isEmpty
         ? recentRooms
         : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
@@ -34,8 +31,11 @@ class LocationSearch extends SearchDelegate {
     //TODO: make it clear that the first item is from the users calendar
     CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
     List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
-    if (nextClasses != null && nextClasses.isNotEmpty && nextClasses.first.filteredLocation() != "N/A") {
-      var next = nextClasses.first.filteredLocation() + " [NEXT CLASS LOCATION]";
+    if (nextClasses != null &&
+        nextClasses.isNotEmpty &&
+        nextClasses.first.filteredLocation() != "N/A") {
+      var next =
+          nextClasses.first.filteredLocation() + " [NEXT CLASS LOCATION]";
       // Avoid duplicates on widget rebuild
       if (!suggestionList.contains(next)) {
         suggestionList.insert(0, next);

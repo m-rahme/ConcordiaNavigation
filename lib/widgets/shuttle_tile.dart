@@ -2,7 +2,7 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/providers/shuttle_data.dart';
+import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -11,8 +11,7 @@ class ShuttleTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     String campus = Provider.of<MapData>(context, listen: false).getCampus;
-    String shuttleTime =
-        Provider.of<ShuttleData>(context, listen: false).getNextShuttle(campus);
+    String shuttleTime = ShuttleService.getNextShuttle(campus);
 
     return Container(
       decoration: BoxDecoration(

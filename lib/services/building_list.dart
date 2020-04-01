@@ -12,9 +12,8 @@ class BuildingList {
   }
 //-------class methods----------------------
   ///For reading the file
-  static Future<String> loadAsset() async {
-    return await rootBundle.loadString('assets/campus_buildings_info.txt');
-  }
+  static Future<String> loadJson() async =>
+      await rootBundle.loadString('assets/campus_buildings_info.txt');
 
   ///Send String value to be organized
   void _readBuildingFile() async {

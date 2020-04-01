@@ -1,7 +1,10 @@
 import 'dart:async';
-import 'package:concordia_navigation/providers/shuttle_data.dart';
 import 'package:concordia_navigation/services/building_list.dart';
 import 'package:concordia_navigation/services/change_later.dart';
+import 'package:concordia_navigation/services/location_search.dart';
+import 'package:concordia_navigation/services/location_service.dart';
+import 'package:concordia_navigation/services/outdoor_poi_list.dart';
+import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/screens/home_page.dart';
 
@@ -16,9 +19,19 @@ class _SplashScreenState extends State<SplashScreen>
   AnimationController _animationController;
   Animation<double> _animation;
 
+  Future<void> loadAssets() async {
+    //WidgetsFlutterBinding.ensureInitialized();
+    BuildingList.buildingInfo = await BuildingList.loadJson();
+    LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
+    ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
+    LocationSearch.classrooms = await LocationSearch.loadJson();
+    OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
+
+    LocationService.currentLocation = await LocationService.setCurrent();
+  }
+
   @override
   void initState() {
-    LoadBuildingInfo();
     super.initState();
     _animationController = new AnimationController(
         vsync: this, duration: new Duration(milliseconds: 500));
@@ -30,9 +43,10 @@ class _SplashScreenState extends State<SplashScreen>
     _animation.addListener(() => this.setState(() {}));
     _animationController.forward();
 
-    Timer(Duration(seconds: 3), () {
-      Navigator.pushNamed(context, '/home');
-    });
+    loadAssets().then((value) => Navigator.pushNamed(context, '/home'));
+    // Timer(Duration(seconds: 3), () {
+    //   Navigator.pushNamed(context, '/home');
+    // });
   }
 
   @override

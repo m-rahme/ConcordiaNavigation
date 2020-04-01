@@ -13,7 +13,7 @@ void main() {
     test(
         'readBuildingFile() creates list of BuildingInformation with the same length as the asset file.',
         () async {
-      BuildingList.buildingInfo = await BuildingList.loadAsset();
+      BuildingList.buildingInfo = await BuildingList.loadJson();
 
       BuildingList buildingList = new BuildingList();
 

@@ -1,12 +1,11 @@
-import 'package:concordia_navigation/providers/shuttle_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/cupertino.dart';
+import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 //Concordia Shuttle Schedule Screen
 class ShuttleSchedule extends StatefulWidget {
@@ -71,7 +70,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
 
   @override
   Widget build(BuildContext context) {
-    dynamic shuttleSchedule = Provider.of<ShuttleData>(context).shuttleSchedule;
+    dynamic shuttleSchedule = ShuttleService.shuttleSchedule;
 
     while (shuttleSchedule == null) {
       return Center(child: CircularProgressIndicator());

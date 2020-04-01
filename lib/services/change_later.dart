@@ -19,14 +19,14 @@ class LoadBuildingInfo {
   static List<double> yNearList = new List<double>();
   static List trip = ["EscalatorUp", 1, 811, 813, 815, 819, 821, 823, 820];
 
-  Map indoorData;
+  static Map indoorData;
+
+  static Future<Map> loadJson() async =>
+      json.decode(await rootBundle.loadString('assets/buildings_indoor.json'));
 
   LoadBuildingInfo() {
-    rootBundle.loadString('assets/buildings_indoor.json').then((data) {
-      indoorData = json.decode(data);
-      _organizeToSet(indoorData);
-      setXList();
-    });
+    _organizeToSet();
+    setXList();
   }
 
   static Future getClassroomSet() async {
@@ -35,7 +35,8 @@ class LoadBuildingInfo {
 
   ///THIS IS BEING CALLED MULTIPLE TIMES!
   ///Parse String into elements and add to list
-  void _organizeToSet(Map data) {
+  void _organizeToSet() {
+    Map data = LoadBuildingInfo.indoorData;
     for (int i = 0; i < data['buildings'].length; i++) {
       for (int j = 0; j < data['buildings'][i]['floors'].length; j++) {
         for (int k = 0;
