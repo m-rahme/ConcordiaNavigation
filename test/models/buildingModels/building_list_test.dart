@@ -19,8 +19,8 @@ void main() {
 
       // Get number of lines from source
 
-      int loyolaBuidings = BuildingList.buildingInfo['Loyola'].length;
-      int sgwBuildings = BuildingList.buildingInfo['Sir George Williams'].length;
+      int loyolaBuidings = BuildingList.buildingInfo[0]['buildings'].length;
+      int sgwBuildings = BuildingList.buildingInfo[1]['buildings'].length;
 
       int numOfBuildings = buildingList.getListOfBuildings().length;
 
