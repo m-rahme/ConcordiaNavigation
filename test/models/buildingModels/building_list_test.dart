@@ -22,8 +22,6 @@ void main() {
       });
       int numOfBuildings = buildingList.getListOfBuildings().length;
       expect(dynSum, numOfBuildings);
-
-      expect(dynSum, numOfBuildings);
     });
   });
 }

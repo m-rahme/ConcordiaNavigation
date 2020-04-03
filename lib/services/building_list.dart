@@ -2,9 +2,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:concordia_navigation/models/building.dart';
-
 class BuildingList {
-//-------class members----------------------
   final Set<Building> buildingList = Set<Building>();
   static List<dynamic> buildingInfo;
 
