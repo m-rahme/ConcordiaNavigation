@@ -41,7 +41,8 @@ class _SplashScreenState extends State<SplashScreen>
     _animation.addListener(() => this.setState(() {}));
     _animationController.forward();
 
-    loadAssets().then((value) => Navigator.pushNamed(context, '/home'));
+    loadAssets()
+        .then((value) => Navigator.pushReplacementNamed(context, '/home'));
     // Timer(Duration(seconds: 3), () {
     //   Navigator.pushNamed(context, '/home');
     // });
