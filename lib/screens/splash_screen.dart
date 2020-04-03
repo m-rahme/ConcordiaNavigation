@@ -26,8 +26,6 @@ class _SplashScreenState extends State<SplashScreen>
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
     LocationSearch.classrooms = await LocationSearch.loadJson();
     OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
-
-    LocationService.currentLocation = await LocationService.setCurrent();
   }
 
   @override
