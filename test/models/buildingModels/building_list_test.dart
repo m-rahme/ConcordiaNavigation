@@ -14,15 +14,16 @@ void main() {
         'readBuildingFile() creates list of BuildingInformation with the same length as the asset file.',
         () async {
       BuildingList.buildingInfo = await BuildingList.loadJson();
-
       BuildingList buildingList = new BuildingList();
 
-      // Get number of lines from source
-      String linebreak = '\n';
-      int numLines = linebreak.allMatches(BuildingList.buildingInfo).length;
+      int dynSum = 0;
+      BuildingList.buildingInfo.forEach((element) {
+        dynSum += element['buildings'].length;
+      });
+      int numOfBuildings = buildingList.getListOfBuildings().length;
+      expect(dynSum, numOfBuildings);
 
-      // Compare lengths
-      expect(buildingList.getListOfBuildings().length, numLines);
+      expect(dynSum, numOfBuildings);
     });
   });
 }
