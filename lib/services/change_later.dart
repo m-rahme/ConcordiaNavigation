@@ -17,7 +17,7 @@ class LoadBuildingInfo {
   static List<double> yRoomList = new List<double>();
   static List<double> xNearList = new List<double>();
   static List<double> yNearList = new List<double>();
-  static List trip = ["EscalatorUp", 1, 811, 813, 815, 819, 821, 823, 820];
+  static List trip = [];
 
   LoadBuildingInfo() {
     _readFile();
