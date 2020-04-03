@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
+import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:concordia_navigation/services/building_list.dart';
 import 'package:flutter/material.dart';
@@ -46,6 +47,7 @@ class App extends StatelessWidget {
         '/settings': (context) => Settings(),
         '/directions': (context) => DirectionsPage(),
         '/shuttle': (context) => ShuttleSchedule(),
+        '/indoor': (context) => IndoorPage(),
       },
       debugShowCheckedModeBanner: false,
       home: HomePage(),

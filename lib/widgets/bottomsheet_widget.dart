@@ -55,11 +55,13 @@ class BottomSheetWidget extends StatelessWidget {
                         shape: RoundedRectangleBorder(
                           borderRadius: new BorderRadius.circular(10.0),
                         ),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, '/indoor');
+                        },
                         color: greenColor,
                         textColor: whiteColor,
                         child: Text(
-                          "Directions",
+                          "Go Indoor",
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0,
