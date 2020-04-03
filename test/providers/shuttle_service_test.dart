@@ -3,7 +3,10 @@ import 'package:flutter_test/flutter_test.dart';
 
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
-  group('ShuttleData', () {
+  group('ShuttleService', () {
+    setUpAll(() async {
+      ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
+    });
     /**
      * Loyola
      */
