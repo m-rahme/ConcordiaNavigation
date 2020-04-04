@@ -2,7 +2,7 @@ import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
-import 'package:concordia_navigation/services/building_list.dart';
+import 'package:concordia_navigation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
@@ -14,9 +14,6 @@ import 'package:concordia_navigation/screens/course_schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
 Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  BuildingList.buildingInfo = await BuildingList.loadAsset();
-
   runApp(MultiProvider(
     providers: providers,
     child: App(),
@@ -41,6 +38,7 @@ class App extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
+        '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
@@ -50,7 +48,7 @@ class App extends StatelessWidget {
         '/indoor': (context) => IndoorPage(),
       },
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }

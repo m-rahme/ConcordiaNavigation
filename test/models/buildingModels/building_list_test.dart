@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/services/building_list.dart';
-import 'package:flutter/services.dart' show AssetBundle, rootBundle;
+import 'package:flutter/services.dart' show AssetBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 
@@ -13,16 +13,15 @@ void main() {
     test(
         'readBuildingFile() creates list of BuildingInformation with the same length as the asset file.',
         () async {
-      BuildingList.buildingInfo = await BuildingList.loadAsset();
-
+      BuildingList.buildingInfo = await BuildingList.loadJson();
       BuildingList buildingList = new BuildingList();
 
-      // Get number of lines from source
-      String linebreak = '\n';
-      int numLines = linebreak.allMatches(BuildingList.buildingInfo).length;
-
-      // Compare lengths
-      expect(buildingList.getListOfBuildings().length, numLines);
+      int dynSum = 0;
+      BuildingList.buildingInfo.forEach((element) {
+        dynSum += element['buildings'].length;
+      });
+      int numOfBuildings = buildingList.getListOfBuildings().length;
+      expect(dynSum, numOfBuildings);
     });
   });
 }

@@ -15,7 +15,7 @@ class ShuttleWidget extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.all(Radius.circular(3.0)),
-              color: constants.greenColor,
+              color: constants.appColor,
             ),
             height: SizeConfig.safeBlockVertical * 4,
             width: SizeConfig.screenWidth,
@@ -75,7 +75,7 @@ class ShuttleWidget extends StatelessWidget {
                               style: GoogleFonts.raleway(
                                 fontSize: 13.0,
                                 fontWeight: FontWeight.w600,
-                                color: constants.greenColor,
+                                color: constants.appColor,
                               ),
                             ),
                             Text(

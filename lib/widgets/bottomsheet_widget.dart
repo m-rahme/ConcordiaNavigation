@@ -58,7 +58,7 @@ class BottomSheetWidget extends StatelessWidget {
                         onPressed: () {
                           Navigator.pushNamed(context, '/indoor');
                         },
-                        color: greenColor,
+                        color: appColor,
                         textColor: whiteColor,
                         child: Text(
                           "Go Indoor",
@@ -116,7 +116,7 @@ class BottomSheetWidget extends StatelessWidget {
                         height: SizeConfig.safeBlockVertical * 7,
                         child: Icon(
                           Icons.access_time,
-                          color: greenColor,
+                          color: appColor,
                           size: 55.0,
                         ),
                       ),

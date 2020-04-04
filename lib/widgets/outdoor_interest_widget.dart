@@ -89,7 +89,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                         child: Consumer<MapData>(
                             builder: (context, mapData, child) {
                           return RaisedButton(
-                            color: constants.greenColor,
+                            color: constants.appColor,
                             child: Text(
                               "Directions",
                               style: TextStyle(
@@ -99,6 +99,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                               Navigator.of(context).pop();
                               mapData.controllerDestination =
                                   snapshot.data[index].name;
+                              mapData.changeCampus('sgw');
                               mapData.controllerStarting = "Current Location";
                               mapData.changeStart(mapData.getCurrentLocation);
                               mapData.changeEnd(LatLng(

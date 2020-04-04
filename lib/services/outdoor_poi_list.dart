@@ -2,14 +2,13 @@ import 'package:flutter/services.dart';
 import 'package:concordia_navigation/models/outdoor_poi.dart';
 import 'dart:convert';
 
-class OutdoorPOIList{
-
-  final String filename = 'assets/pointsofinterest.json';
-
-  OutdoorPOIList();
+class OutdoorPOIList {
+  static Map poi;
 
   List<OutdoorPOI> pointOfInterests = List<OutdoorPOI>();
 
+  static Future<Map> loadJson() async =>
+      poi =  json.decode(await rootBundle.loadString('assets/pointsofinterest.json'));
 
   Future<List<OutdoorPOI>> readPOIFile() async {
     /**
@@ -43,7 +42,6 @@ class OutdoorPOIList{
      * returns {LAT: 45.4608841}
      *
      */
-    Map<String, dynamic> poi =  json.decode(await rootBundle.loadString(filename));
 
     for(int campus = 0; campus< poi.keys.length; campus++){
       for(int location = 0; location< poi[poi.keys.elementAt(campus)].keys.length; location++){
@@ -64,7 +62,5 @@ class OutdoorPOIList{
       }
     }
     return pointOfInterests;
-
   }
-
 }
