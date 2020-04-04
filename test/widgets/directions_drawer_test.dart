@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:concordia_navigation/services/building_list.dart';
 import 'package:concordia_navigation/services/itinerary.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/directions_service.dart';
@@ -19,6 +20,10 @@ class MockMapData extends Mock implements MapData {
 class MockDirectionsService extends Mock implements DirectionsService {}
 
 void main() {
+
+  setUp(() async {
+    BuildingList.buildingInfo = await BuildingList.loadJson();
+  });
   group('DirectionsDrawer', () {
     testWidgets('creates drawer', (WidgetTester tester) async {
       String rawData =

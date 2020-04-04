@@ -3,12 +3,15 @@ import 'package:flutter_test/flutter_test.dart';
 import '../app_widget.dart';
 
 void main() {
+
+  setUp(() async {
+    BuildingList.buildingInfo = await BuildingList.loadJson();
+  });
   group('MapWidget', () {
     testWidgets(
         'tries to create the map widget but fails because the initial camera location is null',
         (WidgetTester tester) async {
-      
-      BuildingList.buildingInfo = await BuildingList.loadJson();
+
       await tester.pumpWidget(appWidget());
 
       // Wait for LocalizationsDelegate's futures

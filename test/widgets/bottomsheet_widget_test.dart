@@ -4,6 +4,8 @@ import 'package:concordia_navigation/widgets/bottomsheet_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
+import '../app_widget.dart';
+
 void main() {
   group('BottomSheetWidget', () {
     testWidgets('creates bottom sheet with BuildingInformation',
@@ -18,31 +20,13 @@ void main() {
         filename: "filename",
       );
 
-      final testWidget = MediaQuery(
-          data: new MediaQueryData(),
-          child: MaterialApp(
-            home: Scaffold(
-              body: TestWidget(buildingInformation)
-            ),
-          ));
-
-      await tester.pumpWidget(testWidget);
+      await tester.pumpWidget(appWidget(testWidget: BottomSheetWidget(buildingInformation)));
 
       await tester.pumpAndSettle();
       final campusName = find.text("Directions");
+      final address = find.text(buildingInformation.buildingAddress);
       expect(campusName, findsOneWidget);
+      expect(address, findsOneWidget);
     });
   });
-}
-
-class TestWidget extends StatelessWidget {
-  Building buildingInformation;
-
-  TestWidget(this.buildingInformation);
-
-  @override
-  Widget build(BuildContext context) {
-    SizeConfig().init(context);
-    return BottomSheetWidget(this.buildingInformation);
-  }
 }

@@ -1,21 +1,19 @@
-
+import 'package:concordia_navigation/services/location_search.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../app_widget.dart';
-
 
 void main() {
   group('LocationSearch', () {
     testWidgets('opens page for searching locations.',
         (WidgetTester tester) async {
-      await tester.pumpWidget(appWidget());
+      await tester.pumpWidget(appWidget(testWidget: TestSearchDelegate()));
 
       // Wait for LocalizationsDelegate's futures
       await tester.pumpAndSettle();
+      final openLocationSearch = find.byKey(Key("SearchDelegate"));
+      await tester.tap(openLocationSearch);
 
-      // Tap search icon in app bar
-      final search = find.byIcon(Icons.search);
-      await tester.tap(search);
       await tester.pumpAndSettle();
 
       // Find list of suggested locations
@@ -39,7 +37,17 @@ void main() {
       await tester.tap(backBtn);
       await tester.pumpAndSettle();
       expect(icon, findsNothing);
-
     });
   });
+}
+
+class TestSearchDelegate extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return RaisedButton(
+        key: Key("SearchDelegate"),
+        onPressed: () {
+          showSearch(context: context, delegate: LocationSearch());
+        });
+  }
 }
