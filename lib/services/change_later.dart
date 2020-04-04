@@ -7,6 +7,11 @@ import 'package:flutter/services.dart';
 import 'dart:convert';
 
 class LoadBuildingInfo {
+  static Map indoorData;
+
+  static Future<Map> loadJson() async =>
+      json.decode(await rootBundle.loadString('assets/buildings_indoor.json'));
+
   static Set<Building> buildingSet = Set<Building>();
   static Set<Floor> floorSet = Set<Floor>();
   static Set<Classroom> classroomSet = Set<Classroom>();
@@ -20,11 +25,6 @@ class LoadBuildingInfo {
   static List<double> yNearList = new List<double>();
   static List trip = [];
 
-  static Map indoorData;
-
-  static Future<Map> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/buildings_indoor.json'));
-
   LoadBuildingInfo() {
     _organizeToSet();
     setXList();
@@ -37,33 +37,32 @@ class LoadBuildingInfo {
   ///THIS IS BEING CALLED MULTIPLE TIMES!
   ///Parse String into elements and add to list
   void _organizeToSet() {
-    Map data = LoadBuildingInfo.indoorData;
-    for (int i = 0; i < data['buildings'].length; i++) {
-      for (int j = 0; j < data['buildings'][i]['floors'].length; j++) {
+    for (int i = 0; i < indoorData['buildings'].length; i++) {
+      for (int j = 0; j < indoorData['buildings'][i]['floors'].length; j++) {
         for (int k = 0;
-            k < data['buildings'][i]['floors'][j]['classrooms'].length;
+            k < indoorData['buildings'][i]['floors'][j]['classrooms'].length;
             k++) {
           classroomSet.add(
             Classroom(
-              classroomNumber: data['buildings'][i]['floors'][j]['classrooms']
-                  [k]['number'],
+              classroomNumber: indoorData['buildings'][i]['floors'][j]
+                  ['classrooms'][k]['number'],
               classroomCoordinates: Coordinate(
                 x: double.parse(
-                  data['buildings'][i]['floors'][j]['classrooms'][k]
+                  indoorData['buildings'][i]['floors'][j]['classrooms'][k]
                       ['coordinates'][0]['classroom']['x'],
                 ),
                 y: double.parse(
-                  data['buildings'][i]['floors'][j]['classrooms'][k]
+                  indoorData['buildings'][i]['floors'][j]['classrooms'][k]
                       ['coordinates'][0]['classroom']['y'],
                 ),
               ),
               nearestCoordinates: Coordinate(
                 x: double.parse(
-                  data['buildings'][i]['floors'][j]['classrooms'][k]
+                  indoorData['buildings'][i]['floors'][j]['classrooms'][k]
                       ['coordinates'][0]['nearest']['x'],
                 ),
                 y: double.parse(
-                  data['buildings'][i]['floors'][j]['classrooms'][k]
+                  indoorData['buildings'][i]['floors'][j]['classrooms'][k]
                       ['coordinates'][0]['nearest']['y'],
                 ),
               ),
@@ -71,29 +70,29 @@ class LoadBuildingInfo {
           );
         }
         for (int k = 0;
-            k < data['buildings'][i]['floors'][j]['poi'].length;
+            k < indoorData['buildings'][i]['floors'][j]['poi'].length;
             k++) {
           indoorInterestSet.add(
             IndoorInterest(
-              name: data['buildings'][i]['floors'][j]['poi'][k]['name'],
+              name: indoorData['buildings'][i]['floors'][j]['poi'][k]['name'],
               roomCoordinates: Coordinate(
                 x: double.parse(
-                  data['buildings'][i]['floors'][j]['poi'][k]['coordinates'][0]
-                      ['room']['x'],
+                  indoorData['buildings'][i]['floors'][j]['poi'][k]
+                      ['coordinates'][0]['room']['x'],
                 ),
                 y: double.parse(
-                  data['buildings'][i]['floors'][j]['poi'][k]['coordinates'][0]
-                      ['room']['y'],
+                  indoorData['buildings'][i]['floors'][j]['poi'][k]
+                      ['coordinates'][0]['room']['y'],
                 ),
               ),
               nearestCoordinates: Coordinate(
                 x: double.parse(
-                  data['buildings'][i]['floors'][j]['poi'][k]['coordinates'][0]
-                      ['nearest']['x'],
+                  indoorData['buildings'][i]['floors'][j]['poi'][k]
+                      ['coordinates'][0]['nearest']['x'],
                 ),
                 y: double.parse(
-                  data['buildings'][i]['floors'][j]['poi'][k]['coordinates'][0]
-                      ['nearest']['y'],
+                  indoorData['buildings'][i]['floors'][j]['poi'][k]
+                      ['coordinates'][0]['nearest']['y'],
                 ),
               ),
             ),
@@ -102,14 +101,14 @@ class LoadBuildingInfo {
         floorSet.add(
           Floor(
             floorNumber: int.parse(
-              data['buildings'][i]['floors'][j]['number'],
+              indoorData['buildings'][i]['floors'][j]['number'],
             ),
             classrooms: classroomSet,
           ),
         );
         buildingSet.add(
           Building(
-            buildingInitial: data['buildings'][i]['initial'],
+            buildingInitial: indoorData['buildings'][i]['initial'],
             floors: floorSet,
           ),
         );
