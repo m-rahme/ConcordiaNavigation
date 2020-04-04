@@ -7,13 +7,10 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:provider/provider.dart';
 
 class Weekday extends StatelessWidget {
-  String weekday;
-  List<Course> courseList;
+  final String weekday;
+  final List<Course> courseList;
 
-  Weekday(String weekday, List<Course> courseList) {
-    this.weekday = weekday;
-    this.courseList = courseList;
-  }
+  Weekday(this.weekday, this.courseList);
 
   @override
   Widget build(BuildContext context) {
@@ -101,7 +98,7 @@ class Weekday extends StatelessWidget {
                     }
                   : null,
               elevation: 1.0,
-              color: constants.greenColor,
+              color: constants.appColor,
               textColor: constants.whiteColor,
               child: Text("Directions")),
           Icon(Icons.keyboard_arrow_right)

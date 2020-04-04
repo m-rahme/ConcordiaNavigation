@@ -11,7 +11,7 @@ class CustomDrawer extends StatelessWidget {
   Widget _expendTile() {
     return Theme(
       data: ThemeData(
-        accentColor: constants.greenColor,
+        accentColor: constants.appColor,
       ),
       child: ExpansionTile(
         leading: Icon(Icons.map),
@@ -44,7 +44,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.popUntil(
                   context,
-                  ModalRoute.withName(Navigator.defaultRouteName),
+                  ModalRoute.withName('/home'),
                 );
                 mapData.animateTo(45.496676, -73.578760);
               });
@@ -63,7 +63,7 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.popUntil(
                   context,
-                  ModalRoute.withName(Navigator.defaultRouteName),
+                  ModalRoute.withName('/home'),
                 );
                 mapData.animateTo(45.4582, -73.6405);
               });
@@ -93,7 +93,7 @@ class CustomDrawer extends StatelessWidget {
                 style: GoogleFonts.raleway(
                   fontSize: 24.0,
                   fontWeight: FontWeight.bold,
-                  color: constants.greenColor,
+                  color: constants.appColor,
                 ),
               ),
               onTap: () {
