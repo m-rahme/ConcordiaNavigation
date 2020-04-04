@@ -10,8 +10,7 @@ class OutdoorInterest extends StatelessWidget {
   final OutdoorPOIList outdoorPOIList = OutdoorPOIList();
 
   Future<List<OutdoorPOI>> callAsyncFetch() {
-    return Future.delayed(
-        Duration(seconds: 2), () => outdoorPOIList.readPOIFile());
+    return outdoorPOIList.readPOIFile();
   }
 
   @override

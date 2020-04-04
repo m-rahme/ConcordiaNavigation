@@ -20,7 +20,6 @@ class _SplashScreenState extends State<SplashScreen>
   Animation<double> _animation;
 
   Future<void> loadAssets() async {
-    //WidgetsFlutterBinding.ensureInitialized();
     BuildingList.buildingInfo = await BuildingList.loadJson();
     LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
@@ -41,11 +40,11 @@ class _SplashScreenState extends State<SplashScreen>
     _animation.addListener(() => this.setState(() {}));
     _animationController.forward();
 
-    loadAssets()
-        .then((value) => Navigator.pushReplacementNamed(context, '/home'));
-    // Timer(Duration(seconds: 3), () {
-    //   Navigator.pushNamed(context, '/home');
-    // });
+    loadAssets().then((value) {
+      Timer(Duration(seconds: 2), () {
+        Navigator.pushReplacementNamed(context, '/home');
+      });
+    });
   }
 
   @override
