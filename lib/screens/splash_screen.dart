@@ -2,11 +2,9 @@ import 'dart:async';
 import 'package:concordia_navigation/services/building_list.dart';
 import 'package:concordia_navigation/services/change_later.dart';
 import 'package:concordia_navigation/services/location_search.dart';
-import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/screens/home_page.dart';
 
 // This is the Splash Screen
 class SplashScreen extends StatefulWidget {

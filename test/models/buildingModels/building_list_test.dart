@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/services/building_list.dart';
-import 'package:flutter/services.dart' show AssetBundle, rootBundle;
+import 'package:flutter/services.dart' show AssetBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 

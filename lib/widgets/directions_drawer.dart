@@ -328,7 +328,6 @@ class DirectionsDrawer extends StatelessWidget {
                                       Provider.of<MapData>(context,
                                               listen: false)
                                           .controllerDestination;
-                                  ;
                                   Provider.of<MapData>(context, listen: false)
                                       .controllerDestination = temp;
                                   mapData.setItinerary();
