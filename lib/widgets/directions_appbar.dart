@@ -32,7 +32,7 @@ class _DirectionsAppBarState extends State<DirectionsAppBar> {
   Widget build(BuildContext context) {
     return Consumer<MapData>(
       builder: (BuildContext context, mapData, Widget child) => Container(
-        color: constants.greenColor,
+        color: constants.appColor,
         height: SizeConfig.safeBlockVertical * 25,
         width: SizeConfig.screenWidth,
         child: SafeArea(

@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/services/itinerary.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +10,8 @@ import 'package:mockito/mockito.dart';
 import '../app_widget.dart';
 
 class MockMapData extends Mock implements MapData {
-  final controllerStarting = TextEditingController();
-  final controllerDestination = TextEditingController();
+  String controllerStarting = "";
+  String controllerDestination = "";
   Itinerary itinerary;
 
 }

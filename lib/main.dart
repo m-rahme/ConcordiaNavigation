@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/providers.dart';
 import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
+import 'package:concordia_navigation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
@@ -8,10 +9,10 @@ import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/screens/settings.dart';
 import 'package:concordia_navigation/screens/profile.dart';
-import 'package:concordia_navigation/screens/schedule.dart';
+import 'package:concordia_navigation/screens/course_schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
-void main() {
+Future<void> main() async {
   runApp(MultiProvider(
     providers: providers,
     child: App(),
@@ -36,7 +37,8 @@ class App extends StatelessWidget {
       ],
       initialRoute: '/',
       routes: {
-        '/schedule': (context) => Schedule(),
+        '/home': (context) => HomePage(),
+        '/schedule': (context) => CourseSchedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
@@ -44,7 +46,7 @@ class App extends StatelessWidget {
         '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }

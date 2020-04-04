@@ -2,12 +2,10 @@ import 'package:concordia_navigation/main.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/providers/shuttle_data.dart';
 import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/single_child_widget.dart';
 
 Widget appWidget({MapData mapData}) {
 
@@ -24,9 +22,6 @@ Widget appWidget({MapData mapData}) {
     create: (context) => BuildingsData(),
   );
 
-  Widget shuttleData = ChangeNotifierProvider<ShuttleData>(
-    create: (_) => ShuttleData(),
-  );
 
   if(mapData != null) {
     mapDataProvider = ChangeNotifierProvider<MapData>.value(value: mapData);
@@ -38,8 +33,7 @@ Widget appWidget({MapData mapData}) {
       providers: [
         userLocationProvider,
         mapDataProvider,
-        buildingsDataProvider,
-        shuttleData
+        buildingsDataProvider
       ],
       child: AppTestWidget(),
     ),

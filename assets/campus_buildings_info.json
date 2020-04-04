@@ -1,0 +1,92 @@
+[
+	{
+		"campusName": "Loyola Campus",
+		"buildings": [
+			{
+				"buildingName": "Central Building",
+				"buildingInitial": "CC",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": "45.458306",
+				"longitude": "-73.640339",
+				"logo": "assets/markers/cc.png"
+			},
+			{
+				"buildingName": "Communication Studies and Journalism Building",
+				"buildingInitial": "CJ",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": "45.457446",
+				"longitude": "-73.640363",
+				"logo": "assets/markers/cj.png"
+			},
+			{
+				"buildingName": "Centre for Structural and Functional Genomics",
+				"buildingInitial": "GE",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": "45.456997",
+				"longitude": "-73.640484",
+				"logo": "assets/markers/ge.png"
+			},
+			{
+				"buildingName": "Psychology Building",
+				"buildingInitial": "PY",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": "45.458984",
+				"longitude": "-73.640495",
+				"logo": "assets/markers/py.png"
+			},
+			{
+				"buildingName": "Richard J. Renaud Science Complex",
+				"buildingInitial": "SP",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": "45.457822",
+				"longitude": "-73.641497",
+				"logo": "assets/markers/sp.png"
+			}
+		]
+	},
+	{
+		"campusName": "Sir George Williams",
+		"buildings": [
+			{
+				"buildingName": "Henry F. Hall Building",
+				"buildingInitial": "H",
+				"buildingAddress": "1455 De Maisonneuve Blvd. W.",
+				"latitude": "45.497261",
+				"longitude": "-73.578943",
+				"logo": "assets/markers/h.png"
+			},
+			{
+				"buildingName": "J.W. McConnell Building",
+				"buildingInitial": "LB",
+				"buildingAddress": "1400 De Maisonneuve Blvd. W.",
+				"latitude": "45.496810",
+				"longitude": "-73.577813",
+				"logo": "assets/markers/lb.png"
+			},
+			{
+				"buildingName": "Faubourg Building",
+				"buildingInitial": "FG",
+				"buildingAddress": "1250 Guy St.",
+				"latitude": "45.494236",
+				"longitude": "-73.578284",
+				"logo": "assets/markers/fg.png"
+			},
+			{
+				"buildingName": "John-Molson Building",
+				"buildingInitial": "MB",
+				"buildingAddress": "1450 Guy St.",
+				"latitude": "45.495222",
+				"longitude": "-73.578824",
+				"logo": "assets/markers/mb.png"
+			},
+			{
+				"buildingName": "Engineering, Computer Science and Visual Arts Integrated Complex",
+				"buildingInitial": "EV",
+				"buildingAddress": "1515 Saint-Catherine St W.",
+				"latitude": "45.495666",
+				"longitude": "-73.578086",
+				"logo": "assets/markers/ev.png"
+			}
+		]
+	}
+]

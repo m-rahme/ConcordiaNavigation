@@ -9,7 +9,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: greenColor,
+      backgroundColor: appColor,
       title: Text("ConNavigation"),
       actions: <Widget>[
         Consumer<BuildingsData>(

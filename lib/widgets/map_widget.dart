@@ -1,6 +1,5 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:concordia_navigation/widgets/directions_drawer.dart';
 import 'package:flutter/services.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
@@ -14,8 +13,8 @@ import 'package:concordia_navigation/services/location_service.dart';
 import 'package:concordia_navigation/widgets/floating_map_button.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/models/buildingModels/building_list.dart';
-import 'package:concordia_navigation/models/buildingModels/building_information.dart';
+import 'package:concordia_navigation/services/building_list.dart';
+import 'package:concordia_navigation/models/building.dart';
 import 'dart:ui' as ui;
 
 //This is the map widget that will be loaded in the home screen.
@@ -30,20 +29,21 @@ class _MapWidgetState extends State<MapWidget> {
   var _location;
 
   //attributes for markers
-  Set<BuildingInformation> buildings = Set<BuildingInformation>();
-  Set<Marker> setOfMarkers = Set<Marker>();
+  Set<Building> buildings = (new BuildingList()).getListOfBuildings();
+  Set<Marker> setOfMarkers = new Set<Marker>();
   Set<Uint8List> buildingIcon = Set<Uint8List>();
   Set<String> iconSet = {
-    "assets/markers/h.png",
-    "assets/markers/lb.png",
-    "assets/markers/fg.png",
-    "assets/markers/mb.png",
-    "assets/markers/ev.png",
     "assets/markers/cc.png",
     "assets/markers/cj.png",
     "assets/markers/ge.png",
     "assets/markers/py.png",
     "assets/markers/sp.png",
+    "assets/markers/h.png",
+    "assets/markers/lb.png",
+    "assets/markers/fg.png",
+    "assets/markers/mb.png",
+    "assets/markers/ev.png",
+
   };
 
   Future setInitialCamera() async {
@@ -61,12 +61,8 @@ class _MapWidgetState extends State<MapWidget> {
   @override
   void initState() {
     super.initState();
-    BuildingList().readBuildingFile().then((buildingSet) {
-      buildings = buildingSet;
-    });
     Future location = setInitialCamera();
     location.then((value) => _location = value);
-    SizeConfig();
   }
 
   Future<Uint8List> getBytesFromAsset(String path, int width) async {
@@ -80,9 +76,11 @@ class _MapWidgetState extends State<MapWidget> {
   }
 
   void setBuildingIcons() async {
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < iconSet.length; i++) {
       buildingIcon.add(await getBytesFromAsset(iconSet.elementAt(i), 350));
     }
+
+    setState(() {});
   }
 
   @override
@@ -93,7 +91,6 @@ class _MapWidgetState extends State<MapWidget> {
         listen: false,
       ).changeCurrentLocation(_location.toLatLng());
     }
-    SizeConfig().init(context);
     final _completer = Provider.of<MapData>(context).getCompleter;
     final _buildings = Provider.of<BuildingsData>(context);
     final pos = Provider.of<UserLocation>(context);
@@ -103,38 +100,41 @@ class _MapWidgetState extends State<MapWidget> {
     }
 
     ///Create markers here
-    if (buildingIcon.length < 10 && buildings.length > 9) setBuildingIcons();
+    if (BuildingList.buildingInfo != null) {
+      if (buildingIcon.length == 0) setBuildingIcons();
 
-    if (buildingIcon.length == 10) {
-      while (buildings.length < 10) {
-        return Container(
-          width: 0,
-          height: 0,
-        );
-      }
-      if (setOfMarkers.length < 10) {
-        for (int i = 0; i < 10; i++) {
-          setOfMarkers.add(Marker(
-            markerId: MarkerId(buildings.elementAt(i).getBuildingInitial()),
-            anchor: const Offset(0.5, 0.5),
-            position: LatLng(buildings.elementAt(i).getLatitude(),
-                buildings.elementAt(i).getLongitude()),
+      if (buildingIcon.length == 10) {
+        while (buildings.length < 10) {
+          return Container(
+            width: 0,
+            height: 0,
+          );
+        }
+        if (setOfMarkers.length < 10) {
+          for (int i = 0; i < 10; i++) {
+            setOfMarkers.add(Marker(
+              markerId: MarkerId(buildings.elementAt(i).buildingInitial),
+              anchor: const Offset(0.5, 0.5),
+              position: LatLng(buildings.elementAt(i).latitude,
+                  buildings.elementAt(i).longitude),
 //            icon: buildingIcon.elementAt(i),
-            icon: BitmapDescriptor.fromBytes(buildingIcon.elementAt(i)),
-            onTap: () {
-              showModalBottomSheet(
-                  context: context,
-                  builder: (builder) {
-                    return BottomSheetWidget(buildings.elementAt(i));
-                  });
-            },
-          ));
+              icon: BitmapDescriptor.fromBytes(buildingIcon.elementAt(i)),
+              onTap: () {
+                showModalBottomSheet(
+                    context: context,
+                    builder: (builder) {
+                      return BottomSheetWidget(buildings.elementAt(i));
+                    });
+              },
+            ));
+          }
         }
       }
     }
     return Stack(
       children: <Widget>[
         GoogleMap(
+            mapToolbarEnabled: false,
             myLocationEnabled: true,
             myLocationButtonEnabled: false,
             compassEnabled: false,
@@ -153,7 +153,7 @@ class _MapWidgetState extends State<MapWidget> {
             }),
         FloatingMapButton(
           key: Key("SwitchCampus"),
-          top: SizeConfig.safeBlockVertical * 66,
+          top: Provider.of<MapData>(context).swapButtonTop,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
@@ -172,7 +172,7 @@ class _MapWidgetState extends State<MapWidget> {
         ),
         FloatingMapButton(
           key: Key("CurrentLocation"),
-          top: SizeConfig.safeBlockVertical * 75,
+          top: Provider.of<MapData>(context).locationButtonTop,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.gps_fixed),
           onClick: () {

@@ -1,7 +1,6 @@
-import 'package:concordia_navigation/models/buildingModels/building_information.dart';
+import 'package:concordia_navigation/models/building.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/bottomsheet_widget.dart';
-import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -9,7 +8,7 @@ void main() {
   group('BottomSheetWidget', () {
     testWidgets('creates bottom sheet with BuildingInformation',
         (WidgetTester tester) async {
-      BuildingInformation buildingInformation = BuildingInformation(
+      Building buildingInformation = Building(
         campusName: "campusName",
         buildingName: "buildingName",
         buildingInitial: "buildingInitial",
@@ -37,7 +36,7 @@ void main() {
 }
 
 class TestWidget extends StatelessWidget {
-  BuildingInformation buildingInformation;
+  Building buildingInformation;
 
   TestWidget(this.buildingInformation);
 

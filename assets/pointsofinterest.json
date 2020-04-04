@@ -1,0 +1,107 @@
+{
+  "Loyola": {
+    "loyolapark": {
+		"Name": "Loyola Park",
+		"Address": "4877 Avenue Doherty",
+		"LAT": "45.4608841",
+		"LNG": "-73.6458944",
+		"Description": "",
+		"Open": "8:00",
+		"Close": "23:00",
+		"Logo" : "assets/poi_images/park.png"
+	},
+    "souvlakigeorge":{
+		"Name":"Souvlaki George",
+		"Address":"6995 Monkland Ave",
+		"LAT":"45.459880",
+		"LNG":"-73.637000",
+		"Description":"",
+		"Open":"11:00",
+		"Close":"5:00",
+		"Logo" : "assets/poi_images/souvlakigeorge.png"
+		},
+    "ndghotdog": {
+		"Name": "NDG Hotdog & Pizzaria",
+		"Address" : "7363 Sherbrooke St W",
+		"LAT": "45.465950",
+		"LNG": "-73.624720",
+		"Description": "",
+		"Open": "11:00",
+		"Close": "22:00",
+		"Logo": "assets/poi_images/ndghotdog.png"
+	},
+	"comptoirkoyajo": {
+		"Name": "Comptoir Koyajo",
+		"Address": "6963 Sherbrooke St W",
+		"LAT": "45.460000",
+		"LNG": "-73.636440",
+		"Description": "",
+		"Open": "10:30",
+		"Close": "15:00",
+		"Logo": "assets/poi_images/comptoirkoyajo.png"
+	}
+
+  },
+  "Sir George Williams": {
+  	"mcdonalds": {
+		"Name": "McDonald's",
+		"Address":"1472 Saint-Catherine St W",
+		"LAT": "45.495645",
+		"LNG": "-73.576931",
+		"Description": "",
+		"Open": "11:00",
+		"Close": "22:00",
+		"Logo": "assets/poi_images/mcdonalds.png"
+  },
+    "britnchips": {
+		"Name": "Brit & Chips",
+		"Address":"1390 Maisonneuve Blvd W",
+		"LAT": "45.4975289",
+		"LNG": "-73.5776902",
+		"Description": "",
+		"Open": "11:00",
+		"Close": "22:00",
+		"Logo": "assets/poi_images/britnchips.png"
+	},
+	"kintonramen":{
+		"Name":"Kinton Ramen",
+		"Address": "1211 Bishop St",
+		"LAT":"45.49600359999999",
+		"LNG":"-73.5748529",
+		"Description":"",
+		"Open":"11:30",
+		"Close":"22:30",
+		"Logo": "assets/poi_images/kintonramen.png"
+	},
+	"belleetlabouef": {
+		"Name": "La Belle et la Boeuf",
+		"Address": "1620 Saint-Catherine St W",
+		"LAT": "45.49423729999999",
+		"LNG": "-73.57853639999999",
+		"Description": "",
+		"Open": "11:30",
+		"Close": "23:00",
+		"Logo": "assets/poi_images/belleetlaboeuf.png"
+	},
+	"sota":{
+		"Name":"Sota",
+		"Address": "1825 Saint-Catherine St W",
+		"LAT":"45.4935173",
+		"LNG":"-73.5798552",
+		"Description":"",
+		"Open":"11:30",
+		"Close":"0:00",
+		"Logo": "assets/poi_images/sota.png"
+	},
+	"mckibbins": {
+		"Name": "McKibbin's Irish Pub",
+		"Address": "1426 Bishop St",
+		"LAT": "45.4967536",
+		"LNG": "-73.57734959999999",
+		"Description": "",
+		"Open": "11:30",
+		"Close": "3:00",
+		"Logo": "assets/poi_images/mckibbinsirishpub.png"
+	}
+  }
+}

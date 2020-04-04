@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/itinerary.dart';
+import 'package:concordia_navigation/services/itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
@@ -10,8 +10,10 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
-  final controllerStarting = TextEditingController();
-  final controllerDestination = TextEditingController();
+  String controllerStarting;
+  String controllerDestination;
+  double swapButtonTop;
+  double locationButtonTop;
 
   Itinerary itinerary;
 
@@ -31,6 +33,16 @@ class MapData extends ChangeNotifier {
 
   void changeCampus(campus) {
     _campus = campus;
+    notifyListeners();
+  }
+
+  void changeSwapTop(double top) {
+    swapButtonTop = top;
+    notifyListeners();
+  }
+
+  void changeLocationTop(double top) {
+    locationButtonTop = top;
     notifyListeners();
   }
 
@@ -74,6 +86,9 @@ class MapData extends ChangeNotifier {
   }
 
   void setItinerary() async {
+    if (_start == null) {
+      _start = _currentLocation;
+    }
     itinerary = await Itinerary.create(_start, _end, _mode);
     notifyListeners();
   }

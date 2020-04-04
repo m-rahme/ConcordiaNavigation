@@ -11,14 +11,14 @@ class Profile extends StatelessWidget {
         title: Text(
           ConcordiaLocalizations.of(context).profile,
         ),
-        backgroundColor: greenColor,
+        backgroundColor: appColor,
       ),
       body: Center(
         child: RaisedButton(
           child: Text(
             ConcordiaLocalizations.of(context).profile,
           ),
-          color: greenColor,
+          color: appColor,
           textColor: whiteColor,
           onPressed: () {
             showDialog(

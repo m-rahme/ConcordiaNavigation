@@ -15,11 +15,6 @@ class DirectionsDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var _controllerStarting =
-        Provider.of<MapData>(context, listen: false).controllerStarting;
-    var _controllerDestination =
-        Provider.of<MapData>(context, listen: false).controllerDestination;
-
     Future<Map<String, Map<String, String>>> fetchItinerary() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
@@ -27,9 +22,21 @@ class DirectionsDrawer extends StatelessWidget {
     }
 
     SlidingUpPanel sp = SlidingUpPanel(
+        onPanelClosed: () {
+          Provider.of<MapData>(context, listen: false)
+              .changeSwapTop(SizeConfig.safeBlockVertical * 57);
+          Provider.of<MapData>(context, listen: false)
+              .changeLocationTop(SizeConfig.safeBlockVertical * 66);
+        },
+        onPanelOpened: () {
+          Provider.of<MapData>(context, listen: false)
+              .changeSwapTop(SizeConfig.safeBlockVertical * 66);
+          Provider.of<MapData>(context, listen: false)
+              .changeLocationTop(SizeConfig.safeBlockVertical * 75);
+        },
         controller: Provider.of<MapData>(context).panelController,
         maxHeight: SizeConfig.safeBlockVertical * 85,
-        defaultPanelState: PanelState.OPEN,
+        defaultPanelState: PanelState.CLOSED,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
@@ -40,7 +47,7 @@ class DirectionsDrawer extends StatelessWidget {
                     Container(
                       height: SizeConfig.safeBlockVertical * 9,
                       decoration: BoxDecoration(
-                        color: constants.greenColor,
+                        color: constants.appColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40),
@@ -54,7 +61,7 @@ class DirectionsDrawer extends StatelessWidget {
                             child: IconButton(
                               icon: Icon(Icons.maximize),
                               iconSize: 30.0,
-                              color: Colors.white,
+                              color: constants.whiteColor,
                               onPressed: () {},
                             ),
                           ),
@@ -162,6 +169,16 @@ class DirectionsDrawer extends StatelessWidget {
                                         onPressed: () {
                                           Provider.of<MapData>(context,
                                                   listen: false)
+                                              .changeSwapTop(
+                                                  SizeConfig.safeBlockVertical *
+                                                      66);
+                                          Provider.of<MapData>(context,
+                                                  listen: false)
+                                              .changeLocationTop(
+                                                  SizeConfig.safeBlockVertical *
+                                                      75);
+                                          Provider.of<MapData>(context,
+                                                  listen: false)
                                               .removeItinerary();
                                           if (_swapCar ==
                                               constants.whiteColor) {
@@ -182,7 +199,7 @@ class DirectionsDrawer extends StatelessWidget {
                       ),
                     ), // top row for transportation mode selection
                     Container(
-                      color: constants.greenColor,
+                      color: constants.appColor,
                       height: SizeConfig.safeBlockVertical * 16,
                       child: Column(
                         children: <Widget>[
@@ -205,7 +222,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             Radius.circular(10.0)),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.grey[600],
+                                            color: constants.greyColor,
                                             blurRadius: 3.0,
                                             spreadRadius: -1.0,
                                             offset: Offset(
@@ -226,27 +243,18 @@ class DirectionsDrawer extends StatelessWidget {
                                             child: Icon(Icons.search),
                                           ),
                                           Expanded(
-                                            child: TextField(
-                                              style: GoogleFonts.raleway(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.w600,
-                                                color: constants.blackColor,
-                                              ),
-                                              controller: _controllerStarting,
-                                              cursorColor: Colors.blue,
-                                              keyboardType: TextInputType.text,
-                                              keyboardAppearance:
-                                                  Brightness.light,
-                                              textInputAction:
-                                                  TextInputAction.go,
-                                              decoration: InputDecoration(
-                                                border: InputBorder.none,
-                                                contentPadding:
-                                                    EdgeInsets.symmetric(
-                                                        horizontal: 10,
-                                                        vertical: 12),
-                                                hintText:
-                                                    "Choose Starting Point",
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                Provider.of<MapData>(context,
+                                                        listen: false)
+                                                    .controllerStarting,
+                                                style: GoogleFonts.raleway(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: constants.blackColor,
+                                                ),
                                               ),
                                             ),
                                           ),
@@ -266,7 +274,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             Radius.circular(10.0)),
                                         boxShadow: [
                                           BoxShadow(
-                                            color: Colors.grey[600],
+                                            color: constants.greyColor,
                                             blurRadius: 3.0,
                                             spreadRadius: -1.0,
                                             offset: Offset(
@@ -285,28 +293,19 @@ class DirectionsDrawer extends StatelessWidget {
                                             child: Icon(Icons.search),
                                           ),
                                           Expanded(
-                                            child: TextField(
-                                              style: GoogleFonts.raleway(
-                                                fontSize: 15.0,
-                                                fontWeight: FontWeight.w600,
-                                                color: constants.blackColor,
+                                            child: Padding(
+                                              padding:
+                                                  const EdgeInsets.all(8.0),
+                                              child: Text(
+                                                Provider.of<MapData>(context,
+                                                        listen: false)
+                                                    .controllerDestination,
+                                                style: GoogleFonts.raleway(
+                                                  fontSize: 15.0,
+                                                  fontWeight: FontWeight.w600,
+                                                  color: constants.blackColor,
+                                                ),
                                               ),
-                                              controller:
-                                                  _controllerDestination,
-                                              cursorColor: constants.blueColor,
-                                              keyboardType: TextInputType.text,
-                                              keyboardAppearance:
-                                                  Brightness.light,
-                                              textInputAction:
-                                                  TextInputAction.go,
-                                              decoration: InputDecoration(
-                                                  border: InputBorder.none,
-                                                  contentPadding:
-                                                      EdgeInsets.symmetric(
-                                                          horizontal: 10,
-                                                          vertical: 12),
-                                                  hintText:
-                                                      "Choose Destination"),
                                             ),
                                           ),
                                         ],
@@ -324,10 +323,16 @@ class DirectionsDrawer extends StatelessWidget {
                                   var start = mapData.getStart;
                                   mapData.changeStart(mapData.getEnd);
                                   mapData.changeEnd(start);
-                                  var temp = _controllerStarting.text;
-                                  _controllerStarting.text =
-                                      _controllerDestination.text;
-                                  _controllerDestination.text = temp;
+                                  String temp = Provider.of<MapData>(context,
+                                          listen: false)
+                                      .controllerStarting;
+                                  Provider.of<MapData>(context, listen: false)
+                                          .controllerStarting =
+                                      Provider.of<MapData>(context,
+                                              listen: false)
+                                          .controllerDestination;
+                                  Provider.of<MapData>(context, listen: false)
+                                      .controllerDestination = temp;
                                   mapData.setItinerary();
                                 },
                               ),
@@ -454,7 +459,7 @@ class DirectionsDrawer extends StatelessWidget {
                       height: SizeConfig.safeBlockVertical * 15,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                        color: constants.greenColor,
+                        color: constants.appColor,
                       ),
                       child: ShuttleWidget(),
                     ),
