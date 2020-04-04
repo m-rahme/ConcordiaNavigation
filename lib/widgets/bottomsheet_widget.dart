@@ -56,7 +56,7 @@ class BottomSheetWidget extends StatelessWidget {
                           borderRadius: new BorderRadius.circular(10.0),
                         ),
                         onPressed: () {},
-                        color: greenColor,
+                        color: appColor,
                         textColor: whiteColor,
                         child: Text(
                           "Directions",
@@ -114,7 +114,7 @@ class BottomSheetWidget extends StatelessWidget {
                         height: SizeConfig.safeBlockVertical * 7,
                         child: Icon(
                           Icons.access_time,
-                          color: greenColor,
+                          color: appColor,
                           size: 55.0,
                         ),
                       ),

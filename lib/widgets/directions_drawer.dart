@@ -37,7 +37,7 @@ class DirectionsDrawer extends StatelessWidget {
         },
         controller: Provider.of<MapData>(context).panelController,
         maxHeight: SizeConfig.safeBlockVertical * 85,
-        defaultPanelState: PanelState.OPEN,
+        defaultPanelState: PanelState.CLOSED,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(40),
           topRight: Radius.circular(40),
@@ -48,7 +48,7 @@ class DirectionsDrawer extends StatelessWidget {
                     Container(
                       height: SizeConfig.safeBlockVertical * 9,
                       decoration: BoxDecoration(
-                        color: constants.greenColor,
+                        color: constants.appColor,
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(40),
                           topRight: Radius.circular(40),
@@ -196,7 +196,7 @@ class DirectionsDrawer extends StatelessWidget {
                       ),
                     ), // top row for transportation mode selection
                     Container(
-                      color: constants.greenColor,
+                      color: constants.appColor,
                       height: SizeConfig.safeBlockVertical * 16,
                       child: Column(
                         children: <Widget>[
@@ -328,7 +328,6 @@ class DirectionsDrawer extends StatelessWidget {
                                       Provider.of<MapData>(context,
                                               listen: false)
                                           .controllerDestination;
-                                  ;
                                   Provider.of<MapData>(context, listen: false)
                                       .controllerDestination = temp;
                                   mapData.setItinerary();
@@ -457,7 +456,7 @@ class DirectionsDrawer extends StatelessWidget {
                       height: SizeConfig.safeBlockVertical * 15,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(3.0)),
-                        color: constants.greenColor,
+                        color: constants.appColor,
                       ),
                       child: ShuttleWidget(),
                     ),

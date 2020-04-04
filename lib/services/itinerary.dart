@@ -8,9 +8,6 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 //This class is used to generate an an Itinerary from the direction's JSON.
 class Itinerary {
   ///Safety making sure the itinerary is generated only once.
-  LatLng _startDestination;
-  LatLng _endDestination;
-  String _mode;
   Map<String, Map<String, String>> _itinerary;
   List<Polyline> _polylines;
   static DirectionsService _directionsService;
@@ -29,13 +26,13 @@ class Itinerary {
 
   /// Create the Itinerary object and populate its fields from json data.
   static Future<Itinerary> create(
-      LatLng startDestination, LatLng endDestination, String mode, [DirectionsService directionsService = const DirectionsService()]) async {
+      LatLng startDestination, LatLng endDestination, String mode,
+      [DirectionsService directionsService = const DirectionsService()]) async {
     Itinerary itinerary = Itinerary._create();
     _directionsService = directionsService;
 
-    String rawData = await _directionsService.getDirections(
-        startDestination, endDestination,
-        mode: mode);
+    String rawData = await _directionsService
+        .getDirections(startDestination, endDestination, mode: mode);
     Map<String, dynamic> rawJson = json.decode(rawData);
     itinerary._polylines = getPolylinePoints(rawJson);
     itinerary._itinerary = getDirectionList(rawJson);
@@ -89,10 +86,6 @@ class Itinerary {
     PolylinePoints tPolylinePoints = PolylinePoints();
     List<PointLatLng> tPointLatLng = [];
     List<Polyline> tPolyline = [];
-
-    double sLat = rawJson['routes'][0]['legs'][0]['start_location']['lat'];
-    double sLong = rawJson['routes'][0]['legs'][0]['start_location']['long'];
-    String sDesc = rawJson['routes'][0]['legs'][0]['start_address'];
 
     var steps =
         rawJson['routes'][0]['legs'][0]['steps']; // # of direction steps

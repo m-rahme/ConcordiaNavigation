@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/floor.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Building {
@@ -9,6 +10,7 @@ class Building {
   final double longitude;
   final String filename;
   final List<LatLng> buildingEdges;
+  final Set<Floor> floors;
   Building({
     this.campusName,
     this.buildingName,
@@ -18,5 +20,6 @@ class Building {
     this.longitude,
     this.filename,
     this.buildingEdges,
+    this.floors,
   });
 }
