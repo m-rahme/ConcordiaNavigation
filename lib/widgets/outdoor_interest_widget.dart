@@ -7,16 +7,15 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
 class OutdoorInterestWidget extends StatelessWidget {
-  OutdoorInterestWidget({this.campus, this.snapshot});
+  final List<OutdoorPOI> interests;
 
-  final String campus;
-  final AsyncSnapshot<List<OutdoorPOI>> snapshot;
+  OutdoorInterestWidget(this.interests);
 
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
-      itemBuilder: (context, index) {
-        if (snapshot.data[index].campus == campus)
+        itemCount: interests.length,
+        itemBuilder: (context, index) {
           return Card(
             child: Container(
               height: SizeConfig.safeBlockVertical * 14,
@@ -35,7 +34,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(75.0),
                             child: new Image.asset(
-                              snapshot.data[index].logo,
+                              interests[index].logo,
                             ),
                           ),
                         ),
@@ -47,7 +46,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: <Widget>[
                         Text(
-                          snapshot.data[index].name,
+                          interests[index].name,
                           style: TextStyle(
                             fontWeight: FontWeight.bold,
                             fontSize: 18,
@@ -55,7 +54,7 @@ class OutdoorInterestWidget extends StatelessWidget {
                           ),
                         ),
                         Text(
-                          snapshot.data[index].address,
+                          interests[index].address,
                           style: TextStyle(
                             fontSize: 14,
                             color: constants.blueColor,
@@ -65,9 +64,9 @@ class OutdoorInterestWidget extends StatelessWidget {
                           padding: const EdgeInsets.only(top: 8.0),
                           child: Text(
                             "Open: " +
-                                snapshot.data[index].open +
+                                interests[index].open +
                                 " Close: " +
-                                snapshot.data[index].close,
+                                interests[index].close,
                             style: TextStyle(
                               fontSize: 14,
                               color: constants.greyColor,
@@ -94,14 +93,14 @@ class OutdoorInterestWidget extends StatelessWidget {
                             ),
                             onPressed: () {
                               Navigator.of(context).pop();
-                              mapData.controllerDestination =
-                                  snapshot.data[index].name;
                               mapData.changeCampus('sgw');
+                              mapData.controllerDestination =
+                                  interests[index].name;
                               mapData.controllerStarting = "Current Location";
                               mapData.changeStart(mapData.getCurrentLocation);
                               mapData.changeEnd(LatLng(
-                                  snapshot.data[index].latitude,
-                                  snapshot.data[index].longitude));
+                                  interests[index].latitude,
+                                  interests[index].longitude));
                               mapData.changeMode("driving");
                               mapData.setItinerary();
                             },
@@ -114,10 +113,6 @@ class OutdoorInterestWidget extends StatelessWidget {
               ),
             ),
           );
-        else
-          return Container();
-      },
-      itemCount: snapshot.data.length,
-    );
+        });
   }
 }

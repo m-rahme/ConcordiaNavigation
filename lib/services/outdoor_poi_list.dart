@@ -3,64 +3,18 @@ import 'package:concordia_navigation/models/outdoor_poi.dart';
 import 'dart:convert';
 
 class OutdoorPOIList {
-  static Map poi;
+  static List<dynamic> poi;
 
   List<OutdoorPOI> pointOfInterests = List<OutdoorPOI>();
 
-  static Future<Map> loadJson() async =>
-      poi =  json.decode(await rootBundle.loadString('assets/pointsofinterest.json'));
+  static Future<List> loadJson() async =>
+      json.decode(await rootBundle.loadString('assets/pointsofinterest.json'));
 
-  Future<List<OutdoorPOI>> readPOIFile() async {
-    /**
-     * Examples to access elements the pointsofinterest.json file
-     *
-     * poi['loyola']['loyolapark']['Name'];
-     * returns loyola park
-     *
-     * poi.keys.elementAt(0);
-     * returns loyola
-     *
-     * poi.keys.length;
-     * returns number of campuses
-     *
-     * poi['loyola'].keys;
-     * returns loyolapark, souvlakigeorge, ndghotdog, comptoirkoyajo
-     *
-     * poi['loyola'].keys.length;
-     * returns number of POIs of the campus
-     *
-     * poi['loyola'].keys.elementAt(2);
-     * returns ndghotdog
-     *
-     * poi['loyola']['loyolapark'].keys.length;
-     * returns number of attributes
-     *
-     * poi['loyola']['loyolapark'].keys.elementAt(0);
-     *  returns {Name: Loyola Park}
-     *
-     * poi['loyola']['loyolapark'].keys.elementAt(1);
-     * returns {LAT: 45.4608841}
-     *
-     */
-
-    for(int campus = 0; campus< poi.keys.length; campus++){
-      for(int location = 0; location< poi[poi.keys.elementAt(campus)].keys.length; location++){
-          this.pointOfInterests.add(
-              OutdoorPOI(
-                  campus: poi.keys.elementAt(campus).toString(),
-                  title: poi[poi.keys.elementAt(campus)].keys.elementAt(location).toString(),
-                  name: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Name'],
-                  address: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Address'],
-                  latitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LAT']),
-                  longitude: double.parse(poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['LNG']),
-                  logo: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Logo'],
-                  description: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Description'],
-                  open: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Open'],
-                  close: poi[poi.keys.elementAt(campus)][poi[poi.keys.elementAt(campus)].keys.elementAt(location)]['Close']
-                  )
-          );
-      }
+  // give it a campus, it will parse the interests property of it
+  OutdoorPOIList.fromJson(Map json) {
+    for (int j = 0; j < json["interests"].length; j++) {
+      pointOfInterests
+          .add(OutdoorPOI.fromJson(json['campusName'], json["interests"][j]));
     }
-    return pointOfInterests;
   }
 }
