@@ -7,7 +7,7 @@ void main() {
   group('MapData', () {
     MapData mapData;
 
-    setUpAll(() async {
+    setUpAll(() {
       mapData = new MapData();
     });
 

@@ -2,6 +2,7 @@ import 'dart:async' show Future;
 import 'dart:convert';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:concordia_navigation/models/building.dart';
+
 class BuildingList {
   final Set<Building> buildingList = Set<Building>();
   static List<dynamic> buildingInfo;
@@ -9,7 +10,7 @@ class BuildingList {
   BuildingList() {
     _readBuildingFile();
   }
-//-------class methods----------------------
+
   ///For reading the file
   static Future<List<dynamic>> loadJson() async => json
       .decode(await rootBundle.loadString('assets/campus_buildings_info.json'));
