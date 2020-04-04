@@ -1,7 +1,7 @@
 import 'package:concordia_navigation/models/coordinate.dart';
 
 class Classroom {
-  final int classroomNumber;
+  final String classroomNumber;
   final Coordinate classroomCoordinates;
   final Coordinate nearestCoordinates;
   Classroom(

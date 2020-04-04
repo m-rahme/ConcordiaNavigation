@@ -1,17 +1,14 @@
 {
-  "buildings":[
+  "buildings": [
     {
-      "initial" : "H",
-
-      "floors":[
+      "initial": "H",
+      "floors": [
         {
           "number": "8",
-
-          "classrooms":[
+          "classrooms": [
             {
               "number": "801",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "157.6",
@@ -26,8 +23,7 @@
             },
             {
               "number": "803",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "240.4",
@@ -42,8 +38,7 @@
             },
             {
               "number": "805",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "337.3",
@@ -58,8 +53,7 @@
             },
             {
               "number": "807",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "471.0",
@@ -73,9 +67,8 @@
               ]
             },
             {
-              "number": "1",
-
-              "coordinates":[
+              "number": "checkTM",
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "550.0",
@@ -90,8 +83,7 @@
             },
             {
               "number": "811",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "614.5",
@@ -106,8 +98,7 @@
             },
             {
               "number": "813",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "709.7",
@@ -122,8 +113,7 @@
             },
             {
               "number": "815",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "834.0",
@@ -138,8 +128,7 @@
             },
             {
               "number": "817",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -154,8 +143,7 @@
             },
             {
               "number": "819",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -170,8 +158,7 @@
             },
             {
               "number": "820",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "801.8",
@@ -186,8 +173,7 @@
             },
             {
               "number": "821",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -202,8 +188,7 @@
             },
             {
               "number": "822",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "803.7",
@@ -218,8 +203,7 @@
             },
             {
               "number": "823",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -234,8 +218,7 @@
             },
             {
               "number": "825",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -250,8 +233,7 @@
             },
             {
               "number": "827",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -266,8 +248,7 @@
             },
             {
               "number": "829",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "861.8",
@@ -282,8 +263,7 @@
             },
             {
               "number": "831",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "876.7",
@@ -298,8 +278,7 @@
             },
             {
               "number": "832",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "629.5",
@@ -314,8 +293,7 @@
             },
             {
               "number": "833",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "846.2",
@@ -330,8 +308,7 @@
             },
             {
               "number": "835",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "714.2",
@@ -346,8 +323,7 @@
             },
             {
               "number": "837",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "629.5",
@@ -361,9 +337,8 @@
               ]
             },
             {
-              "number": "2",
-
-              "coordinates":[
+              "number": "checkBM",
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "550.0",
@@ -378,8 +353,7 @@
             },
             {
               "number": "841",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "466.5",
@@ -394,8 +368,7 @@
             },
             {
               "number": "842",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "395.6",
@@ -410,8 +383,7 @@
             },
             {
               "number": "843",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "395.6",
@@ -426,8 +398,7 @@
             },
             {
               "number": "845",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "297.4",
@@ -442,8 +413,7 @@
             },
             {
               "number": "847",
-
-              "coordinates" :[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "160.8",
@@ -458,8 +428,7 @@
             },
             {
               "number": "849",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "120.4",
@@ -474,8 +443,7 @@
             },
             {
               "number": "853",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "139.8",
@@ -490,8 +458,7 @@
             },
             {
               "number": "854",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "202.6",
@@ -506,8 +473,7 @@
             },
             {
               "number": "855",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "139.8",
@@ -522,8 +488,7 @@
             },
             {
               "number": "857",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "139.8",
@@ -538,8 +503,7 @@
             },
             {
               "number": "859",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "139.8",
@@ -554,8 +518,7 @@
             },
             {
               "number": "861",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "139.8",
@@ -570,8 +533,7 @@
             },
             {
               "number": "862",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "353.8",
@@ -586,8 +548,7 @@
             },
             {
               "number": "863",
-
-              "coordinates":[
+              "coordinates": [
                 {
                   "classroom": {
                     "x": "126.3",
@@ -603,9 +564,8 @@
           ],
           "poi": [
             {
-              "name": "ExitTL",
-
-              "coordinates":[
+              "name": "exitTL",
+              "coordinates": [
                 {
                   "room": {
                     "x": "240.4",
@@ -619,9 +579,8 @@
               ]
             },
             {
-              "name": "Women",
-
-              "coordinates":[
+              "name": "women",
+              "coordinates": [
                 {
                   "room": {
                     "x": "337.3",
@@ -635,9 +594,8 @@
               ]
             },
             {
-              "name": "Men",
-
-              "coordinates":[
+              "name": "men",
+              "coordinates": [
                 {
                   "room": {
                     "x": "614.5",
@@ -651,9 +609,8 @@
               ]
             },
             {
-              "name": "ExitTR",
-
-              "coordinates":[
+              "name": "exitTR",
+              "coordinates": [
                 {
                   "room": {
                     "x": "709.7",
@@ -667,9 +624,8 @@
               ]
             },
             {
-              "name": "ExitBR",
-
-              "coordinates":[
+              "name": "exitBR",
+              "coordinates": [
                 {
                   "room": {
                     "x": "714.2",
@@ -683,9 +639,8 @@
               ]
             },
             {
-              "name": "ExitBL",
-
-              "coordinates":[
+              "name": "exitBL",
+              "coordinates": [
                 {
                   "room": {
                     "x": "297.4",
@@ -699,9 +654,8 @@
               ]
             },
             {
-              "name": "Elevator",
-
-              "coordinates":[
+              "name": "elevator",
+              "coordinates": [
                 {
                   "room": {
                     "x": "353.8",
@@ -715,9 +669,8 @@
               ]
             },
             {
-              "name": "EscalatorUp",
-
-              "coordinates":[
+              "name": "escalatorUp",
+              "coordinates": [
                 {
                   "room": {
                     "x": "479.3",
@@ -731,9 +684,8 @@
               ]
             },
             {
-              "name": "EscalatorDown",
-
-              "coordinates":[
+              "name": "escalatorDown",
+              "coordinates": [
                 {
                   "room": {
                     "x": "483.8",
@@ -747,9 +699,1189 @@
               ]
             }
           ]
+        },
+        {
+          "number": "9",
+          "classrooms": [
+            {
+              "number": "903",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "748.5",
+                    "y": "771.7"
+                  },
+                  "nearest": {
+                    "x": "748.5",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "907",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "577.6",
+                    "y": "773.8"
+                  },
+                  "nearest": {
+                    "x": "577.6",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "909",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "486.3",
+                    "y": "779.3"
+                  },
+                  "nearest": {
+                    "x": "486.3",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "911",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "397.2",
+                    "y": "779.3 "
+                  },
+                  "nearest": {
+                    "x": "397.2",
+                    "y": "743.8 "
+                  }
+                }
+              ]
+            },
+            {
+              "number": "913",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "298.1",
+                    "y": "779.3"
+                  },
+                  "nearest": {
+                    "x": "298.1",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "915",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "168.1",
+                    "y": "791.1"
+                  },
+                  "nearest": {
+                    "x": "155.1",
+                    "y": "791.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "917",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "142",
+                    "y": "791.1"
+                  },
+                  "nearest": {
+                    "x": "155.1",
+                    "y": "791.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkBL",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "161.1",
+                    "y": "743.8"
+                  },
+                  "nearest": {
+                    "x": "161.1",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "919",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "141",
+                    "y": "698.6"
+                  },
+                  "nearest": {
+                    "x": "168.1",
+                    "y": "698.6"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "921",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "142",
+                    "y": "606.1"
+                  },
+                  "nearest": {
+                    "x": "168.1",
+                    "y": "606.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "923",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "142",
+                    "y": "508.6"
+                  },
+                  "nearest": {
+                    "x": "168.1",
+                    "y": "508.6"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "920",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "200.6",
+                    "y": "508.4"
+                  },
+                  "nearest": {
+                    "x": "168.1",
+                    "y": "508.6"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "980",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "232.8",
+                    "y": "379.1"
+                  },
+                  "nearest": {
+                    "x": "190.4",
+                    "y": "379.4"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "927-4",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "179.6",
+                    "y": "324.6"
+                  },
+                  "nearest": {
+                    "x": "190.7",
+                    "y": "324.6"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "927",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "161.2",
+                    "y": "271.5"
+                  },
+                  "nearest": {
+                    "x": "190.7",
+                    "y": "271.5"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "929",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "190.7",
+                    "y": "109.9"
+                  },
+                  "nearest": {
+                    "x": "190.7",
+                    "y": "132.2"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "933",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "285.3",
+                    "y": "120.1"
+                  },
+                  "nearest": {
+                    "x": "303.3",
+                    "y": "132.2"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "937",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "372",
+                    "y": "209.9"
+                  },
+                  "nearest": {
+                    "x": "349.1",
+                    "y": "209.9"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "945",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "623.9",
+                    "y": "188.1"
+                  },
+                  "nearest": {
+                    "x": "610.4",
+                    "y": "188.6"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "943",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "623.9",
+                    "y": "137.7"
+                  },
+                  "nearest": {
+                    "x": "608.1",
+                    "y": "137.7"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkTM",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "629.4",
+                    "y": "77.1"
+                  },
+                  "nearest": {
+                    "x": "629.4",
+                    "y": "77.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "961-26",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "819.5",
+                    "y": "86"
+                  },
+                  "nearest": {
+                    "x": "819.4",
+                    "y": "75.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkTR",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "930.3",
+                    "y": "77.1"
+                  },
+                  "nearest": {
+                    "x": "930.3",
+                    "y": "77.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "961.14",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "917.8",
+                    "y": "220.9"
+                  },
+                  "nearest": {
+                    "x": "930.3",
+                    "y": "220.9"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkMR",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "930.3",
+                    "y": "308.1"
+                  },
+                  "nearest": {
+                    "x": "930.3",
+                    "y": "308.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "968",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "725.9",
+                    "y": "321.4"
+                  },
+                  "nearest": {
+                    "x": "725.9",
+                    "y": "304.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "966",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "608.1",
+                    "y": "321.4"
+                  },
+                  "nearest": {
+                    "x": "608.1",
+                    "y": "302.1"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "962",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "653.1",
+                    "y": "551.3"
+                  },
+                  "nearest": {
+                    "x": "652.9",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "964",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "747.5",
+                    "y": "551.8"
+                  },
+                  "nearest": {
+                    "x": "747.5",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "963",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "829.4",
+                    "y": "534.2"
+                  },
+                  "nearest": {
+                    "x": "829.4",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "965",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "862.9",
+                    "y": "629.4"
+                  },
+                  "nearest": {
+                    "x": "829.4",
+                    "y": "629.4"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "967",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "861.6",
+                    "y": "743.8"
+                  },
+                  "nearest": {
+                    "x": "829.4",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkML",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "376.3",
+                    "y": "318.2"
+                  },
+                  "nearest": {
+                    "x": "376.3",
+                    "y": "318.2"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkMM",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "486.3",
+                    "y": "318.2"
+                  },
+                  "nearest": {
+                    "x": "486.3",
+                    "y": "318.2"
+                  }
+                }
+              ]
+            }
+          ],
+          "poi": [
+            {
+              "name": "exitTL",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "285.1",
+                    "y": "294.7"
+                  },
+                  "nearest": {
+                    "x": "285.1",
+                    "y": "319.2"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "women",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "578.6",
+                    "y": "698.6"
+                  },
+                  "nearest": {
+                    "x": "577.6",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "men",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "397.2",
+                    "y": "721.7"
+                  },
+                  "nearest": {
+                    "x": "397.2",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitTR",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "725.9",
+                    "y": "294.1"
+                  },
+                  "nearest": {
+                    "x": "725.9",
+                    "y": "304.1"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitBR",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "747.5",
+                    "y": "592.5"
+                  },
+                  "nearest": {
+                    "x": "747.5",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitBL",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "298.1",
+                    "y": "721.7"
+                  },
+                  "nearest": {
+                    "x": "298.1",
+                    "y": "743.8"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "elevator",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "652.9235",
+                    "y": "602.0296 "
+                  },
+                  "nearest": {
+                    "x": "652.9",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "escalatorUp",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "521.2",
+                    "y": "412.8"
+                  },
+                  "nearest": {
+                    "x": "486.3",
+                    "y": "412.9"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "escalatorDown",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "535.7",
+                    "y": "573.8"
+                  },
+                  "nearest": {
+                    "x": "486.3",
+                    "y": "573.8"
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "number": "1",
+          "classrooms": [
+            {
+              "number": "110",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "255",
+                    "y": "377"
+                  },
+                  "nearest": {
+                    "x": "255",
+                    "y": "400"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkMM",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "535",
+                    "y": "560"
+                  },
+                  "nearest": {
+                    "x": "535",
+                    "y": "560"
+                  }
+                }
+              ]
+            }
+          ],
+          "poi": [
+            {
+              "name": "exitMR",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "952",
+                    "y": "560"
+                  },
+                  "nearest": {
+                    "x": "880",
+                    "y": "560"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "women",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "500",
+                    "y": "230"
+                  },
+                  "nearest": {
+                    "x": "535",
+                    "y": "230"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "men",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "500",
+                    "y": "100"
+                  },
+                  "nearest": {
+                    "x": "535",
+                    "y": "100"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "entrance",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "325",
+                    "y": "860"
+                  },
+                  "nearest": {
+                    "x": "325",
+                    "y": "830"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "elevator",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "707",
+                    "y": "277"
+                  },
+                  "nearest": {
+                    "x": "707",
+                    "y": "230"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "escalatorUp",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "771",
+                    "y": "510"
+                  },
+                  "nearest": {
+                    "x": "771",
+                    "y": "560"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "escalatorDown",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "835",
+                    "y": "890"
+                  },
+                  "nearest": {
+                    "x": "880",
+                    "y": "831"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "security",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "880",
+                    "y": "175"
+                  },
+                  "nearest": {
+                    "x": "880",
+                    "y": "230"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "initial": "MB",
+      "floors": [
+        {
+          "number": "1",
+          "classrooms": [
+            {
+              "number": "1.350",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "181.16",
+                    "y": "437"
+                  },
+                  "nearest": {
+                    "x": "196.07",
+                    "y": "437"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.345",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "181.16",
+                    "y": "391.05"
+                  },
+                  "nearest": {
+                    "x": "200.05",
+                    "y": "391.05"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.338",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "200.05",
+                    "y": "365.7"
+                  },
+                  "nearest": {
+                    "x": "200.05",
+                    "y": "391.05"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.210",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "391.05",
+                    "y": "549.58"
+                  },
+                  "nearest": {
+                    "x": "487.83",
+                    "y": "549.58"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.309",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "545.33",
+                    "y": "365.7"
+                  },
+                  "nearest": {
+                    "x": "545.33",
+                    "y": "387.07"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.301",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "607.78",
+                    "y": "383.09"
+                  },
+                  "nearest": {
+                    "x": "588.19",
+                    "y": "383.09"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.424",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "637.84",
+                    "y": "511.5"
+                  },
+                  "nearest": {
+                    "x": "637.84",
+                    "y": "551.21"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.130",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "729.45",
+                    "y": "528.2"
+                  },
+                  "nearest": {
+                    "x": "729.45",
+                    "y": "551.21"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.437",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "775.08",
+                    "y": "247.61"
+                  },
+                  "nearest": {
+                    "x": "788.79",
+                    "y": "247.61"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "1.115",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "901.05",
+                    "y": "391.6"
+                  },
+                  "nearest": {
+                    "x": "901.05",
+                    "y": "410.74"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkBL",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "169.81",
+                    "y": "629.09"
+                  },
+                  "nearest": {
+                    "x": "169.81",
+                    "y": "629.09"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkML",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "495.79",
+                    "y": "629.09"
+                  },
+                  "nearest": {
+                    "x": "495.79",
+                    "y": "629.09"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkMM",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "545.31",
+                    "y": "551.21"
+                  },
+                  "nearest": {
+                    "x": "545.31",
+                    "y": "551.21"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkMR",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "817.15",
+                    "y": "549.58"
+                  },
+                  "nearest": {
+                    "x": "817.15",
+                    "y": "549.58"
+                  }
+                }
+              ]
+            },
+            {
+              "number": "checkTR",
+              "coordinates": [
+                {
+                  "classroom": {
+                    "x": "806.05",
+                    "y": "411.4"
+                  },
+                  "nearest": {
+                    "x": "806.05",
+                    "y": "411.4"
+                  }
+                }
+              ]
+            }
+          ],
+          "poi": [
+            {
+              "name": "exitBL",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "66.5",
+                    "y": "696.1"
+                  },
+                  "nearest": {
+                    "x": "66.5",
+                    "y": "681.08"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "women",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "763.87",
+                    "y": "397.63"
+                  },
+                  "nearest": {
+                    "x": "788.79",
+                    "y": "377.2"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "men",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "763.87",
+                    "y": "355.95"
+                  },
+                  "nearest": {
+                    "x": "788.79",
+                    "y": "377.2"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitML",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "152",
+                    "y": "520.25"
+                  },
+                  "nearest": {
+                    "x": "169.81",
+                    "y": "520.25"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitTM",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "588.19",
+                    "y": "365.7"
+                  },
+                  "nearest": {
+                    "x": "588.19",
+                    "y": "383.09"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "exitTR",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "788.79",
+                    "y": "222.13"
+                  },
+                  "nearest": {
+                    "x": "788.79",
+                    "y": "247.61"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "elevator",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "545.33",
+                    "y": "463.05"
+                  },
+                  "nearest": {
+                    "x": "545.33",
+                    "y": "463.05"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "escalator",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "738.68",
+                    "y": "634.33"
+                  },
+                  "nearest": {
+                    "x": "763.87",
+                    "y": "614.68"
+                  }
+                }
+              ]
+            },
+            {
+              "name": "entrance",
+              "coordinates": [
+                {
+                  "room": {
+                    "x": "879.07",
+                    "y": "595.35"
+                  },
+                  "nearest": {
+                    "x": "867.7",
+                    "y": "576.02"
+                  }
+                }
+              ]
+            }
+          ]
         }
       ]
     }
   ]
 }
-

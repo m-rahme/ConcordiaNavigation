@@ -64,7 +64,6 @@ flutter:
 
   # To add assets to your application, add an assets section, like this:
   assets:
-    - assets/campus_buildings_info.txt
     - assets/logo.png
     - assets/shuttleSchedule.json
     - assets/markers/
@@ -73,6 +72,9 @@ flutter:
     - assets/poi_images/
     - assets/buildings_indoor.json
     - assets/indoor_svg/
+    - assets/LaunchImage.png
+    - assets/app_logo.png
+    - assets/campus_buildings_info.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

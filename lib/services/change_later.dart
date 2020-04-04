@@ -11,6 +11,7 @@ class LoadBuildingInfo {
   static Set<Floor> floorSet = Set<Floor>();
   static Set<Classroom> classroomSet = Set<Classroom>();
   static Set<IndoorInterest> indoorInterestSet = Set<IndoorInterest>();
+
   static List<Coordinate> roomCoordinates = new List<Coordinate>();
   static List<Coordinate> nearestCoordinates = new List<Coordinate>();
   static List<double> xRoomList = new List<double>();
@@ -44,8 +45,8 @@ class LoadBuildingInfo {
             k++) {
           classroomSet.add(
             Classroom(
-              classroomNumber: int.parse(
-                  data['buildings'][i]['floors'][j]['classrooms'][k]['number']),
+              classroomNumber: data['buildings'][i]['floors'][j]['classrooms']
+                  [k]['number'],
               classroomCoordinates: Coordinate(
                 x: double.parse(
                   data['buildings'][i]['floors'][j]['classrooms'][k]
@@ -118,21 +119,18 @@ class LoadBuildingInfo {
 
   void setXList() {
     for (int i = 0; i < trip.length; i++) {
-      if (trip[i] is String) {
-        roomCoordinates.add(indoorInterestSet
-            .firstWhere((room) => room.name == trip[i])
-            .roomCoordinates);
-        nearestCoordinates.add(indoorInterestSet
-            .firstWhere((room) => room.name == trip[i])
-            .nearestCoordinates);
-      } else {
-        roomCoordinates.add(classroomSet
-            .firstWhere((classroom) => classroom.classroomNumber == trip[i])
-            .classroomCoordinates);
-        nearestCoordinates.add(classroomSet
-            .firstWhere((classroom) => classroom.classroomNumber == trip[i])
-            .nearestCoordinates);
-      }
+//      roomCoordinates.add(indoorInterestSet
+//          .firstWhere((room) => room.name == trip[i])
+//          .roomCoordinates);
+//      nearestCoordinates.add(indoorInterestSet
+//          .firstWhere((room) => room.name == trip[i])
+//          .nearestCoordinates);
+      roomCoordinates.add(classroomSet
+          .firstWhere((classroom) => classroom.classroomNumber == trip[i])
+          .classroomCoordinates);
+      nearestCoordinates.add(classroomSet
+          .firstWhere((classroom) => classroom.classroomNumber == trip[i])
+          .nearestCoordinates);
     }
     for (int i = 0; i < roomCoordinates.length; i++) {
       xRoomList.add(roomCoordinates[i].x);

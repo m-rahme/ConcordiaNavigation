@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:concordia_navigation/widgets/indoor_widget.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:google_fonts/google_fonts.dart';
-import 'package:flutter/material.dart';
 
 class IndoorPage extends StatelessWidget {
   final PageController controller =
@@ -15,7 +14,7 @@ class IndoorPage extends StatelessWidget {
       backgroundColor: constants.whiteColor,
       appBar: AppBar(
         title: Text("Indoor View"),
-        backgroundColor: constants.greenColor,
+        backgroundColor: constants.appColor,
       ),
       body: Column(
         children: <Widget>[
