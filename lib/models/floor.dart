@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/classroom.dart';
-import 'package:concordia_navigation/models/indoor_interest.dart';
+import 'package:concordia_navigation/models/indoor_poi.dart';
 
 class Floor {
   int floorNumber;
