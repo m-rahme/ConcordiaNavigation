@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/user_location.dart';
-import 'package:concordia_navigation/services/location_service.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:flutter/services.dart' show MethodCall, MethodChannel;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:location/location.dart';

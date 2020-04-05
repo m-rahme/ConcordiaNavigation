@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/services/shuttle_service.dart';
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

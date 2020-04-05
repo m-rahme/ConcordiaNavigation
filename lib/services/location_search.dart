@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/course.dart';
+import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';

@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/outdoor_poi.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
-import 'package:concordia_navigation/widgets/outdoor_interest_widget.dart';
+import 'package:concordia_navigation/widgets/outdoor/outdoor_interest_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 

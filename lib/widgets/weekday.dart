@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/course.dart';
+import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';

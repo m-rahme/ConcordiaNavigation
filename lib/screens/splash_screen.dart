@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:typed_data';
-import 'package:concordia_navigation/models/building.dart';
-import 'package:concordia_navigation/models/campus.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/outdoor/campus.dart';
 import 'package:concordia_navigation/services/location_search.dart';
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
-import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

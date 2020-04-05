@@ -1,6 +1,6 @@
 import 'package:concordia_navigation/services/painters.dart';
+import 'package:concordia_navigation/widgets/indoor/indoor_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/widgets/indoor_widget.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,5 +1,5 @@
+import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/models/floor.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

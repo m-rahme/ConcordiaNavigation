@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/coordinate.dart';
+import 'package:concordia_navigation/models/indoor/coordinate.dart';
 
 abstract class IndoorLocation {
   String name;

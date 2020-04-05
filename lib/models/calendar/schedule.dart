@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/course.dart';
+import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:device_calendar/device_calendar.dart';
 
 class Schedule {

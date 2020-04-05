@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/building.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';

@@ -22,8 +22,8 @@ class LocationService {
   @visibleForTesting
   static getTestInstance(Location location) {
     ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
-    if(_location == null) _location = location;
-    if(_instance == null) _instance = LocationService._();
+    if (_location == null) _location = location;
+    if (_instance == null) _instance = LocationService._();
     return _instance;
   }
 

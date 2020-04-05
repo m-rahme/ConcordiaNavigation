@@ -1,5 +1,5 @@
+import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
 import 'package:flutter/services.dart';
-import 'package:concordia_navigation/models/outdoor_poi.dart';
 import 'dart:convert';
 
 class OutdoorPOIList {

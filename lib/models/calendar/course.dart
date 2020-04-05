@@ -35,7 +35,7 @@ class Course {
 
   /// Returns the uppercase filtered location, according to the regex in the constants file.
   /// The filtered location is N/A if location is null, a null string or unsupported.
-  String filteredLocation() =>
+  String get filteredLocation =>
       _location != null && _location != '' && hasClassroomLocation()
           ? constants.classroomFilter.firstMatch(_location)[0].toUpperCase()
           : 'N/A';

@@ -1,6 +1,6 @@
+import 'package:concordia_navigation/widgets/outdoor/floating_map_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:concordia_navigation/widgets/floating_map_button.dart';
 
 void main() {
   group('FloatingMapButton', () {

@@ -1,5 +1,5 @@
+import 'package:concordia_navigation/services/network.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'network.dart';
 
 //Google API key
 //TODO: Hide Key

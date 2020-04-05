@@ -10,12 +10,13 @@ class FloatingMapButton extends StatelessWidget {
   final VoidCallback onClick;
 
   const FloatingMapButton({
-    this.top, this.left, this.onClick,
+    this.top,
+    this.left,
+    this.onClick,
     this.icon: const Icon(Icons.add),
     this.bgColor: offWhiteColor,
     this.fgColor: greyColor,
   });
-
 
   @override
   Widget build(BuildContext context) {
