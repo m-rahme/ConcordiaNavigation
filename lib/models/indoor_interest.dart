@@ -1,8 +1,5 @@
-import 'package:concordia_navigation/models/coordinate.dart';
+import 'package:concordia_navigation/models/indoor_location.dart';
 
-class IndoorInterest {
-  final String name;
-  final Coordinate roomCoordinates;
-  final Coordinate nearestCoordinates;
-  IndoorInterest({this.name, this.roomCoordinates, this.nearestCoordinates});
+class IndoorInterest extends IndoorLocation {
+  IndoorInterest.fromJson(json): super.fromJson(json);
 }
