@@ -1703,7 +1703,7 @@
 						"number": "1",
 						"classrooms": [
 							{
-								"number": "110",
+								"name": "110",
 								"coordinates": {
 									"room": {
 										"x": 255,
@@ -1713,10 +1713,14 @@
 										"x": 255,
 										"y": 400
 									}
-								}
+								},
+								"edges":[
+									{"name": "entrance", "distance": 3},
+									{"name": "checkMM", "distance": 1 }
+								]
 							},
 							{
-								"number": "checkMM",
+								"name": "checkMM",
 								"coordinates": {
 									"room": {
 										"x": 535,
@@ -1726,7 +1730,12 @@
 										"x": 535,
 										"y": 560
 									}
-								}
+								},
+								"edges":[
+									{"name": "entrance", "distance": 2},
+									{"name": "women", "distance": 2},
+									{"name": "escalatorUp", "distance": 2}
+								]
 							}
 						],
 						"poi": [
@@ -1741,7 +1750,12 @@
 										"x": 880,
 										"y": 560
 									}
-								}
+								},
+								"edges":[
+									{"name": "security", "distance": 2},
+									{"name": "escalatorDown", "distance": 1},
+									{"name": "escalatorUp", "distance": 1}
+								]
 							},
 							{
 								"name": "women",
@@ -1754,7 +1768,11 @@
 										"x": 535,
 										"y": 230
 									}
-								}
+								},
+								"edges":[
+									{"name": "men", "distance": 1},
+									{"name": "elevator", "distance": 2}
+								]
 							},
 							{
 								"name": "men",
@@ -1780,7 +1798,10 @@
 										"x": 325,
 										"y": 830
 									}
-								}
+								},
+								"edges":[
+									{"name": "escalatorDown", "distance": 4}
+								]
 							},
 							{
 								"name": "elevator",
@@ -1793,7 +1814,10 @@
 										"x": 707,
 										"y": 230
 									}
-								}
+								},
+								"edges":[
+									{"name": "security", "distance": 1}
+								]
 							},
 							{
 								"name": "escalatorUp",
@@ -1806,7 +1830,10 @@
 										"x": 771,
 										"y": 560
 									}
-								}
+								},
+								"edges":[
+									{"name": "escalatorDown", "distance": 1}
+								]
 							},
 							{
 								"name": "escalatorDown",
