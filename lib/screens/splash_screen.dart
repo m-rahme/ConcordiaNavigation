@@ -1,14 +1,29 @@
 import 'dart:async';
+import 'dart:typed_data';
+import 'package:concordia_navigation/models/building.dart';
 import 'package:concordia_navigation/models/campus.dart';
 import 'package:concordia_navigation/services/location_search.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'dart:ui' as ui;
 
 // This is the Splash Screen
 class SplashScreen extends StatefulWidget {
   @override
   _SplashScreenState createState() => _SplashScreenState();
+}
+
+Future<Uint8List> getBytesFromAsset(String path, int width) async {
+  ByteData data = await rootBundle.load(path);
+  ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+      targetWidth: width);
+  ui.FrameInfo fi = await codec.getNextFrame();
+  return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
+      .buffer
+      .asUint8List();
 }
 
 class _SplashScreenState extends State<SplashScreen>
@@ -17,10 +32,12 @@ class _SplashScreenState extends State<SplashScreen>
   Animation<double> _animation;
 
   Future<void> loadAssets() async {
+    // Preloading json data
     List<dynamic> campusData = await Campus.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
     LocationSearch.classrooms = await LocationSearch.loadJson();
     OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
+
     // Creating DAO's for campuses
     Campus.sgw = Campus.fromJson(campusData[0]);
     Campus.loy = Campus.fromJson(campusData[1]);
