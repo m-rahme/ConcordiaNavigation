@@ -63,7 +63,7 @@ class DirectionsDrawer extends StatelessWidget {
                               icon: Icon(Icons.maximize),
                               iconSize: 30.0,
                               color: constants.whiteColor,
-                              onPressed: () {},
+                              onPressed: null,
                             ),
                           ),
                           Container(
@@ -82,7 +82,7 @@ class DirectionsDrawer extends StatelessWidget {
                                         padding: EdgeInsets.only(left: 30.0),
                                         icon: Icon(Icons.accessibility),
                                         color: Colors.transparent,
-                                        onPressed: () {},
+                                        onPressed: null,
                                       ),
                                       Row(
                                         children: <Widget>[

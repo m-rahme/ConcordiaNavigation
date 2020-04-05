@@ -1,7 +1,7 @@
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
-//User location model with user's latitude and longitude.
+///User location model with user's latitude and longitude.
 class UserLocation {
   double latitude;
   double longitude;

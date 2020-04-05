@@ -1,24 +1,23 @@
+/*
 import 'package:concordia_navigation/models/building.dart';
 import 'package:concordia_navigation/models/classroom.dart';
 import 'package:concordia_navigation/models/coordinate.dart';
 import 'package:concordia_navigation/models/floor.dart';
 import 'package:concordia_navigation/models/indoor_interest.dart';
-import 'package:flutter/services.dart';
-import 'dart:convert';
 
 class LoadBuildingInfo {
   static Map indoorData;
 
-  static Future<Map> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/buildings_indoor.json'));
+  // static Future<Map> loadJson() async =>
+  //     json.decode(await rootBundle.loadString('assets/buildings_indoor.json'));
 
-  static Set<Building> buildingSet = Set<Building>();
-  static Set<Floor> floorSet = Set<Floor>();
-  static Set<Classroom> classroomSet = Set<Classroom>();
-  static Set<IndoorInterest> indoorInterestSet = Set<IndoorInterest>();
+  // static Set<Building> buildingSet = Set<Building>();
+  // static Set<Floor> floorSet = Set<Floor>();
+  // static Set<Classroom> classroomSet = Set<Classroom>();
+  // static Set<IndoorInterest> indoorInterestSet = Set<IndoorInterest>();
 
-  static List<Coordinate> roomCoordinates = new List<Coordinate>();
-  static List<Coordinate> nearestCoordinates = new List<Coordinate>();
+  // static List<Coordinate> roomCoordinates = new List<Coordinate>();
+  // static List<Coordinate> nearestCoordinates = new List<Coordinate>();
   static List<double> xRoomList = new List<double>();
   static List<double> yRoomList = new List<double>();
   static List<double> xNearList = new List<double>();
@@ -142,3 +141,5 @@ class LoadBuildingInfo {
     }
   }
 }
+
+*/

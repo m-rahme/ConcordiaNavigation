@@ -5,8 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 
 class BottomSheetWidget extends StatelessWidget {
-  final Building bInformation;
-  BottomSheetWidget(this.bInformation);
+  final Building building;
+  BottomSheetWidget(this.building);
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class BottomSheetWidget extends StatelessWidget {
                           left: 0.0,
                         ),
                         child: Text(
-                          bInformation.buildingAddress,
+                          building.buildingAddress,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.w400,
                             fontSize: 15.0,
@@ -88,7 +88,7 @@ class BottomSheetWidget extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 0.0, left: 0.0),
                         child: Text(
-                          bInformation.buildingName,
+                          building.buildingName,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
