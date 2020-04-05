@@ -1,6 +1,5 @@
 import 'dart:async';
-import 'dart:typed_data';
-import 'package:flutter/services.dart';
+import 'package:concordia_navigation/models/building.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:flutter/material.dart';
@@ -141,8 +140,7 @@ class _MapWidgetState extends State<MapWidget> {
             tiltGesturesEnabled: true,
             buildingsEnabled: false,
             mapType: MapType.normal,
-            polygons: _buildings.polygons,
-            markers: Set.of(setOfMarkers),
+            polygons: _buildings.allPolygons,
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCamera,

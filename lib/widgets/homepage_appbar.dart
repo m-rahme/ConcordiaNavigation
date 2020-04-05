@@ -17,11 +17,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
               IconButton(
             icon: Icon(Icons.wb_sunny),
             onPressed: () {
-              if (buildings.visible) {
-                buildings.clearOutlines();
-              } else {
-                buildings.showOutlines();
-              }
+              buildings.toggleOutline();
             },
           ),
         ),

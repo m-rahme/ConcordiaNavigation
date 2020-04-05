@@ -24,6 +24,21 @@ class _SplashScreenState extends State<SplashScreen>
     // Creating DAO's for campuses
     Campus.sgw = Campus.fromJson(campusData[0]);
     Campus.loy = Campus.fromJson(campusData[1]);
+
+    Campus.sgw.buildings.forEach((building) async {
+      if (building.logo != null)
+        // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
+        //     ImageConfiguration(size: Size(350, 350)), building.logo);
+        Building.icons[building] = BitmapDescriptor.fromBytes(
+            await getBytesFromAsset(building.logo, 350));
+    });
+    Campus.loy.buildings.forEach((building) async {
+      if (building.logo != null)
+        // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
+        //     ImageConfiguration(size: Size(350, 350)), building.logo);
+        Building.icons[building] = BitmapDescriptor.fromBytes(
+            await getBytesFromAsset(building.logo, 350));
+    });
   }
 
   @override
