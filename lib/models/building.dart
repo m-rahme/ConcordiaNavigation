@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/models/floor.dart';
+import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class Building {
@@ -16,6 +17,16 @@ class Building {
   Polygon outline;
 
   static Map<Building, BitmapDescriptor> icons = {};
+
+  Building(
+      {@required this.buildingInitials,
+      @required this.outline,
+      this.buildingName,
+      this.buildingAddress,
+      this.latitude,
+      this.longitude,
+      this.logo,
+      this.floors});
 
   /// All buildings have edges.
   /// Not every building has markers.
