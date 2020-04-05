@@ -71,6 +71,7 @@ flutter:
     - assets/h.png
     - assets/markers/
     - assets/destinations.json
+    - assets/sampleGoogleDirections.json
     - assets/pointsofinterest.json
     - assets/poi_images/
     - assets/buildings_indoor.json

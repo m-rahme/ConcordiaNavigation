@@ -22,10 +22,8 @@ class OutdoorInterestWidget extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: <Widget>[
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: <Widget>[
-                      Padding(
+                  Center(
+                    child: Padding(
                         padding: const EdgeInsets.only(left: 10.0),
                         child: Container(
                           height: SizeConfig.safeBlockHorizontal * 18,
@@ -41,7 +39,6 @@ class OutdoorInterestWidget extends StatelessWidget {
                           ),
                         ),
                       ),
-                    ],
                   ),
                   Container(
                     width: SizeConfig.safeBlockHorizontal * 48,

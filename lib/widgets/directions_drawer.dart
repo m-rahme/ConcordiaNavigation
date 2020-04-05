@@ -18,7 +18,6 @@ class DirectionsDrawer extends StatelessWidget {
     Future<Map<String, Map<String, String>>> fetchItinerary() async {
       Map<String, Map<String, String>> test =
           Provider.of<MapData>(context, listen: false)?.itinerary?.itinerary;
-      await Future.delayed(Duration(seconds: 1));
       return Future.value(test);
     }
 
@@ -87,6 +86,7 @@ class DirectionsDrawer extends StatelessWidget {
                                       Row(
                                         children: <Widget>[
                                           IconButton(
+                                            key: Key("Driving"),
                                             icon: Icon(Icons.directions_car),
                                             color: _swapCar,
                                             onPressed: () {
@@ -105,6 +105,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Transit"),
                                             icon: Icon(Icons.train),
                                             color: _swapTransit,
                                             onPressed: () {
@@ -123,6 +124,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Walking"),
                                             icon: Icon(Icons.directions_walk),
                                             color: _swapWalking,
                                             onPressed: () {
@@ -141,6 +143,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             },
                                           ),
                                           IconButton(
+                                            key: Key("Bicycling"),
                                             icon: Icon(Icons.directions_bike),
                                             color: _swapBike,
                                             onPressed: () {
