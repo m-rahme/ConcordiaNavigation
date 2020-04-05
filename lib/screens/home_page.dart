@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/services/painters.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
@@ -25,8 +26,9 @@ class _HomePageState extends State<HomePage> {
       appBar: HomePageAppBar(),
       drawer: CustomDrawer(),
       body: Stack(children: <Widget>[
-        MapWidget(),
-        DirectionsDrawer(),
+//        MapWidget(),
+//        DirectionsDrawer(),
+        IndoorPage(),
       ]),
     );
   }
