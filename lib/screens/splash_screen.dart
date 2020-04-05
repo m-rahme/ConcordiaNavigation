@@ -1,6 +1,5 @@
 import 'dart:async';
-import 'package:concordia_navigation/services/building_list.dart';
-import 'package:concordia_navigation/services/change_later.dart';
+import 'package:concordia_navigation/models/campus.dart';
 import 'package:concordia_navigation/services/location_search.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/services/shuttle_service.dart';
@@ -18,12 +17,13 @@ class _SplashScreenState extends State<SplashScreen>
   Animation<double> _animation;
 
   Future<void> loadAssets() async {
-    BuildingList.buildingInfo = await BuildingList.loadJson();
-    LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
+    List<dynamic> campusData = await Campus.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
     LocationSearch.classrooms = await LocationSearch.loadJson();
     OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
-    LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
+    // Creating DAO's for campuses
+    Campus.sgw = Campus.fromJson(campusData[0]);
+    Campus.loy = Campus.fromJson(campusData[1]);
   }
 
   @override

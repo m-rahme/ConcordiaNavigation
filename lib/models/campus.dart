@@ -9,6 +9,8 @@ class Campus {
   String initials;
   LatLng latlng;
   Set<Building> buildings = {};
+  static Campus sgw;
+  static Campus loy;
 
   Campus.fromJson(Map json) {
     this.name = json['campusName'];
