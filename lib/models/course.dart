@@ -3,9 +3,9 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 /// This class models a course provided by Google Calendar.
 class Course {
-  String _summary, _description;
-  DateTime _start, _end;
-  String _location;
+  final String _summary, _description;
+  final DateTime _start, _end;
+  final String _location;
 
   // duration in minutes
   int duration() => _end.minute - _start.minute;
@@ -35,7 +35,8 @@ class Course {
 
   /// Returns the uppercase filtered location, according to the regex in the constants file.
   /// The filtered location is N/A if location is null, a null string or unsupported.
-  String filteredLocation() => _location != null && _location != '' && hasClassroomLocation()
-      ? constants.classroomFilter.firstMatch(_location)[0].toUpperCase()
-      : 'N/A';
+  String filteredLocation() =>
+      _location != null && _location != '' && hasClassroomLocation()
+          ? constants.classroomFilter.firstMatch(_location)[0].toUpperCase()
+          : 'N/A';
 }
