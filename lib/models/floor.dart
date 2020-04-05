@@ -6,7 +6,7 @@ class Floor {
 
   // TODO: one set of IndoorLocation and use polymorphism
   Set<Classroom> classrooms = {};
-  Set<IndoorInterest> indoorInterests = {};
+  Set<IndoorPOI> indoorPois = {};
 
   Floor.fromJson(Map json) {
     this.floorNumber = int.parse(json['number']);
@@ -15,6 +15,6 @@ class Floor {
       classrooms.add(Classroom.fromJson(json['classrooms'][i]));
 
     for (int i = 0; i < json['classrooms'].length; i++)
-      indoorInterests.add(IndoorInterest.fromJson(json['classrooms'][i]));
+      indoorPois.add(IndoorPOI.fromJson(json['classrooms'][i]));
   }
 }

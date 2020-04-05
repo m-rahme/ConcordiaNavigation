@@ -14,7 +14,7 @@ class LoadBuildingInfo {
   // static Set<Building> buildingSet = Set<Building>();
   // static Set<Floor> floorSet = Set<Floor>();
   // static Set<Classroom> classroomSet = Set<Classroom>();
-  // static Set<IndoorInterest> indoorInterestSet = Set<IndoorInterest>();
+  // static Set<IndoorPOI> indoorPoiSet = Set<IndoorPOI>();
 
   // static List<Coordinate> roomCoordinates = new List<Coordinate>();
   // static List<Coordinate> nearestCoordinates = new List<Coordinate>();
@@ -71,8 +71,8 @@ class LoadBuildingInfo {
         for (int k = 0;
             k < indoorData['buildings'][i]['floors'][j]['poi'].length;
             k++) {
-          indoorInterestSet.add(
-            IndoorInterest(
+          indoorPoiSet.add(
+            IndoorPOI(
               name: indoorData['buildings'][i]['floors'][j]['poi'][k]['name'],
               roomCoordinates: Coordinate(
                 x: double.parse(
@@ -117,10 +117,10 @@ class LoadBuildingInfo {
 
   void setXList() {
     for (int i = 0; i < trip.length; i++) {
-//      roomCoordinates.add(indoorInterestSet
+//      roomCoordinates.add(indoorPoiSet
 //          .firstWhere((room) => room.name == trip[i])
 //          .roomCoordinates);
-//      nearestCoordinates.add(indoorInterestSet
+//      nearestCoordinates.add(indoorPoiSet
 //          .firstWhere((room) => room.name == trip[i])
 //          .nearestCoordinates);
       roomCoordinates.add(classroomSet
