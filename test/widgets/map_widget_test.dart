@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/services/building_list.dart';
+import 'package:concordia_navigation/models/campus.dart';
 import 'package:flutter_test/flutter_test.dart';
 import '../test_app_widget.dart';
 
@@ -7,7 +7,8 @@ void main() {
     testWidgets(
         'tries to create the map widget but fails because the initial camera location is null',
         (WidgetTester tester) async {
-      BuildingList.buildingInfo = await BuildingList.loadJson();
+      List<dynamic> campusData = await Campus.loadJson();
+      
       await tester.pumpWidget(testAppWidget);
 
       // Wait for LocalizationsDelegate's futures

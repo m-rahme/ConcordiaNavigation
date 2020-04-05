@@ -1,3 +1,4 @@
+/*
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/storage/campus_buildings.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -33,3 +34,5 @@ void main() {
     });
   });
 }
+
+*/
