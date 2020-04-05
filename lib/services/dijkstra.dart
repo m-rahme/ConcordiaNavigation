@@ -26,7 +26,7 @@ class Dijkstra {
     return inOrder.toList();
   }
 
-  Map<String, Node> _compute(String start) {
+  void _compute(String start) {
     // distance from start to start is 0
     _nodes[start].distance = 0;
 
@@ -54,6 +54,5 @@ class Dijkstra {
       });
     }
 
-    return _nodes;
   }
 }
