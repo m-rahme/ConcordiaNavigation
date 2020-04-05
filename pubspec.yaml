@@ -70,11 +70,10 @@ flutter:
     - assets/destinations.json
     - assets/pointsofinterest.json
     - assets/poi_images/
-    - assets/buildings_indoor.json
     - assets/indoor_svg/
     - assets/LaunchImage.png
     - assets/app_logo.png
-    - assets/campus_buildings_info.json
+    - assets/campus_buildings.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
