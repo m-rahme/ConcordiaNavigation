@@ -7,7 +7,7 @@ void main() {
   group('BuildingsData', () {
     BuildingsData buildingsData;
 
-    setUpAll(() async {
+    setUpAll(() {
       buildingsData = new BuildingsData();
     });
 

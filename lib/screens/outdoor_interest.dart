@@ -7,14 +7,15 @@ import 'package:concordia_navigation/services/localization.dart';
 
 //Outdoor Interests Page
 class OutdoorInterest extends StatelessWidget {
-  final OutdoorPOIList outdoorPOIList = OutdoorPOIList();
-
-  Future<List<OutdoorPOI>> callAsyncFetch() {
-    return outdoorPOIList.readPOIFile();
-  }
+  List<OutdoorPOI> sgwList;
+  List<OutdoorPOI> loyolaList;
 
   @override
   Widget build(BuildContext context) {
+    sgwList = OutdoorPOIList.fromJson(OutdoorPOIList.poi[0]).pointOfInterests;
+    loyolaList =
+        OutdoorPOIList.fromJson(OutdoorPOIList.poi[1]).pointOfInterests;
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -32,25 +33,10 @@ class OutdoorInterest extends StatelessWidget {
             ],
           ),
         ),
-        body: FutureBuilder(
-            future: callAsyncFetch(),
-            builder: (context, AsyncSnapshot<List<OutdoorPOI>> snapshot) {
-              if (snapshot.hasData) {
-                return TabBarView(
-                  children: [
-                    new OutdoorInterestWidget(
-                      snapshot: snapshot,
-                      campus: "Sir George Williams",
-                    ),
-                    new OutdoorInterestWidget(
-                      snapshot: snapshot,
-                      campus: "Loyola",
-                    ),
-                  ],
-                );
-              } else
-                return Center(child: CircularProgressIndicator());
-            }),
+        body: TabBarView(children: [
+          OutdoorInterestWidget(sgwList),
+          OutdoorInterestWidget(loyolaList)
+        ]),
       ),
     );
   }
