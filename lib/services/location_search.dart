@@ -33,9 +33,9 @@ class LocationSearch extends SearchDelegate {
     List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
     if (nextClasses != null &&
         nextClasses.isNotEmpty &&
-        nextClasses.first.filteredLocation() != "N/A") {
+        nextClasses.first.filteredLocation != "N/A") {
       var next =
-          nextClasses.first.filteredLocation() + " [NEXT CLASS LOCATION]";
+          nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
       // Avoid duplicates on widget rebuild
       if (!suggestionList.contains(next)) {
         suggestionList.insert(0, next);

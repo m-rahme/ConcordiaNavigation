@@ -42,14 +42,14 @@ class Weekday extends StatelessWidget {
               "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())}",
               style: TextStyle(color: constants.blueColor),
             ),
-            Text(course.filteredLocation()),
+            Text(course.filteredLocation),
           ],
         ),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-              onPressed: (course.filteredLocation() != 'N/A')
+              onPressed: (course.filteredLocation != 'N/A')
                   ? () {
-                      String letter = course.filteredLocation()[0];
+                      String letter = course.filteredLocation[0];
                       if (letter == "H") {
                         Provider.of<MapData>(context, listen: false)
                             .changeCampus('sgw');
