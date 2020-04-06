@@ -4,12 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:google_fonts/google_fonts.dart';
 
+class Arguments {
+  final bool showDirections;
+
+  Arguments(this.showDirections);
+}
+
 class IndoorPage extends StatelessWidget {
   final PageController controller =
       PageController(initialPage: 0, viewportFraction: 1, keepPage: true);
 
   @override
   Widget build(BuildContext context) {
+    final Arguments args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       backgroundColor: constants.whiteColor,
       appBar: AppBar(
@@ -25,7 +32,7 @@ class IndoorPage extends StatelessWidget {
               controller: controller,
               itemCount: Painters.painters.length,
               itemBuilder: (context, index) {
-                return IndoorWidget(index);
+                return IndoorWidget(index, args.showDirections);
               },
             ),
           ),

@@ -1,10 +1,7 @@
-import 'package:concordia_navigation/providers/buildings_data.dart';
-import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/location_search.dart';
-import 'package:provider/provider.dart';
 
 //Custom AppBar shown only in HomePage
 class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -14,6 +11,14 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
       backgroundColor: constants.appColor,
       title: Text("ConNavigation"),
       actions: <Widget>[
+        IconButton(
+          icon: Icon(Icons.domain),
+          tooltip: "Go Indoor!",
+          onPressed: () {
+            Navigator.pushNamed(context, '/indoor',
+                arguments: Arguments(false));
+          },
+        ),
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {

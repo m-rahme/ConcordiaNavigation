@@ -15,6 +15,9 @@ class MapData extends ChangeNotifier {
   double swapButtonTop;
   double locationButtonTop;
 
+  String startLocation = "H937";
+  String endLocation = "MB1.301";
+
   Itinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
