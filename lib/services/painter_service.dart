@@ -12,7 +12,7 @@ class PainterService extends CustomPainter {
     paint.color = Colors.red;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 3.0;
-    String startLocation = "H820";
+    String startLocation = "H920";
     String endLocation = "MB1.338";
     Set<IndoorLocation> locH1 = new Set<IndoorLocation>();
     Set<IndoorLocation> locH8 = new Set<IndoorLocation>();
