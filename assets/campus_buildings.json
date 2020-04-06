@@ -1919,15 +1919,7 @@
 										"distance": 1
 									},
 									{
-										"name": "H8escalatorDown",
-										"distance": 1
-									},
-									{
 										"name": "H9escalatorUp",
-										"distance": 1
-									},
-									{
-										"name": "H9escalatorDown",
 										"distance": 1
 									}
 								]
@@ -3087,10 +3079,6 @@
 										"distance": 2
 									},
 									{
-										"name": "H1escalatorUp",
-										"distance": 1
-									},
-									{
 										"name": "H9escalatorUp",
 										"distance": 1
 									}
@@ -3119,10 +3107,6 @@
 									},
 									{
 										"name": "H1escalatorUp",
-										"distance": 1
-									},
-									{
-										"name": "H9escalatorDown",
 										"distance": 1
 									}
 								]
@@ -4141,14 +4125,6 @@
 									{
 										"name": "H9checkMM",
 										"distance": 1
-									},
-									{
-										"name": "H8escalatorUp",
-										"distance": 1
-									},
-									{
-										"name": "H1escalatorUp",
-										"distance": 1
 									}
 								]
 							},
@@ -4175,10 +4151,6 @@
 									},
 									{
 										"name": "H962",
-										"distance": 1
-									},
-									{
-										"name": "H1escalatorUp",
 										"distance": 1
 									},
 									{
@@ -4689,7 +4661,7 @@
 								"name": "MB1.210",
 								"coordinates": {
 									"room": {
-										"x": 391.05,
+										"x": 465.7,
 										"y": 549.58
 									},
 									"nearest": {
@@ -5198,10 +5170,6 @@
 								"edges": [
 									{
 										"name": "H1entrance",
-										"distance": 1
-									},
-									{
-										"name": "MBescalator",
 										"distance": 1
 									},
 									{

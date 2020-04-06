@@ -12,41 +12,93 @@ class PainterService extends CustomPainter {
     paint.color = Colors.red;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 3.0;
-    String startLocation = "H980";
-    String endLocation = "H961-26";
+    String startLocation = "H820";
+    String endLocation = "MB1.338";
+    Set<IndoorLocation> locH1 = new Set<IndoorLocation>();
+    Set<IndoorLocation> locH8 = new Set<IndoorLocation>();
+    Set<IndoorLocation> locH9 = new Set<IndoorLocation>();
+    Set<IndoorLocation> locMB = new Set<IndoorLocation>();
 
     List<Node> result = IndoorData.shortest.pathTo(startLocation, endLocation);
 
     Path path = Path();
 
-    void drawPath() {
-      for (Node node in result) {
-        // get the indoor location with the same name
-        IndoorLocation loc = IndoorData.indoors[node.name];
-        if (node == result.first) {
-          path.moveTo((940 * loc.room.x) / 1000, (862 * loc.room.y / 920));
-        }
-        path.lineTo((940 * loc.nearest.x) / 1000, (862 * loc.nearest.y / 920));
-        if (node == result.last) {
-          path.lineTo((940 * loc.room.x) / 1000, (862 * loc.room.y / 920));
-        }
+    for (Node node in result) {
+      switch (node.name.substring(0, 2)) {
+        case "H1":
+          locH1.add(IndoorData.indoors[node.name]);
+          break;
+        case "H8":
+          locH8.add(IndoorData.indoors[node.name]);
+          break;
+        case "H9":
+          locH9.add(IndoorData.indoors[node.name]);
+          break;
+        case "MB":
+          locMB.add(IndoorData.indoors[node.name]);
+          break;
       }
     }
 
-    if (startLocation.substring(0, 2) == endLocation.substring(0, 2)) {
-      if (startLocation.substring(0, 2) == "H1") {
-        if (index == 0) drawPath();
-      }
-      if (startLocation.substring(0, 2) == "H8") {
-        if (index == 1) drawPath();
-      }
-      if (startLocation.substring(0, 2) == "H9") {
-        if (index == 2) drawPath();
-      }
-      if (startLocation.substring(0, 2) == "MB") {
-        if (index == 3) drawPath();
-      }
+    switch (index) {
+      case 0:
+        for (IndoorLocation indoor in locH1) {
+          if (indoor == locH1.first) {
+            path.moveTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+          path.lineTo(
+              (940 * indoor.nearest.x) / 1000, (862 * indoor.nearest.y / 920));
+          if (indoor == locH1.last) {
+            path.lineTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+        }
+        break;
+      case 1:
+        for (IndoorLocation indoor in locH8) {
+          if (indoor == locH8.first) {
+            path.moveTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+          path.lineTo(
+              (940 * indoor.nearest.x) / 1000, (862 * indoor.nearest.y / 920));
+          if (indoor == locH8.last) {
+            path.lineTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+        }
+        break;
+      case 2:
+        for (IndoorLocation indoor in locH9) {
+          if (indoor == locH9.first) {
+            path.moveTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+          path.lineTo(
+              (940 * indoor.nearest.x) / 1000, (862 * indoor.nearest.y / 920));
+          if (indoor == locH9.last) {
+            path.lineTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+        }
+        break;
+      case 3:
+        for (IndoorLocation indoor in locMB) {
+          if (indoor == locMB.first) {
+            path.moveTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+          path.lineTo(
+              (940 * indoor.nearest.x) / 1000, (862 * indoor.nearest.y / 920));
+          if (indoor == locMB.last) {
+            path.lineTo(
+                (940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+          }
+        }
+        break;
     }
+
     canvas.drawPath(path, paint);
   }
 
