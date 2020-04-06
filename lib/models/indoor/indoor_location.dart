@@ -9,6 +9,7 @@ abstract class IndoorLocation {
 
   IndoorLocation.fromJson(Map json)
       : assert(json['name'] != null), // required
+        name = json['name'],
         room = Coordinate.fromJson(json['coordinates']['room']),
         nearest = Coordinate.fromJson(json['coordinates']['nearest']);
 }
