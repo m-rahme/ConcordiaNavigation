@@ -3613,16 +3613,12 @@
 										"y": 137.7
 									}
 								},
-                              "edges": [
-                                {
-                                  "name": "H945",
-                                  "distance": 1
-                                },
-                                {
-                                  "name": "H9checkTM",
-                                  "distance": 1
-                                }
-                              ]
+								"edges": [
+									{
+										"name": "H945",
+										"distance": 1
+									}
+								]
 							},
 							{
 								"name": "H8checkTM",
@@ -3659,16 +3655,12 @@
 										"y": 75.1
 									}
 								},
-                              "edges": [
-                                {
-                                  "name": "H9checkTM",
-                                  "distance": 2
-                                },
-                                {
-                                  "name": "H9checkTR",
-                                  "distance": 1
-                                }
-                              ]
+								"edges": [
+									{
+										"name": "H9checkTR",
+										"distance": 1
+									}
+								]
 							},
 							{
 								"name": "H9checkTR",
