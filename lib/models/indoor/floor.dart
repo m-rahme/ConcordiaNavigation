@@ -9,7 +9,7 @@ class Floor {
   Set<Classroom> classrooms = {};
   Set<IndoorPOI> indoorPois = {};
 
-  Floor.fromJson(Map json) {
+  Floor.fromJson(Map json) : assert(json['number'] != null) {
     this.floorNumber = int.parse(json['number']);
 
     for (int i = 0; i < json['classrooms'].length; i++) {

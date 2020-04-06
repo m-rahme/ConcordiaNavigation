@@ -33,7 +33,7 @@ class Building {
   ///
   /// Therefore, some of the parameters are optional.
   /// This is an example of converse error. thanks u
-  Building.fromJson(Map json) {
+  Building.fromJson(Map json) : assert(json['buildingInitials'] != null) {
     // Optional parameters - can be null (if no marker, or if indoor unsupported for this floor)
     this.buildingName = json['buildingName'];
     this.buildingAddress = json['buildingAddress'];
