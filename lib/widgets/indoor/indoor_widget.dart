@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/services/painter_service.dart';
 import 'package:concordia_navigation/services/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:zoom_widget/zoom_widget.dart';
@@ -26,9 +27,9 @@ class IndoorWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Painters.painters[index],
-//              CustomPaint(
-//                painter: PainterService(),
-//              ),
+             CustomPaint(
+               painter: PainterService(),
+             ),
             ],
           ),
         ),
