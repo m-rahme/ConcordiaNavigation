@@ -1925,6 +1925,37 @@
 								]
 							},
 							{
+								"name": "H1escalatorUp2",
+								"coordinates": {
+									"room": {
+										"x": 771,
+										"y": 510
+									},
+									"nearest": {
+										"x": 771,
+										"y": 560
+									}
+								},
+								"edges": [
+									{
+										"name": "H1escalatorDown",
+										"distance": 1
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									},
+									{
+										"name": "H1exitMR",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorDown",
+										"distance": 1
+									}
+								]
+							},
+							{
 								"name": "H1escalatorDown",
 								"coordinates": {
 									"room": {
@@ -3108,6 +3139,10 @@
 									{
 										"name": "H1escalatorUp",
 										"distance": 1
+									},
+									{
+										"name": "H9escalatorDown",
+										"distance": 1
 									}
 								]
 							}
@@ -4154,7 +4189,7 @@
 										"distance": 1
 									},
 									{
-										"name": "H8escalatorDown",
+										"name": "H1escalatorUp2",
 										"distance": 1
 									}
 								]
