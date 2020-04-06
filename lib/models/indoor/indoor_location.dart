@@ -8,6 +8,7 @@ abstract class IndoorLocation {
   IndoorLocation({this.name, this.room, this.nearest});
 
   IndoorLocation.fromJson(Map json)
-      : room = Coordinate.fromJson(json['coordinates']['room']),
+      : name = json['name'],
+        room = Coordinate.fromJson(json['coordinates']['room']),
         nearest = Coordinate.fromJson(json['coordinates']['nearest']);
 }

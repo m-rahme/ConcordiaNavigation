@@ -1,12 +1,13 @@
 class Node implements Comparable<Node> {
   String name;
   int distance;
-  Map<Node, int> edges;
+  Map<Node, int> edges = {};
   Node previous;
 
-  Node(this.name, this.edges, [this.distance = 9999]) {
-    this.edges?.forEach((key, value) => key.edges[this] = value);
-  }
+  Node(this.name, [this.distance = 9999]);
+
+  /// checks if the map is already
+  void setEdge(Node node, int distance) => edges[node] = distance;
 
   @override
   int compareTo(Node other) {
