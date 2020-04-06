@@ -3617,11 +3617,15 @@
 									{
 										"name": "H945",
 										"distance": 1
+									},
+									{
+										"name": "H9checkTM",
+										"distance": 1
 									}
 								]
 							},
 							{
-								"name": "H8checkTM",
+								"name": "H9checkTM",
 								"coordinates": {
 									"room": {
 										"x": 629.4,
@@ -3659,6 +3663,10 @@
 									{
 										"name": "H9checkTR",
 										"distance": 1
+									},
+									{
+										"name": "H9checkTM",
+										"distance": 2
 									}
 								]
 							},
