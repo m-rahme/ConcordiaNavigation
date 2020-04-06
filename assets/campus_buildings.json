@@ -1703,7 +1703,7 @@
 						"number": "1",
 						"classrooms": [
 							{
-								"name": "110",
+								"name": "H110",
 								"coordinates": {
 									"room": {
 										"x": 255,
@@ -1714,13 +1714,19 @@
 										"y": 400
 									}
 								},
-								"edges":[
-									{"name": "entrance", "distance": 3},
-									{"name": "checkMM", "distance": 1 }
+								"edges": [
+									{
+										"name": "entranceH1",
+										"distance": 3
+									},
+									{
+										"name": "checkMMH1",
+										"distance": 2
+									}
 								]
 							},
 							{
-								"name": "checkMM",
+								"name": "checkMMH1",
 								"coordinates": {
 									"room": {
 										"x": 535,
@@ -1731,16 +1737,29 @@
 										"y": 560
 									}
 								},
-								"edges":[
-									{"name": "entrance", "distance": 2},
-									{"name": "women", "distance": 2},
-									{"name": "escalatorUp", "distance": 2}
+								"edges": [
+									{
+										"name": "H110",
+										"distance": 2
+									},
+									{
+										"name": "entranceH1",
+										"distance": 2
+									},
+									{
+										"name": "womenH1",
+										"distance": 2
+									},
+									{
+										"name": "escalatorUpH1",
+										"distance": 2
+									}
 								]
 							}
 						],
 						"poi": [
 							{
-								"name": "exitMR",
+								"name": "exitMRH1",
 								"coordinates": {
 									"room": {
 										"x": 952,
@@ -1751,14 +1770,23 @@
 										"y": 560
 									}
 								},
-								"edges":[
-									{"name": "security", "distance": 2},
-									{"name": "escalatorDown", "distance": 1},
-									{"name": "escalatorUp", "distance": 1}
+								"edges": [
+									{
+										"name": "security",
+										"distance": 2
+									},
+									{
+										"name": "escalatorDownH1",
+										"distance": 1
+									},
+									{
+										"name": "escalatorUpH1",
+										"distance": 1
+									}
 								]
 							},
 							{
-								"name": "women",
+								"name": "womenH1",
 								"coordinates": {
 									"room": {
 										"x": 500,
@@ -1769,13 +1797,19 @@
 										"y": 230
 									}
 								},
-								"edges":[
-									{"name": "men", "distance": 1},
-									{"name": "elevator", "distance": 2}
+								"edges": [
+									{
+										"name": "menH1",
+										"distance": 1
+									},
+									{
+										"name": "elevatorH1",
+										"distance": 2
+									}
 								]
 							},
 							{
-								"name": "men",
+								"name": "menH1",
 								"coordinates": {
 									"room": {
 										"x": 500,
@@ -1785,10 +1819,16 @@
 										"x": 535,
 										"y": 100
 									}
-								}
+								},
+								"edges": [
+									{
+										"name": "womenH1",
+										"distance": 1
+									}
+								]
 							},
 							{
-								"name": "entrance",
+								"name": "entranceH1",
 								"coordinates": {
 									"room": {
 										"x": 325,
@@ -1799,12 +1839,23 @@
 										"y": 830
 									}
 								},
-								"edges":[
-									{"name": "escalatorDown", "distance": 4}
+								"edges": [
+									{
+										"name": "escalatorDownH1",
+										"distance": 4
+									},
+									{
+										"name": "checkMMH1",
+										"distance": 2
+									},
+									{
+										"name": "H110",
+										"distance": 3
+									}
 								]
 							},
 							{
-								"name": "elevator",
+								"name": "elevatorH1",
 								"coordinates": {
 									"room": {
 										"x": 707,
@@ -1815,12 +1866,19 @@
 										"y": 230
 									}
 								},
-								"edges":[
-									{"name": "security", "distance": 1}
+								"edges": [
+									{
+										"name": "security",
+										"distance": 1
+									},
+									{
+										"name": "womenH1",
+										"distance": 2
+									}
 								]
 							},
 							{
-								"name": "escalatorUp",
+								"name": "escalatorUpH1",
 								"coordinates": {
 									"room": {
 										"x": 771,
@@ -1831,12 +1889,23 @@
 										"y": 560
 									}
 								},
-								"edges":[
-									{"name": "escalatorDown", "distance": 1}
+								"edges": [
+									{
+										"name": "escalatorDownH1",
+										"distance": 1
+									},
+									{
+										"name": "checkMMH1",
+										"distance": 2
+									},
+									{
+										"name": "exitMRH1",
+										"distance": 1
+									}
 								]
 							},
 							{
-								"name": "escalatorDown",
+								"name": "escalatorDownH1",
 								"coordinates": {
 									"room": {
 										"x": 835,
@@ -1846,7 +1915,21 @@
 										"x": 880,
 										"y": 831
 									}
-								}
+								},
+								"edges": [
+									{
+										"name": "escalatorUpH1",
+										"distance": 1
+									},
+									{
+										"name": "entranceH1",
+										"distance": 4
+									},
+									{
+										"name": "exitMRH1",
+										"distance": 1
+									}
+								]
 							},
 							{
 								"name": "security",
@@ -1859,7 +1942,17 @@
 										"x": 880,
 										"y": 230
 									}
-								}
+								},
+								"edges": [
+									{
+										"name": "elevatorH1",
+										"distance": 1
+									},
+									{
+										"name": "exitMRH1",
+										"distance": 2
+									}
+								]
 							}
 						]
 					},
@@ -1867,7 +1960,7 @@
 						"number": "8",
 						"classrooms": [
 							{
-								"number": "801",
+							 "name": "H801",
 								"coordinates": {
 									"room": {
 										"x": 157.6,
@@ -1880,7 +1973,7 @@
 								}
 							},
 							{
-								"number": "803",
+							 "name": "H803",
 								"coordinates": {
 									"room": {
 										"x": 240.4,
@@ -1893,7 +1986,7 @@
 								}
 							},
 							{
-								"number": "805",
+							 "name": "H805",
 								"coordinates": {
 									"room": {
 										"x": 337.3,
@@ -1906,7 +1999,7 @@
 								}
 							},
 							{
-								"number": "807",
+							 "name": "H807",
 								"coordinates": {
 									"room": {
 										"x": 471.0,
@@ -1919,7 +2012,7 @@
 								}
 							},
 							{
-								"number": "checkTM",
+							 "name": "checkTM",
 								"coordinates": {
 									"room": {
 										"x": 550.0,
@@ -1932,7 +2025,7 @@
 								}
 							},
 							{
-								"number": "811",
+							 "name": "H811",
 								"coordinates": {
 									"room": {
 										"x": 614.5,
@@ -1945,7 +2038,7 @@
 								}
 							},
 							{
-								"number": "813",
+							 "name": "H813",
 								"coordinates": {
 									"room": {
 										"x": 709.7,
@@ -1958,7 +2051,7 @@
 								}
 							},
 							{
-								"number": "815",
+							 "name": "H815",
 								"coordinates": {
 									"room": {
 										"x": 834.0,
@@ -1971,7 +2064,7 @@
 								}
 							},
 							{
-								"number": "817",
+							 "name": "H817",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -1984,7 +2077,7 @@
 								}
 							},
 							{
-								"number": "819",
+							 "name": "H819",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -1997,7 +2090,7 @@
 								}
 							},
 							{
-								"number": "820",
+							 "name": "H820",
 								"coordinates": {
 									"room": {
 										"x": 801.8,
@@ -2010,7 +2103,7 @@
 								}
 							},
 							{
-								"number": "821",
+							 "name": "H821",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -2023,7 +2116,7 @@
 								}
 							},
 							{
-								"number": "822",
+							 "name": "H822",
 								"coordinates": {
 									"room": {
 										"x": 803.7,
@@ -2036,7 +2129,7 @@
 								}
 							},
 							{
-								"number": "823",
+							 "name": "H823",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -2049,7 +2142,7 @@
 								}
 							},
 							{
-								"number": "825",
+							 "name": "H825",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -2062,7 +2155,7 @@
 								}
 							},
 							{
-								"number": "827",
+							 "name": "H827",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -2075,7 +2168,7 @@
 								}
 							},
 							{
-								"number": "829",
+							 "name": "H829",
 								"coordinates": {
 									"room": {
 										"x": 861.8,
@@ -2088,7 +2181,7 @@
 								}
 							},
 							{
-								"number": "831",
+							 "name": "H831",
 								"coordinates": {
 									"room": {
 										"x": 876.7,
@@ -2101,7 +2194,7 @@
 								}
 							},
 							{
-								"number": "832",
+							 "name": "H832",
 								"coordinates": {
 									"room": {
 										"x": 629.5,
@@ -2114,7 +2207,7 @@
 								}
 							},
 							{
-								"number": "833",
+							 "name": "H833",
 								"coordinates": {
 									"room": {
 										"x": 846.2,
@@ -2127,7 +2220,7 @@
 								}
 							},
 							{
-								"number": "835",
+							 "name": "H835",
 								"coordinates": {
 									"room": {
 										"x": 714.2,
@@ -2140,7 +2233,7 @@
 								}
 							},
 							{
-								"number": "837",
+							 "name": "H837",
 								"coordinates": {
 									"room": {
 										"x": 629.5,
@@ -2153,7 +2246,7 @@
 								}
 							},
 							{
-								"number": "checkBM",
+							 "name": "checkBM",
 								"coordinates": {
 									"room": {
 										"x": 550.0,
@@ -2166,7 +2259,7 @@
 								}
 							},
 							{
-								"number": "841",
+							 "name": "H841",
 								"coordinates": {
 									"room": {
 										"x": 466.5,
@@ -2179,7 +2272,7 @@
 								}
 							},
 							{
-								"number": "842",
+							 "name": "H842",
 								"coordinates": {
 									"room": {
 										"x": 395.6,
@@ -2192,7 +2285,7 @@
 								}
 							},
 							{
-								"number": "843",
+							 "name": "H843",
 								"coordinates": {
 									"room": {
 										"x": 395.6,
@@ -2205,7 +2298,7 @@
 								}
 							},
 							{
-								"number": "845",
+							 "name": "H845",
 								"coordinates": {
 									"room": {
 										"x": 297.4,
@@ -2218,7 +2311,7 @@
 								}
 							},
 							{
-								"number": "847",
+							 "name": "H847",
 								"coordinates": {
 									"room": {
 										"x": 160.8,
@@ -2231,7 +2324,7 @@
 								}
 							},
 							{
-								"number": "849",
+							 "name": "H849",
 								"coordinates": {
 									"room": {
 										"x": 120.4,
@@ -2244,7 +2337,7 @@
 								}
 							},
 							{
-								"number": "853",
+							 "name": "H853",
 								"coordinates": {
 									"room": {
 										"x": 139.8,
@@ -2257,7 +2350,7 @@
 								}
 							},
 							{
-								"number": "854",
+							 "name": "H854",
 								"coordinates": {
 									"room": {
 										"x": 202.6,
@@ -2270,7 +2363,7 @@
 								}
 							},
 							{
-								"number": "855",
+							 "name": "H855",
 								"coordinates": {
 									"room": {
 										"x": 139.8,
@@ -2283,7 +2376,7 @@
 								}
 							},
 							{
-								"number": "857",
+							 "name": "H857",
 								"coordinates": {
 									"room": {
 										"x": 139.8,
@@ -2296,7 +2389,7 @@
 								}
 							},
 							{
-								"number": "859",
+							 "name": "H859",
 								"coordinates": {
 									"room": {
 										"x": 139.8,
@@ -2309,7 +2402,7 @@
 								}
 							},
 							{
-								"number": "861",
+							 "name": "H861",
 								"coordinates": {
 									"room": {
 										"x": 139.8,
@@ -2322,7 +2415,7 @@
 								}
 							},
 							{
-								"number": "862",
+							 "name": "H862",
 								"coordinates": {
 									"room": {
 										"x": 353.8,
@@ -2335,7 +2428,7 @@
 								}
 							},
 							{
-								"number": "863",
+							 "name": "H863",
 								"coordinates": {
 									"room": {
 										"x": 126.3,
@@ -2472,7 +2565,7 @@
 						"number": "9",
 						"classrooms": [
 							{
-								"number": "903",
+							 "name": "H903",
 								"coordinates": {
 									"room": {
 										"x": 748.5,
@@ -2485,7 +2578,7 @@
 								}
 							},
 							{
-								"number": "907",
+							 "name": "H907",
 								"coordinates": {
 									"room": {
 										"x": 577.6,
@@ -2498,7 +2591,7 @@
 								}
 							},
 							{
-								"number": "909",
+							 "name": "H909",
 								"coordinates": {
 									"room": {
 										"x": 486.3,
@@ -2511,7 +2604,7 @@
 								}
 							},
 							{
-								"number": "911",
+							 "name": "H911",
 								"coordinates": {
 									"room": {
 										"x": 397.2,
@@ -2524,7 +2617,7 @@
 								}
 							},
 							{
-								"number": "913",
+							 "name": "H913",
 								"coordinates": {
 									"room": {
 										"x": 298.1,
@@ -2537,7 +2630,7 @@
 								}
 							},
 							{
-								"number": "915",
+							 "name": "H915",
 								"coordinates": {
 									"room": {
 										"x": 168.1,
@@ -2550,7 +2643,7 @@
 								}
 							},
 							{
-								"number": "917",
+							 "name": "H917",
 								"coordinates": {
 									"room": {
 										"x": 142,
@@ -2563,7 +2656,7 @@
 								}
 							},
 							{
-								"number": "checkBL",
+							 "name": "checkBL",
 								"coordinates": {
 									"room": {
 										"x": 161.1,
@@ -2576,7 +2669,7 @@
 								}
 							},
 							{
-								"number": "919",
+							 "name": "H919",
 								"coordinates": {
 									"room": {
 										"x": 141,
@@ -2589,7 +2682,7 @@
 								}
 							},
 							{
-								"number": "921",
+							 "name": "H921",
 								"coordinates": {
 									"room": {
 										"x": 142,
@@ -2602,7 +2695,7 @@
 								}
 							},
 							{
-								"number": "923",
+							 "name": "H923",
 								"coordinates": {
 									"room": {
 										"x": 142,
@@ -2615,7 +2708,7 @@
 								}
 							},
 							{
-								"number": "920",
+							 "name": "H920",
 								"coordinates": {
 									"room": {
 										"x": 200.6,
@@ -2628,7 +2721,7 @@
 								}
 							},
 							{
-								"number": "980",
+							 "name": "H980",
 								"coordinates": {
 									"room": {
 										"x": 232.8,
@@ -2641,7 +2734,7 @@
 								}
 							},
 							{
-								"number": "927-4",
+							 "name": "H927-4",
 								"coordinates": {
 									"room": {
 										"x": 179.6,
@@ -2654,7 +2747,7 @@
 								}
 							},
 							{
-								"number": "927",
+							 "name": "H927",
 								"coordinates": {
 									"room": {
 										"x": 161.2,
@@ -2667,7 +2760,7 @@
 								}
 							},
 							{
-								"number": "929",
+							 "name": "H929",
 								"coordinates": {
 									"room": {
 										"x": 190.7,
@@ -2680,7 +2773,7 @@
 								}
 							},
 							{
-								"number": "933",
+							 "name": "H933",
 								"coordinates": {
 									"room": {
 										"x": 285.3,
@@ -2693,7 +2786,7 @@
 								}
 							},
 							{
-								"number": "937",
+							 "name": "H937",
 								"coordinates": {
 									"room": {
 										"x": 372,
@@ -2706,7 +2799,7 @@
 								}
 							},
 							{
-								"number": "945",
+							 "name": "H945",
 								"coordinates": {
 									"room": {
 										"x": 623.9,
@@ -2719,7 +2812,7 @@
 								}
 							},
 							{
-								"number": "943",
+							 "name": "H943",
 								"coordinates": {
 									"room": {
 										"x": 623.9,
@@ -2732,7 +2825,7 @@
 								}
 							},
 							{
-								"number": "checkTM",
+							 "name": "checkTM",
 								"coordinates": {
 									"room": {
 										"x": 629.4,
@@ -2745,7 +2838,7 @@
 								}
 							},
 							{
-								"number": "961-26",
+							 "name": "H961-26",
 								"coordinates": {
 									"room": {
 										"x": 819.5,
@@ -2758,7 +2851,7 @@
 								}
 							},
 							{
-								"number": "checkTR",
+							 "name": "checkTR",
 								"coordinates": {
 									"room": {
 										"x": 930.3,
@@ -2771,7 +2864,7 @@
 								}
 							},
 							{
-								"number": "961.14",
+							 "name": "H961.14",
 								"coordinates": {
 									"room": {
 										"x": 917.8,
@@ -2784,7 +2877,7 @@
 								}
 							},
 							{
-								"number": "checkMR",
+							 "name": "checkMR",
 								"coordinates": {
 									"room": {
 										"x": 930.3,
@@ -2797,7 +2890,7 @@
 								}
 							},
 							{
-								"number": "968",
+							 "name": "H968",
 								"coordinates": {
 									"room": {
 										"x": 725.9,
@@ -2810,7 +2903,7 @@
 								}
 							},
 							{
-								"number": "966",
+							 "name": "H966",
 								"coordinates": {
 									"room": {
 										"x": 608.1,
@@ -2823,7 +2916,7 @@
 								}
 							},
 							{
-								"number": "962",
+							 "name": "H962",
 								"coordinates": {
 									"room": {
 										"x": 653.1,
@@ -2836,7 +2929,7 @@
 								}
 							},
 							{
-								"number": "964",
+							 "name": "H964",
 								"coordinates": {
 									"room": {
 										"x": 747.5,
@@ -2849,7 +2942,7 @@
 								}
 							},
 							{
-								"number": "963",
+							 "name": "H963",
 								"coordinates": {
 									"room": {
 										"x": 829.4,
@@ -2862,7 +2955,7 @@
 								}
 							},
 							{
-								"number": "965",
+							 "name": "H965",
 								"coordinates": {
 									"room": {
 										"x": 862.9,
@@ -2875,7 +2968,7 @@
 								}
 							},
 							{
-								"number": "967",
+							 "name": "H967",
 								"coordinates": {
 									"room": {
 										"x": 861.6,
@@ -2888,7 +2981,7 @@
 								}
 							},
 							{
-								"number": "checkML",
+							 "name": "checkML",
 								"coordinates": {
 									"room": {
 										"x": 376.3,
@@ -2901,7 +2994,7 @@
 								}
 							},
 							{
-								"number": "checkMM",
+							 "name": "checkMM",
 								"coordinates": {
 									"room": {
 										"x": 486.3,
@@ -3466,7 +3559,7 @@
 						"number": "1",
 						"classrooms": [
 							{
-								"number": "1.350",
+							 "name": "MB1.350",
 								"coordinates": {
 									"room": {
 										"x": 181.16,
@@ -3479,7 +3572,7 @@
 								}
 							},
 							{
-								"number": "1.345",
+							 "name": "MB1.345",
 								"coordinates": {
 									"room": {
 										"x": 181.16,
@@ -3492,7 +3585,7 @@
 								}
 							},
 							{
-								"number": "1.338",
+							 "name": "MB1.338",
 								"coordinates": {
 									"room": {
 										"x": 200.05,
@@ -3505,7 +3598,7 @@
 								}
 							},
 							{
-								"number": "1.210",
+							 "name": "MB1.210",
 								"coordinates": {
 									"room": {
 										"x": 391.05,
@@ -3518,7 +3611,7 @@
 								}
 							},
 							{
-								"number": "1.309",
+							 "name": "MB1.309",
 								"coordinates": {
 									"room": {
 										"x": 545.33,
@@ -3531,7 +3624,7 @@
 								}
 							},
 							{
-								"number": "1.301",
+							 "name": "MB1.301",
 								"coordinates": {
 									"room": {
 										"x": 607.78,
@@ -3544,7 +3637,7 @@
 								}
 							},
 							{
-								"number": "1.424",
+							 "name": "MB1.424",
 								"coordinates": {
 									"room": {
 										"x": 637.84,
@@ -3557,7 +3650,7 @@
 								}
 							},
 							{
-								"number": "1.130",
+							 "name": "MB1.130",
 								"coordinates": {
 									"room": {
 										"x": 729.45,
@@ -3570,7 +3663,7 @@
 								}
 							},
 							{
-								"number": "1.437",
+							 "name": "MB1.437",
 								"coordinates": {
 									"room": {
 										"x": 775.08,
@@ -3583,7 +3676,7 @@
 								}
 							},
 							{
-								"number": "1.115",
+							 "name": "MB1.115",
 								"coordinates": {
 									"room": {
 										"x": 901.05,
@@ -3596,7 +3689,7 @@
 								}
 							},
 							{
-								"number": "checkBL",
+							 "name": "checkBL",
 								"coordinates": {
 									"room": {
 										"x": 169.81,
@@ -3609,7 +3702,7 @@
 								}
 							},
 							{
-								"number": "checkML",
+							 "name": "checkML",
 								"coordinates": {
 									"room": {
 										"x": 495.79,
@@ -3622,7 +3715,7 @@
 								}
 							},
 							{
-								"number": "checkMM",
+							 "name": "checkMM",
 								"coordinates": {
 									"room": {
 										"x": 545.31,
@@ -3635,7 +3728,7 @@
 								}
 							},
 							{
-								"number": "checkMR",
+							 "name": "checkMR",
 								"coordinates": {
 									"room": {
 										"x": 817.15,
@@ -3648,7 +3741,7 @@
 								}
 							},
 							{
-								"number": "checkTR",
+							 "name": "checkTR",
 								"coordinates": {
 									"room": {
 										"x": 806.05,
@@ -3683,7 +3776,7 @@
 										"y": 397.63
 									},
 									"nearest": {
-										"x": 767.8,
+										"x": 788.79,
 										"y": 377.2
 									}
 								}
@@ -3696,7 +3789,7 @@
 										"y": 355.95
 									},
 									"nearest": {
-										"x": 767.8,
+										"x": 788.79,
 										"y": 377.2
 									}
 								}
@@ -3767,7 +3860,7 @@
 								}
 							},
 							{
-								"name": "entrance",
+								"name": "entrance5",
 								"coordinates": {
 									"room": {
 										"x": 879.07,
