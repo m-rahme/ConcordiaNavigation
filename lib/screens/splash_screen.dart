@@ -2,6 +2,8 @@ import 'dart:async';
 import 'dart:typed_data';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:concordia_navigation/services/location_search.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
@@ -42,6 +44,7 @@ class _SplashScreenState extends State<SplashScreen>
     Campus.sgw = Campus.fromJson(campusData[0]);
     Campus.loy = Campus.fromJson(campusData[1]);
 
+    IndoorData.shortest = Dijkstra.fromJson(campusData);
     Campus.sgw.buildings.forEach((building) async {
       if (building.logo != null)
         // Building.icons[building] = await BitmapDescriptor.fromAssetImage(

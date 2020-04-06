@@ -1,11 +1,60 @@
 import 'dart:collection';
 import 'package:collection/collection.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/node.dart';
 
 /// Class for finding the shortest path between nodes.
 class Dijkstra {
   Map<String, Node> _nodes;
   PriorityQueue<Node> _pq;
+
+  static Dijkstra fromJson(List json) {
+    Map<String, Node> graph = {};
+
+    json.forEach((campus) => campus['buildings']
+        ?.forEach((building) => building['floors']?.forEach((floor) {
+              if (floor['classrooms'] != null && floor['poi'] != null) {
+                floor['classrooms'].forEach((classroom) {
+                  if (classroom['name'] != null) {
+                    graph[classroom['name']] = Node(classroom['name']);
+                  }
+                });
+                floor['poi'].forEach((poi) {
+                  if (poi['name'] != null) {
+                    graph[poi['name']] = Node(poi['name']);
+                  }
+                });
+              }
+            })));
+
+    json.forEach((campus) => campus['buildings']
+        ?.forEach((building) => building['floors']?.forEach((floor) {
+              if (floor['classrooms'] != null) {
+                floor['classrooms']?.forEach((classroom) {
+                  if (classroom['edges'] != null) {
+                    classroom['edges'].forEach((edge) {
+                      if (edge['name'] != null)
+                        graph[classroom['name']]
+                            .setEdge(graph[edge['name']], edge['distance']);
+                    });
+                  }
+                });
+                floor['poi']?.forEach((poi) {
+                  if (poi['edges'] != null) {
+                    poi['edges'].forEach((edge) {
+                      if (edge['name'] != null)
+                        graph[poi['name']]
+                            .setEdge(graph[edge['name']], edge['distance']);
+                    });
+                  }
+                });
+              }
+            })));
+
+    Dijkstra dijkstra = Dijkstra.fromGraph(graph);
+
+    return dijkstra;
+  }
 
   Dijkstra.fromGraph(Map<String, Node> nodes)
       : _nodes = nodes,
@@ -53,6 +102,5 @@ class Dijkstra {
         }
       });
     }
-
   }
 }
