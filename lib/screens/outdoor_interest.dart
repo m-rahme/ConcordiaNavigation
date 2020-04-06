@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 
 //Outdoor Interests Page
+// ignore: must_be_immutable
 class OutdoorInterest extends StatelessWidget {
   List<OutdoorPOI> sgwList;
   List<OutdoorPOI> loyolaList;
