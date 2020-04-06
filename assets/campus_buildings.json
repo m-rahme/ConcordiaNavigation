@@ -1878,7 +1878,11 @@
 									{
 										"name": "H8elevator",
 										"distance": 1
-									}
+									},
+                                    {
+                                        "name": "H9elevator",
+                                        "distance": 1
+                                    }
 								]
 							},
 							{
@@ -1913,7 +1917,15 @@
 									{
 										"name": "H8escalatorDown",
 										"distance": 1
-									}
+									},
+                                    {
+                                        "name": "H9escalatorUp",
+                                        "distance": 1
+                                    },
+                                    {
+                                        "name": "H9escalatorDown",
+                                        "distance": 1
+                                    }
 								]
 							},
 							{
@@ -3034,7 +3046,11 @@
 									{
 										"name": "H1elevator",
 										"distance": 1
-									}
+									},
+                                    {
+                                        "name": "H9elevator",
+                                        "distance": 1
+                                    }
 								]
 							},
 							{
@@ -3069,7 +3085,11 @@
 									{
 										"name": "H1escalatorUP",
 										"distance": 1
-									}
+									},
+                                    {
+                                        "name": "H9escalatorUp",
+                                         "distance": 1
+                                    }
 								]
 							},
 							{
@@ -3096,7 +3116,11 @@
 									{
 										"name": "H1escalatorUP",
 										"distance": 1
-									}
+									},
+                                    {
+                                        "name": "H9escalatorDown",
+                                        "distance": 1
+                                    }
 								]
 							}
 						]
@@ -3115,7 +3139,17 @@
 										"x": 748.5,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H967",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H907",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "H907",
@@ -3128,7 +3162,21 @@
 										"x": 577.6,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H903",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H9women",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H909",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H909",
@@ -3141,7 +3189,21 @@
 										"x": 486.3,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H907",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H911",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9escalatorDown",
+                                  "distance": 3
+                                }
+                              ]
 							},
 							{
 								"name": "H911",
@@ -3154,7 +3216,21 @@
 										"x": 397.2,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H909",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9men",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H913",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H913",
@@ -3167,7 +3243,21 @@
 										"x": 298.1,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H911",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9exitBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkBL",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "H915",
@@ -3180,7 +3270,17 @@
 										"x": 155.1,
 										"y": 791.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H917",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H917",
@@ -3193,7 +3293,17 @@
 										"x": 155.1,
 										"y": 791.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H915",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9checkBL",
@@ -3206,7 +3316,25 @@
 										"x": 161.1,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H919",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H917",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H913",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H915",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H919",
@@ -3219,7 +3347,17 @@
 										"x": 168.1,
 										"y": 698.6
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H921",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H921",
@@ -3232,7 +3370,17 @@
 										"x": 168.1,
 										"y": 606.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H919",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H923",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H923",
@@ -3245,7 +3393,21 @@
 										"x": 168.1,
 										"y": 508.6
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H921",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H980",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H920",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H920",
@@ -3258,7 +3420,13 @@
 										"x": 168.1,
 										"y": 508.6
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H923",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H980",
@@ -3271,7 +3439,21 @@
 										"x": 190.4,
 										"y": 379.4
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H923",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H9exitTL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H927-4",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H927-4",
@@ -3284,7 +3466,21 @@
 										"x": 190.7,
 										"y": 324.6
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H980",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9exitTL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H927",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H927",
@@ -3297,7 +3493,17 @@
 										"x": 190.7,
 										"y": 271.5
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H927-4",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H929",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H929",
@@ -3310,7 +3516,17 @@
 										"x": 190.7,
 										"y": 132.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H927",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H933",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H933",
@@ -3323,7 +3539,17 @@
 										"x": 303.3,
 										"y": 132.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H929",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H937",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H937",
@@ -3336,7 +3562,17 @@
 										"x": 349.1,
 										"y": 209.9
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H933",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkML",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H945",
@@ -3349,7 +3585,17 @@
 										"x": 610.4,
 										"y": 188.6
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H966",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H943",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H943",
@@ -3362,7 +3608,17 @@
 										"x": 608.1,
 										"y": 137.7
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H945",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkTM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H8checkTM",
@@ -3375,7 +3631,17 @@
 										"x": 629.4,
 										"y": 77.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H943",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H961-26",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "H961-26",
@@ -3388,7 +3654,17 @@
 										"x": 819.4,
 										"y": 75.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkTM",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H9checkTR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9checkTR",
@@ -3401,10 +3677,20 @@
 										"x": 930.3,
 										"y": 77.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H961-26",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H961-14",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
-								"name": "H961.14",
+								"name": "H961-14",
 								"coordinates": {
 									"room": {
 										"x": 917.8,
@@ -3414,7 +3700,17 @@
 										"x": 930.3,
 										"y": 220.9
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkTR",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkMR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9checkMR",
@@ -3427,7 +3723,17 @@
 										"x": 930.3,
 										"y": 308.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H961-14",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H968",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "H968",
@@ -3440,7 +3746,21 @@
 										"x": 725.9,
 										"y": 304.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkMR",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H9exitTR",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H966",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H966",
@@ -3453,7 +3773,21 @@
 										"x": 608.1,
 										"y": 302.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H968",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H945",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkMM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H962",
@@ -3466,7 +3800,21 @@
 										"x": 652.9,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9escalatorDown",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9elevator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H964",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H964",
@@ -3479,7 +3827,21 @@
 										"x": 747.5,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H962",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9exitBR",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H963",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H963",
@@ -3492,7 +3854,17 @@
 										"x": 829.4,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H964",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H965",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H965",
@@ -3505,7 +3877,17 @@
 										"x": 829.4,
 										"y": 629.4
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H967",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H963",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H967",
@@ -3518,7 +3900,17 @@
 										"x": 829.4,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H965",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H903",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9checkML",
@@ -3531,7 +3923,21 @@
 										"x": 376.3,
 										"y": 318.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9exitTL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9checkMM",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H937",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9checkMM",
@@ -3544,7 +3950,21 @@
 										"x": 486.3,
 										"y": 318.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H966",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H9escalatorUp",
+                                  "distance": 1
+                                }
+                              ]
 							}
 						],
 						"poi": [
@@ -3559,7 +3979,21 @@
 										"x": 285.1,
 										"y": 319.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9checkML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H980",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H927-4",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9women",
@@ -3572,7 +4006,13 @@
 										"x": 577.6,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H907",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9men",
@@ -3585,7 +4025,13 @@
 										"x": 397.2,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H911",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9exitTR",
@@ -3598,7 +4044,13 @@
 										"x": 725.9,
 										"y": 304.1
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H968",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9exitBR",
@@ -3611,7 +4063,13 @@
 										"x": 747.5,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H964",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9exitBL",
@@ -3624,7 +4082,13 @@
 										"x": 298.1,
 										"y": 743.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H913",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9elevator",
@@ -3637,7 +4101,21 @@
 										"x": 652.9,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H962",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H1elevator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H8elevator",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9escalatorUp",
@@ -3650,7 +4128,25 @@
 										"x": 486.3,
 										"y": 412.9
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H9escalatorDown",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H9checkMM",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H8escalatorUp",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H1escalatorUp",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "H9escalatorDown",
@@ -3663,7 +4159,29 @@
 										"x": 486.3,
 										"y": 573.8
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H909",
+                                  "distance": 3
+                                },
+                                {
+                                  "name": "H9escalatorUp",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "H962",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H1escalatorUP",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "H8escalatorDown",
+                                  "distance": 1
+                                }
+                              ]
 							}
 						]
 					}
