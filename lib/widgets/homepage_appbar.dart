@@ -23,6 +23,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         IconButton(
           icon: Icon(Icons.domain),
+          tooltip: "Go indoor!",
           onPressed: () {
             Navigator.pushNamed(context, '/indoor');
           },
