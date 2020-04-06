@@ -27,9 +27,9 @@ class IndoorWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Painters.painters[index],
-             CustomPaint(
-               painter: PainterService(),
-             ),
+              CustomPaint(
+                painter: PainterService(index),
+              ),
             ],
           ),
         ),
