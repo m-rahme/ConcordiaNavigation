@@ -1,5 +1,7 @@
 import 'package:concordia_navigation/providers/buildings_data.dart';
-import 'package:concordia_navigation/storage/app_constants.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/location_search.dart';
 import 'package:provider/provider.dart';
@@ -9,25 +11,9 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: appColor,
+      backgroundColor: constants.appColor,
       title: Text("ConNavigation"),
       actions: <Widget>[
-        Consumer<BuildingsData>(
-          builder: (BuildContext context, buildings, Widget child) =>
-              IconButton(
-            icon: Icon(Icons.wb_sunny),
-            onPressed: () {
-              buildings.toggleOutline();
-            },
-          ),
-        ),
-        IconButton(
-          icon: Icon(Icons.domain),
-          tooltip: "Go indoor!",
-          onPressed: () {
-            Navigator.pushNamed(context, '/indoor');
-          },
-        ),
         IconButton(
           icon: Icon(Icons.search),
           onPressed: () {

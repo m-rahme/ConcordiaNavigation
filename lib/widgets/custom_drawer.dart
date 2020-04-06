@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
@@ -145,14 +146,15 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: constants.offWhiteColor,
             child: ListTile(
-              leading: Icon(Icons.account_circle),
+              leading: Icon(Icons.wb_sunny),
               title: Text(
-                ConcordiaLocalizations.of(context).profile,
+                "Toggle Building Highlights",
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.pushNamed(context, '/profile');
+                Provider.of<BuildingsData>(context, listen: false)
+                    .toggleOutline();
               },
             ),
           ),
