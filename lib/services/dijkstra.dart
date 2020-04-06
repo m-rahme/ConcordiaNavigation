@@ -1,12 +1,15 @@
 import 'dart:collection';
 import 'package:collection/collection.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/node.dart';
+import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Class for finding the shortest path between nodes.
 class Dijkstra {
   Map<String, Node> _nodes;
   PriorityQueue<Node> _pq;
+
+  @visibleForTesting
+  Map<String, Node> get nodes => _nodes;
 
   static Dijkstra fromJson(List json) {
     Map<String, Node> graph = {};
