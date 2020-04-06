@@ -1,5 +1,4 @@
 import 'package:concordia_navigation/models/providers.dart';
-import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:concordia_navigation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -42,7 +41,6 @@ class App extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
-        '/directions': (context) => DirectionsPage(),
         '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,

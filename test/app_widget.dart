@@ -3,7 +3,6 @@ import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/screens/course_schedule.dart';
-import 'package:concordia_navigation/screens/directions_page.dart';
 import 'package:concordia_navigation/screens/home_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:concordia_navigation/screens/profile.dart';
@@ -97,7 +96,6 @@ class TestApp extends StatelessWidget {
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
-        '/directions': (context) => DirectionsPage(),
         '/shuttle': (context) => ShuttleSchedule(),
       },
       debugShowCheckedModeBanner: false,
