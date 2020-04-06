@@ -67,9 +67,11 @@ class Dijkstra {
 
     Queue<Node> inOrder = Queue<Node>();
     inOrder.addFirst(_nodes[end]);
-    while (_nodes[end].previous != null) {
+    bool stop = false;
+    while (!stop) {
       inOrder.addFirst(_nodes[end].previous);
       end = _nodes[end].previous.name;
+      stop = end == start;
     }
 
     return inOrder.toList();
