@@ -1851,7 +1851,11 @@
 									{
 										"name": "H110",
 										"distance": 3
-									}
+									},
+                                    {
+                                        "name": "MBentrance",
+                                        "distance": 1
+                                    }
 								]
 							},
 							{
@@ -4627,7 +4631,17 @@
 										"x": 196.07,
 										"y": 437
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBexitML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.345",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.345",
@@ -4640,7 +4654,17 @@
 										"x": 200.05,
 										"y": 391.05
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.350",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.338",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.338",
@@ -4653,7 +4677,13 @@
 										"x": 200.05,
 										"y": 391.05
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.345",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.210",
@@ -4666,7 +4696,17 @@
 										"x": 487.83,
 										"y": 549.58
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.309",
@@ -4679,7 +4719,17 @@
 										"x": 545.33,
 										"y": 387.07
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBelevator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBexitTM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.301",
@@ -4692,7 +4742,13 @@
 										"x": 588.19,
 										"y": 383.09
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBexitTM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.424",
@@ -4705,7 +4761,17 @@
 										"x": 637.84,
 										"y": 551.21
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckMM",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.130",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.130",
@@ -4718,7 +4784,21 @@
 										"x": 729.45,
 										"y": 551.21
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.424",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBescalator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.437",
@@ -4731,7 +4811,17 @@
 										"x": 788.79,
 										"y": 247.61
 									}
-								}
+								},
+                                "edges": [
+                                {
+                                  "name": "MBcheckTR",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MBexitTR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MB1.115",
@@ -4744,7 +4834,17 @@
 										"x": 901.05,
 										"y": 410.74
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckTR",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMR",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "MBcheckBL",
@@ -4757,7 +4857,21 @@
 										"x": 169.81,
 										"y": 629.09
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBexitML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBexitBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckML",
+                                  "distance": 2
+                                }
+                              ]
 							},
 							{
 								"name": "MBcheckML",
@@ -4770,7 +4884,21 @@
 										"x": 495.79,
 										"y": 629.09
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckBL",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MB1.210",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMM",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBcheckMM",
@@ -4783,7 +4911,25 @@
 										"x": 545.31,
 										"y": 551.21
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckML",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.210",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBelevator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.424",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBcheckMR",
@@ -4796,7 +4942,29 @@
 										"x": 817.15,
 										"y": 549.58
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBentrance",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.130",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.115",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MBcheckTR",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MBescalator",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBcheckTR",
@@ -4809,7 +4977,29 @@
 										"x": 806.05,
 										"y": 411.4
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.437",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MBmen",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBwomen",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMR",
+                                  "distance": 2
+                                },
+                                {
+                                  "name": "MB1.115",
+                                  "distance": 1
+                                }
+                              ]
 							}
 						],
 						"poi": [
@@ -4824,7 +5014,13 @@
 										"x": 66.5,
 										"y": 681.08
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckBL",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBwomen",
@@ -4837,7 +5033,17 @@
 										"x": 788.79,
 										"y": 377.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBmen",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckTR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBmen",
@@ -4850,7 +5056,17 @@
 										"x": 788.79,
 										"y": 377.2
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBwomen",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckTR",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBexitML",
@@ -4863,7 +5079,17 @@
 										"x": 169.81,
 										"y": 520.25
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckBL",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.350",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBexitTM",
@@ -4876,7 +5102,17 @@
 										"x": 588.19,
 										"y": 383.09
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.301",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.309",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBexitTR",
@@ -4889,7 +5125,13 @@
 										"x": 788.79,
 										"y": 247.61
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MB1.437",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBelevator",
@@ -4902,7 +5144,17 @@
 										"x": 545.33,
 										"y": 463.05
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBcheckMM",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.309",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBescalator",
@@ -4915,7 +5167,21 @@
 										"x": 763.87,
 										"y": 614.68
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "MBentrance",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMR",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MB1.130",
+                                  "distance": 1
+                                }
+                              ]
 							},
 							{
 								"name": "MBentrance",
@@ -4928,7 +5194,21 @@
 										"x": 867.7,
 										"y": 576.02
 									}
-								}
+								},
+                              "edges": [
+                                {
+                                  "name": "H1entrance",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBescalator",
+                                  "distance": 1
+                                },
+                                {
+                                  "name": "MBcheckMR",
+                                  "distance": 1
+                                }
+                              ]
 							}
 						]
 					}
