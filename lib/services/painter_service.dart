@@ -11,8 +11,7 @@ class PainterService extends CustomPainter {
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 3.0;
 
-    List<Node> result = IndoorData.shortest.pathTo("H110", "exitMRH1");
-    print(result);
+    List<Node> result = IndoorData.shortest.pathTo("H110", "H1exitMR");
 
     Path path = Path();
     for (Node node in result) {

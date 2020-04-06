@@ -18,15 +18,15 @@ void main() {
 
 
       solution = [
-        graph['entranceH1'],
-        graph['checkMMH1'],
-        graph['escalatorUpH1'],
-        graph['exitMRH1']
+        graph['H1entrance'],
+        graph['H1checkMM'],
+        graph['H1escalatorUp'],
+        graph['H1exitMR']
       ];
     });
 
     test('constructor creates a list of edges', () {
-      List<Node> result = dijkstra.pathTo("entranceH1", "exitMRH1");
+      List<Node> result = dijkstra.pathTo("H1entrance", "H1exitMR");
       expect(solution, result);
     });
   });
