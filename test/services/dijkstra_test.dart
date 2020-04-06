@@ -51,7 +51,7 @@ void main() {
     });
 
     test('constructor creates a list of edges', () {
-      List<Node> result = dijkstra.getPath("n1", "n6");
+      List<Node> result = dijkstra.pathTo("n1", "n6");
       expect(solution, result);
     });
   });

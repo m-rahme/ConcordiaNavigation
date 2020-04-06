@@ -65,7 +65,7 @@ void main() {
     });
 
     test('constructor creates a list of edges', () {
-      List<Node> result = dijkstra.getPath("entrance", "exitMR");
+      List<Node> result = dijkstra.pathTo("entrance", "exitMR");
       expect(solution, result);
     });
   });

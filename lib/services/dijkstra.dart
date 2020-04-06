@@ -60,7 +60,7 @@ class Dijkstra {
       : _nodes = nodes,
         _pq = PriorityQueue<Node>();
 
-  List<Node> getPath(String start, String end) {
+  List<Node> pathTo(String start, String end) {
     if (_nodes[end].previous == null) {
       _compute(start);
     }
