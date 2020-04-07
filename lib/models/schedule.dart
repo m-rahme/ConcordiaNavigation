@@ -50,8 +50,8 @@ class Schedule {
   ///
   /// A course on Friday, March 27 2020 is not in the same week
   /// as a course on Saturday, March 28 2020.
-  bool _isThisWeek(DateTime when) {
-    DateTime now = DateTime.now();
+  static bool _isThisWeek(DateTime when, [DateTime now]) {
+    now = now ?? DateTime.now();
 
     DateTime lastSaturday = now;
     DateTime nextFriday = now;
