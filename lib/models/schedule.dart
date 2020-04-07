@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/course.dart';
 import 'package:device_calendar/device_calendar.dart';
+import 'package:meta/meta.dart' show visibleForTesting;
 
 class Schedule {
   List<Course> _courses;
@@ -44,6 +45,10 @@ class Schedule {
           (course) => course.start.weekday == day && _isThisWeek(course.start))
       .toList();
 
+  @visibleForTesting
+  static bool isThisWeek(DateTime when, DateTime now) =>
+      Schedule._isThisWeek(when, now);
+
   /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
   ///
   /// Weeks start on Saturday and end on Friday.
@@ -55,25 +60,22 @@ class Schedule {
 
     DateTime lastSaturday = now;
     DateTime nextFriday = now;
-    int diff = now.weekday;
-
-    if (diff < 6) {
-      diff += 7;
-    }
-
-    lastSaturday = now.subtract(Duration(days: diff % 6));
 
     if (now.weekday < 5) {
       nextFriday = now.add(Duration(days: 5 - now.weekday));
+      lastSaturday = now.subtract(Duration(days: now.weekday + 1));
+    } else if (now.weekday == 5) {
+      lastSaturday = now.subtract(Duration(days: now.weekday + 1));
     } else if (now.weekday == 6) {
-      nextFriday = now.subtract(Duration(days: 1));
-    } else {
+      nextFriday = now.add(Duration(days: 6));
+    } else if (now.weekday == 7) {
+      lastSaturday = now.subtract(Duration(days: 1));
       nextFriday = now.add(Duration(days: 5));
     }
 
     // Set time of next friday to 1ms before midnight
-    nextFriday =
-        DateTime(nextFriday.year, nextFriday.month, nextFriday.day, 23, 59, 59, 59);
+    nextFriday = DateTime(
+        nextFriday.year, nextFriday.month, nextFriday.day, 23, 59, 59, 59);
 
     // Set time of last saturday to midnight
     lastSaturday = DateTime(
