@@ -35,6 +35,7 @@ class ShuttleWidget extends StatelessWidget {
                   Container(
                     padding: EdgeInsets.all(5.0),
                     child: OutlineButton(
+                      key: Key("ViewSchedule"),
                       onPressed: () {
                         Navigator.pushNamed(context, '/shuttle');
                       },
