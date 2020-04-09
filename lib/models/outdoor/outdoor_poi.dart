@@ -1,37 +1,33 @@
-import 'package:flutter/foundation.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 
-class OutdoorPOI {
-  String campus;
-  String title;
-  String name;
-  String address;
-  double latitude;
-  double longitude;
+class OutdoorPOI extends OutdoorLocation {
   String logo;
   String description;
   String open;
   String close;
 
-  OutdoorPOI(
-      {@required this.campus,
-      @required this.title,
-      @required this.name,
-      @required this.address,
-      @required this.latitude,
-      @required this.longitude,
-      @required this.logo,
-      this.description,
-      this.open,
-      this.close});
+  OutdoorPOI(String name, String address, this.logo,
+      {OutdoorLocation parent, this.description, this.open, this.close})
+      : super(name, address: address, parent: parent);
 
-  OutdoorPOI.fromJson(this.campus, Map<String, dynamic> jsonInterest)
-      : title = jsonInterest['Name'],
-        name = jsonInterest['Name'],
-        address = jsonInterest['Address'],
-        logo = jsonInterest['Logo'],
-        latitude = double.parse(jsonInterest['LAT']),
-        longitude = double.parse(jsonInterest['LNG']),
-        description = jsonInterest['Description'],
-        open = jsonInterest['Open'],
-        close = jsonInterest['Close'];
+  OutdoorPOI._fromJson(Map<String, dynamic> json, {OutdoorLocation parent})
+      : logo = json['Logo'],
+        description = json['Description'],
+        open = json['Open'],
+        close = json['Close'],
+        super(json['Name'],
+            address: json['Address'],
+            latitude: json['LAT'],
+            longitude: json['LNG'], parent: parent);
+
+  factory OutdoorPOI.fromJson(
+      Map<String, dynamic> json, {OutdoorLocation parent}) {
+    if (parent == null ||
+        json['Name'] == null ||
+        json['Address'] == null ||
+        json['Logo'] == null)
+      return null;
+    else
+      return OutdoorPOI._fromJson(json, parent: parent);
+  }
 }
