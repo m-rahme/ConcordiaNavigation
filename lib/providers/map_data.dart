@@ -1,5 +1,7 @@
 import 'dart:async';
-import 'package:concordia_navigation/services/outdoor/itinerary.dart';
+import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
+import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
@@ -10,58 +12,36 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
-  String controllerStarting;
-  String controllerDestination;
-  double swapButtonTop;
-  double locationButtonTop;
+  Reachable _start, _end;
+  double swapButtonTop, locationButtonTop;
 
-  String startLocation = "H937";
-  String endLocation = "MB1.301";
+  String controllerStarting, controllerEnding;
 
-  Itinerary itinerary;
+  OutdoorItinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
   LatLng _currentLocation;
-  String _campus;
-  LatLng _start;
-  LatLng _end;
-  String _mode;
 
-  MapData() {
-    _mode = "driving";
+  String mode;
+
+  MapData() : mode = "driving";
+
+  Reachable get start => _start;
+  Reachable get end => _end;
+
+  // set the end Reachable object and use its name
+  set end(Reachable obj) {
+    _end = obj;
+    controllerEnding = (obj as UniLocation).name;
   }
 
-  void changeCampus(campus) {
-    _campus = campus;
-    notifyListeners();
-  }
-
-  void changeSwapTop(double top) {
-    swapButtonTop = top;
-    notifyListeners();
-  }
-
-  void changeLocationTop(double top) {
-    locationButtonTop = top;
-    notifyListeners();
-  }
-
-  void changeMode(mode) {
-    _mode = mode;
-    notifyListeners();
-  }
-
-  void changeStart(start) {
-    _start = start;
-    notifyListeners();
-  }
-
-  void changeEnd(end) {
-    _end = end;
-    notifyListeners();
+  // set the start Reachable object and use its name
+  set start(Reachable obj) {
+    _start = obj;
+    controllerStarting = (obj as UniLocation).name;
   }
 
   void changeCurrentLocation(current) {
@@ -72,27 +52,10 @@ class MapData extends ChangeNotifier {
     return _currentLocation;
   }
 
-  String get getMode {
-    return _mode;
-  }
-
-  LatLng get getStart {
-    return _start;
-  }
-
-  LatLng get getEnd {
-    return _end;
-  }
-
-  String get getCampus {
-    return _campus;
-  }
-
-  void setItinerary() async {
-    if (_start == null) {
-      _start = _currentLocation;
-    }
-    itinerary = await Itinerary.create(_start, _end, _mode);
+  void setItinerary({Reachable start, Reachable end}) async {
+    // try to use parameters, but if they're not supplied use attributes
+    itinerary = await OutdoorItinerary.fromReachable(
+        start ?? _start, end ?? _end, mode);
     notifyListeners();
   }
 
