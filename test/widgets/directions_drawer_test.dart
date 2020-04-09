@@ -44,7 +44,7 @@ void main() {
         mockMapData.notifyListeners();
       });
 
-      await tester.pumpWidget(appWidget(mapData: mockMapData));
+      await tester.pumpWidget(appWidget(mockMapData: mockMapData));
       await tester.pumpAndSettle();
 
       final search = find.byKey(Key("LocationSearch"));
