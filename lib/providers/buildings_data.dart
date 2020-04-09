@@ -1,18 +1,22 @@
+import 'dart:typed_data';
+
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/services/search.dart';
+import 'package:flutter/services.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/widgets.dart';
+import 'dart:ui' as ui;
 
 ///Observer Pattern
 ///Handles data related to campus buildings, listens to changes and notifies listeners.
 class BuildingsData extends ChangeNotifier {
-  Set<Building> allBuildings;
-  Set<Polygon> _allPolygons = new Set();
-  Set<Polygon> _clear = new Set();
+  static List<Building> allBuildings = [];
+  List<Polygon> _allPolygons = [];
+  List<Polygon> _clear = [];
 
   bool _visible = true;
 
-  Set<Polygon> get allPolygons {
+  List<Polygon> get allPolygons {
     if (_visible) {
       return _allPolygons;
     }
@@ -21,14 +25,16 @@ class BuildingsData extends ChangeNotifier {
 
   BuildingsData() {
     // Make one big set of buildings that has sgw + loy buildings
-    allBuildings = Campus.sgw.buildings.union(Campus.loy.buildings);
+    allBuildings = Search.supported.whereType<Building>().toList();
 
     // Add the outline of every buildings to one big set of Polygons
-    allBuildings.forEach((building) => _allPolygons.add(building.outline));
+    allBuildings.forEach((building) {
+      _allPolygons.add(building.outline);
 
-    //_buildingIcon.add(await getBytesFromAsset(iconSet.elementAt(i), 350));
-
-    // Add the marker for every building that has the necessary data
+      getBytesFromAsset(building.logo, 350).then((uint8list) {
+        Building.icons[building] = BitmapDescriptor.fromBytes(uint8list);
+      });
+    });
 
     _visible = true;
   }
@@ -36,5 +42,15 @@ class BuildingsData extends ChangeNotifier {
   void toggleOutline() {
     _visible = !_visible;
     notifyListeners();
+  }
+
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
+        .buffer
+        .asUint8List();
   }
 }
