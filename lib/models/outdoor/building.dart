@@ -1,55 +1,41 @@
 import 'package:concordia_navigation/models/indoor/floor.dart';
+import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:meta/meta.dart' show visibleForTesting;
 
-class Building {
+class Building extends OutdoorLocation {
   // optional
   String buildingName;
-  String buildingAddress;
-  double latitude;
-  double longitude;
   String logo;
-  Set<Floor> floors = {};
 
   // required
-  String buildingInitials;
   Polygon outline;
 
   static Map<Building, BitmapDescriptor> icons = {};
 
-  Building(
-      {@required this.buildingInitials,
-      @required this.outline,
-      this.buildingName,
-      this.buildingAddress,
-      this.latitude,
-      this.longitude,
-      this.logo,
-      this.floors});
+  @visibleForTesting
+  Building.forTesting(String name, double latitude, double longitude)
+      : super(name, latitude: latitude, longitude: longitude);
+
+  Building(String buildingInitials, double latitude, double longitude,
+      this.outline, this.buildingName, String buildingAddress, this.logo,
+      {Campus parent})
+      : super(buildingInitials,
+            address: buildingAddress,
+            latitude: latitude,
+            longitude: longitude,
+            parent: parent);
 
   /// All buildings have edges.
   /// Not every building has markers.
   ///
   /// Therefore, some of the parameters are optional.
   /// This is an example of converse error. thanks u
-  Building.fromJson(Map json) : assert(json['buildingInitials'] != null) {
-    // Optional parameters - can be null (if no marker, or if indoor unsupported for this floor)
-    this.buildingName = json['buildingName'];
-    this.buildingAddress = json['buildingAddress'];
-    this.latitude = json['latitude'];
-    this.longitude = json['longitude'];
-    this.logo = json['logo'];
-
-    if (json['floors'] != null) {
-      for (int k = 0; k < json['floors'].length; k++) {
-        this.floors.add(Floor.fromJson(json['floors'][k]));
-      }
-    }
-
-    // Required parameters
-    this.buildingInitials = json['buildingInitials'];
-
+  factory Building.fromJson(Campus parent, Map json) {
+    if (json['buildingInitials'] == null || json['edges'] == null) return null;
+    List<Floor> floors = [];
     List<LatLng> edges = [];
 
     for (int i = 0; i < json['edges'].length; i++) {
@@ -60,13 +46,35 @@ class Building {
       edges.add(temp);
     }
 
-    this.outline = Polygon(
-      polygonId: PolygonId(this.buildingInitials),
+    Polygon outline = Polygon(
+      polygonId: PolygonId(json['buildingInitials']),
       fillColor: constants.maroonColor.withOpacity(0.7),
       consumeTapEvents: false,
       geodesic: false,
       points: edges,
       strokeWidth: 0,
     );
+
+    Building b = Building(
+        json['buildingName'] ??
+            json['buildingInitials'], // if buildingName is set, use it
+        json['latitude'],
+        json['longitude'],
+        outline,
+        json['buildingName'],
+        json['buildingAddress'],
+        json['logo'],
+        parent: parent);
+
+    if (json['floors'] != null) {
+      for (int k = 0; k < json['floors'].length; k++) {
+        Floor floor = Floor.fromJson(b, json['floors'][k]);
+        if (floor != null) floors.add(floor);
+      }
+    }
+
+    b.children = floors;
+
+    return b;
   }
 }
