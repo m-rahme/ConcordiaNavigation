@@ -1,6 +1,6 @@
 [
 	{
-		"campusName": "Loyola Campus",
+		"campusName": "Loyola",
 		"campusInitials": "LOY",
 		"buildings": [
 			{
@@ -8,7 +8,7 @@
 				"buildingInitials": "CC",
 				"buildingAddress": "7141 Sherbrooke W.",
 				"latitude": 45.458306,
-				"longitude": 73.640339,
+				"longitude": -73.640339,
 				"logo": "assets/markers/cc.png",
 				"edges": [
 					{
@@ -66,7 +66,7 @@
 				"buildingInitials": "CJ",
 				"buildingAddress": "7141 Sherbrooke W.",
 				"latitude": 45.457446,
-				"longitude": 73.640363,
+				"longitude": -73.640363,
 				"logo": "assets/markers/cj.png",
 				"edges": [
 					{
@@ -188,7 +188,7 @@
 				"buildingInitials": "GE",
 				"buildingAddress": "7141 Sherbrooke W.",
 				"latitude": 45.456997,
-				"longitude": 73.640484,
+				"longitude": -73.640484,
 				"logo": "assets/markers/ge.png",
 				"edges": [
 					{
@@ -238,7 +238,7 @@
 				"buildingInitials": "PY",
 				"buildingAddress": "7141 Sherbrooke W.",
 				"latitude": 45.458984,
-				"longitude": 73.640495,
+				"longitude": -73.640495,
 				"logo": "assets/markers/py.png",
 				"edges": [
 					{
@@ -304,7 +304,7 @@
 				"buildingInitials": "SP",
 				"buildingAddress": "7141 Sherbrooke W.",
 				"latitude": 45.457822,
-				"longitude": 73.641497,
+				"longitude": -73.641497,
 				"logo": "assets/markers/sp.png",
 				"edges": [
 					{
@@ -423,6 +423,8 @@
 			},
 			{
 				"buildingInitials": "TA",
+				"latitude": 45.46005,
+				"longitude": -73.64079,
 				"edges": [
 					{
 						"latitude": 45.46005,
@@ -444,6 +446,8 @@
 			},
 			{
 				"buildingInitials": "PT",
+				"latitude": 45.45931,
+				"longitude": -73.63867,
 				"edges": [
 					{
 						"latitude": 45.45931,
@@ -609,6 +613,8 @@
 			},
 			{
 				"buildingInitials": "RA",
+				"latitude": 45.45691,
+				"longitude": -73.63756,
 				"edges": [
 					{
 						"latitude": 45.45691,
@@ -650,6 +656,8 @@
 			},
 			{
 				"buildingInitials": "RF",
+				"latitude": 45.45869,
+				"longitude": -73.6408,
 				"edges": [
 					{
 						"latitude": 45.45869,
@@ -735,6 +743,8 @@
 			},
 			{
 				"buildingInitials": "SH",
+				"latitude": 45.45933,
+				"longitude": -73.64237,
 				"edges": [
 					{
 						"latitude": 45.45933,
@@ -756,6 +766,8 @@
 			},
 			{
 				"buildingInitials": "SI",
+				"latitude": 45.4581,
+				"longitude": -73.64241,
 				"edges": [
 					{
 						"latitude": 45.4581,
@@ -913,6 +925,8 @@
 			},
 			{
 				"buildingInitials": "PS",
+				"latitude": 45.45958,
+				"longitude": -73.63922,
 				"edges": [
 					{
 						"latitude": 45.45958,
@@ -974,6 +988,8 @@
 			},
 			{
 				"buildingInitials": "PC",
+				"latitude": 45.45696,
+				"longitude": -73.63676,
 				"edges": [
 					{
 						"latitude": 45.45696,
@@ -995,6 +1011,8 @@
 			},
 			{
 				"buildingInitials": "JR",
+				"latitude": 45.45854,
+				"longitude": -73.64305,
 				"edges": [
 					{
 						"latitude": 45.45854,
@@ -1072,6 +1090,8 @@
 			},
 			{
 				"buildingInitials": "HU",
+				"latitude": 45.45864,
+				"longitude": -73.64141,
 				"edges": [
 					{
 						"latitude": 45.45864,
@@ -1093,6 +1113,8 @@
 			},
 			{
 				"buildingInitials": "HC",
+				"latitude": 45.45983,
+				"longitude": -73.64183,
 				"edges": [
 					{
 						"latitude": 45.45983,
@@ -1130,6 +1152,8 @@
 			},
 			{
 				"buildingInitials": "HB",
+				"latitude": 45.45921,
+				"longitude": -73.64168,
 				"edges": [
 					{
 						"latitude": 45.45921,
@@ -1183,6 +1207,8 @@
 			},
 			{
 				"buildingInitials": "HA",
+				"latitude": 45.45949,
+				"longitude": -73.64088,
 				"edges": [
 					{
 						"latitude": 45.45949,
@@ -1236,6 +1262,8 @@
 			},
 			{
 				"buildingInitials": "FC",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.45876,
@@ -1481,6 +1509,8 @@
 			},
 			{
 				"buildingInitials": "DO",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.45793,
@@ -1502,6 +1532,8 @@
 			},
 			{
 				"buildingInitials": "BH",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.45979,
@@ -1523,6 +1555,8 @@
 			},
 			{
 				"buildingInitials": "BB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.45979,
@@ -1544,6 +1578,8 @@
 			},
 			{
 				"buildingInitials": "AD",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.45827,
@@ -1651,6 +1687,48 @@
 					}
 				]
 			}
+		],
+		"interests": [
+			{
+				"Name": "Loyola Park",
+				"Address": "4877 Avenue Doherty",
+				"LAT": 45.4608841,
+				"LNG": -73.6458944,
+				"Description": "",
+				"Open": "8:00",
+				"Close": "23:00",
+				"Logo": "assets/poi_images/park.png"
+			},
+			{
+				"Name": "Souvlaki George",
+				"Address": "6995 Monkland Ave",
+				"LAT": 45.459880,
+				"LNG": -73.637000,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "5:00",
+				"Logo": "assets/poi_images/souvlakigeorge.png"
+			},
+			{
+				"Name": "NDG Hotdog & Pizzaria",
+				"Address": "7363 Sherbrooke St W",
+				"LAT": 45.465950,
+				"LNG": -73.624720,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/ndghotdog.png"
+			},
+			{
+				"Name": "Comptoir Koyajo",
+				"Address": "6963 Sherbrooke St W",
+				"LAT": 45.460000,
+				"LNG": -73.636440,
+				"Description": "",
+				"Open": "10:30",
+				"Close": "15:00",
+				"Logo": "assets/poi_images/comptoirkoyajo.png"
+			}
 		]
 	},
 	{
@@ -1662,7 +1740,7 @@
 				"buildingInitials": "H",
 				"buildingAddress": "1455 De Maisonneuve Blvd. W.",
 				"latitude": 45.497261,
-				"longitude": 73.578943,
+				"longitude": -73.578943,
 				"logo": "assets/markers/h.png",
 				"edges": [
 					{
@@ -4203,7 +4281,7 @@
 				"buildingInitials": "LB",
 				"buildingAddress": "1400 De Maisonneuve Blvd. W.",
 				"latitude": 45.496810,
-				"longitude": 73.577813,
+				"longitude": -73.577813,
 				"logo": "assets/markers/lb.png",
 				"edges": [
 					{
@@ -4361,7 +4439,7 @@
 				"buildingInitials": "FG",
 				"buildingAddress": "1250 Guy St.",
 				"latitude": 45.494236,
-				"longitude": 73.578284,
+				"longitude": -73.578284,
 				"logo": "assets/markers/fg.png",
 				"edges": [
 					{
@@ -4555,7 +4633,7 @@
 				"buildingInitials": "MB",
 				"buildingAddress": "1450 Guy St.",
 				"latitude": 45.495222,
-				"longitude": 73.578824,
+				"longitude": -73.578824,
 				"logo": "assets/markers/mb.png",
 				"edges": [
 					{
@@ -5222,7 +5300,7 @@
 				"buildingInitials": "EV",
 				"buildingAddress": "1515 Saint-Catherine St W.",
 				"latitude": 45.495666,
-				"longitude": 73.578086,
+				"longitude": -73.578086,
 				"logo": "assets/markers/ev.png",
 				"edges": [
 					{
@@ -5301,6 +5379,8 @@
 			},
 			{
 				"buildingInitials": "SB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49651,
@@ -5418,6 +5498,8 @@
 			},
 			{
 				"buildingInitials": "CL",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49418,
@@ -5471,6 +5553,8 @@
 			},
 			{
 				"buildingInitials": "CB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49506,
@@ -5536,6 +5620,8 @@
 			},
 			{
 				"buildingInitials": "VA",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49568,
@@ -5609,6 +5695,8 @@
 			},
 			{
 				"buildingInitials": "Q",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49668,
@@ -5710,6 +5798,8 @@
 			},
 			{
 				"buildingInitials": "GN2",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.4939,
@@ -5735,6 +5825,8 @@
 			},
 			{
 				"buildingInitials": "GN",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49398,
@@ -6036,6 +6128,8 @@
 			},
 			{
 				"buildingInitials": "GM",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49605,
@@ -6093,6 +6187,8 @@
 			},
 			{
 				"buildingInitials": "FB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
 				"edges": [
 					{
 						"latitude": 45.49491,
@@ -6279,6 +6375,68 @@
 						"longitude": -73.57771
 					}
 				]
+			}
+		],
+		"interests": [
+			{
+				"Name": "McDonald's",
+				"Address": "1472 Saint-Catherine St W",
+				"LAT": 45.495645,
+				"LNG": -73.576931,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/mcdonalds.png"
+			},
+			{
+				"Name": "Brit & Chips",
+				"Address": "1390 Maisonneuve Blvd W",
+				"LAT": 45.4975289,
+				"LNG": -73.5776902,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/britnchips.png"
+			},
+			{
+				"Name": "Kinton Ramen",
+				"Address": "1211 Bishop St",
+				"LAT": 45.49600359999999,
+				"LNG": -73.5748529,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "22:30",
+				"Logo": "assets/poi_images/kintonramen.png"
+			},
+			{
+				"Name": "La Belle et la Boeuf",
+				"Address": "1620 Saint-Catherine St W",
+				"LAT": 45.49423729999999,
+				"LNG": -73.57853639999999,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "23:00",
+				"Logo": "assets/poi_images/belleetlaboeuf.png"
+			},
+			{
+				"Name": "Sota",
+				"Address": "1825 Saint-Catherine St W",
+				"LAT": 45.4935173,
+				"LNG": -73.5798552,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "0:00",
+				"Logo": "assets/poi_images/sota.png"
+			},
+			{
+				"Name": "McKibbin's Irish Pub",
+				"Address": "1426 Bishop St",
+				"LAT": 45.4967536,
+				"LNG": -73.57734959999999,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "3:00",
+				"Logo": "assets/poi_images/mckibbinsirishpub.png"
 			}
 		]
 	}
