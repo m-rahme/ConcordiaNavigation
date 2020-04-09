@@ -5,6 +5,8 @@ import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Class for finding the shortest path between nodes.
 class Dijkstra {
+  static Dijkstra shortest;
+
   Map<String, Node> _nodes;
   PriorityQueue<Node> _pq;
 
