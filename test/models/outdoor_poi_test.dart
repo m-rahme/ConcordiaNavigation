@@ -15,23 +15,23 @@ void main() {
         "Logo": "assets/poi_images/park.png"
       });
 
-      expect(good, isInstanceOf<OutdoorPOI>());
+      expect(good, isA<OutdoorPOI>());
     });
 
-    // test("fromJson() constructor of OutdoorPOI fed a bad longitude value", () {
-    //   Map<String, dynamic> badLat = {
-    //     "Name": "Loyola Park",
-    //     "Address": "4877 Avenue Doherty",
-    //     "LAT": "BAD_VALUE",
-    //     "LNG": "-73.6458944",
-    //     "Description": "",
-    //     "Open": "8:00",
-    //     "Close": "23:00",
-    //     "Logo": "assets/poi_images/park.png"
-    //   };
+    test("fromJson() constructor of OutdoorPOI fed a bad longitude value", () {
+      Map<String, dynamic> badLat = {
+        "Name": "Loyola Park",
+        "Address": "4877 Avenue Doherty",
+        "LAT": "BAD_VALUE",
+        "LNG": "-73.6458944",
+        "Description": "",
+        "Open": "8:00",
+        "Close": "23:00",
+        "Logo": "assets/poi_images/park.png"
+      };
 
-    //   expect(OutdoorPOI.fromJson("badLat", badLat), isInstanceOf<FormatException>());
-    // });
+      expect(() => OutdoorPOI.fromJson("badLat", badLat), throwsA(isA<FormatException>()) );
+    });
 
     test("fromJson() missing an optional parameter",
         () {
@@ -45,11 +45,11 @@ void main() {
         "Logo": "assets/poi_images/park.png"
       };
 
-      expect(OutdoorPOI.fromJson("noDesc", noDesc), isInstanceOf<OutdoorPOI>());
+      expect(OutdoorPOI.fromJson("noDesc", noDesc), isA<OutdoorPOI>());
     });
 
-    // test('fromJson() on SGW fed null data', () {
-    //   expect(OutdoorPOI.fromJson(null, null), isInstanceOf<NoSuchMethodError>());
-    // });
+    test('fromJson() on SGW fed null data', () {
+      expect(() => OutdoorPOI.fromJson(null, null), throwsA(isA<NoSuchMethodError>()) );
+    });
   });
 }
