@@ -51,12 +51,40 @@ Widget appWidget({MapData mockMapData, Widget testWidget}) {
         buildingsDataProvider,
         calendarData
       ],
-      child: testWidget != null ? MaterialApp(home:TestWidget(testWidget)) : App(initialRoute: '/home',),
+      child: testWidget != null ? TestApp(testWidget) : App(initialRoute: '/home',),
   );
 }
 
 
+
 /// Used to test individual widgets
+class TestApp extends StatelessWidget {
+  final Widget widget; 
+
+  TestApp(this.widget);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Concordia Navigation',
+      localizationsDelegates: [
+        // ... app-specific localization delegate[s] here
+        const ConcordiaLocalizationsDelegate(),
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('en', ''),
+        const Locale('fr', ''),
+      ],
+      initialRoute: '/',
+      debugShowCheckedModeBanner: false,
+      home: TestWidget(widget),
+    );
+  }
+}
+
 class TestWidget extends StatelessWidget {
   final Widget widget; 
 
