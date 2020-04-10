@@ -1,41 +1,31 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/reachable.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
-import 'dart:convert' show json;
-import 'package:flutter/services.dart' show rootBundle;
 
 /*This class extends Search Delegate class implemented by flutter.
 It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
-  static List classrooms;
-  final recentRooms = [
-    'HALL BUILDING',
-    'H837',
-    'MB1.437'
-  ]; // for demonstration purposes
-
-  static Future<List> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/destinations.json'));
-
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
     final suggestionList = query.isEmpty
-        ? recentRooms
-        : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
+        ? Search.names.take(10).toList() // 5 first
+        : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
 
-    //TODO: make it clear that the first item is from the users calendar
     CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
     List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
     if (nextClasses != null &&
         nextClasses.isNotEmpty &&
         nextClasses.first.filteredLocation != "N/A") {
-      var next =
-          nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
+      var next = nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
       // Avoid duplicates on widget rebuild
       if (!suggestionList.contains(next)) {
         suggestionList.insert(0, next);
@@ -46,70 +36,22 @@ class LocationSearch extends SearchDelegate {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
           onTap: () async {
-            mapData.controllerDestination = "SGW Campus, Montreal";
-            mapData.controllerStarting = "Current Location";
-            Navigator.of(context).pop();
-            mapData.controllerStarting = "Current Location";
-            mapData.changeStart(mapData.getCurrentLocation);
-            switch (suggestionList[index][0].toString()) {
-              case "H":
-                {
-                  if (suggestionList[index][1].toString() == "A") {
-                    mapData.changeCampus('sgw');
-                    mapData.controllerDestination = "Hall Building, Montreal";
-                    mapData.changeEnd(constants.hBuilding);
-                  } else {
-                    mapData.changeCampus('sgw');
-                    mapData.controllerDestination =
-                        suggestionList[index].toString();
-                    mapData.changeEnd(constants.hBuilding);
-                  }
-                }
-                break;
+            // search for element they tapped
+            dynamic result = Search.query(suggestionList[index].toUpperCase());
 
-              case "M":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination =
-                      suggestionList[index].toString();
-                  mapData.changeEnd(constants.jmsbBuilding);
-                }
-                break;
-
-              case "L":
-                {
-                  mapData.changeCampus('loyola');
-                  mapData.controllerDestination = "Loyola Campus, Montreal";
-                  mapData.changeEnd(constants.loyola);
-                }
-                break;
-
-              case "J":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination =
-                      "John Molson Business, Montreal";
-                  mapData.changeEnd(constants.jmsbBuilding);
-                }
-                break;
-              case "F":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination = "FG Building, Montreal";
-                  mapData.changeEnd(constants.fgBuilding);
-                }
-                break;
-
-              default:
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination = "SGW Campus, Montreal";
-                  mapData.changeEnd(constants.sgw);
-                }
-                break;
+            if (result != null) {
+              if (result is IndoorLocation) {
+                Provider.of<IndoorData>(context)
+                    .setItinerary("H820", result.name);
+              }
+              mapData.end = result;
+              mapData.controllerStarting = "Current Location";
+              mapData.mode = "driving";
+              mapData.setItinerary(start: null, end: result as Reachable);
             }
-            mapData.changeMode("driving");
-            mapData.setItinerary();
+
+            // pop either way, if results are good or not
+            Navigator.of(context).pop();
           },
           leading: Icon(Icons.location_city),
           title: RichText(
