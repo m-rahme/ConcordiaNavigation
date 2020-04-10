@@ -35,7 +35,7 @@ class Weekday extends StatelessWidget {
             left: SizeConfig.safeBlockHorizontal * 5.0,
             right: SizeConfig.safeBlockHorizontal * 5.0),
         leading: CircleAvatar(
-            backgroundImage: AssetImage('assets/concordia_logo.png')),
+            backgroundImage: AssetImage('assets/png/concordia_logo.png')),
         title: Text(
           course.summary,
           style: TextStyle(fontWeight: FontWeight.w500),
