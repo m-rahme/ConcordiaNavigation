@@ -1,11 +1,12 @@
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/node.dart';
-import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
 import 'package:flutter/material.dart';
 
 class PainterService extends CustomPainter {
   int index;
-  PainterService(this.index);
+  IndoorItinerary itinerary;
+
+  PainterService(this.index, this.itinerary);
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
