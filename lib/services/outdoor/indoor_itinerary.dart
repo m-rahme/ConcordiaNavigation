@@ -5,11 +5,11 @@ import 'package:concordia_navigation/services/search.dart';
 
 class IndoorItinerary {
   List<IndoorLocation> path = [];
-  List<Node> nodePath = [];
+  List<Node> _nodePath = [];
 
   IndoorItinerary(String start, String end) {
-    nodePath = Dijkstra.shortest.pathTo(start, end);
-    nodePath.forEach((node) {
+    _nodePath = Dijkstra.shortest.pathTo(start, end);
+    _nodePath.forEach((node) {
       IndoorLocation temp = Search.query(node.name);
       path.add(temp);
     });
