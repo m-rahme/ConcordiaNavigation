@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -12,7 +13,7 @@ void main() {
     });
 
     test('constructor initializes mode to driving', () {
-      expect(mapData.getMode, "driving");
+      expect(mapData.mode, "driving");
     });
 
     test('constructor creates a Completer<GoogleMapController>', () {
@@ -21,14 +22,8 @@ void main() {
 
     test('changes mode', () {
       String newMode = "walking";
-      mapData.changeMode(newMode);
-      expect(mapData.getMode, newMode);
-    });
-
-    test('changes campus', () {
-      String newCampus = "campus";
-      mapData.changeCampus(newCampus);
-      expect(mapData.getCampus, newCampus);
+      mapData.mode = newMode;
+      expect(mapData.mode, newMode);
     });
 
     test('changes currentLocation', () {
@@ -40,19 +35,19 @@ void main() {
     });
 
     test('changes end', () {
-      LatLng latLng = new LatLng(-90.0, -160.0);
-      mapData.changeEnd(latLng);
-      expect(mapData.getEnd, isA<LatLng>());
-      expect(mapData.getEnd.latitude, latLng.latitude);
-      expect(mapData.getEnd.longitude, latLng.longitude);
+      double latitude = -90.0;
+      double longitude = -160.0;
+      mapData.end = Building.forTesting("test", latitude, longitude);
+      expect(mapData.end, isA<Building>());
+      expect(mapData.end.lat, mapData.end.long);
     });
 
     test('changes start', () {
-      LatLng latLng = new LatLng(10, 20);
-      mapData.changeStart(latLng);
-      expect(mapData.getStart, isA<LatLng>());
-      expect(mapData.getStart.latitude, latLng.latitude);
-      expect(mapData.getStart.longitude, latLng.longitude);
+      double latitude = -90.0;
+      double longitude = -160.0;
+      mapData.start = Building.forTesting("test", latitude, longitude);
+      expect(mapData.start, isA<Building>());
+      expect(mapData.start.lat, mapData.start.long);
     });
   });
 }

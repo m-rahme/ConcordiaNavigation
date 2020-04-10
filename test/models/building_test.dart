@@ -16,11 +16,12 @@ void main() {
         LatLng(45.49772, -73.57903),
       ];
       outline = Polygon(polygonId: PolygonId("random"), points: buildingEdges);
-      building = new Building(buildingInitials: 'TEST', outline: outline);
+      building = Building('TEST', 1.0, 2.0, outline, "Mock building",
+          "123 mock address", "assets/mock_logo.png");
     });
 
-    test('constructor creates a list of edges', () {
-      expect(building.buildingInitials, "TEST");
+    test('building name is set', () {
+      expect(building.name, "TEST");
     });
   });
 }

@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/node.dart';
-import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/models/university.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -12,7 +12,7 @@ void main() {
     List<Node> solution;
 
     setUp(() async {
-      campusData = await Campus.loadJson();
+      campusData = await University.loadJson();
       dijkstra= Dijkstra.fromJson(campusData);
       graph = dijkstra.nodes;
 
