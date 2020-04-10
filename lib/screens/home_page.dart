@@ -19,7 +19,6 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    //LoadBuildingInfo();
     Painters();
     return Scaffold(
       appBar: HomePageAppBar(),
