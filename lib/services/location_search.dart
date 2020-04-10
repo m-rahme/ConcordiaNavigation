@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:concordia_navigation/models/reachable.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
@@ -36,18 +37,25 @@ class LocationSearch extends SearchDelegate {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
           onTap: () async {
+            // TODO: this currently can only set an end destination
+            // we should make it able to set both start & end
+
             // search for element they tapped
-            dynamic result = Search.query(suggestionList[index].toUpperCase());
+            dynamic result = Search.query(suggestionList[index]);
 
             if (result != null) {
-              if (result is IndoorLocation) {
-                Provider.of<IndoorData>(context)
-                    .setItinerary("H820", result.name);
-              }
+              // simple example for PoC
+              if (result is IndoorLocation)
+                Provider.of<IndoorData>(context, listen: false).setItinerary("H820", "H859");
+
               mapData.end = result;
               mapData.controllerStarting = "Current Location";
               mapData.mode = "driving";
-              mapData.setItinerary(start: null, end: result as Reachable);
+
+              // check if there's any outdoor itinerary involved
+              if (mapData.end is OutdoorLocation ||
+                  mapData.start is OutdoorLocation || mapData.start == null)
+                mapData.setItinerary(start: null, end: result as Reachable);
             }
 
             // pop either way, if results are good or not
