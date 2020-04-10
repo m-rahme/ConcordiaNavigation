@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/models/reachable.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
@@ -24,18 +25,18 @@ class DirectionsDrawer extends StatelessWidget {
 
     SlidingUpPanel sp = SlidingUpPanel(
         onPanelClosed: () {
-          Provider.of<MapData>(context, listen: false)
-              .changeSwapTop(SizeConfig.safeBlockVertical * 57);
-          Provider.of<MapData>(context, listen: false)
-              .changeLocationTop(SizeConfig.safeBlockVertical * 66);
+          Provider.of<MapData>(context, listen: false).swapButtonTop =
+              (SizeConfig.safeBlockVertical * 57);
+          Provider.of<MapData>(context, listen: false).locationButtonTop =
+              (SizeConfig.safeBlockVertical * 66);
         },
         onPanelOpened: () {
-          Provider.of<MapData>(context, listen: false)
-              .changeSwapTop(SizeConfig.safeBlockVertical * 66);
-          Provider.of<MapData>(context, listen: false)
-              .changeLocationTop(SizeConfig.safeBlockVertical * 75);
+          Provider.of<MapData>(context, listen: false).swapButtonTop =
+              SizeConfig.safeBlockVertical * 66;
+          Provider.of<MapData>(context, listen: false).locationButtonTop =
+              SizeConfig.safeBlockVertical * 75;
         },
-        controller: Provider.of<MapData>(context).panelController,
+        controller: Provider.of<MapData>(context, listen: false).panelController,
         maxHeight: SizeConfig.safeBlockVertical * 85,
         defaultPanelState: PanelState.CLOSED,
         borderRadius: BorderRadius.only(
@@ -90,8 +91,10 @@ class DirectionsDrawer extends StatelessWidget {
                                             icon: Icon(Icons.directions_car),
                                             color: _swapCar,
                                             onPressed: () {
-                                              mapData.changeMode("driving");
-                                              mapData.setItinerary();
+                                              if (mapData.mode != "driving") {
+                                                mapData.mode = "driving";
+                                                mapData.setItinerary();
+                                              }
                                               if (_swapCar ==
                                                   constants.whiteColor) {
                                                 _swapCar = constants.blueColor;
@@ -108,7 +111,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             icon: Icon(Icons.train),
                                             color: _swapTransit,
                                             onPressed: () {
-                                              mapData.changeMode("transit");
+                                              mapData.mode = "transit";
                                               mapData.setItinerary();
                                               if (_swapTransit ==
                                                   constants.whiteColor) {
@@ -126,7 +129,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             icon: Icon(Icons.directions_walk),
                                             color: _swapWalking,
                                             onPressed: () {
-                                              mapData.changeMode("walking");
+                                              mapData.mode = "walking";
                                               mapData.setItinerary();
                                               if (_swapWalking ==
                                                   constants.whiteColor) {
@@ -144,7 +147,7 @@ class DirectionsDrawer extends StatelessWidget {
                                             icon: Icon(Icons.directions_bike),
                                             color: _swapBike,
                                             onPressed: () {
-                                              mapData.changeMode("bicycling");
+                                              mapData.mode = "bicycling";
                                               mapData.setItinerary();
                                               if (_swapBike ==
                                                   constants.whiteColor) {
@@ -164,19 +167,11 @@ class DirectionsDrawer extends StatelessWidget {
                                         icon: Icon(Icons.close),
                                         color: constants.whiteColor,
                                         onPressed: () {
-                                          Provider.of<MapData>(context,
-                                                  listen: false)
-                                              .changeSwapTop(
-                                                  SizeConfig.safeBlockVertical *
-                                                      66);
-                                          Provider.of<MapData>(context,
-                                                  listen: false)
-                                              .changeLocationTop(
-                                                  SizeConfig.safeBlockVertical *
-                                                      75);
-                                          Provider.of<MapData>(context,
-                                                  listen: false)
-                                              .removeItinerary();
+                                          mapData.swapButtonTop =
+                                              SizeConfig.safeBlockVertical * 66;
+                                          mapData.locationButtonTop =
+                                              SizeConfig.safeBlockVertical * 75;
+                                          mapData.removeItinerary();
                                           if (_swapCar ==
                                               constants.whiteColor) {
                                             _swapCar = constants.blueColor;
@@ -244,9 +239,8 @@ class DirectionsDrawer extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                Provider.of<MapData>(context,
-                                                        listen: false)
-                                                    .controllerStarting,
+                                                mapData.controllerStarting ??
+                                                    "Current Location",
                                                 style: GoogleFonts.raleway(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.w600,
@@ -294,9 +288,8 @@ class DirectionsDrawer extends StatelessWidget {
                                               padding:
                                                   const EdgeInsets.all(8.0),
                                               child: Text(
-                                                Provider.of<MapData>(context,
-                                                        listen: false)
-                                                    .controllerDestination,
+                                                mapData.controllerEnding ??
+                                                    "null",
                                                 style: GoogleFonts.raleway(
                                                   fontSize: 15.0,
                                                   fontWeight: FontWeight.w600,
@@ -317,19 +310,9 @@ class DirectionsDrawer extends StatelessWidget {
                                 icon: Icon(Icons.swap_vert),
                                 color: constants.whiteColor,
                                 onPressed: () {
-                                  var start = mapData.getStart;
-                                  mapData.changeStart(mapData.getEnd);
-                                  mapData.changeEnd(start);
-                                  String temp = Provider.of<MapData>(context,
-                                          listen: false)
-                                      .controllerStarting;
-                                  Provider.of<MapData>(context, listen: false)
-                                          .controllerStarting =
-                                      Provider.of<MapData>(context,
-                                              listen: false)
-                                          .controllerDestination;
-                                  Provider.of<MapData>(context, listen: false)
-                                      .controllerDestination = temp;
+                                  Reachable start = mapData.start;
+                                  mapData.start = mapData.end;
+                                  mapData.end = start;
                                   mapData.setItinerary();
                                 },
                               ),

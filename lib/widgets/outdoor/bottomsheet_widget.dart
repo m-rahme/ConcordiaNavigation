@@ -31,7 +31,7 @@ class BottomSheetWidget extends StatelessWidget {
                           left: 0.0,
                         ),
                         child: Text(
-                          building.buildingAddress,
+                          building.address,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.w400,
                             fontSize: 15.0,

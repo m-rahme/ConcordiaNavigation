@@ -3,7 +3,6 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import "package:flutter/material.dart";
-import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:provider/provider.dart';
 
 class OutdoorInterestWidget extends StatelessWidget {
@@ -95,17 +94,11 @@ class OutdoorInterestWidget extends StatelessWidget {
                                   fontSize: 12.0, color: constants.whiteColor),
                             ),
                             onPressed: () {
+                              Provider.of<MapData>(context, listen: false).end =
+                                  interests[index];
+                              Provider.of<MapData>(context, listen: false)
+                                  .setItinerary();
                               Navigator.of(context).pop();
-                              mapData.changeCampus('sgw');
-                              mapData.controllerDestination =
-                                  interests[index].name;
-                              mapData.controllerStarting = "Current Location";
-                              mapData.changeStart(mapData.getCurrentLocation);
-                              mapData.changeEnd(LatLng(
-                                  interests[index].latitude,
-                                  interests[index].longitude));
-                              mapData.changeMode("driving");
-                              mapData.setItinerary();
                             },
                           );
                         }),
