@@ -66,7 +66,7 @@ class _SplashScreenState extends State<SplashScreen>
         children: <Widget>[
           Container(
               child: Image.asset(
-            'assets/LaunchImage.png',
+            'assets/png/LaunchImage.png',
             fit: BoxFit.cover,
           )),
           Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
@@ -82,7 +82,7 @@ class _SplashScreenState extends State<SplashScreen>
                       duration: const Duration(seconds: 3),
                       curve: Curves.fastLinearToSlowEaseIn,
                       child: Image.asset(
-                        'assets/app_logo.png',
+                        'assets/png/app_logo.png',
                       ),
                     ),
                   ],

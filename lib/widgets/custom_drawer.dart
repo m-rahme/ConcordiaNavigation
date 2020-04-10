@@ -86,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
               top: 42.5,
             ),
             decoration: BoxDecoration(
-              color: constants.offWhiteColor,
+              color: constants.whiteColor,
             ),
             child: ListTile(
               title: Text(
@@ -103,18 +103,18 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: Container(
               color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: _expendTile(),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.calendar_today),
               title: Text(
@@ -130,7 +130,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.location_on),
               title: Text(
@@ -144,7 +144,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.wb_sunny),
               title: Text(
@@ -159,7 +159,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.settings),
               title: Text(
@@ -173,14 +173,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: Container(
               color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             height: 570,
           ),
         ],

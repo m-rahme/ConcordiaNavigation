@@ -20,10 +20,9 @@ const Color appColor = Color(0xFF000000);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color blueColor = Color(0xFF017BFF);
 const Color blackColor = Color(0xFF000000);
-const Color offWhiteColor = Color(0xFFFFFFFF);
 const Color lightGreyColor = Color(0xFFF0F0F0);
 const Color greyColor = Color(0xFF656363);
-const Color maroonColor = Color(0xFF014FFF);
+const Color highlightColor = Color(0xFF014FFF);
 
 final RegExp calFilter = RegExp("conco|school|uni|test");
 final RegExp eventFilter = RegExp(r"[A-Z]{4}[-|\s]?\d{3}");

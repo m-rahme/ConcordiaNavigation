@@ -14,7 +14,7 @@ class FloatingMapButton extends StatelessWidget {
     this.left,
     this.onClick,
     this.icon: const Icon(Icons.add),
-    this.bgColor: offWhiteColor,
+    this.bgColor: whiteColor,
     this.fgColor: greyColor,
   });
 

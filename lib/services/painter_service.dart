@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 
 class PainterService extends CustomPainter {
@@ -10,7 +11,7 @@ class PainterService extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint = Paint();
-    paint.color = Colors.red;
+    paint.color = constants.blueColor;
     paint.style = PaintingStyle.stroke;
     paint.strokeWidth = 3.0;
 

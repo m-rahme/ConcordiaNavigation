@@ -7,8 +7,8 @@ class OutdoorPOIList {
 
   List<OutdoorPOI> pointOfInterests = List<OutdoorPOI>();
 
-  static Future<List> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/pointsofinterest.json'));
+  static Future<List> loadJson() async => json
+      .decode(await rootBundle.loadString('assets/json/pointsofinterest.json'));
 
   // give it a campus, it will parse the interests property of it
   OutdoorPOIList.fromJson(Map json) {

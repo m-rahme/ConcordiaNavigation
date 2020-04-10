@@ -337,7 +337,7 @@ class DirectionsDrawer extends StatelessWidget {
                                       style: GoogleFonts.raleway(
                                         fontSize: 12.0,
                                         fontWeight: FontWeight.w600,
-                                        color: constants.offWhiteColor,
+                                        color: constants.whiteColor,
                                       ),
                                     ),
                                   )),
@@ -352,7 +352,7 @@ class DirectionsDrawer extends StatelessWidget {
                                     style: GoogleFonts.raleway(
                                       fontSize: 12.0,
                                       fontWeight: FontWeight.w600,
-                                      color: constants.offWhiteColor,
+                                      color: constants.whiteColor,
                                     ),
                                   ),
                                 ),
@@ -394,7 +394,7 @@ class DirectionsDrawer extends StatelessWidget {
                                           itinerary.data.keys.elementAt(index);
                                       return Container(
                                         decoration: BoxDecoration(
-                                          color: constants.offWhiteColor,
+                                          color: constants.whiteColor,
                                           border: Border(
                                             bottom: BorderSide(
                                                 width: 1.0,

@@ -48,7 +48,7 @@ class Building extends OutdoorLocation {
 
     Polygon outline = Polygon(
       polygonId: PolygonId(json['buildingInitials']),
-      fillColor: constants.maroonColor.withOpacity(0.7),
+      fillColor: constants.highlightColor.withOpacity(0.7),
       consumeTapEvents: false,
       geodesic: false,
       points: edges,

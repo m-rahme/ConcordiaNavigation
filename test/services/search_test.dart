@@ -23,7 +23,7 @@ Future<String> getDirections(
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   List json;
-  List<Reachable> supportedDestinations;
+//  List<Reachable> supportedDestinations;
   // HttpClient client = new HttpClient();
   // String mapsUrl = 'maps.googleapis.com/maps/api/directions/json';
   // Random rnd;

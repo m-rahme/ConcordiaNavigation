@@ -6,8 +6,8 @@ import 'package:flutter/services.dart' show rootBundle;
 class ShuttleService {
   static Map shuttleSchedule;
 
-  static Future<Map> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/shuttleSchedule.json'));
+  static Future<Map> loadJson() async => json
+      .decode(await rootBundle.loadString('assets/json/shuttleSchedule.json'));
 
   static String getNextShuttle(campus, [DateTime time]) {
     time = time ?? DateTime.now();

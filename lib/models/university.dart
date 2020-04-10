@@ -24,6 +24,6 @@ class University extends OutdoorLocation {
   }
 
   ///For reading the file
-  static Future<List<dynamic>> loadJson() async =>
-      json.decode(await rootBundle.loadString('assets/campus_buildings.json'));
+  static Future<List<dynamic>> loadJson() async => json
+      .decode(await rootBundle.loadString('assets/json/campus_buildings.json'));
 }

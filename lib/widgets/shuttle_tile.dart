@@ -35,7 +35,7 @@ class ShuttleTile extends StatelessWidget {
             right: SizeConfig.safeBlockHorizontal * 0.0,
             top: SizeConfig.safeBlockHorizontal * 0.0),
         leading: IconButton(
-          icon: Image.asset('assets/logo.png'),
+          icon: Image.asset('assets/png/concordia_logo.png'),
           tooltip: 'Concordia',
           onPressed: () {},
           iconSize: 45.0,
