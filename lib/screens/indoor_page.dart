@@ -16,7 +16,6 @@ class IndoorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Arguments args = ModalRoute.of(context).settings.arguments;
     return Scaffold(
       backgroundColor: constants.whiteColor,
       appBar: AppBar(
@@ -32,7 +31,7 @@ class IndoorPage extends StatelessWidget {
               controller: controller,
               itemCount: Painters.painters.length,
               itemBuilder: (context, index) {
-                return IndoorWidget(index, args.showDirections);
+                return IndoorWidget(index);
               },
             ),
           ),
