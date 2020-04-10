@@ -34,7 +34,7 @@ abstract class IndoorLocation extends UniLocation implements Reachable {
   double get long {
     Floor floor = parent as Floor;
     Building building = floor.parent as Building;
-    return building.lat;
+    return building.long;
   }
 
   @override
