@@ -55,7 +55,7 @@ The automated system integration code structure is divided into two directories.
 * **Richard Bui**
 * **Michel Rahme**
 * **Andrew Hanichkovsky**
-* **Alex Hayeux**
+* **Alex Hayeur**
 * **Evan Mateo**
 
 ## License
