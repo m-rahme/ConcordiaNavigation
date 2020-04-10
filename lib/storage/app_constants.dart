@@ -16,6 +16,11 @@ const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
 
+const double containerWidth = 940.0;
+const double containerHeight = 862.0;
+const double svgWidth = 1000;
+const double svgHeight = 920.0;
+
 const Color appColor = Color(0xFF000000);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color blueColor = Color(0xFF017BFF);

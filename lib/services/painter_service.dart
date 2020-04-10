@@ -17,15 +17,22 @@ class PainterService extends CustomPainter {
 
     Path path = Path();
 
+    ///Calculations made so match container size where the svg is built with the svg itself
+    ///This way, the path will be drawn on the right X and Y coordinates
     for (IndoorLocation indoor in itinerary.path) {
       if (indoor == itinerary.path.first)
-        path.moveTo((940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+        path.moveTo(
+            (constants.containerWidth * indoor.room.x) / constants.svgWidth,
+            (constants.containerHeight * indoor.room.y / constants.svgHeight));
 
       path.lineTo(
-          (940 * indoor.nearest.x) / 1000, (862 * indoor.nearest.y / 920));
+          (constants.containerWidth * indoor.nearest.x) / constants.svgWidth,
+          (constants.containerHeight * indoor.nearest.y / constants.svgHeight));
 
       if (indoor == itinerary.path.last)
-        path.lineTo((940 * indoor.room.x) / 1000, (862 * indoor.room.y / 920));
+        path.lineTo(
+            (constants.containerWidth * indoor.room.x) / constants.svgWidth,
+            (constants.containerHeight * indoor.room.y / constants.svgHeight));
     }
 
     canvas.drawPath(path, paint);
