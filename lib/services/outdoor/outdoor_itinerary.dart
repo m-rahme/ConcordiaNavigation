@@ -1,18 +1,20 @@
 import 'dart:convert';
+import 'package:concordia_navigation/models/reachable.dart';
 import 'package:concordia_navigation/services/outdoor/directions_service.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 //This class is used to generate an an Itinerary from the direction's JSON.
-class Itinerary {
+class OutdoorItinerary {
   ///Safety making sure the itinerary is generated only once.
   Map<String, Map<String, String>> _itinerary;
   List<Polyline> _polylines;
   static DirectionsService _directionsService;
 
-  Itinerary._create();
+  OutdoorItinerary._create();
 
   String _duration;
   String _distance;
@@ -25,14 +27,36 @@ class Itinerary {
   Map<String, Map<String, String>> get itinerary => _itinerary;
 
   /// Create the Itinerary object and populate its fields from json data.
-  static Future<Itinerary> create(
+  static Future<OutdoorItinerary> create(
       LatLng startDestination, LatLng endDestination, String mode,
       [DirectionsService directionsService = const DirectionsService()]) async {
-    Itinerary itinerary = Itinerary._create();
+    OutdoorItinerary itinerary = OutdoorItinerary._create();
     _directionsService = directionsService;
 
     String rawData = await _directionsService
         .getDirections(startDestination, endDestination, mode: mode);
+    Map<String, dynamic> rawJson = json.decode(rawData);
+    itinerary._polylines = getPolylinePoints(rawJson);
+    itinerary._itinerary = getDirectionList(rawJson);
+    itinerary._distance = getDistance(rawJson);
+    itinerary._duration = getDuration(rawJson);
+
+    return itinerary;
+  }
+
+  /// Create the Itinerary object and populate its fields from json data.
+  static Future<OutdoorItinerary> fromReachable(
+      final Reachable start, final Reachable end, final String mode,
+      [DirectionsService directionsService = const DirectionsService()]) async {
+    OutdoorItinerary itinerary = OutdoorItinerary._create();
+    _directionsService = directionsService;
+
+    LatLng s =
+        start?.toLatLng() ?? LocationService.getInstance().current.toLatLng();
+
+    String rawData =
+        await _directionsService.getDirections(s, end.toLatLng(), mode: mode);
+
     Map<String, dynamic> rawJson = json.decode(rawData);
     itinerary._polylines = getPolylinePoints(rawJson);
     itinerary._itinerary = getDirectionList(rawJson);
