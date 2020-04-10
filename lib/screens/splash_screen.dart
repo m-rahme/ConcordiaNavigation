@@ -1,16 +1,10 @@
 import 'dart:async';
-import 'dart:typed_data';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/campus.dart';
-import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/models/university.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
-import 'package:concordia_navigation/services/location_search.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'dart:ui' as ui;
 
 // This is the Splash Screen
 class SplashScreen extends StatefulWidget {
@@ -25,30 +19,19 @@ class _SplashScreenState extends State<SplashScreen>
 
   Future<void> loadAssets() async {
     // Preloading json data
-    List<dynamic> campusData = await Campus.loadJson();
+    List<dynamic> data = await University.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
-    LocationSearch.classrooms = await LocationSearch.loadJson();
+
     OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
+    University.concordia = University.fromJson(data);
 
-    // Creating DAO's for campuses
-    Campus.sgw = Campus.fromJson(campusData[0]);
-    Campus.loy = Campus.fromJson(campusData[1]);
+    Dijkstra.shortest = Dijkstra.fromJson(data);
 
-    IndoorData.shortest = Dijkstra.fromJson(campusData);
-    Campus.sgw.buildings.forEach((building) async {
-      if (building.logo != null)
-        // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
-        //     ImageConfiguration(size: Size(350, 350)), building.logo);
-        Building.icons[building] = BitmapDescriptor.fromBytes(
-            await getBytesFromAsset(building.logo, 350));
-    });
-    Campus.loy.buildings.forEach((building) async {
-      if (building.logo != null)
-        // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
-        //     ImageConfiguration(size: Size(350, 350)), building.logo);
-        Building.icons[building] = BitmapDescriptor.fromBytes(
-            await getBytesFromAsset(building.logo, 350));
-    });
+    Search.supported
+        .forEach((object) => Search.names.add(object.name.toUpperCase()));
+
+    // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
+    //     ImageConfiguration(size: Size(350, 350)), building.logo);
   }
 
   @override
