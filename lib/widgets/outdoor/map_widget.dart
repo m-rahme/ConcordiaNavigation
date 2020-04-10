@@ -61,12 +61,12 @@ class _MapWidgetState extends State<MapWidget> {
 
     ///Create markers here
     Set<Marker> markers = {};
-    _buildings.allBuildings.forEach((building) {
-      if (building.latitude != null && building.longitude != null) {
+    BuildingsData.allBuildings.forEach((building) {
+      if (building.name != null) {
         markers.add(Marker(
-          markerId: MarkerId(building.buildingInitials),
+          markerId: MarkerId(building.name),
           anchor: const Offset(0.5, 0.5),
-          position: LatLng(building.latitude, building.longitude),
+          position: LatLng(building.lat, building.long),
           icon: Building.icons[building],
           onTap: () {
             showModalBottomSheet(
@@ -88,7 +88,7 @@ class _MapWidgetState extends State<MapWidget> {
             tiltGesturesEnabled: true,
             buildingsEnabled: false,
             mapType: MapType.normal,
-            polygons: _buildings.allPolygons,
+            polygons: _buildings.allPolygons.toSet(),
             markers: Set.of(markers),
             indoorViewEnabled: false,
             trafficEnabled: false,
