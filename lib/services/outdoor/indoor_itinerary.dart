@@ -14,4 +14,11 @@ class IndoorItinerary {
       path.add(temp);
     });
   }
+
+  @override
+  String toString() {
+    String container = "";
+    this.path.forEach((location) => container += " " + location.name);
+    return container;
+  }
 }
