@@ -19,6 +19,8 @@ class LocationService {
     registerLocationUpdates();
   }
 
+  UserLocation get current => _current;
+
   @visibleForTesting
   static getTestInstance(Location location) {
     ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
