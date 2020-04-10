@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
@@ -36,7 +37,8 @@ class DirectionsDrawer extends StatelessWidget {
           Provider.of<MapData>(context, listen: false).locationButtonTop =
               SizeConfig.safeBlockVertical * 75;
         },
-        controller: Provider.of<MapData>(context, listen: false).panelController,
+        controller:
+            Provider.of<MapData>(context, listen: false).panelController,
         maxHeight: SizeConfig.safeBlockVertical * 85,
         defaultPanelState: PanelState.CLOSED,
         borderRadius: BorderRadius.only(
@@ -172,6 +174,9 @@ class DirectionsDrawer extends StatelessWidget {
                                           mapData.locationButtonTop =
                                               SizeConfig.safeBlockVertical * 75;
                                           mapData.removeItinerary();
+                                          Provider.of<IndoorData>(context,
+                                                  listen: false)
+                                              .removeItinerary();
                                           if (_swapCar ==
                                               constants.whiteColor) {
                                             _swapCar = constants.blueColor;
