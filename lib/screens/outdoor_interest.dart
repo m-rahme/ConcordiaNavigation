@@ -1,5 +1,6 @@
+import 'package:concordia_navigation/models/outdoor/campus.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
-import 'package:concordia_navigation/services/outdoor_poi_list.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:concordia_navigation/widgets/outdoor/outdoor_interest_widget.dart';
 import 'package:flutter/material.dart';
@@ -9,13 +10,21 @@ import 'package:concordia_navigation/services/localization.dart';
 // ignore: must_be_immutable
 class OutdoorInterest extends StatelessWidget {
   List<OutdoorPOI> sgwList;
-  List<OutdoorPOI> loyolaList;
+  List<OutdoorPOI> loyList;
 
   @override
   Widget build(BuildContext context) {
-    sgwList = OutdoorPOIList.fromJson(OutdoorPOIList.poi[0]).pointOfInterests;
-    loyolaList =
-        OutdoorPOIList.fromJson(OutdoorPOIList.poi[1]).pointOfInterests;
+    sgwList = Search.supported
+        .where((object) =>
+            object is OutdoorPOI && (object.parent as Campus).initials == "SGW")
+        .toList()
+        .cast<OutdoorPOI>();
+
+    loyList = Search.supported
+        .where((object) =>
+            object is OutdoorPOI && (object.parent as Campus).initials == "LOY")
+        .toList()
+        .cast<OutdoorPOI>();
 
     return DefaultTabController(
       length: 2,
@@ -36,7 +45,7 @@ class OutdoorInterest extends StatelessWidget {
         ),
         body: TabBarView(children: [
           OutdoorInterestWidget(sgwList),
-          OutdoorInterestWidget(loyolaList)
+          OutdoorInterestWidget(loyList)
         ]),
       ),
     );
