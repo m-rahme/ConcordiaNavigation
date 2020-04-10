@@ -13,8 +13,7 @@ class OutdoorPOIList {
   // give it a campus, it will parse the interests property of it
   OutdoorPOIList.fromJson(Map json) {
     for (int j = 0; j < json["interests"].length; j++) {
-      pointOfInterests
-          .add(OutdoorPOI.fromJson(json['campusName'], json["interests"][j]));
+      pointOfInterests.add(OutdoorPOI.fromJson(json["interests"][j]));
     }
   }
 }

@@ -29,7 +29,10 @@ class IndoorWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Painters.painters[index],
-              Provider.of<IndoorData>(context).indoorItinerary != null ? CustomPaint(painter: PainterService(index, Provider.of<IndoorData>(context).indoorItinerary))
+              Provider.of<IndoorData>(context).indoorItinerary != null
+                  ? CustomPaint(
+                      painter: PainterService(index,
+                          Provider.of<IndoorData>(context).indoorItinerary))
                   : Container(),
             ],
           ),
