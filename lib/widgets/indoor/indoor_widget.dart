@@ -1,13 +1,14 @@
+import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/services/painter_service.dart';
 import 'package:concordia_navigation/services/painters.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 class IndoorWidget extends StatelessWidget {
   final int index;
-  final bool showDirections;
-  IndoorWidget(this.index, this.showDirections);
+  IndoorWidget(this.index);
 
   @override
   Widget build(BuildContext context) {
@@ -28,8 +29,7 @@ class IndoorWidget extends StatelessWidget {
           child: Stack(
             children: <Widget>[
               Painters.painters[index],
-              showDirections
-                  ? CustomPaint(painter: PainterService(index))
+              Provider.of<IndoorData>(context).indoorItinerary != null ? CustomPaint(painter: PainterService(index, Provider.of<IndoorData>(context).indoorItinerary))
                   : Container(),
             ],
           ),
