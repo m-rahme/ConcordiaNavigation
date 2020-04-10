@@ -1,5 +1,9 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -49,51 +53,27 @@ class Weekday extends StatelessWidget {
           RaisedButton(
               onPressed: (course.filteredLocation != 'N/A')
                   ? () {
-                      String letter = course.filteredLocation[0];
-                      if (letter == "H") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.hBuilding);
-                        Provider.of<MapData>(context, listen: false)
-                                .controllerDestination =
-                            course.location[1] == "A"
-                                ? "Hall Building, Montreal"
-                                : course.location;
-                      } else if (letter == "M") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = course.location;
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.jmsbBuilding);
-                      } else if (letter == "L") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('loyola');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = "Loyola Campus, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.loyola);
-                      } else if (letter == "J") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                                .controllerDestination =
-                            "John Molson Business, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.jmsbBuilding);
-                      } else if (letter == "F") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = "FG Building, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.fgBuilding);
+                      var mapData =
+                          Provider.of<MapData>(context, listen: false);
+                      dynamic result = Search.query(course.filteredLocation);
+
+                      if (result != null) {
+                        if (result is IndoorLocation) {
+                          // TODO: change this depending on what the building is
+                          // if its mb, bring the user to MB entrance
+                          // if its H, bring the user to H entrance
+                          // maybe separate as its similar to what is done in location_search.dart
+                          Provider.of<IndoorData>(context)
+                              .setItinerary("H110", result.name);
+                        }
+                        mapData = result;
+                        mapData.controllerStarting = "Current Location";
+                        mapData.mode = "driving";
+                        mapData.setItinerary(
+                            start: null, end: result as Reachable);
                       }
-                      Provider.of<MapData>(context, listen: false)
-                          .controllerStarting = "Current Location";
-                      Provider.of<MapData>(context, listen: false)
-                          .setItinerary();
+
+                      // pop either way, if results are good or not
                       Navigator.of(context).pop();
                     }
                   : null,
