@@ -1,4 +1,6 @@
 import 'dart:async';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/university.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
@@ -27,8 +29,10 @@ class _SplashScreenState extends State<SplashScreen>
 
     Dijkstra.shortest = Dijkstra.fromJson(data);
 
-    Search.supported
-        .forEach((object) => Search.names.add(object.name.toUpperCase()));
+    Search.supported.forEach((object) {
+      if (object is IndoorLocation || object is Building)
+        Search.names.add(object.name.toUpperCase());
+    });
 
     // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
     //     ImageConfiguration(size: Size(350, 350)), building.logo);
