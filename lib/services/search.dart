@@ -16,7 +16,9 @@ class Search {
 
   /// Search for everything but floors
   static dynamic query(String text) => Search.supported.firstWhere(
-      (object) => object is! Floor && object.name.toUpperCase().contains(text.toUpperCase()),
+      (object) =>
+          object is! Floor &&
+          object.name.toUpperCase().contains(text.toUpperCase()),
       orElse: () => null);
 
   /// Granular search

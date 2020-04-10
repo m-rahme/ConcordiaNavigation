@@ -1,4 +1,3 @@
-import 'package:concordia_navigation/models/indoor/classroom.dart';
 import 'package:concordia_navigation/models/indoor/coordinate.dart';
 import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
