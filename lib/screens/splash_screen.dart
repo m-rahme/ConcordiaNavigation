@@ -2,6 +2,7 @@ import 'dart:async';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
@@ -31,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen>
     Dijkstra.shortest = Dijkstra.fromJson(data);
 
     Search.supported.forEach((object) {
-      if (object is IndoorLocation || object is Building)
+      if (object is IndoorLocation || object is Building || object is UserLocation)
         Search.names.add(object.name.toUpperCase());
     });
   }
