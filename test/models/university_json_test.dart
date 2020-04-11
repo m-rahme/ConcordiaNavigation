@@ -26,7 +26,7 @@ void main() {
       concordia.children.forEach((campus) =>
           buildingsWithBuildingNames.addAll(campus.children.where((building) {
             Building b = building;
-            return b.buildingName != null;
+            return b.name != null;
           })));
       expect(buildingsWithBuildingNames.length, 10);
     });

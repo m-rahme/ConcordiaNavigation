@@ -1,13 +1,13 @@
-
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/services/search.dart';
+import 'package:concordia_navigation/models/university.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 ///Observer Pattern
 ///Handles data related to campus buildings, listens to changes and notifies listeners.
 class BuildingsData extends ChangeNotifier {
-  static List<Building> allBuildings = [];
+  List<Building> allBuildings = [];
   List<Polygon> _allPolygons = [];
   List<Polygon> _clear = [];
 
@@ -22,7 +22,9 @@ class BuildingsData extends ChangeNotifier {
 
   BuildingsData() {
     // Make one big set of buildings that has sgw + loy buildings
-    allBuildings = Search.supported.whereType<Building>().toList();
+    University.concordia.children.forEach((campus) {
+      allBuildings.addAll(campus.children.whereType<Building>());
+    });
 
     // Add the outline of every buildings to one big set of Polygons
     allBuildings.forEach((building) {

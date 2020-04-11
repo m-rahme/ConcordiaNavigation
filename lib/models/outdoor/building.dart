@@ -9,36 +9,57 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
 class Building extends OutdoorLocation {
-  // optional
-  String buildingName;
-  String logo;
+  // generated
+  Polygon _outline;
   BitmapDescriptor icon;
 
   // required
-  Polygon outline;
+  String buildingInitials;
+  List edges;
+
+  // optional
+  String logo;
 
   @visibleForTesting
   Building.forTesting(String name, double latitude, double longitude)
       : super(name, latitude: latitude, longitude: longitude);
 
-  Building(String buildingInitials, double latitude, double longitude,
-      this.outline, this.buildingName, String buildingAddress, this.logo,
-      {Campus parent})
-      : super(buildingInitials,
-            address: buildingAddress,
-            latitude: latitude,
-            longitude: longitude,
-            parent: parent)
+  Building(this.buildingInitials, String name, double latitude, double longitude,
+      String buildingAddress, this.edges,  this.logo, {Campus parent})
+      : super(name,
+              address: buildingAddress,
+              latitude: latitude,
+              longitude: longitude,
+              parent: parent)
   {
     if(logo != null) {
-      getBytesFromAsset(logo, 350).then((uint8list) {
+      _getBytesFromAsset(logo, 350).then((uint8list) {
         icon = BitmapDescriptor.fromBytes(uint8list);
       });
     }
   }
 
+  /// Confirm the building can have a marker
+  bool hasMarker() {
+    return (logo != null && icon != null);
+  }
+
+  Polygon get outline {
+    if (_outline == null) {
+      _outline = Polygon(
+        polygonId: PolygonId(buildingInitials ?? name),
+        fillColor: constants.highlightColor.withOpacity(0.7),
+        consumeTapEvents: false,
+        geodesic: false,
+        points: edges,
+        strokeWidth: 0,
+      );
+    }
+    return _outline;
+  }
+
   /// Load bitmap for location marker
-  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+  Future<Uint8List> _getBytesFromAsset(String path, int width) async {
     ByteData data = await rootBundle.load(path);
     ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
         targetWidth: width);
@@ -66,23 +87,13 @@ class Building extends OutdoorLocation {
       edges.add(temp);
     }
 
-    Polygon outline = Polygon(
-      polygonId: PolygonId(json['buildingInitials']),
-      fillColor: constants.highlightColor.withOpacity(0.7),
-      consumeTapEvents: false,
-      geodesic: false,
-      points: edges,
-      strokeWidth: 0,
-    );
-
     Building b = Building(
-        json['buildingName'] ??
-            json['buildingInitials'], // if buildingName is set, use it
+        json['buildingInitials'],
+        json['buildingName'] ?? json['buildingInitials'], // if buildingName is set, use it
         json['latitude'],
         json['longitude'],
-        outline,
-        json['buildingName'],
         json['buildingAddress'],
+        edges,
         json['logo'],
         parent: parent);
 

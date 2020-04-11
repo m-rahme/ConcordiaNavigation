@@ -88,7 +88,7 @@ class BottomSheetWidget extends StatelessWidget {
                       child: Padding(
                         padding: const EdgeInsets.only(top: 0.0, left: 0.0),
                         child: Text(
-                          building.buildingName,
+                          building.name,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.bold,
                             fontSize: 20.0,
