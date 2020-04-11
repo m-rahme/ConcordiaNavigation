@@ -1,3 +1,6 @@
+import 'dart:typed_data';
+import 'dart:ui' as ui;
+import 'package:flutter/services.dart';
 import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/models/outdoor/campus.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
@@ -9,11 +12,10 @@ class Building extends OutdoorLocation {
   // optional
   String buildingName;
   String logo;
+  BitmapDescriptor icon;
 
   // required
   Polygon outline;
-
-  static Map<Building, BitmapDescriptor> icons = {};
 
   @visibleForTesting
   Building.forTesting(String name, double latitude, double longitude)
@@ -26,7 +28,25 @@ class Building extends OutdoorLocation {
             address: buildingAddress,
             latitude: latitude,
             longitude: longitude,
-            parent: parent);
+            parent: parent)
+  {
+    if(logo != null) {
+      getBytesFromAsset(logo, 350).then((uint8list) {
+        icon = BitmapDescriptor.fromBytes(uint8list);
+      });
+    }
+  }
+
+  /// Load bitmap for location marker
+  Future<Uint8List> getBytesFromAsset(String path, int width) async {
+    ByteData data = await rootBundle.load(path);
+    ui.Codec codec = await ui.instantiateImageCodec(data.buffer.asUint8List(),
+        targetWidth: width);
+    ui.FrameInfo fi = await codec.getNextFrame();
+    return (await fi.image.toByteData(format: ui.ImageByteFormat.png))
+        .buffer
+        .asUint8List();
+  }
 
   /// All buildings have edges.
   /// Not every building has markers.

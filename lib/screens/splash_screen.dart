@@ -33,9 +33,6 @@ class _SplashScreenState extends State<SplashScreen>
       if (object is IndoorLocation || object is Building)
         Search.names.add(object.name.toUpperCase());
     });
-
-    // Building.icons[building] = await BitmapDescriptor.fromAssetImage(
-    //     ImageConfiguration(size: Size(350, 350)), building.logo);
   }
 
   @override

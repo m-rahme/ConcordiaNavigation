@@ -67,7 +67,7 @@ class _MapWidgetState extends State<MapWidget> {
           markerId: MarkerId(building.name),
           anchor: const Offset(0.5, 0.5),
           position: LatLng(building.lat, building.long),
-          icon: Building.icons[building],
+          icon: building.icon,
           onTap: () {
             showModalBottomSheet(
                 context: context,
