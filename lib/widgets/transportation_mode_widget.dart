@@ -35,11 +35,11 @@ class TransportationModeWidget extends StatelessWidget {
                   children: <Widget>[
                     IconButton(
                       icon: Icon(Icons.accessible_forward),
-                      color: mapData.wheelchair
+                      color: Provider.of<IndoorData>(context).wheelchair
                           ? constants.blueColor
                           : constants.whiteColor,
                       onPressed: () {
-                        mapData.toggleWheelchair();
+                        Provider.of<IndoorData>(context, listen: false).toggleWheelchair();
                       },
                     ),
                     Row(

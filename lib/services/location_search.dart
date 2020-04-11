@@ -1,7 +1,6 @@
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/services/search.dart';
