@@ -31,6 +31,18 @@ void main() {
       expect(mapData.getCampus, newCampus);
     });
 
+    test('changes swapTop', () {
+      double newSwampTop = 2486.0;
+      mapData.changeSwapTop(newSwampTop);
+      expect(mapData.swapButtonTop, newSwampTop);
+    });
+
+    test('changes locationTop', () {
+      double newLocationTop = 7139.0;
+      mapData.changeLocationTop(newLocationTop);
+      expect(mapData.locationButtonTop, newLocationTop);
+    });
+
     test('changes currentLocation', () {
       LatLng latLng = new LatLng(90.0, 160.0);
       mapData.changeCurrentLocation(latLng);
@@ -54,5 +66,19 @@ void main() {
       expect(mapData.getStart.latitude, latLng.latitude);
       expect(mapData.getStart.longitude, latLng.longitude);
     });
+
+    test('setItinerary() sets start as current location if start is null', () {
+      LatLng currentLocation = new LatLng(-12.0, 34.0);
+      mapData.changeCurrentLocation(currentLocation);
+      mapData.changeStart(null);
+      mapData.setItinerary();
+      expect(mapData.getStart, currentLocation);
+    });
+
+    test('removeItinerary() sets intinerary to null', () {
+      mapData.removeItinerary();
+      expect(mapData.itinerary, null);
+    });
+
   });
 }
