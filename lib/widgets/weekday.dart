@@ -65,8 +65,10 @@ class Weekday extends StatelessWidget {
                           // if its H, bring the user to H entrance
                           // maybe separate as its similar to what is done in location_search.dart
                           Provider.of<IndoorData>(context, listen: false)
-                              .setItinerary(start:"H1entrance", end:result.name);
+                              .setItinerary(
+                                  start: "H1entrance", end: result.name);
                         }
+                        mapData.controllerStarting = "Current Location";
                         mapData.end = result;
                         mapData.mode = "driving";
                         mapData.setItinerary(
