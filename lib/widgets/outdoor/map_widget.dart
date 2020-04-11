@@ -99,7 +99,9 @@ class _MapWidgetState extends State<MapWidget> {
               _completer.complete(controller);
             }),
         FloatingMapButton(
-          top: SizeConfig.blockSizeVertical * 67,
+          top: Provider.of<MapData>(context, listen: false).itinerary == null
+              ? SizeConfig.blockSizeVertical * 67
+              : SizeConfig.blockSizeVertical * 47,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
@@ -117,7 +119,9 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
-          top: SizeConfig.blockSizeVertical * 76,
+          top: Provider.of<MapData>(context, listen: false).itinerary == null
+              ? SizeConfig.blockSizeVertical * 76
+              : SizeConfig.blockSizeVertical * 56,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.gps_fixed),
           onClick: () {
