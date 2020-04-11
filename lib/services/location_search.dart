@@ -30,6 +30,7 @@ class LocationSearch extends SearchDelegate {
           onTap: () async {
             // search for element they tapped
             dynamic result = Search.query(suggestionList[index]);
+            mapData.itinerary = null;
 
             if (isFirst) {
               mapData.start = result;
