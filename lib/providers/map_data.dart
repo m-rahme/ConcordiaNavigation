@@ -56,10 +56,15 @@ class MapData extends ChangeNotifier {
     notifyListeners();
   }
 
-  void setItinerary({Reachable start, Reachable end}) async {
+  void setItinerary() async {
     // try to use parameters, but if they're not supplied use attributes
-    itinerary = await OutdoorItinerary.fromReachable(
-        start ?? _start, end ?? _end, mode);
+    if (_start == null)
+      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+    else if (_start.toLatLng() != _end.toLatLng()) {
+      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+    } else {
+      print('Same start and end!');
+    }
     notifyListeners();
   }
 
