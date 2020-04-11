@@ -21,6 +21,7 @@ class LocationSearch extends SearchDelegate {
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
+    // TODO: remove current location from search if end is being set
     final suggestionList = query.isEmpty
         ? Search.names.take(10).toList()
         : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
@@ -53,6 +54,12 @@ class LocationSearch extends SearchDelegate {
             if ((mapData.start is UserLocation && mapData.end != null) ||
                 (mapData.end is UserLocation && mapData.start != null)) {
               //TODO: indoor with current location
+              if (mapData.end is IndoorLocation) {
+                String entrance =
+                    result.name[0] == 'H' ? 'H1entrance' : 'MBentrance';
+                Provider.of<IndoorData>(context, listen: false)
+                    .setItinerary(start: entrance, end: result.name);
+              }
               mapData.setItinerary();
             } else {
               if (mapData.start != null && mapData.end != null) {
