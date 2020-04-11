@@ -59,13 +59,13 @@ class Weekday extends StatelessWidget {
                       if (result != null) {
                         String entrance =
                             result.name[0] == 'H' ? 'H1entrance' : 'MBentrance';
+                            mapData.start = null;
                         Provider.of<IndoorData>(context, listen: false)
                             .setItinerary(start: entrance, end: result.name);
                         mapData.controllerStarting = "Current Location";
                         mapData.end = result;
                         mapData.mode = "driving";
-                        mapData.setItinerary(
-                            start: null, end: result as Reachable);
+                        mapData.setItinerary();
                         mapData.panelController.open();
                       }
 

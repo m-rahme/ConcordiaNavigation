@@ -96,6 +96,8 @@ class OutdoorInterestWidget extends StatelessWidget {
                             onPressed: () {
                               Provider.of<MapData>(context, listen: false)
                                   .controllerStarting = "Current Location";
+                              Provider.of<MapData>(context, listen: false)
+                                  .start = null;
                               Provider.of<MapData>(context, listen: false).end =
                                   interests[index];
                               Provider.of<MapData>(context, listen: false)
