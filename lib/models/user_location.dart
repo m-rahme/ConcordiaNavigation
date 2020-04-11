@@ -6,6 +6,7 @@ import 'package:location/location.dart';
 class UserLocation implements Reachable {
   final double _latitude;
   final double _longitude;
+  final String name = "Current Location";
 
   UserLocation(this._latitude, this._longitude);
 
