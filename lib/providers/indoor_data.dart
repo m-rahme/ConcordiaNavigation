@@ -10,7 +10,6 @@ class IndoorData extends ChangeNotifier {
 
   void setItinerary({String start, String end}) {
     _indoorItinerary = IndoorItinerary(start, end);
-    print(_indoorItinerary);
     notifyListeners();
   }
 

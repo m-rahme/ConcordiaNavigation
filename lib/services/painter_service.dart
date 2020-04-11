@@ -20,8 +20,6 @@ class PainterService extends CustomPainter {
 
     Map<int, List<IndoorLocation>> map = {0: [], 1: [], 2: [], 3: []};
 
-    print(itinerary);
-
     for (IndoorLocation indoor in itinerary.path)
       map[(indoor.parent as Floor).page].add(indoor);
 

@@ -1,11 +1,11 @@
 import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/services/painters.dart';
-import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/widgets/indoor/indoor_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:google_fonts/google_fonts.dart';
+import 'package:provider/provider.dart';
 
 class Arguments {
   final bool showDirections;
@@ -21,7 +21,7 @@ class IndoorPage extends StatelessWidget {
   Widget build(BuildContext context) {
     // for each floor in domain, do this
     List<Floor> floors = [];
-    BuildingsData.allBuildings.forEach((building) =>
+    Provider.of<BuildingsData>(context).allBuildings.forEach((building) =>
         building.children.forEach((floor) => floors.add((floor))));
     List<Widget> buttons = [];
     for (int i = 0; i < floors.length; i++) {

@@ -235,7 +235,7 @@ packages:
       name: intl_translation
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.17.10"
+    version: "0.17.9"
   io:
     dependency: transitive
     description:
@@ -403,7 +403,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.0.2"
+    version: "2.4.0"
   platform:
     dependency: transitive
     description:
@@ -632,7 +632,7 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.7.0"
+    version: "3.6.1"
   yaml:
     dependency: transitive
     description:
