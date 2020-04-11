@@ -1884,6 +1884,10 @@
 									{
 										"name": "H1elevator",
 										"distance": 2
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
 									}
 								]
 							},
@@ -2213,6 +2217,10 @@
 									},
 									{
 										"name": "H8escalatorUp",
+										"distance": 2
+									},
+									{
+										"name": "H8accessibility",
 										"distance": 2
 									}
 								]
@@ -2660,6 +2668,10 @@
 									{
 										"name": "H8escalatorDown",
 										"distance": 2
+									},
+									{
+										"name": "H8accessibility",
+										"distance": 2
 									}
 								]
 							},
@@ -3008,6 +3020,33 @@
 										"distance": 1
 									}
 								]
+							},
+							{
+								"name": "H8accessibility",
+								"coordinates": {
+									"room": {
+										"x": 546.0,
+										"y": 352.15
+									},
+									"nearest": {
+										"x": 546.0,
+										"y": 352.15
+									}
+								},
+								"edges": [
+									{
+										"name": "H8elevator",
+										"distance": 2
+									},
+									{
+										"name": "H8checkTM",
+										"distance": 2
+									},
+									{
+										"name": "H8checkBM",
+										"distance": 2
+									}
+								]
 							}
 						],
 						"poi": [
@@ -3157,6 +3196,10 @@
 									{
 										"name": "H9elevator",
 										"distance": 1
+									},
+									{
+										"name": "H8accessibility",
+										"distance": 2
 									}
 								]
 							},
@@ -3256,6 +3299,33 @@
 								]
 							},
 							{
+								"name": "H9accessibility",
+								"coordinates": {
+									"room": {
+										"x": 486.3,
+										"y": 573.8
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H9elevator",
+										"distance": 1
+									},
+									{
+										"name": "H909",
+										"distance": 3
+									},
+									{
+										"name": "H9checkMM",
+										"distance": 3
+									}
+								]
+							},
+							{
 								"name": "H907",
 								"coordinates": {
 									"room": {
@@ -3305,6 +3375,10 @@
 									},
 									{
 										"name": "H9escalatorDown",
+										"distance": 3
+									},
+									{
+										"name": "H9accessibility",
 										"distance": 3
 									}
 								]
@@ -4067,6 +4141,10 @@
 									{
 										"name": "H9escalatorUp",
 										"distance": 1
+									},
+									{
+										"name": "H9accessibility",
+										"distance": 3
 									}
 								]
 							}
@@ -4217,6 +4295,10 @@
 									},
 									{
 										"name": "H8elevator",
+										"distance": 1
+									},
+									{
+										"name": "H9accessibility",
 										"distance": 1
 									}
 								]
