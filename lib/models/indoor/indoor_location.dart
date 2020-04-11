@@ -18,7 +18,6 @@ abstract class IndoorLocation extends UniLocation implements Reachable {
       : room = Coordinate.fromJson(json['coordinates']['room']),
         nearest = Coordinate.fromJson(json['coordinates']['nearest']),
         super(json['name'], parent: parent) {
-    // skip floors as users shouldn't be able to look those in the search bar
     Search.supported.add(this);
   }
 
