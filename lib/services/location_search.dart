@@ -34,12 +34,16 @@ class LocationSearch extends SearchDelegate {
 
             if (isFirst) {
               if (result == mapData.end) {
-                mapData.start = null;
+                mapData.end = null;
+                Provider.of<IndoorData>(context, listen: false)
+                    .removeItinerary();
               }
               mapData.start = result;
             } else {
               if (result == mapData.start) {
-                mapData.end = null;
+                mapData.start = null;
+                Provider.of<IndoorData>(context, listen: false)
+                    .removeItinerary();
               }
               mapData.end = result;
             }
