@@ -32,19 +32,13 @@ class MapPage extends StatelessWidget {
         ),
       ],
       panel: Consumer<MapData>(
-        builder: (context, mapData, child) => Container(
-          decoration: BoxDecoration(
-            color: constants.appColor,
-            borderRadius: BorderRadius.all(Radius.circular(14.0)),
-          ),
-          child: Column(
-            children: <Widget>[
-              TransportationModeWidget(),
-              SearchBars(), // top row for transportation mode selection
-              DirectionsList(), // list of directions
-              ShuttleWidget(),
-            ],
-          ),
+        builder: (context, mapData, child) => Column(
+          children: <Widget>[
+            TransportationModeWidget(),
+            SearchBars(), // top row for transportation mode selection
+            DirectionsList(), // list of directions
+            ShuttleWidget(),
+          ],
         ),
       ),
       body: MapWidget(),

@@ -11,6 +11,12 @@ class SearchBars extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MapData>(
       builder: (context, mapData, child) => Container(
+        decoration: BoxDecoration(
+          color: constants.appColor,
+          borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(14.0),
+              bottomRight: Radius.circular(14.0)),
+        ),
         height: SizeConfig.safeBlockVertical * 16,
         child: Padding(
           padding: const EdgeInsets.only(left: 20, right: 20),

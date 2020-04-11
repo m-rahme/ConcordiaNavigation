@@ -10,6 +10,11 @@ class TransportationModeWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Consumer<MapData>(
       builder: (BuildContext context, mapData, Widget child) => Container(
+        decoration: BoxDecoration(
+          color: constants.appColor,
+          borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(14.0), topRight: Radius.circular(14.0)),
+        ),
         height: SizeConfig.safeBlockVertical * 8,
         child: Column(
           children: <Widget>[

@@ -79,7 +79,7 @@ class _MapWidgetState extends State<MapWidget> {
                   Provider.of<MapData>(context, listen: false)
                           .controllerEnding !=
                       null)
-              ? SizeConfig.blockSizeVertical * 47
+              ? SizeConfig.blockSizeVertical * 44
               : SizeConfig.blockSizeVertical * 67,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
@@ -88,7 +88,7 @@ class _MapWidgetState extends State<MapWidget> {
             if (_campus) {
               mapData.animateToLatLng(constants.sgw);
               _campus = false;
-            } else if (_campus == false){
+            } else if (_campus == false) {
               mapData.animateToLatLng(constants.loyola);
               _campus = true;
             }
@@ -101,13 +101,13 @@ class _MapWidgetState extends State<MapWidget> {
                   Provider.of<MapData>(context, listen: false)
                           .controllerEnding !=
                       null)
-              ? SizeConfig.blockSizeVertical * 56
+              ? SizeConfig.blockSizeVertical * 53.5
               : SizeConfig.blockSizeVertical * 76,
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: gpsIcon(),
           onClick: () {
             locationService.withPermission(() {
-              if(_locationAvailable == true) {
+              if (_locationAvailable == true) {
                 mapData.animateToReachable(position);
                 if (_locationFixed == true) {
                   _locationFixed = false;
