@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/search.dart';
@@ -59,15 +60,10 @@ class Weekday extends StatelessWidget {
                       dynamic result = Search.query(course.filteredLocation);
 
                       if (result != null) {
-                        if (result is IndoorLocation) {
-                          // TODO: change this depending on what the building is
-                          // if its mb, bring the user to MB entrance
-                          // if its H, bring the user to H entrance
-                          // maybe separate as its similar to what is done in location_search.dart
-                          Provider.of<IndoorData>(context, listen: false)
-                              .setItinerary(
-                                  start: "H1entrance", end: result.name);
-                        }
+                        String entrance =
+                            result.name[0] == 'H' ? 'H1entrance' : 'MBentrance';
+                        Provider.of<IndoorData>(context, listen: false)
+                            .setItinerary(start: entrance, end: result.name);
                         mapData.controllerStarting = "Current Location";
                         mapData.end = result;
                         mapData.mode = "driving";
