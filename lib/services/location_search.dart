@@ -1,9 +1,7 @@
-import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
-import 'package:concordia_navigation/models/reachable.dart';
-import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
@@ -14,6 +12,10 @@ import 'package:concordia_navigation/providers/map_data.dart';
 It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
+  final bool isFirst;
+
+  LocationSearch(this.isFirst);
+
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
@@ -21,17 +23,17 @@ class LocationSearch extends SearchDelegate {
         ? Search.names.take(10).toList() // 5 first
         : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
 
-    CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
-    List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
-    if (nextClasses != null &&
-        nextClasses.isNotEmpty &&
-        nextClasses.first.filteredLocation != "N/A") {
-      var next = nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
-      // Avoid duplicates on widget rebuild
-      if (!suggestionList.contains(next)) {
-        suggestionList.insert(0, next);
-      }
-    }
+    // CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
+    // List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
+    // if (nextClasses != null &&
+    //     nextClasses.isNotEmpty &&
+    //     nextClasses.first.filteredLocation != "N/A") {
+    //   var next = nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
+    //   // Avoid duplicates on widget rebuild
+    //   if (!suggestionList.contains(next)) {
+    //     suggestionList.insert(0, next);
+    //   }
+    // }
 
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
@@ -43,25 +45,37 @@ class LocationSearch extends SearchDelegate {
             // search for element they tapped
             dynamic result = Search.query(suggestionList[index]);
 
-            if (result != null) {
-              // simple example for PoC
-              if (result is IndoorLocation)
-                Provider.of<IndoorData>(context, listen: false)
-                    .setItinerary("H820", "H859");
-
+            if (isFirst) {
+              mapData.start = result;
+            } else {
               mapData.end = result;
-              mapData.controllerStarting = "Current Location";
-              mapData.mode = "driving";
-
-              // check if there's any outdoor itinerary involved
-              if (mapData.end is OutdoorLocation ||
-                  mapData.start is OutdoorLocation ||
-                  mapData.start == null)
-                mapData.setItinerary(start: null, end: result as Reachable);
             }
 
-            // pop either way, if results are good or not
             Navigator.of(context).pop();
+            if (mapData.start != null && mapData.end != null) {
+              if (mapData.start is OutdoorLocation &&
+                  mapData.end is OutdoorLocation) {
+                mapData.setItinerary();
+              } else if (mapData.start is IndoorLocation &&
+                  mapData.end is IndoorLocation) {
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: (mapData.start as IndoorLocation).name,
+                    end: (mapData.end as IndoorLocation).name);
+                Navigator.popAndPushNamed(context, '/indoor',
+                    arguments: Arguments(true));
+              }
+            }
+            // mapData.end = result;
+            // mapData.controllerStarting = "Current Location";
+            // mapData.mode = "driving";
+
+            // // check if there's any outdoor itinerary involved
+            // if (mapData.end is OutdoorLocation ||
+            //     mapData.start is OutdoorLocation ||
+            //     mapData.start == null)
+            //   mapData.setItinerary(start: null, end: result as Reachable);
+
+            // pop either way, if results are good or not
           },
           leading: Icon(Icons.location_city),
           title: RichText(
