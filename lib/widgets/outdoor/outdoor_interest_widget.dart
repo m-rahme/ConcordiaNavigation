@@ -94,10 +94,16 @@ class OutdoorInterestWidget extends StatelessWidget {
                                   fontSize: 12.0, color: constants.whiteColor),
                             ),
                             onPressed: () {
+                              mapData.controllerStarting = "Current Location";
+                              mapData.controllerEnding = interests[index].name;
                               Provider.of<MapData>(context, listen: false).end =
                                   interests[index];
                               Provider.of<MapData>(context, listen: false)
                                   .setItinerary();
+                              Provider.of<MapData>(context, listen: false)
+                                  .panelController
+                                  .open();
+
                               Navigator.of(context).pop();
                             },
                           );

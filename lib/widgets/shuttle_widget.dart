@@ -9,6 +9,13 @@ class ShuttleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      decoration: BoxDecoration(
+        color: constants.appColor,
+        borderRadius: BorderRadius.only(
+          bottomLeft: Radius.circular(14),
+          bottomRight: Radius.circular(14),
+        ),
+      ),
       height: SizeConfig.safeBlockVertical * 15,
       child: Column(
         children: <Widget>[
@@ -48,13 +55,21 @@ class ShuttleWidget extends StatelessWidget {
             flex: 3,
             child: Row(
               children: [
-                Container(
-                  height: SizeConfig.safeBlockVertical * 15,
-                  width: SizeConfig.safeBlockHorizontal * 100,
-                  color: constants.whiteColor,
-                  child: Padding(
-                    padding: const EdgeInsets.only(left: 5.0, right: 6.0),
-                    child: ShuttleTile(),
+                Flexible(
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: constants.whiteColor,
+                      borderRadius: BorderRadius.only(
+                        bottomLeft: Radius.circular(14),
+                        bottomRight: Radius.circular(14),
+                      ),
+                    ),
+                    height: SizeConfig.safeBlockVertical * 15,
+                    width: SizeConfig.safeBlockHorizontal * 100,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 5.0, right: 6.0),
+                      child: ShuttleTile(),
+                    ),
                   ),
                 ),
               ],

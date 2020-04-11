@@ -93,7 +93,7 @@ class SearchBars extends StatelessWidget {
                             width: SizeConfig.blockSizeHorizontal * 3,
                           ),
                           Text(
-                            mapData.controllerStarting ?? "End Location",
+                            mapData.controllerEnding ?? "End Location",
                             style: GoogleFonts.raleway(
                               fontSize: 15.0,
                               fontWeight: FontWeight.w600,

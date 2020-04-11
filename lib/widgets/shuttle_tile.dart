@@ -18,9 +18,7 @@ class ShuttleTile extends StatelessWidget {
           iconSize: 45.0,
         ),
         title: Text(
-          shuttleTime == null
-              ? "Check Shuttle Schedule For More Info"
-              : shuttleTime,
+          shuttleTime == null ? "Check Shuttle Schedule" : shuttleTime,
           style: GoogleFonts.raleway(
             fontSize: 14.0,
             fontWeight: FontWeight.w600,

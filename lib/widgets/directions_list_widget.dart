@@ -25,6 +25,8 @@ class DirectionsList extends StatelessWidget {
               ),
             )
           : Container(
+              height: SizeConfig.safeBlockVertical * 46,
+              color: constants.whiteColor,
               child: ListView.builder(
                 itemCount: mapData.itinerary.itinerary.length,
                 itemBuilder: (context, index) {

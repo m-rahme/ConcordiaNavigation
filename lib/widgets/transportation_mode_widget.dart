@@ -97,7 +97,7 @@ class TransportationModeWidget extends StatelessWidget {
                       icon: Icon(Icons.close),
                       color: constants.whiteColor,
                       onPressed: () {
-                        mapData.togglePanel();
+                        mapData.panelController.close();
                         mapData.removeItinerary();
                         Provider.of<IndoorData>(context, listen: false)
                             .removeItinerary();

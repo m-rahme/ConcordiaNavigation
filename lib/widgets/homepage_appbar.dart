@@ -31,7 +31,15 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
           icon: Icon(Icons.search),
           onPressed: () {
 //            showSearch(context: context, delegate: LocationSearch());
-            Provider.of<MapData>(context, listen: false).togglePanel();
+            Provider.of<MapData>(context, listen: false)
+                    .panelController
+                    .isPanelClosed
+                ? Provider.of<MapData>(context, listen: false)
+                    .panelController
+                    .open()
+                : Provider.of<MapData>(context, listen: false)
+                    .panelController
+                    .close();
           },
         )
       ],

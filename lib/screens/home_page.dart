@@ -1,10 +1,9 @@
 import 'package:concordia_navigation/services/painters.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
-import 'package:concordia_navigation/widgets/outdoor/directions_drawer.dart';
+import 'package:concordia_navigation/widgets/outdoor/map_page.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/widgets/homepage_appbar.dart';
-import 'package:concordia_navigation/widgets/outdoor/map_widget.dart';
 
 //The app will launch here.
 class HomePage extends StatefulWidget {
@@ -23,10 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: HomePageAppBar(),
       drawer: CustomDrawer(),
-      body: Stack(children: <Widget>[
-        MapWidget(),
-        DirectionsDrawer(),
-      ]),
+      body: MapPage(),
     );
   }
 }

@@ -39,7 +39,7 @@ class ShuttleService {
         shuttleTime = shuttleSchedule[campus][nextAvailableDay.toString()][0];
       }
 
-      return "Next Shuttle Bus at: $shuttleTime";
+      return "Next Shuttle: $shuttleTime";
     }
   }
 }
