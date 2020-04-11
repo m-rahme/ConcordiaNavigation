@@ -21,22 +21,9 @@ class LocationSearch extends SearchDelegate {
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
-    // TODO: remove current location from search if end is being set
     final suggestionList = query.isEmpty
         ? Search.names.take(10).toList()
         : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
-
-    // CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
-    // List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
-    // if (nextClasses != null &&
-    //     nextClasses.isNotEmpty &&
-    //     nextClasses.first.filteredLocation != "N/A") {
-    //   var next = nextClasses.first.filteredLocation + " [NEXT CLASS LOCATION]";
-    //   // Avoid duplicates on widget rebuild
-    //   if (!suggestionList.contains(next)) {
-    //     suggestionList.insert(0, next);
-    //   }
-    // }
 
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
@@ -51,44 +38,32 @@ class LocationSearch extends SearchDelegate {
               mapData.end = result;
             }
 
-            if ((mapData.start is UserLocation && mapData.end != null) ||
-                (mapData.end is UserLocation && mapData.start != null)) {
-              //TODO: indoor with current location
-              if (mapData.end is IndoorLocation) {
-                String entrance =
-                    result.name[0] == 'H' ? 'H1entrance' : 'MBentrance';
-                Provider.of<IndoorData>(context, listen: false)
-                    .setItinerary(start: entrance, end: result.name);
-              }
-              mapData.setItinerary();
-            } else {
-              if (mapData.start != null && mapData.end != null) {
-                if (mapData.start is OutdoorLocation &&
-                    mapData.end is OutdoorLocation) {
-                  mapData.setItinerary();
-                } else if (mapData.start is IndoorLocation &&
-                    mapData.end is IndoorLocation) {
-                  Provider.of<IndoorData>(context, listen: false).setItinerary(
-                      start: (mapData.start as IndoorLocation).name,
-                      end: (mapData.end as IndoorLocation).name);
-                  Navigator.pushNamed(context, '/indoor',
-                      arguments: Arguments(true));
-                } else {
-                  OutdoorLocation selected = mapData.start is IndoorLocation
-                      ? mapData.end
-                      : mapData.start;
-                  String letter =
-                      (selected.parent as OutdoorLocation).parent.name[0];
-                  String indoor = letter == 'H' ? 'H1entrance' : 'MBentrance';
-                  Provider.of<IndoorData>(context, listen: false).setItinerary(
-                      start: selected == mapData.start
-                          ? indoor
-                          : (mapData.start as UniLocation).name,
-                      end: selected == mapData.end
-                          ? indoor
-                          : (mapData.end as UniLocation).name);
-                  mapData.setItinerary();
-                }
+            if (mapData.start != null && mapData.end != null) {
+              if (mapData.start is OutdoorLocation &&
+                  mapData.end is OutdoorLocation) {
+                mapData.setItinerary();
+              } else if (mapData.start is IndoorLocation &&
+                  mapData.end is IndoorLocation) {
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: (mapData.start as IndoorLocation).name,
+                    end: (mapData.end as IndoorLocation).name);
+                Navigator.pushNamed(context, '/indoor',
+                    arguments: Arguments(true));
+              } else {
+                OutdoorLocation selected = mapData.start is IndoorLocation
+                    ? mapData.end
+                    : mapData.start;
+                String letter =
+                    (selected.parent as OutdoorLocation).parent.name[0];
+                String indoor = letter == 'H' ? 'H1entrance' : 'MBentrance';
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: selected == mapData.start
+                        ? indoor
+                        : (mapData.start as UniLocation).name,
+                    end: selected == mapData.end
+                        ? indoor
+                        : (mapData.end as UniLocation).name);
+                mapData.setItinerary();
               }
             }
             Navigator.of(context).pop();

@@ -33,8 +33,6 @@ class MapData extends ChangeNotifier {
 
   MapData() {
     mode = "driving";
-    Search.supported.add(LocationService.getInstance().current);
-    Search.names.add("CURRENT LOCATION");
   }
 
   Reachable get start => _start;
@@ -43,18 +41,14 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    controllerEnding = obj is UniLocation
-        ? (obj as UniLocation).name
-        : (obj as UserLocation).name;
+    controllerEnding = (obj as UniLocation).name;
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    controllerStarting = obj is UniLocation
-        ? (obj as UniLocation).name
-        : (obj as UserLocation).name;
+    controllerStarting = (obj as UniLocation).name;
     notifyListeners();
   }
 
