@@ -14,11 +14,11 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
-      margin: const EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0.0),
+      margin: const EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 18.0),
       controller: Provider.of<MapData>(context, listen: false).panelController,
       maxHeight: SizeConfig.safeBlockVertical * 85,
       minHeight: Provider.of<MapData>(context).itinerary == null
-          ? SizeConfig.safeBlockVertical * 3.2
+          ? SizeConfig.safeBlockVertical * 0
           : SizeConfig.safeBlockVertical * 24,
       defaultPanelState: PanelState.CLOSED,
       backdropEnabled: true,
