@@ -23,18 +23,8 @@ void main() {
 
     test('constructor creates user location with latitude and longitude', () {
       final userLocation = new UserLocation.fromLocationData(locationData);
-      expect(userLocation.latitude, 1.0);
-      expect(userLocation.longitude, 2.0);
-    });
-
-    test('sgw() returns location of sgw with lat and lng', () {
-      expect(UserLocation.sgw().latitude, 45.495944);
-      expect(UserLocation.sgw().longitude, -73.578075);
-    });
-
-    test('loyola() returns location of loyola with lat and lng', () {
-      expect(UserLocation.loyola().latitude, 45.4582);
-      expect(UserLocation.loyola().longitude, -73.6405);
+      expect(userLocation.lat, 1.0);
+      expect(userLocation.long, 2.0);
     });
 
     test('toLatLng() returns UserLocation as LatLng', () {

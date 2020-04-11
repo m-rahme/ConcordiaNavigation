@@ -3,6 +3,7 @@ import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/university.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/services/search.dart';
@@ -57,6 +58,14 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    // Trigger location update\
+    try {
+      LocationService.getInstance();
+    } catch (Exception) {
+      Scaffold.of(context).showSnackBar(
+        SnackBar(content: Text('Location is unavailable at this time!'))
+      );
+    }
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,

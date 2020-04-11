@@ -10,7 +10,6 @@ import 'package:concordia_navigation/providers/buildings_data.dart';
 List<SingleChildWidget> providers = [
   StreamProvider<UserLocation>(
     create: (context) => LocationService.getInstance().stream,
-    initialData: UserLocation.sgw(),
   ),
   ChangeNotifierProvider<MapData>(
     create: (context) => MapData(),

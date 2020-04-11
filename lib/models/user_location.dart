@@ -1,27 +1,28 @@
+import 'package:concordia_navigation/models/reachable.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
 ///User location model with user's latitude and longitude.
-class UserLocation {
-  double latitude;
-  double longitude;
+class UserLocation implements Reachable {
+  final double _latitude;
+  final double _longitude;
 
-  UserLocation(this.latitude, this.longitude);
+  UserLocation(this._latitude, this._longitude);
 
-  UserLocation.fromLocationData(LocationData locationData) {
-    this.latitude = locationData.latitude;
-    this.longitude = locationData.longitude;
+  factory UserLocation.fromLocationData(LocationData loc) {
+    return UserLocation(loc.latitude, loc.longitude);
   }
 
-  factory UserLocation.sgw() {
-    return UserLocation(45.495944, -73.578075);
+  factory UserLocation.fromLatLng(LatLng latLng) {
+    return UserLocation(latLng.latitude, latLng.longitude);
   }
 
-  factory UserLocation.loyola() {
-    return UserLocation(45.4582, -73.6405);
-  }
+  @override
+  LatLng toLatLng() => lat == null || long == null ? null : LatLng(lat, long);
 
-  LatLng toLatLng() {
-    return LatLng(latitude, longitude);
-  }
+  @override
+  double get lat => _latitude;
+
+  @override
+  double get long => _longitude;
 }

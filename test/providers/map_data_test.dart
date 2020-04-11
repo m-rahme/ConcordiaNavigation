@@ -26,14 +26,6 @@ void main() {
       expect(mapData.mode, newMode);
     });
 
-    test('changes currentLocation', () {
-      LatLng latLng = new LatLng(90.0, 160.0);
-      mapData.changeCurrentLocation(latLng);
-      expect(mapData.getCurrentLocation, isA<LatLng>());
-      expect(mapData.getCurrentLocation.latitude, latLng.latitude);
-      expect(mapData.getCurrentLocation.longitude, latLng.longitude);
-    });
-
     test('changes end', () {
       double latitude = -90.0;
       double longitude = -160.0;

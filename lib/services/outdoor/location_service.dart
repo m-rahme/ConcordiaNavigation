@@ -14,22 +14,19 @@ class LocationService {
   LocationService._() {
     _locationController = StreamController<UserLocation>();
     _location ??= Location();
-    setCurrent();
-    _locationController.add(_current);
+    updateCurrent();
     registerLocationUpdates();
   }
 
-  UserLocation get current => _current;
-
   @visibleForTesting
-  static getTestInstance(Location location) {
+  static LocationService getTestInstance(Location location) {
     ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
     if (_location == null) _location = location;
     if (_instance == null) _instance = LocationService._();
     return _instance;
   }
 
-  static getInstance() {
+  static LocationService getInstance() {
     ///Checks if instance is null before initializing it, else returns instance  --> (Singleton DP)
     if (_instance == null) {
       _instance = LocationService._();
@@ -38,6 +35,36 @@ class LocationService {
   }
 
   Stream<UserLocation> get stream => _locationController.stream;
+
+  UserLocation get current => _current;
+
+  void setCurrent (LocationData data) {
+    if (data != null) {
+      _current = new UserLocation.fromLocationData(data);
+      _locationController.add(_current);
+    }
+  }
+
+  /// Checks for (and requests) location permissions
+  Future<bool> checkPermission() async {
+    PermissionStatus permission = await _location.hasPermission();
+    if (permission != PermissionStatus.GRANTED) {
+      permission = await _location.requestPermission();
+      if (permission != PermissionStatus.GRANTED) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  /// Clean wrapper for performing privileged actions
+  void withPermission(void method()) {
+    checkPermission().then((granted) => {
+      if(granted == true) {
+        method()
+      }
+    });
+  }
 
   ///Fetches user location using the Location Package
   Future<LocationData> getLocationData() async {
@@ -51,27 +78,14 @@ class LocationService {
     return loc;
   }
 
-  ///Sets _current to current user location
-  void setCurrent() async {
-    Future<LocationData> future = getLocationData();
-    future.then((value) {
-      _current = new UserLocation.fromLocationData(value);
-    });
+  ///Updates _current with real device location
+  void updateCurrent() {
+    withPermission(() => getLocationData().then((position) => setCurrent(position)));
   }
 
   ///Listen to location changes to continuously update user location on map
   void registerLocationUpdates() {
-    // request permission to use location
-    _location.requestPermission().then((granted) async {
-      if (granted != null) {
-        // listen to the onLocationChanged stream and emit over our controller
-        _location.onLocationChanged().listen((position) {
-          if (position != null) {
-            _current = new UserLocation.fromLocationData(position);
-            _locationController.add(_current);
-          }
-        });
-      }
-    });
+    // listen to the onLocationChanged stream and emit over our controller
+    withPermission(() => _location.onLocationChanged().listen((position) => setCurrent(position)));
   }
 }

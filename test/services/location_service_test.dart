@@ -76,12 +76,12 @@ void main() {
       when(location.getLocation()).thenAnswer((_) => Future.value(data));
 
       // Call method
-      firstLocationService.setCurrent();
+      firstLocationService.updateCurrent();
 
       // Verify
       verify(location.getLocation()).called(1);
-      expect(userLocation.latitude, data.latitude);
-      expect(userLocation.longitude, data.longitude);
+      expect(userLocation.lat, data.latitude);
+      expect(userLocation.long, data.longitude);
     });
   });
 }

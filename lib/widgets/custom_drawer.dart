@@ -47,7 +47,7 @@ class CustomDrawer extends StatelessWidget {
                   context,
                   ModalRoute.withName('/home'),
                 );
-                mapData.animateTo(45.496676, -73.578760);
+                mapData.animateToLatLng(constants.sgw);
               });
         },
       ),
@@ -66,7 +66,7 @@ class CustomDrawer extends StatelessWidget {
                   context,
                   ModalRoute.withName('/home'),
                 );
-                mapData.animateTo(45.4582, -73.6405);
+                mapData.animateToLatLng(constants.loyola);
               });
         },
       ),

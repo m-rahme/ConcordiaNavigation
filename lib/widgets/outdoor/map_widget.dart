@@ -1,4 +1,3 @@
-import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
@@ -6,10 +5,9 @@ import 'floating_map_button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 //This is the map widget that will be loaded in the home screen.
@@ -19,28 +17,9 @@ class MapWidget extends StatefulWidget {
 }
 
 class _MapWidgetState extends State<MapWidget> {
-  CameraPosition _initialCamera;
   bool _campus = true;
-  var _location;
-
-  Future setInitialCamera() async {
-    var location = UserLocation.fromLocationData(
-        await LocationService.getInstance().getLocationData());
-    _initialCamera = CameraPosition(
-      target: location.toLatLng(),
-      zoom: constants.CAMERA_ZOOM,
-      tilt: constants.CAMERA_TILT,
-      bearing: constants.CAMERA_BEARING,
-    );
-    return location;
-  }
-
-  @override
-  void initState() {
-    super.initState();
-    Future location = setInitialCamera();
-    location.then((value) => _location = value);
-  }
+  bool _locationAvailable = true;
+  bool _locationFixed = false;
 
   List<Marker> buildingMarkers(List<Building> buildings) {
     return buildings.where((building) => building.hasMarker()).map((building) {
@@ -62,18 +41,16 @@ class _MapWidgetState extends State<MapWidget> {
 
   @override
   Widget build(BuildContext context) {
-    if (_location != null) {
-      Provider.of<MapData>(
-        context,
-        listen: false,
-      ).changeCurrentLocation(_location.toLatLng());
-    }
-    final _completer = Provider.of<MapData>(context).getCompleter;
-    final _buildings = Provider.of<BuildingsData>(context);
-    final pos = Provider.of<UserLocation>(context);
+    final buildingData = Provider.of<BuildingsData>(context);
+    final mapData = Provider.of<MapData>(context);
+    final position = Provider.of<UserLocation>(context);
+    final completer = mapData.getCompleter;
+    final locationService = mapData.locationService;
 
-    while (_initialCamera == null) {
-      return Center(child: Text("Loading Map"));
+    _locationAvailable = (position != null);
+
+    if (_locationAvailable == true && _locationFixed == true) {
+      mapData.animateToReachable(position);
     }
 
     return Stack(
@@ -86,15 +63,14 @@ class _MapWidgetState extends State<MapWidget> {
             tiltGesturesEnabled: true,
             buildingsEnabled: false,
             mapType: MapType.normal,
-            polygons: _buildings.allPolygons.toSet(),
-            markers: buildingMarkers(_buildings.allBuildings).toSet(),
+            polygons: buildingData.allPolygons.toSet(),
+            markers: buildingMarkers(buildingData.allBuildings).toSet(),
             indoorViewEnabled: false,
             trafficEnabled: false,
-            initialCameraPosition: _initialCamera,
-            polylines:
-                Provider.of<MapData>(context).itinerary?.polylines?.toSet(),
+            initialCameraPosition: mapData.getFixedLocationCamera(),
+            polylines: mapData.itinerary?.polylines?.toSet(),
             onMapCreated: (controller) async {
-              _completer.complete(controller);
+              completer.complete(controller);
             }),
         FloatingMapButton(
           top: (Provider.of<MapData>(context, listen: false)
@@ -108,17 +84,14 @@ class _MapWidgetState extends State<MapWidget> {
           left: SizeConfig.safeBlockHorizontal * 83,
           icon: Icon(Icons.swap_calls),
           onClick: () {
-            _campus
-                ? () {
-                    Provider.of<MapData>(context, listen: false).animateTo(
-                        constants.sgw.latitude, constants.sgw.longitude);
-                    _campus = false;
-                  }()
-                : () {
-                    Provider.of<MapData>(context, listen: false).animateTo(
-                        constants.loyola.latitude, constants.loyola.longitude);
-                    _campus = true;
-                  }();
+            _locationFixed = false;
+            if (_campus) {
+              mapData.animateToLatLng(constants.sgw);
+              _campus = false;
+            } else if (_campus == false){
+              mapData.animateToLatLng(constants.loyola);
+              _campus = true;
+            }
           },
         ),
         FloatingMapButton(
@@ -131,13 +104,32 @@ class _MapWidgetState extends State<MapWidget> {
               ? SizeConfig.blockSizeVertical * 56
               : SizeConfig.blockSizeVertical * 76,
           left: SizeConfig.safeBlockHorizontal * 83,
-          icon: Icon(Icons.gps_fixed),
+          icon: gpsIcon(),
           onClick: () {
-            Provider.of<MapData>(context, listen: false)
-                .animateTo(pos.latitude, pos.longitude);
+            locationService.withPermission(() {
+              if(_locationAvailable == true) {
+                mapData.animateToReachable(position);
+                if (_locationFixed == true) {
+                  _locationFixed = false;
+                } else if (_locationFixed == false) {
+                  _locationFixed = true;
+                }
+              }
+            });
           },
         ),
       ],
     );
+  }
+
+  /// Dynamically produce the appropriate location icon
+  Icon gpsIcon() {
+    if (_locationAvailable == false) {
+      return Icon(Icons.gps_off, color: constants.greyColor);
+    }
+    if (_locationFixed == true) {
+      return Icon(Icons.gps_fixed, color: constants.blueColor);
+    }
+    return Icon(Icons.gps_fixed);
   }
 }
