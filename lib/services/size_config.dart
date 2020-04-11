@@ -1,6 +1,4 @@
-import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:flutter/widgets.dart';
-import 'package:provider/provider.dart';
 
 //In this class we are getting the exact screen width and height.
 class SizeConfig {
@@ -26,9 +24,5 @@ class SizeConfig {
         _mediaQueryData.padding.top + _mediaQueryData.padding.bottom;
     safeBlockHorizontal = (screenWidth - _safeAreaHorizontal) / 100;
     safeBlockVertical = (screenHeight - _safeAreaVertical) / 100;
-    Provider.of<MapData>(context, listen: false).swapButtonTop =
-        safeBlockVertical * 66;
-    Provider.of<MapData>(context, listen: false).locationButtonTop =
-        safeBlockVertical * 75;
   }
 }
