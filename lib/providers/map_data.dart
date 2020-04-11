@@ -1,8 +1,10 @@
 import 'dart:async';
 import 'package:concordia_navigation/models/reachable.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
+import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +31,11 @@ class MapData extends ChangeNotifier {
 
   String mode;
 
-  MapData() : mode = "driving";
+  MapData() {
+    mode = "driving";
+    Search.supported.add(LocationService.getInstance().current);
+    Search.names.add("CURRENT LOCATION");
+  }
 
   Reachable get start => _start;
   Reachable get end => _end;
@@ -37,14 +43,18 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    controllerEnding = (obj as UniLocation).name;
+    controllerEnding = obj is UniLocation
+        ? (obj as UniLocation).name
+        : (obj as UserLocation).name;
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    controllerStarting = (obj as UniLocation).name;
+    controllerStarting = obj is UniLocation
+        ? (obj as UniLocation).name
+        : (obj as UserLocation).name;
     notifyListeners();
   }
 
@@ -75,7 +85,6 @@ class MapData extends ChangeNotifier {
     controllerEnding = null;
     notifyListeners();
   }
-
 
   CameraPosition getCameraFor(LatLng location) {
     if (location != null) {
