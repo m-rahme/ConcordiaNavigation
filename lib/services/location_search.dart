@@ -52,6 +52,7 @@ class LocationSearch extends SearchDelegate {
 
             if ((mapData.start is UserLocation && mapData.end != null) ||
                 (mapData.end is UserLocation && mapData.start != null)) {
+              //TODO: indoor with current location
               mapData.setItinerary();
             } else {
               if (mapData.start != null && mapData.end != null) {
