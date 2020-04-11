@@ -74,6 +74,8 @@ class MapData extends ChangeNotifier {
   /// given it builds only with an empty Container() if it is indeed null
   void removeItinerary() {
     itinerary = null;
+    controllerStarting = null;
+    controllerEnding = null;
     notifyListeners();
   }
 
