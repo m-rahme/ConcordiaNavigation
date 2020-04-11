@@ -65,37 +65,57 @@ class Dijkstra {
       : _nodes = nodes,
         _pq = PriorityQueue<Node>();
 
-  List<Node> pathTo(String start, String end) {
-    if (_nodes[end].previous == null) {
-      _compute(start);
-    }
+  List<Node> pathTo(String start, String end, {bool accessible = false}) {
+    _compute(start, accessible);
 
     Queue<Node> inOrder = Queue<Node>();
     inOrder.addFirst(_nodes[end]);
     bool stop = false;
     while (!stop) {
-      inOrder.addFirst(_nodes[end].previous);
-      end = _nodes[end].previous.name;
-      stop = end == start;
+      if (_nodes[end].previous == null) {
+        stop = true;
+      } else {
+        inOrder.addFirst(_nodes[end].previous);
+        end = _nodes[end].previous?.name;
+        stop = end == start;
+      }
     }
 
     return inOrder.toList();
   }
 
-  void _compute(String start) {
+  void _compute(String start, bool accessible) {
     // distance from start to start is 0
     _nodes[start].distance = 0;
 
     // distance for each node
     _nodes.forEach((key, node) {
-      // redundant
       if (key != start) {
         node.distance = 9999;
-        node.previous = null;
       }
 
       _pq.add(node);
     });
+
+    if (accessible) {
+      _nodes.forEach((key, og) {
+        if (!og.accessible) {
+          print(og.name);
+          og.edges.forEach((key, val) {
+            if (!key.accessible) {
+              og.edges[key] = 9999;
+            }
+          });
+          _nodes.forEach((key, node) {
+            node.edges.forEach((thing, otherThing) {
+              if (thing == og) {
+                thing.edges[thing] = 9999;
+              }
+            });
+          });
+        }
+      });
+    }
 
     while (_pq.isNotEmpty) {
       Node u = _pq.removeFirst();
