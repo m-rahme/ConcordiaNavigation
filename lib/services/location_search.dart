@@ -33,8 +33,14 @@ class LocationSearch extends SearchDelegate {
             mapData.itinerary = null;
 
             if (isFirst) {
+              if (result == mapData.end) {
+                mapData.start = null;
+              }
               mapData.start = result;
             } else {
+              if (result == mapData.start) {
+                mapData.end = null;
+              }
               mapData.end = result;
             }
 
