@@ -13,7 +13,8 @@ class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
   Reachable _start, _end;
-  double swapButtonTop, locationButtonTop;
+  bool wheelchair = false;
+  bool panelVisible = false;
 
   String controllerStarting, controllerEnding;
 
@@ -46,6 +47,16 @@ class MapData extends ChangeNotifier {
 
   void changeCurrentLocation(current) {
     _currentLocation = current;
+  }
+
+  void togglePanel() {
+    panelVisible = !panelVisible;
+    notifyListeners();
+  }
+
+  void toggleWheelchair() {
+    wheelchair = !wheelchair;
+    notifyListeners();
   }
 
   LatLng get getCurrentLocation {
