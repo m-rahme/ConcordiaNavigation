@@ -38,14 +38,16 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    controllerEnding = (obj as UniLocation).name;
+    if (obj != null) controllerEnding = (obj as UniLocation).name;
+    else controllerEnding = null;
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    controllerStarting = (obj as UniLocation).name;
+    if (obj != null) controllerStarting = (obj as UniLocation).name;
+    else controllerStarting = null;
     notifyListeners();
   }
 
