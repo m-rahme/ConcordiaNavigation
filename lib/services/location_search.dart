@@ -38,6 +38,7 @@ class LocationSearch extends SearchDelegate {
               mapData.end = result;
             }
 
+            Navigator.of(context).pop();
             if (mapData.start != null && mapData.end != null) {
               if (mapData.start is OutdoorLocation &&
                   mapData.end is OutdoorLocation) {
@@ -66,7 +67,6 @@ class LocationSearch extends SearchDelegate {
                 mapData.setItinerary();
               }
             }
-            Navigator.of(context).pop();
           },
           leading: Icon(Icons.location_city),
           title: RichText(
