@@ -14,40 +14,38 @@ class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SlidingUpPanel(
-            margin: const EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0.0),
-            controller:
-                Provider.of<MapData>(context, listen: false).panelController,
-            maxHeight: SizeConfig.safeBlockVertical * 85,
-            minHeight: SizeConfig.safeBlockVertical * 3.5,
-            defaultPanelState: PanelState.CLOSED,
-            backdropEnabled: true,
-            backdropOpacity: 0.3,
-            parallaxEnabled: false,
+      margin: const EdgeInsets.fromLTRB(18.0, 18.0, 18.0, 0.0),
+      controller: Provider.of<MapData>(context, listen: false).panelController,
+      maxHeight: SizeConfig.safeBlockVertical * 85,
+      minHeight: SizeConfig.safeBlockVertical * 3.5,
+      defaultPanelState: PanelState.CLOSED,
+      backdropEnabled: true,
+      backdropOpacity: 0.3,
+      parallaxEnabled: false,
+      borderRadius: BorderRadius.all(Radius.circular(14.0)),
+      boxShadow: [
+        BoxShadow(
+          blurRadius: 20.0,
+          color: constants.lightGreyColor.withOpacity(0.6),
+        ),
+      ],
+      panel: Consumer<MapData>(
+        builder: (context, mapData, child) => Container(
+          decoration: BoxDecoration(
+            color: constants.appColor,
             borderRadius: BorderRadius.all(Radius.circular(14.0)),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 20.0,
-                color: constants.lightGreyColor.withOpacity(0.6),
-              ),
+          ),
+          child: Column(
+            children: <Widget>[
+              TransportationModeWidget(),
+              SearchBars(), // top row for transportation mode selection
+              DirectionsList(), // list of directions
+              ShuttleWidget(),
             ],
-            panel: Consumer<MapData>(
-              builder: (context, mapData, child) => Container(
-                decoration: BoxDecoration(
-                  color: constants.appColor,
-                  borderRadius: BorderRadius.all(Radius.circular(14.0)),
-                ),
-                child: Column(
-                  children: <Widget>[
-                    TransportationModeWidget(),
-                    SearchBars(), // top row for transportation mode selection
-                    DirectionsList(), // list of directions
-                    ShuttleWidget(),
-                  ],
-                ),
-              ),
-            ),
-            body: MapWidget(),
-          );
-
+          ),
+        ),
+      ),
+      body: MapWidget(),
+    );
   }
 }
