@@ -16,7 +16,7 @@ class CourseSchedule extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     List<Iterable<Course>> weekdays =
-        Provider.of<CalendarData>(context).schedule?.byWeekday(now: now);
+        Provider.of<CalendarData>(context).schedule?.byWeekday(now);
     List<Widget> weekdayContainer = [];
 
     // show progess indicator if fetching calendar events isn't done
