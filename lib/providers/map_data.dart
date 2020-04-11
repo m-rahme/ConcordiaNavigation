@@ -37,12 +37,14 @@ class MapData extends ChangeNotifier {
   set end(Reachable obj) {
     _end = obj;
     controllerEnding = (obj as UniLocation).name;
+    notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
     controllerStarting = (obj as UniLocation).name;
+    notifyListeners();
   }
 
   void changeCurrentLocation(current) {
@@ -74,6 +76,8 @@ class MapData extends ChangeNotifier {
   /// given it builds only with an empty Container() if it is indeed null
   void removeItinerary() {
     itinerary = null;
+    _start = null;
+    _end = null;
     controllerStarting = null;
     controllerEnding = null;
     notifyListeners();
