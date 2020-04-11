@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/location_search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';
@@ -20,42 +21,48 @@ class SearchBars extends StatelessWidget {
                 children: <Widget>[
                   Flexible(
                     fit: FlexFit.tight,
-                    child: Container(
-                      height: SizeConfig.safeBlockVertical * 5,
-                      decoration: BoxDecoration(
-                        color: constants.whiteColor,
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: constants.greyColor,
-                            blurRadius: 3.0,
-                            spreadRadius: -1.0,
-                            offset: Offset(
-                              1.0,
-                              3.0,
-                              // Move to bottom 10 Vertically
+                    child: InkWell(
+                      onTap: () {
+                        showSearch(
+                            context: context, delegate: LocationSearch(true));
+                      },
+                      child: Container(
+                        height: SizeConfig.safeBlockVertical * 5,
+                        decoration: BoxDecoration(
+                          color: constants.whiteColor,
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: constants.greyColor,
+                              blurRadius: 3.0,
+                              spreadRadius: -1.0,
+                              offset: Offset(
+                                1.0,
+                                3.0,
+                                // Move to bottom 10 Vertically
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Icon(Icons.search),
-                          ),
-                          SizedBox(
-                            width: SizeConfig.blockSizeHorizontal * 3,
-                          ),
-                          Text(
-                            mapData.controllerStarting ?? "Start Location",
-                            style: GoogleFonts.raleway(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              color: constants.blackColor,
+                          ],
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Icon(Icons.search),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 3,
+                            ),
+                            Text(
+                              mapData.controllerStarting ?? "Start Location",
+                              style: GoogleFonts.raleway(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w600,
+                                color: constants.blackColor,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
@@ -65,42 +72,48 @@ class SearchBars extends StatelessWidget {
                 children: [
                   Flexible(
                     fit: FlexFit.tight,
-                    child: Container(
-                      height: SizeConfig.safeBlockVertical * 5,
-                      decoration: BoxDecoration(
-                        color: constants.whiteColor,
-                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
-                        boxShadow: [
-                          BoxShadow(
-                            color: constants.greyColor,
-                            blurRadius: 3.0,
-                            spreadRadius: -1.0,
-                            offset: Offset(
-                              1.0,
-                              3.0,
-                              // Move to bottom 10 Vertically
+                    child: InkWell(
+                      onTap: () {
+                        showSearch(
+                            context: context, delegate: LocationSearch(false));
+                      },
+                      child: Container(
+                        height: SizeConfig.safeBlockVertical * 5,
+                        decoration: BoxDecoration(
+                          color: constants.whiteColor,
+                          borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                          boxShadow: [
+                            BoxShadow(
+                              color: constants.greyColor,
+                              blurRadius: 3.0,
+                              spreadRadius: -1.0,
+                              offset: Offset(
+                                1.0,
+                                3.0,
+                                // Move to bottom 10 Vertically
+                              ),
                             ),
-                          ),
-                        ],
-                      ),
-                      child: Row(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.only(left: 10.0),
-                            child: Icon(Icons.search),
-                          ),
-                          SizedBox(
-                            width: SizeConfig.blockSizeHorizontal * 3,
-                          ),
-                          Text(
-                            mapData.controllerEnding ?? "End Location",
-                            style: GoogleFonts.raleway(
-                              fontSize: 15.0,
-                              fontWeight: FontWeight.w600,
-                              color: constants.blackColor,
+                          ],
+                        ),
+                        child: Row(
+                          children: <Widget>[
+                            Padding(
+                              padding: const EdgeInsets.only(left: 10.0),
+                              child: Icon(Icons.search),
                             ),
-                          ),
-                        ],
+                            SizedBox(
+                              width: SizeConfig.blockSizeHorizontal * 3,
+                            ),
+                            Text(
+                              mapData.controllerEnding ?? "End Location",
+                              style: GoogleFonts.raleway(
+                                fontSize: 15.0,
+                                fontWeight: FontWeight.w600,
+                                color: constants.blackColor,
+                              ),
+                            ),
+                          ],
+                        ),
                       ),
                     ),
                   ),
