@@ -24,8 +24,8 @@ class Schedule {
             events.map<Course>((event) => Course.fromEvent(event)).toList();
 
   /// return a list of future classes starting from now until X days into the future
-  List<Course> nextClasses({days: 7}) {
-    DateTime now = DateTime.now();
+  List<Course> nextClasses({days: 7, DateTime from}) {
+    DateTime now = from ?? DateTime.now();
     return _courses
         .where((course) =>
             course.start.isAfter(now) &&
@@ -35,13 +35,13 @@ class Schedule {
 
   /// This returns a list w/ index from 0-4 representing the course on that day of the week.
   /// We're using indexes instead of string values for week days due to multilingual support.
-  List<Iterable<Course>> byWeekday() =>
-      List.from([byDay(1), byDay(2), byDay(3), byDay(4), byDay(5)]);
+  List<Iterable<Course>> byWeekday({DateTime now}) =>
+      List.from([byDay(1, now: now), byDay(2, now: now), byDay(3, now: now), byDay(4, now: now), byDay(5, now: now)]);
 
   /// Returns a list containing courses for a single day.
-  Iterable<Course> byDay(int day) => _courses
+  Iterable<Course> byDay(int day, {DateTime now}) => _courses
       .where(
-          (course) => course.start.weekday == day && _isThisWeek(course.start))
+          (course) => course.start.weekday == day && _isThisWeek(course.start, from: now))
       .toList();
 
   /// returns true if [Schedule.isoWeekNumber(when)] is the same when called with now().
@@ -50,8 +50,8 @@ class Schedule {
   ///
   /// A course on Friday, March 27 2020 is not in the same week
   /// as a course on Saturday, March 28 2020.
-  bool _isThisWeek(DateTime when) {
-    DateTime now = DateTime.now();
+  bool _isThisWeek(DateTime when, {DateTime from}) {
+    DateTime now = from ?? DateTime.now();
 
     DateTime lastSaturday = now;
     DateTime nextFriday = now;
