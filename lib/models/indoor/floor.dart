@@ -4,13 +4,13 @@ import 'package:concordia_navigation/models/indoor/indoor_poi.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 
 class Floor extends IndoorLocation {
-  Floor(String floorNumber, Building parent)
-      : super(floorNumber, parent: parent);
+  final int page;
+  Floor(String name, Building parent, this.page) : super(name, parent: parent);
 
   factory Floor.fromJson(Building building, Map json) {
     if (json['number'] == null) return null;
 
-    Floor f = Floor(json['number'], building);
+    Floor f = Floor(json['number'], building, json['page']);
 
     List<IndoorLocation> indoors = [];
     for (int i = 0; i < json['classrooms'].length; i++) {

@@ -1778,7 +1778,8 @@
 				],
 				"floors": [
 					{
-						"number": "1",
+						"number": "H1",
+						"page": 0,
 						"classrooms": [
 							{
 								"name": "H110",
@@ -2086,7 +2087,8 @@
 						]
 					},
 					{
-						"number": "8",
+						"number": "H8",
+						"page": 1,
 						"classrooms": [
 							{
 								"name": "H801",
@@ -3227,7 +3229,8 @@
 						]
 					},
 					{
-						"number": "9",
+						"number": "H9",
+						"page": 2,
 						"classrooms": [
 							{
 								"name": "H903",
@@ -4703,7 +4706,8 @@
 				],
 				"floors": [
 					{
-						"number": "1",
+						"number": "MB1",
+						"page": 3,
 						"classrooms": [
 							{
 								"name": "MB1.350",
