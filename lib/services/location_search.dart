@@ -1,5 +1,7 @@
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
+import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/services/search.dart';
@@ -20,7 +22,7 @@ class LocationSearch extends SearchDelegate {
   @override
   Widget buildSuggestions(BuildContext context) {
     final suggestionList = query.isEmpty
-        ? Search.names.take(10).toList() // 5 first
+        ? Search.names.take(10).toList()
         : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
 
     // CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
@@ -39,9 +41,6 @@ class LocationSearch extends SearchDelegate {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
           onTap: () async {
-            // TODO: this currently can only set an end destination
-            // we should make it able to set both start & end
-
             // search for element they tapped
             dynamic result = Search.query(suggestionList[index]);
 
@@ -50,31 +49,41 @@ class LocationSearch extends SearchDelegate {
             } else {
               mapData.end = result;
             }
-            Navigator.of(context).pop();
-            if (mapData.start != null && mapData.end != null) {
-              if (mapData.start is OutdoorLocation &&
-                  mapData.end is OutdoorLocation) {
-                mapData.setItinerary();
-              } else if (mapData.start is IndoorLocation &&
-                  mapData.end is IndoorLocation) {
-                Provider.of<IndoorData>(context, listen: false).setItinerary(
-                    start: (mapData.start as IndoorLocation).name,
-                    end: (mapData.end as IndoorLocation).name);
-                Navigator.pushNamed(context, '/indoor',
-                    arguments: Arguments(true));
+
+            if ((mapData.start is UserLocation && mapData.end != null) ||
+                (mapData.end is UserLocation && mapData.start != null)) {
+              mapData.setItinerary();
+            } else {
+              if (mapData.start != null && mapData.end != null) {
+                if (mapData.start is OutdoorLocation &&
+                    mapData.end is OutdoorLocation) {
+                  mapData.setItinerary();
+                } else if (mapData.start is IndoorLocation &&
+                    mapData.end is IndoorLocation) {
+                  Provider.of<IndoorData>(context, listen: false).setItinerary(
+                      start: (mapData.start as IndoorLocation).name,
+                      end: (mapData.end as IndoorLocation).name);
+                  Navigator.pushNamed(context, '/indoor',
+                      arguments: Arguments(true));
+                } else {
+                  OutdoorLocation selected = mapData.start is IndoorLocation
+                      ? mapData.end
+                      : mapData.start;
+                  String letter =
+                      (selected.parent as OutdoorLocation).parent.name[0];
+                  String indoor = letter == 'H' ? 'H1entrance' : 'MBentrance';
+                  Provider.of<IndoorData>(context, listen: false).setItinerary(
+                      start: selected == mapData.start
+                          ? indoor
+                          : (mapData.start as UniLocation).name,
+                      end: selected == mapData.end
+                          ? indoor
+                          : (mapData.end as UniLocation).name);
+                  mapData.setItinerary();
+                }
               }
             }
-            // mapData.end = result;
-            // mapData.controllerStarting = "Current Location";
-            // mapData.mode = "driving";
-
-            // // check if there's any outdoor itinerary involved
-            // if (mapData.end is OutdoorLocation ||
-            //     mapData.start is OutdoorLocation ||
-            //     mapData.start == null)
-            //   mapData.setItinerary(start: null, end: result as Reachable);
-
-            // pop either way, if results are good or not
+            Navigator.of(context).pop();
           },
           leading: Icon(Icons.location_city),
           title: RichText(
