@@ -52,7 +52,6 @@ class Schedule {
   /// as a course on Saturday, March 28 2020.
   bool _isThisWeek(DateTime when) {
     DateTime now = DateTime.now();
-
     DateTime lastSaturday = now;
     DateTime nextFriday = now;
     int diff = now.weekday;
@@ -66,14 +65,14 @@ class Schedule {
     if (now.weekday < 5) {
       nextFriday = now.add(Duration(days: 5 - now.weekday));
     } else if (now.weekday == 6) {
-      nextFriday = now.subtract(Duration(days: 1));
+      nextFriday = now.add(Duration(days: 6));
     } else {
       nextFriday = now.add(Duration(days: 5));
     }
 
     // Set time of next friday to 1ms before midnight
-    nextFriday =
-        DateTime(nextFriday.year, nextFriday.month, nextFriday.day, 23, 59, 59, 59);
+    nextFriday = DateTime(
+        nextFriday.year, nextFriday.month, nextFriday.day, 23, 59, 59, 59);
 
     // Set time of last saturday to midnight
     lastSaturday = DateTime(
