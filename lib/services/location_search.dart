@@ -44,6 +44,8 @@ class LocationSearch extends SearchDelegate {
                 mapData.setItinerary();
               } else if (mapData.start is IndoorLocation &&
                   mapData.end is IndoorLocation) {
+                // This will check if buildings are the same, no need to worry
+                mapData.setItinerary();
                 Provider.of<IndoorData>(context, listen: false).setItinerary(
                     start: (mapData.start as IndoorLocation).name,
                     end: (mapData.end as IndoorLocation).name);
