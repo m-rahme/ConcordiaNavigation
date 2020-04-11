@@ -46,7 +46,8 @@ class LocationSearch extends SearchDelegate {
             if (result != null) {
               // simple example for PoC
               if (result is IndoorLocation)
-                Provider.of<IndoorData>(context, listen: false).setItinerary("H820", "H859");
+                Provider.of<IndoorData>(context, listen: false)
+                    .setItinerary("H820", "H859");
 
               mapData.end = result;
               mapData.controllerStarting = "Current Location";
@@ -54,7 +55,8 @@ class LocationSearch extends SearchDelegate {
 
               // check if there's any outdoor itinerary involved
               if (mapData.end is OutdoorLocation ||
-                  mapData.start is OutdoorLocation || mapData.start == null)
+                  mapData.start is OutdoorLocation ||
+                  mapData.start == null)
                 mapData.setItinerary(start: null, end: result as Reachable);
             }
 
