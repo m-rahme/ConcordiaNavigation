@@ -6,7 +6,6 @@ void main() {
   group('Building', () {
     List<LatLng> buildingEdges;
     Building building;
-    Polygon outline;
 
     setUp(() {
       // Mock data
@@ -15,13 +14,12 @@ void main() {
         LatLng(45.49755, -73.57869),
         LatLng(45.49772, -73.57903),
       ];
-      outline = Polygon(polygonId: PolygonId("random"), points: buildingEdges);
-      building = Building('TEST', 1.0, 2.0, outline, "Mock building",
-          "123 mock address", "assets/mock_logo.png");
+      building = Building('TEST', 'Mock building', 1.0, 2.0, "123 mock address",
+          buildingEdges, "assets/mock_logo.png");
     });
 
     test('building name is set', () {
-      expect(building.name, "TEST");
+      expect(building.name, 'Mock building');
     });
   });
 }

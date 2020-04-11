@@ -1,16 +1,15 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
-
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
-import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
-import 'package:provider/provider.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 //This is the map widget that will be loaded in the home screen.
@@ -43,6 +42,24 @@ class _MapWidgetState extends State<MapWidget> {
     location.then((value) => _location = value);
   }
 
+  List<Marker> buildingMarkers(List<Building> buildings) {
+    return buildings.where((building) => building.hasMarker()).map((building) {
+      return Marker(
+        markerId: MarkerId(building.name),
+        anchor: const Offset(0.5, 0.5),
+        position: LatLng(building.lat, building.long),
+        icon: building.icon,
+        onTap: () {
+          showModalBottomSheet(
+              context: context,
+              builder: (builder) {
+                return BottomSheetWidget(building);
+              });
+        },
+      );
+    }).toList();
+  }
+
   @override
   Widget build(BuildContext context) {
     if (_location != null) {
@@ -59,25 +76,6 @@ class _MapWidgetState extends State<MapWidget> {
       return Center(child: Text("Loading Map"));
     }
 
-    ///Create markers here
-    Set<Marker> markers = {};
-    BuildingsData.allBuildings.forEach((building) {
-      if (building.name != null) {
-        markers.add(Marker(
-          markerId: MarkerId(building.name),
-          anchor: const Offset(0.5, 0.5),
-          position: LatLng(building.lat, building.long),
-          icon: Building.icons[building],
-          onTap: () {
-            showModalBottomSheet(
-                context: context,
-                builder: (builder) {
-                  return BottomSheetWidget(building);
-                });
-          },
-        ));
-      }
-    });
     return Stack(
       children: <Widget>[
         GoogleMap(
@@ -89,7 +87,7 @@ class _MapWidgetState extends State<MapWidget> {
             buildingsEnabled: false,
             mapType: MapType.normal,
             polygons: _buildings.allPolygons.toSet(),
-            markers: Set.of(markers),
+            markers: buildingMarkers(_buildings.allBuildings).toSet(),
             indoorViewEnabled: false,
             trafficEnabled: false,
             initialCameraPosition: _initialCamera,
