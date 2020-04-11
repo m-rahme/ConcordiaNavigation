@@ -50,7 +50,6 @@ class LocationSearch extends SearchDelegate {
             } else {
               mapData.end = result;
             }
-
             Navigator.of(context).pop();
             if (mapData.start != null && mapData.end != null) {
               if (mapData.start is OutdoorLocation &&
@@ -61,7 +60,7 @@ class LocationSearch extends SearchDelegate {
                 Provider.of<IndoorData>(context, listen: false).setItinerary(
                     start: (mapData.start as IndoorLocation).name,
                     end: (mapData.end as IndoorLocation).name);
-                Navigator.popAndPushNamed(context, '/indoor',
+                Navigator.pushNamed(context, '/indoor',
                     arguments: Arguments(true));
               }
             }
