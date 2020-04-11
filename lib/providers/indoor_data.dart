@@ -6,10 +6,23 @@ class IndoorData extends ChangeNotifier {
 
   IndoorData();
 
+  bool wheelchair = false;
+
+  void toggleWheelchair() {
+    wheelchair = !wheelchair;
+    if (_indoorItinerary != null) {
+      setItinerary(
+          start: _indoorItinerary.path.first.name,
+          end: _indoorItinerary.path.last.name,
+          accessible: wheelchair);
+    }
+    notifyListeners();
+  }
+
   IndoorItinerary get indoorItinerary => _indoorItinerary;
 
-  void setItinerary({String start, String end}) {
-    _indoorItinerary = IndoorItinerary(start, end);
+  void setItinerary({String start, String end, bool accessible}) {
+    _indoorItinerary = IndoorItinerary(start, end, accessible: wheelchair);
     notifyListeners();
   }
 

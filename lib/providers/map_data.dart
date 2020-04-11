@@ -18,7 +18,6 @@ class MapData extends ChangeNotifier {
   PanelController panelController = new PanelController();
   LocationService locationService = LocationService.getInstance();
   Reachable _start, _end;
-  bool wheelchair = false;
   bool panelVisible = false;
 
   String controllerStarting, controllerEnding;
@@ -54,11 +53,6 @@ class MapData extends ChangeNotifier {
 
   void togglePanel() {
     panelVisible = !panelVisible;
-    notifyListeners();
-  }
-
-  void toggleWheelchair() {
-    wheelchair = !wheelchair;
     notifyListeners();
   }
 
