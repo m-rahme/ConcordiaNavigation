@@ -8,8 +8,9 @@ class IndoorData extends ChangeNotifier {
 
   IndoorItinerary get indoorItinerary => _indoorItinerary;
 
-  void setItinerary(String start, String end) {
+  void setItinerary({String start, String end}) {
     _indoorItinerary = IndoorItinerary(start, end);
+    print(_indoorItinerary);
     notifyListeners();
   }
 
