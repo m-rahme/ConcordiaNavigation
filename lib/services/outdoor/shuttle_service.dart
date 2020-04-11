@@ -11,7 +11,7 @@ class ShuttleService {
 
   static String getNextShuttle(campus, [DateTime time]) {
     time = time ?? DateTime.now();
-    if (time.weekday == 7 || time.weekday == 6) {
+    if (time.weekday == 7 || time.weekday == 6 || campus == null) {
       return null;
     } else {
       var length = time.weekday == 5

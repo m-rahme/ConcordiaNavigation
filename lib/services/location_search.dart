@@ -27,6 +27,7 @@ class LocationSearch extends SearchDelegate {
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
+          key: Key("Location"+index.toString()),
           onTap: () async {
             // search for element they tapped
             dynamic result = Search.query(suggestionList[index]);
