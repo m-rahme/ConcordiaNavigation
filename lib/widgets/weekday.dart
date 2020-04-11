@@ -1,7 +1,4 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/search.dart';

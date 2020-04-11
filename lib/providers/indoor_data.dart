@@ -1,4 +1,3 @@
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/university.dart';
 import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
