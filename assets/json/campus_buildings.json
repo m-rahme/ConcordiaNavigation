@@ -2034,7 +2034,7 @@
 									},
 									{
 										"name": "H9escalatorDown",
-										"distance": 1
+										"distance":2 
 									}
 								]
 							},
@@ -4353,7 +4353,11 @@
 									},
 									{
 										"name": "H1escalatorUp2",
-										"distance": 1
+										"distance": 2 
+									},
+									{
+										"name": "H8escalatorDown",
+										"distance": 1 
 									}
 								]
 							}
