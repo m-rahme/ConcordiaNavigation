@@ -1,4 +1,6 @@
 import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:concordia_navigation/models/university.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -17,17 +19,22 @@ void main() {
       expect(concordia.children.length, 2);
     });
 
-    test('there are 23 buildings', () {
-      expect(concordia.children.length, 2);
+    test('should have 37 buildings', () {
+      List<UniLocation> uniChildren = [];
+      for (Campus campus in concordia.children) {
+        uniChildren.addAll(campus.children.whereType<Building>().toList());
+      }
+      expect(uniChildren.length, 37);
     });
 
-    test('there are 10 buildings that have the buildingName property', () {
+    test('there are 10 buildings with logos', () {
       List<Building> buildingsWithBuildingNames = [];
       concordia.children.forEach((campus) =>
           buildingsWithBuildingNames.addAll(campus.children.where((building) {
-            return building.name != null;
+            Building b = building;
+            return b.logo != null;
           })));
-      expect(buildingsWithBuildingNames.length, 37);
+      expect(buildingsWithBuildingNames.length, 10);
     });
 
     test('all buildings have initials', () {

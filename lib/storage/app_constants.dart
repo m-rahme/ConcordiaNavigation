@@ -29,6 +29,8 @@ const Color lightGreyColor = Color(0xFFF0F0F0);
 const Color greyColor = Color(0xFF656363);
 const Color highlightColor = Color(0xFF014FFF);
 
+const String apiKey = 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0';
+
 final RegExp calFilter = RegExp("conco|school|uni|test");
 final RegExp eventFilter = RegExp(r"[A-Z]{4}[-|\s]?\d{3}");
 final RegExp classroomFilter = RegExp(
