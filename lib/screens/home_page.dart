@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/services/painters.dart';
+import 'package:concordia_navigation/services/indoor/painters.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:concordia_navigation/widgets/outdoor/map_page.dart';

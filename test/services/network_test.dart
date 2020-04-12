@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/services/network.dart';
+import 'package:concordia_navigation/services/outdoor/network.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:http/http.dart';

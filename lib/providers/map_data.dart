@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/outdoor/reachable.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
