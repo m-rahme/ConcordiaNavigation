@@ -91,7 +91,6 @@ void main() {
       ];
       List<Node> result =
           dijkstra.pathTo("H1entrance", "H967", accessible: true);
-      // for (Node node in result) print(node.name);
       expect(solution, result);
     });
     test('testing route from H110 to H913 with accessibility enabled', () {
@@ -107,7 +106,6 @@ void main() {
         graph['H913'],
       ];
       List<Node> result = dijkstra.pathTo("H110", "H913", accessible: true);
-      for (Node node in result) print(node.name);
       expect(solution, result);
     });
   });

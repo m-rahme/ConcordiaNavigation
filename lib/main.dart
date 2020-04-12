@@ -20,6 +20,10 @@ Future<void> main() async {
 }
 
 class App extends StatelessWidget {
+  final String initialRoute;
+
+  App({this.initialRoute});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,7 +39,7 @@ class App extends StatelessWidget {
         const Locale('en', ''),
         const Locale('fr', ''),
       ],
-      initialRoute: '/',
+      initialRoute: initialRoute ?? '/',
       routes: {
         '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
@@ -46,7 +50,7 @@ class App extends StatelessWidget {
         '/indoor': (context) => IndoorPage(),
       },
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: initialRoute != null ? null : SplashScreen(),
     );
   }
 }

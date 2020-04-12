@@ -170,6 +170,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from SGW to Loyola
   Container buildTitleTableCellSGWToLoy(String cellDisplay) {
     return Container(
+      key: Key("SGWToLoy"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(
@@ -206,6 +207,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from Loyola to SGW
   Container buildTitleTableCellLoyToSGW(String cellDisplay) {
     return Container(
+      key: Key("LoyToSGW"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(

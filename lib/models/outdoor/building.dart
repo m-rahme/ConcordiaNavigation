@@ -21,8 +21,8 @@ class Building extends OutdoorLocation {
   String logo;
 
   @visibleForTesting
-  Building.forTesting(String name, double latitude, double longitude)
-      : super(name, latitude: latitude, longitude: longitude);
+  Building.forTesting(String name, String buildingAddress, double latitude, double longitude)
+      : super(name, address: buildingAddress, latitude: latitude, longitude: longitude);
 
   Building(this.buildingInitials, String name, double latitude, double longitude,
       String buildingAddress, this.edges,  this.logo, {Campus parent})

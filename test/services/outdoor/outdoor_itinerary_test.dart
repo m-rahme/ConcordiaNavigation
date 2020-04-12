@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/services/itinerary.dart';
-import 'package:concordia_navigation/services/directions_service.dart';
+import 'package:concordia_navigation/services/outdoor/directions_service.dart';
+import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
@@ -16,7 +16,7 @@ void main() {
       mockDirectionsService = new MockDirectionsService();
 
       // Load sample Google directions used to compare results in tests
-      String raw = await rootBundle.loadString('assets/sampleGoogleDirections.json');
+      String raw = await rootBundle.loadString('assets/testing/sampleGoogleDirections.json');
       String jsonString = raw.replaceAll(RegExp(r'\s'), '');
 
       // Stub mock methods
@@ -25,7 +25,7 @@ void main() {
     });
 
     test('create() creates Itinerary with polyline, itinerary map, duration, and distance', () async {
-      Itinerary itin = await Itinerary.create(LatLng(90,90), LatLng(90,90), "walking", mockDirectionsService);
+      OutdoorItinerary itin = await OutdoorItinerary.create(LatLng(90,90), LatLng(90,90), "walking", mockDirectionsService);
 
       // Get map itinerary
       Map<String, Map<String, String>> itineraryMap = itin.itinerary;

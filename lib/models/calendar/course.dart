@@ -8,7 +8,7 @@ class Course {
   final String _location;
 
   // duration in minutes
-  int duration() => _end.minute - _start.minute;
+  int get duration => start.difference(_end).inMinutes.abs();
 
   String get summary => _summary;
   String get description => _description;

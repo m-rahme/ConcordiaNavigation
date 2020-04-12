@@ -15,7 +15,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 6, 7);
       String data = ShuttleService.getNextShuttle("loyola", time);
-      expect(data, "Next Shuttle Bus at: 07:30");
+      expect(data, "Next Shuttle: 07:30");
     });
 
     test(
@@ -23,7 +23,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 6, 23, 31);
       String data = ShuttleService.getNextShuttle("loyola", time);
-      expect(data, "Next Shuttle Bus at: 07:30");
+      expect(data, "Next Shuttle: 07:30");
     });
 
     test(
@@ -31,7 +31,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 9, 23, 31);
       String data = ShuttleService.getNextShuttle("loyola", time);
-      expect(data, "Next Shuttle Bus at: 07:40");
+      expect(data, "Next Shuttle: 07:40");
     });
 
     test(
@@ -39,7 +39,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 10, 21, 51);
       String data = ShuttleService.getNextShuttle("loyola", time);
-      expect(data, "Next Shuttle Bus at: 07:30");
+      expect(data, "Next Shuttle: 07:30");
     });
 
     /**
@@ -49,7 +49,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 6, 7);
       String data = ShuttleService.getNextShuttle("sgw", time);
-      expect(data, "Next Shuttle Bus at: 07:45");
+      expect(data, "Next Shuttle: 07:45");
     });
 
     test(
@@ -57,7 +57,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 6, 23, 01);
       String data = ShuttleService.getNextShuttle("sgw", time);
-      expect(data, "Next Shuttle Bus at: 07:45");
+      expect(data, "Next Shuttle: 07:45");
     });
 
     test(
@@ -65,7 +65,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 9, 23, 01);
       String data = ShuttleService.getNextShuttle("sgw", time);
-      expect(data, "Next Shuttle Bus at: 07:45");
+      expect(data, "Next Shuttle: 07:45");
     });
 
     test(
@@ -73,7 +73,7 @@ void main() {
         () async {
       DateTime time = new DateTime(2020, 1, 10, 21, 51);
       String data = ShuttleService.getNextShuttle("sgw", time);
-      expect(data, "Next Shuttle Bus at: 07:45");
+      expect(data, "Next Shuttle: 07:45");
     });
   });
 }

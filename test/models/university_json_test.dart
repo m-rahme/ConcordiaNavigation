@@ -25,10 +25,9 @@ void main() {
       List<Building> buildingsWithBuildingNames = [];
       concordia.children.forEach((campus) =>
           buildingsWithBuildingNames.addAll(campus.children.where((building) {
-            Building b = building;
-            return b.name != null;
+            return building.name != null;
           })));
-      expect(buildingsWithBuildingNames.length, 10);
+      expect(buildingsWithBuildingNames.length, 37);
     });
 
     test('all buildings have initials', () {

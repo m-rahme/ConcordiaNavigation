@@ -1,4 +1,3 @@
-import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:concordia_navigation/services/network.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';

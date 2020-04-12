@@ -15,7 +15,7 @@ void main() {
         LatLng(45.49772, -73.57903),
       ];
       building = Building('TEST', 'Mock building', 1.0, 2.0, "123 mock address",
-          buildingEdges, "assets/mock_logo.png");
+          buildingEdges, null);
     });
 
     test('building name is set', () {

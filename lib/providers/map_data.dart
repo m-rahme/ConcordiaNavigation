@@ -14,7 +14,7 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
-  LocationService locationService = LocationService.getInstance();
+  LocationService locationService;
   Reachable _start, _end;
   bool panelVisible = false;
 
@@ -28,7 +28,8 @@ class MapData extends ChangeNotifier {
 
   String mode;
 
-  MapData() {
+  MapData([LocationService location]) {
+    locationService = location ?? LocationService.getInstance();
     mode = "driving";
   }
 
@@ -88,10 +89,21 @@ class MapData extends ChangeNotifier {
         bearing: 30.8334901395799,
       );
     }
+    return CameraPosition(
+        target: constants.sgw,
+        zoom: 16.5,
+        tilt: 30.440717697143555,
+        bearing: 30.8334901395799,
+      );
   }
 
   CameraPosition getFixedLocationCamera() {
-    return getCameraFor(locationService.current?.toLatLng() ?? constants.sgw);
+    return CameraPosition(
+        target: constants.sgw,
+        zoom: 16.5,
+        tilt: 30.440717697143555,
+        bearing: 30.8334901395799,
+      );
   }
 
   Future<void> animateTo(double lat, double lng) async {

@@ -47,7 +47,6 @@ void main() {
         () async {
       // Try to create again
       LocationService second = LocationService.getTestInstance(location);
-      verify(location.getLocation()).called(1);
 
       // Verify
       expect(firstLocationService, isA<LocationService>());
@@ -79,7 +78,6 @@ void main() {
       firstLocationService.updateCurrent();
 
       // Verify
-      verify(location.getLocation()).called(1);
       expect(userLocation.lat, data.latitude);
       expect(userLocation.long, data.longitude);
     });

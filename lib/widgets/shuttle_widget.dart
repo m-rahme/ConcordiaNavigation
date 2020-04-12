@@ -35,6 +35,7 @@ class ShuttleWidget extends StatelessWidget {
                     ),
                   ),
                   InkWell(
+                    key: Key("ViewSchedule"),
                     onTap: () {
                       Navigator.pushNamed(context, '/shuttle');
                     },

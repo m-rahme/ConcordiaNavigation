@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/services/directions_service.dart';
 import 'package:concordia_navigation/services/network.dart';
+import 'package:concordia_navigation/services/outdoor/directions_service.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:mockito/mockito.dart';
