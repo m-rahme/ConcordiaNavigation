@@ -4,15 +4,16 @@ import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';
 
 class CalendarData extends ChangeNotifier {
-  final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
+  DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
   List<Calendar> _calendars = List();
   List<Event> _classes = List();
   Schedule _schedule;
 
   Schedule get schedule => _schedule;
 
-  CalendarData() {
-    retrieveFromDevice();
+  CalendarData([ @visibleForTesting DeviceCalendarPlugin plugin, @visibleForTesting DateTime today]) {
+    _deviceCalendarPlugin = plugin;
+    retrieveFromDevice(today);
   }
 
   /// Checks for (and requests) permissions required by the [device calendar plugins](https://pub.dev/packages/device_calendar)
@@ -46,12 +47,12 @@ class CalendarData extends ChangeNotifier {
   }
 
   /// Retrieve relevant events from device calendars.
-  Future<Schedule> retrieveFromDevice() async {
+  Future<Schedule> retrieveFromDevice([DateTime time]) async {
     if (_calendars.isEmpty) {
       await _retrieveDeviceCalendars();
     }
 
-    DateTime now = DateTime.now();
+    DateTime now = time ?? DateTime.now();
     DateTime _firstDayOfTheWeek = now.subtract(Duration(days: now.weekday));
 
     // Events are loaded starting from the beginning of this week
