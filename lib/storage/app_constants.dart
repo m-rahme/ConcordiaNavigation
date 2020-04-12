@@ -16,19 +16,25 @@ const double CAMERA_ZOOM = 16;
 const double CAMERA_TILT = 50;
 const double CAMERA_BEARING = 30;
 
+const double containerWidth = 940.0;
+const double containerHeight = 862.0;
+const double svgWidth = 1000;
+const double svgHeight = 920.0;
+
 const Color appColor = Color(0xFF000000);
 const Color whiteColor = Color(0xFFFFFFFF);
 const Color blueColor = Color(0xFF017BFF);
 const Color blackColor = Color(0xFF000000);
-const Color offWhiteColor = Color(0xFFFFFFFF);
 const Color lightGreyColor = Color(0xFFF0F0F0);
 const Color greyColor = Color(0xFF656363);
-const Color maroonColor = Color(0xFF014FFF);
+const Color highlightColor = Color(0xFF014FFF);
+
+const String apiKey = 'AIzaSyBHXKzGZEeBhP_m3QQ6vpI0hRODxeeEWl0';
 
 final RegExp calFilter = RegExp("conco|school|uni|test");
 final RegExp eventFilter = RegExp(r"[A-Z]{4}[-|\s]?\d{3}");
 final RegExp classroomFilter = RegExp(
-    r"(H\ ?\d{3}|MB\ ?S?[1-9]\.[0-9]{3}|FG\ B-?0[3-8]0)",
+    r"(H\ ?\d{3}|MB\ ?S?[1-9]\.[0-9]{3}|FG\ ?B-?0[3-8]0)",
     caseSensitive: false);
 
 final Duration dateLookahead = Duration(days: 31);

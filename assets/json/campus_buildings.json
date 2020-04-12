@@ -1,0 +1,6533 @@
+[
+	{
+		"campusName": "Loyola",
+		"campusInitials": "LOY",
+		"buildings": [
+			{
+				"buildingName": "Central Building",
+				"buildingInitials": "CC",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": 45.458306,
+				"longitude": -73.640339,
+				"logo": "assets/markers/cc.png",
+				"edges": [
+					{
+						"latitude": 45.45823,
+						"longitude": -73.6399
+					},
+					{
+						"latitude": 45.45832,
+						"longitude": -73.64014
+					},
+					{
+						"latitude": 45.45833,
+						"longitude": -73.64014
+					},
+					{
+						"latitude": 45.45845,
+						"longitude": -73.64044
+					},
+					{
+						"latitude": 45.45844,
+						"longitude": -73.64045
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.64069
+					},
+					{
+						"latitude": 45.45838,
+						"longitude": -73.6408
+					},
+					{
+						"latitude": 45.45829,
+						"longitude": -73.64056
+					},
+					{
+						"latitude": 45.45828,
+						"longitude": -73.64056
+					},
+					{
+						"latitude": 45.45817,
+						"longitude": -73.64026
+					},
+					{
+						"latitude": 45.45817,
+						"longitude": -73.64026
+					},
+					{
+						"latitude": 45.45808,
+						"longitude": -73.64001
+					}
+				]
+			},
+			{
+				"buildingName": "Communication Studies and Journalism Building",
+				"buildingInitials": "CJ",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": 45.457446,
+				"longitude": -73.640363,
+				"logo": "assets/markers/cj.png",
+				"edges": [
+					{
+						"latitude": 45.45748,
+						"longitude": -73.63981
+					},
+					{
+						"latitude": 45.45746,
+						"longitude": -73.63996
+					},
+					{
+						"latitude": 45.45745,
+						"longitude": -73.63995
+					},
+					{
+						"latitude": 45.45744,
+						"longitude": -73.64003
+					},
+					{
+						"latitude": 45.45749,
+						"longitude": -73.64015
+					},
+					{
+						"latitude": 45.45762,
+						"longitude": -73.64004
+					},
+					{
+						"latitude": 45.45773,
+						"longitude": -73.64031
+					},
+					{
+						"latitude": 45.45775,
+						"longitude": -73.64029
+					},
+					{
+						"latitude": 45.45783,
+						"longitude": -73.64049
+					},
+					{
+						"latitude": 45.45765,
+						"longitude": -73.64063
+					},
+					{
+						"latitude": 45.4576,
+						"longitude": -73.6405
+					},
+					{
+						"latitude": 45.45733,
+						"longitude": -73.64072
+					},
+					{
+						"latitude": 45.4573,
+						"longitude": -73.64064
+					},
+					{
+						"latitude": 45.45728,
+						"longitude": -73.64066
+					},
+					{
+						"latitude": 45.45718,
+						"longitude": -73.64039
+					},
+					{
+						"latitude": 45.45741,
+						"longitude": -73.64021
+					},
+					{
+						"latitude": 45.45736,
+						"longitude": -73.64008
+					},
+					{
+						"latitude": 45.45731,
+						"longitude": -73.64005
+					},
+					{
+						"latitude": 45.45731,
+						"longitude": -73.64007
+					},
+					{
+						"latitude": 45.45721,
+						"longitude": -73.64002
+					},
+					{
+						"latitude": 45.45721,
+						"longitude": -73.63999
+					},
+					{
+						"latitude": 45.45723,
+						"longitude": -73.63988
+					},
+					{
+						"latitude": 45.45726,
+						"longitude": -73.63983
+					},
+					{
+						"latitude": 45.45728,
+						"longitude": -73.6398
+					},
+					{
+						"latitude": 45.45733,
+						"longitude": -73.63977
+					},
+					{
+						"latitude": 45.45736,
+						"longitude": -73.63976
+					},
+					{
+						"latitude": 45.45741,
+						"longitude": -73.63976
+					},
+					{
+						"latitude": 45.45743,
+						"longitude": -73.63977
+					}
+				]
+			},
+			{
+				"buildingName": "Centre for Structural and Functional Genomics",
+				"buildingInitials": "GE",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": 45.456997,
+				"longitude": -73.640484,
+				"logo": "assets/markers/ge.png",
+				"edges": [
+					{
+						"latitude": 45.45704,
+						"longitude": -73.64016
+					},
+					{
+						"latitude": 45.45714,
+						"longitude": -73.64044
+					},
+					{
+						"latitude": 45.45713,
+						"longitude": -73.64045
+					},
+					{
+						"latitude": 45.45717,
+						"longitude": -73.64057
+					},
+					{
+						"latitude": 45.45695,
+						"longitude": -73.64074
+					},
+					{
+						"latitude": 45.45692,
+						"longitude": -73.64067
+					},
+					{
+						"latitude": 45.45689,
+						"longitude": -73.64069
+					},
+					{
+						"latitude": 45.45687,
+						"longitude": -73.64063
+					},
+					{
+						"latitude": 45.4569,
+						"longitude": -73.64061
+					},
+					{
+						"latitude": 45.4568,
+						"longitude": -73.64034
+					}
+				]
+			},
+			{
+				"buildingName": "Psychology Building",
+				"buildingInitials": "PY",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": 45.458984,
+				"longitude": -73.640495,
+				"logo": "assets/markers/py.png",
+				"edges": [
+					{
+						"latitude": 45.45909,
+						"longitude": -73.64015
+					},
+					{
+						"latitude": 45.45925,
+						"longitude": -73.64059
+					},
+					{
+						"latitude": 45.4592,
+						"longitude": -73.64063
+					},
+					{
+						"latitude": 45.45918,
+						"longitude": -73.64058
+					},
+					{
+						"latitude": 45.45885,
+						"longitude": -73.64084
+					},
+					{
+						"latitude": 45.4588,
+						"longitude": -73.64071
+					},
+					{
+						"latitude": 45.45882,
+						"longitude": -73.64069
+					},
+					{
+						"latitude": 45.45873,
+						"longitude": -73.64045
+					},
+					{
+						"latitude": 45.45876,
+						"longitude": -73.64042
+					},
+					{
+						"latitude": 45.45876,
+						"longitude": -73.6404
+					},
+					{
+						"latitude": 45.45899,
+						"longitude": -73.64021
+					},
+					{
+						"latitude": 45.459,
+						"longitude": -73.64024
+					},
+					{
+						"latitude": 45.45903,
+						"longitude": -73.64022
+					},
+					{
+						"latitude": 45.45902,
+						"longitude": -73.64021
+					}
+				]
+			},
+			{
+				"buildingName": "Richard J. Renaud Science Complex",
+				"buildingInitials": "SP",
+				"buildingAddress": "7141 Sherbrooke W.",
+				"latitude": 45.457822,
+				"longitude": -73.641497,
+				"logo": "assets/markers/sp.png",
+				"edges": [
+					{
+						"latitude": 45.4572,
+						"longitude": -73.64065
+					},
+					{
+						"latitude": 45.45753,
+						"longitude": -73.64147
+					},
+					{
+						"latitude": 45.4579,
+						"longitude": -73.64117
+					},
+					{
+						"latitude": 45.45789,
+						"longitude": -73.64113
+					},
+					{
+						"latitude": 45.45798,
+						"longitude": -73.64106
+					},
+					{
+						"latitude": 45.458,
+						"longitude": -73.64111
+					},
+					{
+						"latitude": 45.45832,
+						"longitude": -73.64085
+					},
+					{
+						"latitude": 45.45834,
+						"longitude": -73.64093
+					},
+					{
+						"latitude": 45.4582,
+						"longitude": -73.64104
+					},
+					{
+						"latitude": 45.45826,
+						"longitude": -73.6412
+					},
+					{
+						"latitude": 45.45818,
+						"longitude": -73.64127
+					},
+					{
+						"latitude": 45.45821,
+						"longitude": -73.64133
+					},
+					{
+						"latitude": 45.45828,
+						"longitude": -73.64128
+					},
+					{
+						"latitude": 45.45833,
+						"longitude": -73.64142
+					},
+					{
+						"latitude": 45.45767,
+						"longitude": -73.64193
+					},
+					{
+						"latitude": 45.45764,
+						"longitude": -73.64185
+					},
+					{
+						"latitude": 45.45744,
+						"longitude": -73.64201
+					},
+					{
+						"latitude": 45.45721,
+						"longitude": -73.64141
+					},
+					{
+						"latitude": 45.45718,
+						"longitude": -73.64143
+					},
+					{
+						"latitude": 45.45717,
+						"longitude": -73.64139
+					},
+					{
+						"latitude": 45.45718,
+						"longitude": -73.64138
+					},
+					{
+						"latitude": 45.45715,
+						"longitude": -73.6413
+					},
+					{
+						"latitude": 45.45716,
+						"longitude": -73.64129
+					},
+					{
+						"latitude": 45.45704,
+						"longitude": -73.641
+					},
+					{
+						"latitude": 45.45702,
+						"longitude": -73.64101
+					},
+					{
+						"latitude": 45.45699,
+						"longitude": -73.64096
+					},
+					{
+						"latitude": 45.45702,
+						"longitude": -73.64093
+					},
+					{
+						"latitude": 45.45698,
+						"longitude": -73.64083
+					}
+				]
+			},
+			{
+				"buildingInitials": "TA",
+				"latitude": 45.46005,
+				"longitude": -73.64079,
+				"edges": [
+					{
+						"latitude": 45.46005,
+						"longitude": -73.64079
+					},
+					{
+						"latitude": 45.46008,
+						"longitude": -73.64089
+					},
+					{
+						"latitude": 45.45998,
+						"longitude": -73.64097
+					},
+					{
+						"latitude": 45.45994,
+						"longitude": -73.64087
+					}
+				]
+			},
+			{
+				"buildingInitials": "PT",
+				"latitude": 45.45931,
+				"longitude": -73.63867,
+				"edges": [
+					{
+						"latitude": 45.45931,
+						"longitude": -73.63867
+					},
+					{
+						"latitude": 45.45949,
+						"longitude": -73.63914
+					},
+					{
+						"latitude": 45.45936,
+						"longitude": -73.63924
+					},
+					{
+						"latitude": 45.45935,
+						"longitude": -73.63921
+					},
+					{
+						"latitude": 45.45933,
+						"longitude": -73.63923
+					},
+					{
+						"latitude": 45.45932,
+						"longitude": -73.63918
+					},
+					{
+						"latitude": 45.45927,
+						"longitude": -73.63922
+					},
+					{
+						"latitude": 45.45931,
+						"longitude": -73.63932
+					},
+					{
+						"latitude": 45.45923,
+						"longitude": -73.63939
+					},
+					{
+						"latitude": 45.45921,
+						"longitude": -73.63934
+					},
+					{
+						"latitude": 45.45911,
+						"longitude": -73.63943
+					},
+					{
+						"latitude": 45.45899,
+						"longitude": -73.63912
+					},
+					{
+						"latitude": 45.45909,
+						"longitude": -73.63904
+					},
+					{
+						"latitude": 45.45908,
+						"longitude": -73.63899
+					},
+					{
+						"latitude": 45.45914,
+						"longitude": -73.63895
+					},
+					{
+						"latitude": 45.45916,
+						"longitude": -73.63898
+					},
+					{
+						"latitude": 45.45922,
+						"longitude": -73.63893
+					},
+					{
+						"latitude": 45.4592,
+						"longitude": -73.63889
+					},
+					{
+						"latitude": 45.45909,
+						"longitude": -73.63897
+					},
+					{
+						"latitude": 45.45905,
+						"longitude": -73.63887
+					},
+					{
+						"latitude": 45.45885,
+						"longitude": -73.63903
+					},
+					{
+						"latitude": 45.45863,
+						"longitude": -73.63847
+					},
+					{
+						"latitude": 45.45871,
+						"longitude": -73.6384
+					},
+					{
+						"latitude": 45.4587,
+						"longitude": -73.63836
+					},
+					{
+						"latitude": 45.45886,
+						"longitude": -73.63824
+					},
+					{
+						"latitude": 45.45885,
+						"longitude": -73.6382
+					},
+					{
+						"latitude": 45.45888,
+						"longitude": -73.63817
+					},
+					{
+						"latitude": 45.45887,
+						"longitude": -73.63813
+					},
+					{
+						"latitude": 45.4589,
+						"longitude": -73.6381
+					},
+					{
+						"latitude": 45.45888,
+						"longitude": -73.63805
+					},
+					{
+						"latitude": 45.45891,
+						"longitude": -73.63803
+					},
+					{
+						"latitude": 45.4589,
+						"longitude": -73.638
+					},
+					{
+						"latitude": 45.45904,
+						"longitude": -73.63789
+					},
+					{
+						"latitude": 45.45905,
+						"longitude": -73.63791
+					},
+					{
+						"latitude": 45.45908,
+						"longitude": -73.63789
+					},
+					{
+						"latitude": 45.45907,
+						"longitude": -73.63787
+					},
+					{
+						"latitude": 45.45911,
+						"longitude": -73.63784
+					},
+					{
+						"latitude": 45.45922,
+						"longitude": -73.63813
+					},
+					{
+						"latitude": 45.45914,
+						"longitude": -73.6382
+					},
+					{
+						"latitude": 45.45932,
+						"longitude": -73.63866
+					}
+				]
+			},
+			{
+				"buildingInitials": "RA",
+				"latitude": 45.45691,
+				"longitude": -73.63756,
+				"edges": [
+					{
+						"latitude": 45.45691,
+						"longitude": -73.63756
+					},
+					{
+						"latitude": 45.45703,
+						"longitude": -73.63787
+					},
+					{
+						"latitude": 45.45697,
+						"longitude": -73.63793
+					},
+					{
+						"latitude": 45.45702,
+						"longitude": -73.63806
+					},
+					{
+						"latitude": 45.45685,
+						"longitude": -73.6382
+					},
+					{
+						"latitude": 45.4568,
+						"longitude": -73.63807
+					},
+					{
+						"latitude": 45.45669,
+						"longitude": -73.63815
+					},
+					{
+						"latitude": 45.45639,
+						"longitude": -73.63737
+					},
+					{
+						"latitude": 45.45673,
+						"longitude": -73.63709
+					}
+				]
+			},
+			{
+				"buildingInitials": "RF",
+				"latitude": 45.45869,
+				"longitude": -73.6408,
+				"edges": [
+					{
+						"latitude": 45.45869,
+						"longitude": -73.6408
+					},
+					{
+						"latitude": 45.45877,
+						"longitude": -73.64104
+					},
+					{
+						"latitude": 45.45879,
+						"longitude": -73.64103
+					},
+					{
+						"latitude": 45.45882,
+						"longitude": -73.64113
+					},
+					{
+						"latitude": 45.45881,
+						"longitude": -73.64115
+					},
+					{
+						"latitude": 45.45881,
+						"longitude": -73.64116
+					},
+					{
+						"latitude": 45.45865,
+						"longitude": -73.64129
+					},
+					{
+						"latitude": 45.45864,
+						"longitude": -73.64127
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.64138
+					},
+					{
+						"latitude": 45.45848,
+						"longitude": -73.64132
+					},
+					{
+						"latitude": 45.45854,
+						"longitude": -73.64128
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.64125
+					},
+					{
+						"latitude": 45.45855,
+						"longitude": -73.64123
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.64114
+					},
+					{
+						"latitude": 45.45843,
+						"longitude": -73.6412
+					},
+					{
+						"latitude": 45.45838,
+						"longitude": -73.64108
+					},
+					{
+						"latitude": 45.45847,
+						"longitude": -73.64101
+					},
+					{
+						"latitude": 45.45841,
+						"longitude": -73.64085
+					},
+					{
+						"latitude": 45.45854,
+						"longitude": -73.64075
+					},
+					{
+						"latitude": 45.45859,
+						"longitude": -73.64088
+					}
+				]
+			},
+			{
+				"buildingInitials": "SH",
+				"latitude": 45.45933,
+				"longitude": -73.64237,
+				"edges": [
+					{
+						"latitude": 45.45933,
+						"longitude": -73.64237
+					},
+					{
+						"latitude": 45.45933,
+						"longitude": -73.64256
+					},
+					{
+						"latitude": 45.45926,
+						"longitude": -73.64256
+					},
+					{
+						"latitude": 45.45925,
+						"longitude": -73.64237
+					}
+				]
+			},
+			{
+				"buildingInitials": "SI",
+				"latitude": 45.4581,
+				"longitude": -73.64241,
+				"edges": [
+					{
+						"latitude": 45.4581,
+						"longitude": -73.64241
+					},
+					{
+						"latitude": 45.45812,
+						"longitude": -73.6424
+					},
+					{
+						"latitude": 45.45817,
+						"longitude": -73.64252
+					},
+					{
+						"latitude": 45.45796,
+						"longitude": -73.64268
+					},
+					{
+						"latitude": 45.45791,
+						"longitude": -73.64256
+					},
+					{
+						"latitude": 45.45794,
+						"longitude": -73.64254
+					},
+					{
+						"latitude": 45.45791,
+						"longitude": -73.64248
+					},
+					{
+						"latitude": 45.45786,
+						"longitude": -73.64252
+					},
+					{
+						"latitude": 45.45784,
+						"longitude": -73.64249
+					},
+					{
+						"latitude": 45.45779,
+						"longitude": -73.64253
+					},
+					{
+						"latitude": 45.45778,
+						"longitude": -73.6425
+					},
+					{
+						"latitude": 45.45774,
+						"longitude": -73.64254
+					},
+					{
+						"latitude": 45.45773,
+						"longitude": -73.64251
+					},
+					{
+						"latitude": 45.45766,
+						"longitude": -73.64257
+					},
+					{
+						"latitude": 45.45766,
+						"longitude": -73.64256
+					},
+					{
+						"latitude": 45.45763,
+						"longitude": -73.64258
+					},
+					{
+						"latitude": 45.45757,
+						"longitude": -73.64239
+					},
+					{
+						"latitude": 45.45763,
+						"longitude": -73.64235
+					},
+					{
+						"latitude": 45.45762,
+						"longitude": -73.64233
+					},
+					{
+						"latitude": 45.45764,
+						"longitude": -73.64232
+					},
+					{
+						"latitude": 45.45763,
+						"longitude": -73.6423
+					},
+					{
+						"latitude": 45.45764,
+						"longitude": -73.64229
+					},
+					{
+						"latitude": 45.45765,
+						"longitude": -73.6423
+					},
+					{
+						"latitude": 45.45769,
+						"longitude": -73.64227
+					},
+					{
+						"latitude": 45.45768,
+						"longitude": -73.64224
+					},
+					{
+						"latitude": 45.45773,
+						"longitude": -73.6422
+					},
+					{
+						"latitude": 45.45772,
+						"longitude": -73.64218
+					},
+					{
+						"latitude": 45.45777,
+						"longitude": -73.64213
+					},
+					{
+						"latitude": 45.45776,
+						"longitude": -73.6421
+					},
+					{
+						"latitude": 45.45783,
+						"longitude": -73.64205
+					},
+					{
+						"latitude": 45.45782,
+						"longitude": -73.64202
+					},
+					{
+						"latitude": 45.45786,
+						"longitude": -73.64199
+					},
+					{
+						"latitude": 45.45788,
+						"longitude": -73.64205
+					},
+					{
+						"latitude": 45.45794,
+						"longitude": -73.642
+					},
+					{
+						"latitude": 45.45797,
+						"longitude": -73.64208
+					},
+					{
+						"latitude": 45.458,
+						"longitude": -73.64208
+					},
+					{
+						"latitude": 45.45806,
+						"longitude": -73.64223
+					},
+					{
+						"latitude": 45.45805,
+						"longitude": -73.64227
+					}
+				]
+			},
+			{
+				"buildingInitials": "PS",
+				"latitude": 45.45958,
+				"longitude": -73.63922,
+				"edges": [
+					{
+						"latitude": 45.45958,
+						"longitude": -73.63922
+					},
+					{
+						"latitude": 45.45963,
+						"longitude": -73.63934
+					},
+					{
+						"latitude": 45.45967,
+						"longitude": -73.63931
+					},
+					{
+						"latitude": 45.45999,
+						"longitude": -73.64014
+					},
+					{
+						"latitude": 45.45986,
+						"longitude": -73.64024
+					},
+					{
+						"latitude": 45.45985,
+						"longitude": -73.64021
+					},
+					{
+						"latitude": 45.45971,
+						"longitude": -73.64032
+					},
+					{
+						"latitude": 45.45964,
+						"longitude": -73.64014
+					},
+					{
+						"latitude": 45.45961,
+						"longitude": -73.64017
+					},
+					{
+						"latitude": 45.45941,
+						"longitude": -73.63966
+					},
+					{
+						"latitude": 45.45944,
+						"longitude": -73.63963
+					},
+					{
+						"latitude": 45.4594,
+						"longitude": -73.63953
+					},
+					{
+						"latitude": 45.45933,
+						"longitude": -73.63959
+					},
+					{
+						"latitude": 45.45928,
+						"longitude": -73.63946
+					}
+				]
+			},
+			{
+				"buildingInitials": "PC",
+				"latitude": 45.45696,
+				"longitude": -73.63676,
+				"edges": [
+					{
+						"latitude": 45.45696,
+						"longitude": -73.63676
+					},
+					{
+						"latitude": 45.45729,
+						"longitude": -73.63763
+					},
+					{
+						"latitude": 45.45702,
+						"longitude": -73.63784
+					},
+					{
+						"latitude": 45.45668,
+						"longitude": -73.63698
+					}
+				]
+			},
+			{
+				"buildingInitials": "JR",
+				"latitude": 45.45854,
+				"longitude": -73.64305,
+				"edges": [
+					{
+						"latitude": 45.45854,
+						"longitude": -73.64305
+					},
+					{
+						"latitude": 45.45857,
+						"longitude": -73.64313
+					},
+					{
+						"latitude": 45.45858,
+						"longitude": -73.64312
+					},
+					{
+						"latitude": 45.45862,
+						"longitude": -73.64322
+					},
+					{
+						"latitude": 45.45861,
+						"longitude": -73.64324
+					},
+					{
+						"latitude": 45.45864,
+						"longitude": -73.64331
+					},
+					{
+						"latitude": 45.45857,
+						"longitude": -73.64337
+					},
+					{
+						"latitude": 45.45856,
+						"longitude": -73.64335
+					},
+					{
+						"latitude": 45.45849,
+						"longitude": -73.6434
+					},
+					{
+						"latitude": 45.45847,
+						"longitude": -73.64333
+					},
+					{
+						"latitude": 45.45845,
+						"longitude": -73.64334
+					},
+					{
+						"latitude": 45.45841,
+						"longitude": -73.64324
+					},
+					{
+						"latitude": 45.45842,
+						"longitude": -73.64323
+					},
+					{
+						"latitude": 45.4584,
+						"longitude": -73.64315
+					},
+					{
+						"latitude": 45.45847,
+						"longitude": -73.64309
+					},
+					{
+						"latitude": 45.45848,
+						"longitude": -73.64312
+					},
+					{
+						"latitude": 45.45849,
+						"longitude": -73.64311
+					},
+					{
+						"latitude": 45.45848,
+						"longitude": -73.6431
+					}
+				]
+			},
+			{
+				"buildingInitials": "HU",
+				"latitude": 45.45864,
+				"longitude": -73.64141,
+				"edges": [
+					{
+						"latitude": 45.45864,
+						"longitude": -73.64141
+					},
+					{
+						"latitude": 45.45892,
+						"longitude": -73.64206
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.64236
+					},
+					{
+						"latitude": 45.45826,
+						"longitude": -73.64171
+					}
+				]
+			},
+			{
+				"buildingInitials": "HC",
+				"latitude": 45.45983,
+				"longitude": -73.64183,
+				"edges": [
+					{
+						"latitude": 45.45983,
+						"longitude": -73.64183
+					},
+					{
+						"latitude": 45.4599,
+						"longitude": -73.64201
+					},
+					{
+						"latitude": 45.45979,
+						"longitude": -73.6421
+					},
+					{
+						"latitude": 45.4598,
+						"longitude": -73.64213
+					},
+					{
+						"latitude": 45.45962,
+						"longitude": -73.64228
+					},
+					{
+						"latitude": 45.45952,
+						"longitude": -73.64202
+					},
+					{
+						"latitude": 45.4597,
+						"longitude": -73.64187
+					},
+					{
+						"latitude": 45.45972,
+						"longitude": -73.64191
+					}
+				]
+			},
+			{
+				"buildingInitials": "HB",
+				"latitude": 45.45921,
+				"longitude": -73.64168,
+				"edges": [
+					{
+						"latitude": 45.45921,
+						"longitude": -73.64168
+					},
+					{
+						"latitude": 45.45937,
+						"longitude": -73.64207
+					},
+					{
+						"latitude": 45.45934,
+						"longitude": -73.64209
+					},
+					{
+						"latitude": 45.45936,
+						"longitude": -73.64215
+					},
+					{
+						"latitude": 45.45917,
+						"longitude": -73.64231
+					},
+					{
+						"latitude": 45.45914,
+						"longitude": -73.64225
+					},
+					{
+						"latitude": 45.4591,
+						"longitude": -73.64227
+					},
+					{
+						"latitude": 45.45896,
+						"longitude": -73.64191
+					},
+					{
+						"latitude": 45.459,
+						"longitude": -73.64189
+					},
+					{
+						"latitude": 45.45897,
+						"longitude": -73.64181
+					},
+					{
+						"latitude": 45.45917,
+						"longitude": -73.64165
+					},
+					{
+						"latitude": 45.45919,
+						"longitude": -73.6417
+					}
+				]
+			},
+			{
+				"buildingInitials": "HA",
+				"latitude": 45.45949,
+				"longitude": -73.64088,
+				"edges": [
+					{
+						"latitude": 45.45949,
+						"longitude": -73.64088
+					},
+					{
+						"latitude": 45.45951,
+						"longitude": -73.64094
+					},
+					{
+						"latitude": 45.45953,
+						"longitude": -73.64093
+					},
+					{
+						"latitude": 45.45967,
+						"longitude": -73.64128
+					},
+					{
+						"latitude": 45.45965,
+						"longitude": -73.64129
+					},
+					{
+						"latitude": 45.45968,
+						"longitude": -73.64135
+					},
+					{
+						"latitude": 45.45943,
+						"longitude": -73.64154
+					},
+					{
+						"latitude": 45.45941,
+						"longitude": -73.64149
+					},
+					{
+						"latitude": 45.4594,
+						"longitude": -73.6415
+					},
+					{
+						"latitude": 45.45926,
+						"longitude": -73.64115
+					},
+					{
+						"latitude": 45.45928,
+						"longitude": -73.64113
+					},
+					{
+						"latitude": 45.45925,
+						"longitude": -73.64107
+					}
+				]
+			},
+			{
+				"buildingInitials": "FC",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.45876,
+						"longitude": -73.63957
+					},
+					{
+						"latitude": 45.45875,
+						"longitude": -73.63962
+					},
+					{
+						"latitude": 45.45867,
+						"longitude": -73.63969
+					},
+					{
+						"latitude": 45.45863,
+						"longitude": -73.63967
+					},
+					{
+						"latitude": 45.4586,
+						"longitude": -73.63959
+					},
+					{
+						"latitude": 45.45859,
+						"longitude": -73.6396
+					},
+					{
+						"latitude": 45.45858,
+						"longitude": -73.63958
+					},
+					{
+						"latitude": 45.45856,
+						"longitude": -73.6396
+					},
+					{
+						"latitude": 45.45854,
+						"longitude": -73.63959
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.63956
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.63954
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.63952
+					},
+					{
+						"latitude": 45.45852,
+						"longitude": -73.63952
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.63952
+					},
+					{
+						"latitude": 45.4585,
+						"longitude": -73.63949
+					},
+					{
+						"latitude": 45.4585,
+						"longitude": -73.63948
+					},
+					{
+						"latitude": 45.45849,
+						"longitude": -73.63945
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.63942
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.63941
+					},
+					{
+						"latitude": 45.45852,
+						"longitude": -73.63941
+					},
+					{
+						"latitude": 45.45846,
+						"longitude": -73.63925
+					},
+					{
+						"latitude": 45.45844,
+						"longitude": -73.63926
+					},
+					{
+						"latitude": 45.45842,
+						"longitude": -73.63919
+					},
+					{
+						"latitude": 45.45843,
+						"longitude": -73.63918
+					},
+					{
+						"latitude": 45.45842,
+						"longitude": -73.63916
+					},
+					{
+						"latitude": 45.45843,
+						"longitude": -73.63916
+					},
+					{
+						"latitude": 45.45841,
+						"longitude": -73.6391
+					},
+					{
+						"latitude": 45.45843,
+						"longitude": -73.63909
+					},
+					{
+						"latitude": 45.45842,
+						"longitude": -73.63906
+					},
+					{
+						"latitude": 45.45839,
+						"longitude": -73.63907
+					},
+					{
+						"latitude": 45.45838,
+						"longitude": -73.63904
+					},
+					{
+						"latitude": 45.45852,
+						"longitude": -73.63893
+					},
+					{
+						"latitude": 45.45853,
+						"longitude": -73.63897
+					},
+					{
+						"latitude": 45.45851,
+						"longitude": -73.63898
+					},
+					{
+						"latitude": 45.45852,
+						"longitude": -73.63901
+					},
+					{
+						"latitude": 45.45854,
+						"longitude": -73.639
+					},
+					{
+						"latitude": 45.45856,
+						"longitude": -73.63905
+					},
+					{
+						"latitude": 45.45857,
+						"longitude": -73.63905
+					},
+					{
+						"latitude": 45.45858,
+						"longitude": -73.63905
+					},
+					{
+						"latitude": 45.45858,
+						"longitude": -73.63906
+					},
+					{
+						"latitude": 45.45859,
+						"longitude": -73.63906
+					},
+					{
+						"latitude": 45.45861,
+						"longitude": -73.63907
+					},
+					{
+						"latitude": 45.45863,
+						"longitude": -73.6391
+					},
+					{
+						"latitude": 45.45862,
+						"longitude": -73.63913
+					},
+					{
+						"latitude": 45.45861,
+						"longitude": -73.63914
+					},
+					{
+						"latitude": 45.45867,
+						"longitude": -73.63929
+					},
+					{
+						"latitude": 45.45868,
+						"longitude": -73.63929
+					},
+					{
+						"latitude": 45.45869,
+						"longitude": -73.63931
+					},
+					{
+						"latitude": 45.4587,
+						"longitude": -73.6393
+					},
+					{
+						"latitude": 45.4587,
+						"longitude": -73.6393
+					},
+					{
+						"latitude": 45.45871,
+						"longitude": -73.63931
+					},
+					{
+						"latitude": 45.45873,
+						"longitude": -73.63929
+					},
+					{
+						"latitude": 45.45875,
+						"longitude": -73.63933
+					},
+					{
+						"latitude": 45.45872,
+						"longitude": -73.63935
+					},
+					{
+						"latitude": 45.45873,
+						"longitude": -73.63936
+					},
+					{
+						"latitude": 45.45871,
+						"longitude": -73.63937
+					},
+					{
+						"latitude": 45.45873,
+						"longitude": -73.63941
+					},
+					{
+						"latitude": 45.45872,
+						"longitude": -73.63942
+					},
+					{
+						"latitude": 45.45874,
+						"longitude": -73.63949
+					},
+					{
+						"latitude": 45.45873,
+						"longitude": -73.6395
+					}
+				]
+			},
+			{
+				"buildingInitials": "DO",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.45793,
+						"longitude": -73.63523
+					},
+					{
+						"latitude": 45.45834,
+						"longitude": -73.63596
+					},
+					{
+						"latitude": 45.45737,
+						"longitude": -73.6371
+					},
+					{
+						"latitude": 45.45695,
+						"longitude": -73.63636
+					}
+				]
+			},
+			{
+				"buildingInitials": "BH",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.45979,
+						"longitude": -73.63909
+					},
+					{
+						"latitude": 45.45976,
+						"longitude": -73.63901
+					},
+					{
+						"latitude": 45.45966,
+						"longitude": -73.63909
+					},
+					{
+						"latitude": 45.4597,
+						"longitude": -73.63917
+					}
+				]
+			},
+			{
+				"buildingInitials": "BB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.45979,
+						"longitude": -73.63909
+					},
+					{
+						"latitude": 45.45982,
+						"longitude": -73.63917
+					},
+					{
+						"latitude": 45.45973,
+						"longitude": -73.63925
+					},
+					{
+						"latitude": 45.4597,
+						"longitude": -73.63917
+					}
+				]
+			},
+			{
+				"buildingInitials": "AD",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.45827,
+						"longitude": -73.63945
+					},
+					{
+						"latitude": 45.45838,
+						"longitude": -73.63977
+					},
+					{
+						"latitude": 45.4583,
+						"longitude": -73.63983
+					},
+					{
+						"latitude": 45.45828,
+						"longitude": -73.63978
+					},
+					{
+						"latitude": 45.45817,
+						"longitude": -73.63986
+					},
+					{
+						"latitude": 45.45817,
+						"longitude": -73.63987
+					},
+					{
+						"latitude": 45.4581,
+						"longitude": -73.63993
+					},
+					{
+						"latitude": 45.45809,
+						"longitude": -73.63992
+					},
+					{
+						"latitude": 45.45797,
+						"longitude": -73.64001
+					},
+					{
+						"latitude": 45.458,
+						"longitude": -73.64007
+					},
+					{
+						"latitude": 45.45791,
+						"longitude": -73.64013
+					},
+					{
+						"latitude": 45.4578,
+						"longitude": -73.63982
+					},
+					{
+						"latitude": 45.45788,
+						"longitude": -73.63975
+					},
+					{
+						"latitude": 45.4579,
+						"longitude": -73.63981
+					},
+					{
+						"latitude": 45.45791,
+						"longitude": -73.6398
+					},
+					{
+						"latitude": 45.45792,
+						"longitude": -73.63983
+					},
+					{
+						"latitude": 45.45802,
+						"longitude": -73.63975
+					},
+					{
+						"latitude": 45.45802,
+						"longitude": -73.63974
+					},
+					{
+						"latitude": 45.45798,
+						"longitude": -73.63963
+					},
+					{
+						"latitude": 45.45805,
+						"longitude": -73.63957
+					},
+					{
+						"latitude": 45.45809,
+						"longitude": -73.63969
+					},
+					{
+						"latitude": 45.45811,
+						"longitude": -73.63969
+					},
+					{
+						"latitude": 45.4582,
+						"longitude": -73.63962
+					},
+					{
+						"latitude": 45.45819,
+						"longitude": -73.63958
+					},
+					{
+						"latitude": 45.4582,
+						"longitude": -73.63957
+					},
+					{
+						"latitude": 45.45818,
+						"longitude": -73.63952
+					}
+				]
+			}
+		],
+		"interests": [
+			{
+				"Name": "Loyola Park",
+				"Address": "4877 Avenue Doherty",
+				"LAT": 45.4608841,
+				"LNG": -73.6458944,
+				"Description": "",
+				"Open": "8:00",
+				"Close": "23:00",
+				"Logo": "assets/poi_images/park.png"
+			},
+			{
+				"Name": "Souvlaki George",
+				"Address": "6995 Monkland Ave",
+				"LAT": 45.459880,
+				"LNG": -73.637000,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "5:00",
+				"Logo": "assets/poi_images/souvlakigeorge.png"
+			},
+			{
+				"Name": "NDG Hotdog & Pizzaria",
+				"Address": "7363 Sherbrooke St W",
+				"LAT": 45.465950,
+				"LNG": -73.624720,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/ndghotdog.png"
+			},
+			{
+				"Name": "Comptoir Koyajo",
+				"Address": "6963 Sherbrooke St W",
+				"LAT": 45.460000,
+				"LNG": -73.636440,
+				"Description": "",
+				"Open": "10:30",
+				"Close": "15:00",
+				"Logo": "assets/poi_images/comptoirkoyajo.png"
+			}
+		]
+	},
+	{
+		"campusName": "Sir George Williams",
+		"campusInitials": "SGW",
+		"buildings": [
+			{
+				"buildingName": "Henry F. Hall Building",
+				"buildingInitials": "H",
+				"buildingAddress": "1455 De Maisonneuve Blvd. W.",
+				"latitude": 45.497261,
+				"longitude": -73.578943,
+				"logo": "assets/markers/h.png",
+				"edges": [
+					{
+						"latitude": 45.49738,
+						"longitude": -73.57833
+					},
+					{
+						"latitude": 45.49755,
+						"longitude": -73.57869
+					},
+					{
+						"latitude": 45.49772,
+						"longitude": -73.57903
+					},
+					{
+						"latitude": 45.49744,
+						"longitude": -73.57929
+					},
+					{
+						"latitude": 45.497171,
+						"longitude": -73.57954
+					},
+					{
+						"latitude": 45.49702,
+						"longitude": -73.57923
+					},
+					{
+						"latitude": 45.496837,
+						"longitude": -73.578848
+					},
+					{
+						"latitude": 45.49715,
+						"longitude": -73.57855
+					}
+				],
+				"floors": [
+					{
+						"number": "H1",
+						"page": 0,
+						"classrooms": [
+							{
+								"name": "H110",
+								"coordinates": {
+									"room": {
+										"x": 255,
+										"y": 377
+									},
+									"nearest": {
+										"x": 255,
+										"y": 400
+									}
+								},
+								"edges": [
+									{
+										"name": "H1entrance",
+										"distance": 3
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H1checkMM",
+								"coordinates": {
+									"room": {
+										"x": 535,
+										"y": 560
+									},
+									"nearest": {
+										"x": 535,
+										"y": 560
+									}
+								},
+								"edges": [
+									{
+										"name": "H110",
+										"distance": 2
+									},
+									{
+										"name": "H1entrance",
+										"distance": 2
+									},
+									{
+										"name": "H1women",
+										"distance": 2
+									},
+									{
+										"name": "H1escalatorUp",
+										"distance": 2
+									}
+								]
+							}
+						],
+						"poi": [
+							{
+								"name": "H1exitMR",
+								"coordinates": {
+									"room": {
+										"x": 952,
+										"y": 560
+									},
+									"nearest": {
+										"x": 880,
+										"y": 560
+									}
+								},
+								"edges": [
+									{
+										"name": "H1security",
+										"distance": 2
+									},
+									{
+										"name": "H1escalatorDown",
+										"distance": 1
+									},
+									{
+										"name": "H1escalatorUp",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1women",
+								"coordinates": {
+									"room": {
+										"x": 500,
+										"y": 230
+									},
+									"nearest": {
+										"x": 535,
+										"y": 230
+									}
+								},
+								"edges": [
+									{
+										"name": "H1men",
+										"distance": 1
+									},
+									{
+										"name": "H1elevator",
+										"distance": 2
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H1men",
+								"coordinates": {
+									"room": {
+										"x": 500,
+										"y": 100
+									},
+									"nearest": {
+										"x": 535,
+										"y": 100
+									}
+								},
+								"edges": [
+									{
+										"name": "H1women",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1entrance",
+								"coordinates": {
+									"room": {
+										"x": 325,
+										"y": 860
+									},
+									"nearest": {
+										"x": 325,
+										"y": 830
+									}
+								},
+								"edges": [
+									{
+										"name": "H1escalatorDown",
+										"distance": 4
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									},
+									{
+										"name": "H110",
+										"distance": 3
+									},
+									{
+										"name": "MBentrance",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1elevator",
+								"coordinates": {
+									"room": {
+										"x": 707,
+										"y": 277
+									},
+									"nearest": {
+										"x": 707,
+										"y": 230
+									}
+								},
+								"edges": [
+									{
+										"name": "H1security",
+										"distance": 1
+									},
+									{
+										"name": "H1women",
+										"distance": 2
+									},
+									{
+										"name": "H8elevator",
+										"distance": 1
+									},
+									{
+										"name": "H9elevator",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1escalatorUp",
+								"coordinates": {
+									"room": {
+										"x": 771,
+										"y": 510
+									},
+									"nearest": {
+										"x": 771,
+										"y": 560
+									}
+								},
+								"edges": [
+									{
+										"name": "H1escalatorDown",
+										"distance": 1
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									},
+									{
+										"name": "H1exitMR",
+										"distance": 1
+									},
+									{
+										"name": "H8escalatorUp",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorUp",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1escalatorUp2",
+								"coordinates": {
+									"room": {
+										"x": 771,
+										"y": 510
+									},
+									"nearest": {
+										"x": 771,
+										"y": 560
+									}
+								},
+								"edges": [
+									{
+										"name": "H1escalatorDown",
+										"distance": 1
+									},
+									{
+										"name": "H1checkMM",
+										"distance": 2
+									},
+									{
+										"name": "H1exitMR",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorDown",
+										"distance":2 
+									}
+								]
+							},
+							{
+								"name": "H1escalatorDown",
+								"coordinates": {
+									"room": {
+										"x": 835,
+										"y": 890
+									},
+									"nearest": {
+										"x": 880,
+										"y": 831
+									}
+								},
+								"edges": [
+									{
+										"name": "H1escalatorUp",
+										"distance": 1
+									},
+									{
+										"name": "H1entrance",
+										"distance": 4
+									},
+									{
+										"name": "H1exitMR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H1security",
+								"coordinates": {
+									"room": {
+										"x": 880,
+										"y": 175
+									},
+									"nearest": {
+										"x": 880,
+										"y": 230
+									}
+								},
+								"edges": [
+									{
+										"name": "H1elevator",
+										"distance": 1
+									},
+									{
+										"name": "H1exitMR",
+										"distance": 2
+									}
+								]
+							}
+						]
+					},
+					{
+						"number": "H8",
+						"page": 1,
+						"classrooms": [
+							{
+								"name": "H801",
+								"coordinates": {
+									"room": {
+										"x": 157.6,
+										"y": 135.5
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H803",
+										"distance": 1
+									},
+									{
+										"name": "H863",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H803",
+								"coordinates": {
+									"room": {
+										"x": 240.4,
+										"y": 135.5
+									},
+									"nearest": {
+										"x": 240.4,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H801",
+										"distance": 1
+									},
+									{
+										"name": "H805",
+										"distance": 1
+									},
+									{
+										"name": "H8exitTL",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H805",
+								"coordinates": {
+									"room": {
+										"x": 337.3,
+										"y": 54.9
+									},
+									"nearest": {
+										"x": 337.3,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H803",
+										"distance": 1
+									},
+									{
+										"name": "H807",
+										"distance": 1
+									},
+									{
+										"name": "H8women",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H807",
+								"coordinates": {
+									"room": {
+										"x": 471.0,
+										"y": 135.5
+									},
+									"nearest": {
+										"x": 471.0,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H805",
+										"distance": 1
+									},
+									{
+										"name": "H8checkTM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8checkTM",
+								"coordinates": {
+									"room": {
+										"x": 550.0,
+										"y": 148.7
+									},
+									"nearest": {
+										"x": 550.0,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H807",
+										"distance": 1
+									},
+									{
+										"name": "H811",
+										"distance": 1
+									},
+									{
+										"name": "H8escalatorUp",
+										"distance": 2
+									},
+									{
+										"name": "H8accessibility",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H811",
+								"coordinates": {
+									"room": {
+										"x": 614.5,
+										"y": 135.5
+									},
+									"nearest": {
+										"x": 614.5,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H8checkTM",
+										"distance": 1
+									},
+									{
+										"name": "H8men",
+										"distance": 1
+									},
+									{
+										"name": "H813",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H813",
+								"coordinates": {
+									"room": {
+										"x": 709.7,
+										"y": 135.5
+									},
+									"nearest": {
+										"x": 709.7,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H811",
+										"distance": 1
+									},
+									{
+										"name": "H8exitTR",
+										"distance": 1
+									},
+									{
+										"name": "H815",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H815",
+								"coordinates": {
+									"room": {
+										"x": 834.0,
+										"y": 120.9
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H813",
+										"distance": 1
+									},
+									{
+										"name": "H817",
+										"distance": 1
+									},
+									{
+										"name": "H819",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H817",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 120.9
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H815",
+										"distance": 1
+									},
+									{
+										"name": "H819",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H819",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 148.7
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H817",
+										"distance": 1
+									},
+									{
+										"name": "H815",
+										"distance": 1
+									},
+									{
+										"name": "H821",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H820",
+								"coordinates": {
+									"room": {
+										"x": 801.8,
+										"y": 395.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 395.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H823",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H821",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 300.3
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 300.3
+									}
+								},
+								"edges": [
+									{
+										"name": "H819",
+										"distance": 1
+									},
+									{
+										"name": "H823",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H822",
+								"coordinates": {
+									"room": {
+										"x": 803.7,
+										"y": 522.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 522.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H827",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H823",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 395.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 395.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H821",
+										"distance": 1
+									},
+									{
+										"name": "H820",
+										"distance": 1
+									},
+									{
+										"name": "H825",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H825",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 461.9
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 461.9
+									}
+								},
+								"edges": [
+									{
+										"name": "H823",
+										"distance": 1
+									},
+									{
+										"name": "H827",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H827",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 522.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 522.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H822",
+										"distance": 1
+									},
+									{
+										"name": "H825",
+										"distance": 1
+									},
+									{
+										"name": "H829",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H829",
+								"coordinates": {
+									"room": {
+										"x": 861.8,
+										"y": 642.2
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 642.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H827",
+										"distance": 1
+									},
+									{
+										"name": "H833",
+										"distance": 1
+									},
+									{
+										"name": "H831",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H831",
+								"coordinates": {
+									"room": {
+										"x": 876.7,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H829",
+										"distance": 1
+									},
+									{
+										"name": "H833",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H832.06",
+								"coordinates": {
+									"room": {
+										"x": 629.5,
+										"y": 621.7
+									},
+									"nearest": {
+										"x": 629.5,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H837",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H833",
+								"coordinates": {
+									"room": {
+										"x": 846.2,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 846.2,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H829",
+										"distance": 1
+									},
+									{
+										"name": "H831",
+										"distance": 1
+									},
+									{
+										"name": "H835",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H835",
+								"coordinates": {
+									"room": {
+										"x": 714.2,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 714.2,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H833",
+										"distance": 1
+									},
+									{
+										"name": "H837",
+										"distance": 1
+									},
+									{
+										"name": "H8exitBR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H837",
+								"coordinates": {
+									"room": {
+										"x": 629.5,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 629.5,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H835",
+										"distance": 1
+									},
+									{
+										"name": "H832.06",
+										"distance": 1
+									},
+									{
+										"name": "H8checkBM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8checkBM",
+								"coordinates": {
+									"room": {
+										"x": 550.0,
+										"y": 762.4
+									},
+									"nearest": {
+										"x": 550.0,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H837",
+										"distance": 1
+									},
+									{
+										"name": "H841",
+										"distance": 1
+									},
+									{
+										"name": "H8escalatorDown",
+										"distance": 2
+									},
+									{
+										"name": "H8accessibility",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H841",
+								"coordinates": {
+									"room": {
+										"x": 466.5,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 466.5,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H8checkBM",
+										"distance": 1
+									},
+									{
+										"name": "H843",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H842",
+								"coordinates": {
+									"room": {
+										"x": 395.6,
+										"y": 620.9
+									},
+									"nearest": {
+										"x": 395.6,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H843",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H843",
+								"coordinates": {
+									"room": {
+										"x": 395.6,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 395.6,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H841",
+										"distance": 1
+									},
+									{
+										"name": "H842",
+										"distance": 1
+									},
+									{
+										"name": "H845",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H845",
+								"coordinates": {
+									"room": {
+										"x": 297.4,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 297.4,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H843",
+										"distance": 1
+									},
+									{
+										"name": "H847",
+										"distance": 1
+									},
+									{
+										"name": "H8exitBL",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H847",
+								"coordinates": {
+									"room": {
+										"x": 160.8,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H845",
+										"distance": 1
+									},
+									{
+										"name": "H853",
+										"distance": 1
+									},
+									{
+										"name": "H849",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H849",
+								"coordinates": {
+									"room": {
+										"x": 120.4,
+										"y": 776.1
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H847",
+										"distance": 1
+									},
+									{
+										"name": "H853",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H853",
+								"coordinates": {
+									"room": {
+										"x": 139.8,
+										"y": 621.7
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 621.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H849",
+										"distance": 1
+									},
+									{
+										"name": "H847",
+										"distance": 1
+									},
+									{
+										"name": "H855",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H854",
+								"coordinates": {
+									"room": {
+										"x": 202.6,
+										"y": 550.6
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 550.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H855",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H855",
+								"coordinates": {
+									"room": {
+										"x": 139.8,
+										"y": 550.6
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 550.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H854",
+										"distance": 1
+									},
+									{
+										"name": "H853",
+										"distance": 1
+									},
+									{
+										"name": "H857",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H857",
+								"coordinates": {
+									"room": {
+										"x": 139.8,
+										"y": 466.3
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 466.3
+									}
+								},
+								"edges": [
+									{
+										"name": "H855",
+										"distance": 1
+									},
+									{
+										"name": "H859",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H859",
+								"coordinates": {
+									"room": {
+										"x": 139.8,
+										"y": 348.5
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 348.5
+									}
+								},
+								"edges": [
+									{
+										"name": "H857",
+										"distance": 1
+									},
+									{
+										"name": "H861",
+										"distance": 1
+									},
+									{
+										"name": "H8elevator",
+										"distance": 3
+									},
+									{
+										"name": "H862",
+										"distance": 3
+									}
+								]
+							},
+							{
+								"name": "H861",
+								"coordinates": {
+									"room": {
+										"x": 139.8,
+										"y": 245.3
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 245.3
+									}
+								},
+								"edges": [
+									{
+										"name": "H859",
+										"distance": 1
+									},
+									{
+										"name": "H863",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H862",
+								"coordinates": {
+									"room": {
+										"x": 353.8,
+										"y": 373.3
+									},
+									"nearest": {
+										"x": 353.8,
+										"y": 348.5
+									}
+								},
+								"edges": [
+									{
+										"name": "H859",
+										"distance": 3
+									},
+									{
+										"name": "H8elevator",
+										"distance": 1
+									},
+									{
+										"name": "H8escalatorUp",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H863",
+								"coordinates": {
+									"room": {
+										"x": 126.3,
+										"y": 158.6
+									},
+									"nearest": {
+										"x": 160.8,
+										"y": 149.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H801",
+										"distance": 1
+									},
+									{
+										"name": "H861",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8accessibility",
+								"coordinates": {
+									"room": {
+										"x": 546.0,
+										"y": 352.15
+									},
+									"nearest": {
+										"x": 546.0,
+										"y": 352.15
+									}
+								},
+								"edges": [
+									{
+										"name": "H8elevator",
+										"distance": 2
+									},
+									{
+										"name": "H8checkTM",
+										"distance": 2
+									},
+									{
+										"name": "H8checkBM",
+										"distance": 2
+									}
+								]
+							}
+						],
+						"poi": [
+							{
+								"name": "H8exitTL",
+								"coordinates": {
+									"room": {
+										"x": 240.4,
+										"y": 190.6
+									},
+									"nearest": {
+										"x": 240.4,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H803",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8women",
+								"coordinates": {
+									"room": {
+										"x": 337.3,
+										"y": 190.6
+									},
+									"nearest": {
+										"x": 337.3,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H805",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8men",
+								"coordinates": {
+									"room": {
+										"x": 614.5,
+										"y": 190.6
+									},
+									"nearest": {
+										"x": 614.5,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H811",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8exitTR",
+								"coordinates": {
+									"room": {
+										"x": 709.7,
+										"y": 190.6
+									},
+									"nearest": {
+										"x": 709.7,
+										"y": 148.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H813",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8exitBR",
+								"coordinates": {
+									"room": {
+										"x": 714.2,
+										"y": 718.1
+									},
+									"nearest": {
+										"x": 714.2,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H835",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8exitBL",
+								"coordinates": {
+									"room": {
+										"x": 297.4,
+										"y": 718.1
+									},
+									"nearest": {
+										"x": 297.4,
+										"y": 762.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H845",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8elevator",
+								"coordinates": {
+									"room": {
+										"x": 353.8,
+										"y": 316.1
+									},
+									"nearest": {
+										"x": 353.8,
+										"y": 348.5
+									}
+								},
+								"edges": [
+									{
+										"name": "H859",
+										"distance": 3
+									},
+									{
+										"name": "H862",
+										"distance": 1
+									},
+									{
+										"name": "H8escalatorUp",
+										"distance": 2
+									},
+									{
+										"name": "H1elevator",
+										"distance": 1
+									},
+									{
+										"name": "H9elevator",
+										"distance": 1
+									},
+									{
+										"name": "H8accessibility",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H8escalatorUp",
+								"coordinates": {
+									"room": {
+										"x": 479.3,
+										"y": 348.5
+									},
+									"nearest": {
+										"x": 550.0,
+										"y": 348.5
+									}
+								},
+								"edges": [
+									{
+										"name": "H8checkTM",
+										"distance": 2
+									},
+									{
+										"name": "H8elevator",
+										"distance": 2
+									},
+									{
+										"name": "H8escalatorDown",
+										"distance": 2
+									},
+									{
+										"name": "H862",
+										"distance": 2
+									},
+									{
+										"name": "H9escalatorUp",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H8escalatorDown",
+								"coordinates": {
+									"room": {
+										"x": 483.8,
+										"y": 595.8
+									},
+									"nearest": {
+										"x": 550.0,
+										"y": 595.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H8checkBM",
+										"distance": 2
+									},
+									{
+										"name": "H8escalatorUp",
+										"distance": 2
+									},
+									{
+										"name": "H1escalatorUp",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorDown",
+										"distance": 1
+									}
+								]
+							}
+						]
+					},
+					{
+						"number": "H9",
+						"page": 2,
+						"classrooms": [
+							{
+								"name": "H903",
+								"coordinates": {
+									"room": {
+										"x": 748.5,
+										"y": 771.7
+									},
+									"nearest": {
+										"x": 748.5,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H967",
+										"distance": 1
+									},
+									{
+										"name": "H907",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H9accessibility",
+								"coordinates": {
+									"room": {
+										"x": 486.3,
+										"y": 573.8
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H9elevator",
+										"distance": 1
+									},
+									{
+										"name": "H909",
+										"distance": 3
+									},
+									{
+										"name": "H9checkMM",
+										"distance": 3
+									}
+								]
+							},
+							{
+								"name": "H907",
+								"coordinates": {
+									"room": {
+										"x": 577.6,
+										"y": 773.8
+									},
+									"nearest": {
+										"x": 577.6,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H903",
+										"distance": 2
+									},
+									{
+										"name": "H9women",
+										"distance": 1
+									},
+									{
+										"name": "H909",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H909",
+								"coordinates": {
+									"room": {
+										"x": 486.3,
+										"y": 779.3
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H907",
+										"distance": 1
+									},
+									{
+										"name": "H911",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorDown",
+										"distance": 3
+									},
+									{
+										"name": "H9accessibility",
+										"distance": 3
+									}
+								]
+							},
+							{
+								"name": "H911",
+								"coordinates": {
+									"room": {
+										"x": 397.2,
+										"y": 779.3
+									},
+									"nearest": {
+										"x": 397.2,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H909",
+										"distance": 1
+									},
+									{
+										"name": "H9men",
+										"distance": 1
+									},
+									{
+										"name": "H913",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H913",
+								"coordinates": {
+									"room": {
+										"x": 298.1,
+										"y": 779.3
+									},
+									"nearest": {
+										"x": 298.1,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H911",
+										"distance": 1
+									},
+									{
+										"name": "H9exitBL",
+										"distance": 1
+									},
+									{
+										"name": "H9checkBL",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H915",
+								"coordinates": {
+									"room": {
+										"x": 168.1,
+										"y": 791.1
+									},
+									"nearest": {
+										"x": 155.1,
+										"y": 791.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkBL",
+										"distance": 1
+									},
+									{
+										"name": "H917",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H917",
+								"coordinates": {
+									"room": {
+										"x": 142,
+										"y": 791.1
+									},
+									"nearest": {
+										"x": 155.1,
+										"y": 791.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkBL",
+										"distance": 1
+									},
+									{
+										"name": "H915",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9checkBL",
+								"coordinates": {
+									"room": {
+										"x": 161.1,
+										"y": 743.8
+									},
+									"nearest": {
+										"x": 161.1,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H919",
+										"distance": 1
+									},
+									{
+										"name": "H917",
+										"distance": 1
+									},
+									{
+										"name": "H913",
+										"distance": 2
+									},
+									{
+										"name": "H915",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H919",
+								"coordinates": {
+									"room": {
+										"x": 141,
+										"y": 698.6
+									},
+									"nearest": {
+										"x": 168.1,
+										"y": 698.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkBL",
+										"distance": 1
+									},
+									{
+										"name": "H921",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H921",
+								"coordinates": {
+									"room": {
+										"x": 142,
+										"y": 606.1
+									},
+									"nearest": {
+										"x": 168.1,
+										"y": 606.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H919",
+										"distance": 1
+									},
+									{
+										"name": "H923",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H923",
+								"coordinates": {
+									"room": {
+										"x": 142,
+										"y": 508.6
+									},
+									"nearest": {
+										"x": 168.1,
+										"y": 508.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H921",
+										"distance": 1
+									},
+									{
+										"name": "H980",
+										"distance": 2
+									},
+									{
+										"name": "H920",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H920",
+								"coordinates": {
+									"room": {
+										"x": 200.6,
+										"y": 508.4
+									},
+									"nearest": {
+										"x": 168.1,
+										"y": 508.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H923",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H980",
+								"coordinates": {
+									"room": {
+										"x": 232.8,
+										"y": 379.1
+									},
+									"nearest": {
+										"x": 190.4,
+										"y": 379.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H923",
+										"distance": 2
+									},
+									{
+										"name": "H9exitTL",
+										"distance": 1
+									},
+									{
+										"name": "H927-4",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H927-4",
+								"coordinates": {
+									"room": {
+										"x": 179.6,
+										"y": 324.6
+									},
+									"nearest": {
+										"x": 190.7,
+										"y": 324.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H980",
+										"distance": 1
+									},
+									{
+										"name": "H9exitTL",
+										"distance": 1
+									},
+									{
+										"name": "H927",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H927",
+								"coordinates": {
+									"room": {
+										"x": 161.2,
+										"y": 271.5
+									},
+									"nearest": {
+										"x": 190.7,
+										"y": 271.5
+									}
+								},
+								"edges": [
+									{
+										"name": "H927-4",
+										"distance": 1
+									},
+									{
+										"name": "H929",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H929",
+								"coordinates": {
+									"room": {
+										"x": 190.7,
+										"y": 109.9
+									},
+									"nearest": {
+										"x": 190.7,
+										"y": 132.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H927",
+										"distance": 1
+									},
+									{
+										"name": "H933",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H933",
+								"coordinates": {
+									"room": {
+										"x": 285.3,
+										"y": 120.1
+									},
+									"nearest": {
+										"x": 303.3,
+										"y": 132.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H929",
+										"distance": 1
+									},
+									{
+										"name": "H937",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H937",
+								"coordinates": {
+									"room": {
+										"x": 372,
+										"y": 209.9
+									},
+									"nearest": {
+										"x": 349.1,
+										"y": 209.9
+									}
+								},
+								"edges": [
+									{
+										"name": "H933",
+										"distance": 1
+									},
+									{
+										"name": "H9checkML",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H945",
+								"coordinates": {
+									"room": {
+										"x": 623.9,
+										"y": 188.1
+									},
+									"nearest": {
+										"x": 610.4,
+										"y": 188.6
+									}
+								},
+								"edges": [
+									{
+										"name": "H966",
+										"distance": 1
+									},
+									{
+										"name": "H943",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H943",
+								"coordinates": {
+									"room": {
+										"x": 623.9,
+										"y": 137.7
+									},
+									"nearest": {
+										"x": 608.1,
+										"y": 137.7
+									}
+								},
+								"edges": [
+									{
+										"name": "H945",
+										"distance": 1
+									},
+									{
+										"name": "H9checkTM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9checkTM",
+								"coordinates": {
+									"room": {
+										"x": 629.4,
+										"y": 77.1
+									},
+									"nearest": {
+										"x": 629.4,
+										"y": 77.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H943",
+										"distance": 1
+									},
+									{
+										"name": "H961-26",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H961-26",
+								"coordinates": {
+									"room": {
+										"x": 819.5,
+										"y": 86
+									},
+									"nearest": {
+										"x": 819.4,
+										"y": 75.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkTR",
+										"distance": 1
+									},
+									{
+										"name": "H9checkTM",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H9checkTR",
+								"coordinates": {
+									"room": {
+										"x": 930.3,
+										"y": 77.1
+									},
+									"nearest": {
+										"x": 930.3,
+										"y": 77.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H961-26",
+										"distance": 1
+									},
+									{
+										"name": "H961-14",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H961-14",
+								"coordinates": {
+									"room": {
+										"x": 917.8,
+										"y": 220.9
+									},
+									"nearest": {
+										"x": 930.3,
+										"y": 220.9
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkTR",
+										"distance": 1
+									},
+									{
+										"name": "H9checkMR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9checkMR",
+								"coordinates": {
+									"room": {
+										"x": 930.3,
+										"y": 308.1
+									},
+									"nearest": {
+										"x": 930.3,
+										"y": 308.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H961-14",
+										"distance": 1
+									},
+									{
+										"name": "H968",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "H968",
+								"coordinates": {
+									"room": {
+										"x": 725.9,
+										"y": 321.4
+									},
+									"nearest": {
+										"x": 725.9,
+										"y": 304.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkMR",
+										"distance": 2
+									},
+									{
+										"name": "H9exitTR",
+										"distance": 1
+									},
+									{
+										"name": "H966",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H966",
+								"coordinates": {
+									"room": {
+										"x": 608.1,
+										"y": 321.4
+									},
+									"nearest": {
+										"x": 608.1,
+										"y": 302.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H968",
+										"distance": 1
+									},
+									{
+										"name": "H945",
+										"distance": 1
+									},
+									{
+										"name": "H9checkMM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H962",
+								"coordinates": {
+									"room": {
+										"x": 653.1,
+										"y": 551.3
+									},
+									"nearest": {
+										"x": 652.9,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H9escalatorDown",
+										"distance": 1
+									},
+									{
+										"name": "H9elevator",
+										"distance": 1
+									},
+									{
+										"name": "H964",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H964",
+								"coordinates": {
+									"room": {
+										"x": 747.5,
+										"y": 551.8
+									},
+									"nearest": {
+										"x": 747.5,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H962",
+										"distance": 1
+									},
+									{
+										"name": "H9exitBR",
+										"distance": 1
+									},
+									{
+										"name": "H963",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H963",
+								"coordinates": {
+									"room": {
+										"x": 829.4,
+										"y": 534.2
+									},
+									"nearest": {
+										"x": 829.4,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H964",
+										"distance": 1
+									},
+									{
+										"name": "H965",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H965",
+								"coordinates": {
+									"room": {
+										"x": 862.9,
+										"y": 629.4
+									},
+									"nearest": {
+										"x": 829.4,
+										"y": 629.4
+									}
+								},
+								"edges": [
+									{
+										"name": "H967",
+										"distance": 1
+									},
+									{
+										"name": "H963",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H967",
+								"coordinates": {
+									"room": {
+										"x": 861.6,
+										"y": 743.8
+									},
+									"nearest": {
+										"x": 829.4,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H965",
+										"distance": 1
+									},
+									{
+										"name": "H903",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9checkML",
+								"coordinates": {
+									"room": {
+										"x": 376.3,
+										"y": 318.2
+									},
+									"nearest": {
+										"x": 376.3,
+										"y": 318.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H9exitTL",
+										"distance": 1
+									},
+									{
+										"name": "H9checkMM",
+										"distance": 1
+									},
+									{
+										"name": "H937",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9checkMM",
+								"coordinates": {
+									"room": {
+										"x": 486.3,
+										"y": 318.2
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 318.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkML",
+										"distance": 1
+									},
+									{
+										"name": "H966",
+										"distance": 1
+									},
+									{
+										"name": "H9escalatorUp",
+										"distance": 1
+									},
+									{
+										"name": "H9accessibility",
+										"distance": 3
+									}
+								]
+							}
+						],
+						"poi": [
+							{
+								"name": "H9exitTL",
+								"coordinates": {
+									"room": {
+										"x": 285.1,
+										"y": 294.7
+									},
+									"nearest": {
+										"x": 285.1,
+										"y": 319.2
+									}
+								},
+								"edges": [
+									{
+										"name": "H9checkML",
+										"distance": 1
+									},
+									{
+										"name": "H980",
+										"distance": 1
+									},
+									{
+										"name": "H927-4",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9women",
+								"coordinates": {
+									"room": {
+										"x": 578.6,
+										"y": 698.6
+									},
+									"nearest": {
+										"x": 577.6,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H907",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9men",
+								"coordinates": {
+									"room": {
+										"x": 397.2,
+										"y": 721.7
+									},
+									"nearest": {
+										"x": 397.2,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H911",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9exitTR",
+								"coordinates": {
+									"room": {
+										"x": 725.9,
+										"y": 294.1
+									},
+									"nearest": {
+										"x": 725.9,
+										"y": 304.1
+									}
+								},
+								"edges": [
+									{
+										"name": "H968",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9exitBR",
+								"coordinates": {
+									"room": {
+										"x": 747.5,
+										"y": 592.5
+									},
+									"nearest": {
+										"x": 747.5,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H964",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9exitBL",
+								"coordinates": {
+									"room": {
+										"x": 298.1,
+										"y": 721.7
+									},
+									"nearest": {
+										"x": 298.1,
+										"y": 743.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H913",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9elevator",
+								"coordinates": {
+									"room": {
+										"x": 652.9235,
+										"y": 602.0296
+									},
+									"nearest": {
+										"x": 652.9,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H962",
+										"distance": 1
+									},
+									{
+										"name": "H1elevator",
+										"distance": 1
+									},
+									{
+										"name": "H8elevator",
+										"distance": 1
+									},
+									{
+										"name": "H9accessibility",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9escalatorUp",
+								"coordinates": {
+									"room": {
+										"x": 521.2,
+										"y": 412.8
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 412.9
+									}
+								},
+								"edges": [
+									{
+										"name": "H9escalatorDown",
+										"distance": 2
+									},
+									{
+										"name": "H9checkMM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "H9escalatorDown",
+								"coordinates": {
+									"room": {
+										"x": 535.7,
+										"y": 573.8
+									},
+									"nearest": {
+										"x": 486.3,
+										"y": 573.8
+									}
+								},
+								"edges": [
+									{
+										"name": "H909",
+										"distance": 3
+									},
+									{
+										"name": "H9escalatorUp",
+										"distance": 2
+									},
+									{
+										"name": "H962",
+										"distance": 1
+									},
+									{
+										"name": "H1escalatorUp2",
+										"distance": 2 
+									},
+									{
+										"name": "H8escalatorDown",
+										"distance": 1 
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"buildingName": "J.W. McConnell Building",
+				"buildingInitials": "LB",
+				"buildingAddress": "1400 De Maisonneuve Blvd. W.",
+				"latitude": 45.496810,
+				"longitude": -73.577813,
+				"logo": "assets/markers/lb.png",
+				"edges": [
+					{
+						"latitude": 45.49704,
+						"longitude": -73.57829
+					},
+					{
+						"latitude": 45.49728,
+						"longitude": -73.57806
+					},
+					{
+						"latitude": 45.49716,
+						"longitude": -73.57782
+					},
+					{
+						"latitude": 45.49713,
+						"longitude": -73.57785
+					},
+					{
+						"latitude": 45.4971,
+						"longitude": -73.5778
+					},
+					{
+						"latitude": 45.4971,
+						"longitude": -73.57781
+					},
+					{
+						"latitude": 45.49709,
+						"longitude": -73.57779
+					},
+					{
+						"latitude": 45.49713,
+						"longitude": -73.57775
+					},
+					{
+						"latitude": 45.49706,
+						"longitude": -73.57759
+					},
+					{
+						"latitude": 45.49701,
+						"longitude": -73.57763
+					},
+					{
+						"latitude": 45.49701,
+						"longitude": -73.57762
+					},
+					{
+						"latitude": 45.49702,
+						"longitude": -73.57761
+					},
+					{
+						"latitude": 45.497,
+						"longitude": -73.57757
+					},
+					{
+						"latitude": 45.49703,
+						"longitude": -73.57754
+					},
+					{
+						"latitude": 45.49696,
+						"longitude": -73.5774
+					},
+					{
+						"latitude": 45.49691,
+						"longitude": -73.57729
+					},
+					{
+						"latitude": 45.49675,
+						"longitude": -73.57744
+					},
+					{
+						"latitude": 45.49663,
+						"longitude": -73.57756
+					},
+					{
+						"latitude": 45.49666,
+						"longitude": -73.5776
+					},
+					{
+						"latitude": 45.4966,
+						"longitude": -73.57765
+					},
+					{
+						"latitude": 45.49651,
+						"longitude": -73.57747
+					},
+					{
+						"latitude": 45.49644,
+						"longitude": -73.57754
+					},
+					{
+						"latitude": 45.49632,
+						"longitude": -73.57765
+					},
+					{
+						"latitude": 45.49627,
+						"longitude": -73.5777
+					},
+					{
+						"latitude": 45.49643,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.49658,
+						"longitude": -73.57834
+					},
+					{
+						"latitude": 45.49669,
+						"longitude": -73.57857
+					},
+					{
+						"latitude": 45.49673,
+						"longitude": -73.57853
+					},
+					{
+						"latitude": 45.49675,
+						"longitude": -73.57858
+					},
+					{
+						"latitude": 45.49691,
+						"longitude": -73.57841
+					},
+					{
+						"latitude": 45.49689,
+						"longitude": -73.57837
+					},
+					{
+						"latitude": 45.49693,
+						"longitude": -73.57833
+					},
+					{
+						"latitude": 45.49691,
+						"longitude": -73.57829
+					},
+					{
+						"latitude": 45.49696,
+						"longitude": -73.57825
+					},
+					{
+						"latitude": 45.49698,
+						"longitude": -73.57829
+					},
+					{
+						"latitude": 45.497,
+						"longitude": -73.57828
+					},
+					{
+						"latitude": 45.49702,
+						"longitude": -73.57826
+					}
+				]
+			},
+			{
+				"buildingName": "Faubourg Building",
+				"buildingInitials": "FG",
+				"buildingAddress": "1250 Guy St.",
+				"latitude": 45.494236,
+				"longitude": -73.578284,
+				"logo": "assets/markers/fg.png",
+				"edges": [
+					{
+						"latitude": 45.49491,
+						"longitude": -73.57779
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.4947,
+						"longitude": -73.57803
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57804
+					},
+					{
+						"latitude": 45.49463,
+						"longitude": -73.57812
+					},
+					{
+						"latitude": 45.49455,
+						"longitude": -73.57823
+					},
+					{
+						"latitude": 45.49437,
+						"longitude": -73.57843
+					},
+					{
+						"latitude": 45.49438,
+						"longitude": -73.57844
+					},
+					{
+						"latitude": 45.49431,
+						"longitude": -73.57852
+					},
+					{
+						"latitude": 45.4943,
+						"longitude": -73.57851
+					},
+					{
+						"latitude": 45.49421,
+						"longitude": -73.57862
+					},
+					{
+						"latitude": 45.49397,
+						"longitude": -73.5789
+					},
+					{
+						"latitude": 45.49383,
+						"longitude": -73.57907
+					},
+					{
+						"latitude": 45.49373,
+						"longitude": -73.57889
+					},
+					{
+						"latitude": 45.49363,
+						"longitude": -73.57873
+					},
+					{
+						"latitude": 45.49375,
+						"longitude": -73.57859
+					},
+					{
+						"latitude": 45.49386,
+						"longitude": -73.57846
+					},
+					{
+						"latitude": 45.49384,
+						"longitude": -73.57844
+					},
+					{
+						"latitude": 45.49389,
+						"longitude": -73.57838
+					},
+					{
+						"latitude": 45.4939,
+						"longitude": -73.5784
+					},
+					{
+						"latitude": 45.49393,
+						"longitude": -73.57836
+					},
+					{
+						"latitude": 45.49392,
+						"longitude": -73.57834
+					},
+					{
+						"latitude": 45.49402,
+						"longitude": -73.57822
+					},
+					{
+						"latitude": 45.49411,
+						"longitude": -73.57811
+					},
+					{
+						"latitude": 45.49412,
+						"longitude": -73.57813
+					},
+					{
+						"latitude": 45.49421,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.49419,
+						"longitude": -73.57799
+					},
+					{
+						"latitude": 45.49438,
+						"longitude": -73.57777
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.5778
+					},
+					{
+						"latitude": 45.49444,
+						"longitude": -73.57776
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.57769
+					},
+					{
+						"latitude": 45.49446,
+						"longitude": -73.57762
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.57752
+					},
+					{
+						"latitude": 45.49456,
+						"longitude": -73.57733
+					},
+					{
+						"latitude": 45.49465,
+						"longitude": -73.57722
+					},
+					{
+						"latitude": 45.4947,
+						"longitude": -73.5773
+					},
+					{
+						"latitude": 45.49469,
+						"longitude": -73.57731
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57735
+					},
+					{
+						"latitude": 45.49477,
+						"longitude": -73.57745
+					},
+					{
+						"latitude": 45.49476,
+						"longitude": -73.57747
+					},
+					{
+						"latitude": 45.49481,
+						"longitude": -73.57754
+					},
+					{
+						"latitude": 45.4948,
+						"longitude": -73.57755
+					},
+					{
+						"latitude": 45.49484,
+						"longitude": -73.57763
+					},
+					{
+						"latitude": 45.49484,
+						"longitude": -73.57763
+					},
+					{
+						"latitude": 45.49488,
+						"longitude": -73.57771
+					},
+					{
+						"latitude": 45.49487,
+						"longitude": -73.57771
+					}
+				]
+			},
+			{
+				"buildingName": "John-Molson Building",
+				"buildingInitials": "MB",
+				"buildingAddress": "1450 Guy St.",
+				"latitude": 45.495222,
+				"longitude": -73.578824,
+				"logo": "assets/markers/mb.png",
+				"edges": [
+					{
+						"latitude": 45.49529,
+						"longitude": -73.57923
+					},
+					{
+						"latitude": 45.49537,
+						"longitude": -73.57937
+					},
+					{
+						"latitude": 45.49541,
+						"longitude": -73.57933
+					},
+					{
+						"latitude": 45.49546,
+						"longitude": -73.57927
+					},
+					{
+						"latitude": 45.49553,
+						"longitude": -73.5792
+					},
+					{
+						"latitude": 45.49551,
+						"longitude": -73.57914
+					},
+					{
+						"latitude": 45.49549,
+						"longitude": -73.57908
+					},
+					{
+						"latitude": 45.49545,
+						"longitude": -73.57896
+					},
+					{
+						"latitude": 45.4952,
+						"longitude": -73.57853
+					},
+					{
+						"latitude": 45.49501,
+						"longitude": -73.57874
+					},
+					{
+						"latitude": 45.49505,
+						"longitude": -73.57879
+					},
+					{
+						"latitude": 45.49501,
+						"longitude": -73.57882
+					},
+					{
+						"latitude": 45.49505,
+						"longitude": -73.57889
+					},
+					{
+						"latitude": 45.49511,
+						"longitude": -73.57903
+					},
+					{
+						"latitude": 45.49518,
+						"longitude": -73.57917
+					},
+					{
+						"latitude": 45.49523,
+						"longitude": -73.57911
+					}
+				],
+				"floors": [
+					{
+						"number": "MB1",
+						"page": 3,
+						"classrooms": [
+							{
+								"name": "MB1.350",
+								"coordinates": {
+									"room": {
+										"x": 181.16,
+										"y": 437
+									},
+									"nearest": {
+										"x": 196.07,
+										"y": 437
+									}
+								},
+								"edges": [
+									{
+										"name": "MBexitML",
+										"distance": 1
+									},
+									{
+										"name": "MB1.345",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.345",
+								"coordinates": {
+									"room": {
+										"x": 181.16,
+										"y": 391.05
+									},
+									"nearest": {
+										"x": 200.05,
+										"y": 391.05
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.350",
+										"distance": 1
+									},
+									{
+										"name": "MB1.338",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.338",
+								"coordinates": {
+									"room": {
+										"x": 200.05,
+										"y": 365.7
+									},
+									"nearest": {
+										"x": 200.05,
+										"y": 391.05
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.345",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.210",
+								"coordinates": {
+									"room": {
+										"x": 465.7,
+										"y": 549.58
+									},
+									"nearest": {
+										"x": 487.83,
+										"y": 549.58
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckML",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.309",
+								"coordinates": {
+									"room": {
+										"x": 545.33,
+										"y": 365.7
+									},
+									"nearest": {
+										"x": 545.33,
+										"y": 387.07
+									}
+								},
+								"edges": [
+									{
+										"name": "MBelevator",
+										"distance": 1
+									},
+									{
+										"name": "MBexitTM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.301",
+								"coordinates": {
+									"room": {
+										"x": 607.78,
+										"y": 383.09
+									},
+									"nearest": {
+										"x": 588.19,
+										"y": 383.09
+									}
+								},
+								"edges": [
+									{
+										"name": "MBexitTM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.424",
+								"coordinates": {
+									"room": {
+										"x": 637.84,
+										"y": 511.5
+									},
+									"nearest": {
+										"x": 637.84,
+										"y": 551.21
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckMM",
+										"distance": 1
+									},
+									{
+										"name": "MB1.130",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.130",
+								"coordinates": {
+									"room": {
+										"x": 729.45,
+										"y": 528.2
+									},
+									"nearest": {
+										"x": 729.45,
+										"y": 551.21
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.424",
+										"distance": 1
+									},
+									{
+										"name": "MBescalator",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.437",
+								"coordinates": {
+									"room": {
+										"x": 775.08,
+										"y": 247.61
+									},
+									"nearest": {
+										"x": 788.79,
+										"y": 247.61
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckTR",
+										"distance": 2
+									},
+									{
+										"name": "MBexitTR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MB1.115",
+								"coordinates": {
+									"room": {
+										"x": 901.05,
+										"y": 391.6
+									},
+									"nearest": {
+										"x": 901.05,
+										"y": 410.74
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckTR",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMR",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "MBcheckBL",
+								"coordinates": {
+									"room": {
+										"x": 169.81,
+										"y": 629.09
+									},
+									"nearest": {
+										"x": 169.81,
+										"y": 629.09
+									}
+								},
+								"edges": [
+									{
+										"name": "MBexitML",
+										"distance": 1
+									},
+									{
+										"name": "MBexitBL",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckML",
+										"distance": 2
+									}
+								]
+							},
+							{
+								"name": "MBcheckML",
+								"coordinates": {
+									"room": {
+										"x": 495.79,
+										"y": 629.09
+									},
+									"nearest": {
+										"x": 495.79,
+										"y": 629.09
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckBL",
+										"distance": 2
+									},
+									{
+										"name": "MB1.210",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMM",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBcheckMM",
+								"coordinates": {
+									"room": {
+										"x": 545.31,
+										"y": 551.21
+									},
+									"nearest": {
+										"x": 545.31,
+										"y": 551.21
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckML",
+										"distance": 1
+									},
+									{
+										"name": "MB1.210",
+										"distance": 1
+									},
+									{
+										"name": "MBelevator",
+										"distance": 1
+									},
+									{
+										"name": "MB1.424",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBcheckMR",
+								"coordinates": {
+									"room": {
+										"x": 817.15,
+										"y": 549.58
+									},
+									"nearest": {
+										"x": 817.15,
+										"y": 549.58
+									}
+								},
+								"edges": [
+									{
+										"name": "MBentrance",
+										"distance": 1
+									},
+									{
+										"name": "MB1.130",
+										"distance": 1
+									},
+									{
+										"name": "MB1.115",
+										"distance": 2
+									},
+									{
+										"name": "MBcheckTR",
+										"distance": 2
+									},
+									{
+										"name": "MBescalator",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBcheckTR",
+								"coordinates": {
+									"room": {
+										"x": 806.05,
+										"y": 411.4
+									},
+									"nearest": {
+										"x": 806.05,
+										"y": 411.4
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.437",
+										"distance": 2
+									},
+									{
+										"name": "MBmen",
+										"distance": 1
+									},
+									{
+										"name": "MBwomen",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMR",
+										"distance": 2
+									},
+									{
+										"name": "MB1.115",
+										"distance": 1
+									}
+								]
+							}
+						],
+						"poi": [
+							{
+								"name": "MBexitBL",
+								"coordinates": {
+									"room": {
+										"x": 66.5,
+										"y": 696.1
+									},
+									"nearest": {
+										"x": 66.5,
+										"y": 681.08
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckBL",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBwomen",
+								"coordinates": {
+									"room": {
+										"x": 763.87,
+										"y": 397.63
+									},
+									"nearest": {
+										"x": 788.79,
+										"y": 377.2
+									}
+								},
+								"edges": [
+									{
+										"name": "MBmen",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckTR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBmen",
+								"coordinates": {
+									"room": {
+										"x": 763.87,
+										"y": 355.95
+									},
+									"nearest": {
+										"x": 788.79,
+										"y": 377.2
+									}
+								},
+								"edges": [
+									{
+										"name": "MBwomen",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckTR",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBexitML",
+								"coordinates": {
+									"room": {
+										"x": 152,
+										"y": 520.25
+									},
+									"nearest": {
+										"x": 169.81,
+										"y": 520.25
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckBL",
+										"distance": 1
+									},
+									{
+										"name": "MB1.350",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBexitTM",
+								"coordinates": {
+									"room": {
+										"x": 588.19,
+										"y": 365.7
+									},
+									"nearest": {
+										"x": 588.19,
+										"y": 383.09
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.301",
+										"distance": 1
+									},
+									{
+										"name": "MB1.309",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBexitTR",
+								"coordinates": {
+									"room": {
+										"x": 788.79,
+										"y": 222.13
+									},
+									"nearest": {
+										"x": 788.79,
+										"y": 247.61
+									}
+								},
+								"edges": [
+									{
+										"name": "MB1.437",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBelevator",
+								"coordinates": {
+									"room": {
+										"x": 545.33,
+										"y": 463.05
+									},
+									"nearest": {
+										"x": 545.33,
+										"y": 463.05
+									}
+								},
+								"edges": [
+									{
+										"name": "MBcheckMM",
+										"distance": 1
+									},
+									{
+										"name": "MB1.309",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBescalator",
+								"coordinates": {
+									"room": {
+										"x": 738.68,
+										"y": 634.33
+									},
+									"nearest": {
+										"x": 763.87,
+										"y": 614.68
+									}
+								},
+								"edges": [
+									{
+										"name": "MBentrance",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMR",
+										"distance": 1
+									},
+									{
+										"name": "MB1.130",
+										"distance": 1
+									}
+								]
+							},
+							{
+								"name": "MBentrance",
+								"coordinates": {
+									"room": {
+										"x": 879.07,
+										"y": 595.35
+									},
+									"nearest": {
+										"x": 867.7,
+										"y": 576.02
+									}
+								},
+								"edges": [
+									{
+										"name": "H1entrance",
+										"distance": 1
+									},
+									{
+										"name": "MBcheckMR",
+										"distance": 1
+									}
+								]
+							}
+						]
+					}
+				]
+			},
+			{
+				"buildingName": "Engineering, Computer Science and Visual Arts Integrated Complex",
+				"buildingInitials": "EV",
+				"buildingAddress": "1515 Saint-Catherine St W.",
+				"latitude": 45.495666,
+				"longitude": -73.578086,
+				"logo": "assets/markers/ev.png",
+				"edges": [
+					{
+						"latitude": 45.49534,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.49569,
+						"longitude": -73.57876
+					},
+					{
+						"latitude": 45.49596,
+						"longitude": -73.5785
+					},
+					{
+						"latitude": 45.49573,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.49605,
+						"longitude": -73.57771
+					},
+					{
+						"latitude": 45.49583,
+						"longitude": -73.57725
+					},
+					{
+						"latitude": 45.49554,
+						"longitude": -73.57753
+					},
+					{
+						"latitude": 45.49555,
+						"longitude": -73.57756
+					},
+					{
+						"latitude": 45.4955,
+						"longitude": -73.57761
+					},
+					{
+						"latitude": 45.49554,
+						"longitude": -73.57761
+					},
+					{
+						"latitude": 45.49545,
+						"longitude": -73.5777
+					},
+					{
+						"latitude": 45.49545,
+						"longitude": -73.57774
+					},
+					{
+						"latitude": 45.49539,
+						"longitude": -73.5778
+					},
+					{
+						"latitude": 45.49533,
+						"longitude": -73.57788
+					},
+					{
+						"latitude": 45.49533,
+						"longitude": -73.57791
+					},
+					{
+						"latitude": 45.49534,
+						"longitude": -73.57792
+					},
+					{
+						"latitude": 45.49535,
+						"longitude": -73.57797
+					},
+					{
+						"latitude": 45.49536,
+						"longitude": -73.578
+					}
+				]
+			},
+			{
+				"buildingInitials": "SB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49651,
+						"longitude": -73.58621
+					},
+					{
+						"latitude": 45.49645,
+						"longitude": -73.58621
+					},
+					{
+						"latitude": 45.49647,
+						"longitude": -73.58574
+					},
+					{
+						"latitude": 45.4965,
+						"longitude": -73.58574
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58578
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58579
+					},
+					{
+						"latitude": 45.49656,
+						"longitude": -73.58579
+					},
+					{
+						"latitude": 45.49658,
+						"longitude": -73.58584
+					},
+					{
+						"latitude": 45.49659,
+						"longitude": -73.58583
+					},
+					{
+						"latitude": 45.49667,
+						"longitude": -73.58601
+					},
+					{
+						"latitude": 45.49666,
+						"longitude": -73.58601
+					},
+					{
+						"latitude": 45.49669,
+						"longitude": -73.58609
+					},
+					{
+						"latitude": 45.49662,
+						"longitude": -73.58615
+					},
+					{
+						"latitude": 45.49654,
+						"longitude": -73.58621
+					},
+					{
+						"latitude": 45.49654,
+						"longitude": -73.58621
+					},
+					{
+						"latitude": 45.49653,
+						"longitude": -73.58617
+					},
+					{
+						"latitude": 45.49653,
+						"longitude": -73.58614
+					},
+					{
+						"latitude": 45.49651,
+						"longitude": -73.58614
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58611
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58608
+					},
+					{
+						"latitude": 45.49655,
+						"longitude": -73.58608
+					},
+					{
+						"latitude": 45.49655,
+						"longitude": -73.58603
+					},
+					{
+						"latitude": 45.49659,
+						"longitude": -73.586
+					},
+					{
+						"latitude": 45.49657,
+						"longitude": -73.58595
+					},
+					{
+						"latitude": 45.49655,
+						"longitude": -73.58592
+					},
+					{
+						"latitude": 45.49653,
+						"longitude": -73.58592
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58599
+					},
+					{
+						"latitude": 45.49652,
+						"longitude": -73.58606
+					}
+				]
+			},
+			{
+				"buildingInitials": "CL",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49418,
+						"longitude": -73.57966
+					},
+					{
+						"latitude": 45.49448,
+						"longitude": -73.57928
+					},
+					{
+						"latitude": 45.49437,
+						"longitude": -73.5791
+					},
+					{
+						"latitude": 45.49427,
+						"longitude": -73.57894
+					},
+					{
+						"latitude": 45.49421,
+						"longitude": -73.57901
+					},
+					{
+						"latitude": 45.49412,
+						"longitude": -73.57912
+					},
+					{
+						"latitude": 45.49404,
+						"longitude": -73.57921
+					},
+					{
+						"latitude": 45.49402,
+						"longitude": -73.57925
+					},
+					{
+						"latitude": 45.494,
+						"longitude": -73.57929
+					},
+					{
+						"latitude": 45.49399,
+						"longitude": -73.57933
+					},
+					{
+						"latitude": 45.49399,
+						"longitude": -73.57935
+					},
+					{
+						"latitude": 45.49405,
+						"longitude": -73.57944
+					}
+				]
+			},
+			{
+				"buildingInitials": "CB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49506,
+						"longitude": -73.57452
+					},
+					{
+						"latitude": 45.4954,
+						"longitude": -73.57419
+					},
+					{
+						"latitude": 45.49536,
+						"longitude": -73.57411
+					},
+					{
+						"latitude": 45.49532,
+						"longitude": -73.57402
+					},
+					{
+						"latitude": 45.49524,
+						"longitude": -73.57386
+					},
+					{
+						"latitude": 45.49516,
+						"longitude": -73.57393
+					},
+					{
+						"latitude": 45.4952,
+						"longitude": -73.574
+					},
+					{
+						"latitude": 45.49514,
+						"longitude": -73.57405
+					},
+					{
+						"latitude": 45.49511,
+						"longitude": -73.57399
+					},
+					{
+						"latitude": 45.49503,
+						"longitude": -73.57407
+					},
+					{
+						"latitude": 45.49506,
+						"longitude": -73.57413
+					},
+					{
+						"latitude": 45.495,
+						"longitude": -73.57419
+					},
+					{
+						"latitude": 45.49501,
+						"longitude": -73.5742
+					},
+					{
+						"latitude": 45.49494,
+						"longitude": -73.57427
+					},
+					{
+						"latitude": 45.49501,
+						"longitude": -73.57441
+					}
+				]
+			},
+			{
+				"buildingInitials": "VA",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49568,
+						"longitude": -73.57431
+					},
+					{
+						"latitude": 45.49602,
+						"longitude": -73.57397
+					},
+					{
+						"latitude": 45.49616,
+						"longitude": -73.57383
+					},
+					{
+						"latitude": 45.4962,
+						"longitude": -73.5738
+					},
+					{
+						"latitude": 45.49608,
+						"longitude": -73.57356
+					},
+					{
+						"latitude": 45.49593,
+						"longitude": -73.57371
+					},
+					{
+						"latitude": 45.49583,
+						"longitude": -73.57381
+					},
+					{
+						"latitude": 45.49578,
+						"longitude": -73.57372
+					},
+					{
+						"latitude": 45.49567,
+						"longitude": -73.5735
+					},
+					{
+						"latitude": 45.49556,
+						"longitude": -73.57362
+					},
+					{
+						"latitude": 45.49551,
+						"longitude": -73.57367
+					},
+					{
+						"latitude": 45.49546,
+						"longitude": -73.57372
+					},
+					{
+						"latitude": 45.49541,
+						"longitude": -73.57377
+					},
+					{
+						"latitude": 45.49546,
+						"longitude": -73.57386
+					},
+					{
+						"latitude": 45.49551,
+						"longitude": -73.57396
+					},
+					{
+						"latitude": 45.49556,
+						"longitude": -73.57406
+					},
+					{
+						"latitude": 45.49563,
+						"longitude": -73.5742
+					}
+				]
+			},
+			{
+				"buildingInitials": "Q",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49668,
+						"longitude": -73.57934
+					},
+					{
+						"latitude": 45.49662,
+						"longitude": -73.5794
+					},
+					{
+						"latitude": 45.49666,
+						"longitude": -73.57948
+					},
+					{
+						"latitude": 45.49672,
+						"longitude": -73.57942
+					},
+					{
+						"latitude": 45.49675,
+						"longitude": -73.57949
+					},
+					{
+						"latitude": 45.49674,
+						"longitude": -73.5795
+					},
+					{
+						"latitude": 45.49678,
+						"longitude": -73.57958
+					},
+					{
+						"latitude": 45.49684,
+						"longitude": -73.57953
+					},
+					{
+						"latitude": 45.49688,
+						"longitude": -73.57949
+					},
+					{
+						"latitude": 45.49686,
+						"longitude": -73.57944
+					},
+					{
+						"latitude": 45.49684,
+						"longitude": -73.57941
+					},
+					{
+						"latitude": 45.49685,
+						"longitude": -73.5794
+					},
+					{
+						"latitude": 45.49681,
+						"longitude": -73.57933
+					},
+					{
+						"latitude": 45.49681,
+						"longitude": -73.57933
+					},
+					{
+						"latitude": 45.49677,
+						"longitude": -73.57925
+					},
+					{
+						"latitude": 45.49676,
+						"longitude": -73.57926
+					},
+					{
+						"latitude": 45.49672,
+						"longitude": -73.57918
+					},
+					{
+						"latitude": 45.49673,
+						"longitude": -73.57917
+					},
+					{
+						"latitude": 45.49669,
+						"longitude": -73.57908
+					},
+					{
+						"latitude": 45.49668,
+						"longitude": -73.57908
+					},
+					{
+						"latitude": 45.49667,
+						"longitude": -73.57905
+					},
+					{
+						"latitude": 45.49665,
+						"longitude": -73.57902
+					},
+					{
+						"latitude": 45.49663,
+						"longitude": -73.57905
+					},
+					{
+						"latitude": 45.49656,
+						"longitude": -73.57912
+					}
+				]
+			},
+			{
+				"buildingInitials": "GN2",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.4939,
+						"longitude": -73.57717
+					},
+					{
+						"latitude": 45.49406,
+						"longitude": -73.57702
+					},
+					{
+						"latitude": 45.4939,
+						"longitude": -73.57666
+					},
+					{
+						"latitude": 45.49384,
+						"longitude": -73.57667
+					},
+					{
+						"latitude": 45.49372,
+						"longitude": -73.57678
+					}
+				]
+			},
+			{
+				"buildingInitials": "GN",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49398,
+						"longitude": -73.57756
+					},
+					{
+						"latitude": 45.49403,
+						"longitude": -73.5775
+					},
+					{
+						"latitude": 45.49413,
+						"longitude": -73.57741
+					},
+					{
+						"latitude": 45.49409,
+						"longitude": -73.57735
+					},
+					{
+						"latitude": 45.49422,
+						"longitude": -73.57722
+					},
+					{
+						"latitude": 45.49439,
+						"longitude": -73.57706
+					},
+					{
+						"latitude": 45.49432,
+						"longitude": -73.57691
+					},
+					{
+						"latitude": 45.49422,
+						"longitude": -73.5767
+					},
+					{
+						"latitude": 45.49408,
+						"longitude": -73.57641
+					},
+					{
+						"latitude": 45.49402,
+						"longitude": -73.57628
+					},
+					{
+						"latitude": 45.49412,
+						"longitude": -73.57618
+					},
+					{
+						"latitude": 45.49403,
+						"longitude": -73.576
+					},
+					{
+						"latitude": 45.49393,
+						"longitude": -73.5761
+					},
+					{
+						"latitude": 45.49382,
+						"longitude": -73.57587
+					},
+					{
+						"latitude": 45.49371,
+						"longitude": -73.57564
+					},
+					{
+						"latitude": 45.49357,
+						"longitude": -73.57578
+					},
+					{
+						"latitude": 45.49364,
+						"longitude": -73.57592
+					},
+					{
+						"latitude": 45.49379,
+						"longitude": -73.57625
+					},
+					{
+						"latitude": 45.49349,
+						"longitude": -73.57654
+					},
+					{
+						"latitude": 45.49347,
+						"longitude": -73.5765
+					},
+					{
+						"latitude": 45.49342,
+						"longitude": -73.57655
+					},
+					{
+						"latitude": 45.49334,
+						"longitude": -73.57662
+					},
+					{
+						"latitude": 45.49337,
+						"longitude": -73.57667
+					},
+					{
+						"latitude": 45.49321,
+						"longitude": -73.57683
+					},
+					{
+						"latitude": 45.49303,
+						"longitude": -73.57701
+					},
+					{
+						"latitude": 45.49294,
+						"longitude": -73.57683
+					},
+					{
+						"latitude": 45.49295,
+						"longitude": -73.57679
+					},
+					{
+						"latitude": 45.49293,
+						"longitude": -73.57675
+					},
+					{
+						"latitude": 45.4929,
+						"longitude": -73.57674
+					},
+					{
+						"latitude": 45.49286,
+						"longitude": -73.57666
+					},
+					{
+						"latitude": 45.49282,
+						"longitude": -73.57657
+					},
+					{
+						"latitude": 45.49273,
+						"longitude": -73.5764
+					},
+					{
+						"latitude": 45.49259,
+						"longitude": -73.57653
+					},
+					{
+						"latitude": 45.49261,
+						"longitude": -73.57658
+					},
+					{
+						"latitude": 45.49261,
+						"longitude": -73.57658
+					},
+					{
+						"latitude": 45.49275,
+						"longitude": -73.57687
+					},
+					{
+						"latitude": 45.49273,
+						"longitude": -73.57687
+					},
+					{
+						"latitude": 45.49268,
+						"longitude": -73.57692
+					},
+					{
+						"latitude": 45.49268,
+						"longitude": -73.57696
+					},
+					{
+						"latitude": 45.49271,
+						"longitude": -73.57703
+					},
+					{
+						"latitude": 45.49277,
+						"longitude": -73.57697
+					},
+					{
+						"latitude": 45.49279,
+						"longitude": -73.57698
+					},
+					{
+						"latitude": 45.49281,
+						"longitude": -73.57696
+					},
+					{
+						"latitude": 45.4929,
+						"longitude": -73.57714
+					},
+					{
+						"latitude": 45.49284,
+						"longitude": -73.5772
+					},
+					{
+						"latitude": 45.49293,
+						"longitude": -73.57738
+					},
+					{
+						"latitude": 45.49299,
+						"longitude": -73.57731
+					},
+					{
+						"latitude": 45.49309,
+						"longitude": -73.57751
+					},
+					{
+						"latitude": 45.4932,
+						"longitude": -73.5774
+					},
+					{
+						"latitude": 45.49311,
+						"longitude": -73.57721
+					},
+					{
+						"latitude": 45.49326,
+						"longitude": -73.57706
+					},
+					{
+						"latitude": 45.49336,
+						"longitude": -73.57696
+					},
+					{
+						"latitude": 45.49335,
+						"longitude": -73.57694
+					},
+					{
+						"latitude": 45.49344,
+						"longitude": -73.57685
+					},
+					{
+						"latitude": 45.49348,
+						"longitude": -73.57694
+					},
+					{
+						"latitude": 45.49345,
+						"longitude": -73.57696
+					},
+					{
+						"latitude": 45.49353,
+						"longitude": -73.57713
+					},
+					{
+						"latitude": 45.49358,
+						"longitude": -73.57708
+					},
+					{
+						"latitude": 45.4936,
+						"longitude": -73.57713
+					},
+					{
+						"latitude": 45.49358,
+						"longitude": -73.57715
+					},
+					{
+						"latitude": 45.49364,
+						"longitude": -73.57727
+					},
+					{
+						"latitude": 45.49375,
+						"longitude": -73.57716
+					},
+					{
+						"latitude": 45.49367,
+						"longitude": -73.577
+					},
+					{
+						"latitude": 45.49373,
+						"longitude": -73.57694
+					},
+					{
+						"latitude": 45.49367,
+						"longitude": -73.57682
+					},
+					{
+						"latitude": 45.49361,
+						"longitude": -73.57688
+					},
+					{
+						"latitude": 45.49355,
+						"longitude": -73.57675
+					},
+					{
+						"latitude": 45.4937,
+						"longitude": -73.5766
+					},
+					{
+						"latitude": 45.4938,
+						"longitude": -73.5765
+					},
+					{
+						"latitude": 45.4939,
+						"longitude": -73.57641
+					},
+					{
+						"latitude": 45.494,
+						"longitude": -73.57663
+					},
+					{
+						"latitude": 45.49413,
+						"longitude": -73.57688
+					},
+					{
+						"latitude": 45.49419,
+						"longitude": -73.57702
+					},
+					{
+						"latitude": 45.49387,
+						"longitude": -73.57734
+					}
+				]
+			},
+			{
+				"buildingInitials": "GM",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49605,
+						"longitude": -73.5789
+					},
+					{
+						"latitude": 45.49613,
+						"longitude": -73.57881
+					},
+					{
+						"latitude": 45.49595,
+						"longitude": -73.57844
+					},
+					{
+						"latitude": 45.49594,
+						"longitude": -73.57845
+					},
+					{
+						"latitude": 45.49596,
+						"longitude": -73.5785
+					},
+					{
+						"latitude": 45.4958,
+						"longitude": -73.57866
+					},
+					{
+						"latitude": 45.49569,
+						"longitude": -73.57876
+					},
+					{
+						"latitude": 45.49563,
+						"longitude": -73.57877
+					},
+					{
+						"latitude": 45.49571,
+						"longitude": -73.57893
+					},
+					{
+						"latitude": 45.49579,
+						"longitude": -73.57909
+					},
+					{
+						"latitude": 45.49577,
+						"longitude": -73.57911
+					},
+					{
+						"latitude": 45.49579,
+						"longitude": -73.57915
+					},
+					{
+						"latitude": 45.49597,
+						"longitude": -73.57897
+					}
+				]
+			},
+			{
+				"buildingInitials": "FB",
+				"latitude": 45.45876,
+				"longitude": -73.63957,
+				"edges": [
+					{
+						"latitude": 45.49491,
+						"longitude": -73.57779
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.4947,
+						"longitude": -73.57803
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57804
+					},
+					{
+						"latitude": 45.49463,
+						"longitude": -73.57812
+					},
+					{
+						"latitude": 45.49455,
+						"longitude": -73.57823
+					},
+					{
+						"latitude": 45.49437,
+						"longitude": -73.57843
+					},
+					{
+						"latitude": 45.49438,
+						"longitude": -73.57844
+					},
+					{
+						"latitude": 45.49431,
+						"longitude": -73.57852
+					},
+					{
+						"latitude": 45.4943,
+						"longitude": -73.57851
+					},
+					{
+						"latitude": 45.49421,
+						"longitude": -73.57862
+					},
+					{
+						"latitude": 45.49397,
+						"longitude": -73.5789
+					},
+					{
+						"latitude": 45.49383,
+						"longitude": -73.57907
+					},
+					{
+						"latitude": 45.49373,
+						"longitude": -73.57889
+					},
+					{
+						"latitude": 45.49363,
+						"longitude": -73.57873
+					},
+					{
+						"latitude": 45.49375,
+						"longitude": -73.57859
+					},
+					{
+						"latitude": 45.49386,
+						"longitude": -73.57846
+					},
+					{
+						"latitude": 45.49384,
+						"longitude": -73.57844
+					},
+					{
+						"latitude": 45.49389,
+						"longitude": -73.57838
+					},
+					{
+						"latitude": 45.4939,
+						"longitude": -73.5784
+					},
+					{
+						"latitude": 45.49393,
+						"longitude": -73.57836
+					},
+					{
+						"latitude": 45.49392,
+						"longitude": -73.57834
+					},
+					{
+						"latitude": 45.49402,
+						"longitude": -73.57822
+					},
+					{
+						"latitude": 45.49411,
+						"longitude": -73.57811
+					},
+					{
+						"latitude": 45.49412,
+						"longitude": -73.57813
+					},
+					{
+						"latitude": 45.49421,
+						"longitude": -73.57802
+					},
+					{
+						"latitude": 45.49419,
+						"longitude": -73.57799
+					},
+					{
+						"latitude": 45.49438,
+						"longitude": -73.57777
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.5778
+					},
+					{
+						"latitude": 45.49444,
+						"longitude": -73.57776
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.57769
+					},
+					{
+						"latitude": 45.49446,
+						"longitude": -73.57762
+					},
+					{
+						"latitude": 45.4944,
+						"longitude": -73.57752
+					},
+					{
+						"latitude": 45.49456,
+						"longitude": -73.57733
+					},
+					{
+						"latitude": 45.49465,
+						"longitude": -73.57722
+					},
+					{
+						"latitude": 45.4947,
+						"longitude": -73.5773
+					},
+					{
+						"latitude": 45.49469,
+						"longitude": -73.57731
+					},
+					{
+						"latitude": 45.49471,
+						"longitude": -73.57735
+					},
+					{
+						"latitude": 45.49477,
+						"longitude": -73.57745
+					},
+					{
+						"latitude": 45.49476,
+						"longitude": -73.57747
+					},
+					{
+						"latitude": 45.49481,
+						"longitude": -73.57754
+					},
+					{
+						"latitude": 45.4948,
+						"longitude": -73.57755
+					},
+					{
+						"latitude": 45.49484,
+						"longitude": -73.57763
+					},
+					{
+						"latitude": 45.49484,
+						"longitude": -73.57763
+					},
+					{
+						"latitude": 45.49488,
+						"longitude": -73.57771
+					},
+					{
+						"latitude": 45.49487,
+						"longitude": -73.57771
+					}
+				]
+			}
+		],
+		"interests": [
+			{
+				"Name": "McDonald's",
+				"Address": "1472 Saint-Catherine St W",
+				"LAT": 45.495645,
+				"LNG": -73.576931,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/mcdonalds.png"
+			},
+			{
+				"Name": "Brit & Chips",
+				"Address": "1390 Maisonneuve Blvd W",
+				"LAT": 45.4975289,
+				"LNG": -73.5776902,
+				"Description": "",
+				"Open": "11:00",
+				"Close": "22:00",
+				"Logo": "assets/poi_images/britnchips.png"
+			},
+			{
+				"Name": "Kinton Ramen",
+				"Address": "1211 Bishop St",
+				"LAT": 45.49600359999999,
+				"LNG": -73.5748529,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "22:30",
+				"Logo": "assets/poi_images/kintonramen.png"
+			},
+			{
+				"Name": "La Belle et la Boeuf",
+				"Address": "1620 Saint-Catherine St W",
+				"LAT": 45.49423729999999,
+				"LNG": -73.57853639999999,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "23:00",
+				"Logo": "assets/poi_images/belleetlaboeuf.png"
+			},
+			{
+				"Name": "Sota",
+				"Address": "1825 Saint-Catherine St W",
+				"LAT": 45.4935173,
+				"LNG": -73.5798552,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "0:00",
+				"Logo": "assets/poi_images/sota.png"
+			},
+			{
+				"Name": "McKibbin's Irish Pub",
+				"Address": "1426 Bishop St",
+				"LAT": 45.4967536,
+				"LNG": -73.57734959999999,
+				"Description": "",
+				"Open": "11:30",
+				"Close": "3:00",
+				"Logo": "assets/poi_images/mckibbinsirishpub.png"
+			}
+		]
+	}
+]

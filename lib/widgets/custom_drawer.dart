@@ -1,3 +1,4 @@
+import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
@@ -46,7 +47,7 @@ class CustomDrawer extends StatelessWidget {
                   context,
                   ModalRoute.withName('/home'),
                 );
-                mapData.animateTo(45.496676, -73.578760);
+                mapData.animateToLatLng(constants.sgw);
               });
         },
       ),
@@ -65,7 +66,7 @@ class CustomDrawer extends StatelessWidget {
                   context,
                   ModalRoute.withName('/home'),
                 );
-                mapData.animateTo(45.4582, -73.6405);
+                mapData.animateToLatLng(constants.loyola);
               });
         },
       ),
@@ -85,7 +86,7 @@ class CustomDrawer extends StatelessWidget {
               top: 42.5,
             ),
             decoration: BoxDecoration(
-              color: constants.offWhiteColor,
+              color: constants.whiteColor,
             ),
             child: ListTile(
               title: Text(
@@ -102,18 +103,18 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: Container(
               color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: _expendTile(),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.calendar_today),
               title: Text(
@@ -129,7 +130,7 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.location_on),
               title: Text(
@@ -143,21 +144,22 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
-              leading: Icon(Icons.account_circle),
+              leading: Icon(Icons.wb_sunny),
               title: Text(
-                ConcordiaLocalizations.of(context).profile,
+                "Toggle Building Highlights",
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {
                 Navigator.of(context).pop();
-                Navigator.pushNamed(context, '/profile');
+                Provider.of<BuildingsData>(context, listen: false)
+                    .toggleOutline();
               },
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: ListTile(
               leading: Icon(Icons.settings),
               title: Text(
@@ -171,14 +173,14 @@ class CustomDrawer extends StatelessWidget {
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             child: Container(
               color: constants.lightGreyColor,
               height: 2,
             ),
           ),
           Container(
-            color: constants.offWhiteColor,
+            color: constants.whiteColor,
             height: 570,
           ),
         ],

@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/providers.dart';
-import 'package:concordia_navigation/screens/directions_page.dart';
+import 'package:concordia_navigation/screens/indoor_page.dart';
 import 'package:concordia_navigation/screens/outdoor_interest.dart';
 import 'package:concordia_navigation/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -20,6 +20,10 @@ Future<void> main() async {
 }
 
 class App extends StatelessWidget {
+  final String initialRoute;
+
+  App({this.initialRoute});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -35,18 +39,18 @@ class App extends StatelessWidget {
         const Locale('en', ''),
         const Locale('fr', ''),
       ],
-      initialRoute: '/',
+      initialRoute: initialRoute ?? '/',
       routes: {
         '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
         '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
-        '/directions': (context) => DirectionsPage(),
         '/shuttle': (context) => ShuttleSchedule(),
+        '/indoor': (context) => IndoorPage(),
       },
       debugShowCheckedModeBanner: false,
-      home: SplashScreen(),
+      home: initialRoute != null ? null : SplashScreen(),
     );
   }
 }

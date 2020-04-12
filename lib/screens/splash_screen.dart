@@ -1,9 +1,12 @@
 import 'dart:async';
-import 'package:concordia_navigation/services/building_list.dart';
-import 'package:concordia_navigation/services/change_later.dart';
-import 'package:concordia_navigation/services/location_search.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
-import 'package:concordia_navigation/services/shuttle_service.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter/material.dart';
 
 // This is the Splash Screen
@@ -18,11 +21,19 @@ class _SplashScreenState extends State<SplashScreen>
   Animation<double> _animation;
 
   Future<void> loadAssets() async {
-    BuildingList.buildingInfo = await BuildingList.loadJson();
-    LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
+    // Preloading json data
+    List<dynamic> data = await University.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
-    LocationSearch.classrooms = await LocationSearch.loadJson();
+
     OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
+    University.concordia = University.fromJson(data);
+
+    Dijkstra.shortest = Dijkstra.fromJson(data);
+
+    Search.supported.forEach((object) {
+      if (object is IndoorLocation || object is Building)
+        Search.names.add(object.name.toUpperCase());
+    });
   }
 
   @override
@@ -47,13 +58,20 @@ class _SplashScreenState extends State<SplashScreen>
 
   @override
   Widget build(BuildContext context) {
+    // Trigger location update\
+    try {
+      LocationService.getInstance();
+    } catch (Exception) {
+      Scaffold.of(context).showSnackBar(
+          SnackBar(content: Text('Location is unavailable at this time!')));
+    }
     return Scaffold(
       body: Stack(
         fit: StackFit.expand,
         children: <Widget>[
           Container(
               child: Image.asset(
-            'assets/LaunchImage.png',
+            'assets/png/LaunchImage.png',
             fit: BoxFit.cover,
           )),
           Column(mainAxisAlignment: MainAxisAlignment.start, children: <Widget>[
@@ -69,7 +87,7 @@ class _SplashScreenState extends State<SplashScreen>
                       duration: const Duration(seconds: 3),
                       curve: Curves.fastLinearToSlowEaseIn,
                       child: Image.asset(
-                        'assets/app_logo.png',
+                        'assets/png/app_logo.png',
                       ),
                     ),
                   ],

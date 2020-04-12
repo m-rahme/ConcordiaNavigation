@@ -1,95 +1,71 @@
 import 'dart:async';
-import 'package:concordia_navigation/services/itinerary.dart';
+import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
+import 'package:concordia_navigation/services/outdoor/location_service.dart';
+import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
 class MapData extends ChangeNotifier {
   Completer<GoogleMapController> _completer = Completer();
   PanelController panelController = new PanelController();
-  String controllerStarting;
-  String controllerDestination;
-  double swapButtonTop;
-  double locationButtonTop;
+  LocationService locationService;
+  Reachable _start, _end;
+  bool panelVisible = false;
 
-  Itinerary itinerary;
+  String controllerStarting, controllerEnding;
+
+  OutdoorItinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
-  LatLng _currentLocation;
-  String _campus;
-  LatLng _start;
-  LatLng _end;
-  String _mode;
+  String mode;
 
-  MapData() {
-    _mode = "driving";
+  MapData([LocationService location]) {
+    locationService = location ?? LocationService.getInstance();
+    mode = "driving";
   }
 
-  void changeCampus(campus) {
-    _campus = campus;
+  Reachable get start => _start;
+  Reachable get end => _end;
+
+  // set the end Reachable object and use its name
+  set end(Reachable obj) {
+    _end = obj;
+    if (obj != null) controllerEnding = (obj as UniLocation).name;
+    else controllerEnding = null;
     notifyListeners();
   }
 
-  void changeSwapTop(double top) {
-    swapButtonTop = top;
+  // set the start Reachable object and use its name
+  set start(Reachable obj) {
+    _start = obj;
+    if (obj != null) controllerStarting = (obj as UniLocation).name;
+    else controllerStarting = null;
     notifyListeners();
   }
 
-  void changeLocationTop(double top) {
-    locationButtonTop = top;
+  void togglePanel() {
+    panelVisible = !panelVisible;
     notifyListeners();
-  }
-
-  void changeMode(mode) {
-    _mode = mode;
-    notifyListeners();
-  }
-
-  void changeStart(start) {
-    _start = start;
-    notifyListeners();
-  }
-
-  void changeEnd(end) {
-    _end = end;
-    notifyListeners();
-  }
-
-  void changeCurrentLocation(current) {
-    _currentLocation = current;
-  }
-
-  LatLng get getCurrentLocation {
-    return _currentLocation;
-  }
-
-  String get getMode {
-    return _mode;
-  }
-
-  LatLng get getStart {
-    return _start;
-  }
-
-  LatLng get getEnd {
-    return _end;
-  }
-
-  String get getCampus {
-    return _campus;
   }
 
   void setItinerary() async {
-    if (_start == null) {
-      _start = _currentLocation;
+    // try to use parameters, but if they're not supplied use attributes
+    if (_start == null)
+      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+    else if (_start.toLatLng() != _end.toLatLng()) {
+      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+    } else {
+      print('Same start and end!');
     }
-    itinerary = await Itinerary.create(_start, _end, _mode);
     notifyListeners();
   }
 
@@ -97,17 +73,50 @@ class MapData extends ChangeNotifier {
   /// given it builds only with an empty Container() if it is indeed null
   void removeItinerary() {
     itinerary = null;
+    _start = null;
+    _end = null;
+    controllerStarting = null;
+    controllerEnding = null;
     notifyListeners();
   }
 
+  CameraPosition getCameraFor(LatLng location) {
+    if (location != null) {
+      return CameraPosition(
+        target: location,
+        zoom: 16.5,
+        tilt: 30.440717697143555,
+        bearing: 30.8334901395799,
+      );
+    }
+    return CameraPosition(
+        target: constants.sgw,
+        zoom: 16.5,
+        tilt: 30.440717697143555,
+        bearing: 30.8334901395799,
+      );
+  }
+
+  CameraPosition getFixedLocationCamera() {
+    return CameraPosition(
+        target: constants.sgw,
+        zoom: 16.5,
+        tilt: 30.440717697143555,
+        bearing: 30.8334901395799,
+      );
+  }
+
   Future<void> animateTo(double lat, double lng) async {
+    animateToLatLng(LatLng(lat, lng));
+  }
+
+  Future<void> animateToReachable(Reachable loc) async {
+    animateToLatLng(loc.toLatLng());
+  }
+
+  Future<void> animateToLatLng(LatLng location) async {
     final c = await _completer.future;
-    final p = CameraPosition(
-      target: LatLng(lat, lng),
-      zoom: 16.5,
-      tilt: 30.440717697143555,
-      bearing: 30.8334901395799,
-    );
+    final p = getCameraFor(location);
     c.animateCamera(CameraUpdate.newCameraPosition(p));
   }
 }

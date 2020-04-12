@@ -1,7 +1,7 @@
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/cupertino.dart';
-import 'package:concordia_navigation/services/shuttle_service.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/rendering.dart';
@@ -170,6 +170,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from SGW to Loyola
   Container buildTitleTableCellSGWToLoy(String cellDisplay) {
     return Container(
+      key: Key("SGWToLoy"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(
@@ -206,6 +207,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from Loyola to SGW
   Container buildTitleTableCellLoyToSGW(String cellDisplay) {
     return Container(
+      key: Key("LoyToSGW"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(

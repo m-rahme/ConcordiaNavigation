@@ -1,6 +1,6 @@
 <a href="https://github.com/MichelRahme/ConcordiaNavigation">
     <p align="center">
-        <img width="180" height="180" src="https://i.ibb.co/7gwdpNn/cona.png" width="40%">
+        <img width="180" height="180" src="https://i.ibb.co/YPjtY6T/Logo-2x.png" width="40%">
     </p>
 </a>
 
@@ -55,7 +55,7 @@ The automated system integration code structure is divided into two directories.
 * **Richard Bui**
 * **Michel Rahme**
 * **Andrew Hanichkovsky**
-* **Alex Hayeux**
+* **Alex Hayeur**
 * **Evan Mateo**
 
 ## License

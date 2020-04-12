@@ -1,8 +1,10 @@
-import 'package:concordia_navigation/services/building_list.dart';
-import 'package:concordia_navigation/services/change_later.dart';
-import 'package:concordia_navigation/services/location_search.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/outdoor_poi_list.dart';
-import 'package:concordia_navigation/services/shuttle_service.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/widgets/custom_drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -39,11 +41,17 @@ void main() {
   group('App Widget Test', () {
 
     setUp(() async {
-      BuildingList.buildingInfo = await BuildingList.loadJson();
-      LoadBuildingInfo.indoorData = await LoadBuildingInfo.loadJson();
       ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
-      LocationSearch.classrooms = await LocationSearch.loadJson();
       OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
+
+      List<dynamic> data = await University.loadJson();
+      University.concordia = University.fromJson(data);
+      Dijkstra.shortest = Dijkstra.fromJson(data);
+
+      Search.supported.forEach((object) {
+      if (object is IndoorLocation || object is Building)
+        Search.names.add(object.name.toUpperCase());
+      });
     });
 
     testWidgets('open drawer', (WidgetTester tester) async {
