@@ -1,21 +1,31 @@
-import 'package:concordia_navigation/models/outdoor_poi.dart';
-import 'package:concordia_navigation/services/outdoor_poi_list.dart';
+import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
-import 'package:concordia_navigation/widgets/outdoor_interest_widget.dart';
+import 'package:concordia_navigation/widgets/outdoor/outdoor_interest_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 
 //Outdoor Interests Page
+// ignore: must_be_immutable
 class OutdoorInterest extends StatelessWidget {
-  final OutdoorPOIList outdoorPOIList = OutdoorPOIList();
-
-  Future<List<OutdoorPOI>> callAsyncFetch() {
-    return Future.delayed(
-        Duration(seconds: 2), () => outdoorPOIList.readPOIFile());
-  }
+  List<OutdoorPOI> sgwList;
+  List<OutdoorPOI> loyList;
 
   @override
   Widget build(BuildContext context) {
+    sgwList = Search.supported
+        .where((object) =>
+            object is OutdoorPOI && (object.parent as Campus).initials == "SGW")
+        .toList()
+        .cast<OutdoorPOI>();
+
+    loyList = Search.supported
+        .where((object) =>
+            object is OutdoorPOI && (object.parent as Campus).initials == "LOY")
+        .toList()
+        .cast<OutdoorPOI>();
+
     return DefaultTabController(
       length: 2,
       child: Scaffold(
@@ -25,7 +35,7 @@ class OutdoorInterest extends StatelessWidget {
             onPressed: () => Navigator.of(context).pop(),
           ),
           title: Text(ConcordiaLocalizations.of(context).interest),
-          backgroundColor: greenColor,
+          backgroundColor: appColor,
           bottom: TabBar(
             tabs: [
               Tab(text: "Sir George Williams"),
@@ -33,25 +43,10 @@ class OutdoorInterest extends StatelessWidget {
             ],
           ),
         ),
-        body: FutureBuilder(
-            future: callAsyncFetch(),
-            builder: (context, AsyncSnapshot<List<OutdoorPOI>> snapshot) {
-              if (snapshot.hasData) {
-                return TabBarView(
-                  children: [
-                    new OutdoorInterestWidget(
-                      snapshot: snapshot,
-                      campus: "Sir George Williams",
-                    ),
-                    new OutdoorInterestWidget(
-                      snapshot: snapshot,
-                      campus: "Loyola",
-                    ),
-                  ],
-                );
-              } else
-                return Center(child: CircularProgressIndicator());
-            }),
+        body: TabBarView(children: [
+          OutdoorInterestWidget(sgwList),
+          OutdoorInterestWidget(loyList)
+        ]),
       ),
     );
   }

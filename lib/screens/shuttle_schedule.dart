@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/providers/shuttle_data.dart';
+import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/cupertino.dart';
@@ -6,7 +6,6 @@ import 'package:flutter/material.dart';
 import 'package:concordia_navigation/services/localization.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:provider/provider.dart';
 
 //Concordia Shuttle Schedule Screen
 class ShuttleSchedule extends StatefulWidget {
@@ -71,7 +70,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
 
   @override
   Widget build(BuildContext context) {
-    dynamic shuttleSchedule = Provider.of<ShuttleData>(context).shuttleSchedule;
+    dynamic shuttleSchedule = ShuttleService.shuttleSchedule;
 
     while (shuttleSchedule == null) {
       return Center(child: CircularProgressIndicator());
@@ -104,7 +103,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
         title: Text(
           ConcordiaLocalizations.of(context).shuttle,
         ),
-        backgroundColor: constants.greenColor,
+        backgroundColor: constants.appColor,
       ),
       body: Center(
         child: Column(
@@ -116,7 +115,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
                 border: TableBorder(
                   top: BorderSide.none,
                   bottom: BorderSide(
-                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
+                      width: 3.0, color: constants.appColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -133,7 +132,7 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
               child: Table(
                 border: TableBorder(
                   bottom: BorderSide(
-                      width: 3.0, color: constants.greenColor.withOpacity(0.7)),
+                      width: 3.0, color: constants.appColor.withOpacity(0.7)),
                 ),
                 children: [
                   TableRow(children: [
@@ -171,13 +170,14 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from SGW to Loyola
   Container buildTitleTableCellSGWToLoy(String cellDisplay) {
     return Container(
+      key: Key("SGWToLoy"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: constants.greenColor,
+            color: constants.appColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {
@@ -207,13 +207,14 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
   // Builds the button to highlight the shuttle bus schedule departure hours from Loyola to SGW
   Container buildTitleTableCellLoyToSGW(String cellDisplay) {
     return Container(
+      key: Key("LoyToSGW"),
       margin: EdgeInsets.fromLTRB(5.0, 15.0, 5.0, 15.0),
       child: Center(
         child: ButtonTheme(
           height: SizeConfig.safeBlockVertical * 6,
           minWidth: SizeConfig.safeBlockHorizontal * 30,
           child: RaisedButton(
-            color: constants.greenColor,
+            color: constants.appColor,
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(7.0)),
             onPressed: () {

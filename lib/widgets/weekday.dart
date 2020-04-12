@@ -1,5 +1,7 @@
-import 'package:concordia_navigation/models/course.dart';
+import 'package:concordia_navigation/models/calendar/course.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -7,13 +9,10 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:provider/provider.dart';
 
 class Weekday extends StatelessWidget {
-  String weekday;
-  List<Course> courseList;
+  final String weekday;
+  final List<Course> courseList;
 
-  Weekday(String weekday, List<Course> courseList) {
-    this.weekday = weekday;
-    this.courseList = courseList;
-  }
+  Weekday(this.weekday, this.courseList);
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +32,8 @@ class Weekday extends StatelessWidget {
         contentPadding: EdgeInsets.only(
             left: SizeConfig.safeBlockHorizontal * 5.0,
             right: SizeConfig.safeBlockHorizontal * 5.0),
-        leading: CircleAvatar(backgroundImage: AssetImage('assets/logo.png')),
+        leading: CircleAvatar(
+            backgroundImage: AssetImage('assets/png/concordia_logo.png')),
         title: Text(
           course.summary,
           style: TextStyle(fontWeight: FontWeight.w500),
@@ -45,63 +45,36 @@ class Weekday extends StatelessWidget {
               "${formatter.format(course?.start?.toLocal())} - ${formatter.format(course?.end?.toLocal())}",
               style: TextStyle(color: constants.blueColor),
             ),
-            Text(course.filteredLocation()),
+            Text(course.filteredLocation),
           ],
         ),
         trailing: Row(mainAxisSize: MainAxisSize.min, children: <Widget>[
           RaisedButton(
-              onPressed: (course.filteredLocation() != 'N/A')
+              onPressed: (course.filteredLocation != 'N/A')
                   ? () {
-                      String letter = course.filteredLocation()[0];
-                      if (letter == "H") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.hBuilding);
-                        Provider.of<MapData>(context, listen: false)
-                                .controllerDestination =
-                            course.location[1] == "A"
-                                ? "Hall Building, Montreal"
-                                : course.location;
-                      } else if (letter == "M") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = course.location;
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.jmsbBuilding);
-                      } else if (letter == "L") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('loyola');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = "Loyola Campus, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.loyola);
-                      } else if (letter == "J") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                                .controllerDestination =
-                            "John Molson Business, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.jmsbBuilding);
-                      } else if (letter == "F") {
-                        Provider.of<MapData>(context, listen: false)
-                            .changeCampus('sgw');
-                        Provider.of<MapData>(context, listen: false)
-                            .controllerDestination = "FG Building, Montreal";
-                        Provider.of<MapData>(context, listen: false)
-                            .changeEnd(constants.fgBuilding);
+                      var mapData =
+                          Provider.of<MapData>(context, listen: false);
+                      dynamic result = Search.query(course.filteredLocation);
+
+                      if (result != null) {
+                        String entrance =
+                            result.name[0] == 'H' ? 'H1entrance' : 'MBentrance';
+                            mapData.start = null;
+                        Provider.of<IndoorData>(context, listen: false)
+                            .setItinerary(start: entrance, end: result.name);
+                        mapData.controllerStarting = "Current Location";
+                        mapData.end = result;
+                        mapData.mode = "driving";
+                        mapData.setItinerary();
+                        mapData.panelController.open();
                       }
-                      Provider.of<MapData>(context, listen: false)
-                          .controllerStarting = "Current Location";
-                      Provider.of<MapData>(context, listen: false)
-                          .setItinerary();
+
+                      // pop either way, if results are good or not
                       Navigator.of(context).pop();
                     }
                   : null,
               elevation: 1.0,
-              color: constants.greenColor,
+              color: constants.appColor,
               textColor: constants.whiteColor,
               child: Text("Directions")),
           Icon(Icons.keyboard_arrow_right)

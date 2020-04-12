@@ -1,115 +1,85 @@
-import 'package:concordia_navigation/models/course.dart';
-import 'package:concordia_navigation/providers/calendar_data.dart';
+import 'package:concordia_navigation/models/indoor/indoor_location.dart';
+import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
+import 'package:concordia_navigation/models/uni_location.dart';
+import 'package:concordia_navigation/providers/indoor_data.dart';
+import 'package:concordia_navigation/screens/indoor_page.dart';
+import 'package:concordia_navigation/services/search.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
-import 'dart:convert' show json;
-import 'package:flutter/services.dart' show rootBundle;
 
 /*This class extends Search Delegate class implemented by flutter.
 It will be called when the user clicks on the search button in the Appbar.
 */
 class LocationSearch extends SearchDelegate {
-  List<dynamic> classrooms;
-  final recentRooms = [
-    'HALL BUILDING',
-    'H837',
-    'MB1.437'
-  ]; // for demonstration purposes
+  final bool isFirst;
 
-  void getClassrooms() async {
-    classrooms =
-        json.decode(await rootBundle.loadString('assets/destinations.json'));
-  }
+  LocationSearch(this.isFirst);
 
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
-    getClassrooms();
     final suggestionList = query.isEmpty
-        ? recentRooms
-        : classrooms.where((p) => p.contains(query.toUpperCase())).toList();
-
-    //TODO: make it clear that the first item is from the users calendar
-    CalendarData calendar = Provider.of<CalendarData>(context, listen: false);
-    List<Course> nextClasses = calendar.schedule?.nextClasses(days: 7);
-    if (nextClasses != null && nextClasses.isNotEmpty && nextClasses.first.filteredLocation() != "N/A") {
-      var next = nextClasses.first.filteredLocation() + " [NEXT CLASS LOCATION]";
-      // Avoid duplicates on widget rebuild
-      if (!suggestionList.contains(next)) {
-        suggestionList.insert(0, next);
-      }
-    }
+        ? Search.names.take(10).toList()
+        : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
 
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
+          key: Key("Location"+index.toString()),
           onTap: () async {
-            mapData.controllerDestination = "SGW Campus, Montreal";
-            mapData.controllerStarting = "Current Location";
-            Navigator.of(context).pop();
-            mapData.controllerStarting = "Current Location";
-            mapData.changeStart(mapData.getCurrentLocation);
-            switch (suggestionList[index][0].toString()) {
-              case "H":
-                {
-                  if (suggestionList[index][1].toString() == "A") {
-                    mapData.changeCampus('sgw');
-                    mapData.controllerDestination = "Hall Building, Montreal";
-                    mapData.changeEnd(constants.hBuilding);
-                  } else {
-                    mapData.changeCampus('sgw');
-                    mapData.controllerDestination =
-                        suggestionList[index].toString();
-                    mapData.changeEnd(constants.hBuilding);
-                  }
-                }
-                break;
+            // search for element they tapped
+            dynamic result = Search.query(suggestionList[index]);
+            mapData.itinerary = null;
 
-              case "M":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination =
-                      suggestionList[index].toString();
-                  mapData.changeEnd(constants.jmsbBuilding);
-                }
-                break;
-
-              case "L":
-                {
-                  mapData.changeCampus('loyola');
-                  mapData.controllerDestination = "Loyola Campus, Montreal";
-                  mapData.changeEnd(constants.loyola);
-                }
-                break;
-
-              case "J":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination =
-                      "John Molson Business, Montreal";
-                  mapData.changeEnd(constants.jmsbBuilding);
-                }
-                break;
-              case "F":
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination = "FG Building, Montreal";
-                  mapData.changeEnd(constants.fgBuilding);
-                }
-                break;
-
-              default:
-                {
-                  mapData.changeCampus('sgw');
-                  mapData.controllerDestination = "SGW Campus, Montreal";
-                  mapData.changeEnd(constants.sgw);
-                }
-                break;
+            if (isFirst) {
+              if (result == mapData.end) {
+                mapData.end = null;
+                Provider.of<IndoorData>(context, listen: false)
+                    .removeItinerary();
+              }
+              mapData.start = result;
+            } else {
+              if (result == mapData.start) {
+                mapData.start = null;
+                Provider.of<IndoorData>(context, listen: false)
+                    .removeItinerary();
+              }
+              mapData.end = result;
             }
-            mapData.changeMode("driving");
-            mapData.setItinerary();
+
+            Navigator.of(context).pop();
+            if (mapData.start != null && mapData.end != null) {
+              if (mapData.start is OutdoorLocation &&
+                  mapData.end is OutdoorLocation) {
+                mapData.setItinerary();
+              } else if (mapData.start is IndoorLocation &&
+                  mapData.end is IndoorLocation) {
+                // This will check if buildings are the same, no need to worry
+                mapData.setItinerary();
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: (mapData.start as IndoorLocation).name,
+                    end: (mapData.end as IndoorLocation).name);
+                Navigator.pushNamed(context, '/indoor',
+                    arguments: Arguments(true));
+              } else {
+                OutdoorLocation selected = mapData.start is IndoorLocation
+                    ? mapData.end
+                    : mapData.start;
+                String letter =
+                    (selected.parent as OutdoorLocation).parent.name[0];
+                String indoor = letter == 'H' ? 'H1entrance' : 'MBentrance';
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: selected == mapData.start
+                        ? indoor
+                        : (mapData.start as UniLocation).name,
+                    end: selected == mapData.end
+                        ? indoor
+                        : (mapData.end as UniLocation).name);
+                mapData.setItinerary();
+              }
+            }
           },
           leading: Icon(Icons.location_city),
           title: RichText(

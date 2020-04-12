@@ -1,49 +1,41 @@
-import 'package:concordia_navigation/models/building.dart';
-import 'package:concordia_navigation/storage/campus_buildings.dart';
+import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/university.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 ///Observer Pattern
 ///Handles data related to campus buildings, listens to changes and notifies listeners.
 class BuildingsData extends ChangeNotifier {
-  final Set<Building> buildings = new Set();
-  final Set<Polygon> _polygons = new Set();
-  final Set<Polygon> _clear = new Set();
-  bool visible = true;
+  List<Building> allBuildings = [];
+  List<Polygon> _allPolygons = [];
+  List<Polygon> _clear = [];
 
-  Set<Polygon> get polygons {
-    if (visible) {
-      return _polygons;
+  bool _visible = true;
+
+  List<Polygon> get allPolygons {
+    if (_visible) {
+      return _allPolygons;
     }
     return _clear;
   }
 
   BuildingsData() {
-    loadBuildings();
-    drawOutlines();
-    showOutlines();
-  }
-
-  void loadBuildings() {
-    // todo: parse data from simple json file not dart class
-    CampusBuildings.buildings.forEach((key, value) {
-      buildings.add(new Building(key, value));
+    // Make one big set of buildings that has sgw + loy buildings
+    University.concordia.children.forEach((campus) {
+      allBuildings.addAll(campus.children.whereType<Building>());
     });
-  }
 
-  void drawOutlines() {
-    buildings.forEach((building) {
-      _polygons.add(building.outline);
+    // Add the outline of every buildings to one big set of Polygons
+    allBuildings.forEach((building) {
+      _allPolygons.add(building.outline);
     });
+
+    _visible = true;
   }
 
-  void showOutlines() {
-    visible = true;
-    notifyListeners();
-  }
-
-  void clearOutlines() {
-    visible = false;
+  void toggleOutline() {
+    _visible = !_visible;
     notifyListeners();
   }
 }
