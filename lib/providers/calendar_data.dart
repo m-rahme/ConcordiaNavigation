@@ -1,6 +1,4 @@
-import 'dart:convert';
 import 'package:concordia_navigation/models/calendar/schedule.dart';
-import 'package:concordia_navigation/services/network.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';

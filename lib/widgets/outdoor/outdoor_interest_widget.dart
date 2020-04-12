@@ -23,21 +23,21 @@ class OutdoorInterestWidget extends StatelessWidget {
                 children: <Widget>[
                   Center(
                     child: Padding(
-                        padding: const EdgeInsets.only(left: 10.0),
-                        child: Container(
-                          height: SizeConfig.safeBlockHorizontal * 18,
-                          width: SizeConfig.safeBlockHorizontal * 18,
-                          decoration: new BoxDecoration(
-                            shape: BoxShape.circle,
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(75.0),
-                            child: new Image.asset(
-                              interests[index].logo,
-                            ),
+                      padding: const EdgeInsets.only(left: 10.0),
+                      child: Container(
+                        height: SizeConfig.safeBlockHorizontal * 18,
+                        width: SizeConfig.safeBlockHorizontal * 18,
+                        decoration: new BoxDecoration(
+                          shape: BoxShape.circle,
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(75.0),
+                          child: new Image.asset(
+                            interests[index].logo,
                           ),
                         ),
                       ),
+                    ),
                   ),
                   Container(
                     width: SizeConfig.safeBlockHorizontal * 48,
@@ -91,17 +91,11 @@ class OutdoorInterestWidget extends StatelessWidget {
                                   fontSize: 12.0, color: constants.whiteColor),
                             ),
                             onPressed: () {
-                              Provider.of<MapData>(context, listen: false)
-                                  .controllerStarting = "Current Location";
-                              Provider.of<MapData>(context, listen: false)
-                                  .start = null;
-                              Provider.of<MapData>(context, listen: false).end =
-                                  interests[index];
-                              Provider.of<MapData>(context, listen: false)
-                                  .setItinerary();
-                              Provider.of<MapData>(context, listen: false)
-                                  .panelController
-                                  .open();
+                              mapData.controllerStarting = "Current Location";
+                              mapData.start = null;
+                              mapData.end = interests[index];
+                              mapData.setItinerary();
+                              mapData.panelController.open();
                               Navigator.of(context).pop();
                             },
                           );

@@ -10,7 +10,7 @@ class Network {
   @visibleForTesting
   set client(Client client) => _client = client;
 
-  Future getData(String url) async {
+  static Future getData(String url) async {
     print('Calling uri: $url');
     Response response = await _client.get(url);
     if (response.statusCode == 200) {
