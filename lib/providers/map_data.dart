@@ -99,7 +99,7 @@ class MapData extends ChangeNotifier {
 
   CameraPosition getFixedLocationCamera() {
     return CameraPosition(
-        target: constants.sgw,
+        target: locationService.current?.toLatLng() ?? constants.sgw,
         zoom: 16.5,
         tilt: 30.440717697143555,
         bearing: 30.8334901395799,
