@@ -59,16 +59,22 @@ class SearchBars extends StatelessWidget {
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 3,
                             ),
-                            Text(
-                              (mapData.controllerStarting != null &&
-                                      mapData.controllerStarting.length > 35)
-                                  ? mapData.controllerStarting.substring(0, 35)
-                                  : mapData.controllerStarting ??
-                                      "Start Location",
-                              style: GoogleFonts.raleway(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.w600,
-                                color: constants.blackColor,
+                            Flexible(
+                              fit: FlexFit.loose,
+                              child: Text(
+                                (mapData.controllerStarting != null &&
+                                        mapData.controllerStarting.length > 35)
+                                    ? mapData.controllerStarting.substring(0, 35)
+                                    : mapData.controllerStarting ??
+                                        "Start Location",
+                                overflow: TextOverflow.fade,
+                                maxLines: 1,
+                                softWrap: false,
+                                style: GoogleFonts.raleway(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: constants.blackColor,
+                                ),
                               ),
                             ),
                           ],
@@ -114,15 +120,22 @@ class SearchBars extends StatelessWidget {
                             SizedBox(
                               width: SizeConfig.blockSizeHorizontal * 3,
                             ),
-                            Text(
-                              (mapData.controllerEnding != null &&
-                                      mapData.controllerEnding.length > 35)
-                                  ? mapData.controllerEnding.substring(0, 35)
-                                  : mapData.controllerEnding ?? "End Location",
-                              style: GoogleFonts.raleway(
-                                fontSize: 15.0,
-                                fontWeight: FontWeight.w600,
-                                color: constants.blackColor,
+                            Flexible(
+                              fit: FlexFit.loose,
+                              child: Text(
+                                (mapData.controllerEnding != null &&
+                                        mapData.controllerEnding.length > 35)
+                                    ? mapData.controllerEnding.substring(0, 35)
+                                    : mapData.controllerEnding ??
+                                        "End Location",
+                                overflow: TextOverflow.fade,
+                                maxLines: 1,
+                                softWrap: false,
+                                style: GoogleFonts.raleway(
+                                  fontSize: 15.0,
+                                  fontWeight: FontWeight.w600,
+                                  color: constants.blackColor,
+                                ),
                               ),
                             ),
                           ],
