@@ -91,7 +91,6 @@ void main() {
       ];
       List<Node> result =
           dijkstra.pathTo("H1entrance", "H967", accessible: true);
-      // for (Node node in result) print(node.name);
       expect(solution, result);
     });
     test('testing route from H110 to H913 with accessibility enabled', () {
@@ -107,7 +106,36 @@ void main() {
         graph['H913'],
       ];
       List<Node> result = dijkstra.pathTo("H110", "H913", accessible: true);
-      for (Node node in result) print(node.name);
+      expect(solution, result);
+    });
+    test('testing route from H903 to H803 with accessibility disabled', () {
+      solution = [
+        graph['H903'],
+        graph['H907'],
+        graph['H909'],
+        graph['H9escalatorDown'],
+        graph['H8escalatorDown'],
+        graph['H8escalatorUp'],
+        graph['H8checkTM'],
+        graph['H807'],
+        graph['H805'],
+        graph['H803'],
+      ];
+      List<Node> result = dijkstra.pathTo("H903", "H803");
+      expect(solution, result);
+    });
+
+    test('testing route from H903 to H110 with accessibility disabled', () {
+      solution = [
+        graph['H903'],
+        graph['H907'],
+        graph['H909'],
+        graph['H9escalatorDown'],
+        graph['H1escalatorUp2'],
+        graph['H1checkMM'],
+        graph['H110'],
+      ];
+      List<Node> result = dijkstra.pathTo("H903", "H110");
       expect(solution, result);
     });
   });
