@@ -1,4 +1,5 @@
 import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -61,7 +62,7 @@ class BottomSheetWidget extends StatelessWidget {
                         color: appColor,
                         textColor: whiteColor,
                         child: Text(
-                          "Go Indoor",
+                          ConcordiaLocalizations.of(context).indoor,
                           style: GoogleFonts.raleway(
                             fontWeight: FontWeight.bold,
                             fontSize: 12.0,

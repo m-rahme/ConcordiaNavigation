@@ -138,7 +138,7 @@ void main() {
         graph['MB1.301'],
         graph['MBexitTM'],
         graph['MB1.309'],
-        graph['MBcheck'],
+        graph['MBelvtr'],
         graph['MBcheckMM'],
         graph['MB1.210'],
       ];
@@ -151,12 +151,11 @@ void main() {
         graph['MB1.301'],
         graph['MBexitTM'],
         graph['MB1.309'],
-        graph['MBcheck'],
+        graph['MBelvtr'],
         graph['MBcheckMM'],
         graph['MB1.210'],
       ];
-      List<Node> result =
-          dijkstra.pathTo("MB1.301", "MB1.210", accessible: true);
+      List<Node> result = dijkstra.pathTo("H110", "MB1.309", accessible: true);
       for (Node node in result) print(node.name);
       expect(solution, result);
     });

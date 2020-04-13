@@ -1,7 +1,7 @@
 {
-  "profile": "Profile",
-  "@profile": {
-    "description": "Profile",
+  "toggle": "Toggle Building Highlights",
+  "@toggle": {
+    "description": "Toggle Building Highlights",
     "type": "text"
   },
   "schedule": "Schedule",
@@ -22,6 +22,11 @@
   "shuttle": "Shuttle Schedule",
     "@shuttle": {
       "description": "Shuttle Schedule",
+      "type": "text"
+  },
+  "indoor": "Indoor",
+    "@indoor": {
+      "description": "Indoor",
       "type": "text"
     },
 }

@@ -1,7 +1,7 @@
 {
-  "profile": "Profil",
-  "@profile": {
-    "description": "Profile",
+  "toggle": "Activer/Désactiver les Marqueurs de Bâtiment",
+  "@toggle": {
+    "description": "activer/désactiver les marqueurs de bâtiment",
     "type": "text"
   },
   "schedule": "Horaire",
@@ -23,5 +23,10 @@
   "@shuttle": {
     "description": "Horaire de la Navette",
     "type": "text"
-  }
+  },
+  "indoor": "Intérieur",
+  "@indoor": {
+     "description": "Intérieur",
+     "type": "text"
+    },
 }

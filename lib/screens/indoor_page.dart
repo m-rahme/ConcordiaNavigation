@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/services/indoor/painters.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/widgets/indoor/indoor_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
@@ -49,7 +50,9 @@ class IndoorPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: constants.whiteColor,
       appBar: AppBar(
-        title: Text("Indoor View"),
+        title: Text(
+          ConcordiaLocalizations.of(context).indoor,
+        ),
         backgroundColor: constants.appColor,
       ),
       body: Column(

@@ -8,7 +8,6 @@ import 'services/localization.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/screens/settings.dart';
-import 'package:concordia_navigation/screens/profile.dart';
 import 'package:concordia_navigation/screens/course_schedule.dart';
 import 'package:concordia_navigation/screens/shuttle_schedule.dart';
 
@@ -43,7 +42,6 @@ class App extends StatelessWidget {
       routes: {
         '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
-        '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
         '/shuttle': (context) => ShuttleSchedule(),
