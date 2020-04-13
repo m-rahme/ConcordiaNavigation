@@ -7,15 +7,21 @@ void main() {
     Map<String, Node> nodes;
     Dijkstra dijkstra;
     List<Node> solution;
+    Node n1;
+    Node n2;
+    Node n3;
+    Node n4;
+    Node n5;
+    Node n6;
 
     setUp(() {
       // Mock data
-      Node n1 = Node("n1");
-      Node n2 = Node("n2");
-      Node n3 = Node("n3");
-      Node n4 = Node("n4");
-      Node n5 = Node("n5");
-      Node n6 = Node("n6");
+      n1 = Node("n1");
+      n2 = Node("n2");
+      n3 = Node("n3");
+      n4 = Node("n4");
+      n5 = Node("n5");
+      n6 = Node("n6");
 
       n1.setEdge(n2, 50);
       n1.setEdge(n3, 10);
@@ -46,13 +52,43 @@ void main() {
       };
 
       dijkstra = Dijkstra.fromGraph(nodes);
-
-      solution = [n1, n5, n6];
     });
 
-    test('constructor creates a list of edges', () {
+    test('find shortest path between n1 and n6', () {
+      solution = [n1, n5, n6];
       List<Node> result = dijkstra.pathTo("n1", "n6");
       expect(solution, result);
     });
+
+    test('find shortest path between n1 and n4', () {
+      solution = [n1, n5, n3, n4];
+      List<Node> result = dijkstra.pathTo("n1", "n4");
+      expect(solution, result);
+    });
+
+    test('find shortest path between n1 and n2', () {
+      solution = [n1, n5, n3, n2];
+      List<Node> result = dijkstra.pathTo("n1", "n2");
+      expect(solution, result);
+    });
+
+    test('find shortest path between n2 and n6', () {
+      solution = [n2, n3, n5, n6];
+      List<Node> result = dijkstra.pathTo("n2", "n6");
+      expect(solution, result);
+    });
+
+    test('find shortest path between n2 and n4', () {
+      solution = [n2, n3, n4];
+      List<Node> result = dijkstra.pathTo("n2", "n4");
+      expect(solution, result);
+    });
+
+    test('find shortest path between n6 and n4', () {
+      solution = [n6, n5, n3, n4];
+      List<Node> result = dijkstra.pathTo("n6", "n4");
+      expect(solution, result);
+    });
+
   });
 }
