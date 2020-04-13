@@ -4897,7 +4897,7 @@
 								},
 								"edges": [
 									{
-										"name": "MBelevator",
+										"name": "MBcheck",
 										"distance": 1
 									},
 									{
@@ -5097,7 +5097,7 @@
 										"distance": 1
 									},
 									{
-										"name": "MBelevator",
+										"name": "MBcheck",
 										"distance": 1
 									},
 									{
@@ -5309,7 +5309,7 @@
 								]
 							},
 							{
-								"name": "MBelevator",
+								"name": "MBcheck",
 								"coordinates": {
 									"room": {
 										"x": 545.33,

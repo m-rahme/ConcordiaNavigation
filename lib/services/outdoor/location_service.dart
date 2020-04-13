@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:location/location.dart';
-import 'package:concordia_navigation/models/user_location.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
 ///Location Service, implementing the Singleton Design Pattern

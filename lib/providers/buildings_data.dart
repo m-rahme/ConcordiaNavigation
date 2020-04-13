@@ -1,5 +1,5 @@
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';

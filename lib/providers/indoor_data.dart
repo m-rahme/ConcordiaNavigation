@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/models/university.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
+import 'package:concordia_navigation/services/indoor/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
 import 'package:flutter/material.dart';
 
