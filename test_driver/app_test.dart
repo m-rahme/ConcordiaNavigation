@@ -22,7 +22,6 @@ void main() {
         await new File('.\\test_driver\\screenshots\\$screenshotName.png')
             .create(recursive: true);
     await file.writeAsBytes(pixels);
-    print('Screenshot $file');
   }
 
 
@@ -33,13 +32,22 @@ void main() {
     FlutterDriver driver;
     /// Finders
         final search = find.byValueKey('LocationSearch');
-        final location1 = find.byValueKey('Location1');
-        final direction1 = find.byValueKey('Direction1');
+        final indoor = find.byValueKey('Indoor');
+        final startLocation = find.byValueKey('StartLocation');
+        final endLocation = find.byValueKey('EndLocation');
+        final direction0 = find.byValueKey('Direction0');
+        final location0 = find.byValueKey('Location0');
+        final wheelchair = find.byValueKey('Wheelchair');
         final driving = find.byValueKey('Driving');
         final transit = find.byValueKey('Transit');
         final walking = find.byValueKey('Walking');
         final bicycling = find.byValueKey('Bicycling');
         final viewSchedule = find.byValueKey('ViewSchedule');
+        final swapCampusIcon = find.byValueKey('SwitchCampus');
+        final sgwTab = find.byValueKey('SGWTab');
+        final loyolaTab = find.byValueKey('LoyolaTab');
+        final outdoorInterest = find.byValueKey('OutdoorInterest');
+        final card = find.byType('Card');
 
 
 
@@ -80,17 +88,27 @@ void main() {
      * Run Tests
      */
     test(
-      'open drawer menu',
+      '[open drawer menu and outdoor interest page]',
       () async {
-        
         // Open drawer menu
         final SerializableFinder drawerMenu =
             find.byTooltip('Open navigation menu');
         await tap(driver, drawerMenu);
 
-        // Close drawer menu
-        await driver.scroll(
-            drawerMenu, -300.0, 0.0, const Duration(milliseconds: 500));
+        // Open outdoor interest page
+        await tap(driver, outdoorInterest);
+
+        // SGW tab
+        await tap(driver, sgwTab);
+        await driver.waitFor(card);
+        await delay(1000);
+        await snapshot(driver, '\\OutdoorInterest\\SGW');
+
+        // Loyola tab
+        await tap(driver, loyolaTab);
+        await driver.waitFor(card);
+        await delay(1000);
+        await snapshot(driver, '\\OutdoorInterest\\Loyola');
       },
       timeout: Timeout(
         Duration(minutes: 1),
@@ -98,20 +116,16 @@ void main() {
     );
 
     test(
-      'see current location and campus building highlights',
+      '[see current location and campus building highlights]',
       () async {
-        final swapCampusIcon = find.byValueKey('SwitchCampus');
-        final sun = find.byValueKey('ToggleBuildingHighlight');
-        await snapshot(driver, '\\MapLocation\\1');
+        // Back
+        await driver.tap(find.byTooltip('Back'));
 
-        // Toggle campus building hightlights
+        await snapshot(driver, '\\MapLocation\\1');
         await tap(driver, swapCampusIcon);
         await snapshot(driver, '\\MapLocation\\2');
-        await tap(driver, sun);
-        await snapshot(driver, '\\MapLocation\\3');
-        await tap(driver, sun);
         await tap(driver, swapCampusIcon);
-        await snapshot(driver, '\\MapLocation\\4');
+        await snapshot(driver, '\\MapLocation\\3');
       },
       timeout: Timeout(
         Duration(minutes: 1),
@@ -119,40 +133,55 @@ void main() {
     );
 
     test(
-      'get directions',
+      '[get outdoor directions]',
       () async {
-        // Open search location page
+        // Open directions panel
         await tap(driver, search);
-        await snapshot(driver, '\\Directions\\1');
 
-        // Tap second suggested location
-        await tap(driver, location1);
-        await delay(3000);
+        // Pick start and end locations
+        await tap(driver, startLocation);
+        await delay(1000);
+        await driver.enterText("CENTRAL");
+        await delay(1000);
+        await tap(driver, location0 );
 
-        // Slide open directions drawer
-        await driver.scroll(
-            driving, 0.0, -500.0, const Duration(milliseconds: 800));
+        await tap(driver, endLocation);
+        await delay(1000);
+        await driver.enterText("H913");
+        await delay(1000);
+        await tap(driver, location0 );
+
+        // Wait to load
+        await delay(2000);
+        await snapshot(driver, '\\Directions\\DirectionsPanel');
 
         // Go through modes and expect at least first direction tile
+        await tap(driver, driving);
         await snapshot(driver, '\\Directions\\driving');
-        await driver.waitFor(direction1, timeout: Duration(seconds: 5));
-        await tap(driver, transit);
+        await driver.waitFor(direction0, timeout: Duration(seconds: 5));
         
+        await tap(driver, transit);
         await snapshot(driver, '\\Directions\\transit');
-        await driver.waitFor(direction1, timeout: Duration(seconds: 5));
+        await driver.waitFor(direction0, timeout: Duration(seconds: 5));
 
         await tap(driver, walking);
         await snapshot(driver, '\\Directions\\walking');
-        await driver.waitFor(direction1, timeout: Duration(seconds: 5));
+        await driver.waitFor(direction0, timeout: Duration(seconds: 5));
 
         await tap(driver, bicycling);
         await snapshot(driver, '\\Directions\\bicycling');
-        await driver.waitFor(direction1, timeout: Duration(seconds: 5));
+        await driver.waitFor(direction0, timeout: Duration(seconds: 5));
 
         // Close directions drawer
         await driver.scroll(
             driving, 0.0, 500.0, const Duration(milliseconds: 800));
         await snapshot(driver, '\\Directions\\mapDirections');
+
+        // Check path on map
+        await tap(driver, swapCampusIcon);
+        await delay(1000);
+        await tap(driver, swapCampusIcon);
+        await delay(1000);
       },
       timeout: Timeout(
         Duration(minutes: 1),
@@ -160,18 +189,68 @@ void main() {
     );
 
     test(
-      'view schedule from directions drawer',
+      '[get indoor directions]',
       () async {
+        final h1 = find.byValueKey("Indoor0");
+        final h8 = find.byValueKey("Indoor1");
+        final h9 = find.byValueKey("Indoor2");
+        final mb1 = find.byValueKey("Indoor3");
+
+        // View each floor
+        await tap(driver, indoor);
+        await delay(2000);
+        await tap(driver, h1);
+        await delay(2000);
+        await tap(driver, h8);
+        await delay(2000);
+        await tap(driver, h9);
+        await delay(2000);
+        await tap(driver, mb1);
+        await delay(2000);
+
+        // Back
+        await driver.tap(find.byTooltip('Back'));
+        await delay(1500);
+        await driver.tap(wheelchair);
+
+        // View accessibility
+        await delay(1000);
+        await tap(driver, indoor);
+        await tap(driver, h1);
+        await delay(2000);
+        await tap(driver, h8);
+        await delay(2000);
+        await tap(driver, h9);
+        await delay(2000);
+        await tap(driver, mb1);
+        await delay(2000);
+      },
+      timeout: Timeout(
+        Duration(minutes: 1),
+      ),
+    );
+
+    test(
+      '[view schedule from directions drawer]',
+      () async {
+        // Back
+        await driver.tap(find.byTooltip('Back'));
+
         // Slide open directions drawer
         await driver.scroll(
             driving, 0.0, -500.0, const Duration(milliseconds: 800));
 
         // Open shuttle schedule page
         await tap(driver, viewSchedule);
+        await driver.waitFor(find.text("09:30"));
         await snapshot(driver, '\\ShuttleSchedule\\1');
 
         // Back
         await driver.tap(find.byTooltip('Back'));
+
+        // Slide close directions drawer
+        await driver.scroll(
+            driving, 0.0, 500.0, const Duration(milliseconds: 800));
       },
       timeout: Timeout(
         Duration(minutes: 1),

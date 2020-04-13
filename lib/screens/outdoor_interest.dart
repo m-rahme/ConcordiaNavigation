@@ -31,6 +31,7 @@ class OutdoorInterest extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           leading: new IconButton(
+            tooltip: "Back",
             icon: new Icon(Icons.arrow_back, color: Colors.white),
             onPressed: () => Navigator.of(context).pop(),
           ),
@@ -38,8 +39,8 @@ class OutdoorInterest extends StatelessWidget {
           backgroundColor: appColor,
           bottom: TabBar(
             tabs: [
-              Tab(text: "Sir George Williams"),
-              Tab(text: "Loyola"),
+              Tab(key: Key("SGWTab"), text: "Sir George Williams"),
+              Tab(key: Key("LoyolaTab"), text: "Loyola"),
             ],
           ),
         ),

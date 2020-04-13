@@ -2,6 +2,7 @@ import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 
 class FloatingMapButton extends StatelessWidget {
+  final Key key;
   final Color fgColor;
   final Color bgColor;
   final Icon icon;
@@ -10,6 +11,7 @@ class FloatingMapButton extends StatelessWidget {
   final VoidCallback onClick;
 
   const FloatingMapButton({
+    this.key,
     this.top,
     this.left,
     this.onClick,
@@ -27,6 +29,7 @@ class FloatingMapButton extends StatelessWidget {
           left: left,
         ),
         child: FloatingActionButton(
+          key: key,
           onPressed: onClick,
           child: icon,
           backgroundColor: this.bgColor,
