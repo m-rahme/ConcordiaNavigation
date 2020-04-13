@@ -3,6 +3,8 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';
 
+/// Handles data related to the calendar such as
+/// transferring to related models, keeping a list of current courses
 class CalendarData extends ChangeNotifier {
   final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
   List<Calendar> _calendars = List();

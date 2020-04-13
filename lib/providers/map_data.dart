@@ -18,14 +18,18 @@ class MapData extends ChangeNotifier {
   Reachable _start, _end;
   bool panelVisible = false;
 
+  // Represent the start and end text fields on the drawer
   String controllerStarting, controllerEnding;
 
+  // Contains the polylines required for drawing an itinerary on the map
   OutdoorItinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
+  // transportation mode for google api call
+  // can be driving, walking, bicycling, or transit
   String mode;
 
   MapData([LocationService location]) {
@@ -61,11 +65,14 @@ class MapData extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the itinerary object of the provider
   void setItinerary() async {
-    // try to use parameters, but if they're not supplied use attributes
+    // must be going somewhere
     if (_end != null) {
+      // use current location if start is null
       if (_start == null)
         itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+      // make sure start and end are not equal
       else if (_start.toLatLng() != _end.toLatLng()) {
         itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
       } else {
