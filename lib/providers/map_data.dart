@@ -94,16 +94,8 @@ class MapData extends ChangeNotifier {
   }
 
   CameraPosition getCameraFor(LatLng location) {
-    if (location != null) {
-      return CameraPosition(
-        target: location,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
-    }
     return CameraPosition(
-      target: constants.sgw,
+      target: location,
       zoom: 16.5,
       tilt: 30.440717697143555,
       bearing: 30.8334901395799,
@@ -111,12 +103,7 @@ class MapData extends ChangeNotifier {
   }
 
   CameraPosition getFixedLocationCamera() {
-    return CameraPosition(
-      target: constants.sgw,
-      zoom: 16.5,
-      tilt: 30.440717697143555,
-      bearing: 30.8334901395799,
-    );
+    return getCameraFor(locationService.current?.toLatLng() ?? constants.sgw);
   }
 
   Future<void> animateTo(double lat, double lng) async {
