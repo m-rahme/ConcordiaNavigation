@@ -20,14 +20,20 @@ class LocationSearch extends SearchDelegate {
   ///This method returns suggested locations to the user, in this case Loyola and SGW campus.
   @override
   Widget buildSuggestions(BuildContext context) {
+    List<String> emptyList = [];
+    if (isFirst) {
+      // only choose current location if choosing start
+      emptyList.add('Current Location');
+    }
+    emptyList.addAll(Search.names.take(10).toList());
     final suggestionList = query.isEmpty
-        ? Search.names.take(10).toList()
+        ? emptyList
         : Search.names.where((p) => p.contains(query.toUpperCase())).toList();
 
     return Consumer<MapData>(builder: (context, mapData, child) {
       return ListView.builder(
         itemBuilder: (context, index) => ListTile(
-          key: Key("Location"+index.toString()),
+          key: Key("Location" + index.toString()),
           onTap: () async {
             // search for element they tapped
             dynamic result = Search.query(suggestionList[index]);
@@ -49,7 +55,23 @@ class LocationSearch extends SearchDelegate {
               mapData.end = result;
             }
 
+            if (suggestionList[index] == 'Current Location') {
+              if (isFirst) {
+                mapData.controllerStarting = 'Current Location';
+              }
+            }
             Navigator.of(context).pop();
+            if (mapData.controllerStarting == 'Current Location' &&
+                mapData.end != null) {
+              if (mapData.end is IndoorLocation) {
+                String letter =
+                    (mapData.end as IndoorLocation).parent.parent.name[0];
+                String indoor = letter == 'H' ? 'H1entrance' : 'MBentrance';
+                Provider.of<IndoorData>(context, listen: false).setItinerary(
+                    start: indoor, end: (mapData.end as IndoorLocation).name);
+              }
+              mapData.setItinerary();
+            }
             if (mapData.start != null && mapData.end != null) {
               if (mapData.start is OutdoorLocation &&
                   mapData.end is OutdoorLocation) {
