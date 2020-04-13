@@ -39,16 +39,20 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    if (obj != null) controllerEnding = (obj as UniLocation).name;
-    else controllerEnding = null;
+    if (obj != null)
+      controllerEnding = (obj as UniLocation).name;
+    else
+      controllerEnding = null;
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    if (obj != null) controllerStarting = (obj as UniLocation).name;
-    else controllerStarting = null;
+    if (obj != null)
+      controllerStarting = (obj as UniLocation).name;
+    else
+      controllerStarting = null;
     notifyListeners();
   }
 
@@ -59,14 +63,16 @@ class MapData extends ChangeNotifier {
 
   void setItinerary() async {
     // try to use parameters, but if they're not supplied use attributes
-    if (_start == null)
-      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
-    else if (_start.toLatLng() != _end.toLatLng()) {
-      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
-    } else {
-      print('Same start and end!');
+    if (_end != null) {
+      if (_start == null)
+        itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+      else if (_start.toLatLng() != _end.toLatLng()) {
+        itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+      } else {
+        print('Same start and end!');
+      }
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   /// Sets the shared itinerary object to null, causing a re-render of the DirectionsDrawer widget
@@ -90,20 +96,20 @@ class MapData extends ChangeNotifier {
       );
     }
     return CameraPosition(
-        target: constants.sgw,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
+      target: constants.sgw,
+      zoom: 16.5,
+      tilt: 30.440717697143555,
+      bearing: 30.8334901395799,
+    );
   }
 
   CameraPosition getFixedLocationCamera() {
     return CameraPosition(
-        target: constants.sgw,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
+      target: constants.sgw,
+      zoom: 16.5,
+      tilt: 30.440717697143555,
+      bearing: 30.8334901395799,
+    );
   }
 
   Future<void> animateTo(double lat, double lng) async {
