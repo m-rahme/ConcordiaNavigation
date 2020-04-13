@@ -3,14 +3,12 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  /**
-   * Functions
-   */
+  ///Functions
   Future delay([int milliseconds = 100]) async {
     await Future.delayed(Duration(milliseconds: milliseconds));
   }
 
-  Future tap(FlutterDriver driver, SerializableFinder  finder) async {
+  Future tap(FlutterDriver driver, SerializableFinder finder) async {
     await driver.tap(finder);
     await delay(500);
   }
@@ -25,23 +23,21 @@ void main() {
     print('Screenshot $file');
   }
 
-
   /**
    * Start Automated Tests
    */
   group('App System Integration Test', () {
     FlutterDriver driver;
+
     /// Finders
-        final search = find.byValueKey('LocationSearch');
-        final location1 = find.byValueKey('Location1');
-        final direction1 = find.byValueKey('Direction1');
-        final driving = find.byValueKey('Driving');
-        final transit = find.byValueKey('Transit');
-        final walking = find.byValueKey('Walking');
-        final bicycling = find.byValueKey('Bicycling');
-        final viewSchedule = find.byValueKey('ViewSchedule');
-
-
+    final search = find.byValueKey('LocationSearch');
+    final location1 = find.byValueKey('Location1');
+    final direction1 = find.byValueKey('Direction1');
+    final driving = find.byValueKey('Driving');
+    final transit = find.byValueKey('Transit');
+    final walking = find.byValueKey('Walking');
+    final bicycling = find.byValueKey('Bicycling');
+    final viewSchedule = find.byValueKey('ViewSchedule');
 
     setUpAll(() async {
       // Make sure environment variable ANDROID_SDK_ROOT is set to path to Android sdk folder
@@ -66,15 +62,11 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-
-
     tearDownAll(() async {
       if (driver != null) {
         driver.close();
       }
     });
-
-
 
     /**
      * Run Tests
@@ -82,7 +74,6 @@ void main() {
     test(
       'open drawer menu',
       () async {
-        
         // Open drawer menu
         final SerializableFinder drawerMenu =
             find.byTooltip('Open navigation menu');
@@ -137,7 +128,7 @@ void main() {
         await snapshot(driver, '\\Directions\\driving');
         await driver.waitFor(direction1, timeout: Duration(seconds: 5));
         await tap(driver, transit);
-        
+
         await snapshot(driver, '\\Directions\\transit');
         await driver.waitFor(direction1, timeout: Duration(seconds: 5));
 
@@ -177,6 +168,5 @@ void main() {
         Duration(minutes: 1),
       ),
     );
-
   });
 }

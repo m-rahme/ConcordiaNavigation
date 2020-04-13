@@ -10,24 +10,19 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'app_widget.dart';
 
-
-// TODO: Update this test once each screen have been implemented
 void main() {
-  /**
-   * Open drawer when in homepage
-   */
+  ///Open drawer when in homepage
   openDrawer(WidgetTester tester) async {
     await tester.dragFrom(
         tester.getTopLeft(find.byType(MaterialApp)), Offset(300, 0));
     await tester.pumpAndSettle();
   }
 
-  /**
-   * 1. Tap finder
-   * 2. Tap center button
-   * 3. Go back to map
-   * 4. Re-open drawer
-   */
+  ///1. Tap finder
+  ///2. Tap center button
+  ///3. Go back to map
+  ///4. Re-open drawer
+
   verifyScreen(WidgetTester tester, String name) async {
     final finder = find.text(name);
     expect(finder, findsOneWidget);
@@ -39,7 +34,6 @@ void main() {
   }
 
   group('App Widget Test', () {
-
     setUp(() async {
       ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
       OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
@@ -49,8 +43,8 @@ void main() {
       Dijkstra.shortest = Dijkstra.fromJson(data);
 
       Search.supported.forEach((object) {
-      if (object is IndoorLocation || object is Building)
-        Search.names.add(object.name.toUpperCase());
+        if (object is IndoorLocation || object is Building)
+          Search.names.add(object.name.toUpperCase());
       });
     });
 
@@ -92,7 +86,7 @@ void main() {
       // await verifyScreen(tester, "Settings");
 
       // Verify drawer closes by tapping on drawer header
-      final drawer = find.byType(CustomDrawer); 
+      final drawer = find.byType(CustomDrawer);
       expect(drawer, findsOneWidget);
       final header = find.text("ConNavigation").at(1);
       await tester.tap(header);
