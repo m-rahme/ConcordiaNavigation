@@ -1,5 +1,7 @@
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 
+/// Concrete OutdoorLocation
+/// Represents a point of interest close to, or in, a campus
 class OutdoorPOI extends OutdoorLocation {
   String logo;
   String description;

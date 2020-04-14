@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/user_location.dart';
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:concordia_navigation/providers/calendar_data.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
 import 'package:concordia_navigation/services/outdoor/location_service.dart';

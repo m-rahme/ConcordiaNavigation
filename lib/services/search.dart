@@ -1,11 +1,18 @@
 import 'package:concordia_navigation/models/indoor/floor.dart';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/outdoor/reachable.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 enum query_result { unsupported, invalid, supported }
 
+/// Manages possible search results in the form of Reachable objects and Strings
+/// 
+/// A user's input is matched against the contents of the `supported` list.
+/// This list contains the objects that themselves contain LatLng objects
+/// for itinerary generation.
+/// 
+/// The `names` list contains the Strings of all the supported locations.
 class Search {
   // for getting latlng's
   static List<dynamic> supported = [];

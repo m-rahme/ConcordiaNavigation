@@ -1,9 +1,9 @@
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/providers/map_data.dart';

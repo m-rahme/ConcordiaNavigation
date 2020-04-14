@@ -3,14 +3,12 @@ import 'package:flutter_driver/flutter_driver.dart';
 import 'package:test/test.dart';
 
 void main() {
-  /**
-   * Functions
-   */
+  ///Functions
   Future delay([int milliseconds = 100]) async {
     await Future.delayed(Duration(milliseconds: milliseconds));
   }
 
-  Future tap(FlutterDriver driver, SerializableFinder  finder) async {
+  Future tap(FlutterDriver driver, SerializableFinder finder) async {
     await driver.tap(finder);
     await delay(500);
   }
@@ -24,32 +22,30 @@ void main() {
     await file.writeAsBytes(pixels);
   }
 
-
   /**
    * Start Automated Tests
    */
   group('App System Integration Test', () {
     FlutterDriver driver;
+
     /// Finders
-        final search = find.byValueKey('LocationSearch');
-        final indoor = find.byValueKey('Indoor');
-        final startLocation = find.byValueKey('StartLocation');
-        final endLocation = find.byValueKey('EndLocation');
-        final direction0 = find.byValueKey('Direction0');
-        final location0 = find.byValueKey('Location0');
-        final wheelchair = find.byValueKey('Wheelchair');
-        final driving = find.byValueKey('Driving');
-        final transit = find.byValueKey('Transit');
-        final walking = find.byValueKey('Walking');
-        final bicycling = find.byValueKey('Bicycling');
-        final viewSchedule = find.byValueKey('ViewSchedule');
-        final swapCampusIcon = find.byValueKey('SwitchCampus');
-        final sgwTab = find.byValueKey('SGWTab');
-        final loyolaTab = find.byValueKey('LoyolaTab');
-        final outdoorInterest = find.byValueKey('OutdoorInterest');
-        final card = find.byType('Card');
-
-
+    final search = find.byValueKey('LocationSearch');
+    final indoor = find.byValueKey('Indoor');
+    final startLocation = find.byValueKey('StartLocation');
+    final endLocation = find.byValueKey('EndLocation');
+    final direction0 = find.byValueKey('Direction0');
+    final location0 = find.byValueKey('Location0');
+    final wheelchair = find.byValueKey('Wheelchair');
+    final driving = find.byValueKey('Driving');
+    final transit = find.byValueKey('Transit');
+    final walking = find.byValueKey('Walking');
+    final bicycling = find.byValueKey('Bicycling');
+    final viewSchedule = find.byValueKey('ViewSchedule');
+    final swapCampusIcon = find.byValueKey('SwitchCampus');
+    final sgwTab = find.byValueKey('SGWTab');
+    final loyolaTab = find.byValueKey('LoyolaTab');
+    final outdoorInterest = find.byValueKey('OutdoorInterest');
+    final card = find.byType('Card');
 
     setUpAll(() async {
       // Make sure environment variable ANDROID_SDK_ROOT is set to path to Android sdk folder
@@ -74,15 +70,11 @@ void main() {
       driver = await FlutterDriver.connect();
     });
 
-
-
     tearDownAll(() async {
       if (driver != null) {
         driver.close();
       }
     });
-
-
 
     /**
      * Run Tests
@@ -143,13 +135,13 @@ void main() {
         await delay(1000);
         await driver.enterText("CENTRAL");
         await delay(1000);
-        await tap(driver, location0 );
+        await tap(driver, location0);
 
         await tap(driver, endLocation);
         await delay(1000);
         await driver.enterText("H913");
         await delay(1000);
-        await tap(driver, location0 );
+        await tap(driver, location0);
 
         // Wait to load
         await delay(2000);
@@ -159,8 +151,8 @@ void main() {
         await tap(driver, driving);
         await snapshot(driver, '\\Directions\\driving');
         await driver.waitFor(direction0, timeout: Duration(seconds: 5));
-        
         await tap(driver, transit);
+
         await snapshot(driver, '\\Directions\\transit');
         await driver.waitFor(direction0, timeout: Duration(seconds: 5));
 
@@ -256,6 +248,5 @@ void main() {
         Duration(minutes: 1),
       ),
     );
-
   });
 }

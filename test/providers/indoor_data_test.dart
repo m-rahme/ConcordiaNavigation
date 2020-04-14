@@ -1,8 +1,8 @@
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
 import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/services/indoor/dijkstra.dart';
 import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter_test/flutter_test.dart';
 

@@ -4,6 +4,7 @@ import 'package:concordia_navigation/models/outdoor/campus.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:flutter/services.dart';
 
+/// Class representing a university
 class University extends OutdoorLocation {
   University._create(String name) : super(name);
   static University concordia;

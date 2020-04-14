@@ -1,6 +1,6 @@
 import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/services/painter_service.dart';
-import 'package:concordia_navigation/services/painters.dart';
+import 'package:concordia_navigation/services/indoor/painter_service.dart';
+import 'package:concordia_navigation/services/indoor/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zoom_widget/zoom_widget.dart';
