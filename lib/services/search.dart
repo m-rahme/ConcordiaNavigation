@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
+import '../models/indoor/floor.dart';
+import '../models/indoor/indoor_location.dart';
+import '../models/reachable.dart';
+import '../models/uni_location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 enum query_result { unsupported, invalid, supported }

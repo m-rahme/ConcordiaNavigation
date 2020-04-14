@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../models/indoor/floor.dart';
+import '../models/indoor/indoor_location.dart';
+import 'outdoor/indoor_itinerary.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 
 /// Class holding the business logic for drawing the paths for indoor navigation

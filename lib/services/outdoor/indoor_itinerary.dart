@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/node.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
-import 'package:concordia_navigation/services/search.dart';
+import '../../models/indoor/indoor_location.dart';
+import '../../models/node.dart';
+import '../dijkstra.dart';
+import '../search.dart';
 
 class IndoorItinerary {
   List<IndoorLocation> path = [];
