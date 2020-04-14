@@ -4,8 +4,9 @@ import 'package:concordia_navigation/services/indoor/dijkstra.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
+  TestWidgetsFlutterBinding.ensureInitialized();
+  
   group('Dijkstra', () {
-    TestWidgetsFlutterBinding.ensureInitialized();
     List<dynamic> campusData;
     Map<String, Node> graph;
     Dijkstra dijkstra;
@@ -143,7 +144,6 @@ void main() {
         graph['MB1.210'],
       ];
       List<Node> result = dijkstra.pathTo("MB1.301", "MB1.210");
-      for (Node node in result) print(node.name);
       expect(solution, result);
     });
     test('testing route from MB1.301 to MB1.210 with accessibility', () {
@@ -155,8 +155,7 @@ void main() {
         graph['MBcheckMM'],
         graph['MB1.210'],
       ];
-      List<Node> result = dijkstra.pathTo("H110", "MB1.309", accessible: true);
-      for (Node node in result) print(node.name);
+      List<Node> result = dijkstra.pathTo("MB1.301", "MB1.210", accessible: true);
       expect(solution, result);
     });
   });
