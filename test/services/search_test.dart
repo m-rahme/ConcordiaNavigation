@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:concordia_navigation/models/indoor/classroom.dart';
 import 'package:concordia_navigation/models/indoor/indoor_poi.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
 import 'package:concordia_navigation/services/search.dart';
 import 'package:http/http.dart';
-import 'package:concordia_navigation/models/university.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 

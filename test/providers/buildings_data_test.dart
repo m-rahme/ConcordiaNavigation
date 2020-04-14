@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/university.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:flutter_test/flutter_test.dart';
 

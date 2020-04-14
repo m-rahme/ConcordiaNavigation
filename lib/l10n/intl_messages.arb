@@ -1,8 +1,8 @@
 {
   "@@last_modified": "2020-02-02T18:43:52.788958",
-  "profile": "Profile",
-  "@profile": {
-    "description": "Profile for the user",
+  "toggle": "Toggle Building Highlights",
+  "@toggle": {
+    "description": "Building Highlights",
     "type": "text",
     "placeholders": {}
   },
@@ -27,6 +27,12 @@
   "shuttle": "Shuttle Schedule",
   "@shuttle": {
     "description": "Shuttle Schedule",
+    "type": "text",
+    "placeholders": {}
+  },
+  "indoor": "Indoor",
+  "@indoor": {
+    "description": "Indoor",
     "type": "text",
     "placeholders": {}
   }

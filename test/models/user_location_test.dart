@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/user_location.dart';
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';

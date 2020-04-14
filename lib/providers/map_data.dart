@@ -1,5 +1,5 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/outdoor/reachable.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
@@ -18,14 +18,18 @@ class MapData extends ChangeNotifier {
   Reachable _start, _end;
   bool panelVisible = false;
 
+  // Represent the start and end text fields on the drawer
   String controllerStarting, controllerEnding;
 
+  // Contains the polylines required for drawing an itinerary on the map
   OutdoorItinerary itinerary;
 
   Completer<GoogleMapController> get getCompleter {
     return _completer;
   }
 
+  // transportation mode for google api call
+  // can be driving, walking, bicycling, or transit
   String mode;
 
   MapData([LocationService location]) {
@@ -39,16 +43,20 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    if (obj != null) controllerEnding = (obj as UniLocation).name;
-    else controllerEnding = null;
+    if (obj != null)
+      controllerEnding = (obj as UniLocation).name;
+    else
+      controllerEnding = null;
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    if (obj != null) controllerStarting = (obj as UniLocation).name;
-    else controllerStarting = null;
+    if (obj != null)
+      controllerStarting = (obj as UniLocation).name;
+    else
+      controllerStarting = null;
     notifyListeners();
   }
 
@@ -57,16 +65,21 @@ class MapData extends ChangeNotifier {
     notifyListeners();
   }
 
+  /// Sets the itinerary object of the provider
   void setItinerary() async {
-    // try to use parameters, but if they're not supplied use attributes
-    if (_start == null)
-      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
-    else if (_start.toLatLng() != _end.toLatLng()) {
-      itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
-    } else {
-      print('Same start and end!');
+    // must be going somewhere
+    if (_end != null) {
+      // use current location if start is null
+      if (_start == null)
+        itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+      // make sure start and end are not equal
+      else if (_start.toLatLng() != _end.toLatLng()) {
+        itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
+      } else {
+        print('Same start and end!');
+      }
+      notifyListeners();
     }
-    notifyListeners();
   }
 
   /// Sets the shared itinerary object to null, causing a re-render of the DirectionsDrawer widget
@@ -81,29 +94,16 @@ class MapData extends ChangeNotifier {
   }
 
   CameraPosition getCameraFor(LatLng location) {
-    if (location != null) {
-      return CameraPosition(
-        target: location,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
-    }
     return CameraPosition(
-        target: constants.sgw,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
+      target: location,
+      zoom: 16.5,
+      tilt: 30.440717697143555,
+      bearing: 30.8334901395799,
+    );
   }
 
   CameraPosition getFixedLocationCamera() {
-    return CameraPosition(
-        target: locationService.current?.toLatLng() ?? constants.sgw,
-        zoom: 16.5,
-        tilt: 30.440717697143555,
-        bearing: 30.8334901395799,
-      );
+    return getCameraFor(locationService.current?.toLatLng() ?? constants.sgw);
   }
 
   Future<void> animateTo(double lat, double lng) async {

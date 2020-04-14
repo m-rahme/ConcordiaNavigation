@@ -1,6 +1,10 @@
 import 'package:concordia_navigation/models/calendar/course.dart';
 import 'package:device_calendar/device_calendar.dart';
 
+/// Class representing a user's schedule
+/// Contains a list of courses, a summary, and a timezone.
+/// 
+/// Modeled after results from Google's Calendar API
 class Schedule {
   List<Course> _courses;
   String _summary;

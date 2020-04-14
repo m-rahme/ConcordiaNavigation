@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/reachable.dart';
+import 'package:concordia_navigation/models/outdoor/reachable.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 
