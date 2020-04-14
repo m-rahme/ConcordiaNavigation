@@ -4,7 +4,7 @@ import 'package:concordia_navigation/services/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/widgets/shuttle_tile.dart';
 
-//Shuttle Widget at the bottom of the Directions Page.
+///Shuttle Widget at the bottom of the Directions Page.
 class ShuttleWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

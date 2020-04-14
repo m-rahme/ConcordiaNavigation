@@ -10,6 +10,7 @@ import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+/// Widget displaying the map
 class MapPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

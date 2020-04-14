@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 
+/// Widget displaying building information when clicked on the highlighted buildings
 class BottomSheetWidget extends StatelessWidget {
   final Building building;
   BottomSheetWidget(this.building);

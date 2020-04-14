@@ -1,6 +1,7 @@
 import 'package:concordia_navigation/storage/app_constants.dart';
 import 'package:flutter/material.dart';
 
+/// Widget for floatin map button
 class FloatingMapButton extends StatelessWidget {
   final Color fgColor;
   final Color bgColor;

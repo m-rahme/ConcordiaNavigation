@@ -8,16 +8,19 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
+/// Model class for buildings
 class Building extends OutdoorLocation {
-  // generated
+  // GENERATED
   Polygon _outline;
+  // Defines a bitmap image used by google map api
   BitmapDescriptor icon;
 
-  // required
+  // REQUIRED
   String buildingInitials;
+  // List of edges of the building in terms of coordinate points
   List edges;
 
-  // optional
+  // OPTIONAL
   String logo;
 
   @visibleForTesting

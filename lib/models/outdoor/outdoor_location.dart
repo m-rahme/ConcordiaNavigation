@@ -11,6 +11,7 @@ abstract class OutdoorLocation extends UniLocation implements Reachable {
 
   String address;
 
+  /// public constructor of an outdoor location
   OutdoorLocation(String name,
       {UniLocation parent,
       List<UniLocation> children,

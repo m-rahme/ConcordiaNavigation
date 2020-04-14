@@ -33,7 +33,7 @@ class BuildingsData extends ChangeNotifier {
 
     _visible = true;
   }
-
+  /// Toggle on and off the outlines of the building
   void toggleOutline() {
     _visible = !_visible;
     notifyListeners();

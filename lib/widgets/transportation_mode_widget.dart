@@ -5,6 +5,7 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:provider/provider.dart';
 
+/// Widget displaying the different mode of transportation
 class TransportationModeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

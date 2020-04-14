@@ -6,6 +6,7 @@ import 'package:provider/provider.dart';
 import 'package:zoom_widget/zoom_widget.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
+/// Widget which shows indoor map and on-map directions
 class IndoorWidget extends StatelessWidget {
   final int index;
   IndoorWidget(this.index);

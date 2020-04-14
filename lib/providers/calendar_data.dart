@@ -3,6 +3,7 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';
 
+/// Class representing calendar data which is part of the provider model
 class CalendarData extends ChangeNotifier {
   final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
   List<Calendar> _calendars = List();
@@ -11,6 +12,7 @@ class CalendarData extends ChangeNotifier {
 
   Schedule get schedule => _schedule;
 
+  /// Constructor which retrieves the data for the calendar from own device's settings
   CalendarData() {
     retrieveFromDevice();
   }

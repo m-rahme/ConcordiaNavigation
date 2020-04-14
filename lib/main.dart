@@ -19,9 +19,11 @@ Future<void> main() async {
   ));
 }
 
+// Main app
 class App extends StatelessWidget {
+  // Holds name of initial page (route)
   final String initialRoute;
-
+  // Sets initial page for the app
   App({this.initialRoute});
 
   @override

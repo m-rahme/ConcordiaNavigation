@@ -1,11 +1,14 @@
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 
+/// Model class of an outdoor point of interest
 class OutdoorPOI extends OutdoorLocation {
   String logo;
   String description;
+  // Open and closing hours
   String open;
   String close;
 
+  // Public constructor of an outdoor point of interest
   OutdoorPOI(String name, String address, this.logo,
       {OutdoorLocation parent, this.description, this.open, this.close})
       : super(name, address: address, parent: parent);
@@ -20,6 +23,7 @@ class OutdoorPOI extends OutdoorLocation {
             latitude: json['LAT'],
             longitude: json['LNG'], parent: parent);
 
+  /// Factory constructor method for outdoor point of interest from reading a json file
   factory OutdoorPOI.fromJson(
       Map<String, dynamic> json, {OutdoorLocation parent}) {
     if (parent == null ||

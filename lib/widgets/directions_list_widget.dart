@@ -5,6 +5,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
+/// Widget which displays the list of directions
 class DirectionsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

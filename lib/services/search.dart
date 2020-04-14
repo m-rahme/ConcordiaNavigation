@@ -6,6 +6,7 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 enum query_result { unsupported, invalid, supported }
 
+/// Business logic for searching
 class Search {
   // for getting latlng's
   static List<dynamic> supported = [];

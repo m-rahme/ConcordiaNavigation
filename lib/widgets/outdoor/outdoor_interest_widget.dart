@@ -5,6 +5,7 @@ import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 
+/// Widget displaying the outdoor point of interests
 class OutdoorInterestWidget extends StatelessWidget {
   final List<OutdoorPOI> interests;
 

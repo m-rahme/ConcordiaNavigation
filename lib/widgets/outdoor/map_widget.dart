@@ -10,7 +10,7 @@ import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/services/size_config.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 
-//This is the map widget that will be loaded in the home screen.
+///This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
   @override
   _MapWidgetState createState() => _MapWidgetState();

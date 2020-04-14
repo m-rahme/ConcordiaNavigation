@@ -7,7 +7,7 @@ import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:provider/provider.dart';
 
-//Custom drawer used in the app.
+/// Custom drawer used in the app.
 class CustomDrawer extends StatelessWidget {
   Widget _expendTile() {
     return Theme(

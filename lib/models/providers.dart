@@ -7,6 +7,7 @@ import 'package:provider/single_child_widget.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 
+/// Model class that holds the list of providers used for state management
 List<SingleChildWidget> providers = [
   StreamProvider<UserLocation>(
     create: (context) => LocationService.getInstance().stream,

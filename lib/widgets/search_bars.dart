@@ -6,6 +6,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Widget of the search bar at the top of the screen
 class SearchBars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

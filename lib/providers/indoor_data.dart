@@ -3,6 +3,7 @@ import 'package:concordia_navigation/services/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
 import 'package:flutter/material.dart';
 
+/// Class part of the provider model which uses indoor data
 class IndoorData extends ChangeNotifier {
   IndoorItinerary _indoorItinerary;
 

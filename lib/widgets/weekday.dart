@@ -8,10 +8,12 @@ import 'package:intl/intl.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:provider/provider.dart';
 
+/// Widget class showing the course schedule
 class Weekday extends StatelessWidget {
   final String weekday;
   final List<Course> courseList;
 
+  /// Constructor for course schedule
   Weekday(this.weekday, this.courseList);
 
   @override
