@@ -8,7 +8,7 @@ import 'indoor_poi.dart';
 class Floor extends IndoorLocation {
   final int page;
   Floor(String name, Building parent, this.page) : super(name, parent: parent);
-  /// Factory design patttern to create a floor from json file
+  /// Factory design pattern to create a floor from json file
   factory Floor.fromJson(Building building, Map json) {
     if (json['number'] == null) return null;
 
