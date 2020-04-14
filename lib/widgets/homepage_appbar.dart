@@ -16,6 +16,7 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         Center(
           child: InkWell(
+            key: Key("Indoor"),
             child: Text(
               ConcordiaLocalizations.of(context).indoor,
               style: GoogleFonts.raleway(

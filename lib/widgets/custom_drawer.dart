@@ -132,6 +132,7 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: constants.whiteColor,
             child: ListTile(
+              key: Key("OutdoorInterest"),
               leading: Icon(Icons.location_on),
               title: Text(
                 ConcordiaLocalizations.of(context).interest,

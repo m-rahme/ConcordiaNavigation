@@ -76,9 +76,6 @@ void main() {
       expect(search, findsWidgets);
       await tester.tap(search);
       await tester.pumpAndSettle();
-/*
-      final cityIcon = find.byIcon(Icons.location_city);
-      expect(cityIcon, findsWidgets);*/
     });
   });
 }

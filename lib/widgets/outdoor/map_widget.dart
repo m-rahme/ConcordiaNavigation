@@ -73,6 +73,7 @@ class _MapWidgetState extends State<MapWidget> {
               completer.complete(controller);
             }),
         FloatingMapButton(
+          key: Key("SwitchCampus"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||
@@ -95,6 +96,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
+          key: Key("CurrentLocation"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||

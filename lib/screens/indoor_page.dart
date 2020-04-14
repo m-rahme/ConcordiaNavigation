@@ -27,6 +27,7 @@ class IndoorPage extends StatelessWidget {
     List<Widget> buttons = [];
     for (int i = 0; i < floors.length; i++) {
       Widget button = FloatingActionButton(
+        key: Key("Indoor"+i.toString()),
         heroTag: "btn$i",
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16.0))),

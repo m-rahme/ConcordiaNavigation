@@ -6,12 +6,18 @@ import 'package:flutter/widgets.dart';
 /// Handles data related to the calendar such as
 /// transferring to related models, keeping a list of current courses
 class CalendarData extends ChangeNotifier {
-  final DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
+  DeviceCalendarPlugin _deviceCalendarPlugin = DeviceCalendarPlugin();
   List<Calendar> _calendars = List();
   List<Event> _classes = List();
   Schedule _schedule;
 
   Schedule get schedule => _schedule;
+
+  @visibleForTesting
+  CalendarData.test(DeviceCalendarPlugin plugin, DateTime today) {
+    _deviceCalendarPlugin = plugin;
+    retrieveFromDevice(today);
+  }
 
   CalendarData() {
     retrieveFromDevice();
@@ -48,12 +54,12 @@ class CalendarData extends ChangeNotifier {
   }
 
   /// Retrieve relevant events from device calendars.
-  Future<Schedule> retrieveFromDevice() async {
+  Future<Schedule> retrieveFromDevice([DateTime time]) async {
     if (_calendars.isEmpty) {
       await _retrieveDeviceCalendars();
     }
 
-    DateTime now = DateTime.now();
+    DateTime now = time ?? DateTime.now();
     DateTime _firstDayOfTheWeek = now.subtract(Duration(days: now.weekday));
 
     // Events are loaded starting from the beginning of this week
