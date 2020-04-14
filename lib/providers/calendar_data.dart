@@ -13,9 +13,14 @@ class CalendarData extends ChangeNotifier {
 
   Schedule get schedule => _schedule;
 
-  CalendarData([ @visibleForTesting DeviceCalendarPlugin plugin, @visibleForTesting DateTime today]) {
+  @visibleForTesting
+  CalendarData.test(DeviceCalendarPlugin plugin, DateTime today) {
     _deviceCalendarPlugin = plugin;
     retrieveFromDevice(today);
+  }
+
+  CalendarData() {
+    retrieveFromDevice();
   }
 
   /// Checks for (and requests) permissions required by the [device calendar plugins](https://pub.dev/packages/device_calendar)

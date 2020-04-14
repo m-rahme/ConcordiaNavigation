@@ -69,7 +69,7 @@ void main() {
     test(
         'constructor creates a list of Calendar',
         () async {
-      CalendarData calendarData = CalendarData(mockDeviceCalendarPlugin, DateTime(2020, 01, 01));
+      CalendarData calendarData = CalendarData.test(mockDeviceCalendarPlugin, DateTime(2020, 01, 01));
       await calendarData.retrieveFromDevice(DateTime(2020, 01, 01));
       expect(calendarData.schedule.courses[0].summary, event.title);
     });
