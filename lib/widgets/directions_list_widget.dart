@@ -1,9 +1,9 @@
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/services/size_config.dart';
+import '../providers/map_data.dart';
+import '../services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../storage/app_constants.dart' as constants;
 
 /// Widget which displays the list of directions
 class DirectionsList extends StatelessWidget {

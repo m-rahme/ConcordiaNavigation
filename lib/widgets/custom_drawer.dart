@@ -1,10 +1,10 @@
-import 'package:concordia_navigation/providers/buildings_data.dart';
-import 'package:concordia_navigation/providers/calendar_data.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../providers/buildings_data.dart';
+import '../providers/calendar_data.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:concordia_navigation/services/localization.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
+import '../services/localization.dart';
+import '../providers/map_data.dart';
 import 'package:provider/provider.dart';
 
 /// Custom drawer used in the app.

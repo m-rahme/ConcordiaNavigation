@@ -1,8 +1,8 @@
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/storage/app_constants.dart';
+import '../../models/outdoor/building.dart';
+import '../../storage/app_constants.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:concordia_navigation/services/size_config.dart';
+import '../../services/size_config.dart';
 
 /// Widget displaying building information when clicked on the highlighted buildings
 class BottomSheetWidget extends StatelessWidget {

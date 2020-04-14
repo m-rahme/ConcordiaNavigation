@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../services/outdoor/shuttle_service.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 

@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/screens/indoor_page.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../providers/map_data.dart';
+import '../screens/indoor_page.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';

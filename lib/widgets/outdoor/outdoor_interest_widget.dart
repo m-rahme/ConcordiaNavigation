@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../../models/outdoor/outdoor_poi.dart';
+import '../../providers/map_data.dart';
+import '../../services/size_config.dart';
+import '../../storage/app_constants.dart' as constants;
 import "package:flutter/material.dart";
 import 'package:provider/provider.dart';
 

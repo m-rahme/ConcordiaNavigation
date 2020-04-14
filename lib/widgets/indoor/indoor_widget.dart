@@ -1,10 +1,10 @@
-import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/services/painter_service.dart';
-import 'package:concordia_navigation/services/painters.dart';
+import '../../providers/indoor_data.dart';
+import '../../services/painter_service.dart';
+import '../../services/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zoom_widget/zoom_widget.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../../storage/app_constants.dart' as constants;
 
 /// Widget which shows indoor map and on-map directions
 class IndoorWidget extends StatelessWidget {
