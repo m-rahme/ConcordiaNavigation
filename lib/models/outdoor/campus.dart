@@ -2,6 +2,7 @@ import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
 import 'package:concordia_navigation/models/outdoor/university.dart';
+import 'package:meta/meta.dart' show visibleForTesting;
 
 // Concrete outdoor location
 class Campus extends OutdoorLocation {
@@ -9,6 +10,10 @@ class Campus extends OutdoorLocation {
   static Campus sgw;
   static Campus loy;
   final List<OutdoorPOI> interests = [];
+
+  @visibleForTesting
+  Campus.forTesting(String name, this.initials, {University parent})
+      : super(name, parent: parent);
 
   Campus._create(String name, this.initials, {University parent})
       : super(name, parent: parent);
