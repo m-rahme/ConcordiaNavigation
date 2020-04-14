@@ -1,9 +1,9 @@
-import 'package:concordia_navigation/models/calendar/course.dart';
-import 'package:concordia_navigation/providers/calendar_data.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/widgets/weekday.dart';
+import '../models/calendar/course.dart';
+import '../providers/calendar_data.dart';
+import '../storage/app_constants.dart' as constants;
+import '../widgets/weekday.dart';
+import '../services/localization.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/services/localization.dart';
 import 'package:provider/provider.dart';
 
 /// User Schedule Screen

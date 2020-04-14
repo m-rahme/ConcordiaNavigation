@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/models/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/services/search.dart';
+import '../reachable.dart';
+import '../uni_location.dart';
+import '../../services/search.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 /// all outdoor locations are reachable

@@ -1,7 +1,7 @@
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
-import 'package:concordia_navigation/models/university.dart';
+import 'building.dart';
+import 'outdoor_location.dart';
+import 'outdoor_poi.dart';
+import '../university.dart';
 
 /// Model class of concrete outdoor location representing a campus
 class Campus extends OutdoorLocation {

@@ -1,7 +1,8 @@
-import 'package:concordia_navigation/models/indoor/classroom.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/indoor/indoor_poi.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
+import '../outdoor/building.dart';
+import 'classroom.dart';
+import 'indoor_location.dart';
+import 'indoor_poi.dart';
+
 
 /// Model class for indoor floors
 class Floor extends IndoorLocation {

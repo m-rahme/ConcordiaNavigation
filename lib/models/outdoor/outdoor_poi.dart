@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
+import 'outdoor_location.dart';
 
 /// Model class of an outdoor point of interest
 class OutdoorPOI extends OutdoorLocation {

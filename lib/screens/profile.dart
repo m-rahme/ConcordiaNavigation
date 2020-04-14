@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/storage/app_constants.dart';
+import '../storage/app_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/services/localization.dart';
+import '../services/localization.dart';
 
 //User Profile Screen
 class Profile extends StatelessWidget {

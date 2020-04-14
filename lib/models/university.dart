@@ -1,7 +1,6 @@
 import 'dart:convert';
-
-import 'package:concordia_navigation/models/outdoor/campus.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
+import 'outdoor/campus.dart';
+import 'outdoor/outdoor_location.dart';
 import 'package:flutter/services.dart';
 
 /// Model class of university outdoor location

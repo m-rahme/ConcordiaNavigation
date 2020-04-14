@@ -1,12 +1,12 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/university.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
-import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
-import 'package:concordia_navigation/services/outdoor_poi_list.dart';
-import 'package:concordia_navigation/services/search.dart';
+import '../models/indoor/indoor_location.dart';
+import '../models/outdoor/building.dart';
+import '../models/university.dart';
+import '../services/dijkstra.dart';
+import '../services/outdoor/location_service.dart';
+import '../services/outdoor/shuttle_service.dart';
+import '../services/outdoor_poi_list.dart';
+import '../services/search.dart';
 import 'package:flutter/material.dart';
 
 // This is the Splash Screen

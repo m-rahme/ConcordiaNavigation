@@ -1,13 +1,14 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
-import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
+import '../models/reachable.dart';
+import '../models/uni_location.dart';
+import '../services/outdoor/location_service.dart';
+import '../services/outdoor/outdoor_itinerary.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.

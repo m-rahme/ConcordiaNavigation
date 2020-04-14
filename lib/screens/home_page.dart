@@ -1,9 +1,9 @@
-import 'package:concordia_navigation/services/painters.dart';
-import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/widgets/custom_drawer.dart';
-import 'package:concordia_navigation/widgets/outdoor/map_page.dart';
+import '../services/painters.dart';
+import '../services/size_config.dart';
+import '../widgets/custom_drawer.dart';
+import '../widgets/outdoor/map_page.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/widgets/homepage_appbar.dart';
+import '../widgets/homepage_appbar.dart';
 
 //The app will launch here.
 class HomePage extends StatefulWidget {

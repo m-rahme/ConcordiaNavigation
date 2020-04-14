@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/models/university.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
-import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
+import '../models/university.dart';
+import '../services/dijkstra.dart';
+import '../services/outdoor/indoor_itinerary.dart';
 import 'package:flutter/material.dart';
 
 /// Class part of the provider model which uses indoor data

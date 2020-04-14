@@ -1,10 +1,10 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/outdoor/campus.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../indoor/floor.dart';
+import 'campus.dart';
+import 'outdoor_location.dart';
+import '../../storage/app_constants.dart' as constants;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
