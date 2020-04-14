@@ -38,18 +38,20 @@ class Dijkstra {
                 floor['classrooms']?.forEach((classroom) {
                   if (classroom['edges'] != null) {
                     classroom['edges'].forEach((edge) {
-                      if (edge['name'] != null)
+                      if (edge['name'] != null) {
                         graph[classroom['name']]
                             .setEdge(graph[edge['name']], edge['distance']);
+                      }
                     });
                   }
                 });
                 floor['poi']?.forEach((poi) {
                   if (poi['edges'] != null) {
                     poi['edges'].forEach((edge) {
-                      if (edge['name'] != null)
+                      if (edge['name'] != null) {
                         graph[poi['name']]
                             .setEdge(graph[edge['name']], edge['distance']);
+                      }
                     });
                   }
                 });

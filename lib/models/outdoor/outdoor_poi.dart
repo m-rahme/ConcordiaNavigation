@@ -21,17 +21,19 @@ class OutdoorPOI extends OutdoorLocation {
         super(json['Name'],
             address: json['Address'],
             latitude: json['LAT'],
-            longitude: json['LNG'], parent: parent);
+            longitude: json['LNG'],
+            parent: parent);
 
   /// Factory constructor method for outdoor point of interest from reading a json file
-  factory OutdoorPOI.fromJson(
-      Map<String, dynamic> json, {OutdoorLocation parent}) {
+  factory OutdoorPOI.fromJson(Map<String, dynamic> json,
+      {OutdoorLocation parent}) {
     if (parent == null ||
         json['Name'] == null ||
         json['Address'] == null ||
-        json['Logo'] == null)
+        json['Logo'] == null) {
       return null;
-    else
+    } else {
       return OutdoorPOI._fromJson(json, parent: parent);
+    }
   }
 }

@@ -183,10 +183,12 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
             onPressed: () {
               setState(
                 () {
-                  if (!isSelectedSGWToLoy)
+                  if (!isSelectedSGWToLoy) {
                     isSelectedSGWToLoy = !isSelectedSGWToLoy;
-                  if (isSelectedLoyToSGW)
+                  }
+                  if (isSelectedLoyToSGW) {
                     isSelectedLoyToSGW = !isSelectedLoyToSGW;
+                  }
                 },
               );
             },
@@ -220,10 +222,12 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
             onPressed: () {
               setState(
                 () {
-                  if (!isSelectedLoyToSGW)
+                  if (!isSelectedLoyToSGW) {
                     isSelectedLoyToSGW = !isSelectedLoyToSGW;
-                  if (isSelectedSGWToLoy)
+                  }
+                  if (isSelectedSGWToLoy) {
                     isSelectedSGWToLoy = !isSelectedSGWToLoy;
+                  }
                 },
               );
             },

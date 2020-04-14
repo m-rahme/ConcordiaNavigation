@@ -24,9 +24,9 @@ class Search {
 
   /// Granular search
   static LatLng indoor(Reachable location) {
-    if (location is IndoorLocation && !supported.contains(location))
+    if (location is IndoorLocation && !supported.contains(location)) {
       throw Exception("sorry location not found or unsupported");
-    else {
+    } else {
       return location.toLatLng();
     }
   }

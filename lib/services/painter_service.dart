@@ -21,8 +21,9 @@ class PainterService extends CustomPainter {
 
     Map<int, List<IndoorLocation>> map = {0: [], 1: [], 2: [], 3: []};
 
-    for (IndoorLocation indoor in itinerary.path)
+    for (IndoorLocation indoor in itinerary.path) {
       map[(indoor.parent as Floor).page].add(indoor);
+    }
 
     ///Calculations made so match container size where the svg is built with the svg itself
     ///This way, the path will be drawn on the right X and Y coordinates

@@ -31,8 +31,9 @@ class _SplashScreenState extends State<SplashScreen>
     Dijkstra.shortest = Dijkstra.fromJson(data);
 
     Search.supported.forEach((object) {
-      if (object is IndoorLocation || object is Building)
+      if (object is IndoorLocation || object is Building) {
         Search.names.add(object.name.toUpperCase());
+      }
     });
   }
 
