@@ -1,5 +1,6 @@
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/screens/indoor_page.dart';
+import 'package:concordia_navigation/services/localization.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -15,8 +16,9 @@ class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
       actions: <Widget>[
         Center(
           child: InkWell(
+            key: Key("Indoor"),
             child: Text(
-              "Indoor",
+              ConcordiaLocalizations.of(context).indoor,
               style: GoogleFonts.raleway(
                   fontWeight: FontWeight.w600, fontSize: 18.0),
             ),

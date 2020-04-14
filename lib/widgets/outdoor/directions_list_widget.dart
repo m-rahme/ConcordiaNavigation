@@ -33,6 +33,7 @@ class DirectionsList extends StatelessWidget {
                   String key =
                       mapData.itinerary.itinerary.keys.elementAt(index);
                   return Container(
+                    key: Key("Direction"+index.toString()),
                     decoration: BoxDecoration(
                       color: constants.whiteColor,
                       border: Border(

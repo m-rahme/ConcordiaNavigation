@@ -2,7 +2,7 @@ import 'package:intl/intl.dart';
 import '../l10n/messages_all.dart';
 import 'package:flutter/material.dart';
 
-//Localization for French/English Support
+/// Deals with converting strings to French when necessary
 class ConcordiaLocalizations {
   ConcordiaLocalizations(this.localeName);
 
@@ -23,11 +23,11 @@ class ConcordiaLocalizations {
 
   final String localeName;
 
-  String get profile {
+  String get toggle {
     return Intl.message(
-      'Profile',
-      name: 'profile',
-      desc: 'Profile for the user',
+      'Toggle Building Highlights',
+      name: 'toggle',
+      desc: 'Building Highlights',
       locale: localeName,
     );
   }
@@ -64,6 +64,15 @@ class ConcordiaLocalizations {
       'Shuttle Schedule',
       name: 'shuttle',
       desc: 'Shuttle Scedule',
+      locale: localeName,
+    );
+  }
+
+  String get indoor {
+    return Intl.message(
+      'Indoor',
+      name: 'indoor',
+      desc: 'Indoor',
       locale: localeName,
     );
   }

@@ -132,6 +132,7 @@ class CustomDrawer extends StatelessWidget {
           Container(
             color: constants.whiteColor,
             child: ListTile(
+              key: Key("OutdoorInterest"),
               leading: Icon(Icons.location_on),
               title: Text(
                 ConcordiaLocalizations.of(context).interest,
@@ -148,7 +149,7 @@ class CustomDrawer extends StatelessWidget {
             child: ListTile(
               leading: Icon(Icons.wb_sunny),
               title: Text(
-                "Toggle Building Highlights",
+                ConcordiaLocalizations.of(context).toggle,
                 style: GoogleFonts.raleway(fontWeight: FontWeight.bold),
               ),
               onTap: () {

@@ -1,7 +1,7 @@
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/models/outdoor/campus.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
 import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/models/university.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {

@@ -1,11 +1,11 @@
 import 'package:concordia_navigation/providers/map_data.dart';
 import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/widgets/directions_list_widget.dart';
+import 'package:concordia_navigation/widgets/outdoor/directions_list_widget.dart';
 import 'package:concordia_navigation/widgets/outdoor/map_widget.dart';
+import 'package:concordia_navigation/widgets/outdoor/shuttle_widget.dart';
+import 'package:concordia_navigation/widgets/outdoor/transportation_mode_widget.dart';
 import 'package:concordia_navigation/widgets/search_bars.dart';
-import 'package:concordia_navigation/widgets/shuttle_widget.dart';
-import 'package:concordia_navigation/widgets/transportation_mode_widget.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

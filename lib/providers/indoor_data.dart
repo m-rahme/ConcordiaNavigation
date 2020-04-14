@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/models/university.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
+import 'package:concordia_navigation/services/indoor/dijkstra.dart';
 import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
 import 'package:flutter/material.dart';
 
@@ -10,16 +10,15 @@ class IndoorData extends ChangeNotifier {
 
   bool wheelchair = false;
 
-  void toggleWheelchair() {
+  Future<void> toggleWheelchair() async {
     wheelchair = !wheelchair;
     if (_indoorItinerary != null) {
-      University.loadJson().then((data) {
-        Dijkstra.shortest = Dijkstra.fromJson(data);
-        setItinerary(
+      List<dynamic> data = await University.loadJson();
+      Dijkstra.shortest = Dijkstra.fromJson(data);
+      setItinerary(
             start: _indoorItinerary.path.first.name,
             end: _indoorItinerary.path.last.name,
             accessible: wheelchair);
-      });
     }
     notifyListeners();
   }

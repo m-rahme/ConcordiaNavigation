@@ -1,6 +1,6 @@
 import 'dart:collection';
 import 'package:collection/collection.dart';
-import 'package:concordia_navigation/models/node.dart';
+import 'package:concordia_navigation/models/indoor/node.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Class for finding the shortest path between nodes.

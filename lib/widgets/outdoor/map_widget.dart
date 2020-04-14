@@ -1,9 +1,9 @@
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:concordia_navigation/models/user_location.dart';
 import 'package:concordia_navigation/providers/buildings_data.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
 import 'package:concordia_navigation/providers/map_data.dart';
@@ -73,6 +73,7 @@ class _MapWidgetState extends State<MapWidget> {
               completer.complete(controller);
             }),
         FloatingMapButton(
+          key: Key("SwitchCampus"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||
@@ -95,6 +96,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
+          key: Key("CurrentLocation"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||

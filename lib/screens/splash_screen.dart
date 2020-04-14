@@ -1,11 +1,11 @@
 import 'dart:async';
 import 'package:concordia_navigation/models/indoor/indoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/university.dart';
-import 'package:concordia_navigation/services/dijkstra.dart';
+import 'package:concordia_navigation/models/outdoor/university.dart';
+import 'package:concordia_navigation/services/indoor/dijkstra.dart';
+import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:concordia_navigation/services/outdoor/location_service.dart';
 import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
-import 'package:concordia_navigation/services/outdoor_poi_list.dart';
 import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter/material.dart';
 
@@ -25,14 +25,16 @@ class _SplashScreenState extends State<SplashScreen>
     List<dynamic> data = await University.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
 
-    OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
     University.concordia = University.fromJson(data);
 
     Dijkstra.shortest = Dijkstra.fromJson(data);
 
     Search.supported.forEach((object) {
-      if (object is IndoorLocation || object is Building)
+      if (object is Building ||
+          (object is IndoorLocation &&
+              constants.classroomFilter.hasMatch(object.name))) {
         Search.names.add(object.name.toUpperCase());
+      }
     });
   }
 
