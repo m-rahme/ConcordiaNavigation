@@ -1,12 +1,12 @@
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/screens/indoor_page.dart';
-import 'package:concordia_navigation/services/localization.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import '../providers/map_data.dart';
+import '../screens/indoor_page.dart';
+import '../services/localization.dart';
+import '../storage/app_constants.dart' as constants;
 
-//Custom AppBar shown only in HomePage
+///Custom AppBar shown only in HomePage
 class HomePageAppBar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {

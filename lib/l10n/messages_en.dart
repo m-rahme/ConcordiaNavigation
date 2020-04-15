@@ -12,10 +12,11 @@
 import 'package:intl/intl.dart';
 import 'package:intl/message_lookup_by_library.dart';
 
+// Messages in English
 final messages = new MessageLookup();
-
+// Alias that returns a default message if a message is absent
 typedef String MessageIfAbsent(String messageStr, List<dynamic> args);
-
+// Gets the messages to display
 class MessageLookup extends MessageLookupByLibrary {
   String get localeName => 'en';
 

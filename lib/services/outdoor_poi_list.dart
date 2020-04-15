@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
+import '../models/outdoor/outdoor_poi.dart';
 import 'package:flutter/services.dart';
 import 'dart:convert';
 

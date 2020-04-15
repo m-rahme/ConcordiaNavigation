@@ -1,4 +1,4 @@
-import 'package:concordia_navigation/models/calendar/course.dart';
+import 'course.dart';
 import 'package:device_calendar/device_calendar.dart';
 
 /// Class representing a user's schedule
@@ -13,14 +13,15 @@ class Schedule {
   List<Course> get courses => _courses;
 
   String get summary => _summary;
+  // Timezone
   String get tz => _tz;
-
+  /// Retrieves schedule information from json file
   Schedule.fromJson(Map<String, dynamic> json)
       : _summary = json['summary'],
         _tz = json['timeZone'],
         _courses =
             json['items'].map<Course>((json) => Course.fromJson(json)).toList();
-
+  /// Retrieves schedule information from events
   Schedule.fromEvents(List<Event> events)
       : _summary = 'All Classes',
         _tz = 'America/Toronto',

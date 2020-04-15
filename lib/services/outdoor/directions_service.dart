@@ -1,5 +1,5 @@
-import 'package:concordia_navigation/services/outdoor/network.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import 'network.dart';
+import '../../storage/app_constants.dart' as constants;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 

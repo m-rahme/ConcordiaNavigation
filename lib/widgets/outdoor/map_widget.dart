@@ -1,16 +1,17 @@
-import 'package:concordia_navigation/models/outdoor/user_location.dart';
+import '../../models/outdoor/user_location.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:concordia_navigation/providers/buildings_data.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../../providers/buildings_data.dart';
+import '../../models/outdoor/building.dart';
+import '../../providers/map_data.dart';
+import '../../services/size_config.dart';
+import '../../storage/app_constants.dart' as constants;
 
-//This is the map widget that will be loaded in the home screen.
+
+///This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
   @override
   _MapWidgetState createState() => _MapWidgetState();

@@ -1,11 +1,12 @@
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/outdoor/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
+import '../models/indoor/floor.dart';
+import '../models/indoor/indoor_location.dart';
+import '../models/outdoor/reachable.dart';
+import '../models/uni_location.dart';
 
 enum query_result { unsupported, invalid, supported }
 
+/// Business logic for searching
 /// Manages possible search results in the form of Reachable objects and Strings
 /// 
 /// A user's input is matched against the contents of the `supported` list.
@@ -30,9 +31,9 @@ class Search {
 
   /// Granular search
   static LatLng indoor(Reachable location) {
-    if (location is IndoorLocation && !supported.contains(location))
+    if (location is IndoorLocation && !supported.contains(location)) {
       throw Exception("sorry location not found or unsupported");
-    else {
+    } else {
       return location.toLatLng();
     }
   }
