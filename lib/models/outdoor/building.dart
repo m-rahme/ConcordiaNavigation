@@ -31,7 +31,10 @@ class Building extends OutdoorLocation {
 
   @visibleForTesting
   Building.forTesting(String name, String buildingAddress, double latitude, double longitude)
-      : super(name, address: buildingAddress, latitude: latitude, longitude: longitude);
+      : super(name, 
+              address: buildingAddress, 
+              latitude: latitude, 
+              longitude: longitude);
 
   Building(this.buildingInitials, String name, double latitude, double longitude,
       String buildingAddress, this.edges,  this.logo, {Campus parent})
@@ -65,6 +68,11 @@ class Building extends OutdoorLocation {
       );
     }
     return _outline;
+  }
+
+  @visibleForTesting
+  Future<Uint8List> testGetBytesFromAsset(String path, int width) {
+    return _getBytesFromAsset(path, width);
   }
 
   /// Load bitmap for location marker
