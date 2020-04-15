@@ -1,6 +1,6 @@
 import '../../providers/indoor_data.dart';
-import '../../services/painter_service.dart';
-import '../../services/painters.dart';
+import '../../services/indoor/painter_service.dart';
+import '../../services/indoor/painters.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:zoom_widget/zoom_widget.dart';

@@ -1,13 +1,13 @@
 import 'dart:async';
+import 'package:flutter/material.dart';
 import '../models/indoor/indoor_location.dart';
 import '../models/outdoor/building.dart';
-import '../models/university.dart';
-import '../services/dijkstra.dart';
+import '../models/outdoor/university.dart';
+import '../services/indoor/dijkstra.dart';
+import '../storage/app_constants.dart' as constants;
 import '../services/outdoor/location_service.dart';
 import '../services/outdoor/shuttle_service.dart';
-import '../services/outdoor_poi_list.dart';
 import '../services/search.dart';
-import 'package:flutter/material.dart';
 
 // This is the Splash Screen
 class SplashScreen extends StatefulWidget {
@@ -25,13 +25,14 @@ class _SplashScreenState extends State<SplashScreen>
     List<dynamic> data = await University.loadJson();
     ShuttleService.shuttleSchedule = await ShuttleService.loadJson();
 
-    OutdoorPOIList.poi = await OutdoorPOIList.loadJson();
     University.concordia = University.fromJson(data);
 
     Dijkstra.shortest = Dijkstra.fromJson(data);
 
     Search.supported.forEach((object) {
-      if (object is IndoorLocation || object is Building) {
+      if (object is Building ||
+          (object is IndoorLocation &&
+              constants.classroomFilter.hasMatch(object.name))) {
         Search.names.add(object.name.toUpperCase());
       }
     });

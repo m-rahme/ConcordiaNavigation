@@ -1,9 +1,11 @@
 import 'dart:convert';
-import 'outdoor/campus.dart';
-import 'outdoor/outdoor_location.dart';
+import 'campus.dart';
+import 'outdoor_location.dart';
 import 'package:flutter/services.dart';
 
 /// Model class of university outdoor location
+/// Class representing a university
+
 class University extends OutdoorLocation {
   University._create(String name) : super(name);
   static University concordia;

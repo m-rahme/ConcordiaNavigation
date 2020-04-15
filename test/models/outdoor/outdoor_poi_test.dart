@@ -1,7 +1,5 @@
 import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
 import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
 import 'package:flutter_test/flutter_test.dart';
 
 void main() {
@@ -38,7 +36,8 @@ void main() {
         "Logo": "assets/poi_images/park.png"
       };
 
-      expect(() => OutdoorPOI.fromJson(badLat, parent: building), throwsA(isA<TypeError>()) );
+      expect(() => OutdoorPOI.fromJson(badLat, parent: building),
+          throwsA(isA<TypeError>()));
     });
 
     test("fromJson() missing an optional parameter", () {
@@ -56,7 +55,8 @@ void main() {
     });
 
     test('fromJson() on SGW fed null data', () {
-      expect(() => OutdoorPOI.fromJson(null, parent: building), throwsA(isA<NoSuchMethodError>()) );
+      expect(() => OutdoorPOI.fromJson(null, parent: building),
+          throwsA(isA<NoSuchMethodError>()));
     });
   });
 }

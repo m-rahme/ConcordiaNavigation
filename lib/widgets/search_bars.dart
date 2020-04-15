@@ -29,6 +29,7 @@ class SearchBars extends StatelessWidget {
                   Flexible(
                     fit: FlexFit.tight,
                     child: InkWell(
+                      key: Key("StartLocation"),
                       onTap: () {
                         showSearch(
                             context: context, delegate: LocationSearch(true));
@@ -90,6 +91,7 @@ class SearchBars extends StatelessWidget {
                   Flexible(
                     fit: FlexFit.tight,
                     child: InkWell(
+                      key: Key("EndLocation"),
                       onTap: () {
                         showSearch(
                             context: context, delegate: LocationSearch(false));

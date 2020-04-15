@@ -1,6 +1,9 @@
 import 'outdoor_location.dart';
 
 /// Model class of an outdoor point of interest
+/// Concrete OutdoorLocation
+/// Represents a point of interest close to, or in, a campus
+
 class OutdoorPOI extends OutdoorLocation {
   String logo;
   String description;

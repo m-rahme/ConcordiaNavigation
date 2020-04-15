@@ -5,9 +5,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import '../app_widget.dart';
 
-class MockCalendarData extends Mock implements CalendarData{
-  Future<Schedule> retrieveFromDevice() => null;
-}
+class MockCalendarData extends Mock implements CalendarData{}
 
 void main() {
   group('CourseSchedule', () {
@@ -37,6 +35,7 @@ void main() {
                   ]
                   });
       when(mockCalendarData.schedule).thenReturn(schedule);
+      when(mockCalendarData.retrieveFromDevice()).thenReturn(null); // ignore method
     });
     testWidgets('course is displayed', (WidgetTester tester) async {
       await tester.pumpWidget(appWidget(mockCalendarData: mockCalendarData, testWidget: CourseSchedule(now: now,)));

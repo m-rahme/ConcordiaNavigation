@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'package:collection/collection.dart';
-import '../models/node.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
+import '../../models/indoor/node.dart';
 
 /// Class for finding the shortest path between nodes.
 class Dijkstra {

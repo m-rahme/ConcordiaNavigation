@@ -1,9 +1,9 @@
-import '../providers/map_data.dart';
-import '../services/size_config.dart';
+import '../../providers/map_data.dart';
+import '../../services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import '../storage/app_constants.dart' as constants;
+import '../../storage/app_constants.dart' as constants;
 
 /// Widget which displays the list of directions
 class DirectionsList extends StatelessWidget {
@@ -34,6 +34,7 @@ class DirectionsList extends StatelessWidget {
                   String key =
                       mapData.itinerary.itinerary.keys.elementAt(index);
                   return Container(
+                    key: Key("Direction"+index.toString()),
                     decoration: BoxDecoration(
                       color: constants.whiteColor,
                       border: Border(

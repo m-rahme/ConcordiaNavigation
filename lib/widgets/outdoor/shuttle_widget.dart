@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import '../storage/app_constants.dart' as constants;
-import '../services/size_config.dart';
+import '../../storage/app_constants.dart' as constants;
+import '../../services/size_config.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'shuttle_tile.dart';
+import '../shuttle_tile.dart';
 
 ///Shuttle Widget at the bottom of the Directions Page.
 class ShuttleWidget extends StatelessWidget {

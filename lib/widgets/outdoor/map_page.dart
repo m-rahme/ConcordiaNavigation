@@ -1,11 +1,11 @@
 import '../../providers/map_data.dart';
 import '../../storage/app_constants.dart' as constants;
 import '../../services/size_config.dart';
-import '../directions_list_widget.dart';
+import '../outdoor/directions_list_widget.dart';
 import '../outdoor/map_widget.dart';
 import '../search_bars.dart';
-import '../shuttle_widget.dart';
-import '../transportation_mode_widget.dart';
+import 'shuttle_widget.dart';
+import 'transportation_mode_widget.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';

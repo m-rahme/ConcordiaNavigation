@@ -22,10 +22,13 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static _notInlinedMessages(_) => <String, Function>{
-        "profile": MessageLookupByLibrary.simpleMessage("Profil"),
+        "toggle": MessageLookupByLibrary.simpleMessage(
+            "Activer/Désactiver les Marqueurs de Bâtiment"),
         "schedule": MessageLookupByLibrary.simpleMessage("Horaire"),
         "interest": MessageLookupByLibrary.simpleMessage("Intérêt Extérieur"),
         "settings": MessageLookupByLibrary.simpleMessage("Paramètres"),
-        "shuttle": MessageLookupByLibrary.simpleMessage("Horaire de la Navette")
+        "shuttle":
+            MessageLookupByLibrary.simpleMessage("Horaire de la Navette"),
+        "indoor": MessageLookupByLibrary.simpleMessage("Intérieur"),
       };
 }

@@ -1,6 +1,6 @@
 import 'dart:async';
+import 'package:concordia_navigation/models/outdoor/user_location.dart';
 import 'package:location/location.dart';
-import '../../models/user_location.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
 ///Location Service, implementing the Singleton Design Pattern
@@ -57,11 +57,27 @@ class LocationService {
     return true;
   }
 
+  /// Checks that location service is enabled
+  Future<bool> checkService() async {
+    bool service = await _location.serviceEnabled();
+    if (service != true) {
+      service = await _location.requestService();
+      if (service != true) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   /// Clean wrapper for performing privileged actions
   void withPermission(void method()) {
     checkPermission().then((granted) => {
       if(granted == true) {
-        method()
+        checkService().then((service) => {
+          if(service == true) {
+            method()
+          }
+        })
       }
     });
   }

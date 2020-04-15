@@ -1,6 +1,6 @@
 import '../../models/indoor/indoor_location.dart';
-import '../../models/node.dart';
-import '../dijkstra.dart';
+import '../../models/indoor/node.dart';
+import '../indoor/dijkstra.dart';
 import '../search.dart';
 
 class IndoorItinerary {

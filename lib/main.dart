@@ -8,7 +8,6 @@ import 'services/localization.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
 import 'screens/settings.dart';
-import 'screens/profile.dart';
 import 'screens/course_schedule.dart';
 import 'screens/shuttle_schedule.dart';
 
@@ -45,7 +44,6 @@ class App extends StatelessWidget {
       routes: {
         '/home': (context) => HomePage(),
         '/schedule': (context) => CourseSchedule(),
-        '/profile': (context) => Profile(),
         '/o_interest': (context) => OutdoorInterest(),
         '/settings': (context) => Settings(),
         '/shuttle': (context) => ShuttleSchedule(),

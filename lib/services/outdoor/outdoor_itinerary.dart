@@ -1,5 +1,5 @@
 import 'dart:convert';
-import '../../models/reachable.dart';
+import '../../models/outdoor/reachable.dart';
 import 'directions_service.dart';
 import 'location_service.dart';
 import 'package:flutter/material.dart';

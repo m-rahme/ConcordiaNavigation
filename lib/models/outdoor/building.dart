@@ -9,6 +9,12 @@ import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
 /// Model class for buildings
+/// Represents a building in a university campus
+/// Examples include the H building, EV building, and JMSB.
+/// 
+/// Buildings contain floors which contains classrooms/indoor points of interest
+/// 
+/// A building also has an outline required for highlighting it on the map
 class Building extends OutdoorLocation {
   // GENERATED
   Polygon _outline;

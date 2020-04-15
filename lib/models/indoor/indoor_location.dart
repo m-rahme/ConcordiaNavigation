@@ -2,9 +2,8 @@ import '../../services/search.dart';
 import 'coordinate.dart';
 import 'floor.dart';
 import '../outdoor/building.dart';
-import '../reachable.dart';
+import '../outdoor/reachable.dart';
 import '../uni_location.dart';
-
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 /// indoor locations are reachable since theyre in buildings and buildings are reachable

@@ -1,4 +1,4 @@
-import 'user_location.dart';
+import 'outdoor/user_location.dart';
 import '../providers/calendar_data.dart';
 import '../providers/indoor_data.dart';
 import '../services/outdoor/location_service.dart';

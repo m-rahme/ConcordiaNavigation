@@ -1,11 +1,12 @@
-import '../models/indoor/floor.dart';
-import '../providers/buildings_data.dart';
-import '../services/painters.dart';
-import '../widgets/indoor/indoor_widget.dart';
-import 'package:flutter/material.dart';
-import '../storage/app_constants.dart' as constants;
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:flutter/material.dart';
+import '../models/indoor/floor.dart';
+import '../providers/buildings_data.dart';
+import '../services/indoor/painters.dart';
+import '../widgets/indoor/indoor_widget.dart';
+import '../services/localization.dart';
+import '../storage/app_constants.dart' as constants;
 
 class Arguments {
   final bool showDirections;
@@ -19,13 +20,14 @@ class IndoorPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // for each floor in domain, do this
+    // add button for each supported floor
     List<Floor> floors = [];
     Provider.of<BuildingsData>(context).allBuildings.forEach((building) =>
         building.children.forEach((floor) => floors.add((floor))));
     List<Widget> buttons = [];
     for (int i = 0; i < floors.length; i++) {
       Widget button = FloatingActionButton(
+        key: Key("Indoor"+i.toString()),
         heroTag: "btn$i",
         shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.all(Radius.circular(16.0))),
@@ -40,6 +42,7 @@ class IndoorPage extends StatelessWidget {
           ),
         ),
         onPressed: () {
+          // change to different floor on press
           controller.animateToPage(i,
               duration: Duration(milliseconds: 500), curve: Curves.decelerate);
         },
@@ -49,7 +52,9 @@ class IndoorPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: constants.whiteColor,
       appBar: AppBar(
-        title: Text("Indoor View"),
+        title: Text(
+          ConcordiaLocalizations.of(context).indoor,
+        ),
         backgroundColor: constants.appColor,
       ),
       body: Column(

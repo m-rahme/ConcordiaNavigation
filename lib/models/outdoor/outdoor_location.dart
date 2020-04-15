@@ -1,4 +1,4 @@
-import '../reachable.dart';
+import 'reachable.dart';
 import '../uni_location.dart';
 import '../../services/search.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';

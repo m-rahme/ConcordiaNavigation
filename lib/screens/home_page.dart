@@ -1,4 +1,4 @@
-import '../services/painters.dart';
+import '../services/indoor/painters.dart';
 import '../services/size_config.dart';
 import '../widgets/custom_drawer.dart';
 import '../widgets/outdoor/map_page.dart';

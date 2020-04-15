@@ -1,8 +1,8 @@
-import '../providers/indoor_data.dart';
-import '../providers/map_data.dart';
+import '../../providers/indoor_data.dart';
+import '../../providers/map_data.dart';
 import 'package:flutter/material.dart';
-import '../storage/app_constants.dart' as constants;
-import '../services/size_config.dart';
+import '../../storage/app_constants.dart' as constants;
+import '../../services/size_config.dart';
 import 'package:provider/provider.dart';
 
 /// Widget displaying the different mode of transportation
@@ -35,6 +35,7 @@ class TransportationModeWidget extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     IconButton(
+                      key: Key("Wheelchair"),
                       icon: Icon(Icons.accessible_forward),
                       color: Provider.of<IndoorData>(context).wheelchair
                           ? constants.blueColor
@@ -46,6 +47,7 @@ class TransportationModeWidget extends StatelessWidget {
                     Row(
                       children: <Widget>[
                         IconButton(
+                          key: Key("Driving"),
                           icon: Icon(Icons.directions_car),
                           color: mapData.mode == "driving"
                               ? constants.blueColor
@@ -59,6 +61,7 @@ class TransportationModeWidget extends StatelessWidget {
                           },
                         ),
                         IconButton(
+                          key: Key("Transit"),
                           icon: Icon(Icons.train),
                           color: mapData.mode == "transit"
                               ? constants.blueColor
@@ -72,6 +75,7 @@ class TransportationModeWidget extends StatelessWidget {
                           },
                         ),
                         IconButton(
+                          key: Key("Walking"),
                           icon: Icon(Icons.directions_walk),
                           color: mapData.mode == "walking"
                               ? constants.blueColor
@@ -85,6 +89,7 @@ class TransportationModeWidget extends StatelessWidget {
                           },
                         ),
                         IconButton(
+                          key: Key("Bicycling"),
                           icon: Icon(Icons.directions_bike),
                           color: mapData.mode == "bicycling"
                               ? constants.blueColor

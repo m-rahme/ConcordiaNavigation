@@ -1,14 +1,15 @@
+import '../../models/outdoor/user_location.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'bottomsheet_widget.dart';
 import 'floating_map_button.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import '../../models/user_location.dart';
 import '../../providers/buildings_data.dart';
 import '../../models/outdoor/building.dart';
 import '../../providers/map_data.dart';
 import '../../services/size_config.dart';
 import '../../storage/app_constants.dart' as constants;
+
 
 ///This is the map widget that will be loaded in the home screen.
 class MapWidget extends StatefulWidget {
@@ -73,6 +74,7 @@ class _MapWidgetState extends State<MapWidget> {
               completer.complete(controller);
             }),
         FloatingMapButton(
+          key: Key("SwitchCampus"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||
@@ -95,6 +97,7 @@ class _MapWidgetState extends State<MapWidget> {
           },
         ),
         FloatingMapButton(
+          key: Key("CurrentLocation"),
           top: (Provider.of<MapData>(context, listen: false)
                           .controllerStarting !=
                       null ||
