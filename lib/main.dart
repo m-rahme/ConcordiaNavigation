@@ -1,15 +1,15 @@
-import 'package:concordia_navigation/models/providers.dart';
-import 'package:concordia_navigation/screens/indoor_page.dart';
-import 'package:concordia_navigation/screens/outdoor_interest.dart';
-import 'package:concordia_navigation/screens/splash_screen.dart';
+import 'models/providers.dart';
+import 'screens/indoor_page.dart';
+import 'screens/outdoor_interest.dart';
+import 'screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'services/localization.dart';
 import 'screens/home_page.dart';
 import 'package:provider/provider.dart';
-import 'package:concordia_navigation/screens/settings.dart';
-import 'package:concordia_navigation/screens/course_schedule.dart';
-import 'package:concordia_navigation/screens/shuttle_schedule.dart';
+import 'screens/settings.dart';
+import 'screens/course_schedule.dart';
+import 'screens/shuttle_schedule.dart';
 
 Future<void> main() async {
   runApp(MultiProvider(
@@ -18,9 +18,11 @@ Future<void> main() async {
   ));
 }
 
+// Main app
 class App extends StatelessWidget {
+  // Holds name of initial page (route)
   final String initialRoute;
-
+  // Sets initial page for the app
   App({this.initialRoute});
 
   @override

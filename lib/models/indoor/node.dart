@@ -1,3 +1,4 @@
+/// Node class used for Dijkstra shortest path algorithm
 class Node implements Comparable<Node> {
   String name;
   int distance;
@@ -5,19 +6,22 @@ class Node implements Comparable<Node> {
   Node previous;
   bool accessible;
 
+  /// Sets initial node distance as 9999 to simulate an infinite distance (part of the Dijkstra algorithm)
   Node(this.name, [this.distance = 9999])
       : accessible = !name.contains('escalator');
 
-  /// checks if the map is already
   void setEdge(Node node, int distance) => edges[node] = distance;
 
   @override
   int compareTo(Node other) {
-    if (distance > other.distance)
+    if (distance > other.distance) {
       return 1;
-    else if (distance < other.distance)
+    }
+    else if (distance < other.distance) {
       return -1;
-    else
+    }
+    else {
       return 0;
+    }
   }
 }

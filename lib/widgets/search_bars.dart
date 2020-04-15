@@ -1,11 +1,12 @@
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/services/location_search.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/services/size_config.dart';
+import '../providers/map_data.dart';
+import '../services/location_search.dart';
+import '../storage/app_constants.dart' as constants;
+import '../services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+/// Widget of the search bar at the top of the screen
 class SearchBars extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

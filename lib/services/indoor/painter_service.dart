@@ -1,9 +1,10 @@
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/services/outdoor/indoor_itinerary.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
+import '../../models/indoor/floor.dart';
+import '../../models/indoor/indoor_location.dart';
+import '../outdoor/indoor_itinerary.dart';
+import '../../storage/app_constants.dart' as constants;
 
+/// Class holding the business logic for drawing the paths for indoor navigation
 class PainterService extends CustomPainter {
   int index;
   IndoorItinerary itinerary;
@@ -21,9 +22,9 @@ class PainterService extends CustomPainter {
     // one list for every supported floor
     Map<int, List<IndoorLocation>> map = {0: [], 1: [], 2: [], 3: []};
 
-    // add every indoor location to its respective list
-    for (IndoorLocation indoor in itinerary.path)
+    for (IndoorLocation indoor in itinerary.path) {
       map[(indoor.parent as Floor).page].add(indoor);
+    }
 
     /// Calculations made so match container size where the svg is built with the svg itself
     /// This way, the path will be drawn on the right X and Y coordinates

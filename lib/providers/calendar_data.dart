@@ -1,8 +1,9 @@
-import 'package:concordia_navigation/models/calendar/schedule.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../models/calendar/schedule.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:device_calendar/device_calendar.dart';
 import 'package:flutter/widgets.dart';
 
+/// Class representing calendar data which is part of the provider model
 /// Handles data related to the calendar such as
 /// transferring to related models, keeping a list of current courses
 class CalendarData extends ChangeNotifier {
@@ -19,6 +20,7 @@ class CalendarData extends ChangeNotifier {
     retrieveFromDevice(today);
   }
 
+  /// Constructor which retrieves the data for the calendar from own device's settings
   CalendarData() {
     retrieveFromDevice();
   }

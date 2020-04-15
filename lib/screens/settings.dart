@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/storage/app_constants.dart';
+import '../storage/app_constants.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/services/localization.dart';
+import '../services/localization.dart';
 
 //App Settings Screen
 class Settings extends StatelessWidget {

@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'package:concordia_navigation/models/outdoor/reachable.dart';
-import 'package:concordia_navigation/services/outdoor/directions_service.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
+import '../../models/outdoor/reachable.dart';
+import 'directions_service.dart';
+import 'location_service.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polyline_points/flutter_polyline_points.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../../storage/app_constants.dart' as constants;
 
 //This class is used to generate an an Itinerary from the direction's JSON.
 class OutdoorItinerary {
