@@ -1,13 +1,13 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/university.dart';
-import 'package:concordia_navigation/services/indoor/dijkstra.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
-import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
-import 'package:concordia_navigation/services/search.dart';
 import 'package:flutter/material.dart';
+import '../models/indoor/indoor_location.dart';
+import '../models/outdoor/building.dart';
+import '../models/outdoor/university.dart';
+import '../services/indoor/dijkstra.dart';
+import '../storage/app_constants.dart' as constants;
+import '../services/outdoor/location_service.dart';
+import '../services/outdoor/shuttle_service.dart';
+import '../services/search.dart';
 
 // This is the Splash Screen
 class SplashScreen extends StatefulWidget {

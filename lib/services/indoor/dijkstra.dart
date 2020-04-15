@@ -1,7 +1,7 @@
 import 'dart:collection';
 import 'package:collection/collection.dart';
-import 'package:concordia_navigation/models/indoor/node.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
+import '../../models/indoor/node.dart';
 
 /// Class for finding the shortest path between nodes.
 class Dijkstra {
@@ -38,18 +38,20 @@ class Dijkstra {
                 floor['classrooms']?.forEach((classroom) {
                   if (classroom['edges'] != null) {
                     classroom['edges'].forEach((edge) {
-                      if (edge['name'] != null)
+                      if (edge['name'] != null) {
                         graph[classroom['name']]
                             .setEdge(graph[edge['name']], edge['distance']);
+                      }
                     });
                   }
                 });
                 floor['poi']?.forEach((poi) {
                   if (poi['edges'] != null) {
                     poi['edges'].forEach((edge) {
-                      if (edge['name'] != null)
+                      if (edge['name'] != null) {
                         graph[poi['name']]
                             .setEdge(graph[edge['name']], edge['distance']);
+                      }
                     });
                   }
                 });

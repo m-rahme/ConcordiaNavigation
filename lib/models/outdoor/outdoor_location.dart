@@ -1,6 +1,6 @@
-import 'package:concordia_navigation/models/outdoor/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/services/search.dart';
+import 'reachable.dart';
+import '../uni_location.dart';
+import '../../services/search.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 /// all outdoor locations are reachable
@@ -11,6 +11,7 @@ abstract class OutdoorLocation extends UniLocation implements Reachable {
 
   String address;
 
+  /// public constructor of an outdoor location
   OutdoorLocation(String name,
       {UniLocation parent,
       List<UniLocation> children,

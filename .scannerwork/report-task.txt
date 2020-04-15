@@ -1,0 +1,6 @@
+projectKey=conNavigation
+serverUrl=http://localhost:9000
+serverVersion=8.2.0.32929
+dashboardUrl=http://localhost:9000/dashboard?id=conNavigation
+ceTaskId=AXF1vuNDe6qRCDvj_-Jg
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AXF1vuNDe6qRCDvj_-Jg

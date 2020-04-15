@@ -1,9 +1,9 @@
-import 'package:concordia_navigation/services/outdoor/shuttle_service.dart';
-import 'package:concordia_navigation/services/size_config.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../services/outdoor/shuttle_service.dart';
+import '../services/size_config.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/services/localization.dart';
+import '../services/localization.dart';
 import 'package:flutter/rendering.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -183,10 +183,12 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
             onPressed: () {
               setState(
                 () {
-                  if (!isSelectedSGWToLoy)
+                  if (!isSelectedSGWToLoy) {
                     isSelectedSGWToLoy = !isSelectedSGWToLoy;
-                  if (isSelectedLoyToSGW)
+                  }
+                  if (isSelectedLoyToSGW) {
                     isSelectedLoyToSGW = !isSelectedLoyToSGW;
+                  }
                 },
               );
             },
@@ -220,10 +222,12 @@ class _ShuttleScheduleState extends State<ShuttleSchedule> {
             onPressed: () {
               setState(
                 () {
-                  if (!isSelectedLoyToSGW)
+                  if (!isSelectedLoyToSGW) {
                     isSelectedLoyToSGW = !isSelectedLoyToSGW;
-                  if (isSelectedSGWToLoy)
+                  }
+                  if (isSelectedSGWToLoy) {
                     isSelectedSGWToLoy = !isSelectedSGWToLoy;
+                  }
                 },
               );
             },

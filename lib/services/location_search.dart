@@ -1,13 +1,13 @@
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/screens/indoor_page.dart';
-import 'package:concordia_navigation/services/search.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../models/indoor/indoor_location.dart';
+import '../models/outdoor/outdoor_location.dart';
+import '../models/uni_location.dart';
+import '../providers/indoor_data.dart';
+import '../screens/indoor_page.dart';
+import 'search.dart';
+import '../storage/app_constants.dart' as constants;
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
+import '../providers/map_data.dart';
 
 /// Shows the user a list of possible locations, parses inputs and submits them to
 /// MapData + IndoorData providers for itinerary generation

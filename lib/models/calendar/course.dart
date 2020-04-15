@@ -15,14 +15,14 @@ class Course {
   DateTime get start => _start;
   DateTime get end => _end;
   String get location => _location;
-
+  /// Fetches course information from json file
   Course.fromJson(Map<String, dynamic> json)
       : _summary = json['summary'],
         _description = json['description'],
         _start = DateTime.parse(json['start']['dateTime']),
         _end = DateTime.parse(json['end']['dateTime']),
         _location = json['location'];
-
+  /// Gets course information from the event
   Course.fromEvent(Event event)
       : _summary = event.title,
         _description = event.description,

@@ -1,10 +1,11 @@
-import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
+import '../../providers/indoor_data.dart';
+import '../../providers/map_data.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
-import 'package:concordia_navigation/services/size_config.dart';
+import '../../storage/app_constants.dart' as constants;
+import '../../services/size_config.dart';
 import 'package:provider/provider.dart';
 
+/// Widget displaying the different mode of transportation
 class TransportationModeWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

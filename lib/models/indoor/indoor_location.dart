@@ -1,9 +1,9 @@
-import 'package:concordia_navigation/models/indoor/coordinate.dart';
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
-import 'package:concordia_navigation/models/outdoor/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/services/search.dart';
+import '../../services/search.dart';
+import 'coordinate.dart';
+import 'floor.dart';
+import '../outdoor/building.dart';
+import '../outdoor/reachable.dart';
+import '../uni_location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 /// indoor locations are reachable since theyre in buildings and buildings are reachable

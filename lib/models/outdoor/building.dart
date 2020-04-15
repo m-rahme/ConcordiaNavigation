@@ -1,13 +1,14 @@
 import 'dart:typed_data';
 import 'dart:ui' as ui;
 import 'package:flutter/services.dart';
-import 'package:concordia_navigation/models/indoor/floor.dart';
-import 'package:concordia_navigation/models/outdoor/campus.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_location.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../indoor/floor.dart';
+import 'campus.dart';
+import 'outdoor_location.dart';
+import '../../storage/app_constants.dart' as constants;
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:meta/meta.dart' show visibleForTesting;
 
+/// Model class for buildings
 /// Represents a building in a university campus
 /// Examples include the H building, EV building, and JMSB.
 /// 
@@ -15,20 +16,25 @@ import 'package:meta/meta.dart' show visibleForTesting;
 /// 
 /// A building also has an outline required for highlighting it on the map
 class Building extends OutdoorLocation {
-  // generated
+  // GENERATED
   Polygon _outline;
+  // Defines a bitmap image used by google map api
   BitmapDescriptor icon;
 
-  // required
+  // REQUIRED
   String buildingInitials;
+  // List of edges of the building in terms of coordinate points
   List edges;
 
-  // optional
+  // OPTIONAL
   String logo;
 
   @visibleForTesting
   Building.forTesting(String name, String buildingAddress, double latitude, double longitude)
-      : super(name, address: buildingAddress, latitude: latitude, longitude: longitude);
+      : super(name, 
+              address: buildingAddress, 
+              latitude: latitude, 
+              longitude: longitude);
 
   Building(this.buildingInitials, String name, double latitude, double longitude,
       String buildingAddress, this.edges,  this.logo, {Campus parent})
@@ -62,6 +68,11 @@ class Building extends OutdoorLocation {
       );
     }
     return _outline;
+  }
+
+  @visibleForTesting
+  Future<Uint8List> testGetBytesFromAsset(String path, int width) {
+    return _getBytesFromAsset(path, width);
   }
 
   /// Load bitmap for location marker

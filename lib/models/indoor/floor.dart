@@ -1,12 +1,14 @@
-import 'package:concordia_navigation/models/indoor/classroom.dart';
-import 'package:concordia_navigation/models/indoor/indoor_location.dart';
-import 'package:concordia_navigation/models/indoor/indoor_poi.dart';
-import 'package:concordia_navigation/models/outdoor/building.dart';
+import '../outdoor/building.dart';
+import 'classroom.dart';
+import 'indoor_location.dart';
+import 'indoor_poi.dart';
 
+
+/// Model class for indoor floors
 class Floor extends IndoorLocation {
   final int page;
   Floor(String name, Building parent, this.page) : super(name, parent: parent);
-
+  /// Factory design pattern to create a floor from json file
   factory Floor.fromJson(Building building, Map json) {
     if (json['number'] == null) return null;
 

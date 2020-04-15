@@ -1,10 +1,10 @@
-import 'package:concordia_navigation/models/outdoor/campus.dart';
-import 'package:concordia_navigation/models/outdoor/outdoor_poi.dart';
-import 'package:concordia_navigation/services/search.dart';
-import 'package:concordia_navigation/storage/app_constants.dart';
-import 'package:concordia_navigation/widgets/outdoor/outdoor_interest_widget.dart';
+import '../models/outdoor/campus.dart';
+import '../models/outdoor/outdoor_poi.dart';
+import '../services/search.dart';
+import '../storage/app_constants.dart';
+import '../widgets/outdoor/outdoor_interest_widget.dart';
 import 'package:flutter/material.dart';
-import 'package:concordia_navigation/services/localization.dart';
+import '../services/localization.dart';
 
 //Outdoor Interests Page
 // ignore: must_be_immutable

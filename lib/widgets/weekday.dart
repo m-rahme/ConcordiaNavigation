@@ -1,17 +1,19 @@
-import 'package:concordia_navigation/models/calendar/course.dart';
-import 'package:concordia_navigation/providers/indoor_data.dart';
-import 'package:concordia_navigation/providers/map_data.dart';
-import 'package:concordia_navigation/services/search.dart';
-import 'package:concordia_navigation/services/size_config.dart';
+import '../models/calendar/course.dart';
+import '../providers/indoor_data.dart';
+import '../providers/map_data.dart';
+import '../services/search.dart';
+import '../services/size_config.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../storage/app_constants.dart' as constants;
 import 'package:provider/provider.dart';
 
+/// Widget class showing the course schedule
 class Weekday extends StatelessWidget {
   final String weekday;
   final List<Course> courseList;
 
+  /// Constructor for course schedule
   Weekday(this.weekday, this.courseList);
 
   @override

@@ -1,13 +1,13 @@
 import 'dart:async';
-import 'package:concordia_navigation/models/outdoor/reachable.dart';
-import 'package:concordia_navigation/models/uni_location.dart';
-import 'package:concordia_navigation/services/outdoor/location_service.dart';
-import 'package:concordia_navigation/services/outdoor/outdoor_itinerary.dart';
 import 'package:flutter/foundation.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:flutter/material.dart';
 import 'package:sliding_up_panel/sliding_up_panel.dart';
-import 'package:concordia_navigation/storage/app_constants.dart' as constants;
+import '../models/outdoor/reachable.dart';
+import '../models/uni_location.dart';
+import '../services/outdoor/location_service.dart';
+import '../services/outdoor/outdoor_itinerary.dart';
+import '../storage/app_constants.dart' as constants;
 
 ///Observer Pattern
 ///Handles all the data related to the map, listens to changes and notifies listeners.
@@ -43,20 +43,22 @@ class MapData extends ChangeNotifier {
   // set the end Reachable object and use its name
   set end(Reachable obj) {
     _end = obj;
-    if (obj != null)
+    if (obj != null) {
       controllerEnding = (obj as UniLocation).name;
-    else
+    } else {
       controllerEnding = null;
+    }
     notifyListeners();
   }
 
   // set the start Reachable object and use its name
   set start(Reachable obj) {
     _start = obj;
-    if (obj != null)
+    if (obj != null) {
       controllerStarting = (obj as UniLocation).name;
-    else
+    } else {
       controllerStarting = null;
+    }
     notifyListeners();
   }
 
@@ -70,10 +72,10 @@ class MapData extends ChangeNotifier {
     // must be going somewhere
     if (_end != null) {
       // use current location if start is null
-      if (_start == null)
+      if (_start == null) {
         itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
-      // make sure start and end are not equal
-      else if (_start.toLatLng() != _end.toLatLng()) {
+        // make sure start and end are not equal
+      } else if (_start.toLatLng() != _end.toLatLng()) {
         itinerary = await OutdoorItinerary.fromReachable(_start, _end, mode);
       } else {
         print('Same start and end!');
